@@ -3,73 +3,229 @@
   "features": [
     {
       "type": "Feature",
-      "properties": { "name": "KOH'S 33 Stadium", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Football club stadium, 5-star rated, great for sport-loving kids" },
-      "geometry": { "type": "Point", "coordinates": [100.0471907, 9.473987] }
+      "properties": {
+        "name": "KOH'S 33 Stadium",
+        "category": "Activity",
+        "address": "Lamai, Koh Samui",
+        "notes": "Football club stadium, 5-star rated, great for sport-loving kids"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0471907,
+          9.473987
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Padel Paradise Lamai", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Padel club, 4.8 stars — fun racket sport for families" },
-      "geometry": { "type": "Point", "coordinates": [100.04009, 9.4641367] }
+      "properties": {
+        "name": "Padel Paradise Lamai",
+        "category": "Activity",
+        "address": "Lamai, Koh Samui",
+        "notes": "Padel club, 4.8 stars — fun racket sport for families"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.04009,
+          9.4641367
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Pinjutha Gym & Badminton", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Badminton courts and gym — great for active kids, 4.6 stars" },
-      "geometry": { "type": "Point", "coordinates": [100.0476804, 9.4704675] }
+      "properties": {
+        "name": "Pinjutha Gym & Badminton",
+        "category": "Activity",
+        "address": "Lamai, Koh Samui",
+        "notes": "Badminton courts and gym — great for active kids, 4.6 stars"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0476804,
+          9.4704675
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Outdoor Gym Lamai", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Open-air gym, 4.8 stars — free outdoor workout spot" },
-      "geometry": { "type": "Point", "coordinates": [100.0570765, 9.470278] }
+      "properties": {
+        "name": "Outdoor Gym Lamai",
+        "category": "Activity",
+        "address": "Lamai, Koh Samui",
+        "notes": "Open-air gym, 4.8 stars — free outdoor workout spot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0570765,
+          9.470278
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Punch it Gym", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Muay Thai gym, 4.9 stars — kids Muay Thai classes available" },
-      "geometry": { "type": "Point", "coordinates": [100.0412322, 9.4707108] }
+      "properties": {
+        "name": "Punch it Gym",
+        "category": "Activity",
+        "address": "Lamai, Koh Samui",
+        "notes": "Muay Thai gym, 4.9 stars — kids Muay Thai classes available"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0412322,
+          9.4707108
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Chaweng Beach", "category": "Beach", "address": "Chaweng, Koh Samui", "notes": "Most popular beach, good for families, lots of facilities" },
-      "geometry": { "type": "Point", "coordinates": [100.0615, 9.5345] }
+      "properties": {
+        "name": "Chaweng Beach",
+        "category": "Beach",
+        "address": "Chaweng, Koh Samui",
+        "notes": "Most popular beach, good for families, lots of facilities"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.058712,
+          9.52496
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Maenam Beach", "category": "Beach", "address": "Maenam, Koh Samui", "notes": "Calm waters, great for young kids" },
-      "geometry": { "type": "Point", "coordinates": [100.0050, 9.5625] }
+      "properties": {
+        "name": "Maenam Beach",
+        "category": "Beach",
+        "address": "Maenam, Koh Samui",
+        "notes": "Calm waters, great for young kids"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9886138,
+          9.5785237
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Bophut Fisherman's Village", "category": "Restaurant", "address": "Bophut, Koh Samui", "notes": "Friday night market, great street food, family friendly" },
-      "geometry": { "type": "Point", "coordinates": [100.0148, 9.5315] }
+      "properties": {
+        "name": "Bophut Fisherman's Village",
+        "category": "Restaurant",
+        "address": "Bophut, Koh Samui",
+        "notes": "Friday night market, great street food, family friendly"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.051791,
+          9.556523
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Big Buddha Temple (Wat Phra Yai)", "category": "Activity", "address": "Ko Fan, Koh Samui", "notes": "Iconic landmark, free entry, easy walk" },
-      "geometry": { "type": "Point", "coordinates": [100.0645, 9.5508] }
+      "properties": {
+        "name": "Big Buddha Temple (Wat Phra Yai)",
+        "category": "Activity",
+        "address": "Ko Fan, Koh Samui",
+        "notes": "Iconic landmark, free entry, easy walk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.060549,
+          9.570632
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Lamai Beach", "category": "Beach", "address": "Lamai, Koh Samui", "notes": "Good for swimming, calmer than Chaweng" },
-      "geometry": { "type": "Point", "coordinates": [100.0545, 9.4695] }
+      "properties": {
+        "name": "Lamai Beach",
+        "category": "Beach",
+        "address": "Lamai, Koh Samui",
+        "notes": "Good for swimming, calmer than Chaweng"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.045894,
+          9.468689
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Choeng Mon Beach", "category": "Beach", "address": "Choeng Mon, Koh Samui", "notes": "Quiet, shallow water, perfect for toddlers" },
-      "geometry": { "type": "Point", "coordinates": [100.0665, 9.5610] }
+      "properties": {
+        "name": "Choeng Mon Beach",
+        "category": "Beach",
+        "address": "Choeng Mon, Koh Samui",
+        "notes": "Quiet, shallow water, perfect for toddlers"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.08382,
+          9.558624
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Nathon Pier & Market", "category": "Shopping", "address": "Nathon, Koh Samui", "notes": "Local market, cheaper prices, authentic feel" },
-      "geometry": { "type": "Point", "coordinates": [99.9684, 9.5303] }
+      "properties": {
+        "name": "Nathon Pier & Market",
+        "category": "Shopping",
+        "address": "Nathon, Koh Samui",
+        "notes": "Local market, cheaper prices, authentic feel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9307916,
+          9.5359969
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Secret Sunrise Beach", "category": "VIP", "premium": true, "address": "North Koh Samui", "notes": "🔒 Members only — quiet beach, no crowds, best sunrise spot" },
-      "geometry": { "type": "Point", "coordinates": [100.0320, 9.5680] }
+      "properties": {
+        "name": "Secret Sunrise Beach",
+        "category": "VIP",
+        "premium": true,
+        "address": "North Koh Samui",
+        "notes": "🔒 Members only — quiet beach, no crowds, best sunrise spot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.032,
+          9.568
+        ]
+      }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Expat Rooftop Club", "category": "VIP", "premium": true, "address": "Chaweng, Koh Samui", "notes": "🔒 Members only — private expat community meetup space" },
-      "geometry": { "type": "Point", "coordinates": [100.0610, 9.5360] }
+      "properties": {
+        "name": "Expat Rooftop Club",
+        "category": "VIP",
+        "premium": true,
+        "address": "Chaweng, Koh Samui",
+        "notes": "🔒 Members only — private expat community meetup space"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.061,
+          9.536
+        ]
+      }
     }
   ]
 }
