@@ -1,0 +1,283 @@
+{{ define "head" }}
+<style>
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+  .page-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .page-header p { color: #555; font-size: 1rem; }
+  .map-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1rem;
+    height: calc(100vh - 200px);
+    min-height: 500px;
+  }
+  @media (max-width: 768px) {
+    .map-layout { grid-template-columns: 1fr; height: auto; }
+    #map { height: 60vw; min-height: 300px; }
+  }
+  #map { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .sidebar { overflow-y: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+  .sidebar-header { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 0.35rem 0.75rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.8rem; font-weight: 500;
+    transition: all 0.15s;
+  }
+  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  .poi-card {
+    background: white; border-radius: 10px; padding: 0.85rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s;
+  }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .poi-card .poi-cat { font-size: 0.75rem; color: #888; margin-bottom: 0.35rem; }
+  .poi-card .poi-addr { font-size: 0.78rem; color: #555; line-height: 1.4; }
+  .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+  .poi-card .poi-actions a {
+    font-size: 0.75rem; color: #1a3a5c; text-decoration: none; font-weight: 500;
+  }
+  .poi-card .poi-actions a:hover { text-decoration: underline; }
+  .cat-badge {
+    display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem;
+    border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem;
+  }
+  .add-location {
+    background: #f0f4ff; border: 2px dashed #1a3a5c; border-radius: 10px;
+    padding: 0.85rem 1rem; text-align: center; cursor: pointer; color: #1a3a5c;
+    font-size: 0.85rem; font-weight: 500; transition: background 0.15s;
+  }
+  .add-location:hover { background: #dde8ff; }
+  .search-box {
+    width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd;
+    border-radius: 8px; font-size: 0.85rem; margin-bottom: 0.5rem;
+  }
+  .search-box:focus { outline: none; border-color: #1a3a5c; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-header">
+  <h1>🏝️ Koh Samui with Kids</h1>
+  <p>Family-friendly spots — beaches, restaurants, activities & more. Updated by the community.</p>
+</div>
+
+<div class="map-layout">
+  <div class="sidebar" id="sidebar">
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
+    <div class="sidebar-header" id="filter-btns"></div>
+    <div id="poi-list"></div>
+    <div class="add-location" onclick="document.getElementById('add-modal').style.display='flex'">
+      + Add a location
+    </div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<!-- Add location modal -->
+<div id="add-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:white;border-radius:12px;padding:1.5rem;width:90%;max-width:420px;">
+    <h3 style="margin-bottom:1rem;">Add a Location</h3>
+    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Name</label>
+    <input id="add-name" type="text" placeholder="Restaurant, Beach..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;">
+    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Category</label>
+    <select id="add-cat" style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;">
+      <option>Beach</option><option>Restaurant</option><option>Activity</option><option>Hotel</option><option>Shopping</option><option>Other</option>
+    </select>
+    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Google Maps URL (paste to auto-extract coords)</label>
+    <input id="add-gmaps" type="text" placeholder="https://maps.google.com/..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;" oninput="extractCoords()">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+      <div>
+        <label style="display:block;margin-bottom:0.25rem;font-size:0.8rem;font-weight:500;">Latitude</label>
+        <input id="add-lat" type="number" step="0.0001" placeholder="9.5..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;font-size:0.85rem;">
+      </div>
+      <div>
+        <label style="display:block;margin-bottom:0.25rem;font-size:0.8rem;font-weight:500;">Longitude</label>
+        <input id="add-lng" type="number" step="0.0001" placeholder="100.0..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;font-size:0.85rem;">
+      </div>
+    </div>
+    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Notes (optional)</label>
+    <textarea id="add-notes" rows="2" placeholder="Tips, hours, price range..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:1rem;font-size:0.85rem;resize:vertical;"></textarea>
+    <div style="display:flex;gap:0.5rem;justify-content:flex-end;">
+      <button onclick="document.getElementById('add-modal').style.display='none'" style="padding:0.5rem 1rem;border:1.5px solid #ddd;border-radius:6px;background:white;cursor:pointer;">Cancel</button>
+      <button onclick="submitLocation()" style="padding:0.5rem 1rem;border:none;border-radius:6px;background:#1a3a5c;color:white;cursor:pointer;font-weight:600;">Add to Map</button>
+    </div>
+    <p style="margin-top:0.75rem;font-size:0.75rem;color:#888;">📋 Copy the JSON output to add it permanently to the GeoJSON file.</p>
+    <pre id="add-output" style="display:none;background:#f5f5f5;border-radius:6px;padding:0.75rem;font-size:0.75rem;margin-top:0.5rem;overflow-x:auto;"></pre>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// Load GeoJSON data
+const GEOJSON_URL = '{{ "/koh-samui/locations.geojson" | relURL }}';
+
+const CATEGORY_COLORS = {
+  'Beach': '#0ea5e9',
+  'Restaurant': '#f97316',
+  'Activity': '#22c55e',
+  'Hotel': '#8b5cf6',
+  'Shopping': '#ec4899',
+  'Kids': '#f59e0b',
+  'Other': '#6b7280'
+};
+
+const CATEGORY_ICONS = {
+  'Beach': '🏖️', 'Restaurant': '🍽️', 'Activity': '🎯',
+  'Hotel': '🏨', 'Shopping': '🛍️', 'Kids': '👶', 'Other': '📍'
+};
+
+let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+
+// Init map centered on Koh Samui
+map = L.map('map').setView([9.5018, 100.0136], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(category) {
+  const color = CATEGORY_COLORS[category] || '#6b7280';
+  const icon = CATEGORY_ICONS[category] || '📍';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -20]
+  });
+}
+
+function renderSidebar() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const filtered = allPOIs.filter(f => {
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
+    return matchCat && matchSearch;
+  });
+  filtered.forEach((f, i) => {
+    const p = f.properties;
+    const cat = p.category || 'Other';
+    const color = CATEGORY_COLORS[cat] || '#6b7280';
+    const icon = CATEGORY_ICONS[cat] || '📍';
+    const card = document.createElement('div');
+    card.className = 'poi-card';
+    card.id = 'card-' + f._id;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+      <h3>${p.name}</h3>
+      ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
+      ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
+      <div class="poi-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=${f.geometry.coordinates[1]},${f.geometry.coordinates[0]}" target="_blank">Open in Maps ↗</a>
+        ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  map.flyTo([lat, lng], 15, { duration: 0.8 });
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function filterPOIs() { renderSidebar(); updateMarkers(); }
+
+function updateMarkers() {
+  const search = document.getElementById('search').value.toLowerCase();
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const cat = p.category || 'Other';
+    const matchCat = activeFilter === 'All' || cat === activeFilter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
+    if (!matchCat || !matchSearch) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
+      .addTo(map)
+      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${p.notes ? '<br><em>' + p.notes + '</em>' : ''}`);
+    marker.on('click', () => focusPOI(f));
+    markers[f._id] = marker;
+  });
+}
+
+function setupFilters(pois) {
+  const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
+  const container = document.getElementById('filter-btns');
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+    btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
+    btn.onclick = () => {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterPOIs();
+    };
+    container.appendChild(btn);
+  });
+}
+
+// Extract coords from Google Maps URL
+function extractCoords() {
+  const url = document.getElementById('add-gmaps').value;
+  const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if (match) {
+    document.getElementById('add-lat').value = match[1];
+    document.getElementById('add-lng').value = match[2];
+  }
+}
+
+function submitLocation() {
+  const name = document.getElementById('add-name').value.trim();
+  const cat = document.getElementById('add-cat').value;
+  const lat = parseFloat(document.getElementById('add-lat').value);
+  const lng = parseFloat(document.getElementById('add-lng').value);
+  const notes = document.getElementById('add-notes').value.trim();
+  if (!name || isNaN(lat) || isNaN(lng)) { alert('Name and coordinates are required.'); return; }
+  const feature = {
+    "type": "Feature",
+    "properties": { "name": name, "category": cat, "notes": notes },
+    "geometry": { "type": "Point", "coordinates": [lng, lat] }
+  };
+  const out = document.getElementById('add-output');
+  out.textContent = JSON.stringify(feature, null, 2);
+  out.style.display = 'block';
+  // Also add to map temporarily
+  feature._id = 'temp-' + Date.now();
+  allPOIs.push(feature);
+  updateMarkers();
+  renderSidebar();
+  map.flyTo([lat, lng], 14);
+}
+
+// Load data
+fetch(GEOJSON_URL)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    setupFilters(allPOIs);
+    renderSidebar();
+    updateMarkers();
+    if (allPOIs.length > 0) {
+      const group = L.featureGroup(Object.values(markers));
+      if (Object.keys(markers).length > 0) map.fitBounds(group.getBounds().pad(0.1));
+    }
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded yet. Add some!</p>';
+  });
+</script>
+{{ end }}

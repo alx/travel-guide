@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "The Donut's Library", "category": "Restaurant", "address": "Lamai, Koh Samui", "notes": "Highly rated cafe-library, cozy spot for kids — temporarily closed, check before visiting" },
+      "geometry": { "type": "Point", "coordinates": [100.0492181, 9.4710124] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "KOH'S 33 Stadium", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Football club stadium, 5-star rated, great for sport-loving kids" },
+      "geometry": { "type": "Point", "coordinates": [100.0471907, 9.473987] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Padel Paradise Lamai", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Padel club, 4.8 stars — fun racket sport for families" },
+      "geometry": { "type": "Point", "coordinates": [100.04009, 9.4641367] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Pinjutha Gym & Badminton", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Badminton courts and gym — great for active kids, 4.6 stars" },
+      "geometry": { "type": "Point", "coordinates": [100.0476804, 9.4704675] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Outdoor Gym Lamai", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Open-air gym, 4.8 stars — free outdoor workout spot" },
+      "geometry": { "type": "Point", "coordinates": [100.0570765, 9.470278] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Lamai Driving Range", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Golf driving range, 4.5 stars — fun intro to golf for older kids" },
+      "geometry": { "type": "Point", "coordinates": [100.0429942, 9.4817575] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Punch it Gym", "category": "Activity", "address": "Lamai, Koh Samui", "notes": "Muay Thai gym, 4.9 stars — kids Muay Thai classes available" },
+      "geometry": { "type": "Point", "coordinates": [100.0412322, 9.4707108] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Chaweng Beach", "category": "Beach", "address": "Chaweng, Koh Samui", "notes": "Most popular beach, good for families, lots of facilities" },
+      "geometry": { "type": "Point", "coordinates": [100.0613, 9.5327] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Maenam Beach", "category": "Beach", "address": "Maenam, Koh Samui", "notes": "Calm waters, great for young kids" },
+      "geometry": { "type": "Point", "coordinates": [100.0136, 9.5618] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Bophut Fisherman's Village", "category": "Restaurant", "address": "Bophut, Koh Samui", "notes": "Friday night market, great street food, family friendly" },
+      "geometry": { "type": "Point", "coordinates": [100.0215, 9.5447] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Samui Aquarium & Tiger Zoo", "category": "Activity", "address": "Ban Hua Thanon, Koh Samui", "notes": "Kids love it, dolphin shows, tigers" },
+      "geometry": { "type": "Point", "coordinates": [100.0516, 9.4762] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Big Buddha Temple (Wat Phra Yai)", "category": "Activity", "address": "Ko Fan, Koh Samui", "notes": "Iconic landmark, free entry, easy walk" },
+      "geometry": { "type": "Point", "coordinates": [100.0632, 9.5513] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Lamai Beach", "category": "Beach", "address": "Lamai, Koh Samui", "notes": "Good for swimming, calmer than Chaweng" },
+      "geometry": { "type": "Point", "coordinates": [100.0529, 9.4747] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Choeng Mon Beach", "category": "Beach", "address": "Choeng Mon, Koh Samui", "notes": "Quiet, shallow water, perfect for toddlers" },
+      "geometry": { "type": "Point", "coordinates": [100.0721, 9.5601] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Nathon Pier & Market", "category": "Shopping", "address": "Nathon, Koh Samui", "notes": "Local market, cheaper prices, authentic feel" },
+      "geometry": { "type": "Point", "coordinates": [99.9684, 9.5303] }
+    }
+  ]
+}

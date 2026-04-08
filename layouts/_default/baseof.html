@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} — Travel Guide</title>
+  <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa; color: #1a1a1a; }
+    .site-header { background: #1a3a5c; color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .site-header h1 { font-size: 1.25rem; font-weight: 600; }
+    .site-header a { color: white; text-decoration: none; }
+    .site-nav { display: flex; gap: 1.5rem; margin-left: auto; font-size: 0.9rem; }
+    .site-nav a:hover { text-decoration: underline; }
+    main { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+    footer { text-align: center; padding: 2rem; color: #666; font-size: 0.85rem; margin-top: 2rem; }
+  </style>
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <header class="site-header">
+    <a href="{{ "/" | relURL }}">🗺️ Travel Guide</a>
+    <nav class="site-nav">
+      <a href="{{ "/koh-samui/" | relURL }}">Koh Samui</a>
+    </nav>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer>Built with Hugo · Open data · <a href="https://www.reddit.com/r/kohsamui/" target="_blank">/r/kohsamui</a></footer>
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>
