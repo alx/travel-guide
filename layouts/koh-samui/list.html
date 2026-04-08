@@ -7,7 +7,7 @@
   .page-header p { color: #555; font-size: 1rem; }
   .map-layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 1fr 320px;
     gap: 1rem;
     height: calc(100vh - 200px);
     min-height: 500px;
@@ -25,6 +25,8 @@
     transition: all 0.15s;
   }
   .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  .filter-btn.vip-btn { border-color: #f59e0b; }
+  .filter-btn.vip-btn.active { background: #f59e0b; color: white; border-color: #f59e0b; }
   .poi-card {
     background: white; border-radius: 10px; padding: 0.85rem 1rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
@@ -54,6 +56,14 @@
     border-radius: 8px; font-size: 0.85rem; margin-bottom: 0.5rem;
   }
   .search-box:focus { outline: none; border-color: #1a3a5c; }
+  .poi-card.premium-card { position: relative; overflow: hidden; }
+  .poi-card.premium-card .premium-overlay {
+    position: absolute; inset: 0; background: rgba(255,255,255,0.85);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.25rem; border-radius: 10px;
+  }
+  .poi-card.premium-card .premium-overlay span { font-size: 1.5rem; }
+  .poi-card.premium-card .premium-overlay p { font-size: 0.8rem; color: #888; margin: 0; }
 </style>
 {{ end }}
 
@@ -64,6 +74,7 @@
 </div>
 
 <div class="map-layout">
+  <div id="map"></div>
   <div class="sidebar" id="sidebar">
     <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
     <div class="sidebar-header" id="filter-btns"></div>
@@ -72,7 +83,6 @@
       + Add a location
     </div>
   </div>
-  <div id="map"></div>
 </div>
 
 <!-- Add location modal -->
@@ -107,6 +117,18 @@
     <pre id="add-output" style="display:none;background:#f5f5f5;border-radius:6px;padding:0.75rem;font-size:0.75rem;margin-top:0.5rem;overflow-x:auto;"></pre>
   </div>
 </div>
+
+<!-- Paywall modal -->
+<div id="paywall-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:380px;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔒</div>
+    <h3 style="margin-bottom:0.5rem;">Unlock VIP Access</h3>
+    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive family spots, private beaches, and expat-curated hidden gems.</p>
+    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:1.25rem;">€4.99 / month</div>
+    <a href="#" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">Unlock Now →</a>
+    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:0.85rem;">Maybe later</button>
+  </div>
+</div>
 {{ end }}
 
 {{ define "scripts" }}
@@ -122,12 +144,13 @@ const CATEGORY_COLORS = {
   'Hotel': '#8b5cf6',
   'Shopping': '#ec4899',
   'Kids': '#f59e0b',
-  'Other': '#6b7280'
+  'Other': '#6b7280',
+  'VIP': '#f59e0b'
 };
 
 const CATEGORY_ICONS = {
   'Beach': '🏖️', 'Restaurant': '🍽️', 'Activity': '🎯',
-  'Hotel': '🏨', 'Shopping': '🛍️', 'Kids': '👶', 'Other': '📍'
+  'Hotel': '🏨', 'Shopping': '🛍️', 'Kids': '👶', 'Other': '📍', 'VIP': '🔒'
 };
 
 let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
@@ -166,18 +189,30 @@ function renderSidebar() {
     const color = CATEGORY_COLORS[cat] || '#6b7280';
     const icon = CATEGORY_ICONS[cat] || '📍';
     const card = document.createElement('div');
-    card.className = 'poi-card';
+    card.className = 'poi-card' + (p.premium ? ' premium-card' : '');
     card.id = 'card-' + f._id;
-    card.innerHTML = `
-      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-      <h3>${p.name}</h3>
-      ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
-      ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
-      <div class="poi-actions">
-        <a href="https://www.google.com/maps/search/?api=1&query=${f.geometry.coordinates[1]},${f.geometry.coordinates[0]}" target="_blank">Open in Maps ↗</a>
-        ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
-      </div>`;
-    card.onclick = () => focusPOI(f);
+    if (p.premium) {
+      card.innerHTML = `
+        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+        <h3 style="filter:blur(4px);user-select:none;">${p.name}</h3>
+        ${p.address ? `<div class="poi-addr" style="filter:blur(3px);user-select:none;">📍 ${p.address}</div>` : ''}
+        <div class="premium-overlay">
+          <span>🔒</span>
+          <p>Members only</p>
+        </div>`;
+      card.onclick = () => { document.getElementById('paywall-modal').style.display = 'flex'; };
+    } else {
+      card.innerHTML = `
+        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+        <h3>${p.name}</h3>
+        ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
+        ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
+        <div class="poi-actions">
+          <a href="https://www.google.com/maps/search/?api=1&query=${f.geometry.coordinates[1]},${f.geometry.coordinates[0]}" target="_blank">Open in Maps ↗</a>
+          ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
+        </div>`;
+      card.onclick = () => focusPOI(f);
+    }
     list.appendChild(card);
   });
 }
@@ -207,18 +242,23 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${p.notes ? '<br><em>' + p.notes + '</em>' : ''}`);
-    marker.on('click', () => focusPOI(f));
+      .bindPopup(`<b>${p.premium ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${p.notes && !p.premium ? '<br><em>' + p.notes + '</em>' : ''}`);
+    if (!p.premium) {
+      marker.on('click', () => focusPOI(f));
+    } else {
+      marker.on('click', () => { document.getElementById('paywall-modal').style.display = 'flex'; });
+    }
     markers[f._id] = marker;
   });
 }
 
 function setupFilters(pois) {
-  const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
+  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium).map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
   cats.forEach(cat => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+    btn.dataset.cat = cat;
     btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
     btn.onclick = () => {
       activeFilter = cat;
@@ -228,6 +268,16 @@ function setupFilters(pois) {
     };
     container.appendChild(btn);
   });
+
+  // VIP filter button — always added last, hardcoded
+  const vipBtn = document.createElement('button');
+  vipBtn.className = 'filter-btn vip-btn';
+  vipBtn.dataset.cat = 'VIP';
+  vipBtn.textContent = '🔒 VIP';
+  vipBtn.onclick = () => {
+    document.getElementById('paywall-modal').style.display = 'flex';
+  };
+  container.appendChild(vipBtn);
 }
 
 // Extract coords from Google Maps URL
@@ -274,6 +324,13 @@ fetch(GEOJSON_URL)
     if (allPOIs.length > 0) {
       const group = L.featureGroup(Object.values(markers));
       if (Object.keys(markers).length > 0) map.fitBounds(group.getBounds().pad(0.1));
+    }
+
+    // Apply URL filter param
+    const urlFilter = new URLSearchParams(window.location.search).get('filter');
+    if (urlFilter) {
+      const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
+      if (btn) btn.click();
     }
   })
   .catch(() => {
