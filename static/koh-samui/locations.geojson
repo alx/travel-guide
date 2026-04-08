@@ -7,7 +7,7 @@
         "name": "KOH'S 33 Stadium",
         "category": "Activity",
         "address": "Lamai, Koh Samui",
-        "notes": "Football club stadium, 5-star rated, great for sport-loving kids"
+        "notes": "Football club stadium, 5-star rated, great for sports lovers"
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +23,7 @@
         "name": "Padel Paradise Lamai",
         "category": "Activity",
         "address": "Lamai, Koh Samui",
-        "notes": "Padel club, 4.8 stars — fun racket sport for families"
+        "notes": "Padel club, 4.8 stars — fun racket sport"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +39,7 @@
         "name": "Pinjutha Gym & Badminton",
         "category": "Activity",
         "address": "Lamai, Koh Samui",
-        "notes": "Badminton courts and gym — great for active kids, 4.6 stars"
+        "notes": "Badminton courts and gym — great for active visitors, 4.6 stars"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +71,7 @@
         "name": "Punch it Gym",
         "category": "Activity",
         "address": "Lamai, Koh Samui",
-        "notes": "Muay Thai gym, 4.9 stars — kids Muay Thai classes available"
+        "notes": "Muay Thai gym, 4.9 stars — Muay Thai classes available"
       },
       "geometry": {
         "type": "Point",
@@ -87,7 +87,7 @@
         "name": "Chaweng Beach",
         "category": "Beach",
         "address": "Chaweng, Koh Samui",
-        "notes": "Most popular beach, good for families, lots of facilities"
+        "notes": "Most popular beach, lots of facilities"
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +103,7 @@
         "name": "Maenam Beach",
         "category": "Beach",
         "address": "Maenam, Koh Samui",
-        "notes": "Calm waters, great for young kids"
+        "notes": "Calm waters, great for swimming"
       },
       "geometry": {
         "type": "Point",
@@ -119,7 +119,7 @@
         "name": "Bophut Fisherman's Village",
         "category": "Restaurant",
         "address": "Bophut, Koh Samui",
-        "notes": "Friday night market, great street food, family friendly"
+        "notes": "Friday night market, great street food"
       },
       "geometry": {
         "type": "Point",
@@ -167,7 +167,7 @@
         "name": "Choeng Mon Beach",
         "category": "Beach",
         "address": "Choeng Mon, Koh Samui",
-        "notes": "Quiet, shallow water, perfect for toddlers"
+        "notes": "Quiet, shallow water"
       },
       "geometry": {
         "type": "Point",
