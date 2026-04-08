@@ -1,4 +1,4 @@
-baseURL = "https://alx.github.io/travel-guide/"
+baseURL = "https://travels.girard-davila.net/"
 languageCode = "en-us"
 title = "Travel Guide"
 canonifyURLs = false
