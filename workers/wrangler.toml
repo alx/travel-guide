@@ -1,0 +1,10 @@
+name = "travels-github-proxy"
+main = "github-proxy.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Register an OAuth App at https://github.com/settings/developers
+# Application name: "Girard-Davila Travels"
+# Homepage URL: https://travels.girard-davila.net
+# Callback URL: https://travels.girard-davila.net (device flow — not used)
+GITHUB_CLIENT_ID = "REPLACE_WITH_YOUR_GITHUB_OAUTH_APP_CLIENT_ID"

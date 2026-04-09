@@ -39,6 +39,8 @@
   </script>
   {{ end }}
 
+  <!-- topojson-client for TopoJSON map support -->
+  <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js" defer></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,11 +66,17 @@
 </head>
 <body>
   {{ partial "vip-manager.html" . }}
+  <script>
+    // GitHub OAuth config (from hugo.toml)
+    window.GITHUB_CLIENT_ID = {{ .Site.Params.githubClientId | default "" | jsonify }};
+    window.GITHUB_WORKER_URL = {{ .Site.Params.githubWorkerUrl | default "" | jsonify }};
+  </script>
   <header class="site-header">
     <a href="{{ "/" | relURL }}">🗺️ Girard-Davila Travels</a>
     <nav class="site-nav">
       <a href="{{ "/koh-samui/" | relURL }}">Koh Samui</a>
       <a href="{{ "/hoi-an/" | relURL }}">Hoi An</a>
+      <a href="{{ "/fishing-boat/" | relURL }}">⚓ Expedition</a>
     </nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>

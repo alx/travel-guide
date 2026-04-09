@@ -1,0 +1,615 @@
+<!-- Map Toolbar — Download · GPX · Embed · Share · Load · GitHub -->
+<!-- Each map page must set window.MAP_CONFIG = { title, geojsonUrl, embedPath, geojsonData? } -->
+<div id="map-toolbar" style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.75rem;align-items:center;">
+
+  <!-- Download GeoJSON -->
+  <button class="tb-btn" onclick="tbDownloadGeoJSON()" title="Download GeoJSON file">
+    📥 GeoJSON
+  </button>
+
+  <!-- Export GPX for OsmAnd -->
+  <button class="tb-btn" onclick="tbExportGPX()" title="Export as GPX for OsmAnd / GPS devices">
+    🗺️ GPX
+  </button>
+
+  <!-- Embed iframe -->
+  <button class="tb-btn" onclick="tbOpenEmbed()" title="Embed this map as an iframe">
+    &lt;/&gt; Embed
+  </button>
+
+  <!-- Share URL -->
+  <button class="tb-btn" onclick="tbShareURL()" id="tb-share-btn" title="Copy shareable link">
+    🔗 Share
+  </button>
+
+  <!-- Load custom GeoJSON / TopoJSON -->
+  <button class="tb-btn" onclick="tbOpenLoad()" title="Load your own GeoJSON or TopoJSON">
+    📂 Load
+  </button>
+
+  <!-- GitHub integration -->
+  <button class="tb-btn tb-github" onclick="tbOpenGitHub()" title="Sign in with GitHub · Load from repo · Submit PR" id="tb-github-btn">
+    🐙 GitHub
+  </button>
+</div>
+
+<style>
+  .tb-btn {
+    padding: 0.3rem 0.7rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.78rem; font-weight: 500;
+    transition: all 0.15s; white-space: nowrap;
+  }
+  .tb-btn:hover { background: #f0f4ff; border-color: #1a3a5c; }
+  .tb-btn.tb-github { border-color: #374151; }
+  .tb-btn.tb-github.authed { border-color: #22c55e; color: #166534; background: #f0fdf4; }
+
+  /* Modal overlay */
+  .tb-modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10000;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tb-modal {
+    background: white; border-radius: 14px; padding: 1.5rem;
+    width: 90%; max-width: 460px; max-height: 85vh; overflow-y: auto;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  }
+  .tb-modal h3 { font-size: 1rem; font-weight: 700; color: #1a3a5c; margin-bottom: 1rem; }
+  .tb-modal-close {
+    float: right; background: none; border: none; font-size: 1.2rem;
+    cursor: pointer; color: #888; margin-top: -0.2rem;
+  }
+  .tb-input {
+    width: 100%; padding: 0.45rem 0.7rem; border: 1.5px solid #ddd;
+    border-radius: 8px; font-size: 0.85rem; font-family: inherit;
+  }
+  .tb-input:focus { outline: none; border-color: #1a3a5c; }
+  .tb-code {
+    width: 100%; padding: 0.5rem 0.7rem; border: 1.5px solid #e5e7eb;
+    border-radius: 8px; font-size: 0.78rem; font-family: monospace;
+    background: #f8f9fa; resize: vertical;
+  }
+  .tb-btn-primary {
+    background: #1a3a5c; color: white; border: none; padding: 0.5rem 1.2rem;
+    border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  }
+  .tb-btn-primary:hover { background: #153050; }
+  .tb-btn-secondary {
+    background: #f0f4ff; color: #1a3a5c; border: 1.5px solid #1a3a5c;
+    padding: 0.5rem 1.2rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  }
+  .tb-tabs { display: flex; gap: 0; margin-bottom: 1rem; border-bottom: 2px solid #e5e7eb; }
+  .tb-tab {
+    padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: 500; cursor: pointer;
+    border: none; background: none; color: #888; border-bottom: 2px solid transparent; margin-bottom: -2px;
+  }
+  .tb-tab.active { color: #1a3a5c; border-bottom-color: #1a3a5c; font-weight: 700; }
+  .tb-status { font-size: 0.8rem; color: #555; margin-top: 0.4rem; min-height: 1.2rem; }
+  .tb-divider { border: none; border-top: 1px solid #e5e7eb; margin: 0.9rem 0; }
+  .tb-label { font-size: 0.8rem; font-weight: 600; color: #374151; margin-bottom: 0.35rem; display: block; }
+  .tb-repo-item {
+    padding: 0.5rem 0.7rem; border-radius: 8px; border: 1.5px solid #e5e7eb;
+    cursor: pointer; font-size: 0.82rem; margin-bottom: 0.35rem; transition: border-color 0.15s;
+  }
+  .tb-repo-item:hover { border-color: #1a3a5c; }
+</style>
+
+<script>
+(function () {
+
+/* ── Helpers ── */
+function getGeoJSON() {
+  if (window.MAP_CONFIG?.geojsonData) return window.MAP_CONFIG.geojsonData;
+  if (window.allPOIs) return { type: 'FeatureCollection', features: window.allPOIs };
+  return null;
+}
+
+function getTitle() { return window.MAP_CONFIG?.title || document.title; }
+
+function triggerDownload(content, filename, mime) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([content], { type: mime }));
+  a.download = filename;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+function closeAllModals() {
+  document.querySelectorAll('.tb-modal-overlay').forEach(m => m.remove());
+}
+
+/* ── Download GeoJSON ── */
+window.tbDownloadGeoJSON = function () {
+  const data = getGeoJSON();
+  if (!data) {
+    alert('Map data not loaded yet.');
+    return;
+  }
+  const filename = (getTitle().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'map') + '.geojson';
+  triggerDownload(JSON.stringify(data, null, 2), filename, 'application/geo+json');
+};
+
+/* ── Export GPX ── */
+window.tbExportGPX = function () {
+  const data = getGeoJSON();
+  if (!data) { alert('Map data not loaded yet.'); return; }
+
+  const wpts = (data.features || []).filter(f => f.geometry?.type === 'Point');
+  const lines = (data.features || []).filter(f => f.geometry?.type === 'LineString');
+
+  const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const title = esc(getTitle());
+
+  let gpx = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  gpx += `<gpx version="1.1" creator="travels.girard-davila.net" xmlns="http://www.topografix.com/GPX/1/1">\n`;
+  gpx += `  <metadata><name>${title}</name><desc>Exported from travels.girard-davila.net</desc></metadata>\n`;
+
+  // Waypoints (POIs)
+  wpts.forEach(f => {
+    const [lng, lat] = f.geometry.coordinates;
+    const p = f.properties || {};
+    gpx += `  <wpt lat="${lat}" lon="${lng}">\n`;
+    gpx += `    <name>${esc(p.name)}</name>\n`;
+    if (p.notes || p.address) gpx += `    <desc>${esc(p.notes || p.address)}</desc>\n`;
+    if (p.category) gpx += `    <type>${esc(p.category)}</type>\n`;
+    gpx += `  </wpt>\n`;
+  });
+
+  // Routes / tracks
+  lines.forEach(f => {
+    const p = f.properties || {};
+    gpx += `  <trk><name>${esc(p.name || 'Route')}</name><trkseg>\n`;
+    f.geometry.coordinates.forEach(([lng, lat]) => {
+      gpx += `    <trkpt lat="${lat}" lon="${lng}"></trkpt>\n`;
+    });
+    gpx += `  </trkseg></trk>\n`;
+  });
+
+  gpx += `</gpx>`;
+
+  const filename = (getTitle().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'map') + '.gpx';
+  triggerDownload(gpx, filename, 'application/gpx+xml');
+};
+
+/* ── Embed ── */
+window.tbOpenEmbed = function () {
+  closeAllModals();
+  const path = window.MAP_CONFIG?.embedPath || window.location.pathname;
+  const iframeURL = location.origin + path;
+  const code = `<iframe src="${iframeURL}" width="100%" height="500" frameborder="0" style="border-radius:12px;" title="${getTitle()}"></iframe>`;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'tb-modal-overlay';
+  overlay.innerHTML = `
+    <div class="tb-modal">
+      <h3>Embed this map <button class="tb-modal-close" onclick="this.closest('.tb-modal-overlay').remove()">✕</button></h3>
+      <label class="tb-label">iframe code — paste into any webpage:</label>
+      <textarea class="tb-code" rows="4" readonly id="tb-embed-code">${code}</textarea>
+      <div style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <button class="tb-btn-primary" onclick="
+          navigator.clipboard.writeText(document.getElementById('tb-embed-code').value);
+          this.textContent='✅ Copied!';setTimeout(()=>this.textContent='📋 Copy code',1800);">
+          📋 Copy code
+        </button>
+        <button class="tb-btn-secondary" onclick="this.closest('.tb-modal-overlay').remove()">Close</button>
+      </div>
+      <hr class="tb-divider">
+      <label class="tb-label" style="margin-bottom:0.25rem;">Preview (live):</label>
+      <iframe src="${iframeURL}" width="100%" height="220" frameborder="0" style="border-radius:8px;border:1px solid #e5e7eb;" loading="lazy"></iframe>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+};
+
+/* ── Share URL ── */
+window.tbShareURL = function () {
+  navigator.clipboard.writeText(location.href).then(() => {
+    const btn = document.getElementById('tb-share-btn');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '🔗 Share', 1800);
+  });
+};
+
+/* ── Load custom GeoJSON / TopoJSON ── */
+window.tbOpenLoad = function () {
+  closeAllModals();
+  const overlay = document.createElement('div');
+  overlay.className = 'tb-modal-overlay';
+  overlay.innerHTML = `
+    <div class="tb-modal">
+      <h3>Load custom map data <button class="tb-modal-close" onclick="this.closest('.tb-modal-overlay').remove()">✕</button></h3>
+      <p style="font-size:0.82rem;color:#555;margin-bottom:1rem;">Load your own <strong>GeoJSON</strong> or <strong>TopoJSON</strong> (.topojson / .json) file to overlay on this map.</p>
+
+      <!-- File upload -->
+      <label class="tb-label">From file:</label>
+      <input type="file" accept=".geojson,.json,.topojson" style="font-size:0.82rem;margin-bottom:0.75rem;" onchange="tbLoadFile(this)">
+
+      <hr class="tb-divider">
+
+      <!-- URL load -->
+      <label class="tb-label">From URL (GitHub raw, S3, etc.):</label>
+      <div style="display:flex;gap:0.4rem;margin-bottom:0.75rem;">
+        <input class="tb-input" id="tb-url-input" type="url" placeholder="https://raw.githubusercontent.com/…/file.geojson" style="flex:1;">
+        <button class="tb-btn-primary" onclick="tbLoadURL()">Load</button>
+      </div>
+      <p id="tb-load-status" class="tb-status"></p>
+
+      <hr class="tb-divider">
+      <p style="font-size:0.78rem;color:#888;line-height:1.5;">
+        Loaded data is overlaid on the existing map. Public GitHub files: use the <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">raw.githubusercontent.com</code> URL.
+      </p>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+};
+
+window.tbLoadFile = function(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      tbIngestData(data, file.name);
+      input.closest('.tb-modal-overlay').remove();
+    } catch (err) {
+      document.getElementById('tb-load-status').textContent = '❌ Invalid JSON: ' + err.message;
+    }
+  };
+  reader.readAsText(file);
+};
+
+window.tbLoadURL = function() {
+  const url = document.getElementById('tb-url-input').value.trim();
+  const status = document.getElementById('tb-load-status');
+  if (!url) return;
+  status.textContent = '⏳ Loading…';
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      tbIngestData(data, url.split('/').pop());
+      document.querySelector('.tb-modal-overlay')?.remove();
+    })
+    .catch(err => {
+      status.textContent = '❌ Failed to load: ' + err.message;
+    });
+};
+
+window.tbIngestData = function(data, sourceName) {
+  let geojson;
+  if (data.type === 'Topology') {
+    // TopoJSON — convert all objects to GeoJSON
+    if (typeof topojson === 'undefined') {
+      alert('topojson-client not loaded. Cannot convert TopoJSON.');
+      return;
+    }
+    const features = [];
+    Object.keys(data.objects).forEach(key => {
+      const fc = topojson.feature(data, data.objects[key]);
+      features.push(...fc.features);
+    });
+    geojson = { type: 'FeatureCollection', features };
+  } else if (data.type === 'FeatureCollection' || data.type === 'Feature') {
+    geojson = data.type === 'Feature' ? { type: 'FeatureCollection', features: [data] } : data;
+  } else {
+    alert('Unrecognised format. Expected GeoJSON FeatureCollection or TopoJSON Topology.');
+    return;
+  }
+
+  if (typeof window.loadCustomData === 'function') {
+    window.loadCustomData(geojson, sourceName);
+  } else {
+    alert('This map page does not support live data loading yet.');
+  }
+};
+
+/* ── GitHub Panel ── */
+window.tbOpenGitHub = function () {
+  closeAllModals();
+  const pat = localStorage.getItem('github_pat') || '';
+  const user = JSON.parse(localStorage.getItem('github_user') || 'null');
+  const overlay = document.createElement('div');
+  overlay.className = 'tb-modal-overlay';
+  overlay.id = 'tb-github-overlay';
+  overlay.innerHTML = `
+    <div class="tb-modal" style="max-width:520px;">
+      <h3>🐙 GitHub Integration <button class="tb-modal-close" onclick="this.closest('.tb-modal-overlay').remove()">✕</button></h3>
+
+      <div class="tb-tabs">
+        <button class="tb-tab active" onclick="tbGHTab('signin',this)" id="gh-tab-signin">Sign In</button>
+        <button class="tb-tab" onclick="tbGHTab('load',this)" id="gh-tab-load">Load GeoJSON</button>
+        <button class="tb-tab" onclick="tbGHTab('pr',this)" id="gh-tab-pr">Submit PR</button>
+      </div>
+
+      <!-- Sign In Tab -->
+      <div id="gh-panel-signin">
+        ${user ? `
+          <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:1rem;margin-bottom:0.9rem;display:flex;align-items:center;gap:0.75rem;">
+            <img src="${user.avatar_url}" width="40" height="40" style="border-radius:50%;">
+            <div>
+              <div style="font-weight:700;color:#166534;">✅ Signed in as <a href="${user.html_url}" target="_blank" style="color:#166534;">@${user.login}</a></div>
+              <div style="font-size:0.78rem;color:#555;">${user.name || ''}</div>
+            </div>
+          </div>
+          <button class="tb-btn-secondary" onclick="tbGHSignOut()" style="width:100%;">Sign out</button>
+        ` : `
+          <p style="font-size:0.82rem;color:#555;line-height:1.6;margin-bottom:0.9rem;">Sign in to load GeoJSON files from your own GitHub repositories and submit pull requests to <strong>alx/travel-guide</strong>.</p>
+
+          <div style="background:#eff6ff;border-radius:10px;padding:1rem;margin-bottom:0.9rem;border:1px solid #bfdbfe;">
+            <div style="font-weight:700;font-size:0.85rem;color:#1e40af;margin-bottom:0.5rem;">🔐 OAuth sign-in (recommended)</div>
+            <p style="font-size:0.78rem;color:#555;margin-bottom:0.6rem;">Redirects to GitHub to authorize — no token copy-paste needed.</p>
+            <button class="tb-btn-primary" onclick="tbGHOAuthStart()" style="width:100%;">Sign in with GitHub →</button>
+            <p id="gh-device-status" class="tb-status" style="text-align:center;min-height:1.4rem;"></p>
+            <div id="gh-device-code-box" style="display:none;text-align:center;margin-top:0.5rem;">
+              <div style="font-size:0.82rem;color:#555;margin-bottom:0.35rem;">Enter this code at <a href="https://github.com/login/device" target="_blank" style="color:#1d4ed8;font-weight:600;">github.com/login/device</a>:</div>
+              <div id="gh-device-code-display" style="font-size:1.8rem;font-weight:800;letter-spacing:0.15em;color:#1a3a5c;padding:0.5rem;background:#f0f4ff;border-radius:8px;font-family:monospace;"></div>
+              <button onclick="window.open('https://github.com/login/device','_blank')" style="margin-top:0.5rem;background:#24292e;color:white;border:none;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;cursor:pointer;font-weight:600;">Open GitHub →</button>
+            </div>
+          </div>
+
+          <hr class="tb-divider">
+          <div style="font-weight:700;font-size:0.85rem;color:#374151;margin-bottom:0.5rem;">🔑 Personal Access Token (PAT)</div>
+          <p style="font-size:0.78rem;color:#555;margin-bottom:0.5rem;">Generate a PAT at <a href="https://github.com/settings/tokens/new?scopes=repo,read:user&description=travels.girard-davila.net" target="_blank" style="color:#1d4ed8;">github.com/settings/tokens</a> with <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">repo</code> scope.</p>
+          <div style="display:flex;gap:0.4rem;margin-bottom:0.4rem;">
+            <input class="tb-input" id="gh-pat-input" type="password" placeholder="ghp_xxxxxxxxxxxx" style="flex:1;" value="${pat}">
+            <button class="tb-btn-primary" onclick="tbGHApplyPAT()">Apply</button>
+          </div>
+          <p id="gh-pat-status" class="tb-status"></p>
+        `}
+      </div>
+
+      <!-- Load GeoJSON Tab -->
+      <div id="gh-panel-load" style="display:none;">
+        ${!user ? '<p style="font-size:0.85rem;color:#888;text-align:center;padding:1rem;">Sign in first to browse your repos.</p>' : `
+          <p style="font-size:0.82rem;color:#555;margin-bottom:0.75rem;">Browse your repositories for <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">.geojson</code> / <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">.topojson</code> files.</p>
+          <div style="display:flex;gap:0.4rem;margin-bottom:0.6rem;">
+            <input class="tb-input" id="gh-repo-input" placeholder="${user.login}/my-repo" style="flex:1;">
+            <button class="tb-btn-primary" onclick="tbGHBrowse()">Browse</button>
+          </div>
+          <div id="gh-file-list" style="max-height:240px;overflow-y:auto;"></div>
+          <p id="gh-browse-status" class="tb-status"></p>
+        `}
+      </div>
+
+      <!-- Submit PR Tab -->
+      <div id="gh-panel-pr" style="display:none;">
+        ${!user ? '<p style="font-size:0.85rem;color:#888;text-align:center;padding:1rem;">Sign in first to submit a PR.</p>' : `
+          <p style="font-size:0.82rem;color:#555;line-height:1.6;margin-bottom:0.75rem;">Add your GeoJSON to <strong>alx/travel-guide</strong>. This creates a fork and opens a pull request.</p>
+          <label class="tb-label">GeoJSON filename (without extension):</label>
+          <input class="tb-input" id="gh-pr-filename" placeholder="my-destination" style="margin-bottom:0.6rem;">
+          <label class="tb-label">PR title / description:</label>
+          <input class="tb-input" id="gh-pr-title" placeholder="Add My Destination map" style="margin-bottom:0.5rem;">
+          <textarea class="tb-input" id="gh-pr-body" rows="3" placeholder="Where is this? What kind of spots are included?" style="resize:vertical;margin-bottom:0.75rem;"></textarea>
+          <button class="tb-btn-primary" onclick="tbGHCreatePR()" style="width:100%;" id="gh-pr-btn">🚀 Fork & Create PR</button>
+          <p id="gh-pr-status" class="tb-status" style="margin-top:0.4rem;"></p>
+        `}
+      </div>
+
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+
+  // Update GitHub button badge
+  const ghBtn = document.getElementById('tb-github-btn');
+  if (ghBtn) ghBtn.classList.toggle('authed', !!user);
+};
+
+window.tbGHTab = function(tab, btn) {
+  ['signin','load','pr'].forEach(t => {
+    document.getElementById('gh-panel-' + t).style.display = t === tab ? '' : 'none';
+    document.getElementById('gh-tab-' + t).classList.toggle('active', t === tab);
+  });
+};
+
+/* ── GitHub OAuth Device Flow ── */
+window.tbGHOAuthStart = async function() {
+  const clientId = window.GITHUB_CLIENT_ID;
+  if (!clientId) {
+    document.getElementById('gh-device-status').textContent = '⚠️ GitHub Client ID not configured. Use PAT method instead.';
+    return;
+  }
+  const status = document.getElementById('gh-device-status');
+  const codeBox = document.getElementById('gh-device-code-box');
+  status.textContent = '⏳ Requesting device code…';
+
+  try {
+    const proxyUrl = window.GITHUB_WORKER_URL + '/github-device-code';
+    const res = await fetch(proxyUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ client_id: clientId, scope: 'repo read:user' })
+    });
+    if (!res.ok) throw new Error('Worker returned ' + res.status);
+    const d = await res.json();
+
+    document.getElementById('gh-device-code-display').textContent = d.user_code;
+    codeBox.style.display = '';
+    status.textContent = '⏳ Waiting for you to authorize at github.com/login/device…';
+
+    // Poll for token
+    let attempts = 0;
+    const interval = (d.interval || 5) * 1000;
+    const poll = setInterval(async () => {
+      attempts++;
+      if (attempts > 36) { clearInterval(poll); status.textContent = '⏰ Timed out. Try again.'; return; }
+      try {
+        const tr = await fetch(window.GITHUB_WORKER_URL + '/github-device-token', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ client_id: clientId, device_code: d.device_code, grant_type: 'urn:ietf:params:oauth:grant-type:device_code' })
+        });
+        const td = await tr.json();
+        if (td.access_token) {
+          clearInterval(poll);
+          localStorage.setItem('github_pat', td.access_token);
+          await tbGHFetchUser(td.access_token);
+        } else if (td.error !== 'authorization_pending') {
+          clearInterval(poll);
+          status.textContent = '❌ ' + (td.error_description || td.error);
+        }
+      } catch (e) { /* keep polling */ }
+    }, interval);
+  } catch (err) {
+    status.textContent = '❌ ' + err.message;
+  }
+};
+
+window.tbGHApplyPAT = async function() {
+  const pat = document.getElementById('gh-pat-input').value.trim();
+  if (!pat) return;
+  const status = document.getElementById('gh-pat-status');
+  status.textContent = '⏳ Verifying…';
+  const ok = await tbGHFetchUser(pat);
+  if (!ok) status.textContent = '❌ Invalid token or network error.';
+};
+
+window.tbGHFetchUser = async function(token) {
+  try {
+    const r = await fetch('https://api.github.com/user', {
+      headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28' }
+    });
+    if (!r.ok) return false;
+    const user = await r.json();
+    localStorage.setItem('github_pat', token);
+    localStorage.setItem('github_user', JSON.stringify({ login: user.login, name: user.name, avatar_url: user.avatar_url, html_url: user.html_url }));
+    closeAllModals();
+    window.tbOpenGitHub();
+    return true;
+  } catch { return false; }
+};
+
+window.tbGHSignOut = function() {
+  localStorage.removeItem('github_pat');
+  localStorage.removeItem('github_user');
+  const ghBtn = document.getElementById('tb-github-btn');
+  if (ghBtn) ghBtn.classList.remove('authed');
+  closeAllModals();
+  window.tbOpenGitHub();
+};
+
+/* ── Browse repo for GeoJSON files ── */
+window.tbGHBrowse = async function() {
+  const token = localStorage.getItem('github_pat');
+  const repo = document.getElementById('gh-repo-input').value.trim();
+  const status = document.getElementById('gh-browse-status');
+  const list = document.getElementById('gh-file-list');
+  if (!repo || !token) return;
+  status.textContent = '⏳ Searching…';
+  list.innerHTML = '';
+  try {
+    const r = await fetch(`https://api.github.com/search/code?q=extension:geojson+extension:topojson+repo:${repo}`, {
+      headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', Accept: 'application/vnd.github+json' }
+    });
+    const d = await r.json();
+    const items = d.items || [];
+    if (!items.length) { status.textContent = 'No GeoJSON / TopoJSON files found in that repo.'; return; }
+    status.textContent = `Found ${items.length} file(s):`;
+    items.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'tb-repo-item';
+      div.innerHTML = `<strong style="font-size:0.82rem;">${item.name}</strong> <span style="color:#888;font-size:0.75rem;">· ${item.path}</span>`;
+      div.onclick = () => {
+        const rawUrl = `https://raw.githubusercontent.com/${repo}/HEAD/${item.path}`;
+        tbLoadURL_direct(rawUrl, item.name);
+      };
+      list.appendChild(div);
+    });
+  } catch (err) {
+    status.textContent = '❌ ' + err.message;
+  }
+};
+
+window.tbLoadURL_direct = function(url, name) {
+  fetch(url)
+    .then(r => r.json())
+    .then(data => { tbIngestData(data, name); closeAllModals(); })
+    .catch(err => alert('Failed to load: ' + err.message));
+};
+
+/* ── Create Fork + PR ── */
+window.tbGHCreatePR = async function() {
+  const token = localStorage.getItem('github_pat');
+  const user  = JSON.parse(localStorage.getItem('github_user') || 'null');
+  const data  = getGeoJSON();
+  const filename = document.getElementById('gh-pr-filename').value.trim();
+  const title    = document.getElementById('gh-pr-title').value.trim() || ('Add ' + filename + ' map');
+  const body     = document.getElementById('gh-pr-body').value.trim();
+  const status   = document.getElementById('gh-pr-status');
+  const btn      = document.getElementById('gh-pr-btn');
+
+  if (!token || !user) { status.textContent = '❌ Sign in first.'; return; }
+  if (!filename)        { status.textContent = '❌ Enter a filename.'; return; }
+  if (!data)            { status.textContent = '❌ No map data to submit.'; return; }
+
+  btn.disabled = true;
+  const upstream = 'alx/travel-guide';
+  const [upOwner, upRepo] = upstream.split('/');
+
+  try {
+    // 1. Fork the upstream repo (idempotent)
+    status.textContent = '⏳ Forking repository…';
+    const forkRes = await fetch(`https://api.github.com/repos/${upstream}/forks`, {
+      method: 'POST', headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ default_branch_only: true })
+    });
+    if (!forkRes.ok && forkRes.status !== 422) throw new Error('Fork failed: ' + forkRes.status);
+
+    // Wait a moment for fork to propagate
+    await new Promise(r => setTimeout(r, 2500));
+
+    // 2. Get default branch SHA
+    status.textContent = '⏳ Getting branch info…';
+    const repoRes = await fetch(`https://api.github.com/repos/${user.login}/${upRepo}`, {
+      headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28' }
+    });
+    const repoData = await repoRes.json();
+    const defaultBranch = repoData.default_branch || 'main';
+
+    const branchRes = await fetch(`https://api.github.com/repos/${user.login}/${upRepo}/git/refs/heads/${defaultBranch}`, {
+      headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28' }
+    });
+    const branchData = await branchRes.json();
+    const sha = branchData.object?.sha;
+    if (!sha) throw new Error('Could not get branch SHA');
+
+    // 3. Create a new branch
+    const newBranch = 'add-' + filename.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '-' + Date.now();
+    status.textContent = '⏳ Creating branch…';
+    await fetch(`https://api.github.com/repos/${user.login}/${upRepo}/git/refs`, {
+      method: 'POST', headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ref: `refs/heads/${newBranch}`, sha })
+    });
+
+    // 4. Create / update the file
+    status.textContent = '⏳ Committing GeoJSON…';
+    const filePath = `static/${filename}/locations.geojson`;
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    await fetch(`https://api.github.com/repos/${user.login}/${upRepo}/contents/${filePath}`, {
+      method: 'PUT', headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: `Add ${filename} GeoJSON map`, content, branch: newBranch })
+    });
+
+    // 5. Open PR
+    status.textContent = '⏳ Opening pull request…';
+    const prRes = await fetch(`https://api.github.com/repos/${upOwner}/${upRepo}/pulls`, {
+      method: 'POST', headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, body: body + `\n\n---\n_Submitted via travels.girard-davila.net map toolbar_`, head: `${user.login}:${newBranch}`, base: defaultBranch })
+    });
+    const prData = await prRes.json();
+    if (!prRes.ok) throw new Error(prData.message || 'PR failed');
+
+    status.innerHTML = `✅ PR created! <a href="${prData.html_url}" target="_blank" style="color:#1d4ed8;font-weight:600;">View PR #${prData.number} →</a>`;
+  } catch (err) {
+    status.textContent = '❌ ' + err.message;
+    btn.disabled = false;
+  }
+};
+
+// Check on load if already authed
+document.addEventListener('DOMContentLoaded', function() {
+  const user = JSON.parse(localStorage.getItem('github_user') || 'null');
+  const ghBtn = document.getElementById('tb-github-btn');
+  if (user && ghBtn) ghBtn.classList.add('authed');
+});
+
+})(); // end IIFE
+</script>

@@ -1,0 +1,262 @@
+{{ define "head" }}
+<style>
+  .page-header { margin-bottom: 1rem; }
+  .page-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .page-header p { color: #555; font-size: 0.95rem; }
+  .map-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1rem;
+    height: calc(100vh - 220px);
+    min-height: 520px;
+  }
+  @media (max-width: 768px) {
+    .map-layout { grid-template-columns: 1fr; height: auto; }
+    #map { height: 65vw; min-height: 320px; }
+  }
+  #map { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .sidebar { overflow-y: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  /* Legend */
+  .legend {
+    background: white; border-radius: 10px; padding: 0.85rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .legend h4 { font-size: 0.8rem; font-weight: 700; color: #1a3a5c; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .legend-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; margin-bottom: 0.3rem; color: #444; }
+  .legend-line { width: 28px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+
+  /* Waypoint cards */
+  .wp-card {
+    background: white; border-radius: 10px; padding: 0.85rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s;
+  }
+  .wp-card:hover, .wp-card.active { border-color: #1a3a5c; }
+  .wp-card h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .wp-card .wp-cat { font-size: 0.72rem; color: #888; margin-bottom: 0.3rem; }
+  .wp-card .wp-notes { font-size: 0.78rem; color: #555; line-height: 1.45; }
+  .wp-card .wp-hours { font-size: 0.75rem; color: #888; margin-top: 0.25rem; }
+  .cat-badge {
+    display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem;
+    border-radius: 20px; font-weight: 600; margin-bottom: 0.3rem;
+  }
+  .topo-badge {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: #eff6ff; color: #1d4ed8; font-size: 0.72rem; font-weight: 600;
+    padding: 0.2rem 0.6rem; border-radius: 20px; border: 1px solid #bfdbfe;
+  }
+  /* Day tabs */
+  .day-tabs { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .day-tab {
+    padding: 0.3rem 0.7rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.78rem; font-weight: 500; transition: all 0.15s;
+  }
+  .day-tab.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-header">
+  <h1>⚓ Gulf of Thailand Fishing Expedition</h1>
+  <p>
+    2-day expedition from Nathon Pier · Red snapper, tuna, overnight anchorage.
+    <span class="topo-badge">📐 TopoJSON demo</span>
+  </p>
+</div>
+
+<!-- Toolbar -->
+{{ partial "map-toolbar.html" . }}
+
+<div class="map-layout">
+  <div id="map"></div>
+  <div class="sidebar" id="sidebar">
+
+    <!-- Legend -->
+    <div class="legend">
+      <h4>Route Legend</h4>
+      <div class="legend-row"><div class="legend-line" style="background:#0ea5e9;"></div> Day 1 — Outbound</div>
+      <div class="legend-row"><div class="legend-line" style="background:#6366f1;"></div> Day 1 — Overnight run</div>
+      <div class="legend-row"><div class="legend-line" style="background:#8b5cf6;"></div> Day 2 — Deep water leg</div>
+      <div class="legend-row"><div class="legend-line" style="background:#22c55e;"></div> Day 2 — Return</div>
+      <div style="border-top:1px solid #f0f0f0;margin:0.5rem 0;"></div>
+      <div class="legend-row"><div class="legend-dot" style="background:#f97316;"></div> Port / Service</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#0ea5e9;"></div> Fishing ground</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#6366f1;"></div> Anchorage</div>
+      <div class="legend-row"><div class="legend-dot" style="background:#ef4444;"></div> Hazard</div>
+    </div>
+
+    <!-- Day filter tabs -->
+    <div class="day-tabs" id="day-tabs">
+      <button class="day-tab active" data-day="all" onclick="filterDay('all',this)">All days</button>
+      <button class="day-tab" data-day="1" onclick="filterDay('1',this)">Day 1</button>
+      <button class="day-tab" data-day="2" onclick="filterDay('2',this)">Day 2</button>
+    </div>
+
+    <div id="wp-list"></div>
+  </div>
+</div>
+
+{{ partial "contact-form.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+// Map config for toolbar
+window.MAP_CONFIG = {
+  title: 'Gulf of Thailand Fishing Expedition',
+  topojsonUrl: '{{ "/fishing-boat/route.topojson" | relURL }}',
+  geojsonUrl: null,   // derived from TopoJSON — set after load
+  embedPath: '/fishing-boat/'
+};
+
+const CAT_COLORS = {
+  'Port':      '#f97316',
+  'Fishing':   '#0ea5e9',
+  'Anchorage': '#6366f1',
+  'Hazard':    '#ef4444',
+  'Service':   '#f59e0b'
+};
+
+let map, routeLayers = [], waypointMarkers = [], allWaypoints = [], activeDay = 'all';
+
+map = L.map('map').setView([9.62, 100.06], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeWpIcon(cat) {
+  const color = CAT_COLORS[cat] || '#6b7280';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">
+      ${{ if eq (index . 0) 'Port' }}⚓${{ end }}
+      <span data-icon></span>
+    </div>`,
+    iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -18]
+  });
+}
+
+function makeIconHtml(cat, iconEmoji) {
+  const color = CAT_COLORS[cat] || '#6b7280';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${iconEmoji}</div>`,
+    iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -18]
+  });
+}
+
+function focusWaypoint(wp, idx) {
+  const [lng, lat] = wp.geometry.coordinates;
+  map.flyTo([lat, lng], 13, { duration: 0.8 });
+  waypointMarkers[idx]?.openPopup();
+  document.querySelectorAll('.wp-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('wp-' + idx)?.classList.add('active');
+  document.getElementById('wp-' + idx)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function filterDay(day, btn) {
+  activeDay = day;
+  document.querySelectorAll('.day-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRoutes();
+  renderSidebar();
+}
+
+function renderSidebar() {
+  const list = document.getElementById('wp-list');
+  list.innerHTML = '';
+  allWaypoints.forEach((wp, i) => {
+    const p = wp.properties;
+    const color = CAT_COLORS[p.category] || '#6b7280';
+    const card = document.createElement('div');
+    card.className = 'wp-card';
+    card.id = 'wp-' + i;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${p.icon || '📍'} ${p.category}</span>
+      <h3>${p.name}</h3>
+      ${p.notes ? `<div class="wp-notes">${p.notes}</div>` : ''}
+      ${p.hours ? `<div class="wp-hours">🕐 ${p.hours}</div>` : ''}
+      <div style="margin-top:0.4rem;display:flex;gap:0.5rem;">
+        <a href="geo:${wp.geometry.coordinates[1]},${wp.geometry.coordinates[0]}" style="font-size:0.73rem;color:#1a3a5c;font-weight:500;text-decoration:none;">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${wp.geometry.coordinates[1]},${wp.geometry.coordinates[0]}" target="_blank" style="font-size:0.73rem;color:#1a3a5c;font-weight:500;text-decoration:none;">Google Maps ↗</a>
+      </div>`;
+    card.onclick = () => focusWaypoint(wp, i);
+    list.appendChild(card);
+  });
+}
+
+function renderRoutes() {
+  routeLayers.forEach(l => map.removeLayer(l));
+  routeLayers = [];
+  // Re-added from topoFeatures stored in window
+  if (!window._topoRoutes) return;
+  window._topoRoutes.forEach(f => {
+    const p = f.properties;
+    const dayNum = String(p.day);
+    if (activeDay !== 'all' && dayNum !== activeDay) return;
+    const latlngs = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+    const line = L.polyline(latlngs, {
+      color: p.color || '#0ea5e9',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: p.day === 1 ? null : '8,4'
+    }).addTo(map)
+      .bindPopup(`<b>${p.name}</b><br><small>${p.notes || ''}</small>`);
+    // Direction arrows via decorating the midpoint
+    routeLayers.push(line);
+  });
+}
+
+// Load TopoJSON
+fetch(window.MAP_CONFIG.topojsonUrl)
+  .then(r => r.json())
+  .then(topo => {
+    // Convert TopoJSON → GeoJSON
+    const routeGeo  = topojson.feature(topo, topo.objects.route);
+    const wpGeo     = topojson.feature(topo, topo.objects.waypoints);
+
+    // Store for toolbar download
+    const combined = {
+      type: 'FeatureCollection',
+      features: [...routeGeo.features, ...wpGeo.features]
+    };
+    window.MAP_CONFIG.geojsonData = combined;
+    window.allPOIs = wpGeo.features.map((f, i) => ({ ...f, _id: i }));
+
+    // Store routes for re-render
+    window._topoRoutes = routeGeo.features;
+
+    // Render routes
+    renderRoutes();
+
+    // Render waypoints
+    allWaypoints = wpGeo.features;
+    allWaypoints.forEach((wp, i) => {
+      const [lng, lat] = wp.geometry.coordinates;
+      const p = wp.properties;
+      const m = L.marker([lat, lng], { icon: makeIconHtml(p.category, p.icon || '📍') })
+        .addTo(map)
+        .bindPopup(`<b>${p.name}</b><br><small>${p.category}</small>${p.notes ? '<br>' + p.notes : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}`);
+      m.on('click', () => focusWaypoint(wp, i));
+      waypointMarkers[i] = m;
+    });
+
+    renderSidebar();
+
+    // Fit bounds to all features
+    const allLL = [
+      ...routeGeo.features.flatMap(f => f.geometry.coordinates.map(([lng, lat]) => [lat, lng])),
+      ...wpGeo.features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]])
+    ];
+    if (allLL.length) map.fitBounds(L.latLngBounds(allLL).pad(0.1));
+  })
+  .catch(err => {
+    document.getElementById('wp-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Failed to load TopoJSON route data.</p>';
+    console.error('TopoJSON load error:', err);
+  });
+</script>
+{{ end }}

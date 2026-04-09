@@ -1,0 +1,161 @@
+{
+  "type": "Topology",
+  "objects": {
+    "route": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "LineString",
+          "arcs": [[0]],
+          "properties": {
+            "name": "Day 1 — Outbound",
+            "day": 1,
+            "category": "Route",
+            "notes": "Pre-dawn departure from Nathon Pier. NW into the Gulf toward prime snapper grounds.",
+            "color": "#0ea5e9"
+          }
+        },
+        {
+          "type": "LineString",
+          "arcs": [[1]],
+          "properties": {
+            "name": "Day 1 — Overnight run",
+            "day": 1,
+            "category": "Route",
+            "notes": "After fishing, run to protected anchorage before dark.",
+            "color": "#6366f1"
+          }
+        },
+        {
+          "type": "LineString",
+          "arcs": [[2]],
+          "properties": {
+            "name": "Day 2 — Deep water leg",
+            "day": 2,
+            "category": "Route",
+            "notes": "Early morning run SE to deep-water tuna grounds.",
+            "color": "#8b5cf6"
+          }
+        },
+        {
+          "type": "LineString",
+          "arcs": [[3]],
+          "properties": {
+            "name": "Day 2 — Return",
+            "day": 2,
+            "category": "Route",
+            "notes": "Homeward run back to Nathon with full coolers.",
+            "color": "#22c55e"
+          }
+        }
+      ]
+    },
+    "waypoints": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "coordinates": [99.9718, 9.5352],
+          "properties": {
+            "name": "Nathon Pier",
+            "category": "Port",
+            "notes": "Main departure / arrival. Depart 04:30 — buy ice blocks at the pier head.",
+            "icon": "⚓",
+            "hours": "Depart 04:30 · Return Day 2 ~16:00"
+          }
+        },
+        {
+          "type": "Point",
+          "coordinates": [99.8540, 9.6420],
+          "properties": {
+            "name": "Fishing Ground Alpha — Red Snapper Shelf",
+            "category": "Fishing",
+            "notes": "Rocky shelf at 18–22 m. Best on incoming tide for red snapper and grouper. Drop anchor; no trolling.",
+            "icon": "🎣",
+            "hours": "Best: 06:30–11:00"
+          }
+        },
+        {
+          "type": "Point",
+          "coordinates": [99.9480, 9.7280],
+          "properties": {
+            "name": "Koh Pha Nok anchorage",
+            "category": "Anchorage",
+            "notes": "Small uninhabited island. Protected bay on E side, 3–4 m sandy bottom. Fresh water stream (seasonal). Overnight only — no facilities.",
+            "icon": "🌙",
+            "hours": "Anchor ~17:30, depart 05:00"
+          }
+        },
+        {
+          "type": "Point",
+          "coordinates": [99.9960, 9.6650],
+          "properties": {
+            "name": "Float Net Zone",
+            "category": "Hazard",
+            "notes": "Local commercial nets mark this area. Navigate at slow speed, watch for rope ends. Respect the buoys.",
+            "icon": "⚠️"
+          }
+        },
+        {
+          "type": "Point",
+          "coordinates": [100.1520, 9.5080],
+          "properties": {
+            "name": "Fishing Ground Beta — Tuna Alley",
+            "category": "Fishing",
+            "notes": "Deep channel, 45–60 m. Trolling for yellowfin tuna. Use lures at 6–8 knots. Prime spot on afternoon outgoing tide.",
+            "icon": "🎣",
+            "hours": "Best: 10:00–14:30"
+          }
+        },
+        {
+          "type": "Point",
+          "coordinates": [100.0640, 9.5750],
+          "properties": {
+            "name": "Fuel & Rest stop",
+            "category": "Service",
+            "notes": "Floating fuel barge operated by local fishermen co-op. Diesel only. Fresh coconuts sold by longtail.",
+            "icon": "⛽",
+            "hours": "07:00–15:00 (not always staffed)"
+          }
+        }
+      ]
+    }
+  },
+  "arcs": [
+    [
+      [99.9718, 9.5352],
+      [99.9520, 9.5480],
+      [99.9280, 9.5680],
+      [99.9060, 9.5890],
+      [99.8840, 9.6120],
+      [99.8640, 9.6280],
+      [99.8540, 9.6420]
+    ],
+    [
+      [99.8540, 9.6420],
+      [99.8720, 9.6620],
+      [99.8960, 9.6880],
+      [99.9200, 9.7060],
+      [99.9480, 9.7280]
+    ],
+    [
+      [99.9480, 9.7280],
+      [99.9720, 9.7060],
+      [100.0060, 9.6800],
+      [100.0400, 9.6440],
+      [100.0720, 9.6020],
+      [100.1080, 9.5640],
+      [100.1520, 9.5080]
+    ],
+    [
+      [100.1520, 9.5080],
+      [100.1180, 9.5180],
+      [100.0960, 9.5320],
+      [100.0640, 9.5750],
+      [100.0320, 9.5580],
+      [100.0060, 9.5480],
+      [99.9860, 9.5420],
+      [99.9718, 9.5352]
+    ]
+  ]
+}

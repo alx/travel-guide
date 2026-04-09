@@ -6,12 +6,13 @@
 
 ## About
 
-Girard-Davila Travels is a curated travel map project built from personal travel experience. Each destination map contains GPS-verified POIs with category filters, opening hours, prices and insider notes. Maps are built with Hugo, Leaflet.js and GeoJSON, deployed on GitHub Pages.
+Girard-Davila Travels is a curated travel map project built from personal travel experience. Each destination map contains GPS-verified POIs with category filters, opening hours, prices and insider notes. Maps are built with Hugo, Leaflet.js and GeoJSON/TopoJSON, deployed on GitHub Pages.
 
 ## Destinations
 
 - [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/): Beaches, spas, restaurants and activities across the island — Lamai, Chaweng, Maenam. Includes Tamarind Springs Forest Spa, Karma Two Palms Beach Club, local gyms and padel courts.
 - [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/): An Hoi peninsula — restaurants, cafés, local market, Buddhist pagoda and river viewpoints around the Na Mom Homestay area.
+- [Gulf of Thailand Fishing Expedition](https://travels.girard-davila.net/fishing-boat/): 2-day boat expedition from Nathon Pier — red snapper grounds, tuna alley, overnight anchorage. TopoJSON format demo with multi-segment route and waypoints.
 
 ## Features
 
@@ -21,6 +22,12 @@ Girard-Davila Travels is a curated travel map project built from personal travel
 - Opening hours and price information on enhanced POIs
 - VIP locked spots (🔒) for members — hidden gems not published openly
 - Floating contact form on all pages (Formspree)
+- **Map toolbar** on every map: download GeoJSON, export GPX for OsmAnd, embed as iframe, share URL, load custom data
+- **OsmAnd integration**: `geo:lat,lon` links on every POI for direct navigation
+- **Custom GeoJSON/TopoJSON loading**: load any file from disk or URL onto the map
+- **GitHub integration**: sign in with GitHub (Device Flow OAuth or PAT), load GeoJSON from your repos, submit PRs to add your maps to this project
+- **TopoJSON support**: route lines and waypoints in TopoJSON format (Gulf of Thailand demo)
+- **GPX export**: all POIs and routes exported as GPX for use with OsmAnd, Garmin, and other GPS apps
 
 ## VIP Access
 
@@ -29,6 +36,13 @@ Some POIs are reserved for VIP members (€4.99/month). These appear as locked c
 ## Custom Maps
 
 Personalised travel maps can be requested via the contact form. Maps are built from real Girard-Davila family travel experience — not tourist brochures. Destinations covered include South East Asia (Thailand, Vietnam) and Europe.
+
+## Open Source / Contribution
+
+The site is open source on GitHub. Any user can:
+1. Sign in with their GitHub account via the map toolbar
+2. Load their own GeoJSON or TopoJSON file onto the map
+3. Submit a pull request to add their map to the upstream repository
 
 ## Contact
 
@@ -41,7 +55,10 @@ Personalised travel maps can be requested via the contact form. Maps are built f
 
 - Built with: Hugo (static site generator)
 - Maps: Leaflet.js + OpenStreetMap
-- Data: GeoJSON (static/koh-samui/locations.geojson, static/hoi-an/locations.geojson)
+- Data formats: GeoJSON, TopoJSON (via topojson-client@3)
+- Data: static/koh-samui/locations.geojson, static/hoi-an/locations.geojson, static/fishing-boat/route.topojson
+- GitHub OAuth: Device Flow via Cloudflare Worker CORS proxy (workers/github-proxy.js)
+- GPX export: client-side GeoJSON → GPX conversion
 - Geocoding: LocationIQ forward geocoding API
 - Hosting: GitHub Pages (travels.girard-davila.net)
 - Source: https://github.com/alx/travel-guide

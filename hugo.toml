@@ -12,6 +12,10 @@ canonifyURLs = false
   # Success URL must be: https://travels.girard-davila.net/?vip=success
   stripePaymentLink = "https://buy.stripe.com/test_cNi6oG7aP2R55sJ2X27N600"
   stripePublishableKey = "pk_test_REPLACE_ME"
+  # GitHub OAuth App — register at https://github.com/settings/developers
+  # Device Flow proxy worker URL (deploy workers/github-proxy.js)
+  githubClientId = "REPLACE_WITH_GITHUB_OAUTH_APP_CLIENT_ID"
+  githubWorkerUrl = "https://travels-github-proxy.YOUR_SUBDOMAIN.workers.dev"
 
 [outputs]
   home = ["HTML", "RSS"]

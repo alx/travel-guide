@@ -1,7 +1,7 @@
 {{ define "head" }}
 <style>
   .page-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   .page-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
   .page-header p { color: #555; font-size: 1rem; }
@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 1rem;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 220px);
     min-height: 500px;
   }
   @media (max-width: 768px) {
@@ -36,7 +36,7 @@
   .poi-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
   .poi-card .poi-cat { font-size: 0.75rem; color: #888; margin-bottom: 0.35rem; }
   .poi-card .poi-addr { font-size: 0.78rem; color: #555; line-height: 1.4; }
-  .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+  .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .poi-card .poi-actions a {
     font-size: 0.75rem; color: #1a3a5c; text-decoration: none; font-weight: 500;
   }
@@ -45,12 +45,6 @@
     display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem;
     border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem;
   }
-  .add-location {
-    background: #f0f4ff; border: 2px dashed #1a3a5c; border-radius: 10px;
-    padding: 0.85rem 1rem; text-align: center; cursor: pointer; color: #1a3a5c;
-    font-size: 0.85rem; font-weight: 500; transition: background 0.15s;
-  }
-  .add-location:hover { background: #dde8ff; }
   .search-box {
     width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd;
     border-radius: 8px; font-size: 0.85rem; margin-bottom: 0.5rem;
@@ -64,6 +58,12 @@
   }
   .poi-card.premium-card .premium-overlay span { font-size: 1.5rem; }
   .poi-card.premium-card .premium-overlay p { font-size: 0.8rem; color: #888; margin: 0; }
+  /* Custom layer badge */
+  .custom-layer-badge {
+    background: #fef3c7; border: 1.5px solid #f59e0b; border-radius: 8px;
+    padding: 0.4rem 0.7rem; font-size: 0.78rem; color: #92400e; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;
+  }
 </style>
 {{ end }}
 
@@ -73,11 +73,17 @@
   <p>Best spots — beaches, restaurants, activities & more.</p>
 </div>
 
+{{ partial "map-toolbar.html" . }}
+
 <div class="map-layout">
   <div id="map"></div>
   <div class="sidebar" id="sidebar">
     <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
     <div class="sidebar-header" id="filter-btns"></div>
+    <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
+      📂 <span id="custom-layer-name">Custom layer loaded</span>
+      <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
+    </div>
     <div id="poi-list"></div>
   </div>
 </div>
@@ -102,9 +108,16 @@
 
 {{ define "scripts" }}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
 <script>
-// Load GeoJSON data
-const GEOJSON_URL = '{{ "/koh-samui/locations.geojson" | relURL }}';
+// Map config for toolbar
+window.MAP_CONFIG = {
+  title: 'Koh Samui — Girard-Davila Travels',
+  geojsonUrl: '{{ "/koh-samui/locations.geojson" | relURL }}',
+  embedPath: '/koh-samui/'
+};
+
+const GEOJSON_URL = window.MAP_CONFIG.geojsonUrl;
 
 const CATEGORY_COLORS = {
   'Beach': '#0ea5e9',
@@ -121,11 +134,9 @@ const CATEGORY_ICONS = {
   'Hotel': '🏨', 'Shopping': '🛍️', 'Other': '📍', 'VIP': '🔒'
 };
 
-let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
-// VIP status from vip-manager.html (set before DOMContentLoaded)
+let map, allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', activeCard = null;
 function getVIP() { return window.isVIP === true; }
 
-// Init map centered on Koh Samui
 map = L.map('map').setView([9.5018, 100.0136], 12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
@@ -162,6 +173,7 @@ function renderSidebar() {
     const isPremium = p.premium && !getVIP();
     card.className = 'poi-card' + (isPremium ? ' premium-card' : '');
     card.id = 'card-' + f._id;
+    const [lng, lat] = f.geometry.coordinates;
     if (isPremium) {
       card.innerHTML = `
         <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
@@ -181,7 +193,8 @@ function renderSidebar() {
         ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours}</div>` : ''}
         ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
         <div class="poi-actions">
-          <a href="https://www.google.com/maps/search/?api=1&query=${f.geometry.coordinates[1]},${f.geometry.coordinates[0]}" target="_blank">Open in Maps ↗</a>
+          <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
           ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
         </div>`;
       card.onclick = () => focusPOI(f);
@@ -228,9 +241,10 @@ function updateMarkers() {
 function setupFilters(pois) {
   const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium || getVIP()).map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
+  container.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');
-    btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+    btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
     btn.dataset.cat = cat;
     btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
     btn.onclick = () => {
@@ -242,14 +256,13 @@ function setupFilters(pois) {
     container.appendChild(btn);
   });
 
-  // VIP filter button — always added last, hardcoded
+  // VIP filter button
   const vipBtn = document.createElement('button');
   vipBtn.className = 'filter-btn vip-btn' + (getVIP() ? ' active' : '');
   vipBtn.dataset.cat = 'VIP';
   vipBtn.textContent = getVIP() ? '🔓 VIP' : '🔒 VIP';
   vipBtn.onclick = () => {
     if (getVIP()) {
-      // Filter to show only VIP POIs
       activeFilter = 'VIP';
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       vipBtn.classList.add('active');
@@ -261,11 +274,59 @@ function setupFilters(pois) {
   container.appendChild(vipBtn);
 }
 
-// Load data
+// Load custom GeoJSON / TopoJSON from toolbar
+window.loadCustomData = function(geojson, sourceName) {
+  if (customLayer) { map.removeLayer(customLayer); customLayer = null; }
+
+  const features = geojson.features || [];
+  const customPOIs = features
+    .filter(f => f.geometry?.type === 'Point')
+    .map((f, i) => ({ ...f, _id: 'custom-' + i, _custom: true }));
+
+  // Add line/polygon features as a Leaflet GeoJSON layer
+  const nonPoints = features.filter(f => f.geometry?.type !== 'Point');
+  if (nonPoints.length) {
+    customLayer = L.geoJSON({ type: 'FeatureCollection', features: nonPoints }, {
+      style: () => ({ color: '#f59e0b', weight: 3, opacity: 0.8 }),
+      onEachFeature: (feature, layer) => {
+        if (feature.properties?.name) layer.bindPopup(`<b>${feature.properties.name}</b>`);
+      }
+    }).addTo(map);
+  }
+
+  // Merge custom POIs into allPOIs (or show separate)
+  allPOIs = [...allPOIs.filter(f => !f._custom), ...customPOIs];
+  window.MAP_CONFIG.geojsonData = geojson;
+
+  // Show badge
+  const badge = document.getElementById('custom-layer-info');
+  badge.style.display = 'flex';
+  document.getElementById('custom-layer-name').textContent = sourceName || 'Custom layer loaded';
+
+  setupFilters(allPOIs);
+  renderSidebar();
+  updateMarkers();
+  if (customPOIs.length) {
+    const lls = customPOIs.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+    map.fitBounds(L.latLngBounds(lls).pad(0.1));
+  }
+};
+
+window.removeCustomLayer = function() {
+  if (customLayer) { map.removeLayer(customLayer); customLayer = null; }
+  allPOIs = allPOIs.filter(f => !f._custom);
+  document.getElementById('custom-layer-info').style.display = 'none';
+  setupFilters(allPOIs);
+  renderSidebar();
+  updateMarkers();
+};
+
+// Initial load
 fetch(GEOJSON_URL)
   .then(r => r.json())
   .then(data => {
     allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
     setupFilters(allPOIs);
     renderSidebar();
     updateMarkers();
@@ -274,7 +335,6 @@ fetch(GEOJSON_URL)
       if (Object.keys(markers).length > 0) map.fitBounds(group.getBounds().pad(0.1));
     }
 
-    // Apply URL filter param
     const urlFilter = new URLSearchParams(window.location.search).get('filter');
     if (urlFilter) {
       const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
@@ -282,7 +342,7 @@ fetch(GEOJSON_URL)
     }
   })
   .catch(() => {
-    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded yet. Add some!</p>';
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded yet.</p>';
   });
 </script>
 {{ end }}
