@@ -39,6 +39,17 @@
   </script>
   {{ end }}
 
+  <!-- Embed mode detection — must run before first paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var isEmbed = new URLSearchParams(window.location.search).get('embed') === '1'
+          || window.self !== window.top;
+        if (isEmbed) document.documentElement.classList.add('embed-mode');
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- topojson-client for TopoJSON map support -->
   <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js" defer></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -52,6 +63,20 @@
     .site-nav a:hover { text-decoration: underline; }
     main { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
     footer { text-align: center; padding: 2rem; color: #666; font-size: 0.85rem; margin-top: 2rem; }
+
+    /* ── Embed mode: map-only view ── */
+    html.embed-mode .site-header   { display: none !important; }
+    html.embed-mode footer         { display: none !important; }
+    html.embed-mode main           { max-width: 100%; padding: 0 !important; margin: 0 !important; }
+    html.embed-mode .page-header   { display: none !important; }
+    html.embed-mode #map-toolbar   { display: none !important; }
+    html.embed-mode .contact-form-float { display: none !important; }
+    html.embed-mode #paywall-modal { display: none !important; }
+    html.embed-mode .map-layout    { height: 100vh !important; min-height: 100vh !important; gap: 0 !important; }
+    html.embed-mode #map           { height: 100% !important; border-radius: 0 !important; box-shadow: none !important; }
+    /* Hide sidebar in embed — map-only */
+    html.embed-mode .sidebar       { display: none !important; }
+    html.embed-mode body           { background: white; }
   </style>
   {{ block "head" . }}{{ end }}
 

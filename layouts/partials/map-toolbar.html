@@ -174,7 +174,7 @@ window.tbExportGPX = function () {
 window.tbOpenEmbed = function () {
   closeAllModals();
   const path = window.MAP_CONFIG?.embedPath || window.location.pathname;
-  const iframeURL = location.origin + path;
+  const iframeURL = location.origin + path + '?embed=1';
   const code = `<iframe src="${iframeURL}" width="100%" height="500" frameborder="0" style="border-radius:12px;" title="${getTitle()}"></iframe>`;
 
   const overlay = document.createElement('div');
