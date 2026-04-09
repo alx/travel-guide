@@ -10,7 +10,7 @@ canonifyURLs = false
   twitterHandle = "@alxgirard"
   # Stripe — replace with your Payment Link from dashboard.stripe.com
   # Success URL must be: https://travels.girard-davila.net/?vip=success
-  stripePaymentLink = "https://buy.stripe.com/test_REPLACE_ME"
+  stripePaymentLink = "https://buy.stripe.com/test_cNi6oG7aP2R55sJ2X27N600"
   stripePublishableKey = "pk_test_REPLACE_ME"
 
 [outputs]
