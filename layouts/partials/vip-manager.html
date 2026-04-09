@@ -38,19 +38,47 @@
     showVIPBanner('✅ VIP access restored!');
   };
 
-  // Show a brief top banner
-  window.showVIPBanner = function (msg) {
-    const b = document.createElement('div');
-    b.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#f59e0b;color:white;text-align:center;padding:0.6rem;font-weight:600;font-size:0.9rem;z-index:99999;';
-    b.textContent = msg;
-    document.body.prepend(b);
-    setTimeout(() => b.remove(), 4000);
+  // Show welcome modal after payment
+  window.showVIPWelcomeModal = function () {
+    const overlay = document.createElement('div');
+    overlay.id = 'vip-welcome-modal';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99999;display:flex;align-items:center;justify-content:center;';
+    overlay.innerHTML = `
+      <div style="background:white;border-radius:16px;padding:2.5rem;width:90%;max-width:420px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.25);">
+        <div style="font-size:3.5rem;margin-bottom:0.75rem;">🎉</div>
+        <h2 style="font-size:1.5rem;font-weight:800;color:#1a3a5c;margin-bottom:0.5rem;">Welcome to VIP!</h2>
+        <p style="color:#555;font-size:0.95rem;line-height:1.6;margin-bottom:1.25rem;">All exclusive spots are now unlocked on every map — hidden gems, private beaches, and insider tips.</p>
+        <div style="background:#fef9ec;border:1.5px solid #f59e0b;border-radius:10px;padding:1rem;margin-bottom:1.5rem;text-align:left;">
+          <div style="font-weight:700;color:#92400e;font-size:0.88rem;margin-bottom:0.4rem;">🔓 Now visible on your maps:</div>
+          <ul style="color:#78350f;font-size:0.85rem;line-height:1.8;padding-left:1.2rem;margin:0;">
+            <li>Secret Sunrise Beach — Koh Samui</li>
+            <li>Expat Rooftop Club — Koh Samui</li>
+            <li>More spots added as we travel</li>
+          </ul>
+        </div>
+        <button onclick="document.getElementById('vip-welcome-modal').remove()" style="background:#f59e0b;color:white;border:none;padding:0.85rem 2.5rem;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">
+          Explore the Map →
+        </button>
+      </div>`;
+    document.body.appendChild(overlay);
+    // Close on backdrop click
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
   };
 
-  // Show welcome banner after payment
+  // Show a brief top banner (used for restore access)
+  window.showVIPBanner = function (msg) {
+    const b = document.createElement('div');
+    b.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#f59e0b;color:white;text-align:center;padding:0.6rem;font-weight:600;font-size:0.9rem;z-index:99999;cursor:pointer;';
+    b.textContent = msg + ' ✕';
+    b.onclick = () => b.remove();
+    document.body.prepend(b);
+    setTimeout(() => b.remove(), 6000);
+  };
+
+  // Show welcome modal after payment
   document.addEventListener('DOMContentLoaded', function () {
     if (window._vipJustUnlocked) {
-      showVIPBanner('🎉 Welcome to VIP! All exclusive spots are now unlocked.');
+      showVIPWelcomeModal();
       // Update VIP button in nav if present
       document.querySelectorAll('.vip-nav-btn').forEach(el => {
         el.textContent = '🔓 VIP Active';
