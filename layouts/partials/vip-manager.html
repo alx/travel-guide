@@ -1,0 +1,71 @@
+<script>
+// ─── VIP Access Manager ──────────────────────────────────────────────────────
+// Handles Stripe payment redirect detection, localStorage persistence,
+// and exposes window.isVIP + window.unlockVIP() globally.
+// Payment flow:
+//   1. User clicks "Unlock Now" → Stripe Payment Link
+//   2. Stripe redirects to /?vip=success after payment
+//   3. This script detects the param, saves to localStorage, cleans URL
+//   4. Map pages read window.isVIP to show/hide premium POIs
+// ─────────────────────────────────────────────────────────────────────────────
+(function () {
+  const VIP_KEY = 'vip_access';
+  const VIP_DATE_KEY = 'vip_date';
+
+  // Detect Stripe redirect success
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('vip') === 'success') {
+    localStorage.setItem(VIP_KEY, '1');
+    localStorage.setItem(VIP_DATE_KEY, new Date().toISOString());
+    // Clean ?vip=success from URL without reload
+    const clean = new URL(window.location.href);
+    clean.searchParams.delete('vip');
+    window.history.replaceState({}, '', clean.toString());
+    window._vipJustUnlocked = true;
+  }
+
+  // Global VIP status
+  window.isVIP = localStorage.getItem(VIP_KEY) === '1';
+
+  // Call this to programmatically unlock (e.g. restore access)
+  window.unlockVIP = function () {
+    localStorage.setItem(VIP_KEY, '1');
+    localStorage.setItem(VIP_DATE_KEY, new Date().toISOString());
+    window.isVIP = true;
+    if (typeof renderSidebar === 'function') renderSidebar();
+    if (typeof updateMarkers === 'function') updateMarkers();
+    document.querySelectorAll('#paywall-modal').forEach(m => m.style.display = 'none');
+    showVIPBanner('✅ VIP access restored!');
+  };
+
+  // Show a brief top banner
+  window.showVIPBanner = function (msg) {
+    const b = document.createElement('div');
+    b.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#f59e0b;color:white;text-align:center;padding:0.6rem;font-weight:600;font-size:0.9rem;z-index:99999;';
+    b.textContent = msg;
+    document.body.prepend(b);
+    setTimeout(() => b.remove(), 4000);
+  };
+
+  // Show welcome banner after payment
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window._vipJustUnlocked) {
+      showVIPBanner('🎉 Welcome to VIP! All exclusive spots are now unlocked.');
+      // Update VIP button in nav if present
+      document.querySelectorAll('.vip-nav-btn').forEach(el => {
+        el.textContent = '🔓 VIP Active';
+        el.style.background = '#f59e0b';
+      });
+    }
+    // Add VIP indicator to nav header if VIP
+    if (window.isVIP) {
+      document.querySelectorAll('.site-nav').forEach(nav => {
+        const badge = document.createElement('span');
+        badge.style.cssText = 'background:#f59e0b;color:white;font-size:0.72rem;padding:0.15rem 0.5rem;border-radius:20px;font-weight:700;';
+        badge.textContent = '🔓 VIP';
+        nav.appendChild(badge);
+      });
+    }
+  });
+})();
+</script>

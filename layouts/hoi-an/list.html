@@ -118,6 +118,7 @@ const CATEGORY_ICONS = {
 };
 
 let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+function getVIP() { return window.isVIP === true; }
 
 // Init map centered on Hoi An (An Hoi peninsula)
 map = L.map('map').setView([15.873326, 108.367462], 16);
@@ -153,9 +154,10 @@ function renderSidebar() {
     const color = CATEGORY_COLORS[cat] || '#6b7280';
     const icon = CATEGORY_ICONS[cat] || '📍';
     const card = document.createElement('div');
-    card.className = 'poi-card' + (p.premium ? ' premium-card' : '');
+    const isPremium = p.premium && !getVIP();
+    card.className = 'poi-card' + (isPremium ? ' premium-card' : '');
     card.id = 'card-' + f._id;
-    if (p.premium) {
+    if (isPremium) {
       card.innerHTML = `
         <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
         <h3 style="filter:blur(4px);user-select:none;">${p.name}</h3>
@@ -206,8 +208,8 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.premium ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${p.notes && !p.premium ? '<br><em>' + p.notes + '</em>' : ''}`);
-    if (!p.premium) {
+      .bindPopup(`<b>${(p.premium && !getVIP()) ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${(p.notes && !(p.premium && !getVIP())) ? '<br><em>' + p.notes + '</em>' : ''}`);
+    if (!p.premium || getVIP()) {
       marker.on('click', () => focusPOI(f));
     } else {
       marker.on('click', () => { document.getElementById('paywall-modal').style.display = 'flex'; });
@@ -217,7 +219,7 @@ function updateMarkers() {
 }
 
 function setupFilters(pois) {
-  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium).map(f => f.properties.category || 'Other'))];
+  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium || getVIP()).map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -235,11 +237,18 @@ function setupFilters(pois) {
 
   // VIP filter button — always added last, hardcoded
   const vipBtn = document.createElement('button');
-  vipBtn.className = 'filter-btn vip-btn';
+  vipBtn.className = 'filter-btn vip-btn' + (getVIP() ? ' active' : '');
   vipBtn.dataset.cat = 'VIP';
-  vipBtn.textContent = '🔒 VIP';
+  vipBtn.textContent = getVIP() ? '🔓 VIP' : '🔒 VIP';
   vipBtn.onclick = () => {
-    document.getElementById('paywall-modal').style.display = 'flex';
+    if (getVIP()) {
+      activeFilter = 'VIP';
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      vipBtn.classList.add('active');
+      filterPOIs();
+    } else {
+      document.getElementById('paywall-modal').style.display = 'flex';
+    }
   };
   container.appendChild(vipBtn);
 }

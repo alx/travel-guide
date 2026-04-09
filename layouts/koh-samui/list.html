@@ -84,13 +84,17 @@
 
 <!-- Paywall modal -->
 <div id="paywall-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:380px;text-align:center;">
+  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:400px;text-align:center;">
     <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔒</div>
     <h3 style="margin-bottom:0.5rem;">Unlock VIP Access</h3>
-    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive spots, private beaches, and expat-curated hidden gems.</p>
-    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:1.25rem;">€4.99 / month</div>
-    <a href="#" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">Unlock Now →</a>
-    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:0.85rem;">Maybe later</button>
+    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive spots, private beaches, and expat-curated hidden gems on Koh Samui and all destinations.</p>
+    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:0.5rem;">€4.99 / month</div>
+    <p style="color:#aaa;font-size:0.75rem;margin-bottom:1.25rem;">Recurring · Cancel anytime · Powered by Stripe</p>
+    <a id="stripe-unlock-btn" href="{{ .Site.Params.stripePaymentLink }}" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">
+      🔓 Unlock Now — €4.99/mo
+    </a>
+    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="display:block;width:100%;background:none;border:none;color:#aaa;cursor:pointer;font-size:0.82rem;margin-bottom:0.5rem;">Maybe later</button>
+    <button onclick="window.unlockVIP && window.unlockVIP()" style="display:block;width:100%;background:none;border:none;color:#bbb;cursor:pointer;font-size:0.75rem;text-decoration:underline;">Already a member? Restore access</button>
   </div>
 </div>
 {{ partial "contact-form.html" . }}
@@ -118,6 +122,8 @@ const CATEGORY_ICONS = {
 };
 
 let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+// VIP status from vip-manager.html (set before DOMContentLoaded)
+function getVIP() { return window.isVIP === true; }
 
 // Init map centered on Koh Samui
 map = L.map('map').setView([9.5018, 100.0136], 12);
@@ -153,9 +159,10 @@ function renderSidebar() {
     const color = CATEGORY_COLORS[cat] || '#6b7280';
     const icon = CATEGORY_ICONS[cat] || '📍';
     const card = document.createElement('div');
-    card.className = 'poi-card' + (p.premium ? ' premium-card' : '');
+    const isPremium = p.premium && !getVIP();
+    card.className = 'poi-card' + (isPremium ? ' premium-card' : '');
     card.id = 'card-' + f._id;
-    if (p.premium) {
+    if (isPremium) {
       card.innerHTML = `
         <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
         <h3 style="filter:blur(4px);user-select:none;">${p.name}</h3>
@@ -208,8 +215,8 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.premium ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${p.notes && !p.premium ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
-    if (!p.premium) {
+      .bindPopup(`<b>${(p.premium && !getVIP()) ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${(p.notes && !(p.premium && !getVIP())) ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
+    if (!p.premium || getVIP()) {
       marker.on('click', () => focusPOI(f));
     } else {
       marker.on('click', () => { document.getElementById('paywall-modal').style.display = 'flex'; });
@@ -219,7 +226,7 @@ function updateMarkers() {
 }
 
 function setupFilters(pois) {
-  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium).map(f => f.properties.category || 'Other'))];
+  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium || getVIP()).map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -237,11 +244,19 @@ function setupFilters(pois) {
 
   // VIP filter button — always added last, hardcoded
   const vipBtn = document.createElement('button');
-  vipBtn.className = 'filter-btn vip-btn';
+  vipBtn.className = 'filter-btn vip-btn' + (getVIP() ? ' active' : '');
   vipBtn.dataset.cat = 'VIP';
-  vipBtn.textContent = '🔒 VIP';
+  vipBtn.textContent = getVIP() ? '🔓 VIP' : '🔒 VIP';
   vipBtn.onclick = () => {
-    document.getElementById('paywall-modal').style.display = 'flex';
+    if (getVIP()) {
+      // Filter to show only VIP POIs
+      activeFilter = 'VIP';
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      vipBtn.classList.add('active');
+      filterPOIs();
+    } else {
+      document.getElementById('paywall-modal').style.display = 'flex';
+    }
   };
   container.appendChild(vipBtn);
 }
