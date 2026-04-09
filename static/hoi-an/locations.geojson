@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Na Mom Homestay", "category": "Hotel", "address": "An Hoi, Hoi An", "notes": "Local homestay on An Hoi peninsula" },
+      "geometry": { "type": "Point", "coordinates": [108.365397, 15.871272] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Breeze Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An", "notes": "Riverside restaurant on An Hoi" },
+      "geometry": { "type": "Point", "coordinates": [108.361615, 15.871297] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Tok Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An" },
+      "geometry": { "type": "Point", "coordinates": [108.363436, 15.873929] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Buffalo Home Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An" },
+      "geometry": { "type": "Point", "coordinates": [108.366555, 15.877557] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Morning Coffee", "category": "Cafe", "address": "An Hoi, Hoi An", "notes": "Morning coffee spot" },
+      "geometry": { "type": "Point", "coordinates": [108.362591, 15.875122] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "An Hoi Market", "category": "Shopping", "address": "An Hoi, Hoi An", "notes": "Local market" },
+      "geometry": { "type": "Point", "coordinates": [108.364005, 15.876125] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "WinMart", "category": "Shopping", "address": "An Hoi, Hoi An", "notes": "Convenience store" },
+      "geometry": { "type": "Point", "coordinates": [108.365349, 15.870239] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "ATM", "category": "Shopping", "address": "An Hoi, Hoi An" },
+      "geometry": { "type": "Point", "coordinates": [108.373934, 15.872753] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "An Hoi Pagoda", "category": "Activity", "address": "An Hoi, Hoi An", "notes": "Buddhist pagoda" },
+      "geometry": { "type": "Point", "coordinates": [108.362041, 15.872917] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "River Point of View", "category": "Activity", "address": "An Hoi, Hoi An", "notes": "Scenic viewpoint along the Thu Bon river" },
+      "geometry": { "type": "Point", "coordinates": [108.365827, 15.869511] }
+    }
+  ]
+}
