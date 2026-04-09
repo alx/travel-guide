@@ -27,6 +27,11 @@
     📂 Load
   </button>
 
+  <!-- PNG export for social media (9:16) -->
+  <button class="tb-btn" onclick="tbExportPNG()" id="tb-png-btn" title="Export 9:16 share card for social media (Instagram Stories, TikTok…)">
+    📸 PNG
+  </button>
+
   <!-- GitHub integration -->
   <button class="tb-btn tb-github" onclick="tbOpenGitHub()" title="Sign in with GitHub · Load from repo · Submit PR" id="tb-github-btn">
     🐙 GitHub
@@ -745,6 +750,236 @@ document.addEventListener('DOMContentLoaded', function() {
   const ghBtn = document.getElementById('tb-github-btn');
   if (user && ghBtn) ghBtn.classList.add('authed');
 });
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   📸 PNG Export — 9:16 social share card + PNG tEXt metadata chunk
+   Aspect ratio: 9:16 (Instagram Stories, TikTok, Snapchat, YouTube Shorts)
+   Output: 1080×1920 px (rendered at 540×960, pixelRatio 2)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* CRC-32 table — required for PNG chunk checksums */
+const _crcTable = (() => {
+  const t = new Uint32Array(256);
+  for (let i = 0; i < 256; i++) {
+    let c = i;
+    for (let j = 0; j < 8; j++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+    t[i] = c;
+  }
+  return t;
+})();
+
+function _crc32(bytes) {
+  let c = 0xFFFFFFFF;
+  for (let i = 0; i < bytes.length; i++) c = _crcTable[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+  return (c ^ 0xFFFFFFFF) >>> 0;
+}
+
+/**
+ * Inject tEXt metadata chunks into a PNG ArrayBuffer.
+ * Inserted right after the IHDR chunk (byte 33).
+ * Each entry becomes one tEXt chunk: keyword\0value (Latin-1 safe for URLs/ASCII).
+ */
+function injectPNGMetadata(arrayBuffer, meta) {
+  const enc = new TextEncoder();
+  const textChunks = [];
+  for (const [kw, val] of Object.entries(meta)) {
+    const data = enc.encode(kw + '\x00' + val);
+    const chunk = new Uint8Array(12 + data.length);
+    const dv = new DataView(chunk.buffer);
+    dv.setUint32(0, data.length);               // 4-byte length
+    chunk.set([116, 69, 88, 116], 4);           // 'tEXt' type
+    chunk.set(data, 8);                         // keyword + null + value
+    dv.setUint32(8 + data.length,               // CRC over type+data
+      _crc32(chunk.slice(4, 8 + data.length)));
+    textChunks.push(chunk);
+  }
+  const extra = textChunks.reduce((s, c) => s + c.length, 0);
+  const src = new Uint8Array(arrayBuffer);
+  const out = new Uint8Array(src.length + extra);
+  out.set(src.slice(0, 33), 0);   // PNG sig (8 bytes) + IHDR chunk (25 bytes)
+  let pos = 33;
+  for (const chunk of textChunks) { out.set(chunk, pos); pos += chunk.length; }
+  out.set(src.slice(33), pos);
+  return out.buffer;
+}
+
+/** Build the 9:16 share card DOM element (540×960 px, hidden off-screen) */
+function buildShareCard() {
+  const cfg    = window.MAP_CONFIG || {};
+  const rawTitle = cfg.title || document.title;
+  // Strip " — Girard-Davila Travels" suffix if present
+  const title  = rawTitle.replace(/\s*[—–-]\s*Girard.Davila Travels$/i, '').trim();
+  const url    = location.origin + (cfg.embedPath || location.pathname);
+  const pois   = (window.allPOIs || []).filter(f => !f.properties?.premium);
+
+  // Emoji + flag per known destination
+  const destMeta = {
+    'koh samui':  { emoji: '🏝️', sub: 'Thailand 🇹🇭' },
+    'hoi an':     { emoji: '🏮', sub: 'Vietnam 🇻🇳' },
+    'fishing':    { emoji: '⚓', sub: 'Gulf of Thailand 🇹🇭' },
+  };
+  const lc   = title.toLowerCase();
+  const meta = Object.entries(destMeta).find(([k]) => lc.includes(k))?.[1]
+             || { emoji: '🗺️', sub: '' };
+
+  // Category icons (same as map pages)
+  const CAT_ICONS = {
+    Beach:'🏖️', Restaurant:'🍽️', Activity:'🎯', Hotel:'🏨',
+    Shopping:'🛍️', Cafe:'☕', Port:'⚓', Fishing:'🎣',
+    Anchorage:'🌙', Hazard:'⚠️', Service:'⛽', Other:'📍', VIP:'🔒'
+  };
+  const CAT_COLORS = {
+    Beach:'#0ea5e9', Restaurant:'#f97316', Activity:'#22c55e', Hotel:'#8b5cf6',
+    Shopping:'#ec4899', Cafe:'#f59e0b', Port:'#f97316', Fishing:'#0ea5e9',
+    Anchorage:'#6366f1', Hazard:'#ef4444', Service:'#f59e0b', Other:'#6b7280'
+  };
+
+  // Top POIs (up to 7, sorted by category diversity)
+  const top = pois.slice(0, 7);
+
+  const poiRows = top.map(f => {
+    const p   = f.properties || {};
+    const cat = p.category || 'Other';
+    const ic  = CAT_ICONS[cat] || '📍';
+    const col = CAT_COLORS[cat] || '#6b7280';
+    return `<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <span style="font-size:20px;flex-shrink:0;">${ic}</span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:15px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.name || '—'}</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:1px;">${cat}${p.hours ? ' · ' + p.hours.split('·')[0].trim() : ''}</div>
+      </div>
+      <span style="font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;background:${col}33;color:${col};flex-shrink:0;">${cat}</span>
+    </div>`;
+  }).join('');
+
+  // Stat chips
+  const cats = [...new Set(pois.map(f => f.properties?.category || 'Other'))];
+  const chips = cats.slice(0, 4).map(c =>
+    `<span style="font-size:11px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 10px;color:rgba(255,255,255,0.85);">${CAT_ICONS[c]||'📍'} ${c}</span>`
+  ).join('');
+
+  const card = document.createElement('div');
+  card.id = 'tb-share-card';
+  card.style.cssText = [
+    'position:fixed', 'left:-9999px', 'top:0',
+    'width:540px', 'height:960px',
+    'background:linear-gradient(160deg,#0b1f35 0%,#1a3a5c 45%,#0e4f7a 100%)',
+    'color:#fff',
+    'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',
+    'display:flex', 'flex-direction:column',
+    'overflow:hidden', 'box-sizing:border-box',
+  ].join(';');
+
+  card.innerHTML = `
+    <!-- Top bar -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 32px 0;">
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;">🗺️ Girard-Davila Travels</span>
+      <span style="font-size:11px;opacity:0.45;">${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
+    </div>
+
+    <!-- Hero -->
+    <div style="padding:24px 32px 20px;flex-shrink:0;">
+      <div style="font-size:72px;line-height:1;margin-bottom:12px;">${meta.emoji}</div>
+      <div style="font-size:34px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">${title}</div>
+      ${meta.sub ? `<div style="font-size:15px;opacity:0.65;margin-top:8px;">${meta.sub}</div>` : ''}
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;">${chips}</div>
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px;background:rgba(255,255,255,0.12);margin:0 32px;flex-shrink:0;"></div>
+
+    <!-- POI list -->
+    <div style="flex:1;overflow:hidden;padding:4px 32px 0;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.45;padding:14px 0 4px;">Featured spots</div>
+      ${poiRows || '<div style="opacity:0.4;font-size:14px;padding:16px 0;">No spots loaded</div>'}
+    </div>
+
+    <!-- Stats bar -->
+    <div style="padding:14px 32px;display:flex;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,0.1);flex-shrink:0;">
+      <div style="text-align:center;">
+        <div style="font-size:22px;font-weight:800;">${pois.length}</div>
+        <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.08em;">curated spots</div>
+      </div>
+      <div style="width:1px;height:32px;background:rgba(255,255,255,0.15);"></div>
+      <div style="text-align:center;">
+        <div style="font-size:22px;font-weight:800;">${cats.length}</div>
+        <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.08em;">categories</div>
+      </div>
+      <div style="flex:1;"></div>
+      <div style="background:rgba(245,158,11,0.2);border:1.5px solid rgba(245,158,11,0.5);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:700;color:#f59e0b;">🔒 VIP spots</div>
+    </div>
+
+    <!-- URL footer -->
+    <div style="background:rgba(0,0,0,0.3);padding:18px 32px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <div style="width:3px;height:28px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
+      <div>
+        <div style="font-size:13px;font-weight:700;opacity:0.9;">${url.replace('https://','')}</div>
+        <div style="font-size:10px;opacity:0.45;margin-top:2px;">Scan · Explore · Share</div>
+      </div>
+    </div>`;
+
+  return card;
+}
+
+/** Main PNG export function */
+window.tbExportPNG = async function () {
+  const btn = document.getElementById('tb-png-btn');
+  if (btn) { btn.textContent = '⏳ Rendering…'; btn.disabled = true; }
+
+  // Check html-to-image is loaded
+  if (typeof htmlToImage === 'undefined') {
+    alert('html-to-image library not loaded. Check your internet connection.');
+    if (btn) { btn.textContent = '📸 PNG'; btn.disabled = false; }
+    return;
+  }
+
+  const card = buildShareCard();
+  document.body.appendChild(card);
+
+  try {
+    // Render at 2× pixel ratio → 1080×1920 output
+    const dataUrl = await htmlToImage.toPng(card, {
+      width: 540,
+      height: 960,
+      pixelRatio: 2,
+      backgroundColor: '#0b1f35',
+    });
+
+    // Convert data URL → ArrayBuffer
+    const res    = await fetch(dataUrl);
+    const buffer = await res.arrayBuffer();
+
+    // Inject tEXt metadata chunks into PNG
+    const cfg   = window.MAP_CONFIG || {};
+    const title = (cfg.title || document.title).replace(/\s*[—–-]\s*Girard.Davila Travels$/i,'').trim();
+    const withMeta = injectPNGMetadata(buffer, {
+      'Title':         title,
+      'Source':        location.href,
+      'Author':        'Girard-Davila Travels',
+      'URL':           location.href,
+      'Software':      'travels.girard-davila.net',
+      'Creation Time': new Date().toISOString(),
+      'Comment':       `${(window.allPOIs||[]).filter(f=>!f.properties?.premium).length} curated spots · 9:16 share card`,
+    });
+
+    // Download
+    const filename = title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') + '-share.png';
+    const blob = new Blob([withMeta], { type: 'image/png' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+
+    if (btn) { btn.textContent = '✅ Done!'; setTimeout(() => { btn.textContent = '📸 PNG'; btn.disabled = false; }, 1800); }
+  } catch (err) {
+    console.error('PNG export error:', err);
+    alert('PNG export failed: ' + err.message);
+    if (btn) { btn.textContent = '📸 PNG'; btn.disabled = false; }
+  } finally {
+    document.body.removeChild(card);
+  }
+};
 
 })(); // end IIFE
 </script>
