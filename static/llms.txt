@@ -1,64 +1,159 @@
 # Travels — Curated Maps by Girard-Davila
 # https://travels.girard-davila.net/
 # Format: https://llmstxt.org
+# Last updated: 2026-04-09
 
-> Hand-picked travel maps from real family experiences across South East Asia and Europe. GPS-precise spots, honest notes, opening hours and prices. No generic tourist lists.
+> Hand-picked travel maps from real family experiences across South East Asia and Europe.
+> GPS-precise spots, honest notes, opening hours, prices. No generic tourist lists.
 
 ## About
 
-Girard-Davila Travels is a curated travel map project built from personal travel experience. Each destination map contains GPS-verified POIs with category filters, opening hours, prices and insider notes. Maps are built with Hugo, Leaflet.js and GeoJSON/TopoJSON, deployed on GitHub Pages.
+Girard-Davila Travels is an open-source curated travel map project built from personal travel experience. Each destination contains GPS-verified POIs with category filters, opening hours, prices, and insider notes. Maps are built with Hugo, Leaflet.js, GeoJSON and TopoJSON, deployed on GitHub Pages.
+
+Any user can sign in with GitHub, load their own GeoJSON/TopoJSON data onto the maps, and submit a pull request to add their own destination to the project.
 
 ## Destinations
 
-- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/): Beaches, spas, restaurants and activities across the island — Lamai, Chaweng, Maenam. Includes Tamarind Springs Forest Spa, Karma Two Palms Beach Club, local gyms and padel courts.
-- [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/): An Hoi peninsula — restaurants, cafés, local market, Buddhist pagoda and river viewpoints around the Na Mom Homestay area.
-- [Gulf of Thailand Fishing Expedition](https://travels.girard-davila.net/fishing-boat/): 2-day boat expedition from Nathon Pier — red snapper grounds, tuna alley, overnight anchorage. TopoJSON format demo with multi-segment route and waypoints.
+- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/) — Beaches, spas, restaurants, activities across the island. Covers Lamai, Chaweng, Maenam, Nathon. Includes Tamarind Springs Forest Spa, Karma Two Palms Beach Club, local gyms, padel courts, GPS-verified coordinates, opening hours, prices. VIP-locked hidden spots.
+- [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/) — An Hoi peninsula: curated restaurants, cafés, local market, Buddhist pagoda, river viewpoints around the Na Mom Homestay area.
+- [Gulf of Thailand Fishing Expedition](https://travels.girard-davila.net/fishing-boat/) — 2-day boat trip from Nathon Pier: red snapper shelf, tuna alley, overnight island anchorage, hazard markers, fuel barge. Demonstrates the TopoJSON multi-segment route + waypoints format.
 
-## Features
+## Map Toolbar
 
-- Interactive maps powered by Leaflet.js and OpenStreetMap tiles
-- Category filters: Beach, Restaurant, Café, Activity, Hotel, Shopping
-- URL filter parameters (e.g. ?filter=Beach) for shareable filtered views
-- Opening hours and price information on enhanced POIs
-- VIP locked spots (🔒) for members — hidden gems not published openly
-- Floating contact form on all pages (Formspree)
-- **Map toolbar** on every map: download GeoJSON, export GPX for OsmAnd, embed as iframe, share URL, load custom data
-- **OsmAnd integration**: `geo:lat,lon` links on every POI for direct navigation
-- **Custom GeoJSON/TopoJSON loading**: load any file from disk or URL onto the map
-- **GitHub integration**: sign in with GitHub (Device Flow OAuth or PAT), load GeoJSON from your repos, submit PRs to add your maps to this project
-- **TopoJSON support**: route lines and waypoints in TopoJSON format (Gulf of Thailand demo)
-- **GPX export**: all POIs and routes exported as GPX for use with OsmAnd, Garmin, and other GPS apps
+Every map page has a toolbar with these actions:
+
+| Button | Action |
+|--------|--------|
+| 📥 GeoJSON | Download the map's raw GeoJSON data file |
+| 🗺️ GPX | Export all visible POIs + routes as GPX (OsmAnd, Garmin, etc.) |
+| `</>` Embed | Copy `<iframe>` snippet with live preview; src uses `?embed=1` |
+| 🔗 Share | Copy current URL (including active filter) to clipboard |
+| 📂 Load | Load custom GeoJSON/TopoJSON from file, URL, or GitHub forks |
+| 🐙 GitHub | Sign in · browse repos · fork & submit PR |
+
+## Load Custom Data (📂 Load)
+
+Three tabs in the Load modal:
+
+1. **File** — file-picker; accepts `.geojson`, `.topojson`, `.json`
+2. **URL** — fetch from any public URL (GitHub raw, S3, Gist, etc.)
+3. **GitHub Forks** — lists all public forks of `alx/travel-guide`; per-fork branch dropdown; recursive tree scan for `.geojson`/`.topojson` under `static/`; one-click load onto the map
+
+TopoJSON is converted to GeoJSON via `topojson-client@3` before rendering. Loaded data appears as a removable overlay layer with a yellow badge in the sidebar.
+
+## GitHub Integration (🐙 GitHub)
+
+Three-tab panel in the toolbar:
+
+1. **Sign In** — GitHub Device Flow OAuth (show a code, enter at github.com/login/device) or Personal Access Token. Token stored in `localStorage['github_pat']`.
+2. **Load GeoJSON** — search any of the user's repos for `.geojson`/`.topojson` files.
+3. **Submit PR** — forks `alx/travel-guide`, commits GeoJSON to `static/<name>/locations.geojson` on a new branch, opens a pull request via GitHub API — all from the browser.
+
+GitHub Device Flow uses a Cloudflare Worker CORS proxy (`workers/github-proxy.js`); the two endpoints `/github-device-code` and `/github-device-token` proxy GitHub's OAuth API with CORS headers. No client secret required.
+
+## OsmAnd & GPS Export
+
+- Every POI card has a **🗺️ OsmAnd** link (`geo:lat,lon`) — tapping on Android opens OsmAnd or any registered geo: handler
+- The **GPX export** button serialises all currently visible POIs as `<wpt>` waypoints and route LineStrings as `<trk>` tracks in GPX 1.1 format
+
+## Embed Mode
+
+Append `?embed=1` to any map URL to get a map-only view (no header, footer, toolbar, sidebar, contact form). An inline script adds `embed-mode` to `<html>` before first paint so there is no flash of chrome.
+
+```html
+<iframe
+  src="https://travels.girard-davila.net/koh-samui/?embed=1"
+  width="100%" height="500" frameborder="0"
+  style="border-radius:12px;"
+  title="Koh Samui — Girard-Davila Travels">
+</iframe>
+```
+
+Add `&filter=Beach` to pre-filter on load.
 
 ## VIP Access
 
-Some POIs are reserved for VIP members (€4.99/month). These appear as locked cards in the sidebar. After unlocking via Stripe, members get full GPS coordinates, insider notes and access to all future VIP spots across all destinations.
+Some POIs are reserved for paying members (€4.99/month via Stripe). They appear as blurred 🔒 cards. After Stripe payment the return URL carries `?vip=success`; `vip-manager.html` detects this, stores `vip_access=1` in `localStorage`, and shows a dismissible welcome modal. A "Restore access" button lets returning members re-activate on a new device without repaying.
 
-## Custom Maps
+## TopoJSON Format
 
-Personalised travel maps can be requested via the contact form. Maps are built from real Girard-Davila family travel experience — not tourist brochures. Destinations covered include South East Asia (Thailand, Vietnam) and Europe.
+The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc coordinates are absolute `[lng, lat]` pairs. Two named objects: `route` (LineString geometries referencing arc indices) and `waypoints` (Point geometries with direct coordinates). Loaded via `topojson.feature()`.
 
-## Open Source / Contribution
+## Contributing
 
-The site is open source on GitHub. Any user can:
-1. Sign in with their GitHub account via the map toolbar
-2. Load their own GeoJSON or TopoJSON file onto the map
-3. Submit a pull request to add their map to the upstream repository
+1. Fork `alx/travel-guide` on GitHub
+2. Add `static/<destination>/locations.geojson` following existing schema
+3. Add `content/<destination>/_index.md` and `layouts/<destination>/list.html`
+4. Submit a PR — or use the in-map **🐙 GitHub → Submit PR** flow to do everything from the browser
 
-## Contact
+## Changelog
 
-- Website: https://travels.girard-davila.net/
-- Contact form: https://travels.girard-davila.net/#contact
-- GitHub: https://github.com/alx/travel-guide
-- Parent site: https://girard-davila.net/
+```
+2026-04-09  feat  load modal: GitHub forks browser — lists public forks of
+                  alx/travel-guide, branch dropdown, recursive GeoJSON scan,
+                  one-click load onto map
+2026-04-09  fix   embed mode (?embed=1): hide header/footer/toolbar/sidebar;
+                  map fills 100vh; no flash via early inline script
+2026-04-09  feat  map toolbar on all pages: download GeoJSON, export GPX,
+                  embed iframe, share URL, load custom data, GitHub panel
+2026-04-09  feat  GitHub sign-in (Device Flow OAuth + PAT fallback);
+                  browse repos; fork & create PR via GitHub API
+2026-04-09  feat  custom GeoJSON/TopoJSON loader (file, URL, GitHub repos)
+                  overlaid as removable layer; supports both formats
+2026-04-09  feat  OsmAnd: geo:lat,lon links on every POI card; GPX export
+2026-04-09  feat  Gulf of Thailand fishing expedition demo — TopoJSON format
+                  with 4 route segments, 6 waypoints, day filter tabs
+2026-04-09  feat  Cloudflare Worker CORS proxy for GitHub Device Flow
+2026-04-09  ux    Stripe VIP welcome: dismissible modal overlay (not banner)
+2026-04-09  feat  Stripe VIP payment flow: vip-manager partial, paywall modal,
+                  localStorage persistence, success page, restore access
+2026-04-09  seo   meta tags, OG/Twitter Card, JSON-LD, robots.txt, canonical
+2026-04-09  feat  landing page: destination cards, VIP explainer, custom map CTA
+2026-04-09  feat  floating Formspree contact form on all pages
+2026-04-09  feat  Hoi An map from uMap JSON export (An Hoi peninsula)
+2026-04-09  feat  Tamarind Springs Forest Spa — hours, price, website
+2026-04-09  feat  Karma Two Palms Beach Club — hours, GPS, website
+2026-04-09  feat  Koh Samui map — left-column layout, URL filter params, VIP paywall
+2026-04-09  feat  /llms.txt for AI agent discovery (llmstxt.org format)
+2026-04-09  analytics  Google Analytics G-WDJF6L9P30
+```
 
-## Technical
+## Technical Stack
 
-- Built with: Hugo (static site generator)
-- Maps: Leaflet.js + OpenStreetMap
-- Data formats: GeoJSON, TopoJSON (via topojson-client@3)
-- Data: static/koh-samui/locations.geojson, static/hoi-an/locations.geojson, static/fishing-boat/route.topojson
-- GitHub OAuth: Device Flow via Cloudflare Worker CORS proxy (workers/github-proxy.js)
-- GPX export: client-side GeoJSON → GPX conversion
-- Geocoding: LocationIQ forward geocoding API
-- Hosting: GitHub Pages (travels.girard-davila.net)
+| Layer | Technology |
+|-------|-----------|
+| Static site | Hugo |
+| Maps | Leaflet.js 1.9.4 + OpenStreetMap tiles |
+| Data formats | GeoJSON · TopoJSON (topojson-client@3) |
+| Payments | Stripe Payment Links + localStorage (no backend) |
+| Auth | GitHub Device Flow via Cloudflare Worker CORS proxy |
+| Forms | Formspree (mqegoqqz) |
+| Analytics | Google Analytics G-WDJF6L9P30 |
+| Hosting | GitHub Pages — travels.girard-davila.net |
+| CI/CD | GitHub Actions → upload-pages-artifact → deploy-pages |
+| DNS | Cloudflare (CNAME flattening, apex → www redirect) |
+
+## Key Files
+
+| Path | Purpose |
+|------|---------|
+| `static/koh-samui/locations.geojson` | Koh Samui POI data |
+| `static/hoi-an/locations.geojson` | Hoi An POI data |
+| `static/fishing-boat/route.topojson` | Fishing expedition — route + waypoints (TopoJSON) |
+| `layouts/partials/map-toolbar.html` | Toolbar: download, GPX, embed, share, load, GitHub |
+| `layouts/partials/vip-manager.html` | Stripe VIP unlock, welcome modal, localStorage |
+| `layouts/partials/contact-form.html` | Floating Formspree contact form |
+| `layouts/_default/baseof.html` | Site shell, embed-mode CSS, GitHub config injection |
+| `layouts/koh-samui/list.html` | Koh Samui map (Leaflet, filters, custom layer) |
+| `layouts/hoi-an/list.html` | Hoi An map |
+| `layouts/fishing-boat/list.html` | TopoJSON expedition demo |
+| `workers/github-proxy.js` | Cloudflare Worker: GitHub Device Flow CORS proxy |
+| `hugo.toml` | Site config — Stripe + GitHub OAuth params |
+
+## Links
+
+- Site: https://travels.girard-davila.net/
 - Source: https://github.com/alx/travel-guide
+- Contact: floating ✉️ button on every page
+- Parent site: https://girard-davila.net/
+- Author: Girard-Davila (@alxgirard)
