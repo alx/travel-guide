@@ -1,0 +1,22 @@
+<div class="contact-form-float" id="contact-form-float">
+  <button class="contact-toggle" onclick="document.getElementById('contact-form-float').classList.toggle('open')" aria-label="Contact">
+    ✉️ <span>Ask a question</span>
+  </button>
+  <div class="contact-form-panel">
+    <h4>Get in touch</h4>
+    <p style="font-size:0.8rem;color:#555;margin-bottom:0.75rem;">Questions about a destination? Looking for a custom map?</p>
+    <form action="https://formspree.io/f/mqegoqqz" method="POST">
+      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;">
+      <input type="email" name="email" placeholder="Email" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;">
+      <textarea name="message" placeholder="Your message..." rows="3" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;resize:vertical;"></textarea>
+      <button type="submit" style="width:100%;background:#1a3a5c;color:white;border:none;padding:0.5rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:0.85rem;">Send →</button>
+    </form>
+  </div>
+</div>
+<style>
+.contact-form-float { position:fixed; bottom:1.5rem; right:1.5rem; z-index:8000; font-family:inherit; }
+.contact-toggle { background:#1a3a5c; color:white; border:none; padding:0.6rem 1rem; border-radius:24px; cursor:pointer; font-size:0.85rem; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,0.2); display:flex; align-items:center; gap:0.4rem; }
+.contact-form-panel { display:none; background:white; border-radius:12px; padding:1.1rem; box-shadow:0 4px 20px rgba(0,0,0,0.15); width:280px; margin-bottom:0.5rem; }
+.contact-form-float.open .contact-form-panel { display:block; }
+.contact-form-float.open .contact-toggle span { display:none; }
+</style>

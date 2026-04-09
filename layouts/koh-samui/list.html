@@ -79,42 +79,6 @@
     <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
     <div class="sidebar-header" id="filter-btns"></div>
     <div id="poi-list"></div>
-    <div class="add-location" onclick="document.getElementById('add-modal').style.display='flex'">
-      + Add a location
-    </div>
-  </div>
-</div>
-
-<!-- Add location modal -->
-<div id="add-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:white;border-radius:12px;padding:1.5rem;width:90%;max-width:420px;">
-    <h3 style="margin-bottom:1rem;">Add a Location</h3>
-    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Name</label>
-    <input id="add-name" type="text" placeholder="Restaurant, Beach..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;">
-    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Category</label>
-    <select id="add-cat" style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;">
-      <option>Beach</option><option>Restaurant</option><option>Activity</option><option>Hotel</option><option>Shopping</option><option>Other</option>
-    </select>
-    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Google Maps URL (paste to auto-extract coords)</label>
-    <input id="add-gmaps" type="text" placeholder="https://maps.google.com/..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.75rem;font-size:0.85rem;" oninput="extractCoords()">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
-      <div>
-        <label style="display:block;margin-bottom:0.25rem;font-size:0.8rem;font-weight:500;">Latitude</label>
-        <input id="add-lat" type="number" step="0.0001" placeholder="9.5..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;font-size:0.85rem;">
-      </div>
-      <div>
-        <label style="display:block;margin-bottom:0.25rem;font-size:0.8rem;font-weight:500;">Longitude</label>
-        <input id="add-lng" type="number" step="0.0001" placeholder="100.0..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;font-size:0.85rem;">
-      </div>
-    </div>
-    <label style="display:block;margin-bottom:0.5rem;font-size:0.85rem;font-weight:500;">Notes (optional)</label>
-    <textarea id="add-notes" rows="2" placeholder="Tips, hours, price range..." style="width:100%;padding:0.5rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:1rem;font-size:0.85rem;resize:vertical;"></textarea>
-    <div style="display:flex;gap:0.5rem;justify-content:flex-end;">
-      <button onclick="document.getElementById('add-modal').style.display='none'" style="padding:0.5rem 1rem;border:1.5px solid #ddd;border-radius:6px;background:white;cursor:pointer;">Cancel</button>
-      <button onclick="submitLocation()" style="padding:0.5rem 1rem;border:none;border-radius:6px;background:#1a3a5c;color:white;cursor:pointer;font-weight:600;">Add to Map</button>
-    </div>
-    <p style="margin-top:0.75rem;font-size:0.75rem;color:#888;">📋 Copy the JSON output to add it permanently to the GeoJSON file.</p>
-    <pre id="add-output" style="display:none;background:#f5f5f5;border-radius:6px;padding:0.75rem;font-size:0.75rem;margin-top:0.5rem;overflow-x:auto;"></pre>
   </div>
 </div>
 
@@ -129,6 +93,7 @@
     <button onclick="document.getElementById('paywall-modal').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:0.85rem;">Maybe later</button>
   </div>
 </div>
+{{ partial "contact-form.html" . }}
 {{ end }}
 
 {{ define "scripts" }}
@@ -279,39 +244,6 @@ function setupFilters(pois) {
     document.getElementById('paywall-modal').style.display = 'flex';
   };
   container.appendChild(vipBtn);
-}
-
-// Extract coords from Google Maps URL
-function extractCoords() {
-  const url = document.getElementById('add-gmaps').value;
-  const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-  if (match) {
-    document.getElementById('add-lat').value = match[1];
-    document.getElementById('add-lng').value = match[2];
-  }
-}
-
-function submitLocation() {
-  const name = document.getElementById('add-name').value.trim();
-  const cat = document.getElementById('add-cat').value;
-  const lat = parseFloat(document.getElementById('add-lat').value);
-  const lng = parseFloat(document.getElementById('add-lng').value);
-  const notes = document.getElementById('add-notes').value.trim();
-  if (!name || isNaN(lat) || isNaN(lng)) { alert('Name and coordinates are required.'); return; }
-  const feature = {
-    "type": "Feature",
-    "properties": { "name": name, "category": cat, "notes": notes },
-    "geometry": { "type": "Point", "coordinates": [lng, lat] }
-  };
-  const out = document.getElementById('add-output');
-  out.textContent = JSON.stringify(feature, null, 2);
-  out.style.display = 'block';
-  // Also add to map temporarily
-  feature._id = 'temp-' + Date.now();
-  allPOIs.push(feature);
-  updateMarkers();
-  renderSidebar();
-  map.flyTo([lat, lng], 14);
 }
 
 // Load data

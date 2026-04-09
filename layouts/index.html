@@ -1,16 +1,98 @@
 {{ define "main" }}
-<div style="padding: 3rem 0; text-align: center;">
-  <h1 style="font-size: 2rem; margin-bottom: 1rem;">Southeast Asia Travel Guide</h1>
-  <p style="color: #666; margin-bottom: 2rem;">Curated locations, maps, and tips for independent travelers.</p>
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-    <a href="{{ "/koh-samui/" | relURL }}" style="background: #1a3a5c; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; flex-direction: column; align-items: flex-start; max-width: 220px;">
-      <span style="font-size: 1.1rem; margin-bottom: 0.25rem;">🏝️ Koh Samui</span>
-      <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.85;">Best spots — beaches, restaurants, activities & more.</span>
-    </a>
-    <a href="{{ "/hoi-an/" | relURL }}" style="background: #7c3d12; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; flex-direction: column; align-items: flex-start; max-width: 220px;">
-      <span style="font-size: 1.1rem; margin-bottom: 0.25rem;">🏮 Hoi An</span>
-      <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.85;">An Hoi peninsula — restaurants, cafés, pagodas and river views.</span>
-    </a>
+
+<!-- Hero -->
+<section style="background:linear-gradient(135deg,#1a3a5c 0%,#0ea5e9 100%);color:white;padding:4rem 1.5rem 3rem;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🗺️</div>
+    <h1 style="font-size:2rem;font-weight:800;margin-bottom:0.75rem;line-height:1.2;">Curated Travel Maps<br>by Girard-Davila</h1>
+    <p style="font-size:1.05rem;opacity:0.9;line-height:1.6;margin-bottom:2rem;">Hand-picked spots from real stays. Restaurants, beaches, activities — with GPS precision, opening hours, and honest notes.</p>
+    <a href="#maps" style="background:white;color:#1a3a5c;padding:0.75rem 2rem;border-radius:24px;font-weight:700;text-decoration:none;font-size:0.95rem;">Explore Maps ↓</a>
   </div>
-</div>
+</section>
+
+<!-- Maps -->
+<section id="maps" style="padding:3rem 1.5rem;max-width:800px;margin:0 auto;">
+  <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:0.4rem;color:#1a3a5c;">Available Destinations</h2>
+  <p style="color:#666;margin-bottom:2rem;font-size:0.92rem;">Each map is built from personal travel experience — not tourist brochures.</p>
+
+  <div style="display:flex;flex-direction:column;gap:1.25rem;">
+
+    <!-- Koh Samui -->
+    <a href="/koh-samui/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#e5e7eb'">
+      <div style="font-size:2.5rem;flex-shrink:0;">🏝️</div>
+      <div>
+        <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">Koh Samui, Thailand</div>
+        <div style="font-size:0.85rem;color:#555;line-height:1.5;">Beaches, spas, restaurants and activities across the island — from Lamai to Chaweng and Maenam. Includes GPS-verified coordinates, opening hours, and prices.</div>
+        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span style="font-size:0.72rem;background:#e0f2fe;color:#0369a1;padding:0.2rem 0.5rem;border-radius:20px;">🏖️ Beaches</span>
+          <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">🎯 Activities</span>
+          <span style="font-size:0.72rem;background:#fff7ed;color:#9a3412;padding:0.2rem 0.5rem;border-radius:20px;">🍽️ Restaurants</span>
+          <span style="font-size:0.72rem;background:#faf5ff;color:#6b21a8;padding:0.2rem 0.5rem;border-radius:20px;">🔒 VIP Spots</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Hoi An -->
+    <a href="/hoi-an/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#e5e7eb'">
+      <div style="font-size:2.5rem;flex-shrink:0;">🏮</div>
+      <div>
+        <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">Hoi An, Vietnam</div>
+        <div style="font-size:0.85rem;color:#555;line-height:1.5;">The An Hoi peninsula — curated restaurants, cafés, the local market, a riverfront pagoda, and the Na Mom Homestay area. Compact, walkable, and local.</div>
+        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span style="font-size:0.72rem;background:#fff7ed;color:#9a3412;padding:0.2rem 0.5rem;border-radius:20px;">🍽️ Restaurants</span>
+          <span style="font-size:0.72rem;background:#fefce8;color:#854d0e;padding:0.2rem 0.5rem;border-radius:20px;">☕ Cafés</span>
+          <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">🎯 Activities</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Custom Map CTA -->
+<section style="background:#f8fafc;border-top:1px solid #e5e7eb;padding:3rem 1.5rem;">
+  <div style="max-width:640px;margin:0 auto;text-align:center;">
+    <div style="font-size:2rem;margin-bottom:0.75rem;">📬</div>
+    <h2 style="font-size:1.35rem;font-weight:700;color:#1a3a5c;margin-bottom:0.75rem;">Planning a trip somewhere?</h2>
+    <p style="color:#555;line-height:1.6;margin-bottom:1.5rem;font-size:0.95rem;">We build custom travel maps based on real family travel experience across South East Asia and Europe — hand-picked restaurants, hidden spots, practical tips, and GPS-precise locations. <strong>No generic tourist lists.</strong></p>
+    <p style="color:#555;line-height:1.6;margin-bottom:2rem;font-size:0.95rem;">Tell us your destination and travel style. We'll put together a personalized map for your trip.</p>
+    <a href="#contact-form-float" onclick="document.getElementById('contact-form-float').classList.add('open');return false;" style="background:#1a3a5c;color:white;padding:0.75rem 2rem;border-radius:24px;font-weight:700;text-decoration:none;font-size:0.95rem;display:inline-block;">Request a Custom Map →</a>
+  </div>
+</section>
+
+<!-- VIP section -->
+<section style="background:linear-gradient(135deg,#78350f 0%,#f59e0b 100%);color:white;padding:3rem 1.5rem;">
+  <div style="max-width:640px;margin:0 auto;">
+    <div style="font-size:2rem;margin-bottom:0.75rem;text-align:center;">🔒</div>
+    <h2 style="font-size:1.35rem;font-weight:700;margin-bottom:1rem;text-align:center;">What are VIP spots?</h2>
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;">
+      <p style="line-height:1.7;font-size:0.93rem;margin:0;">Some spots on our maps are reserved for VIP members — hidden gems, private beaches, off-menu restaurants, and insider tips that we don't publish openly. These appear as 🔒 locked cards in the sidebar.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+      <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:1rem;font-size:0.85rem;">
+        <div style="font-weight:700;margin-bottom:0.4rem;">After unlocking you get:</div>
+        <ul style="margin:0;padding-left:1.1rem;line-height:1.8;">
+          <li>Full name & GPS location</li>
+          <li>Notes & insider tips</li>
+          <li>Best time to visit</li>
+          <li>Access to all future VIP spots</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:1rem;font-size:0.85rem;">
+        <div style="font-weight:700;margin-bottom:0.4rem;">€4.99 / month includes:</div>
+        <ul style="margin:0;padding-left:1.1rem;line-height:1.8;">
+          <li>All current destinations</li>
+          <li>New maps as we travel</li>
+          <li>Priority custom map requests</li>
+          <li>Cancel any time</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a href="#" style="background:white;color:#78350f;padding:0.75rem 2rem;border-radius:24px;font-weight:700;text-decoration:none;font-size:0.95rem;display:inline-block;">Unlock VIP Access — €4.99/mo</a>
+    </div>
+  </div>
+</section>
+
+{{ partial "contact-form.html" . }}
 {{ end }}
