@@ -1,9 +1,15 @@
 baseURL = "https://travels.girard-davila.net/"
 languageCode = "en-us"
-title = "Travel Guide"
+title = "Travels — Curated Maps by Girard-Davila"
 canonifyURLs = false
 
+[params]
+  description = "Hand-picked travel maps from real family experiences across South East Asia and Europe. GPS-precise spots, honest notes, opening hours."
+  author = "Girard-Davila"
+  siteImage = "/images/og-travels.png"
+  twitterHandle = "@alxgirard"
+
 [outputs]
-  home = ["HTML"]
-  page = ["HTML"]
+  home = ["HTML", "RSS"]
   section = ["HTML"]
+  page = ["HTML"]

@@ -3,8 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }} — Travel Guide</title>
-  <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+
+  <!-- Primary Meta -->
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/og-travels.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-travels.png">
+
+  <!-- Structured Data -->
+  {{ if .IsHome }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "description": "{{ .Site.Params.description }}",
+    "author": { "@type": "Person", "name": "{{ .Site.Params.author }}" }
+  }
+  </script>
+  {{ end }}
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,13 +55,14 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="{{ "/" | relURL }}">🗺️ Travel Guide</a>
+    <a href="{{ "/" | relURL }}">🗺️ Girard-Davila Travels</a>
     <nav class="site-nav">
       <a href="{{ "/koh-samui/" | relURL }}">Koh Samui</a>
+      <a href="{{ "/hoi-an/" | relURL }}">Hoi An</a>
     </nav>
   </header>
   <main>{{ block "main" . }}{{ end }}</main>
-  <footer>Built with Hugo · Open data · <a href="https://www.reddit.com/r/kohsamui/" target="_blank">/r/kohsamui</a></footer>
+  <footer>Built with Hugo · Open data · <a href="https://github.com/alx/travel-guide" target="_blank">GitHub</a></footer>
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>
