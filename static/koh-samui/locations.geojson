@@ -226,6 +226,25 @@
           9.536
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tamarind Springs Forest Spa",
+        "category": "Activity",
+        "address": "265/1 Thong Takian, Moo 4, Tambon Maret, Koh Samui",
+        "notes": "Koh Samui's first day spa (est. 1998). Jungle setting with natural granite boulders, herbal steam caves, plunge pools, and massage treatments.",
+        "url": "https://www.tamarindsprings.com/en/",
+        "hours": "09:00–18:00 daily",
+        "price": "from ฿1,500 (Steam and Dream package)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.05756,
+          9.473857
+        ]
+      }
     }
   ]
 }

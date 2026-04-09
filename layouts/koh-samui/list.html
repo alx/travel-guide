@@ -206,6 +206,8 @@ function renderSidebar() {
         <h3>${p.name}</h3>
         ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
         ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
+        ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours}</div>` : ''}
+        ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
         <div class="poi-actions">
           <a href="https://www.google.com/maps/search/?api=1&query=${f.geometry.coordinates[1]},${f.geometry.coordinates[0]}" target="_blank">Open in Maps ↗</a>
           ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
@@ -241,7 +243,7 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.premium ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${p.notes && !p.premium ? '<br><em>' + p.notes + '</em>' : ''}`);
+      .bindPopup(`<b>${p.premium ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${p.notes && !p.premium ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
     if (!p.premium) {
       marker.on('click', () => focusPOI(f));
     } else {
