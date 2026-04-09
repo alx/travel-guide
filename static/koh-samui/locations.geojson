@@ -230,6 +230,25 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Karma Two Palms Beach Club",
+        "category": "Beach",
+        "address": "Karma Panalee, Maenam, Koh Samui",
+        "notes": "Beachfront club at Karma Panalee resort. Infinity pool aligned with the Gulf of Thailand, wood-fired pizza oven, Thai restaurant, games room, watersports, sun loungers. Known for Balearic beach music and live DJ events. Opened January 10, 2025.",
+        "url": "https://karmacommunity.karmagroup.com/experience-karma/two-palms-samui-beach-club-magic/",
+        "hours": "Open daily (hours vary by season)",
+        "price": "À la carte dining and drinks; day-bed/sun lounger hire available"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9405258,
+          9.5781703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Tamarind Springs Forest Spa",
         "category": "Activity",
         "address": "265/1 Thong Takian, Moo 4, Tambon Maret, Koh Samui",
