@@ -212,34 +212,169 @@ window.tbShareURL = function () {
 /* ── Load custom GeoJSON / TopoJSON ── */
 window.tbOpenLoad = function () {
   closeAllModals();
+  const pat = localStorage.getItem('github_pat') || '';
   const overlay = document.createElement('div');
   overlay.className = 'tb-modal-overlay';
   overlay.innerHTML = `
-    <div class="tb-modal">
+    <div class="tb-modal" style="max-width:500px;">
       <h3>Load custom map data <button class="tb-modal-close" onclick="this.closest('.tb-modal-overlay').remove()">✕</button></h3>
-      <p style="font-size:0.82rem;color:#555;margin-bottom:1rem;">Load your own <strong>GeoJSON</strong> or <strong>TopoJSON</strong> (.topojson / .json) file to overlay on this map.</p>
 
-      <!-- File upload -->
-      <label class="tb-label">From file:</label>
-      <input type="file" accept=".geojson,.json,.topojson" style="font-size:0.82rem;margin-bottom:0.75rem;" onchange="tbLoadFile(this)">
-
-      <hr class="tb-divider">
-
-      <!-- URL load -->
-      <label class="tb-label">From URL (GitHub raw, S3, etc.):</label>
-      <div style="display:flex;gap:0.4rem;margin-bottom:0.75rem;">
-        <input class="tb-input" id="tb-url-input" type="url" placeholder="https://raw.githubusercontent.com/…/file.geojson" style="flex:1;">
-        <button class="tb-btn-primary" onclick="tbLoadURL()">Load</button>
+      <div class="tb-tabs">
+        <button class="tb-tab active" onclick="tbLoadTab('file',this)">📁 File</button>
+        <button class="tb-tab" onclick="tbLoadTab('url',this)">🔗 URL</button>
+        <button class="tb-tab" onclick="tbLoadTab('forks',this);tbLoadForks()">🐙 GitHub Forks</button>
       </div>
-      <p id="tb-load-status" class="tb-status"></p>
 
-      <hr class="tb-divider">
-      <p style="font-size:0.78rem;color:#888;line-height:1.5;">
-        Loaded data is overlaid on the existing map. Public GitHub files: use the <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">raw.githubusercontent.com</code> URL.
-      </p>
+      <!-- File tab -->
+      <div id="tb-load-file">
+        <p style="font-size:0.82rem;color:#555;margin-bottom:0.75rem;">Upload a <strong>GeoJSON</strong> or <strong>TopoJSON</strong> file from your device.</p>
+        <input type="file" accept=".geojson,.json,.topojson" style="font-size:0.82rem;" onchange="tbLoadFile(this)">
+      </div>
+
+      <!-- URL tab -->
+      <div id="tb-load-url" style="display:none;">
+        <p style="font-size:0.82rem;color:#555;margin-bottom:0.75rem;">Load from any public URL — GitHub raw, S3, Gist, etc.</p>
+        <div style="display:flex;gap:0.4rem;margin-bottom:0.5rem;">
+          <input class="tb-input" id="tb-url-input" type="url" placeholder="https://raw.githubusercontent.com/…/file.geojson" style="flex:1;">
+          <button class="tb-btn-primary" onclick="tbLoadURL()">Load</button>
+        </div>
+        <p id="tb-load-status" class="tb-status"></p>
+      </div>
+
+      <!-- GitHub Forks tab -->
+      <div id="tb-load-forks" style="display:none;">
+        <p style="font-size:0.82rem;color:#555;margin-bottom:0.75rem;">
+          Browse public forks of <strong>alx/travel-guide</strong> and load their GeoJSON/TopoJSON files.
+          ${pat ? '' : '<br><span style="color:#888;">Sign in via 🐙 GitHub for higher rate limits.</span>'}
+        </p>
+        <div id="tb-forks-list" style="max-height:360px;overflow-y:auto;">
+          <p style="color:#888;font-size:0.82rem;text-align:center;padding:1rem;">⏳ Loading forks…</p>
+        </div>
+        <p id="tb-forks-status" class="tb-status"></p>
+      </div>
     </div>`;
   document.body.appendChild(overlay);
   overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+};
+
+window.tbLoadTab = function(tab, btn) {
+  ['file','url','forks'].forEach(t => {
+    document.getElementById('tb-load-' + t).style.display = t === tab ? '' : 'none';
+  });
+  document.querySelectorAll('.tb-modal .tb-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+};
+
+/* ── Fetch forks and their GeoJSON files ── */
+window.tbLoadForks = async function() {
+  const list = document.getElementById('tb-forks-list');
+  const status = document.getElementById('tb-forks-status');
+  if (!list) return;
+
+  const pat = localStorage.getItem('github_pat') || '';
+  const headers = pat
+    ? { Authorization: 'Bearer ' + pat, 'X-GitHub-Api-Version': '2022-11-28' }
+    : { 'X-GitHub-Api-Version': '2022-11-28' };
+
+  try {
+    // Fetch all forks (up to 100)
+    const r = await fetch('https://api.github.com/repos/alx/travel-guide/forks?per_page=100&sort=newest', { headers });
+    if (r.status === 403) { list.innerHTML = '<p style="color:#888;font-size:0.82rem;padding:0.5rem;">⚠️ GitHub rate limit hit. Sign in via 🐙 GitHub for more requests.</p>'; return; }
+    const forks = await r.json();
+
+    if (!Array.isArray(forks) || forks.length === 0) {
+      list.innerHTML = '<p style="color:#888;font-size:0.82rem;padding:0.5rem;">No public forks found yet. Be the first to fork <a href="https://github.com/alx/travel-guide" target="_blank">alx/travel-guide</a>!</p>';
+      return;
+    }
+
+    list.innerHTML = '';
+    forks.forEach(fork => {
+      const item = document.createElement('div');
+      item.style.cssText = 'border:1.5px solid #e5e7eb;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;';
+      item.innerHTML = `
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+          <img src="${fork.owner.avatar_url}" width="22" height="22" style="border-radius:50%;">
+          <strong style="font-size:0.85rem;color:#1a3a5c;">
+            <a href="${fork.html_url}" target="_blank" style="color:inherit;text-decoration:none;">${fork.full_name}</a>
+          </strong>
+          <span style="font-size:0.72rem;color:#888;margin-left:auto;">${new Date(fork.updated_at).toLocaleDateString()}</span>
+        </div>
+        <div style="display:flex;gap:0.4rem;align-items:center;">
+          <select id="branch-${fork.id}" class="tb-input" style="flex:1;padding:0.3rem 0.5rem;font-size:0.8rem;" onchange="tbForkBranchChange('${fork.owner.login}','travel-guide',this.value,'files-${fork.id}')">
+            <option value="">⏳ Loading branches…</option>
+          </select>
+        </div>
+        <div id="files-${fork.id}" style="margin-top:0.5rem;"></div>`;
+      list.appendChild(item);
+
+      // Load branches for this fork async
+      tbLoadForkBranches(fork.owner.login, 'travel-guide', fork.id, headers);
+    });
+
+    status.textContent = `${forks.length} fork${forks.length === 1 ? '' : 's'} found.`;
+  } catch (err) {
+    list.innerHTML = '<p style="color:#888;font-size:0.82rem;padding:0.5rem;">❌ Failed to load forks: ' + err.message + '</p>';
+  }
+};
+
+window.tbLoadForkBranches = async function(owner, repo, forkId, headers) {
+  const select = document.getElementById('branch-' + forkId);
+  if (!select) return;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/branches?per_page=30`, { headers });
+    const branches = await r.json();
+    if (!Array.isArray(branches)) { select.innerHTML = '<option>No branches</option>'; return; }
+    select.innerHTML = '<option value="">— pick a branch —</option>'
+      + branches.map(b => `<option value="${b.name}"${b.name === 'main' || b.name === 'master' ? ' selected' : ''}>${b.name}</option>`).join('');
+    // Auto-load default branch
+    const def = branches.find(b => b.name === 'main' || b.name === 'master') || branches[0];
+    if (def) tbForkBranchChange(owner, repo, def.name, 'files-' + forkId);
+  } catch {
+    select.innerHTML = '<option>Error loading</option>';
+  }
+};
+
+window.tbForkBranchChange = async function(owner, repo, branch, filesContainerId) {
+  const container = document.getElementById(filesContainerId);
+  if (!container || !branch) return;
+  container.innerHTML = '<span style="font-size:0.75rem;color:#888;">⏳ Scanning for GeoJSON…</span>';
+
+  const pat = localStorage.getItem('github_pat') || '';
+  const headers = pat
+    ? { Authorization: 'Bearer ' + pat, 'X-GitHub-Api-Version': '2022-11-28' }
+    : { 'X-GitHub-Api-Version': '2022-11-28' };
+
+  try {
+    // Get the full tree recursively
+    const refR = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/heads/${encodeURIComponent(branch)}`, { headers });
+    const refData = await refR.json();
+    const sha = refData.object?.sha;
+    if (!sha) { container.innerHTML = '<span style="font-size:0.75rem;color:#888;">Branch not found.</span>'; return; }
+
+    const treeR = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/${sha}?recursive=1`, { headers });
+    const treeData = await treeR.json();
+
+    const geoFiles = (treeData.tree || []).filter(f =>
+      f.type === 'blob' && /\.(geo)?json|\.topojson$/i.test(f.path) && f.path.startsWith('static/')
+    );
+
+    if (!geoFiles.length) {
+      container.innerHTML = '<span style="font-size:0.75rem;color:#888;">No GeoJSON/TopoJSON files in static/.</span>';
+      return;
+    }
+
+    container.innerHTML = geoFiles.map(f => {
+      const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${f.path}`;
+      const label = f.path.replace('static/', '').replace('/locations.geojson', '').replace(/\.(geo)?json|\.topojson$/i, '');
+      return `<div class="tb-repo-item" style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0.6rem;" onclick="tbLoadURL_direct('${rawUrl}','${label}')">
+        <span style="font-size:1rem;">📄</span>
+        <span style="font-size:0.8rem;font-weight:500;flex:1;">${label}</span>
+        <span style="font-size:0.72rem;color:#888;">${f.path.split('/').pop()}</span>
+      </div>`;
+    }).join('');
+  } catch (err) {
+    container.innerHTML = '<span style="font-size:0.75rem;color:#c00;">❌ ' + err.message + '</span>';
+  }
 };
 
 window.tbLoadFile = function(input) {
