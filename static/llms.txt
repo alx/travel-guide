@@ -1,0 +1,47 @@
+# Travels — Curated Maps by Girard-Davila
+# https://travels.girard-davila.net/
+# Format: https://llmstxt.org
+
+> Hand-picked travel maps from real family experiences across South East Asia and Europe. GPS-precise spots, honest notes, opening hours and prices. No generic tourist lists.
+
+## About
+
+Girard-Davila Travels is a curated travel map project built from personal travel experience. Each destination map contains GPS-verified POIs with category filters, opening hours, prices and insider notes. Maps are built with Hugo, Leaflet.js and GeoJSON, deployed on GitHub Pages.
+
+## Destinations
+
+- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/): Beaches, spas, restaurants and activities across the island — Lamai, Chaweng, Maenam. Includes Tamarind Springs Forest Spa, Karma Two Palms Beach Club, local gyms and padel courts.
+- [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/): An Hoi peninsula — restaurants, cafés, local market, Buddhist pagoda and river viewpoints around the Na Mom Homestay area.
+
+## Features
+
+- Interactive maps powered by Leaflet.js and OpenStreetMap tiles
+- Category filters: Beach, Restaurant, Café, Activity, Hotel, Shopping
+- URL filter parameters (e.g. ?filter=Beach) for shareable filtered views
+- Opening hours and price information on enhanced POIs
+- VIP locked spots (🔒) for members — hidden gems not published openly
+- Floating contact form on all pages (Formspree)
+
+## VIP Access
+
+Some POIs are reserved for VIP members (€4.99/month). These appear as locked cards in the sidebar. After unlocking via Stripe, members get full GPS coordinates, insider notes and access to all future VIP spots across all destinations.
+
+## Custom Maps
+
+Personalised travel maps can be requested via the contact form. Maps are built from real Girard-Davila family travel experience — not tourist brochures. Destinations covered include South East Asia (Thailand, Vietnam) and Europe.
+
+## Contact
+
+- Website: https://travels.girard-davila.net/
+- Contact form: https://travels.girard-davila.net/#contact
+- GitHub: https://github.com/alx/travel-guide
+- Parent site: https://girard-davila.net/
+
+## Technical
+
+- Built with: Hugo (static site generator)
+- Maps: Leaflet.js + OpenStreetMap
+- Data: GeoJSON (static/koh-samui/locations.geojson, static/hoi-an/locations.geojson)
+- Geocoding: LocationIQ forward geocoding API
+- Hosting: GitHub Pages (travels.girard-davila.net)
+- Source: https://github.com/alx/travel-guide
