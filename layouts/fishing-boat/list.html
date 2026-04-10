@@ -123,6 +123,11 @@ const CAT_COLORS = {
 };
 
 let map, routeLayers = [], waypointMarkers = [], allWaypoints = [], activeDay = 'all';
+// Expose waypoints as allPOIs for map-toolbar.html compatibility
+Object.defineProperty(window, 'allPOIs', { get: () => allWaypoints.map(w => ({
+  geometry: { type: 'Point', coordinates: [w.lng ?? w.geometry?.coordinates[0], w.lat ?? w.geometry?.coordinates[1]] },
+  properties: { category: w.type || w.properties?.type || 'Other' }
+})), configurable: true });
 
 map = L.map('map').setView([9.62, 100.06], 11);
 window._leafletMap = map; // expose for map-toolbar.html (window.map is the <div>)

@@ -136,6 +136,8 @@ const CATEGORY_ICONS = {
 };
 
 let map, allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', activeCard = null;
+// Expose allPOIs to map-toolbar.html via a live getter (local let is not on window)
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
 function getVIP() { return window.isVIP === true; }
 
 map = L.map('map').setView([9.5018, 100.0136], 12);

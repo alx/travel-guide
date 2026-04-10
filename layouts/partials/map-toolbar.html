@@ -916,139 +916,102 @@ async function captureMapScreenshot() {
   return canvas.toDataURL('image/png');
 }
 
-/** Build the 9:16 share card. mapDataUrl is optional — shown as top section. */
+/**
+ * Build the 9:16 share card (540×960 px).
+ * Layout: map fills most of the card with title + URL overlaid at the bottom.
+ * mapDataUrl is optional — solid gradient background used as fallback.
+ */
 function buildShareCard(mapDataUrl) {
-  const cfg    = window.MAP_CONFIG || {};
+  const cfg      = window.MAP_CONFIG || {};
   const rawTitle = cfg.title || document.title;
-  const title  = rawTitle.replace(/\s*[—–-]\s*Girard.Davila Travels$/i, '').trim();
-  const url    = location.origin + (cfg.embedPath || location.pathname);
-  const pois   = (window.allPOIs || []).filter(f => !f.properties?.premium);
+  const title    = rawTitle.replace(/\s*[—–-]\s*Girard.Davila Travels$/i, '').trim();
+  const siteUrl  = location.origin.replace('https://', '');
 
   const destMeta = {
-    'koh samui': { emoji: '🏝️', sub: 'Thailand 🇹🇭' },
-    'hoi an':    { emoji: '🏮', sub: 'Vietnam 🇻🇳' },
-    'fishing':   { emoji: '⚓', sub: 'Gulf of Thailand 🇹🇭' },
+    'koh samui': { emoji: '🏝️', sub: 'Thailand' },
+    'hoi an':    { emoji: '🏮', sub: 'Vietnam' },
+    'fishing':   { emoji: '⚓', sub: 'Gulf of Thailand' },
   };
   const lc   = title.toLowerCase();
   const meta = Object.entries(destMeta).find(([k]) => lc.includes(k))?.[1]
              || { emoji: '🗺️', sub: '' };
-
-  const CAT_ICONS = {
-    Beach:'🏖️', Restaurant:'🍽️', Activity:'🎯', Hotel:'🏨',
-    Shopping:'🛍️', Cafe:'☕', Port:'⚓', Fishing:'🎣',
-    Anchorage:'🌙', Hazard:'⚠️', Service:'⛽', Other:'📍', VIP:'🔒'
-  };
-  const CAT_COLORS = {
-    Beach:'#0ea5e9', Restaurant:'#f97316', Activity:'#22c55e', Hotel:'#8b5cf6',
-    Shopping:'#ec4899', Cafe:'#f59e0b', Port:'#f97316', Fishing:'#0ea5e9',
-    Anchorage:'#6366f1', Hazard:'#ef4444', Service:'#f59e0b', Other:'#6b7280'
-  };
-
-  const cats    = [...new Set(pois.map(f => f.properties?.category || 'Other'))];
-  const top     = pois.slice(0, 6);
-  const poiRows = top.map(f => {
-    const p   = f.properties || {};
-    const cat = p.category || 'Other';
-    const ic  = CAT_ICONS[cat] || '📍';
-    const col = CAT_COLORS[cat] || '#6b7280';
-    return `<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
-      <span style="font-size:18px;flex-shrink:0;">${ic}</span>
-      <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.name || '—'}</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:1px;">${cat}${p.hours ? ' · ' + p.hours.split('·')[0].trim() : ''}</div>
-      </div>
-      <span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;background:${col}33;color:${col};flex-shrink:0;">${cat}</span>
-    </div>`;
-  }).join('');
-
-  const chips = cats.slice(0, 4).map(c =>
-    `<span style="font-size:10px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 9px;color:rgba(255,255,255,0.85);">${CAT_ICONS[c]||'📍'} ${c}</span>`
-  ).join('');
-
-  // ── Card dimensions: 540×960 (9:16) ──
-  // Map section: 310px  ← live screenshot
-  // Hero:        ~155px
-  // POI list:    flex-1 (fills remaining space)
-  // Stats bar:   65px
-  // URL footer:  80px
-  const MAP_H = mapDataUrl ? 310 : 0;
 
   const card = document.createElement('div');
   card.id = 'tb-share-card';
   card.style.cssText = [
     'position:fixed', 'top:0', 'left:0', 'z-index:99998',
     'width:540px', 'height:960px',
-    'background:linear-gradient(160deg,#0b1f35 0%,#1a3a5c 50%,#0e4f7a 100%)',
+    'background:#0b1f35',
     'color:#fff',
     'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',
     'display:flex', 'flex-direction:column',
     'overflow:hidden', 'box-sizing:border-box',
   ].join(';');
 
-  card.innerHTML = `
-    ${mapDataUrl ? `
-    <!-- Map screenshot section -->
-    <div style="position:relative;width:540px;height:${MAP_H}px;flex-shrink:0;overflow:hidden;">
-      <img src="${mapDataUrl}" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" crossorigin="anonymous">
-      <!-- Brand bar overlaid on map -->
-      <div style="position:absolute;top:0;left:0;right:0;padding:16px 20px;background:linear-gradient(to bottom,rgba(11,31,53,0.85),transparent);display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.9);">🗺️ Girard-Davila Travels</span>
-        <span style="font-size:10px;color:rgba(255,255,255,0.55);">${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
+  // ── Map section fills full card, labels overlaid ─────────────────
+  if (mapDataUrl) {
+    card.innerHTML = `
+      <!-- Full-card map image -->
+      <div style="position:absolute;inset:0;">
+        <img src="${mapDataUrl}"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       </div>
-      <!-- Gradient fade map → card background -->
-      <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(transparent,#0b1f35);"></div>
-    </div>
-    ` : `
-    <!-- Fallback brand bar (no map) -->
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 32px 0;flex-shrink:0;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.6;">🗺️ Girard-Davila Travels</span>
-      <span style="font-size:10px;opacity:0.4;">${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
-    </div>
-    `}
 
-    <!-- Hero: emoji, title, subtitle, chips -->
-    <div style="padding:${mapDataUrl?'8px':'20px'} 28px 16px;flex-shrink:0;">
-      ${!mapDataUrl ? `<div style="font-size:60px;line-height:1;margin-bottom:10px;">${meta.emoji}</div>` : ''}
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
-        ${mapDataUrl ? `<span style="font-size:28px;">${meta.emoji}</span>` : ''}
-        <div style="font-size:${mapDataUrl?'28':'32'}px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">${title}</div>
+      <!-- Dark vignette at top for brand -->
+      <div style="position:absolute;top:0;left:0;right:0;height:110px;
+        background:linear-gradient(to bottom,rgba(5,15,30,0.82),transparent);"></div>
+
+      <!-- Brand pill top-left -->
+      <div style="position:absolute;top:22px;left:22px;
+        background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);
+        border:1px solid rgba(255,255,255,0.18);border-radius:30px;
+        padding:6px 14px;font-size:11px;font-weight:700;
+        letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.92);">
+        🗺️ Girard-Davila Travels
       </div>
-      ${meta.sub ? `<div style="font-size:13px;opacity:0.6;margin-bottom:10px;">${meta.sub}</div>` : '<div style="margin-bottom:10px;"></div>'}
-      <div style="display:flex;flex-wrap:wrap;gap:5px;">${chips}</div>
-    </div>
 
-    <!-- Divider -->
-    <div style="height:1px;background:rgba(255,255,255,0.1);margin:0 28px;flex-shrink:0;"></div>
+      <!-- Dark vignette at bottom for title + URL -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:300px;
+        background:linear-gradient(transparent,rgba(5,15,30,0.96) 55%,#050f1e 100%);"></div>
 
-    <!-- POI list -->
-    <div style="flex:1;overflow:hidden;padding:0 28px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;padding:12px 0 2px;">Featured spots</div>
-      ${poiRows || '<div style="opacity:0.35;font-size:13px;padding:14px 0;">No spots loaded</div>'}
-    </div>
-
-    <!-- Stats bar -->
-    <div style="padding:12px 28px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);flex-shrink:0;">
-      <div style="text-align:center;">
-        <div style="font-size:20px;font-weight:800;">${pois.length}</div>
-        <div style="font-size:9px;opacity:0.45;text-transform:uppercase;letter-spacing:0.08em;">spots</div>
+      <!-- Title block bottom -->
+      <div style="position:absolute;bottom:90px;left:0;right:0;padding:0 28px;">
+        <div style="font-size:13px;opacity:0.65;margin-bottom:6px;letter-spacing:0.04em;">
+          ${meta.emoji} ${meta.sub}
+        </div>
+        <div style="font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">
+          ${title}
+        </div>
       </div>
-      <div style="width:1px;height:28px;background:rgba(255,255,255,0.12);"></div>
-      <div style="text-align:center;">
-        <div style="font-size:20px;font-weight:800;">${cats.length}</div>
-        <div style="font-size:9px;opacity:0.45;text-transform:uppercase;letter-spacing:0.08em;">categories</div>
-      </div>
-      <div style="flex:1;"></div>
-      <div style="background:rgba(245,158,11,0.18);border:1.5px solid rgba(245,158,11,0.45);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;color:#f59e0b;">🔒 VIP spots</div>
-    </div>
 
-    <!-- URL footer -->
-    <div style="background:rgba(0,0,0,0.35);padding:16px 28px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
-      <div style="width:3px;height:26px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
-      <div>
-        <div style="font-size:12px;font-weight:700;opacity:0.9;">${url.replace('https://','')}</div>
-        <div style="font-size:9px;opacity:0.4;margin-top:2px;">Scan · Explore · Share</div>
+      <!-- URL footer -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:80px;
+        display:flex;align-items:center;padding:0 28px;gap:12px;
+        border-top:1px solid rgba(255,255,255,0.1);">
+        <div style="width:3px;height:28px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
+        <div style="font-size:14px;font-weight:700;opacity:0.92;">${siteUrl}</div>
+      </div>`;
+
+  } else {
+    // ── Fallback: no map — gradient card ─────────────────────────────
+    card.style.background = 'linear-gradient(160deg,#0b1f35 0%,#1a3a5c 60%,#0e4f7a 100%)';
+    card.innerHTML = `
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;
+        justify-content:center;padding:40px 32px;text-align:center;">
+        <div style="font-size:80px;line-height:1;margin-bottom:20px;">${meta.emoji}</div>
+        <div style="font-size:13px;opacity:0.6;margin-bottom:8px;letter-spacing:0.04em;">
+          🗺️ Girard-Davila Travels · ${meta.sub}
+        </div>
+        <div style="font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">
+          ${title}
+        </div>
       </div>
-    </div>`;
+      <div style="background:rgba(0,0,0,0.4);padding:20px 28px;
+        display:flex;align-items:center;gap:12px;flex-shrink:0;">
+        <div style="width:3px;height:28px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
+        <div style="font-size:14px;font-weight:700;opacity:0.92;">${siteUrl}</div>
+      </div>`;
+  }
 
   return card;
 }
@@ -1102,6 +1065,7 @@ window.tbExportPNG = async function () {
     const dataUrl = await htmlToImage.toPng(card, {
       width: 540, height: 960, pixelRatio: 2,
       backgroundColor: '#0b1f35',
+      skipFonts: true,          // avoids cross-origin CSS/font CORS errors
       style: { opacity: '1' },
     });
 
