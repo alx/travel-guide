@@ -77,6 +77,40 @@ export default {
       return jsonResponse(data);
     }
 
+    // ── GET /osm-tile/{z}/{x}/{y} ─────────────────────────────────────────
+    // CORS proxy for OSM tiles: the browser blocks canvas.toDataURL() when
+    // tiles are drawn from tile.openstreetmap.org (no CORS headers). This
+    // endpoint fetches the tile server-side and re-serves with CORS headers,
+    // enabling the PNG share-card export to use the same OSM style as the site.
+    if (request.method === 'GET' && url.pathname.startsWith('/osm-tile/')) {
+      const match = url.pathname.match(/^\/osm-tile\/(\d+)\/(\d+)\/(\d+)$/);
+      if (!match) return new Response('Bad request', { status: 400, headers: CORS_HEADERS });
+      const [, z, x, y] = match;
+
+      // Round-robin between OSM subdomains (a/b/c) to spread load
+      const subs = ['a', 'b', 'c'];
+      const sub  = subs[(parseInt(x) + parseInt(y)) % 3];
+      const osmUrl = `https://${sub}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
+
+      const osmRes = await fetch(osmUrl, {
+        headers: {
+          'User-Agent': 'travels.girard-davila.net map-export/1.0 (share card PNG)',
+          'Referer':    'https://travels.girard-davila.net',
+        },
+      });
+      if (!osmRes.ok) return new Response('Tile error', { status: osmRes.status, headers: CORS_HEADERS });
+
+      const body = await osmRes.arrayBuffer();
+      return new Response(body, {
+        status: 200,
+        headers: {
+          'Content-Type':                'image/png',
+          'Cache-Control':               'public, max-age=86400',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
+    }
+
     return new Response('Not found', { status: 404, headers: CORS_HEADERS });
   },
 };

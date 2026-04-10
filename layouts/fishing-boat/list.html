@@ -121,6 +121,11 @@ const CAT_COLORS = {
   'Hazard':    '#ef4444',
   'Service':   '#f59e0b'
 };
+const CAT_ICONS = {
+  'Port': '⚓', 'Fishing': '🎣', 'Anchorage': '🌙', 'Hazard': '⚠️', 'Service': '⛽'
+};
+window._mapCategoryColors = CAT_COLORS;
+window._mapCategoryIcons  = CAT_ICONS;
 
 let map, routeLayers = [], waypointMarkers = [], allWaypoints = [], activeDay = 'all';
 // Expose waypoints as allPOIs for map-toolbar.html compatibility

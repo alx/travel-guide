@@ -806,65 +806,71 @@ function injectPNGMetadata(arrayBuffer, meta) {
 /**
  * Capture the live Leaflet map as a PNG data URL via manual canvas compositing.
  *
- * We avoid leaflet-image (creates new Image() objects inside callbacks which
- * triggers SES lockdown in browser extensions like MetaMask). Instead:
- *
- *  1. Swap OSM tiles → CARTO Voyager (loaded with crossOrigin:anonymous →
- *     canvas-safe, no taint). Wait for them to appear in the DOM.
- *  2. Draw the already-loaded <img> tile elements directly onto a canvas
- *     using getBoundingClientRect() for pixel-perfect positioning.
- *     No new Image() objects needed — reuses what the browser already has.
- *  3. Composite the SVG overlay pane (routes/polylines) via a Blob URL.
- *  4. Draw POI markers as coloured dots using latLngToContainerPoint().
- *     (DivIcon HTML markers can't be canvas-copied; dots are the best proxy.)
- *  5. Restore original tile layers.
+ * Steps:
+ *  1. Zoom out 1 level (shows more context), wait for tiles.
+ *  2. Swap OSM tiles → CORS-safe tiles and wait for them to load in the DOM:
+ *       a. If GITHUB_WORKER_URL is set → use /osm-tile/{z}/{x}/{y} proxy
+ *          (same OSM Carto style as the live site, CORS added server-side).
+ *       b. Fallback → CARTO Voyager (always has CORS, slightly different style).
+ *  3. Draw already-loaded tile <img> elements directly — no new Image() objects,
+ *     no SES-lockdown risk (browser extensions like MetaMask intercept those).
+ *  4. Composite SVG overlay (routes, polylines) via a same-origin Blob URL.
+ *  5. Draw POI markers matching the live DivIcon style: 32×32 coloured circle +
+ *     white border + centred emoji, using latLngToContainerPoint() for position.
+ *  6. Restore zoom and original tile layers.
  */
 async function captureMapScreenshot() {
-  const mapEl     = document.getElementById('map');
+  const mapEl      = document.getElementById('map');
   const leafletMap = window._leafletMap;
   if (!mapEl || !leafletMap || typeof L === 'undefined') return null;
 
-  // ── 1. Swap to CARTO tiles (CORS-safe) ──────────────────────────────
+  // ── 1. Zoom out 1 level ──────────────────────────────────────────────
+  const originalZoom = leafletMap.getZoom();
+  leafletMap.setZoom(originalZoom - 1, { animate: false });
+  await new Promise(r => setTimeout(r, 300));
+
+  // ── 2. Swap to CORS-safe tile layer ─────────────────────────────────
   const originals = [];
   leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originals.push(l); });
   originals.forEach(l => leafletMap.removeLayer(l));
 
-  const cartoLayer = L.tileLayer(
-    'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-    { crossOrigin: 'anonymous', attribution: '' }
-  );
-  cartoLayer.addTo(leafletMap);
+  const workerUrl = window.GITHUB_WORKER_URL;
+  const tileUrl   = (workerUrl && workerUrl.length > 4)
+    ? `${workerUrl}/osm-tile/{z}/{x}/{y}`          // OSM via CORS proxy → same style
+    : 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png'; // fallback
+
+  const corsLayer = L.tileLayer(tileUrl, { crossOrigin: 'anonymous', attribution: '' });
+  corsLayer.addTo(leafletMap);
 
   await new Promise(resolve => {
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
-    cartoLayer.once('load', finish);
-    setTimeout(finish, 5000);
+    corsLayer.once('load', finish);
+    setTimeout(finish, 6000);
   });
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-  // ── 2. Set up canvas ─────────────────────────────────────────────────
+  // ── 3. Canvas setup ──────────────────────────────────────────────────
   const W = mapEl.offsetWidth;
   const H = mapEl.offsetHeight;
-  const canvas = document.createElement('canvas');
+  const canvas  = document.createElement('canvas');
   canvas.width  = W;
   canvas.height = H;
   const ctx     = canvas.getContext('2d');
   const mapRect = mapEl.getBoundingClientRect();
 
-  // ── 3. Draw tile <img> elements (already in DOM, already CORS-loaded) ─
-  const tileImgs = mapEl.querySelectorAll('.leaflet-tile-pane img.leaflet-tile');
-  for (const img of tileImgs) {
+  // ── 4. Draw tile <img> elements (in-DOM, CORS-loaded, no new Image()) ─
+  for (const img of mapEl.querySelectorAll('.leaflet-tile-pane img.leaflet-tile')) {
     if (!img.complete || !img.naturalWidth) continue;
     const r = img.getBoundingClientRect();
     try {
       ctx.drawImage(img,
         Math.round(r.left - mapRect.left), Math.round(r.top - mapRect.top),
         Math.round(r.width), Math.round(r.height));
-    } catch { /* tile couldn't be drawn — skip */ }
+    } catch { /* tainted tile — skip */ }
   }
 
-  // ── 4. Composite SVG overlay (routes, polylines, polygons) ───────────
+  // ── 5. Composite SVG overlay (routes, polylines, polygons) ───────────
   const svgEl = mapEl.querySelector('.leaflet-overlay-pane svg');
   if (svgEl) {
     try {
@@ -883,36 +889,59 @@ async function captureMapScreenshot() {
         img.onerror = () => { URL.revokeObjectURL(blobUrl); resolve(); };
         img.src = blobUrl;
       });
-    } catch (e) { console.warn('SVG overlay composite failed:', e); }
+    } catch (e) { console.warn('SVG overlay:', e); }
   }
 
-  // ── 5. Draw POI markers as coloured dots ─────────────────────────────
-  // DivIcon HTML markers can't be canvas-copied; we approximate them.
-  const CAT_COLORS = {
+  // ── 6. Draw POI markers matching the live DivIcon style ──────────────
+  // DivIcon is HTML — can't drawImage() it. Replicate the exact style:
+  // 32×32 px filled circle + 2px white border + centred emoji (16px).
+  const catColors = window._mapCategoryColors || {};
+  const catIcons  = window._mapCategoryIcons  || {};
+  const fallbackColors = {
     Beach:'#0ea5e9', Restaurant:'#f97316', Activity:'#22c55e', Hotel:'#8b5cf6',
     Shopping:'#ec4899', Cafe:'#f59e0b', Port:'#f97316', Fishing:'#0ea5e9',
     Anchorage:'#6366f1', Hazard:'#ef4444', Service:'#f59e0b', Other:'#6b7280',
   };
+  const fallbackIcons = {
+    Beach:'🏖️', Restaurant:'🍽️', Activity:'🎯', Hotel:'🏨', Shopping:'🛍️',
+    Cafe:'☕', Port:'⚓', Fishing:'🎣', Anchorage:'🌙', Hazard:'⚠️',
+    Service:'⛽', Other:'📍',
+  };
+  const R = 16; // circle radius matching iconSize:[32,32]
+
   for (const f of (window.allPOIs || [])) {
     if (f.geometry?.type !== 'Point') continue;
     const [lng, lat] = f.geometry.coordinates;
-    const pt = leafletMap.latLngToContainerPoint([lat, lng]);
-    if (pt.x < 0 || pt.y < 0 || pt.x > W || pt.y > H) continue;
-    const color = CAT_COLORS[f.properties?.category] || '#6b7280';
+    const pt  = leafletMap.latLngToContainerPoint([lat, lng]);
+    if (pt.x < -R || pt.y < -R || pt.x > W + R || pt.y > H + R) continue;
+
+    const cat   = f.properties?.category || 'Other';
+    const color = catColors[cat] || fallbackColors[cat] || '#6b7280';
+    const emoji = catIcons[cat]  || fallbackIcons[cat]  || '📍';
+
+    // Filled circle
     ctx.beginPath();
-    ctx.arc(pt.x, pt.y, 7, 0, Math.PI * 2);
-    ctx.fillStyle   = color;
+    ctx.arc(pt.x, pt.y, R, 0, Math.PI * 2);
+    ctx.fillStyle = color;
     ctx.fill();
+    // White border (2px, matching DivIcon border:2px solid white)
     ctx.strokeStyle = '#fff';
     ctx.lineWidth   = 2;
     ctx.stroke();
+    // Emoji centred
+    ctx.font         = '15px serif';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle    = '#fff';
+    ctx.fillText(emoji, pt.x, pt.y);
   }
 
-  // ── 6. Restore original tile layers ─────────────────────────────────
-  leafletMap.removeLayer(cartoLayer);
+  // ── 7. Restore zoom and tile layers ─────────────────────────────────
+  leafletMap.removeLayer(corsLayer);
   originals.forEach(l => leafletMap.addLayer(l));
+  leafletMap.setZoom(originalZoom, { animate: false });
 
-  console.log('Map preview: canvas composite succeeded');
+  console.log('Map preview: canvas composite succeeded (' + (workerUrl ? 'OSM proxy' : 'CARTO fallback') + ')');
   return canvas.toDataURL('image/png');
 }
 
@@ -957,39 +986,29 @@ function buildShareCard(mapDataUrl) {
           style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       </div>
 
-      <!-- Dark vignette at top for brand -->
-      <div style="position:absolute;top:0;left:0;right:0;height:110px;
-        background:linear-gradient(to bottom,rgba(5,15,30,0.82),transparent);"></div>
-
-      <!-- Brand pill top-left -->
-      <div style="position:absolute;top:22px;left:22px;
-        background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);
-        border:1px solid rgba(255,255,255,0.18);border-radius:30px;
+      <!-- Brand pill top-left — dark pill, no full gradient -->
+      <div style="position:absolute;top:18px;left:18px;
+        background:rgba(5,15,28,0.72);
+        border:1px solid rgba(255,255,255,0.22);border-radius:30px;
         padding:6px 14px;font-size:11px;font-weight:700;
         letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.92);">
         🗺️ Girard-Davila Travels
       </div>
 
-      <!-- Dark vignette at bottom for title + URL -->
-      <div style="position:absolute;bottom:0;left:0;right:0;height:300px;
-        background:linear-gradient(transparent,rgba(5,15,30,0.96) 55%,#050f1e 100%);"></div>
-
-      <!-- Title block bottom -->
-      <div style="position:absolute;bottom:90px;left:0;right:0;padding:0 28px;">
-        <div style="font-size:13px;opacity:0.65;margin-bottom:6px;letter-spacing:0.04em;">
+      <!-- Title + URL block — dark pill at bottom, no full gradient -->
+      <div style="position:absolute;bottom:0;left:0;right:0;
+        background:rgba(5,15,28,0.82);
+        padding:18px 24px 20px;">
+        <div style="font-size:12px;opacity:0.65;margin-bottom:4px;letter-spacing:0.04em;">
           ${meta.emoji} ${meta.sub}
         </div>
-        <div style="font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">
+        <div style="font-size:30px;font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;">
           ${title}
         </div>
-      </div>
-
-      <!-- URL footer -->
-      <div style="position:absolute;bottom:0;left:0;right:0;height:80px;
-        display:flex;align-items:center;padding:0 28px;gap:12px;
-        border-top:1px solid rgba(255,255,255,0.1);">
-        <div style="width:3px;height:28px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
-        <div style="font-size:14px;font-weight:700;opacity:0.92;">${siteUrl}</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:3px;height:20px;background:#f59e0b;border-radius:2px;flex-shrink:0;"></div>
+          <div style="font-size:13px;font-weight:700;opacity:0.88;">${siteUrl}</div>
+        </div>
       </div>`;
 
   } else {
