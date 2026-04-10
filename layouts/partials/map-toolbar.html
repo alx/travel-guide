@@ -835,13 +835,22 @@ async function captureMapScreenshot() {
   leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originals.push(l); });
   originals.forEach(l => leafletMap.removeLayer(l));
 
+  // Use retina (@2x) tiles when device pixel ratio ≥ 2 for crisp canvas output.
+  // CARTO supports @2x (512px tiles). OSM proxy serves 256px tiles only.
+  const dpr       = Math.min(window.devicePixelRatio || 1, 2);
+  const isRetina  = dpr >= 2;
   const workerUrl = window.GITHUB_WORKER_URL || '';
   const useProxy  = workerUrl.length > 8 && !workerUrl.includes('YOUR_SUBDOMAIN');
   const tileUrl   = useProxy
-    ? `${workerUrl}/osm-tile/{z}/{x}/{y}`   // OSM via CORS proxy (same style as site)
-    : 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png';
+    ? `${workerUrl}/osm-tile/{z}/{x}/{y}`                                     // OSM proxy (256px)
+    : `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}${isRetina ? '@2x' : ''}.png`;
 
-  const corsLayer = L.tileLayer(tileUrl, { crossOrigin: 'anonymous', attribution: '' });
+  const corsLayer = L.tileLayer(tileUrl, {
+    crossOrigin:   'anonymous',
+    attribution:   '',
+    tileSize:      isRetina && !useProxy ? 512 : 256,  // @2x tiles are 512px
+    zoomOffset:    isRetina && !useProxy ? -1  : 0,    // compensate so zoom levels match
+  });
   corsLayer.addTo(leafletMap);
 
   // Wait for tiles to load at current zoom, then zoom out for wider context
@@ -862,13 +871,19 @@ async function captureMapScreenshot() {
   });
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-  // ── 3. Canvas setup ──────────────────────────────────────────────────
+  // ── 3. Canvas at device-pixel resolution ────────────────────────────
+  // getBoundingClientRect() returns CSS pixels. On a 2× Retina screen every
+  // CSS pixel = 2 device pixels. Creating the canvas at CSS size produces a
+  // 1× image that gets upscaled → blurry. Creating at DPR × CSS size and
+  // scaling the context means all draw calls use CSS coordinates but produce
+  // a full-resolution output — matching the native tile resolution.
   const W = mapEl.offsetWidth;
   const H = mapEl.offsetHeight;
   const canvas  = document.createElement('canvas');
-  canvas.width  = W;
-  canvas.height = H;
+  canvas.width  = Math.round(W * dpr);
+  canvas.height = Math.round(H * dpr);
   const ctx     = canvas.getContext('2d');
+  ctx.scale(dpr, dpr); // all subsequent calls use CSS-pixel coordinates
   const mapRect = mapEl.getBoundingClientRect();
 
   // ── 4. Draw tile <img> elements (in-DOM, CORS-loaded, no new Image()) ─
