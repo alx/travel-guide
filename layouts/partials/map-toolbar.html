@@ -812,7 +812,9 @@ function injectPNGMetadata(arrayBuffer, meta) {
  * Access-Control-Allow-Origin: *, then restore the originals after capture.
  */
 async function captureMapScreenshot() {
-  const leafletMap = window.map;
+  // window.map is the <div id="map"> DOM element (browsers auto-expose named
+  // elements); the actual Leaflet instance is stored as window._leafletMap.
+  const leafletMap = window._leafletMap;
   if (!leafletMap || typeof L === 'undefined') return null;
 
   if (typeof leafletImage === 'undefined') {

@@ -128,6 +128,7 @@ let map, allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', a
 function getVIP() { return window.isVIP === true; }
 
 map = L.map('map').setView([15.873326, 108.367462], 16);
+window._leafletMap = map; // expose for map-toolbar.html (window.map is the <div>)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
