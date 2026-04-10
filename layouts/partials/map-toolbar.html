@@ -824,29 +824,41 @@ async function captureMapScreenshot() {
   const leafletMap = window._leafletMap;
   if (!mapEl || !leafletMap || typeof L === 'undefined') return null;
 
-  // ── 1. Zoom out 1 level ──────────────────────────────────────────────
   const originalZoom = leafletMap.getZoom();
-  leafletMap.setZoom(originalZoom - 1, { animate: false });
-  await new Promise(r => setTimeout(r, 300));
 
-  // ── 2. Swap to CORS-safe tile layer ─────────────────────────────────
+  // ── 1. Swap OSM → CARTO (CORS-safe, canvas-safe) ────────────────────
+  // OSM tiles have no CORS headers so canvas.toDataURL() would throw.
+  // CARTO Voyager always sends Access-Control-Allow-Origin: *.
+  // Worker OSM proxy (workerUrl/osm-tile/…) gives the same OSM style but
+  // only when a real deployed worker URL is configured — detect placeholder.
   const originals = [];
   leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originals.push(l); });
   originals.forEach(l => leafletMap.removeLayer(l));
 
-  const workerUrl = window.GITHUB_WORKER_URL;
-  const tileUrl   = (workerUrl && workerUrl.length > 4)
-    ? `${workerUrl}/osm-tile/{z}/{x}/{y}`          // OSM via CORS proxy → same style
-    : 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png'; // fallback
+  const workerUrl = window.GITHUB_WORKER_URL || '';
+  const useProxy  = workerUrl.length > 8 && !workerUrl.includes('YOUR_SUBDOMAIN');
+  const tileUrl   = useProxy
+    ? `${workerUrl}/osm-tile/{z}/{x}/{y}`   // OSM via CORS proxy (same style as site)
+    : 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png';
 
   const corsLayer = L.tileLayer(tileUrl, { crossOrigin: 'anonymous', attribution: '' });
   corsLayer.addTo(leafletMap);
 
+  // Wait for tiles to load at current zoom, then zoom out for wider context
   await new Promise(resolve => {
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
     corsLayer.once('load', finish);
     setTimeout(finish, 6000);
+  });
+
+  // Zoom out AFTER CARTO is fully loaded — avoids tile-swap race condition
+  leafletMap.setZoom(originalZoom - 1, { animate: false });
+  await new Promise(resolve => {
+    let done = false;
+    const finish = () => { if (!done) { done = true; resolve(); } };
+    corsLayer.once('load', finish);
+    setTimeout(finish, 4000);
   });
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
@@ -936,12 +948,12 @@ async function captureMapScreenshot() {
     ctx.fillText(emoji, pt.x, pt.y);
   }
 
-  // ── 7. Restore zoom and tile layers ─────────────────────────────────
+  // ── 7. Restore original zoom and tile layers ────────────────────────
+  leafletMap.setZoom(originalZoom, { animate: false });
   leafletMap.removeLayer(corsLayer);
   originals.forEach(l => leafletMap.addLayer(l));
-  leafletMap.setZoom(originalZoom, { animate: false });
 
-  console.log('Map preview: canvas composite succeeded (' + (workerUrl ? 'OSM proxy' : 'CARTO fallback') + ')');
+  console.log('Map preview: canvas composite succeeded (' + (useProxy ? 'OSM proxy' : 'CARTO') + ')');
   return canvas.toDataURL('image/png');
 }
 
