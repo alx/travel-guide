@@ -804,28 +804,30 @@ function injectPNGMetadata(arrayBuffer, meta) {
 }
 
 /**
- * Capture the live Leaflet map as a PNG data URL using leaflet-image.
+ * Capture the live Leaflet map as a PNG data URL via manual canvas compositing.
  *
- * leaflet-image composites all Leaflet layers (tiles, markers, vector paths)
- * directly onto a canvas — no SVG/foreignObject tricks. OSM tiles lack CORS
- * headers so we temporarily swap them for CARTO Voyager tiles which carry
- * Access-Control-Allow-Origin: *, then restore the originals after capture.
+ * We avoid leaflet-image (creates new Image() objects inside callbacks which
+ * triggers SES lockdown in browser extensions like MetaMask). Instead:
+ *
+ *  1. Swap OSM tiles → CARTO Voyager (loaded with crossOrigin:anonymous →
+ *     canvas-safe, no taint). Wait for them to appear in the DOM.
+ *  2. Draw the already-loaded <img> tile elements directly onto a canvas
+ *     using getBoundingClientRect() for pixel-perfect positioning.
+ *     No new Image() objects needed — reuses what the browser already has.
+ *  3. Composite the SVG overlay pane (routes/polylines) via a Blob URL.
+ *  4. Draw POI markers as coloured dots using latLngToContainerPoint().
+ *     (DivIcon HTML markers can't be canvas-copied; dots are the best proxy.)
+ *  5. Restore original tile layers.
  */
 async function captureMapScreenshot() {
-  // window.map is the <div id="map"> DOM element (browsers auto-expose named
-  // elements); the actual Leaflet instance is stored as window._leafletMap.
+  const mapEl     = document.getElementById('map');
   const leafletMap = window._leafletMap;
-  if (!leafletMap || typeof L === 'undefined') return null;
+  if (!mapEl || !leafletMap || typeof L === 'undefined') return null;
 
-  if (typeof leafletImage === 'undefined') {
-    console.warn('leaflet-image not loaded');
-    return null;
-  }
-
-  // Swap OSM tiles (no CORS) → CARTO tiles (CORS-enabled, canvas-safe)
-  const originalTileLayers = [];
-  leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originalTileLayers.push(l); });
-  originalTileLayers.forEach(l => leafletMap.removeLayer(l));
+  // ── 1. Swap to CARTO tiles (CORS-safe) ──────────────────────────────
+  const originals = [];
+  leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originals.push(l); });
+  originals.forEach(l => leafletMap.removeLayer(l));
 
   const cartoLayer = L.tileLayer(
     'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
@@ -833,30 +835,85 @@ async function captureMapScreenshot() {
   );
   cartoLayer.addTo(leafletMap);
 
-  // Wait for CARTO tiles to paint
   await new Promise(resolve => {
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
     cartoLayer.once('load', finish);
     setTimeout(finish, 5000);
   });
-  // One extra frame so the browser flushes tile images to the DOM
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-  // leaflet-image composites all visible layers onto a single canvas
-  const dataUrl = await new Promise(resolve => {
-    leafletImage(leafletMap, (err, canvas) => {
-      if (err) { console.warn('leaflet-image error:', err); resolve(null); return; }
-      resolve(canvas.toDataURL('image/png'));
-    });
-  });
+  // ── 2. Set up canvas ─────────────────────────────────────────────────
+  const W = mapEl.offsetWidth;
+  const H = mapEl.offsetHeight;
+  const canvas = document.createElement('canvas');
+  canvas.width  = W;
+  canvas.height = H;
+  const ctx     = canvas.getContext('2d');
+  const mapRect = mapEl.getBoundingClientRect();
 
-  // Restore original tile layers
+  // ── 3. Draw tile <img> elements (already in DOM, already CORS-loaded) ─
+  const tileImgs = mapEl.querySelectorAll('.leaflet-tile-pane img.leaflet-tile');
+  for (const img of tileImgs) {
+    if (!img.complete || !img.naturalWidth) continue;
+    const r = img.getBoundingClientRect();
+    try {
+      ctx.drawImage(img,
+        Math.round(r.left - mapRect.left), Math.round(r.top - mapRect.top),
+        Math.round(r.width), Math.round(r.height));
+    } catch { /* tile couldn't be drawn — skip */ }
+  }
+
+  // ── 4. Composite SVG overlay (routes, polylines, polygons) ───────────
+  const svgEl = mapEl.querySelector('.leaflet-overlay-pane svg');
+  if (svgEl) {
+    try {
+      const svgStr = new XMLSerializer().serializeToString(svgEl);
+      const blobUrl = URL.createObjectURL(new Blob([svgStr], { type: 'image/svg+xml' }));
+      await new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => {
+          const r = svgEl.getBoundingClientRect();
+          ctx.drawImage(img,
+            Math.round(r.left - mapRect.left), Math.round(r.top - mapRect.top),
+            Math.round(r.width), Math.round(r.height));
+          URL.revokeObjectURL(blobUrl);
+          resolve();
+        };
+        img.onerror = () => { URL.revokeObjectURL(blobUrl); resolve(); };
+        img.src = blobUrl;
+      });
+    } catch (e) { console.warn('SVG overlay composite failed:', e); }
+  }
+
+  // ── 5. Draw POI markers as coloured dots ─────────────────────────────
+  // DivIcon HTML markers can't be canvas-copied; we approximate them.
+  const CAT_COLORS = {
+    Beach:'#0ea5e9', Restaurant:'#f97316', Activity:'#22c55e', Hotel:'#8b5cf6',
+    Shopping:'#ec4899', Cafe:'#f59e0b', Port:'#f97316', Fishing:'#0ea5e9',
+    Anchorage:'#6366f1', Hazard:'#ef4444', Service:'#f59e0b', Other:'#6b7280',
+  };
+  for (const f of (window.allPOIs || [])) {
+    if (f.geometry?.type !== 'Point') continue;
+    const [lng, lat] = f.geometry.coordinates;
+    const pt = leafletMap.latLngToContainerPoint([lat, lng]);
+    if (pt.x < 0 || pt.y < 0 || pt.x > W || pt.y > H) continue;
+    const color = CAT_COLORS[f.properties?.category] || '#6b7280';
+    ctx.beginPath();
+    ctx.arc(pt.x, pt.y, 7, 0, Math.PI * 2);
+    ctx.fillStyle   = color;
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth   = 2;
+    ctx.stroke();
+  }
+
+  // ── 6. Restore original tile layers ─────────────────────────────────
   leafletMap.removeLayer(cartoLayer);
-  originalTileLayers.forEach(l => leafletMap.addLayer(l));
+  originals.forEach(l => leafletMap.addLayer(l));
 
-  if (dataUrl) console.log('Map preview: leaflet-image capture succeeded');
-  return dataUrl;
+  console.log('Map preview: canvas composite succeeded');
+  return canvas.toDataURL('image/png');
 }
 
 /** Build the 9:16 share card. mapDataUrl is optional — shown as top section. */
