@@ -803,51 +803,81 @@ function injectPNGMetadata(arrayBuffer, meta) {
   return out.buffer;
 }
 
-/** Build the 9:16 share card DOM element (540×960 px, hidden off-screen) */
 /**
- * Capture the live Leaflet #map div as a PNG data URL.
- * OSM tiles are CORS-blocked for canvas; we temporarily swap them for
- * CARTO Voyager tiles (Access-Control-Allow-Origin: *) then restore.
+ * Return a map image for the share card.
+ *
+ * Strategy (fastest / most reliable first):
+ *   1. Pre-generated PNG at MAP_CONFIG.previewImage — produced by CI
+ *      (scripts/generate-map-previews.js) and served as a static asset.
+ *      Same-origin so no CORS issues; load it into a canvas → dataURL.
+ *   2. If that 404s (local dev / first deploy), fall back to a live
+ *      capture of the Leaflet #map div using CARTO Voyager tiles which
+ *      carry Access-Control-Allow-Origin: * (OSM tiles are CORS-blocked).
  */
 async function captureMapScreenshot() {
+  // ── Strategy 1: pre-generated static PNG ─────────────────────────
+  const previewUrl = window.MAP_CONFIG?.previewImage;
+  if (previewUrl) {
+    try {
+      const resp = await fetch(previewUrl, { method: 'HEAD' });
+      if (resp.ok) {
+        // Load into a canvas so we get a same-origin dataURL
+        const dataUrl = await new Promise((resolve, reject) => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => {
+            const c = document.createElement('canvas');
+            c.width  = img.naturalWidth;
+            c.height = img.naturalHeight;
+            c.getContext('2d').drawImage(img, 0, 0);
+            try { resolve(c.toDataURL('image/png')); }
+            catch (e) { reject(e); }
+          };
+          img.onerror = reject;
+          img.src = previewUrl + '?v=' + Date.now(); // bypass any cache
+        });
+        console.log('Map preview: using pre-generated static image');
+        return dataUrl;
+      }
+    } catch (e) {
+      console.warn('Pre-generated preview unavailable, falling back to live capture:', e.message);
+    }
+  }
+
+  // ── Strategy 2: live CARTO tile capture ───────────────────────────
   const mapEl = document.getElementById('map');
   const leafletMap = window.map;
   if (!mapEl || !leafletMap || typeof L === 'undefined') return null;
 
-  // Collect existing tile layers to restore later
   const originalTileLayers = [];
   leafletMap.eachLayer(l => { if (l instanceof L.TileLayer) originalTileLayers.push(l); });
   originalTileLayers.forEach(l => leafletMap.removeLayer(l));
 
-  // CARTO Voyager tiles support crossOrigin — safe for canvas copy
   const cartoLayer = L.tileLayer(
     'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
     { crossOrigin: 'anonymous', attribution: '' }
   );
   cartoLayer.addTo(leafletMap);
 
-  // Wait for tiles to load (event or 4s timeout)
   await new Promise(resolve => {
     let done = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
     cartoLayer.once('load', finish);
-    setTimeout(finish, 4000);
+    setTimeout(finish, 5000);
   });
-  // Extra frame so tile images are painted
   await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
   let mapDataUrl = null;
   try {
     mapDataUrl = await htmlToImage.toPng(mapEl, {
-      pixelRatio: 1,          // 1× — we scale in the card at 2×
-      skipFonts: true,
+      pixelRatio: 1, skipFonts: true,
       style: { borderRadius: '0', boxShadow: 'none' },
     });
+    console.log('Map preview: live CARTO capture succeeded');
   } catch (e) {
-    console.warn('Map screenshot failed:', e);
+    console.warn('Live map capture failed:', e);
   }
 
-  // Restore original tile layers
   leafletMap.removeLayer(cartoLayer);
   originalTileLayers.forEach(l => leafletMap.addLayer(l));
 
@@ -1016,7 +1046,8 @@ window.tbExportPNG = async function () {
       <div style="font-size:1rem;font-weight:600;">${msg}</div>
       <div style="font-size:0.78rem;opacity:0.45;">${sub}</div>`;
   };
-  setOverlayMsg('🗺️', 'Capturing map…', 'switching to CORS-safe tiles');
+  const hasPreview = !!window.MAP_CONFIG?.previewImage;
+  setOverlayMsg('🗺️', 'Capturing map…', hasPreview ? 'loading pre-generated preview' : 'switching to CORS-safe tiles');
   document.body.appendChild(overlay);
 
   // Step 1: capture the live map using CARTO tiles (CORS-enabled)

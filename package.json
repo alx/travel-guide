@@ -1,0 +1,12 @@
+{
+  "name": "travel-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hugo travel guide site — Girard-Davila Travels",
+  "scripts": {
+    "generate-previews": "node scripts/generate-map-previews.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.44.0"
+  }
+}
