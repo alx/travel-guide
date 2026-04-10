@@ -860,8 +860,11 @@ function buildShareCard() {
 
   const card = document.createElement('div');
   card.id = 'tb-share-card';
+  // NOTE: must be in-viewport (not off-screen) — html-to-image uses
+  // getBoundingClientRect() which returns 0×0 for elements at left:-9999px.
+  // The loading overlay (z-index:99999) covers the card (z-index:99998).
   card.style.cssText = [
-    'position:fixed', 'left:-9999px', 'top:0',
+    'position:fixed', 'top:0', 'left:0', 'z-index:99998',
     'width:540px', 'height:960px',
     'background:linear-gradient(160deg,#0b1f35 0%,#1a3a5c 45%,#0e4f7a 100%)',
     'color:#fff',
@@ -926,15 +929,36 @@ window.tbExportPNG = async function () {
   const btn = document.getElementById('tb-png-btn');
   if (btn) { btn.textContent = '⏳ Rendering…'; btn.disabled = true; }
 
-  // Check html-to-image is loaded
+  // Check html-to-image is loaded (deferred script — should be ready by click time)
   if (typeof htmlToImage === 'undefined') {
     alert('html-to-image library not loaded. Check your internet connection.');
     if (btn) { btn.textContent = '📸 PNG'; btn.disabled = false; }
     return;
   }
 
+  // Loading overlay — covers the card while it's in-viewport during capture.
+  // html-to-image needs the element on-screen; this hides the flash from user.
+  const overlay = document.createElement('div');
+  overlay.style.cssText = [
+    'position:fixed', 'inset:0', 'z-index:99999',
+    'background:rgba(10,20,35,0.92)',
+    'display:flex', 'flex-direction:column', 'align-items:center', 'justify-content:center',
+    'gap:0.75rem', 'color:white', 'font-family:inherit',
+  ].join(';');
+  overlay.innerHTML = `
+    <div style="font-size:2rem;">📸</div>
+    <div style="font-size:1rem;font-weight:600;">Generating 9:16 share card…</div>
+    <div style="font-size:0.8rem;opacity:0.5;">1080 × 1920 px</div>`;
+
   const card = buildShareCard();
+
+  // Append overlay first (higher z-index) then card
+  document.body.appendChild(overlay);
   document.body.appendChild(card);
+
+  // Two rAFs + 150ms — ensures browser has fully painted both card and overlay
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  await new Promise(r => setTimeout(r, 150));
 
   try {
     // Render at 2× pixel ratio → 1080×1920 output
@@ -943,6 +967,8 @@ window.tbExportPNG = async function () {
       height: 960,
       pixelRatio: 2,
       backgroundColor: '#0b1f35',
+      // Force full opacity on root clone in case any parent has opacity set
+      style: { opacity: '1' },
     });
 
     // Convert data URL → ArrayBuffer
@@ -978,6 +1004,7 @@ window.tbExportPNG = async function () {
     if (btn) { btn.textContent = '📸 PNG'; btn.disabled = false; }
   } finally {
     document.body.removeChild(card);
+    document.body.removeChild(overlay);
   }
 };
 
