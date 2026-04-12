@@ -1,21 +1,43 @@
 {{ define "head" }}
 <style>
-  .page-header { margin-bottom: 1rem; }
-  .page-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .page-header p { color: #555; font-size: 0.95rem; }
-  .map-layout {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 1rem;
-    height: calc(100vh - 220px);
-    min-height: 520px;
+  /* ── Full-viewport map mode (Windy-style) ── */
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
+
+  /* Floating left sidebar */
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    pointer-events: none;
   }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header { margin: 0; }
+  .overlay-card .page-header h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .overlay-card .page-header p { font-size: 0.82rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { margin-bottom: 0 !important; }
+
   @media (max-width: 768px) {
-    .map-layout { grid-template-columns: 1fr; height: auto; }
-    #map { height: 65vw; min-height: 320px; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; max-height: 60vh; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card:first-child { border-radius: 16px 16px 0 0; }
   }
-  #map { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-  .sidebar { overflow-y: auto; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  /* ── original fishing-boat sidebar styles (now inside overlay cards) ── */
 
   /* Legend */
   .legend {
@@ -58,21 +80,21 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="page-header">
-  <h1>⚓ Gulf of Thailand Fishing Expedition</h1>
-  <p>
-    2-day expedition from Nathon Pier · Red snapper, tuna, overnight anchorage.
-    <span class="topo-badge">📐 TopoJSON demo</span>
-  </p>
-</div>
+<div id="map"></div>
 
-<!-- Toolbar -->
-{{ partial "map-toolbar.html" . }}
-
-<div class="map-layout">
-  <div id="map"></div>
-  <div class="sidebar" id="sidebar">
-
+<!-- Floating left overlay -->
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Girard-Davila Travels</a>
+    <div class="page-header">
+      <h1>⚓ Gulf of Thailand</h1>
+      <p>2-day fishing expedition · Red snapper, tuna, overnight anchorage. <span class="topo-badge">📐 TopoJSON</span></p>
+    </div>
+  </div>
+  <div class="overlay-card">
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable">
     <!-- Legend -->
     <div class="legend">
       <h4>Route Legend</h4>
@@ -80,20 +102,18 @@
       <div class="legend-row"><div class="legend-line" style="background:#6366f1;"></div> Day 1 — Overnight run</div>
       <div class="legend-row"><div class="legend-line" style="background:#8b5cf6;"></div> Day 2 — Deep water leg</div>
       <div class="legend-row"><div class="legend-line" style="background:#22c55e;"></div> Day 2 — Return</div>
-      <div style="border-top:1px solid #f0f0f0;margin:0.5rem 0;"></div>
+      <div style="border-top:1px solid #f0f0f0;margin:0.4rem 0;"></div>
       <div class="legend-row"><div class="legend-dot" style="background:#f97316;"></div> Port / Service</div>
       <div class="legend-row"><div class="legend-dot" style="background:#0ea5e9;"></div> Fishing ground</div>
       <div class="legend-row"><div class="legend-dot" style="background:#6366f1;"></div> Anchorage</div>
       <div class="legend-row"><div class="legend-dot" style="background:#ef4444;"></div> Hazard</div>
     </div>
-
     <!-- Day filter tabs -->
     <div class="day-tabs" id="day-tabs">
       <button class="day-tab active" data-day="all" onclick="filterDay('all',this)">All days</button>
       <button class="day-tab" data-day="1" onclick="filterDay('1',this)">Day 1</button>
       <button class="day-tab" data-day="2" onclick="filterDay('2',this)">Day 2</button>
     </div>
-
     <div id="wp-list"></div>
   </div>
 </div>
