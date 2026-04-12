@@ -113,10 +113,9 @@
       "type": "Feature",
       "properties": {
         "name": "Secret Sunrise Beach",
-        "category": "VIP",
-        "premium": true,
+        "category": "Beach",
         "address": "North Koh Samui",
-        "notes": "🔒 Members only — quiet beach, no crowds, best sunrise spot on the island."
+        "notes": "Quiet, uncrowded beach on the north coast — one of the best sunrise spots on the island."
       },
       "geometry": {
         "type": "Point",
@@ -127,10 +126,9 @@
       "type": "Feature",
       "properties": {
         "name": "Expat Rooftop Club",
-        "category": "VIP",
-        "premium": true,
+        "category": "Bar",
         "address": "Chaweng, Koh Samui",
-        "notes": "🔒 Members only — private expat community meetup space with sunset views over Chaweng."
+        "notes": "Rooftop bar popular with the expat community. Sunset views over Chaweng, relaxed atmosphere, and good cocktail selection."
       },
       "geometry": {
         "type": "Point",
