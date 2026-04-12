@@ -153,13 +153,14 @@ const CATEGORY_COLORS = {
   'Activity': '#22c55e',
   'Hotel': '#8b5cf6',
   'Shopping': '#ec4899',
+  'Area Guide': '#1a3a5c',
   'Other': '#6b7280',
   'VIP': '#f59e0b'
 };
 
 const CATEGORY_ICONS = {
   'Beach': '🏖️', 'Restaurant': '🍽️', 'Activity': '🎯',
-  'Hotel': '🏨', 'Shopping': '🛍️', 'Other': '📍', 'VIP': '🔒'
+  'Hotel': '🏨', 'Shopping': '🛍️', 'Area Guide': '🗺️', 'Other': '📍', 'VIP': '🔒'
 };
 
 let map, allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', activeCard = null;
@@ -228,7 +229,7 @@ function renderSidebar() {
         <div class="poi-actions">
           <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
           <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
-          ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
+          ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : 'Source ↗'}</a>` : ''}
         </div>`;
       card.onclick = () => focusPOI(f);
     }

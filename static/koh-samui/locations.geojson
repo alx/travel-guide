@@ -4,97 +4,14 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KOH'S 33 Stadium",
-        "category": "Activity",
-        "address": "Lamai, Koh Samui",
-        "notes": "Football club stadium, 5-star rated, great for sports lovers"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0471907,
-          9.473987
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Padel Paradise Lamai",
-        "category": "Activity",
-        "address": "Lamai, Koh Samui",
-        "notes": "Padel club, 4.8 stars — fun racket sport"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.04009,
-          9.4641367
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Pinjutha Gym & Badminton",
-        "category": "Activity",
-        "address": "Lamai, Koh Samui",
-        "notes": "Badminton courts and gym — great for active visitors, 4.6 stars"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0476804,
-          9.4704675
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Outdoor Gym Lamai",
-        "category": "Activity",
-        "address": "Lamai, Koh Samui",
-        "notes": "Open-air gym, 4.8 stars — free outdoor workout spot"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0570765,
-          9.470278
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Punch it Gym",
-        "category": "Activity",
-        "address": "Lamai, Koh Samui",
-        "notes": "Muay Thai gym, 4.9 stars — Muay Thai classes available"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0412322,
-          9.4707108
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Chaweng Beach",
         "category": "Beach",
         "address": "Chaweng, Koh Samui",
-        "notes": "Most popular beach, lots of facilities"
+        "notes": "Most popular beach on the island — long stretch of white sand, plenty of facilities, restaurants, and beach clubs."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.058712,
-          9.52496
-        ]
+        "coordinates": [100.058712, 9.52496]
       }
     },
     {
@@ -103,62 +20,11 @@
         "name": "Maenam Beach",
         "category": "Beach",
         "address": "Maenam, Koh Samui",
-        "notes": "Calm waters, great for swimming"
+        "notes": "Long, calm beach on the north coast. Excellent for swimming, quieter than Chaweng with a relaxed village feel."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          99.9886138,
-          9.5785237
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Bophut Fisherman's Village",
-        "category": "Restaurant",
-        "address": "Bophut, Koh Samui",
-        "notes": "Friday night market, great street food"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.051791,
-          9.556523
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Big Buddha Temple (Wat Phra Yai)",
-        "category": "Activity",
-        "address": "Ko Fan, Koh Samui",
-        "notes": "Iconic landmark, free entry, easy walk"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.060549,
-          9.570632
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Lamai Beach",
-        "category": "Beach",
-        "address": "Lamai, Koh Samui",
-        "notes": "Good for swimming, calmer than Chaweng"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.045894,
-          9.468689
-        ]
+        "coordinates": [99.9886138, 9.5785237]
       }
     },
     {
@@ -167,14 +33,37 @@
         "name": "Choeng Mon Beach",
         "category": "Beach",
         "address": "Choeng Mon, Koh Samui",
-        "notes": "Quiet, shallow water"
+        "notes": "Quiet northeast bay with shallow, clear water. Ideal for families and those seeking a less touristy setting."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.08382,
-          9.558624
-        ]
+        "coordinates": [100.08382, 9.558624]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bophut Fisherman's Village",
+        "category": "Restaurant",
+        "address": "Bophut, Koh Samui",
+        "notes": "Historic fishing village with boutique cafés, seafood restaurants, and the famous Friday Night Walking Street market."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.051791, 9.556523]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Big Buddha Temple (Wat Phra Yai)",
+        "category": "Activity",
+        "address": "Ko Fan, Koh Samui",
+        "notes": "Koh Samui's most recognisable landmark — a 12-metre golden Buddha visible from across the north bay. Free entry, causeway walkable."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.060549, 9.570632]
       }
     },
     {
@@ -183,14 +72,41 @@
         "name": "Nathon Pier & Market",
         "category": "Shopping",
         "address": "Nathon, Koh Samui",
-        "notes": "Local market, cheaper prices, authentic feel"
+        "notes": "The island's administrative capital. Authentic local market with lower prices, ferry connections to the mainland, and minimal tourist crowds."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          99.9307916,
-          9.5359969
-        ]
+        "coordinates": [99.9307916, 9.5359969]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Karma Two Palms Beach Club",
+        "category": "Beach",
+        "address": "Karma Panalee, Maenam, Koh Samui",
+        "notes": "Beachfront club at Karma Panalee resort. Infinity pool aligned with the Gulf of Thailand, wood-fired pizza oven, Thai restaurant, watersports, and live DJ events. Opened January 2025.",
+        "url": "https://karmacommunity.karmagroup.com/experience-karma/two-palms-samui-beach-club-magic/",
+        "hours": "Open daily (hours vary by season)",
+        "price": "À la carte dining; sun lounger hire available"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [99.9405258, 9.5781703]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lamai Village",
+        "category": "Area Guide",
+        "address": "Lamai, Koh Samui",
+        "notes": "Lamai is Samui's second-largest beach area — a laid-back mix of beach, Muay Thai gyms, local markets, forest spas, and great food. Open the dedicated Lamai map for the full curated guide.",
+        "url": "/lamai/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.0478, 9.4695]
       }
     },
     {
@@ -200,14 +116,11 @@
         "category": "VIP",
         "premium": true,
         "address": "North Koh Samui",
-        "notes": "🔒 Members only — quiet beach, no crowds, best sunrise spot"
+        "notes": "🔒 Members only — quiet beach, no crowds, best sunrise spot on the island."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.032,
-          9.568
-        ]
+        "coordinates": [100.032, 9.568]
       }
     },
     {
@@ -217,52 +130,11 @@
         "category": "VIP",
         "premium": true,
         "address": "Chaweng, Koh Samui",
-        "notes": "🔒 Members only — private expat community meetup space"
+        "notes": "🔒 Members only — private expat community meetup space with sunset views over Chaweng."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          100.061,
-          9.536
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Karma Two Palms Beach Club",
-        "category": "Beach",
-        "address": "Karma Panalee, Maenam, Koh Samui",
-        "notes": "Beachfront club at Karma Panalee resort. Infinity pool aligned with the Gulf of Thailand, wood-fired pizza oven, Thai restaurant, games room, watersports, sun loungers. Known for Balearic beach music and live DJ events. Opened January 10, 2025.",
-        "url": "https://karmacommunity.karmagroup.com/experience-karma/two-palms-samui-beach-club-magic/",
-        "hours": "Open daily (hours vary by season)",
-        "price": "À la carte dining and drinks; day-bed/sun lounger hire available"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9405258,
-          9.5781703
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Tamarind Springs Forest Spa",
-        "category": "Activity",
-        "address": "265/1 Thong Takian, Moo 4, Tambon Maret, Koh Samui",
-        "notes": "Koh Samui's first day spa (est. 1998). Jungle setting with natural granite boulders, herbal steam caves, plunge pools, and massage treatments.",
-        "url": "https://www.tamarindsprings.com/en/",
-        "hours": "09:00–18:00 daily",
-        "price": "from ฿1,500 (Steam and Dream package)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.05756,
-          9.473857
-        ]
+        "coordinates": [100.061, 9.536]
       }
     }
   ]

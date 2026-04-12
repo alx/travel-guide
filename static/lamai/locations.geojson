@@ -44,6 +44,7 @@
       "properties": {
         "name": "Tamarind Springs",
         "category": "Spa",
+        "premium": true,
         "address": "265/1 Tambon Lemat, Ko Samui, Surat Thani 84310",
         "notes": "Koh Samui's first forest spa (est. 1998). Nestled in the rainforest with natural granite boulders, steam caves, and herbal pools. One of the island's finest wellness experiences.",
         "hours": "09:00–18:00 daily",
@@ -141,6 +142,7 @@
       "properties": {
         "name": "Chalay Rock Bar",
         "category": "Bar",
+        "premium": true,
         "address": "208/6 Moo 4, Ko Samui, Surat Thani 84310",
         "notes": "Cliffside bar on the eastern cape of Lamai with dramatic sea views. Sundowners, cocktails, and a rock-music vibe.",
         "hours": "10:00–20:00",
@@ -164,6 +166,7 @@
       "properties": {
         "name": "Stone Turtle Cape",
         "category": "Landmark",
+        "premium": true,
         "address": "Southern cape, Ko Samui, Surat Thani",
         "notes": "Natural rock formations on the southern headland of Lamai Beach resembling a giant stone turtle. Great sunset viewpoint with a small spirit house.",
         "hours": "Open anytime"
@@ -251,6 +254,150 @@
         "phone": "+66 90 798 4251"
       },
       "geometry": { "type": "Point", "coordinates": [100.0478864, 9.468831] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phu's Massage",
+        "category": "Spa",
+        "premium": true,
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Highly regarded local massage therapist known among expats and long-stay visitors for exceptional technique. Hard to find — coordinates and booking tips exclusive to members.",
+        "hours": "10:00–20:00"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0524390, 9.4720750] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Community Club Lamai",
+        "category": "Spa",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Friendly neighbourhood massage and wellness club. Traditional Thai massage, foot reflexology, and oil treatments at local prices. Popular with residents.",
+        "hours": "10:00–22:00",
+        "phone": "+66 77 424 369"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0434, 9.4712] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JUNIPER Spa",
+        "category": "Spa",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Boutique spa with aromatherapy treatments, hot-stone massage, and herbal compress therapies. Calm interiors, upmarket feel without the resort price tag.",
+        "hours": "10:00–21:00",
+        "url": "https://juniperspasam ui.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0501, 9.4695] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "1% Coffee House Samui",
+        "category": "Café",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Specialty café serving third-wave coffee — single-origin pourover, AeroPress, and nitro cold brew. Minimalist design, fast Wi-Fi, and excellent pastries.",
+        "hours": "07:30–17:00",
+        "url": "https://www.instagram.com/1percentcoffeesamui"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.02276, 9.44850] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Crystal Beach",
+        "category": "Beach",
+        "premium": true,
+        "address": "South Lamai, Ko Samui, Surat Thani",
+        "notes": "Secluded cove south of Lamai with crystal-clear water and very few visitors. Accessible via a short rocky path — details and best entry point unlocked for members.",
+        "hours": "Open anytime"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0605, 9.4538] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wat Ratchathamaram (Snake Temple)",
+        "category": "Temple",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Active Buddhist temple notable for its resident pythons kept by the monks — a long-standing tradition. Respectful dress required. Free entry.",
+        "hours": "08:00–17:00 daily",
+        "price": "Free entry"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0371, 9.4735] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wat Lamai",
+        "category": "Temple",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Neighbourhood Buddhist temple in the heart of Lamai. Ornate bot hall, resident monks, and a small cultural museum. Quiet mornings are best for a visit.",
+        "hours": "06:00–18:00 daily",
+        "price": "Free entry"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0415, 9.4608] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chez Pelo Butchery",
+        "category": "Restaurant",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "French-run butcher and deli. Aged beef, homemade charcuterie, imported cheeses, and prepared dishes to take away. The go-to spot for a proper Western dinner at home.",
+        "hours": "09:00–19:00",
+        "phone": "+66 82 284 6789"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0462, 9.4718] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "🔒 Hilltop Jungle Bar",
+        "category": "Bar",
+        "premium": true,
+        "address": "Hills above Lamai, Ko Samui",
+        "notes": "Members only — an open-air jungle bar perched on the ridge above Lamai. 360° views, craft cocktails, fire show on weekends. No sign, no Google Maps listing.",
+        "hours": "17:00–01:00 (Thu–Sun)"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0584, 9.4781] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "🔒 Secret Lagoon Swim Spot",
+        "category": "Beach",
+        "premium": true,
+        "address": "Southern Lamai coastline, Ko Samui",
+        "notes": "Members only — a hidden tidal lagoon tucked behind the southern cliffs. Calm, turquoise water year-round. Access route, tide timing, and local contact shared with members.",
+        "hours": "Best at low tide"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0652, 9.4521] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "🔒 Local Chef's Table",
+        "category": "Restaurant",
+        "premium": true,
+        "address": "Lamai village, Ko Samui",
+        "notes": "Members only — a Thai home-cook runs a 6-seat supper club out of her family kitchen on Friday evenings. No menu, no reservations online — booking contact exclusive to members.",
+        "hours": "Fri 19:00 (by reservation)"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0471, 9.4672] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "🔒 Jungle Waterfall & Pool",
+        "category": "Landmark",
+        "premium": true,
+        "address": "Inland from Lamai, Ko Samui",
+        "notes": "Members only — a two-tier waterfall and natural swimming pool inland from Lamai, reached via an unmarked jungle track. Coordinates, route notes, and best season advice for members only.",
+        "hours": "Best Nov–Feb (rainy season flow)"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0502, 9.4818] }
     }
   ]
 }
