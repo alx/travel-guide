@@ -73,6 +73,15 @@
     padding: 0.4rem 0.7rem; font-size: 0.78rem; color: #92400e; font-weight: 500;
     display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
   }
+  /* POI permalink / focus */
+  .poi-card.faded { opacity: 0.25; transition: opacity 0.25s; }
+  .copy-toast {
+    position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
+    background: rgba(26,58,92,0.92); color: white; padding: 0.35rem 0.9rem;
+    border-radius: 20px; font-size: 0.78rem; z-index: 9000;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
+  }
+  .copy-toast.show { opacity: 1; }
 
   @media (max-width: 768px) {
     #list-toggle { display: inline-block; }
@@ -129,6 +138,7 @@
   </div>
 </div>
 {{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
 {{ end }}
 
 {{ define "scripts" }}
@@ -165,8 +175,36 @@ window._mapCategoryColors = CATEGORY_COLORS;
 window._mapCategoryIcons  = CATEGORY_ICONS;
 function getVIP() { return window.isVIP === true; }
 
+function slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+function showToast(msg) {
+  const t = document.getElementById('copy-toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function fadePOIs(activeId) {
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.2';
+  });
+  document.querySelectorAll('.poi-card').forEach(c =>
+    c.classList.toggle('faded', c.id !== 'card-' + activeId));
+}
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+  Object.values(markers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
+  document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('faded'));
+  const u = new URL(window.location.href);
+  u.searchParams.delete('poi');
+  history.replaceState({}, '', u);
+}
+
 map = L.map('map').setView([15.873326, 108.367462], 16);
 window._leafletMap = map; // expose for map-toolbar.html (window.map is the <div>)
+map.on('click', clearFocus);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
@@ -209,6 +247,7 @@ function renderSidebar() {
         <div class="premium-overlay"><span>🔒</span><p>Members only</p></div>`;
       card.onclick = () => { document.getElementById('paywall-modal').style.display = 'flex'; };
     } else {
+      const slug = slugify(p.name);
       card.innerHTML = `
         <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
         <h3>${p.name}</h3>
@@ -219,6 +258,7 @@ function renderSidebar() {
           <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
           <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
           ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
+          <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
         </div>`;
       card.onclick = () => focusPOI(f);
     }
@@ -230,10 +270,15 @@ function focusPOI(f) {
   const [lng, lat] = f.geometry.coordinates;
   map.flyTo([lat, lng], 17, { duration: 0.8 });
   if (markers[f._id]) markers[f._id].openPopup();
-  if (activeCard) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
   activeCard = f._id;
   document.getElementById('card-' + f._id)?.classList.add('active');
   document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const u = new URL(window.location.href);
+  u.searchParams.set('poi', slugify(f.properties.name));
+  u.searchParams.delete('filter');
+  history.replaceState({}, '', u);
+  fadePOIs(f._id);
 }
 
 function filterPOIs() { renderSidebar(); updateMarkers(); }
@@ -338,10 +383,16 @@ fetch(GEOJSON_URL)
     setupFilters(allPOIs);
     renderSidebar();
     updateMarkers();
-    const urlFilter = new URLSearchParams(window.location.search).get('filter');
+    const params = new URLSearchParams(window.location.search);
+    const urlFilter = params.get('filter');
     if (urlFilter) {
       const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
       if (btn) btn.click();
+    }
+    const urlPOI = params.get('poi');
+    if (urlPOI) {
+      const match = allPOIs.find(f => slugify(f.properties.name) === urlPOI);
+      if (match) setTimeout(() => focusPOI(match), 350);
     }
   })
   .catch(() => {
