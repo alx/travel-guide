@@ -1,7 +1,7 @@
 # Travels — Curated Maps by Girard-Davila
 # https://travels.girard-davila.net/
 # Format: https://llmstxt.org
-# Last updated: 2026-04-09
+# Last updated: 2026-04-12
 
 > Hand-picked travel maps from real family experiences across South East Asia and Europe.
 > GPS-precise spots, honest notes, opening hours, prices. No generic tourist lists.
@@ -10,13 +10,189 @@
 
 Girard-Davila Travels is an open-source curated travel map project built from personal travel experience. Each destination contains GPS-verified POIs with category filters, opening hours, prices, and insider notes. Maps are built with Hugo, Leaflet.js, GeoJSON and TopoJSON, deployed on GitHub Pages.
 
-Any user can sign in with GitHub, load their own GeoJSON/TopoJSON data onto the maps, and submit a pull request to add their own destination to the project.
+Any user can fork the repository, add new places to a GeoJSON file, and submit a pull request. New places can also be submitted directly from the browser using the in-map **🐙 GitHub → Submit PR** toolbar flow — no local setup required.
 
 ## Destinations
 
-- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/) — Beaches, spas, restaurants, activities across the island. Covers Lamai, Chaweng, Maenam, Nathon. Includes Tamarind Springs Forest Spa, Karma Two Palms Beach Club, local gyms, padel courts, GPS-verified coordinates, opening hours, prices. VIP-locked hidden spots.
+- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/) — Island-wide overview: beaches (Chaweng, Maenam, Choeng Mon, Lamai), Big Buddha Temple, Bophut Fisherman's Village, Karma Two Palms Beach Club, Nathon Pier. Includes a Lamai Village area-guide POI that links to the dedicated Lamai map.
+- [Lamai Beach, Koh Samui](https://travels.girard-davila.net/lamai/) — Neighbourhood-level detail for Lamai: local restaurants, Muay Thai gyms (Punch It, Chatpichit), markets (Lotus Fresh, Lotus's), spas (Tamarind Springs, Phu's Massage, Community Club), temples (Wat Lamai, Wat Ratchathamaram Red Temple), beaches (Crystal Beach), bakeries, bars and cafés. 28 GPS-verified POIs.
 - [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/) — An Hoi peninsula: curated restaurants, cafés, local market, Buddhist pagoda, river viewpoints around the Na Mom Homestay area.
 - [Gulf of Thailand Fishing Expedition](https://travels.girard-davila.net/fishing-boat/) — 2-day boat trip from Nathon Pier: red snapper shelf, tuna alley, overnight island anchorage, hazard markers, fuel barge. Demonstrates the TopoJSON multi-segment route + waypoints format.
+
+## GeoJSON POI Schema
+
+Every destination's data lives in `static/<destination>/locations.geojson` as a standard GeoJSON `FeatureCollection`. Each feature must follow this schema:
+
+```json
+{
+  "type": "Feature",
+  "properties": {
+    "name":     "String — place name (required)",
+    "category": "String — must match a known category (required)",
+    "address":  "String — full street address or area description (recommended)",
+    "notes":    "String — insider description, what makes it worth visiting",
+    "hours":    "String — opening hours, e.g. '09:00–18:00 daily' or 'Open 24h'",
+    "phone":    "String — international format, e.g. '+66 77 256 500'",
+    "url":      "String — website or Instagram URL",
+    "price":    "String — entry fee or price range, e.g. 'from ฿1,500'"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [longitude, latitude]
+  }
+}
+```
+
+**Coordinate order is `[longitude, latitude]`** — the GeoJSON standard (opposite to Google Maps).
+
+Only `name`, `category`, and `geometry` are strictly required. All other properties are optional but encouraged for quality.
+
+### Categories
+
+Use one of the established categories for the destination's map to get the right colour-coded icon. Unrecognised categories fall back to grey `📍`.
+
+**Lamai map** (`layouts/lamai/list.html` `CATEGORY_COLORS`/`CATEGORY_ICONS`):
+
+| Category   | Icon | Colour    |
+|------------|------|-----------|
+| Restaurant | 🍽️  | `#f97316` |
+| Bakery     | 🥐  | `#eab308` |
+| Café       | ☕  | `#92400e` |
+| Muay Thai  | 🥊  | `#ef4444` |
+| Market     | 🛒  | `#7dd3fc` |
+| Bar        | 🍺  | `#8b5cf6` |
+| Spa        | 💆  | `#ec4899` |
+| Fitness    | 💪  | `#06b6d4` |
+| Landmark   | 🪨  | `#64748b` |
+| Temple     | 🛕  | `#a78bfa` |
+| Beach      | 🏖️  | `#0ea5e9` |
+
+**Koh Samui map** (`layouts/koh-samui/list.html`):
+
+| Category   | Icon | Colour    |
+|------------|------|-----------|
+| Beach      | 🏖️  | `#0ea5e9` |
+| Restaurant | 🍽️  | `#f97316` |
+| Activity   | 🎯  | `#22c55e` |
+| Hotel      | 🏨  | `#8b5cf6` |
+| Shopping   | 🛍️  | `#ec4899` |
+| Area Guide | 🗺️  | `#1a3a5c` |
+
+Adding a new category requires adding a matching entry to both `CATEGORY_COLORS` and `CATEGORY_ICONS` in the relevant `layouts/<destination>/list.html`.
+
+## Contributing New Places — Step-by-Step
+
+### Option A — In-browser (no local setup)
+
+The fastest path for adding a small number of places to an existing map:
+
+1. Open any map page, e.g. `https://travels.girard-davila.net/lamai/`
+2. Click **🛠️ Tools** in the top-left overlay to reveal the toolbar
+3. Click **🐙 GitHub** → **Sign In** tab
+4. Authenticate via **Device Flow** (enter the displayed code at `github.com/login/device`) or paste a Personal Access Token
+5. Go to the **Submit PR** tab
+6. Select the destination GeoJSON file (e.g. `static/lamai/locations.geojson`)
+7. Paste your new feature(s) following the schema above, or load a local file
+8. Fill in a branch name and PR title, then click **Submit PR**
+9. The tool will fork `alx/travel-guide` under your account (if not already forked), commit the updated GeoJSON to a new branch, and open a pull request via the GitHub API
+
+### Option B — CLI / Git workflow
+
+**Step 1 — Fork the repository**
+
+```bash
+# Via GitHub CLI
+gh repo fork alx/travel-guide --clone --remote
+
+# Or manually: fork on github.com, then:
+git clone https://github.com/<your-username>/travel-guide.git
+cd travel-guide
+git remote add upstream https://github.com/alx/travel-guide.git
+```
+
+**Step 2 — Create a feature branch**
+
+```bash
+git checkout -b add-lamai-places
+```
+
+**Step 3 — Edit the GeoJSON file**
+
+Open `static/lamai/locations.geojson` (or another destination) and append new features to the `"features"` array. Keep JSON valid — run a quick check:
+
+```bash
+python3 -c "import json; json.load(open('static/lamai/locations.geojson')); print('valid')"
+```
+
+Minimal example of a new feature to append:
+
+```json
+{
+  "type": "Feature",
+  "properties": {
+    "name": "My Favourite Café",
+    "category": "Café",
+    "address": "42 Haad Lamai Road, Tambon Maret, Ko Samui",
+    "notes": "Tiny roaster run by a Thai-French couple. Best cold brew on the beach road.",
+    "hours": "08:00–16:00",
+    "phone": "+66 81 234 5678"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [100.0491, 9.4703]
+  }
+}
+```
+
+> **Tip — get coordinates**: right-click any location in Google Maps → "What's here?" shows `lat, lng`. Reverse the order to `[lng, lat]` for GeoJSON.
+
+**Step 4 — Commit and push**
+
+```bash
+git add static/lamai/locations.geojson
+git commit -m "lamai: add My Favourite Café and 2 other spots"
+git push origin add-lamai-places
+```
+
+**Step 5 — Open a Pull Request**
+
+```bash
+gh pr create \
+  --repo alx/travel-guide \
+  --title "lamai: add 3 new spots" \
+  --body "Added: My Favourite Café (Café), Jungle Smoothie Bar (Bar), Beach Yoga Club (Fitness). All GPS-verified on-site."
+```
+
+Or open a PR on `github.com/<your-username>/travel-guide` → **Contribute → Open pull request**.
+
+### PR Guidelines
+
+- One destination per PR is preferred
+- GeoJSON must be valid (no trailing commas, correct coordinate order)
+- Include `notes` describing *why* a place is worth visiting — not just its type
+- `hours`, `phone`, and `url` are optional but strongly encouraged
+- Coordinates should be verified (on-site GPS, Google Maps pin, or Nominatim)
+- Do not include `"premium": true` — that field is managed by maintainers
+
+### Adding a New Destination (requires Hugo files)
+
+To add a completely new destination (not just POIs to an existing map):
+
+1. Create `static/<destination>/locations.geojson` — the GeoJSON data file
+2. Create `content/<destination>/_index.md` — minimal Hugo content file:
+   ```yaml
+   ---
+   title: "My Destination"
+   ---
+   ```
+3. Copy `layouts/lamai/list.html` to `layouts/<destination>/list.html` and update:
+   - `window.MAP_CONFIG.title`
+   - `window.MAP_CONFIG.geojsonUrl` → `'/<destination>/locations.geojson'`
+   - `window.MAP_CONFIG.embedPath` → `'/<destination>/'`
+   - Initial map centre: `map.setView([lat, lng], zoom)`
+   - `CATEGORY_COLORS` and `CATEGORY_ICONS` for the new destination's categories
+   - Page header text in `{{ define "main" }}`
+4. Open a PR with all three files
 
 ## Map Toolbar
 
@@ -62,33 +238,75 @@ Append `?embed=1` to any map URL to get a map-only view (no header, footer, tool
 
 ```html
 <iframe
-  src="https://travels.girard-davila.net/koh-samui/?embed=1"
+  src="https://travels.girard-davila.net/lamai/?embed=1"
   width="100%" height="500" frameborder="0"
   style="border-radius:12px;"
-  title="Koh Samui — Girard-Davila Travels">
+  title="Lamai Beach — Girard-Davila Travels">
 </iframe>
 ```
 
-Add `&filter=Beach` to pre-filter on load.
-
-## VIP Access
-
-Some POIs are reserved for paying members (€4.99/month via Stripe). They appear as blurred 🔒 cards. After Stripe payment the return URL carries `?vip=success`; `vip-manager.html` detects this, stores `vip_access=1` in `localStorage`, and shows a dismissible welcome modal. A "Restore access" button lets returning members re-activate on a new device without repaying.
+Add `&filter=Spa` to pre-filter on load. Any category name works as a filter value.
 
 ## TopoJSON Format
 
 The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc coordinates are absolute `[lng, lat]` pairs. Two named objects: `route` (LineString geometries referencing arc indices) and `waypoints` (Point geometries with direct coordinates). Loaded via `topojson.feature()`.
 
-## Contributing
+## Technical Stack
 
-1. Fork `alx/travel-guide` on GitHub
-2. Add `static/<destination>/locations.geojson` following existing schema
-3. Add `content/<destination>/_index.md` and `layouts/<destination>/list.html`
-4. Submit a PR — or use the in-map **🐙 GitHub → Submit PR** flow to do everything from the browser
+| Layer | Technology |
+|-------|-----------|
+| Static site | Hugo |
+| Maps | Leaflet.js 1.9.4 + OpenStreetMap tiles |
+| Data formats | GeoJSON · TopoJSON (topojson-client@3) |
+| Auth | GitHub Device Flow via Cloudflare Worker CORS proxy |
+| Forms | Formspree (mqegoqqz) |
+| Analytics | Google Analytics G-WDJF6L9P30 |
+| Hosting | GitHub Pages — travels.girard-davila.net |
+| CI/CD | GitHub Actions → upload-pages-artifact → deploy-pages |
+| DNS | Cloudflare (CNAME flattening, apex → www redirect) |
+
+## Key Files
+
+| Path | Purpose |
+|------|---------|
+| `static/lamai/locations.geojson` | Lamai Beach POI data (28 places) |
+| `static/koh-samui/locations.geojson` | Koh Samui island overview POIs |
+| `static/hoi-an/locations.geojson` | Hoi An POI data |
+| `static/fishing-boat/route.topojson` | Fishing expedition — route + waypoints (TopoJSON) |
+| `layouts/lamai/list.html` | Lamai map: Leaflet, categories, sidebar, filters |
+| `layouts/koh-samui/list.html` | Koh Samui map |
+| `layouts/hoi-an/list.html` | Hoi An map |
+| `layouts/fishing-boat/list.html` | TopoJSON expedition demo |
+| `layouts/partials/map-toolbar.html` | Toolbar: download, GPX, embed, share, load, GitHub |
+| `layouts/partials/contact-form.html` | Floating Formspree contact form |
+| `layouts/_default/baseof.html` | Site shell, embed-mode CSS, GitHub config injection |
+| `workers/github-proxy.js` | Cloudflare Worker: GitHub Device Flow CORS proxy |
+| `hugo.toml` | Site config — GitHub OAuth params |
 
 ## Changelog
 
 ```
+2026-04-12  fix   lamai: remove VIP flags from all POIs; fix GPS for Wat Lamai,
+                  Wat Ratchathamaram Red Temple, Chez Pelo Butchery, Crystal Beach
+                  via Nominatim/OSM; remove JUNIPER Spa, Hilltop Jungle Bar,
+                  Secret Lagoon, Local Chef's Table, Jungle Waterfall & Pool
+2026-04-12  fix   koh-samui: remove VIP flags from Secret Sunrise Beach &
+                  Expat Rooftop Club; recategorise to Beach / Bar
+2026-04-12  feat  lamai: Market icon colour → light blue (#7dd3fc)
+2026-04-12  feat  koh-samui: remove all Lamai-area duplicate POIs; replace with
+                  Lamai Village area-guide POI linking to /lamai/
+2026-04-12  feat  koh-samui: add Area Guide category (🗺️ #1a3a5c); "Open Lamai Map →"
+                  link renders in place of generic "Source ↗"
+2026-04-11  feat  lamai: 8 new locations (Phu's Massage, Community Club, JUNIPER Spa,
+                  1% Coffee House, Crystal Beach, Wat Ratchathamaram, Wat Lamai,
+                  Chez Pelo Butchery); VIP teaser POIs; Temple & Beach categories
+2026-04-11  feat  all maps: Windy-style full-viewport layout — #map fixed inset:0;
+                  floating frosted-glass left sidebar with header, toolbar, POI list
+2026-04-11  feat  mobile: column-reverse drawer — header anchored at bottom;
+                  📍 Spots button expands POI list upward; phantom gap fix (gap:0)
+2026-04-11  feat  ask-a-question button: fixed bottom-right; redesigned modal panel
+2026-04-11  feat  lamai: initial 21-POI map (restaurants, gyms, spas, landmarks,
+                  markets) with category filters and GPS-verified coordinates
 2026-04-09  feat  load modal: GitHub forks browser — lists public forks of
                   alx/travel-guide, branch dropdown, recursive GeoJSON scan,
                   one-click load onto map
@@ -104,51 +322,14 @@ The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc co
 2026-04-09  feat  Gulf of Thailand fishing expedition demo — TopoJSON format
                   with 4 route segments, 6 waypoints, day filter tabs
 2026-04-09  feat  Cloudflare Worker CORS proxy for GitHub Device Flow
-2026-04-09  ux    Stripe VIP welcome: dismissible modal overlay (not banner)
-2026-04-09  feat  Stripe VIP payment flow: vip-manager partial, paywall modal,
-                  localStorage persistence, success page, restore access
-2026-04-09  seo   meta tags, OG/Twitter Card, JSON-LD, robots.txt, canonical
-2026-04-09  feat  landing page: destination cards, VIP explainer, custom map CTA
+2026-04-09  feat  Koh Samui map — left-column layout, URL filter params
+2026-04-09  feat  landing page: destination cards, custom map CTA
 2026-04-09  feat  floating Formspree contact form on all pages
 2026-04-09  feat  Hoi An map from uMap JSON export (An Hoi peninsula)
-2026-04-09  feat  Tamarind Springs Forest Spa — hours, price, website
-2026-04-09  feat  Karma Two Palms Beach Club — hours, GPS, website
-2026-04-09  feat  Koh Samui map — left-column layout, URL filter params, VIP paywall
+2026-04-09  seo   meta tags, OG/Twitter Card, JSON-LD, robots.txt, canonical
 2026-04-09  feat  /llms.txt for AI agent discovery (llmstxt.org format)
 2026-04-09  analytics  Google Analytics G-WDJF6L9P30
 ```
-
-## Technical Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Static site | Hugo |
-| Maps | Leaflet.js 1.9.4 + OpenStreetMap tiles |
-| Data formats | GeoJSON · TopoJSON (topojson-client@3) |
-| Payments | Stripe Payment Links + localStorage (no backend) |
-| Auth | GitHub Device Flow via Cloudflare Worker CORS proxy |
-| Forms | Formspree (mqegoqqz) |
-| Analytics | Google Analytics G-WDJF6L9P30 |
-| Hosting | GitHub Pages — travels.girard-davila.net |
-| CI/CD | GitHub Actions → upload-pages-artifact → deploy-pages |
-| DNS | Cloudflare (CNAME flattening, apex → www redirect) |
-
-## Key Files
-
-| Path | Purpose |
-|------|---------|
-| `static/koh-samui/locations.geojson` | Koh Samui POI data |
-| `static/hoi-an/locations.geojson` | Hoi An POI data |
-| `static/fishing-boat/route.topojson` | Fishing expedition — route + waypoints (TopoJSON) |
-| `layouts/partials/map-toolbar.html` | Toolbar: download, GPX, embed, share, load, GitHub |
-| `layouts/partials/vip-manager.html` | Stripe VIP unlock, welcome modal, localStorage |
-| `layouts/partials/contact-form.html` | Floating Formspree contact form |
-| `layouts/_default/baseof.html` | Site shell, embed-mode CSS, GitHub config injection |
-| `layouts/koh-samui/list.html` | Koh Samui map (Leaflet, filters, custom layer) |
-| `layouts/hoi-an/list.html` | Hoi An map |
-| `layouts/fishing-boat/list.html` | TopoJSON expedition demo |
-| `workers/github-proxy.js` | Cloudflare Worker: GitHub Device Flow CORS proxy |
-| `hugo.toml` | Site config — Stripe + GitHub OAuth params |
 
 ## Links
 

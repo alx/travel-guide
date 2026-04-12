@@ -37,7 +37,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [100.08382, 9.558624]
+        "coordinates": [100.0806, 9.5627]
       }
     },
     {
@@ -107,32 +107,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [100.0478, 9.4695]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Secret Sunrise Beach",
-        "category": "Beach",
-        "address": "North Koh Samui",
-        "notes": "Quiet, uncrowded beach on the north coast — one of the best sunrise spots on the island."
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [100.032, 9.568]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Expat Rooftop Club",
-        "category": "Bar",
-        "address": "Chaweng, Koh Samui",
-        "notes": "Rooftop bar popular with the expat community. Sunset views over Chaweng, relaxed atmosphere, and good cocktail selection."
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [100.061, 9.536]
       }
     }
   ]
