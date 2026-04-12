@@ -1,0 +1,256 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lamai Breakfast",
+        "category": "Restaurant",
+        "address": "138/1 Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Popular local Thai breakfast spot known for congee (jok) and traditional morning dishes.",
+        "hours": "07:00–14:00",
+        "phone": "+66 65 337 7946"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0478388, 9.4708193] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Punch It Gym",
+        "category": "Muay Thai",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Muay Thai training gym with daily sessions for all levels — beginner to fighter.",
+        "hours": "08:00–19:45",
+        "phone": "+66 61 661 5161",
+        "url": "https://punchitgym.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0412322, 9.4707108] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chatpichit Muay Thai Gym",
+        "category": "Muay Thai",
+        "address": "63 Lamaipattana 3, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Traditional Muay Thai camp with experienced trainers. Individual and group sessions available.",
+        "hours": "09:00–18:00",
+        "phone": "+66 98 525 9458",
+        "url": "https://chatpichitmuaythai.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0374974, 9.4735239] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tamarind Springs",
+        "category": "Spa",
+        "address": "265/1 Tambon Lemat, Ko Samui, Surat Thani 84310",
+        "notes": "Koh Samui's first forest spa (est. 1998). Nestled in the rainforest with natural granite boulders, steam caves, and herbal pools. One of the island's finest wellness experiences.",
+        "hours": "09:00–18:00 daily",
+        "phone": "+66 85 926 4626",
+        "url": "https://tamarindsprings.com",
+        "price": "from ฿1,500 (Steam & Dream package)"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0573344, 9.4743138] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lotus Eat Market",
+        "category": "Market",
+        "address": "131/3 Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Evening street food market with local vendors, fresh produce, and Thai street snacks.",
+        "hours": "15:00–22:00"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.044957, 9.472554] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Meal Prep Beachside",
+        "category": "Restaurant",
+        "address": "156/3 Haad Lamai Road, Tambon Maret, Ko Samui, Surat Thani 84320",
+        "notes": "Healthy meal prep and clean-eating restaurant on the beachside road. Macro-friendly menus, protein bowls, and smoothies.",
+        "hours": "08:00–17:00",
+        "phone": "+66 80 305 1585",
+        "url": "https://mealprepsamui.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0494468, 9.4689923] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Balkan Corner Samui",
+        "category": "Restaurant",
+        "address": "139 Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Eastern European cuisine in Lamai — grilled meats, Balkan specialties, and a relaxed terrace vibe.",
+        "hours": "16:30–23:00",
+        "phone": "+66 85 354 8963"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0482369, 9.4687908] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Samui Bakery & Patisserie by SEB",
+        "category": "Bakery",
+        "address": "179/4 Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "French-style bakery and patisserie. Fresh bread, croissants, pastries, and custom cakes baked daily by a French pastry chef.",
+        "hours": "06:30–18:30",
+        "phone": "+66 86 641 5007",
+        "url": "https://m.samui-passion.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0514512, 9.4710358] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Papé",
+        "category": "Bakery",
+        "address": "83/25 Haad Lamai Road, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Artisan bakery with fresh-baked bread, pastries, and light bites. A quiet neighbourhood find on the main Lamai road."
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0495073, 9.471281] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Bamboo",
+        "category": "Restaurant",
+        "address": "124/433 Tambon Malet, Ko Samui, Surat Thani 84310",
+        "notes": "All-day dining with Thai and international options. Relaxed bamboo-and-garden setting, popular with expats and long-stay visitors.",
+        "hours": "07:00–23:00",
+        "phone": "+66 61 190 3253"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0459955, 9.4645677] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nana Tam",
+        "category": "Restaurant",
+        "address": "83/25 Haad Lamai Road, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Local Thai restaurant with a broad menu. Known for fresh seafood and classic Thai dishes at fair prices.",
+        "hours": "12:00–23:00",
+        "phone": "+66 98 383 6900"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0490811, 9.4706233] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chalay Rock Bar",
+        "category": "Bar",
+        "address": "208/6 Moo 4, Ko Samui, Surat Thani 84310",
+        "notes": "Cliffside bar on the eastern cape of Lamai with dramatic sea views. Sundowners, cocktails, and a rock-music vibe.",
+        "hours": "10:00–20:00",
+        "phone": "+66 62 404 2969"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0685324, 9.4685723] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Outdoor Gym",
+        "category": "Fitness",
+        "address": "Lamai Beach area, Ko Samui, Surat Thani",
+        "notes": "Free public outdoor gym on the beachfront. Resistance machines, pull-up bars, and parallel bars with a sea breeze.",
+        "hours": "Open 24h"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0570765, 9.470278] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stone Turtle Cape",
+        "category": "Landmark",
+        "address": "Southern cape, Ko Samui, Surat Thani",
+        "notes": "Natural rock formations on the southern headland of Lamai Beach resembling a giant stone turtle. Great sunset viewpoint with a small spirit house.",
+        "hours": "Open anytime"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0688634, 9.4666845] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hin Ta & Hin Yai (Grandmother & Grandfather Rocks)",
+        "category": "Landmark",
+        "address": "126/92 Moo 3, Ko Samui, Surat Thani 84310",
+        "notes": "Koh Samui's most iconic natural landmark — rock formations shaped by sea erosion into unmistakably genital shapes. Local legend links them to an elderly couple lost at sea. Small souvenir stalls and entry is free.",
+        "hours": "08:30–18:30 daily",
+        "price": "Free entry"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0395387, 9.452187] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Harry's Sportsbar & Grill",
+        "category": "Bar",
+        "address": "124/158-159 Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Lively sports bar showing live international sports. Cold beers, grilled food, and a busy atmosphere on match nights.",
+        "hours": "15:00–02:00",
+        "phone": "+66 85 286 2954"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0433084, 9.4628092] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lotus's Lamai (Supermarket)",
+        "category": "Market",
+        "address": "131/12 Thawirat Phakdi Road, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Full-size Lotus's hypermarket — the main supermarket for Lamai. Fresh produce, imported goods, pharmacy, ATM, and food court.",
+        "hours": "09:00–22:00 daily",
+        "phone": "+66 77 256 500",
+        "url": "https://www.lotuss.com"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0450441, 9.471498] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Me Coffee",
+        "category": "Café",
+        "address": "Had Lamai 3, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Cosy neighbourhood coffee shop. Good espresso, iced lattes, and Thai-style coffee drinks at local prices.",
+        "phone": "+66 81 823 5159"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0423673, 9.4715268] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wi Num Korat",
+        "category": "Restaurant",
+        "address": "150/10 Moo 4, Ko Samui, Surat Thani 84310",
+        "notes": "Northeastern Thai (Isaan) restaurant — grilled meats, som tam, larb, and sticky rice. Local favourite with authentic Korat-style cooking.",
+        "phone": "+66 63 236 1891"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0484012, 9.4703435] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lamai Fresh Market (ตลาดสดละไม)",
+        "category": "Market",
+        "address": "Haad Lamai 4 Road, Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Main morning fresh market for Lamai. Local vendors selling fresh fish, meat, vegetables, fruit, and prepared foods. Best visited early morning for the widest selection.",
+        "hours": "06:00–12:00 daily"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0469599, 9.4716345] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Roaming Coffee",
+        "category": "Café",
+        "address": "Lamai Night Market area, Tambon Maret, Ko Samui, Surat Thani 84130",
+        "notes": "Morning specialty coffee pop-up at the Lamai market area. Single-origin pour-overs, cold brew, and light breakfast bites.",
+        "hours": "08:00–14:00",
+        "phone": "+66 90 798 4251"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.0478864, 9.468831] }
+    }
+  ]
+}
