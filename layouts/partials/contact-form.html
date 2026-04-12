@@ -1,22 +1,130 @@
 <div class="contact-form-float" id="contact-form-float">
-  <button class="contact-toggle" onclick="document.getElementById('contact-form-float').classList.toggle('open')" aria-label="Contact">
-    ✉️ <span>Ask a question</span>
-  </button>
-  <div class="contact-form-panel">
-    <h4>Get in touch</h4>
-    <p style="font-size:0.8rem;color:#555;margin-bottom:0.75rem;">Questions about a destination? Looking for a custom map?</p>
+  <div class="contact-form-panel" role="dialog" aria-label="Ask a question">
+    <div class="cfp-header">
+      <div>
+        <h4>Ask a question</h4>
+        <p>About a destination or a custom map?</p>
+      </div>
+      <button class="cfp-close" onclick="document.getElementById('contact-form-float').classList.remove('open')" aria-label="Close">✕</button>
+    </div>
     <form action="https://formspree.io/f/mqegoqqz" method="POST">
-      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;">
-      <input type="email" name="email" placeholder="Email" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;">
-      <textarea name="message" placeholder="Your message..." rows="3" required style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid #ddd;border-radius:6px;margin-bottom:0.5rem;font-size:0.82rem;resize:vertical;"></textarea>
-      <button type="submit" style="width:100%;background:#1a3a5c;color:white;border:none;padding:0.5rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:0.85rem;">Send →</button>
+      <input  class="cfp-input" type="text"  name="name"    placeholder="Your name"      required>
+      <input  class="cfp-input" type="email" name="email"   placeholder="Email"          required>
+      <textarea class="cfp-input cfp-textarea" name="message" placeholder="Your message…" rows="3" required></textarea>
+      <button class="cfp-submit" type="submit">Send →</button>
     </form>
   </div>
+  <button class="contact-toggle" onclick="document.getElementById('contact-form-float').classList.toggle('open')" aria-label="Ask a question">
+    ✉️ Ask a question
+  </button>
 </div>
+
 <style>
-.contact-form-float { position:fixed; bottom:1.5rem; right:1.5rem; z-index:8000; font-family:inherit; }
-.contact-toggle { background:#1a3a5c; color:white; border:none; padding:0.6rem 1rem; border-radius:24px; cursor:pointer; font-size:0.85rem; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,0.2); display:flex; align-items:center; gap:0.4rem; }
-.contact-form-panel { display:none; background:white; border-radius:12px; padding:1.1rem; box-shadow:0 4px 20px rgba(0,0,0,0.15); width:280px; margin-bottom:0.5rem; }
-.contact-form-float.open .contact-form-panel { display:block; }
-.contact-form-float.open .contact-toggle span { display:none; }
+/* ── Floating trigger ── */
+.contact-form-float {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 8000;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.contact-toggle {
+  background: rgba(26,58,92,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.contact-toggle:hover { opacity: 0.85; }
+
+/* ── Panel ── */
+.contact-form-panel {
+  display: none;
+  background: white;
+  border-radius: 14px;
+  width: 300px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+.contact-form-float.open .contact-form-panel { display: block; }
+
+/* Header row */
+.cfp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem 1rem 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f8fafc;
+}
+.cfp-header h4 { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.2rem; color: #1a1a1a; }
+.cfp-header p  { font-size: 0.73rem; color: #888; margin: 0; line-height: 1.4; }
+.cfp-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.15s, background 0.15s;
+}
+.cfp-close:hover { color: #333; background: #eee; }
+
+/* Form body */
+.contact-form-panel form {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.cfp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.65rem;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  background: #fafafa;
+  color: #1a1a1a;
+  transition: border-color 0.15s, background 0.15s;
+}
+.cfp-input:focus { outline: none; border-color: #1a3a5c; background: white; }
+.cfp-textarea { resize: vertical; min-height: 72px; }
+.cfp-submit {
+  width: 100%;
+  background: #1a3a5c;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  transition: opacity 0.15s;
+}
+.cfp-submit:hover { opacity: 0.88; }
+
+/* Mobile: lift above the bottom header card */
+@media (max-width: 768px) {
+  .contact-form-float { bottom: 7rem; right: 0.75rem; }
+  .contact-form-panel { width: calc(100vw - 1.5rem); }
+}
 </style>
