@@ -1,54 +1,137 @@
 {
   "type": "FeatureCollection",
+  "bbox": [108.361615, 15.869511, 108.373934, 15.877557],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-13",
+    "schema": "/schema.json"
+  },
   "features": [
     {
       "type": "Feature",
-      "properties": { "name": "Na Mom Homestay", "category": "Hotel", "address": "An Hoi, Hoi An", "notes": "Local homestay on An Hoi peninsula" },
+      "id": "hoian-na-mom-homestay",
+      "properties": {
+        "name": "Na Mom Homestay",
+        "category": "Hotel",
+        "address": "An Hoi, Hoi An",
+        "notes": "Local homestay on An Hoi peninsula",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.365397, 15.871272] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Breeze Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An", "notes": "Riverside restaurant on An Hoi" },
+      "id": "hoian-breeze-restaurant",
+      "properties": {
+        "name": "Breeze Restaurant",
+        "category": "Restaurant",
+        "address": "An Hoi, Hoi An",
+        "notes": "Riverside restaurant on An Hoi",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.361615, 15.871297] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Tok Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An" },
+      "id": "hoian-tok-restaurant",
+      "properties": {
+        "name": "Tok Restaurant",
+        "category": "Restaurant",
+        "address": "An Hoi, Hoi An",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.363436, 15.873929] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Buffalo Home Restaurant", "category": "Restaurant", "address": "An Hoi, Hoi An" },
+      "id": "hoian-buffalo-home-restaurant",
+      "properties": {
+        "name": "Buffalo Home Restaurant",
+        "category": "Restaurant",
+        "address": "An Hoi, Hoi An",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.366555, 15.877557] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "Morning Coffee", "category": "Cafe", "address": "An Hoi, Hoi An", "notes": "Morning coffee spot" },
+      "id": "hoian-morning-coffee",
+      "properties": {
+        "name": "Morning Coffee",
+        "category": "Cafe",
+        "address": "An Hoi, Hoi An",
+        "notes": "Morning coffee spot",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.362591, 15.875122] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "An Hoi Market", "category": "Shopping", "address": "An Hoi, Hoi An", "notes": "Local market" },
+      "id": "hoian-an-hoi-market",
+      "properties": {
+        "name": "An Hoi Market",
+        "category": "Shopping",
+        "address": "An Hoi, Hoi An",
+        "notes": "Local market",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.364005, 15.876125] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "WinMart", "category": "Shopping", "address": "An Hoi, Hoi An", "notes": "Convenience store" },
+      "id": "hoian-winmart",
+      "properties": {
+        "name": "WinMart",
+        "category": "Shopping",
+        "address": "An Hoi, Hoi An",
+        "notes": "Convenience store",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.365349, 15.870239] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "ATM", "category": "Shopping", "address": "An Hoi, Hoi An" },
+      "id": "hoian-atm",
+      "properties": {
+        "name": "ATM",
+        "category": "Shopping",
+        "address": "An Hoi, Hoi An",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.373934, 15.872753] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "An Hoi Pagoda", "category": "Activity", "address": "An Hoi, Hoi An", "notes": "Buddhist pagoda" },
+      "id": "hoian-an-hoi-pagoda",
+      "properties": {
+        "name": "An Hoi Pagoda",
+        "category": "Activity",
+        "address": "An Hoi, Hoi An",
+        "notes": "Buddhist pagoda",
+        "coord_source": "research",
+        "coord_accuracy": "medium"
+      },
       "geometry": { "type": "Point", "coordinates": [108.362041, 15.872917] }
     },
     {
       "type": "Feature",
-      "properties": { "name": "River Point of View", "category": "Activity", "address": "An Hoi, Hoi An", "notes": "Scenic viewpoint along the Thu Bon river" },
+      "id": "hoian-river-point-of-view",
+      "properties": {
+        "name": "River Point of View",
+        "category": "Activity",
+        "address": "An Hoi, Hoi An",
+        "notes": "Scenic viewpoint along the Thu Bon river",
+        "coord_source": "estimated",
+        "coord_accuracy": "low"
+      },
       "geometry": { "type": "Point", "coordinates": [108.365827, 15.869511] }
     }
   ]

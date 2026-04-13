@@ -1,13 +1,22 @@
 {
   "type": "FeatureCollection",
+  "bbox": [99.9307916, 9.4695, 100.0825253, 9.5785237],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-13",
+    "schema": "/schema.json"
+  },
   "features": [
     {
       "type": "Feature",
+      "id": "samui-chaweng-beach",
       "properties": {
         "name": "Chaweng Beach",
         "category": "Beach",
         "address": "Chaweng, Koh Samui",
-        "notes": "Most popular beach on the island — long stretch of white sand, plenty of facilities, restaurants, and beach clubs."
+        "notes": "Most popular beach on the island — long stretch of white sand, plenty of facilities, restaurants, and beach clubs.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -16,11 +25,14 @@
     },
     {
       "type": "Feature",
+      "id": "samui-maenam-beach",
       "properties": {
         "name": "Maenam Beach",
         "category": "Beach",
         "address": "Maenam, Koh Samui",
-        "notes": "Long, calm beach on the north coast. Excellent for swimming, quieter than Chaweng with a relaxed village feel."
+        "notes": "Long, calm beach on the north coast. Excellent for swimming, quieter than Chaweng with a relaxed village feel.",
+        "coord_source": "research",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -29,11 +41,14 @@
     },
     {
       "type": "Feature",
+      "id": "samui-choeng-mon-beach",
       "properties": {
         "name": "Choeng Mon Beach",
         "category": "Beach",
         "address": "Choeng Mon, Koh Samui",
-        "notes": "Quiet northeast bay with shallow, clear water. Ideal for families and those seeking a less touristy setting."
+        "notes": "Quiet northeast bay with shallow, clear water. Ideal for families and those seeking a less touristy setting.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -42,11 +57,14 @@
     },
     {
       "type": "Feature",
+      "id": "samui-bophut-fishermans-village",
       "properties": {
         "name": "Bophut Fisherman's Village",
         "category": "Restaurant",
         "address": "Bophut, Koh Samui",
-        "notes": "Historic fishing village with boutique cafés, seafood restaurants, and the famous Friday Night Walking Street market."
+        "notes": "Historic fishing village with boutique cafés, seafood restaurants, and the famous Friday Night Walking Street market.",
+        "coord_source": "research",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -55,11 +73,14 @@
     },
     {
       "type": "Feature",
+      "id": "samui-big-buddha-temple",
       "properties": {
         "name": "Big Buddha Temple (Wat Phra Yai)",
         "category": "Activity",
         "address": "Ko Fan, Koh Samui",
-        "notes": "Koh Samui's most recognisable landmark — a 12-metre golden Buddha visible from across the north bay. Free entry, causeway walkable."
+        "notes": "Koh Samui's most recognisable landmark — a 12-metre golden Buddha visible from across the north bay. Free entry, causeway walkable.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -68,11 +89,14 @@
     },
     {
       "type": "Feature",
+      "id": "samui-nathon-pier",
       "properties": {
         "name": "Nathon Pier & Market",
         "category": "Shopping",
         "address": "Nathon, Koh Samui",
-        "notes": "The island's administrative capital. Authentic local market with lower prices, ferry connections to the mainland, and minimal tourist crowds."
+        "notes": "The island's administrative capital. Authentic local market with lower prices, ferry connections to the mainland, and minimal tourist crowds.",
+        "coord_source": "research",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -81,6 +105,7 @@
     },
     {
       "type": "Feature",
+      "id": "samui-karma-two-palms",
       "properties": {
         "name": "Karma Two Palms Beach Club",
         "category": "Beach",
@@ -88,7 +113,9 @@
         "notes": "Beachfront club at Karma Panalee resort. Infinity pool aligned with the Gulf of Thailand, wood-fired pizza oven, Thai restaurant, watersports, and live DJ events. Opened January 2025.",
         "url": "https://karmacommunity.karmagroup.com/experience-karma/two-palms-samui-beach-club-magic/",
         "hours": "Open daily (hours vary by season)",
-        "price": "À la carte dining; sun lounger hire available"
+        "price": "À la carte dining; sun lounger hire available",
+        "coord_source": "research",
+        "coord_accuracy": "high"
       },
       "geometry": {
         "type": "Point",
@@ -97,12 +124,15 @@
     },
     {
       "type": "Feature",
+      "id": "samui-lamai-village",
       "properties": {
         "name": "Lamai Village",
         "category": "Area Guide",
         "address": "Lamai, Koh Samui",
         "notes": "Lamai is Samui's second-largest beach area — a laid-back mix of beach, Muay Thai gyms, local markets, forest spas, and great food. Open the dedicated Lamai map for the full curated guide.",
-        "url": "/lamai/"
+        "url": "/lamai/",
+        "coord_source": "research",
+        "coord_accuracy": "medium"
       },
       "geometry": {
         "type": "Point",

@@ -26,6 +26,9 @@ jobs:
           hugo-version: '0.147.0'
           extended: true
 
+      - name: Validate GeoJSON
+        run: python3 scripts/validate_geojson.py
+
       - name: Build site
         run: hugo --minify
 

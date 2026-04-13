@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travels.girard-davila.net/schema.json",
+  "title": "Travel Guide POI Feature Properties",
+  "description": "JSON Schema for GeoJSON Feature properties in alx/travel-guide. All POI features must satisfy this schema.",
+  "type": "object",
+  "required": ["name", "category"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name of the place"
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Place type — used for icon and filter",
+      "examples": [
+        "Restaurant", "Café", "Bakery", "Bar", "Market",
+        "Beach", "Spa", "Fitness", "Muay Thai", "Temple",
+        "Landmark", "Hotel", "Activity", "Shopping", "Area Guide"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "description": "Street or locality address"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human-readable description shown on the POI card"
+    },
+    "hours": {
+      "type": "string",
+      "description": "Opening hours, e.g. '08:00–17:00' or 'Open 24h'"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number in international format, e.g. +66 80 305 1585"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Website or social media URL"
+    },
+    "price": {
+      "type": "string",
+      "description": "Pricing information or entry cost"
+    },
+    "coord_source": {
+      "type": "string",
+      "enum": ["google_maps_pin", "nominatim", "research", "estimated", "on_site_gps"],
+      "description": "How coordinates were obtained. 'google_maps_pin' = from a Maps share link; 'nominatim' = OSM geocoder; 'research' = cross-referenced from web sources; 'estimated' = approximate, needs verification; 'on_site_gps' = recorded on location."
+    },
+    "coord_accuracy": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Confidence in coordinate accuracy. 'high' = within ~10 m; 'medium' = within ~50 m; 'low' = rough area only, needs improvement."
+    }
+  },
+  "additionalProperties": true
+}
