@@ -345,10 +345,10 @@
         "notes": "Friendly neighbourhood massage and wellness club. Traditional Thai massage, foot reflexology, and oil treatments at local prices. Popular with residents.",
         "hours": "10:00–22:00",
         "phone": "+66 77 424 369",
-        "coord_source": "estimated",
-        "coord_accuracy": "low"
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
       },
-      "geometry": { "type": "Point", "coordinates": [100.0434, 9.4712] }
+      "geometry": { "type": "Point", "coordinates": [100.04925, 9.46878] }
     },
     {
       "type": "Feature",
