@@ -1,0 +1,234 @@
+{{/* map-geolocation.html
+     Self-contained geolocation + OSRM foot-routing for all map pages.
+     Requires: window._leafletMap, window.allPOIs populated by the host page.
+     Exposes:  toggleLocation(), showRoute(poiId), clearRoute()
+*/}}
+<style>
+  /* Pulsing blue location dot */
+  .loc-dot {
+    width: 18px; height: 18px;
+    background: #2563eb; border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    animation: loc-pulse 2s ease-out infinite;
+  }
+  @keyframes loc-pulse {
+    0%   { box-shadow: 0 0 0 0    rgba(37,99,235,0.55); }
+    70%  { box-shadow: 0 0 0 11px rgba(37,99,235,0);    }
+    100% { box-shadow: 0 0 0 0    rgba(37,99,235,0);    }
+  }
+
+  /* Distance badge injected on the active POI card */
+  .route-info {
+    font-size: 0.74rem; font-weight: 600; color: #1a3a5c;
+    margin-top: 0.3rem; padding: 0.18rem 0.55rem;
+    background: #eff6ff; border-radius: 6px; display: inline-block;
+  }
+
+  /* Location button state classes */
+  .header-btn.loc-searching {
+    border-color: #3b82f6; color: #3b82f6;
+    animation: btn-blink 1s linear infinite;
+  }
+  .header-btn.loc-active {
+    border-color: #22c55e; color: #166534; background: #f0fdf4;
+  }
+  @keyframes btn-blink { 50% { opacity: 0.45; } }
+</style>
+
+<script>
+(function () {
+
+  let _locMarker  = null;   // blue dot marker
+  let _locCircle  = null;   // accuracy circle
+  let _locWatchId = null;   // geolocation watchPosition id
+  let _locLatLng  = null;   // [lat, lng] of current position
+  let _routeLayer = null;   // active route polyline
+  let _pendingId  = null;   // poi _id waiting for first GPS fix
+  let _activeId   = null;   // poi _id currently showing route
+
+  /* ── Toggle location dot ──────────────────────────────────────────────── */
+  window.toggleLocation = function () {
+    const map = window._leafletMap;
+    const btn = document.getElementById('locate-btn');
+    if (!map || !btn) return;
+
+    if (_locWatchId !== null) {
+      // Turn off
+      navigator.geolocation.clearWatch(_locWatchId);
+      _locWatchId = null;
+      _locLatLng  = null;
+      if (_locMarker) { map.removeLayer(_locMarker); _locMarker = null; }
+      if (_locCircle) { map.removeLayer(_locCircle); _locCircle = null; }
+      window.clearRoute();
+      btn.textContent = '📍 Position';
+      btn.classList.remove('loc-searching', 'loc-active');
+      return;
+    }
+
+    if (!navigator.geolocation) {
+      alert('La géolocalisation n\'est pas supportée par ce navigateur.');
+      return;
+    }
+
+    btn.textContent = '⏳…';
+    btn.classList.add('loc-searching');
+
+    _locWatchId = navigator.geolocation.watchPosition(
+      pos => {
+        const { latitude: lat, longitude: lng, accuracy } = pos.coords;
+        _locLatLng = [lat, lng];
+
+        if (!_locMarker) {
+          // First fix — create marker + accuracy circle and fly there
+          const icon = L.divIcon({
+            className: '',
+            html: '<div class="loc-dot"></div>',
+            iconSize: [18, 18],
+            iconAnchor: [9, 9]
+          });
+          _locMarker = L.marker([lat, lng], { icon, zIndexOffset: 1000, interactive: false })
+            .addTo(map);
+          _locCircle = L.circle([lat, lng], {
+            radius: accuracy,
+            color: '#3b82f6', fillColor: '#3b82f6',
+            fillOpacity: 0.07, weight: 1, interactive: false
+          }).addTo(map);
+          map.flyTo([lat, lng], Math.max(map.getZoom(), 15), { duration: 0.8 });
+        } else {
+          _locMarker.setLatLng([lat, lng]);
+          _locCircle.setLatLng([lat, lng]).setRadius(accuracy);
+        }
+
+        btn.textContent = '🔵 Position';
+        btn.classList.remove('loc-searching');
+        btn.classList.add('loc-active');
+
+        // Draw pending route once position is known
+        if (_pendingId !== null) {
+          const id = _pendingId;
+          _pendingId = null;
+          window.showRoute(id);
+        } else if (_activeId !== null) {
+          // Refresh route as user moves
+          const poi = (window.allPOIs || []).find(f => f._id === _activeId);
+          if (poi) _drawRoute(_activeId, poi.geometry.coordinates[1], poi.geometry.coordinates[0]);
+        }
+      },
+      err => {
+        btn.textContent = '📍 Position';
+        btn.classList.remove('loc-searching');
+        _locWatchId = null;
+        if (err.code === 1) {
+          alert('Géolocalisation refusée. Autorisez-la dans les paramètres du navigateur.');
+        }
+      },
+      { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 }
+    );
+  };
+
+  /* ── Show route to a POI (by _id) ────────────────────────────────────── */
+  window.showRoute = function (poiId) {
+    const poi = (window.allPOIs || []).find(f => f._id === poiId);
+    if (!poi) return;
+
+    if (!_locLatLng) {
+      // Location not yet active — start it, then route once we have a fix
+      _pendingId = poiId;
+      if (_locWatchId === null) window.toggleLocation();
+      return;
+    }
+
+    const [destLng, destLat] = poi.geometry.coordinates;
+    _drawRoute(poiId, destLat, destLng);
+  };
+
+  /* ── Clear the active route ───────────────────────────────────────────── */
+  window.clearRoute = function () {
+    if (_routeLayer) {
+      window._leafletMap?.removeLayer(_routeLayer);
+      _routeLayer = null;
+    }
+    _activeId  = null;
+    _pendingId = null;
+    document.querySelectorAll('.route-info').forEach(el => el.remove());
+    document.querySelectorAll('[data-route-poi]').forEach(a => {
+      a.textContent = '🧭 Route';
+      a.style.opacity = '';
+    });
+  };
+
+  /* ── Fetch OSRM route and draw on map ────────────────────────────────── */
+  async function _drawRoute(poiId, destLat, destLng) {
+    if (!_locLatLng) return;
+    const map = window._leafletMap;
+    const [origLat, origLng] = _locLatLng;
+
+    const routeBtn = document.querySelector(`[data-route-poi="${poiId}"]`);
+    if (routeBtn) { routeBtn.textContent = '⏳'; routeBtn.style.opacity = '0.6'; }
+
+    // Remove previous route
+    if (_routeLayer) { map.removeLayer(_routeLayer); _routeLayer = null; }
+    document.querySelectorAll('.route-info').forEach(el => el.remove());
+    _activeId = poiId;
+
+    try {
+      const url = `https://router.project-osrm.org/route/v1/foot/${origLng},${origLat};${destLng},${destLat}?overview=full&geometries=geojson`;
+      const res  = await fetch(url);
+      const data = await res.json();
+      if (data.code !== 'Ok' || !data.routes?.length) throw new Error('no route');
+
+      const route   = data.routes[0];
+      const distM   = Math.round(route.distance);
+      const distStr = distM < 1000
+        ? distM + '\u202fm'
+        : (distM / 1000).toFixed(1) + '\u202fkm';
+      const mins = Math.round(route.duration / 60);
+
+      const coords = route.geometry.coordinates.map(([ln, la]) => [la, ln]);
+      _routeLayer  = L.polyline(coords, {
+        color: '#1a3a5c', weight: 4, opacity: 0.85,
+        dashArray: '8 6', lineCap: 'round', lineJoin: 'round'
+      }).addTo(map);
+
+      map.fitBounds(
+        _routeLayer.getBounds().extend(_locLatLng),
+        { padding: [48, 48], maxZoom: 17 }
+      );
+
+      _injectBadge(poiId, `🚶 ${distStr} · ${mins} min à pied`);
+
+    } catch {
+      // Haversine fallback (straight-line + dashed grey line)
+      const R  = 6371000;
+      const φ1 = origLat * Math.PI / 180, φ2 = destLat * Math.PI / 180;
+      const dφ = (destLat - origLat) * Math.PI / 180;
+      const dλ = (destLng - origLng) * Math.PI / 180;
+      const a  = Math.sin(dφ/2)**2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(dλ/2)**2;
+      const d  = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distStr = d < 1000
+        ? Math.round(d) + '\u202fm'
+        : (d / 1000).toFixed(1) + '\u202fkm';
+
+      _routeLayer = L.polyline([_locLatLng, [destLat, destLng]], {
+        color: '#6b7280', weight: 3, opacity: 0.6, dashArray: '5 8'
+      }).addTo(map);
+
+      _injectBadge(poiId, `📏 ${distStr} à vol d'oiseau`);
+    }
+
+    if (routeBtn) { routeBtn.textContent = '🧭 Route'; routeBtn.style.opacity = ''; }
+  }
+
+  function _injectBadge(poiId, text) {
+    const card = document.getElementById('card-' + poiId);
+    if (!card) return;
+    const badge = document.createElement('div');
+    badge.className = 'route-info';
+    badge.textContent = text;
+    const actions = card.querySelector('.poi-actions');
+    actions ? actions.before(badge) : card.appendChild(badge);
+  }
+
+})();
+</script>

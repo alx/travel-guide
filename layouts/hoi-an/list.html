@@ -110,6 +110,7 @@
     <div class="header-actions">
       <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
       <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Spots ▾':'📍 Spots'">📍 Spots</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position sur la carte">📍 Position</button>
     </div>
     {{ partial "map-toolbar.html" . }}
   </div>
@@ -200,6 +201,7 @@ function clearFocus() {
   const u = new URL(window.location.href);
   u.searchParams.delete('poi');
   history.replaceState({}, '', u);
+  window.clearRoute?.();
 }
 
 map = L.map('map').setView([15.873326, 108.367462], 16);
@@ -258,6 +260,7 @@ function renderSidebar() {
           <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
           <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
           ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
+          <a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>
           <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
         </div>`;
       card.onclick = () => focusPOI(f);
@@ -399,4 +402,5 @@ fetch(GEOJSON_URL)
     document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded yet.</p>';
   });
 </script>
+{{ partial "map-geolocation.html" . }}
 {{ end }}
