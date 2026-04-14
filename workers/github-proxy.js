@@ -16,13 +16,13 @@
  * GitHub OAuth App setup:
  *   1. Go to https://github.com/settings/developers → OAuth Apps → New OAuth App
  *   2. Application name: "Girard-Davila Travels"
- *   3. Homepage URL: https://travels.girard-davila.net
+ *   3. Homepage URL: https://maps.girard-davila.net
  *   4. Authorization callback URL: (not used for device flow — put homepage URL)
  *   5. Copy the Client ID into GITHUB_CLIENT_ID in wrangler.toml
  */
 
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': 'https://travels.girard-davila.net',
+  'Access-Control-Allow-Origin': 'https://maps.girard-davila.net',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
   'Access-Control-Max-Age': '86400',
@@ -94,8 +94,8 @@ export default {
 
       const osmRes = await fetch(osmUrl, {
         headers: {
-          'User-Agent': 'travels.girard-davila.net map-export/1.0 (share card PNG)',
-          'Referer':    'https://travels.girard-davila.net',
+          'User-Agent': 'maps.girard-davila.net map-export/1.0 (share card PNG)',
+          'Referer':    'https://maps.girard-davila.net',
         },
       });
       if (!osmRes.ok) return new Response('Tile error', { status: osmRes.status, headers: CORS_HEADERS });

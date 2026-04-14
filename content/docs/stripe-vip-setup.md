@@ -29,7 +29,7 @@ VIP POIs are stored in the GeoJSON with `"premium": true`. When a visitor clicks
 
 1. In Stripe Dashboard → **Payment Links** → **New**
 2. Select your VIP Access product
-3. Set success URL to: `https://travels.girard-davila.net/?vip=unlocked`
+3. Set success URL to: `https://maps.girard-davila.net/?vip=unlocked`
 4. Copy the Payment Link URL (e.g. `https://buy.stripe.com/...`)
 
 ## Step 4 — Wire the Payment Link into the Map

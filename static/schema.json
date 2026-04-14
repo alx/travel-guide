@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://travels.girard-davila.net/schema.json",
+  "$id": "https://maps.girard-davila.net/schema.json",
   "title": "Travel Guide POI Feature Properties",
   "description": "JSON Schema for GeoJSON Feature properties in alx/travel-guide. All POI features must satisfy this schema.",
   "type": "object",

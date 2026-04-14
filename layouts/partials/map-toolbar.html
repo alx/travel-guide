@@ -145,8 +145,8 @@ window.tbExportGPX = function () {
   const title = esc(getTitle());
 
   let gpx = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  gpx += `<gpx version="1.1" creator="travels.girard-davila.net" xmlns="http://www.topografix.com/GPX/1/1">\n`;
-  gpx += `  <metadata><name>${title}</name><desc>Exported from travels.girard-davila.net</desc></metadata>\n`;
+  gpx += `<gpx version="1.1" creator="maps.girard-davila.net" xmlns="http://www.topografix.com/GPX/1/1">\n`;
+  gpx += `  <metadata><name>${title}</name><desc>Exported from maps.girard-davila.net</desc></metadata>\n`;
 
   // Waypoints (POIs)
   wpts.forEach(f => {
@@ -488,7 +488,7 @@ window.tbOpenGitHub = function () {
 
           <hr class="tb-divider">
           <div style="font-weight:700;font-size:0.85rem;color:#374151;margin-bottom:0.5rem;">🔑 Personal Access Token (PAT)</div>
-          <p style="font-size:0.78rem;color:#555;margin-bottom:0.5rem;">Generate a PAT at <a href="https://github.com/settings/tokens/new?scopes=repo,read:user&description=travels.girard-davila.net" target="_blank" style="color:#1d4ed8;">github.com/settings/tokens</a> with <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">repo</code> scope.</p>
+          <p style="font-size:0.78rem;color:#555;margin-bottom:0.5rem;">Generate a PAT at <a href="https://github.com/settings/tokens/new?scopes=repo,read:user&description=maps.girard-davila.net" target="_blank" style="color:#1d4ed8;">github.com/settings/tokens</a> with <code style="background:#f0f0f0;padding:0.1rem 0.3rem;border-radius:3px;">repo</code> scope.</p>
           <div style="display:flex;gap:0.4rem;margin-bottom:0.4rem;">
             <input class="tb-input" id="gh-pat-input" type="password" placeholder="ghp_xxxxxxxxxxxx" style="flex:1;" value="${pat}">
             <button class="tb-btn-primary" onclick="tbGHApplyPAT()">Apply</button>
@@ -732,7 +732,7 @@ window.tbGHCreatePR = async function() {
     status.textContent = '⏳ Opening pull request…';
     const prRes = await fetch(`https://api.github.com/repos/${upOwner}/${upRepo}/pulls`, {
       method: 'POST', headers: { Authorization: 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, body: body + `\n\n---\n_Submitted via travels.girard-davila.net map toolbar_`, head: `${user.login}:${newBranch}`, base: defaultBranch })
+      body: JSON.stringify({ title, body: body + `\n\n---\n_Submitted via maps.girard-davila.net map toolbar_`, head: `${user.login}:${newBranch}`, base: defaultBranch })
     });
     const prData = await prRes.json();
     if (!prRes.ok) throw new Error(prData.message || 'PR failed');
@@ -1019,7 +1019,7 @@ function buildShareCard(mapDataUrl) {
         border:1px solid rgba(255,255,255,0.22);border-radius:30px;
         padding:6px 14px;font-size:11px;font-weight:700;
         letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.92);">
-        🗺️ Girard-Davila Travels
+        🗺️ Maps
       </div>
 
       <!-- Title + URL block — dark pill at bottom, no full gradient -->
@@ -1046,7 +1046,7 @@ function buildShareCard(mapDataUrl) {
         justify-content:center;padding:40px 32px;text-align:center;">
         <div style="font-size:80px;line-height:1;margin-bottom:20px;">${meta.emoji}</div>
         <div style="font-size:13px;opacity:0.6;margin-bottom:8px;letter-spacing:0.04em;">
-          🗺️ Girard-Davila Travels · ${meta.sub}
+          🗺️ Maps · ${meta.sub}
         </div>
         <div style="font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;">
           ${title}
@@ -1123,9 +1123,9 @@ window.tbExportPNG = async function () {
     const withMeta = injectPNGMetadata(buffer, {
       'Title':         title,
       'Source':        location.href,
-      'Author':        'Girard-Davila Travels',
+      'Author':        'Maps',
       'URL':           location.href,
-      'Software':      'travels.girard-davila.net',
+      'Software':      'maps.girard-davila.net',
       'Creation Time': new Date().toISOString(),
       'Comment':       `${(window.allPOIs||[]).filter(f=>!f.properties?.premium).length} curated spots · 9:16 · CARTO map`,
     });

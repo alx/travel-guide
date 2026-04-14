@@ -1,5 +1,5 @@
-# Travels — Curated Maps by Girard-Davila
-# https://travels.girard-davila.net/
+# Maps — Curated Travel Maps
+# https://maps.girard-davila.net/
 # Format: https://llmstxt.org
 # Last updated: 2026-04-12
 
@@ -8,16 +8,16 @@
 
 ## About
 
-Girard-Davila Travels is an open-source curated travel map project built from personal travel experience. Each destination contains GPS-verified POIs with category filters, opening hours, prices, and insider notes. Maps are built with Hugo, Leaflet.js, GeoJSON and TopoJSON, deployed on GitHub Pages.
+Maps is an open-source curated travel map project built from personal travel experience. Each destination contains GPS-verified POIs with category filters, opening hours, prices, and insider notes. Maps are built with Hugo, Leaflet.js, GeoJSON and TopoJSON, deployed on GitHub Pages.
 
 Any user can fork the repository, add new places to a GeoJSON file, and submit a pull request. New places can also be submitted directly from the browser using the in-map **🐙 GitHub → Submit PR** toolbar flow — no local setup required.
 
 ## Destinations
 
-- [Koh Samui, Thailand](https://travels.girard-davila.net/koh-samui/) — Island-wide overview: beaches (Chaweng, Maenam, Choeng Mon, Lamai), Big Buddha Temple, Bophut Fisherman's Village, Karma Two Palms Beach Club, Nathon Pier. Includes a Lamai Village area-guide POI that links to the dedicated Lamai map.
-- [Lamai Beach, Koh Samui](https://travels.girard-davila.net/lamai/) — Neighbourhood-level detail for Lamai: local restaurants, Muay Thai gyms (Punch It, Chatpichit), markets (Lotus Fresh, Lotus's), spas (Tamarind Springs, Phu's Massage, Community Club), temples (Wat Lamai, Wat Ratchathamaram Red Temple), beaches (Crystal Beach), bakeries, bars and cafés. 28 GPS-verified POIs.
-- [Hoi An, Vietnam](https://travels.girard-davila.net/hoi-an/) — An Hoi peninsula: curated restaurants, cafés, local market, Buddhist pagoda, river viewpoints around the Na Mom Homestay area.
-- [Gulf of Thailand Fishing Expedition](https://travels.girard-davila.net/fishing-boat/) — 2-day boat trip from Nathon Pier: red snapper shelf, tuna alley, overnight island anchorage, hazard markers, fuel barge. Demonstrates the TopoJSON multi-segment route + waypoints format.
+- [Koh Samui, Thailand](https://maps.girard-davila.net/koh-samui/) — Island-wide overview: beaches (Chaweng, Maenam, Choeng Mon, Lamai), Big Buddha Temple, Bophut Fisherman's Village, Karma Two Palms Beach Club, Nathon Pier. Includes a Lamai Village area-guide POI that links to the dedicated Lamai map.
+- [Lamai Beach, Koh Samui](https://maps.girard-davila.net/lamai/) — Neighbourhood-level detail for Lamai: local restaurants, Muay Thai gyms (Punch It, Chatpichit), markets (Lotus Fresh, Lotus's), spas (Tamarind Springs, Phu's Massage, Community Club), temples (Wat Lamai, Wat Ratchathamaram Red Temple), beaches (Crystal Beach), bakeries, bars and cafés. 28 GPS-verified POIs.
+- [Hoi An, Vietnam](https://maps.girard-davila.net/hoi-an/) — An Hoi peninsula: curated restaurants, cafés, local market, Buddhist pagoda, river viewpoints around the Na Mom Homestay area.
+- [Gulf of Thailand Fishing Expedition](https://maps.girard-davila.net/fishing-boat/) — 2-day boat trip from Nathon Pier: red snapper shelf, tuna alley, overnight island anchorage, hazard markers, fuel barge. Demonstrates the TopoJSON multi-segment route + waypoints format.
 
 ## GeoJSON POI Schema
 
@@ -86,7 +86,7 @@ Adding a new category requires adding a matching entry to both `CATEGORY_COLORS`
 
 The fastest path for adding a small number of places to an existing map:
 
-1. Open any map page, e.g. `https://travels.girard-davila.net/lamai/`
+1. Open any map page, e.g. `https://maps.girard-davila.net/lamai/`
 2. Click **🛠️ Tools** in the top-left overlay to reveal the toolbar
 3. Click **🐙 GitHub** → **Sign In** tab
 4. Authenticate via **Device Flow** (enter the displayed code at `github.com/login/device`) or paste a Personal Access Token
@@ -238,10 +238,10 @@ Append `?embed=1` to any map URL to get a map-only view (no header, footer, tool
 
 ```html
 <iframe
-  src="https://travels.girard-davila.net/lamai/?embed=1"
+  src="https://maps.girard-davila.net/lamai/?embed=1"
   width="100%" height="500" frameborder="0"
   style="border-radius:12px;"
-  title="Lamai Beach — Girard-Davila Travels">
+  title="Lamai Beach — Maps">
 </iframe>
 ```
 
@@ -261,7 +261,7 @@ The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc co
 | Auth | GitHub Device Flow via Cloudflare Worker CORS proxy |
 | Forms | Formspree (mqegoqqz) |
 | Analytics | Google Analytics G-WDJF6L9P30 |
-| Hosting | GitHub Pages — travels.girard-davila.net |
+| Hosting | GitHub Pages — maps.girard-davila.net |
 | CI/CD | GitHub Actions → upload-pages-artifact → deploy-pages |
 | DNS | Cloudflare (CNAME flattening, apex → www redirect) |
 
@@ -333,8 +333,8 @@ The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc co
 
 ## Links
 
-- Site: https://travels.girard-davila.net/
+- Site: https://maps.girard-davila.net/
 - Source: https://github.com/alx/travel-guide
 - Contact: floating ✉️ button on every page
 - Parent site: https://girard-davila.net/
-- Author: Girard-Davila (@alxgirard)
+- Author: alxgirard

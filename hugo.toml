@@ -1,15 +1,15 @@
-baseURL = "https://travels.girard-davila.net/"
+baseURL = "https://maps.girard-davila.net/"
 languageCode = "en-us"
-title = "Travels — Curated Maps by Girard-Davila"
+title = "Maps — Curated Travel Maps"
 canonifyURLs = false
 
 [params]
   description = "Hand-picked travel maps from real family experiences across South East Asia and Europe. GPS-precise spots, honest notes, opening hours."
-  author = "Girard-Davila"
+  author = "alxgirard"
   siteImage = "/images/og-travels.png"
   twitterHandle = "@alxgirard"
   # Stripe — replace with your Payment Link from dashboard.stripe.com
-  # Success URL must be: https://travels.girard-davila.net/?vip=success
+  # Success URL must be: https://maps.girard-davila.net/?vip=success
   stripePaymentLink = "https://buy.stripe.com/test_cNi6oG7aP2R55sJ2X27N600"
   stripePublishableKey = "pk_test_REPLACE_ME"
   # GitHub OAuth App — register at https://github.com/settings/developers
