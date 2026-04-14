@@ -52,8 +52,7 @@
 
   /* Legend */
   .legend {
-    background: white; border-radius: 10px; padding: 0.85rem 1rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    background: white; padding: 0.85rem 1rem;
   }
   .legend h4 { font-size: 0.8rem; font-weight: 700; color: #1a3a5c; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
   .legend-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; margin-bottom: 0.3rem; color: #444; }
@@ -284,7 +283,20 @@ fetch(window.MAP_CONFIG.topojsonUrl)
       ...routeGeo.features.flatMap(f => f.geometry.coordinates.map(([lng, lat]) => [lat, lng])),
       ...wpGeo.features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]])
     ];
-    if (allLL.length) map.fitBounds(L.latLngBounds(allLL).pad(0.1));
+    if (allLL.length) {
+      map.fitBounds(L.latLngBounds(allLL).pad(0.1));
+      // In embed mode: the 340px left overlay blocks the POIs.
+      // Zoom out 1 level and pan center 50% of overlay width to the left
+      // so POIs land in the visible area to the right of the sidebar.
+      if (document.documentElement.classList.contains('embed-mode')) {
+        map.once('moveend', function() {
+          map.zoomOut(1);
+          map.once('zoomend', function() {
+            map.panBy([-170, 0], { animate: false });
+          });
+        });
+      }
+    }
   })
   .catch(err => {
     document.getElementById('wp-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Failed to load TopoJSON route data.</p>';
