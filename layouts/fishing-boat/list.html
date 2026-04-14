@@ -129,6 +129,9 @@
   </div>
 </div>
 
+<!-- Embed overlay toggle button (hidden outside embed mode via CSS) -->
+<button class="embed-overlay-toggle" id="overlay-toggle-btn" title="Show list">☰</button>
+
 {{ partial "contact-form.html" . }}
 {{ end }}
 
@@ -302,5 +305,27 @@ fetch(window.MAP_CONFIG.topojsonUrl)
     document.getElementById('wp-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Failed to load TopoJSON route data.</p>';
     console.error('TopoJSON load error:', err);
   });
+
+// ── Embed overlay toggle ────────────────────────────────────────────────────
+(function () {
+  if (!document.documentElement.classList.contains('embed-mode')) return;
+  var overlay = document.querySelector('.map-overlay');
+  var btn     = document.getElementById('overlay-toggle-btn');
+  if (!overlay || !btn) return;
+
+  function setOverlay(open) {
+    overlay.style.display = open ? 'flex' : 'none';
+    btn.textContent  = open ? '✕' : '☰';
+    btn.title        = open ? 'Hide list' : 'Show list';
+  }
+
+  btn.addEventListener('click', function () {
+    setOverlay(overlay.style.display === 'none' || overlay.style.display === '');
+  });
+
+  // Show overlay if ?overlay=1 is in the URL
+  var showOnLoad = new URLSearchParams(location.search).get('overlay') === '1';
+  setOverlay(showOnLoad);
+})();
 </script>
 {{ end }}
