@@ -423,6 +423,21 @@
         "coord_accuracy": "high"
       },
       "geometry": { "type": "Point", "coordinates": [100.0486342, 9.4698136] }
+    },
+    {
+      "type": "Feature",
+      "id": "lamai-gaya-boutique",
+      "properties": {
+        "name": "Gaya Boutique",
+        "category": "Shopping",
+        "address": "Tambon Maret, Ko Samui, Surat Thani 84310",
+        "notes": "Fishermen pants, Thai-style clothing and beachwear. Accepts cash, cards and crypto.",
+        "hours": "10:00–19:00",
+        "url": "https://www.fishermenpants.com/",
+        "coord_source": "research",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.049209, 9.469443] }
     }
   ]
 }
