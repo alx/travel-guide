@@ -105,25 +105,6 @@
     },
     {
       "type": "Feature",
-      "id": "samui-karma-two-palms",
-      "properties": {
-        "name": "Karma Two Palms Beach Club",
-        "category": "Beach",
-        "address": "Karma Panalee, Maenam, Koh Samui",
-        "notes": "Beachfront club at Karma Panalee resort. Infinity pool aligned with the Gulf of Thailand, wood-fired pizza oven, Thai restaurant, watersports, and live DJ events. Opened January 2025.",
-        "url": "https://karmacommunity.karmagroup.com/experience-karma/two-palms-samui-beach-club-magic/",
-        "hours": "Open daily (hours vary by season)",
-        "price": "À la carte dining; sun lounger hire available",
-        "coord_source": "research",
-        "coord_accuracy": "high"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [99.9405258, 9.5781703]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "samui-lamai-village",
       "properties": {
         "name": "Lamai Village",
