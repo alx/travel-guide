@@ -10,7 +10,7 @@
   </div>
 </section>
 
-<!-- Maps -->
+<!-- Available Destinations -->
 <section id="maps" style="padding:3rem 1.5rem;max-width:800px;margin:0 auto;">
   <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:0.4rem;color:#1a3a5c;">Available Destinations</h2>
   <p style="color:#666;margin-bottom:2rem;font-size:0.92rem;">Each map is built from personal travel experience — not tourist brochures.</p>
@@ -32,6 +32,20 @@
       </div>
     </a>
 
+    <!-- Lamai Beach -->
+    <a href="/lamai/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#e5e7eb'">
+      <div style="font-size:2.5rem;flex-shrink:0;">🏖️</div>
+      <div>
+        <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">Lamai Beach, Koh Samui</div>
+        <div style="font-size:0.85rem;color:#555;line-height:1.5;">Detailed focus map of Lamai — the island's second beach town. Beachfront restaurants, massage spots, surf zones, and neighbourhood gems with GPS precision.</div>
+        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span style="font-size:0.72rem;background:#e0f2fe;color:#0369a1;padding:0.2rem 0.5rem;border-radius:20px;">🏖️ Beaches</span>
+          <span style="font-size:0.72rem;background:#fff7ed;color:#9a3412;padding:0.2rem 0.5rem;border-radius:20px;">🍽️ Restaurants</span>
+          <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">💆 Wellness</span>
+        </div>
+      </div>
+    </a>
+
     <!-- Hoi An -->
     <a href="/hoi-an/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#e5e7eb'">
       <div style="font-size:2.5rem;flex-shrink:0;">🏮</div>
@@ -46,12 +60,24 @@
       </div>
     </a>
 
-    <!-- Fishing Boat Expedition (TopoJSON demo) -->
-    <a href="/fishing-boat/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#e5e7eb'">
+  </div>
+</section>
+
+<!-- Custom Maps & Demo -->
+<section id="demo" style="background:#f0f6ff;border-top:1px solid #dbeafe;border-bottom:1px solid #dbeafe;padding:3rem 1.5rem;">
+  <div style="max-width:800px;margin:0 auto;">
+    <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.4rem;">
+      <h2 style="font-size:1.4rem;font-weight:700;color:#1a3a5c;">Custom Maps</h2>
+      <span style="font-size:0.72rem;font-weight:700;background:#1a3a5c;color:white;padding:0.15rem 0.55rem;border-radius:20px;letter-spacing:0.04em;">DEMO</span>
+    </div>
+    <p style="color:#555;margin-bottom:2rem;font-size:0.92rem;">Maps can go beyond points of interest — routes, expedition tracks, TopoJSON overlays. Any map can be embedded on any HTML page with a single <code style="background:#e0ebff;padding:0.1rem 0.35rem;border-radius:4px;font-size:0.88rem;">&lt;iframe&gt;</code>.</p>
+
+    <!-- Gulf of Thailand card -->
+    <a href="/fishing-boat/" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #bfdbfe;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;margin-bottom:2rem;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1a3a5c'" onmouseout="this.style.borderColor='#bfdbfe'">
       <div style="font-size:2.5rem;flex-shrink:0;">⚓</div>
       <div>
         <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">Gulf of Thailand — Fishing Expedition</div>
-        <div style="font-size:0.85rem;color:#555;line-height:1.5;">A 2-day boat expedition from Nathon Pier. Red snapper grounds, tuna alley, overnight anchorage, and hazard markers. Demonstrates the <strong>TopoJSON</strong> route format.</div>
+        <div style="font-size:0.85rem;color:#555;line-height:1.5;">A 2-day boat expedition from Nathon Pier. Red snapper grounds, tuna alley, overnight anchorage, and hazard markers — demonstrating route mapping with <strong>TopoJSON</strong> and GPX export.</div>
         <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
           <span style="font-size:0.72rem;background:#eff6ff;color:#1d4ed8;padding:0.2rem 0.5rem;border-radius:20px;border:1px solid #bfdbfe;">📐 TopoJSON</span>
           <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">🎣 Routes + Waypoints</span>
@@ -60,6 +86,36 @@
       </div>
     </a>
 
+    <!-- Live embed demo -->
+    <div style="margin-bottom:1.25rem;">
+      <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1a3a5c;margin-bottom:0.75rem;">Live embed preview</div>
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #bfdbfe;box-shadow:0 4px 16px rgba(26,58,92,0.10);">
+        <iframe
+          src="/fishing-boat/?embed=1"
+          width="100%"
+          height="420"
+          style="display:block;border:none;"
+          loading="lazy"
+          title="Gulf of Thailand Expedition — embed demo">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Embed code snippet -->
+    <div style="background:#0f172a;border-radius:10px;padding:1.25rem 1.5rem;">
+      <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center;">
+        <span>Embed any map on your page</span>
+        <button onclick="copyEmbed()" id="copy-btn" style="background:#1e3a5f;border:none;color:#93c5fd;font-size:0.72rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:6px;cursor:pointer;letter-spacing:0.04em;">Copy</button>
+      </div>
+      <pre id="embed-snippet" style="margin:0;font-size:0.8rem;line-height:1.7;color:#e2e8f0;white-space:pre-wrap;word-break:break-all;font-family:'Menlo','Consolas',monospace;">&lt;iframe
+  src="https://maps.girard-davila.net/fishing-boat/?embed=1"
+  width="100%"
+  height="420"
+  style="border:none;border-radius:12px;"
+  loading="lazy"
+  title="Gulf of Thailand Expedition"&gt;
+&lt;/iframe&gt;</pre>
+    </div>
   </div>
 </section>
 
@@ -109,4 +165,23 @@
 </section>
 
 {{ partial "contact-form.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+function copyEmbed() {
+  const code = document.getElementById('embed-snippet').innerText;
+  navigator.clipboard.writeText(code).then(function() {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied!';
+    btn.style.background = '#166534';
+    btn.style.color = '#bbf7d0';
+    setTimeout(function() {
+      btn.textContent = 'Copy';
+      btn.style.background = '#1e3a5f';
+      btn.style.color = '#93c5fd';
+    }, 2000);
+  });
+}
+</script>
 {{ end }}
