@@ -87,22 +87,6 @@
     },
     {
       "type": "Feature",
-      "id": "lamai-meal-prep-beachside",
-      "properties": {
-        "name": "Meal Prep Beachside",
-        "category": "Restaurant",
-        "address": "156/3 Haad Lamai Road, Tambon Maret, Ko Samui, Surat Thani 84320",
-        "notes": "Healthy meal prep and clean-eating restaurant on the beachside road. Macro-friendly menus, protein bowls, and smoothies.",
-        "hours": "08:00–17:00",
-        "phone": "+66 80 305 1585",
-        "url": "https://mealprepsamui.com",
-        "coord_source": "research",
-        "coord_accuracy": "high"
-      },
-      "geometry": { "type": "Point", "coordinates": [100.0494468, 9.4689923] }
-    },
-    {
-      "type": "Feature",
       "id": "lamai-balkan-corner",
       "properties": {
         "name": "Balkan Corner Samui",
