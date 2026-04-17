@@ -1,0 +1,246 @@
+{{ define "head" }}
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header { margin: 0; }
+  .overlay-card .page-header h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .overlay-card .page-header p  { font-size: 0.8rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  #list-toggle { display: none; }
+
+  /* Timeline itinerary cards */
+  .poi-card {
+    background: white; border-radius: 10px; padding: 0.8rem 0.9rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0;
+    border-left-width: 4px;
+  }
+  .poi-card:hover, .poi-card.active { box-shadow: 0 2px 10px rgba(0,0,0,0.13); }
+  .poi-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .poi-card .poi-dates { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+  .poi-card .poi-notes { font-size: 0.78rem; color: #555; line-height: 1.45; margin-top: 0.25rem; }
+  .poi-card .poi-actions { margin-top: 0.45rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .poi-card .poi-actions a { font-size: 0.73rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .poi-card .poi-actions a:hover { text-decoration: underline; }
+  .cat-badge { display: inline-block; font-size: 0.68rem; padding: 0.12rem 0.45rem; border-radius: 20px; font-weight: 700; margin-bottom: 0.3rem; }
+  .copy-toast {
+    position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
+    background: rgba(26,58,92,0.92); color: white; padding: 0.35rem 0.9rem;
+    border-radius: 20px; font-size: 0.78rem; z-index: 9000;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
+  }
+  .copy-toast.show { opacity: 1; }
+
+  /* Legend strip */
+  .legend-strip {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+    padding: 0.5rem 0 0.1rem; border-top: 1px solid #f0f0f0; margin-top: 0.1rem;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.68rem; color: #555; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🇲🇾 Malaisie — Mai 2026</h1>
+      <p>Surat Thani → Ipoh → Iskandar Puteri → Malacca → Cameron Highlands</p>
+    </div>
+    <div class="legend-strip">
+      <div class="legend-item"><div class="legend-dot" style="background:#64748b;"></div>Départ/Transit</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0369a1;"></div>Étape</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div>Excursion</div>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Étapes ▾':'📍 Étapes'">📍 Étapes</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable" id="poi-list"></div>
+</div>
+
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'Malaisie Mai 2026 — Maps',
+  geojsonUrl: '{{ "/malaysia-mai-2026/locations.geojson" | relURL }}',
+  embedPath: '/malaysia-mai-2026/',
+  previewImage: '/images/map-previews/malaysia-mai-2026.png'
+};
+
+const CATEGORY_COLORS = {
+  'Départ':    '#64748b',
+  'Transit':   '#94a3b8',
+  'Étape':     '#0369a1',
+  'Excursion': '#16a34a'
+};
+const CATEGORY_ICONS = {
+  'Départ':    '🛫',
+  'Transit':   '🚂',
+  'Étape':     '🏨',
+  'Excursion': '🎯'
+};
+
+let map, allPOIs = [], markers = {}, routeLine = null, activeCard = null;
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+window._mapCategoryColors = CATEGORY_COLORS;
+window._mapCategoryIcons  = CATEGORY_ICONS;
+
+function showToast(msg) {
+  const t = document.getElementById('copy-toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function slugify(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+  Object.values(markers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
+}
+
+map = L.map('map').setView([4.5, 101.8], 7);
+window._leafletMap = map;
+map.on('click', clearFocus);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(category) {
+  const color = CATEGORY_COLORS[category] || '#6b7280';
+  const icon  = CATEGORY_ICONS[category]  || '📍';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -20]
+  });
+}
+
+function renderSidebar() {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  allPOIs.forEach(f => {
+    const p     = f.properties;
+    const cat   = p.category || 'Étape';
+    const color = CATEGORY_COLORS[cat] || '#6b7280';
+    const icon  = CATEGORY_ICONS[cat]  || '📍';
+    const [lng, lat] = f.geometry.coordinates;
+    const card = document.createElement('div');
+    card.className = 'poi-card';
+    card.id = 'card-' + f._id;
+    card.style.borderLeftColor = color;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+      <div class="poi-dates" style="color:${color};">${p.dates || ''}</div>
+      <h3>${p.name}</h3>
+      ${p.hours  ? `<div style="font-size:0.72rem;color:#888;margin-bottom:0.15rem;">⏱ ${p.hours}</div>` : ''}
+      ${p.notes  ? `<div class="poi-notes">${p.notes}</div>` : ''}
+      <div class="poi-actions">
+        <a href="geo:${lat},${lng}">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+        ${p.url ? `<a href="${p.url}" target="_blank">Site ↗</a>` : ''}
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  map.flyTo([lat, lng], 12, { duration: 0.8 });
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = String(id) === String(f._id) ? '1' : '0.25';
+  });
+}
+
+fetch(window.MAP_CONFIG.geojsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    const points    = data.features.filter(f => f.geometry.type === 'Point');
+    const lines     = data.features.filter(f => f.geometry.type === 'LineString');
+
+    // Draw route polyline (dashed)
+    lines.forEach(f => {
+      const latlngs = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+      L.polyline(latlngs, {
+        color: '#1a3a5c', weight: 2.5, opacity: 0.55,
+        dashArray: '8 6'
+      }).addTo(map).bindPopup(`<b>${f.properties.name}</b>`);
+    });
+
+    // Render POI markers in order
+    allPOIs = points.map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+    allPOIs.forEach(f => {
+      const [lng, lat] = f.geometry.coordinates;
+      const p   = f.properties;
+      const cat = p.category || 'Étape';
+      const m = L.marker([lat, lng], { icon: makeIcon(cat) })
+        .addTo(map)
+        .bindPopup(`<b>${p.name}</b><br><small>${p.dates || cat}</small>${p.notes ? '<br><em style="font-size:0.85em">' + p.notes.slice(0, 80) + '…</em>' : ''}`);
+      m.on('click', () => focusPOI(f));
+      markers[f._id] = m;
+    });
+
+    renderSidebar();
+
+    // Fit to all points
+    const lls = allPOIs.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+    if (lls.length) map.fitBounds(L.latLngBounds(lls).pad(0.12));
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Impossible de charger l\'itinéraire.</p>';
+  });
+</script>
+{{ end }}

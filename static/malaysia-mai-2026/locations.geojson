@@ -1,0 +1,151 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [98.830042, 1.357107, 103.819499, 9.467466],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-17",
+    "schema": "/schema.json"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-route",
+      "properties": {
+        "name": "Itinéraire",
+        "category": "_route",
+        "notes": "Route principale : Surat Thani → Padang Besar → Ipoh → Iskandar Puteri → Malacca → Cameron Highlands → Padang Besar",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [98.830042, 9.467466],
+          [100.320198, 6.662684],
+          [101.090024, 4.598682],
+          [103.614473, 1.452271],
+          [102.288096, 2.329374],
+          [101.375173, 4.471079],
+          [100.320198, 6.662684]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-surat-thani",
+      "properties": {
+        "name": "Surat Thani",
+        "category": "Départ",
+        "address": "Surat Thani, Thaïlande",
+        "notes": "Point de départ — train de nuit vers la Malaisie le 05/05. Traversée de la frontière à Padang Besar.",
+        "dates": "05 Mai",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [98.830042, 9.467466] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-padang-besar",
+      "properties": {
+        "name": "Padang Besar",
+        "category": "Transit",
+        "address": "Padang Besar, Perlis, Malaisie",
+        "notes": "Poste-frontière Malaysia–Thaïlande. Terminus du train de nuit thaïlandais, correspondance ETS vers Ipoh. Retour le 26/05 par ETS depuis Ipoh.",
+        "dates": "06 Mai / 26 Mai",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.320198, 6.662684] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-ipoh",
+      "properties": {
+        "name": "Ipoh",
+        "category": "Étape",
+        "address": "Ipoh, Perak, Malaisie",
+        "notes": "5 nuits de repos après le train de nuit. Vieille ville coloniale, art mural, cafés taïwanais, dim sum matinal. Base calme avant la suite du voyage.",
+        "dates": "06 – 11 Mai",
+        "hours": "5 nuits",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [101.090024, 4.598682] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-iskandar-puteri",
+      "properties": {
+        "name": "Iskandar Puteri",
+        "category": "Étape",
+        "address": "Iskandar Puteri, Johor, Malaisie",
+        "notes": "L'étape majeure du voyage — 7 nuits. Ville nouvelle au bord du détroit de Johor, face à Singapour. Legoland Malaysia le 14 ou 15 Mai. Daytrip Singapour le 18 Mai.",
+        "dates": "11 – 18 Mai",
+        "hours": "7 nuits",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [103.614473, 1.452271] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-legoland",
+      "properties": {
+        "name": "Legoland Malaysia",
+        "category": "Excursion",
+        "address": "Bandar Medini Iskandar, Johor, Malaisie",
+        "notes": "Parc à thème Lego — 1 ou 2 jours. À 10 min d'Iskandar Puteri en Grab. Water Park inclus avec billet combiné. Idéal pour les enfants 3–12 ans.",
+        "dates": "14 ou 15 Mai",
+        "url": "https://www.legoland.com.my",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [103.629475, 1.427768] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-singapore",
+      "properties": {
+        "name": "Singapour",
+        "category": "Excursion",
+        "address": "Singapour",
+        "notes": "Daytrip depuis Iskandar Puteri le 18 Mai. Bus ou train via Woodlands. Gardens by the Bay, Marina Bay Sands, Chinatown ou Sentosa selon les envies.",
+        "dates": "18 Mai (daytrip)",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [103.819499, 1.357107] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-malacca",
+      "properties": {
+        "name": "Malacca",
+        "category": "Étape",
+        "address": "Malacca, Malaisie",
+        "notes": "3 nuits — pause culturelle. Ville historique classée UNESCO. Trishaws en soirée sur Jonker Street, bateau pirate dans le détroit, Christ Church et A Famosa. Cuisine Peranakan (Nyonya).",
+        "dates": "19 – 21 Mai",
+        "hours": "3 nuits",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [102.288096, 2.329374] }
+    },
+    {
+      "type": "Feature",
+      "id": "malaysia-mai-2026-cameron-highlands",
+      "properties": {
+        "name": "Cameron Highlands",
+        "category": "Étape",
+        "address": "Cameron Highlands, Pahang, Malaisie",
+        "notes": "3 nuits — la fraîcheur finale avant la chaleur de la Thaïlande. Plantations de thé, fraises, marché indien. Températures 15–25 °C. Proche d'Ipoh pour le retour vers Padang Besar.",
+        "dates": "22 – 25 Mai",
+        "hours": "3 nuits",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [101.375173, 4.471079] }
+    }
+  ]
+}
