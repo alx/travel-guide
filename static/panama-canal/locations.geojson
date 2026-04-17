@@ -1,0 +1,181 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [-79.929924, 8.951786, -79.534671, 9.361383],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-17",
+    "schema": "/schema.json"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "panama-canal-miraflores-locks",
+      "properties": {
+        "name": "Miraflores Locks",
+        "category": "Lock",
+        "address": "Arraiján, Panamá Oeste, Panamá",
+        "notes": "The Pacific-side original locks. The visitor centre (4 floors) has live viewing terraces overlooking active transits, a museum, restaurant and IMAX-style theatre. Ships rise/fall ~16 m in two steps.",
+        "hours": "09:00–17:00 daily",
+        "price": "$20 adults · $10 children",
+        "url": "https://visitcanalpanama.com",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.590704, 8.995339] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-cocoli-locks",
+      "properties": {
+        "name": "Cocolí Locks",
+        "category": "Lock",
+        "address": "Arraiján, Panamá Oeste, Panamá",
+        "notes": "New Pacific-side expansion locks opened 2016 as part of the Third Set of Locks project. Handles Neo-Panamax vessels (366 m long, up to 49 m beam) using water-saving basins that recycle 60% of freshwater per transit.",
+        "hours": "No public access — view from road bridge",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.588365, 8.980880] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-pedro-miguel-locks",
+      "properties": {
+        "name": "Pedro Miguel Locks",
+        "category": "Lock",
+        "address": "Pedro Miguel, Ancón, Distrito de Panamá",
+        "notes": "Single-step lock between Miraflores and Gatun Lake. Ships drop or rise ~9 m here before entering the Culebra Cut. The oldest of the three original lock stations, built 1907–1914.",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.612559, 9.017169] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-gaillard-cut",
+      "properties": {
+        "name": "Gaillard Cut (Culebra Cut)",
+        "category": "Engineering",
+        "address": "Continental Divide, Panamá",
+        "notes": "The 13 km artificial channel blasted through the Continental Divide — the most dangerous section of canal construction (1904–1914). Named after Lt. Col. David Gaillard. Widened to 218 m in 2002 to allow two-way Panamax traffic.",
+        "coord_source": "estimated",
+        "coord_accuracy": "medium"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.645000, 9.065000] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-gamboa",
+      "properties": {
+        "name": "Gamboa — Midpoint & Pilot Transfer",
+        "category": "Transit",
+        "address": "Gamboa, Cristóbal, Colón, Panamá",
+        "notes": "The geographic midpoint of the canal where Gatun Lake narrows into the cut. Canal pilots board and disembark here. Also home to the ACP Dredging Division fleet and the Gamboa Rainforest Resort — a good base for watching large ships transit.",
+        "hours": "Transit traffic: 24h",
+        "url": "https://www.gamboaresort.com",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.700303, 9.118089] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-gatun-locks",
+      "properties": {
+        "name": "Gatun Locks",
+        "category": "Lock",
+        "address": "Gatún, Cristóbal, Colón, Panamá",
+        "notes": "The Atlantic-side original locks — a triple-flight lifting ships 26 m in one continuous set. Longest of the three lock stations at 1.9 km. A free public observation platform on the east bank offers unobstructed views of full Neo-Panamax transits.",
+        "hours": "Observation platform: 09:00–17:00",
+        "price": "Free viewpoint",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.923068, 9.273966] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-agua-clara-locks",
+      "properties": {
+        "name": "Agua Clara Locks",
+        "category": "Lock",
+        "address": "Gatún, Cristóbal, Colón, Panamá",
+        "notes": "New Atlantic-side expansion locks opened 2016. Visitor centre with panoramic terrace — arguably the best place to watch Neo-Panamax container ships and LNG tankers transit. The observation deck is at water level alongside the chambers.",
+        "hours": "09:00–17:00 daily",
+        "price": "$15 adults · $8 children",
+        "url": "https://visitcanalpanama.com",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.912340, 9.271091] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-gatun-dam",
+      "properties": {
+        "name": "Gatun Dam",
+        "category": "Engineering",
+        "address": "Gatún, Cristóbal, Colón, Panamá",
+        "notes": "When completed in 1913 this was the largest earth dam in the world, creating Gatun Lake — then the largest artificial lake on Earth (425 km²). Still supplies all freshwater for lock operations and drinking water for Panama City and Colón.",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.929924, 9.262529] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-port-balboa",
+      "properties": {
+        "name": "Port of Balboa",
+        "category": "Port",
+        "address": "Ancón, Distrito de Panamá, Panamá",
+        "notes": "The main Pacific-side container terminal operated by Hutchison Ports. One of the 25 busiest ports in the world by TEU throughput. Ships awaiting canal slots anchor in the Bay of Panama — often dozens visible from the Amador Causeway.",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.562647, 8.957577] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-port-colon",
+      "properties": {
+        "name": "Port of Colón (Cristóbal)",
+        "category": "Port",
+        "address": "Barrio Norte, Colón, Panamá",
+        "notes": "Atlantic-side gateway — handles both container traffic (Colon Container Terminal) and cruise ships. The Colón Free Trade Zone adjacent to the port is the largest free-trade zone in the Western Hemisphere. Arriving ships wait in Limón Bay.",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.892893, 9.361383] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-acp-hq",
+      "properties": {
+        "name": "Panama Canal Authority HQ",
+        "category": "Historic",
+        "address": "Avenida Roberto F. Chiari, Ancón, Panamá",
+        "notes": "The Canal Administration Building (1914), a National Monument. Designed by Austin Lord in neoclassical style, it overlooked the canal construction from Ancon Hill. The ACP (Autoridad del Canal de Panamá) has managed the canal since the US handover on 31 Dec 1999.",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.555749, 8.957804] }
+    },
+    {
+      "type": "Feature",
+      "id": "panama-canal-museum",
+      "properties": {
+        "name": "Museo del Canal Interoceánico",
+        "category": "Museum",
+        "address": "Calle 6a Oeste, Casco Viejo, Distrito de Panamá",
+        "notes": "The definitive Panama Canal museum, housed in the former Grand Hotel and later the Colombian/US postal building in Casco Viejo. Covers the failed French attempt (1880–1889), the US construction era, and Panamanian control post-1999. English and Spanish.",
+        "hours": "09:00–17:00 Tue–Sun (closed Mon)",
+        "price": "From $8 adults",
+        "url": "https://museodelcanal.com",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      },
+      "geometry": { "type": "Point", "coordinates": [-79.534671, 8.951786] }
+    }
+  ]
+}
