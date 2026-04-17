@@ -95,6 +95,10 @@
       transition: background 0.15s;
     }
     html.embed-mode .embed-overlay-toggle:hover { background: white; }
+    /* On portrait/mobile the overlay stacks at the bottom — move toggle to bottom-right */
+    @media (max-width: 768px) {
+      html.embed-mode .embed-overlay-toggle { left: auto; right: 1rem; bottom: 1rem; }
+    }
   </style>
   {{ block "head" . }}{{ end }}
 
