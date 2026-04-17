@@ -1,7 +1,7 @@
 # Maps — Curated Travel Maps
 # https://maps.girard-davila.net/
 # Format: https://llmstxt.org
-# Last updated: 2026-04-12
+# Last updated: 2026-04-17
 
 > Hand-picked travel maps from real family experiences across South East Asia and Europe.
 > GPS-precise spots, honest notes, opening hours, prices. No generic tourist lists.
@@ -193,6 +193,122 @@ To add a completely new destination (not just POIs to an existing map):
    - `CATEGORY_COLORS` and `CATEGORY_ICONS` for the new destination's categories
    - Page header text in `{{ define "main" }}`
 4. Open a PR with all three files
+
+## Geocoding Coordinates
+
+All POI coordinates must be in GeoJSON order: **`[longitude, latitude]`** (opposite to Google Maps which shows `lat, lng`). Use one of the two services below to resolve a place name or OSM object to coordinates. Record the source in `coord_source` and `coord_accuracy` on every feature.
+
+### Nominatim (OpenStreetMap) — free, no key required
+
+API endpoint: `https://nominatim.openstreetmap.org/search`
+
+**Required header**: `User-Agent: <your-app>/<version>` — requests without it are rejected.
+
+**Search by name**
+
+```python
+import urllib.request, json, time, urllib.parse
+
+def geocode(query, label):
+    url = ('https://nominatim.openstreetmap.org/search?format=json&limit=1&q='
+           + urllib.parse.quote(query))
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    results = json.loads(urllib.request.urlopen(req).read())
+    if results:
+        r = results[0]
+        print(f'{label}: [{float(r["lon"]):.6f}, {float(r["lat"]):.6f}]  ({r["display_name"][:60]})')
+    else:
+        print(f'{label}: NOT FOUND — try a more specific query or Spanish/local name')
+    time.sleep(1)  # mandatory 1 req/s rate limit
+
+geocode('Miraflores Locks Panama Canal', 'Miraflores Locks')
+# → try local-language name on failure: 'Esclusas de Miraflores Panama'
+```
+
+**Lookup a known OSM way/node (most precise — from an openstreetmap.org URL)**
+
+```python
+import urllib.request, json
+
+def osm_way_centroid(way_id):
+    url = f'https://api.openstreetmap.org/api/0.6/way/{way_id}/full.json'
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    d = json.loads(urllib.request.urlopen(req).read())
+    way   = next(e for e in d['elements'] if e['type'] == 'way')
+    nodes = {e['id']: (e['lat'], e['lon']) for e in d['elements'] if e['type'] == 'node'}
+    lats  = [nodes[n][0] for n in way['nodes']]
+    lons  = [nodes[n][1] for n in way['nodes']]
+    cx    = round(sum(lons) / len(lons), 6)
+    cy    = round(sum(lats) / len(lats), 6)
+    print(f'centroid: [{cx}, {cy}]')   # [longitude, latitude] — GeoJSON order
+    print('tags:', way.get('tags', {}))  # name, opening_hours, website, etc.
+    return [cx, cy]
+
+# Example: https://www.openstreetmap.org/way/528312914
+osm_way_centroid(528312914)
+```
+
+Use `coord_source: "research"` for Nominatim name-search results and `coord_accuracy: "high"` when the result type is a specific feature (pier, building, park). Use `coord_accuracy: "medium"` for administrative boundaries or town-level results.
+
+**Rate limits**: 1 request/second maximum. Add `time.sleep(1)` between calls. No API key needed for reasonable volume. For bulk geocoding (>100 POIs) use the Nominatim self-hosted instance or switch to LocationIQ.
+
+---
+
+### LocationIQ — higher rate limits, requires free API key
+
+Sign up at **https://locationiq.com** (free tier: 5,000 req/day, 2 req/s).
+
+Set your key as an environment variable: `export LOCATIONIQ_API_KEY=pk.xxxxxxxx`
+
+**Search by name**
+
+```python
+import os, urllib.request, json, urllib.parse
+
+def locationiq_geocode(query, label):
+    key = os.environ['LOCATIONIQ_API_KEY']
+    url = (f'https://us1.locationiq.com/v1/search?key={key}&format=json&limit=1&q='
+           + urllib.parse.quote(query))
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    results = json.loads(urllib.request.urlopen(req).read())
+    if results:
+        r = results[0]
+        print(f'{label}: [{float(r["lon"]):.6f}, {float(r["lat"]):.6f}]  ({r["display_name"][:60]})')
+    else:
+        print(f'{label}: NOT FOUND')
+
+locationiq_geocode('Tamarind Springs Spa Lamai Koh Samui', 'Tamarind Springs')
+```
+
+**Reverse geocode (lat/lng → address)**
+
+```python
+def locationiq_reverse(lat, lon):
+    key = os.environ['LOCATIONIQ_API_KEY']
+    url = f'https://us1.locationiq.com/v1/reverse?key={key}&format=json&lat={lat}&lon={lon}'
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    r = json.loads(urllib.request.urlopen(req).read())
+    print(r['display_name'])
+    return r
+
+locationiq_reverse(9.469443, 100.049209)
+```
+
+Use `coord_source: "nominatim"` for LocationIQ results (same underlying OSM data). Use `coord_accuracy: "high"` for POI-type results, `"medium"` for street/area results.
+
+---
+
+### Choosing between the two
+
+| | Nominatim | LocationIQ |
+|---|---|---|
+| Cost | Free | Free tier 5k req/day |
+| Rate limit | 1 req/s | 2 req/s |
+| API key | None | Required |
+| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding |
+| Local-language fallback | Often needed | Same OSM data |
+
+**Workflow for a new destination**: start with Nominatim name-search. If a result is missing or imprecise, look up the place on `openstreetmap.org`, copy the way/node ID from the URL, and use `osm_way_centroid()` above for a building-level centroid.
 
 ## Map Toolbar
 
