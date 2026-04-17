@@ -1,0 +1,1269 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    99.9308,
+    9.4485,
+    100.0621,
+    9.5635
+  ],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-17"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "samui-711-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0605,
+          9.5521
+        ]
+      },
+      "properties": {
+        "id": "samui-711-001",
+        "name": "7-Eleven Chaweng Beach Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0612,
+          9.5498
+        ]
+      },
+      "properties": {
+        "id": "samui-711-002",
+        "name": "7-Eleven Chaweng Beach Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0615,
+          9.5475
+        ]
+      },
+      "properties": {
+        "id": "samui-711-003",
+        "name": "7-Eleven Chaweng Beach Rd 3",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0618,
+          9.5448
+        ]
+      },
+      "properties": {
+        "id": "samui-711-004",
+        "name": "7-Eleven Chaweng Beach Rd 4",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0619,
+          9.5422
+        ]
+      },
+      "properties": {
+        "id": "samui-711-005",
+        "name": "7-Eleven Chaweng Beach Rd 5",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0614,
+          9.5395
+        ]
+      },
+      "properties": {
+        "id": "samui-711-006",
+        "name": "7-Eleven Chaweng Beach Rd 6",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0605,
+          9.5368
+        ]
+      },
+      "properties": {
+        "id": "samui-711-007",
+        "name": "7-Eleven Chaweng Beach Rd 7",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0548,
+          9.544
+        ]
+      },
+      "properties": {
+        "id": "samui-711-008",
+        "name": "7-Eleven Chaweng Lake Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0535,
+          9.5415
+        ]
+      },
+      "properties": {
+        "id": "samui-711-009",
+        "name": "7-Eleven Chaweng Lake Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0593,
+          9.5445
+        ]
+      },
+      "properties": {
+        "id": "samui-711-010",
+        "name": "7-Eleven Central Festival Samui",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0621,
+          9.5468
+        ]
+      },
+      "properties": {
+        "id": "samui-711-011",
+        "name": "7-Eleven Soi Green Mango",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0582,
+          9.533
+        ]
+      },
+      "properties": {
+        "id": "samui-711-012",
+        "name": "7-Eleven Chaweng Noi 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0565,
+          9.5305
+        ]
+      },
+      "properties": {
+        "id": "samui-711-013",
+        "name": "7-Eleven Chaweng Noi 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0512,
+          9.549
+        ]
+      },
+      "properties": {
+        "id": "samui-711-014",
+        "name": "7-Eleven Chaweng Ring Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0492,
+          9.5353
+        ]
+      },
+      "properties": {
+        "id": "samui-711-015",
+        "name": "7-Eleven Chaweng Ring Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0555,
+          9.4852
+        ]
+      },
+      "properties": {
+        "id": "samui-711-016",
+        "name": "7-Eleven Lamai Beach Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0582,
+          9.4826
+        ]
+      },
+      "properties": {
+        "id": "samui-711-017",
+        "name": "7-Eleven Lamai Beach Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0598,
+          9.4798
+        ]
+      },
+      "properties": {
+        "id": "samui-711-018",
+        "name": "7-Eleven Lamai Beach Rd 3",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0605,
+          9.4769
+        ]
+      },
+      "properties": {
+        "id": "samui-711-019",
+        "name": "7-Eleven Lamai Beach Rd 4",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0608,
+          9.4741
+        ]
+      },
+      "properties": {
+        "id": "samui-711-020",
+        "name": "7-Eleven Lamai Beach Rd 5",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0502,
+          9.487
+        ]
+      },
+      "properties": {
+        "id": "samui-711-021",
+        "name": "7-Eleven Lamai Ring Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0498,
+          9.4755
+        ]
+      },
+      "properties": {
+        "id": "samui-711-022",
+        "name": "7-Eleven Lamai Ring Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0558,
+          9.4681
+        ]
+      },
+      "properties": {
+        "id": "samui-711-023",
+        "name": "7-Eleven Hua Thanon",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0265,
+          9.5468
+        ]
+      },
+      "properties": {
+        "id": "samui-711-024",
+        "name": "7-Eleven Bophut Fisherman Village",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0298,
+          9.5488
+        ]
+      },
+      "properties": {
+        "id": "samui-711-025",
+        "name": "7-Eleven Bophut Beach Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0335,
+          9.5512
+        ]
+      },
+      "properties": {
+        "id": "samui-711-026",
+        "name": "7-Eleven Bophut Beach Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0218,
+          9.5432
+        ]
+      },
+      "properties": {
+        "id": "samui-711-027",
+        "name": "7-Eleven Bophut Ring Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0378,
+          9.5468
+        ]
+      },
+      "properties": {
+        "id": "samui-711-028",
+        "name": "7-Eleven Bang Rak Pier",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0402,
+          9.5498
+        ]
+      },
+      "properties": {
+        "id": "samui-711-029",
+        "name": "7-Eleven Bang Rak Beach",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9925,
+          9.5595
+        ]
+      },
+      "properties": {
+        "id": "samui-711-030",
+        "name": "7-Eleven Maenam Beach Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9878,
+          9.5618
+        ]
+      },
+      "properties": {
+        "id": "samui-711-031",
+        "name": "7-Eleven Maenam Beach Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9858,
+          9.5545
+        ]
+      },
+      "properties": {
+        "id": "samui-711-032",
+        "name": "7-Eleven Maenam Ring Rd 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9792,
+          9.5522
+        ]
+      },
+      "properties": {
+        "id": "samui-711-033",
+        "name": "7-Eleven Maenam Ring Rd 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9955,
+          9.5575
+        ]
+      },
+      "properties": {
+        "id": "samui-711-034",
+        "name": "7-Eleven Maenam Market",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0452,
+          9.5618
+        ]
+      },
+      "properties": {
+        "id": "samui-711-035",
+        "name": "7-Eleven Choeng Mon 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Choeng Mon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0505,
+          9.5635
+        ]
+      },
+      "properties": {
+        "id": "samui-711-036",
+        "name": "7-Eleven Choeng Mon 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Choeng Mon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0432,
+          9.5568
+        ]
+      },
+      "properties": {
+        "id": "samui-711-037",
+        "name": "7-Eleven Big Buddha Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Choeng Mon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0485,
+          9.5595
+        ]
+      },
+      "properties": {
+        "id": "samui-711-038",
+        "name": "7-Eleven Big Buddha Beach",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Choeng Mon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9318,
+          9.5352
+        ]
+      },
+      "properties": {
+        "id": "samui-711-039",
+        "name": "7-Eleven Nathon Pier",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9335,
+          9.5328
+        ]
+      },
+      "properties": {
+        "id": "samui-711-040",
+        "name": "7-Eleven Nathon Town 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9308,
+          9.5368
+        ]
+      },
+      "properties": {
+        "id": "samui-711-041",
+        "name": "7-Eleven Nathon Town 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9362,
+          9.5205
+        ]
+      },
+      "properties": {
+        "id": "samui-711-042",
+        "name": "7-Eleven Nathon South",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9388,
+          9.5448
+        ]
+      },
+      "properties": {
+        "id": "samui-711-043",
+        "name": "7-Eleven Nathon North Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9355,
+          9.4628
+        ]
+      },
+      "properties": {
+        "id": "samui-711-044",
+        "name": "7-Eleven Taling Ngam",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Taling Ngam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0362,
+          9.4945
+        ]
+      },
+      "properties": {
+        "id": "samui-711-045",
+        "name": "7-Eleven Na Thian Ring Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0108,
+          9.4485
+        ]
+      },
+      "properties": {
+        "id": "samui-711-046",
+        "name": "7-Eleven Thong Krut",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9948,
+          9.4548
+        ]
+      },
+      "properties": {
+        "id": "samui-711-047",
+        "name": "7-Eleven Bang Kao",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9435,
+          9.4965
+        ]
+      },
+      "properties": {
+        "id": "samui-711-048",
+        "name": "7-Eleven Lipa Noi",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lipa Noi",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0612,
+          9.5548
+        ]
+      },
+      "properties": {
+        "id": "samui-711-049",
+        "name": "7-Eleven Samui Airport Area",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Airport",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0468,
+          9.5398
+        ]
+      },
+      "properties": {
+        "id": "samui-711-050",
+        "name": "7-Eleven Chaweng Inland 1",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0422,
+          9.5272
+        ]
+      },
+      "properties": {
+        "id": "samui-711-051",
+        "name": "7-Eleven Chaweng Inland 2",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0548,
+          9.5575
+        ]
+      },
+      "properties": {
+        "id": "samui-711-052",
+        "name": "7-Eleven Plai Laem",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Choeng Mon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0535,
+          9.5275
+        ]
+      },
+      "properties": {
+        "id": "samui-711-053",
+        "name": "7-Eleven Chaweng Noi 3",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Chaweng",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0502,
+          9.5002
+        ]
+      },
+      "properties": {
+        "id": "samui-711-054",
+        "name": "7-Eleven Lamai North",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0468,
+          9.4908
+        ]
+      },
+      "properties": {
+        "id": "samui-711-055",
+        "name": "7-Eleven Lamai Viewpoint Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0152,
+          9.5362
+        ]
+      },
+      "properties": {
+        "id": "samui-711-056",
+        "name": "7-Eleven Bophut South",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9592,
+          9.5155
+        ]
+      },
+      "properties": {
+        "id": "samui-711-057",
+        "name": "7-Eleven Don Sak Ferry Rd",
+        "category": "Convenience",
+        "icon": "\ud83c\udfea",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "coord_source": "research",
+        "coord_accuracy": "low"
+      }
+    }
+  ]
+}
