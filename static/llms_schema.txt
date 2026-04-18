@@ -1,0 +1,126 @@
+# Maps — GeoJSON POI Schema & Categories
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: data format, required fields, category tables per map
+
+## GeoJSON POI Schema
+
+Every destination's data lives in `static/<destination>/locations.geojson` as a standard GeoJSON `FeatureCollection`. Each feature must follow this schema:
+
+```json
+{
+  "type": "Feature",
+  "id": "<destination>-<zero-padded-number>",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [longitude, latitude]
+  },
+  "properties": {
+    "id":           "String — same as feature id (required)",
+    "name":         "String — place name (required)",
+    "category":     "String — must match a known category for the map (required)",
+    "icon":         "String — emoji, e.g. '🍽️' (required)",
+    "display_name": "String — longer OSM/Nominatim display name",
+    "address":      "String — full street address or area description",
+    "notes":        "String — insider description, what makes it worth visiting",
+    "hours":        "String — opening hours, e.g. '09:00–18:00 daily'",
+    "phone":        "String — international format, e.g. '+66 77 256 500'",
+    "url":          "String — website or Instagram URL",
+    "price":        "String — entry fee or price range, e.g. 'from ฿1,500'",
+    "coord_source": "Enum — see below",
+    "coord_accuracy": "Enum — 'high' | 'medium' | 'low'",
+    "osm_id":       "String or null — OSM node/way/relation ID",
+    "osm_type":     "String or null — 'N' | 'W' | 'R'"
+  }
+}
+```
+
+**Coordinate order is `[longitude, latitude]`** — the GeoJSON standard (opposite to Google Maps which shows `lat, lng`).
+
+Only `name`, `category`, `icon`, and `geometry` are strictly required. All other properties are optional but encouraged for quality.
+
+### coord_source enum
+
+| Value | Meaning |
+|-------|---------|
+| `google_maps_pin` | Dropped pin from Google Maps |
+| `nominatim` | Nominatim, LocationIQ, or Photon (OSM-backed) search result |
+| `research` | Manual research from web sources |
+| `estimated` | Approximate position, neighbourhood level |
+| `on_site_gps` | Verified on-site with a GPS device |
+
+### coord_accuracy enum
+
+| Value | Meaning |
+|-------|---------|
+| `high` | Building or POI-level accuracy |
+| `medium` | Street or area level |
+| `low` | Town or district level |
+
+## Categories
+
+Use one of the established categories for the destination's map to get the right colour-coded icon. Unrecognised categories fall back to grey `📍`.
+
+### Lamai map (`layouts/lamai/list.html`)
+
+| Category   | Icon | Colour    |
+|------------|------|-----------|
+| Restaurant | 🍽️  | `#f97316` |
+| Bakery     | 🥐  | `#eab308` |
+| Café       | ☕  | `#92400e` |
+| Muay Thai  | 🥊  | `#ef4444` |
+| Market     | 🛒  | `#7dd3fc` |
+| Bar        | 🍺  | `#8b5cf6` |
+| Spa        | 💆  | `#ec4899` |
+| Fitness    | 💪  | `#06b6d4` |
+| Landmark   | 🪨  | `#64748b` |
+| Temple     | 🛕  | `#a78bfa` |
+| Beach      | 🏖️  | `#0ea5e9` |
+
+### Koh Samui map (`layouts/koh-samui/list.html`)
+
+| Category   | Icon | Colour    |
+|------------|------|-----------|
+| Beach      | 🏖️  | `#0ea5e9` |
+| Restaurant | 🍽️  | `#f97316` |
+| Activity   | 🎯  | `#22c55e` |
+| Hotel      | 🏨  | `#8b5cf6` |
+| Shopping   | 🛍️  | `#ec4899` |
+| Area Guide | 🗺️  | `#1a3a5c` |
+
+### Roadtrip maps (Reddit-sourced, `layouts/roadtrip-*/list.html`)
+
+Reddit-sourced maps use day-number colour coding instead of category colours:
+
+| Day | Colour    | Meaning |
+|-----|-----------|---------|
+| 1   | `#0ea5e9` | Sky blue |
+| 2   | `#f97316` | Orange |
+| 3   | `#22c55e` | Green |
+| 4   | `#8b5cf6` | Purple |
+| 5   | `#ef4444` | Red |
+| 6–7 | `#6b7280` | Gray |
+
+### 7-Eleven Samui map (`layouts/711-samui/list.html`)
+
+Single category `Store` with SVG logo marker from `static/images/711-logo.svg`. Filter by area (Chaweng, Lamai, Bophut, etc.) via area-pill buttons.
+
+### Fishing-boat expedition (`layouts/fishing-boat/list.html`)
+
+| Category  | Icon | Colour    |
+|-----------|------|-----------|
+| Port      | ⚓  | `#f97316` |
+| Fishing   | 🎣  | `#0ea5e9` |
+| Anchorage | 🌙  | `#6366f1` |
+| Hazard    | ⚠️  | `#ef4444` |
+| Service   | ⛽  | `#f59e0b` |
+
+Route segments are coloured by day:
+
+| Day | Colour    | Segment |
+|-----|-----------|---------|
+| 1   | `#0ea5e9` | Outbound |
+| 1   | `#6366f1` | Overnight run |
+| 2   | `#8b5cf6` | Deep water leg |
+| 2   | `#22c55e` | Return |
+
+Adding a new category requires adding a matching entry to both `CATEGORY_COLORS` and `CATEGORY_ICONS` in the relevant `layouts/<destination>/list.html`.

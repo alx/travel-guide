@@ -1,0 +1,214 @@
+# Maps — Geocoding APIs
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: Nominatim, LocationIQ, Photon — usage patterns, rate limits, coord_source mapping
+
+## Geocoding Coordinates
+
+All POI coordinates must be in GeoJSON order: **`[longitude, latitude]`** (opposite to Google Maps which shows `lat, lng`). Use one of the services below to resolve a place name or OSM object to coordinates. Record the source in `coord_source` and `coord_accuracy` on every feature (see `llms_schema.txt` for enums).
+
+---
+
+### Nominatim (OpenStreetMap) — free, no key required
+
+API endpoint: `https://nominatim.openstreetmap.org/search`
+
+**Required header**: `User-Agent: <your-app>/<version>` — requests without it are rejected.
+
+**Search by name**
+
+```python
+import urllib.request, json, time, urllib.parse
+
+def geocode(query, label):
+    url = ('https://nominatim.openstreetmap.org/search?format=json&limit=1&q='
+           + urllib.parse.quote(query))
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    results = json.loads(urllib.request.urlopen(req).read())
+    if results:
+        r = results[0]
+        print(f'{label}: [{float(r["lon"]):.6f}, {float(r["lat"]):.6f}]  ({r["display_name"][:60]})')
+    else:
+        print(f'{label}: NOT FOUND — try a more specific query or local-language name')
+    time.sleep(1)  # mandatory 1 req/s rate limit
+
+geocode('Miraflores Locks Panama Canal', 'Miraflores Locks')
+geocode('Tamarind Springs Spa Lamai Koh Samui', 'Tamarind Springs')
+```
+
+**Lookup a known OSM way/node (most precise — from an openstreetmap.org URL)**
+
+```python
+import urllib.request, json
+
+def osm_way_centroid(way_id):
+    url = f'https://api.openstreetmap.org/api/0.6/way/{way_id}/full.json'
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    d = json.loads(urllib.request.urlopen(req).read())
+    way   = next(e for e in d['elements'] if e['type'] == 'way')
+    nodes = {e['id']: (e['lat'], e['lon']) for e in d['elements'] if e['type'] == 'node'}
+    lats  = [nodes[n][0] for n in way['nodes']]
+    lons  = [nodes[n][1] for n in way['nodes']]
+    cx    = round(sum(lons) / len(lons), 6)
+    cy    = round(sum(lats) / len(lats), 6)
+    print(f'centroid: [{cx}, {cy}]')   # [longitude, latitude] — GeoJSON order
+    print('tags:', way.get('tags', {}))
+    return [cx, cy]
+
+# Example: https://www.openstreetmap.org/way/528312914
+osm_way_centroid(528312914)
+```
+
+**Rate limits**: 1 request/second maximum. Add `time.sleep(1)` between calls. No API key needed for reasonable volume. For bulk geocoding (>100 POIs) use a self-hosted Nominatim instance or switch to Photon.
+
+`coord_source` mapping: use `"nominatim"` for name-search results. `coord_accuracy: "high"` for specific POI results (building, pier, park), `"medium"` for area/admin results.
+
+---
+
+### LocationIQ — higher rate limits, requires free API key
+
+Sign up at **https://locationiq.com** (free tier: 5,000 req/day, 2 req/s).
+
+Set key: `export LOCATIONIQ_API_KEY=pk.xxxxxxxx`
+
+**Search by name**
+
+```python
+import os, urllib.request, json, urllib.parse
+
+def locationiq_geocode(query, label):
+    key = os.environ['LOCATIONIQ_API_KEY']
+    url = (f'https://us1.locationiq.com/v1/search?key={key}&format=json&limit=1&q='
+           + urllib.parse.quote(query))
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    results = json.loads(urllib.request.urlopen(req).read())
+    if results:
+        r = results[0]
+        print(f'{label}: [{float(r["lon"]):.6f}, {float(r["lat"]):.6f}]  ({r["display_name"][:60]})')
+
+locationiq_geocode('Tamarind Springs Spa Lamai Koh Samui', 'Tamarind Springs')
+```
+
+**Reverse geocode (lat/lng → address)**
+
+```python
+def locationiq_reverse(lat, lon):
+    key = os.environ['LOCATIONIQ_API_KEY']
+    url = f'https://us1.locationiq.com/v1/reverse?key={key}&format=json&lat={lat}&lon={lon}'
+    req = urllib.request.Request(url, headers={'User-Agent': 'maps.girard-davila.net/1.0'})
+    r = json.loads(urllib.request.urlopen(req).read())
+    print(r['display_name'])
+    return r
+
+locationiq_reverse(9.469443, 100.049209)
+```
+
+`coord_source` mapping: use `"nominatim"` (same underlying OSM data). `coord_accuracy: "high"` for POI-type results.
+
+---
+
+### Photon (Komoot) — bulk POI search by brand/name, no key required
+
+API endpoint: `https://photon.komoot.io/api/`
+
+Photon is OSM-backed and optimised for **forward search and branded POI lookup**. Returns up to 50 ranked results per query, making it ideal for fetching all instances of a chain (7-Eleven, PTT, McDonald's) within a bounding box in one pass.
+
+**Multi-center search for full coverage**
+
+```python
+import urllib.request, json, urllib.parse, time
+
+BBOX = (9.38, 99.88, 9.66, 100.10)  # (lat_min, lon_min, lat_max, lon_max) — Koh Samui
+
+def in_bbox(coords):
+    lon, lat = coords  # GeoJSON: [lon, lat]
+    return BBOX[0] <= lat <= BBOX[2] and BBOX[1] <= lon <= BBOX[3]
+
+def photon_search(query, center_lat, center_lon, limit=50):
+    params = {"q": query, "lat": str(center_lat), "lon": str(center_lon), "limit": limit}
+    url = "https://photon.komoot.io/api/?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"User-Agent": "maps.girard-davila.net/1.0"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.loads(r.read()).get("features", [])
+
+# Multiple centre points to overcome the 50-result cap
+CENTERS = [
+    (9.52, 100.06),  # Chaweng
+    (9.48, 100.05),  # Lamai
+    (9.56, 99.99),   # Maenam
+    (9.53, 99.93),   # Nathon
+    (9.54, 100.01),  # Bang Rak
+    (9.50, 99.97),   # Bophut west
+    (9.47, 99.95),   # Hua Thanon
+]
+
+seen, stores = set(), []
+for lat, lon in CENTERS:
+    for f in photon_search("7-Eleven", lat, lon):
+        coords = f["geometry"]["coordinates"]   # [lon, lat]
+        if not in_bbox(coords):
+            continue
+        key = (round(coords[0], 4), round(coords[1], 4))
+        if key in seen:
+            continue
+        seen.add(key)
+        p = f["properties"]
+        if "7" not in p.get("name", "") and "eleven" not in p.get("name","").lower():
+            continue
+        stores.append({
+            "lon": coords[0], "lat": coords[1],
+            "name": p.get("name"),
+            "area": p.get("city") or p.get("suburb") or p.get("district", ""),
+            "osm_id": str(p.get("osm_id")),
+            "osm_type": p.get("osm_type"),   # N=node, W=way, R=relation
+        })
+    time.sleep(1)
+
+print(f"Found {len(stores)} unique stores")
+```
+
+**Response properties**
+
+| Property | Description |
+|----------|-------------|
+| `osm_id` | OSM node/way/relation ID |
+| `osm_type` | `N` (node), `W` (way), `R` (relation) |
+| `name` | Display name (may be in local script) |
+| `city` / `suburb` / `district` | Neighbourhood or city name |
+| `country` | Country name |
+| `postcode` | Postal code |
+
+`coord_source` mapping: Photon is OSM-backed — use `"nominatim"` in the GeoJSON (the `coord_source` enum does not include `"photon"` as a distinct value). `coord_accuracy: "high"` for node-level results.
+
+**Rate limits**: no hard published limit. Apply 1 req/s courtesy delay for multi-center searches. No API key needed. If you receive HTTP 403, add a descriptive `User-Agent` header.
+
+---
+
+### Choosing between the three
+
+| | Nominatim | LocationIQ | Photon |
+|---|---|---|---|
+| Cost | Free | Free 5k/day | Free |
+| Rate limit | 1 req/s | 2 req/s | ~1 req/s (courtesy) |
+| API key | None | Required | None |
+| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding | Bulk branded POI search |
+| Results per query | 1 | 1 | Up to 50 ranked |
+| Local-language fallback | Needed | Same OSM data | Built-in |
+
+**Recommended cascade for `scripts/reddit_to_map.py`**:
+Photon first (50 results, relevant ranking) → Nominatim (fallback) → LocationIQ (final fallback).
+
+**Recommended workflow for a new destination**:
+Photon brand-search for chains → Nominatim name-search for unique landmarks → `osm_way_centroid()` for building-level precision when OSM way ID is known.
+
+---
+
+### Deduplication
+
+When combining results from multiple Photon centers or API sources, deduplicate by rounding coordinates to 3 decimal places (~100m grid):
+
+```python
+key = (round(lon, 3), round(lat, 3))
+if key in seen:
+    continue   # duplicate — skip
+seen.add(key)
+```

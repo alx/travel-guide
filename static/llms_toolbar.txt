@@ -1,0 +1,73 @@
+# Maps — Toolbar, Embed, GitHub & OsmAnd
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: map toolbar actions, embed mode, load custom data, GitHub integration, OsmAnd/GPX
+
+## Map Toolbar
+
+Every map page has a floating **🛠️ Tools** button (top-left overlay header) that reveals the toolbar. Available actions:
+
+| Button | Action |
+|--------|--------|
+| 📥 GeoJSON | Download the map's raw GeoJSON data file |
+| 🗺️ GPX | Export all visible POIs + routes as GPX (OsmAnd, Garmin, etc.) |
+| `</>` Embed | Copy `<iframe>` snippet with live preview; src uses `?embed=1` |
+| 🔗 Share | Copy current URL (including active filter) to clipboard |
+| 📂 Load | Load custom GeoJSON/TopoJSON from file, URL, or GitHub forks |
+| 🐙 GitHub | Sign in · browse repos · fork & submit PR |
+
+Toolbar HTML/JS lives in `layouts/partials/map-toolbar.html`. It reads `window.MAP_CONFIG` for title, geojsonUrl, embedPath, and previewImage.
+
+## Embed Mode
+
+Append `?embed=1` to any map URL to get a map-only view (no header, footer, toolbar, sidebar buttons, contact form). An inline script in `layouts/_default/baseof.html` adds the `embed-mode` class to `<html>` before first paint so there is no flash of site chrome.
+
+```html
+<iframe
+  src="https://maps.girard-davila.net/lamai/?embed=1"
+  width="100%" height="500" frameborder="0"
+  style="border-radius:12px;"
+  title="Lamai Beach — Maps">
+</iframe>
+```
+
+- `?embed=1&filter=Spa` — pre-filter on load; any category name works
+- `?embed=1&overlay=1` — show the POI list overlay on load
+- A floating **☰** button (bottom-right on mobile, bottom-left on desktop) lets the viewer toggle the overlay open/close
+
+**Portrait/mobile handling**: on screens where `innerWidth <= innerHeight || innerWidth <= 768`, the overlay stacks at the bottom (CSS `column-reverse`) and the ☰ button moves to `bottom-right`. No horizontal pan offset is applied on portrait screens.
+
+## Load Custom Data (📂 Load)
+
+Three tabs in the Load modal:
+
+1. **File** — file-picker; accepts `.geojson`, `.topojson`, `.json`
+2. **URL** — fetch from any public URL (GitHub raw, S3, Gist, etc.)
+3. **GitHub Forks** — lists all public forks of `alx/travel-guide`; per-fork branch dropdown; recursive tree scan for `.geojson`/`.topojson` under `static/`; one-click load onto the map
+
+TopoJSON is converted to GeoJSON via `topojson-client@3` before rendering. Loaded data appears as a removable overlay layer with a yellow badge in the sidebar.
+
+## GitHub Integration (🐙 GitHub)
+
+Three-tab panel in the toolbar:
+
+1. **Sign In** — GitHub Device Flow OAuth (display a code, enter at `github.com/login/device`) or Personal Access Token. Token stored in `localStorage['github_pat']`.
+2. **Load GeoJSON** — search any of the user's repos for `.geojson`/`.topojson` files.
+3. **Submit PR** — forks `alx/travel-guide` (if not already forked), commits GeoJSON to `static/<name>/locations.geojson` on a new branch, opens a pull request via GitHub API — all from the browser.
+
+GitHub Device Flow uses a Cloudflare Worker CORS proxy (`workers/github-proxy.js`). The two proxied endpoints `/github-device-code` and `/github-device-token` add CORS headers to GitHub's OAuth API responses. No client secret is exposed to the browser.
+
+## OsmAnd & GPS Export
+
+- Every POI card has a **🗺️ OsmAnd** link (`geo:lat,lon`) — tapping on Android opens OsmAnd or any registered `geo:` handler
+- The **GPX export** button serialises all currently visible POIs as `<wpt>` waypoints and route LineStrings as `<trk>` tracks in GPX 1.1 format; download triggered automatically
+
+## URL Filter Parameters
+
+Any category filter can be pre-applied via URL:
+
+```
+https://maps.girard-davila.net/lamai/?filter=Spa
+https://maps.girard-davila.net/koh-samui/?filter=Beach
+```
+
+The filter value is matched against `feature.properties.category` (case-sensitive).

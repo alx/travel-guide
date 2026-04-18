@@ -1,0 +1,153 @@
+# Maps — Contributing New Places
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: how to add POIs (in-browser PR flow, CLI git workflow, new destination)
+
+## Contributing New Places — Step-by-Step
+
+### Option A — In-browser (no local setup)
+
+The fastest path for adding a small number of places to an existing map:
+
+1. Open any map page, e.g. `https://maps.girard-davila.net/lamai/`
+2. Click **🛠️ Tools** in the top-left overlay to reveal the toolbar
+3. Click **🐙 GitHub** → **Sign In** tab
+4. Authenticate via **Device Flow** (enter the displayed code at `github.com/login/device`) or paste a Personal Access Token
+5. Go to the **Submit PR** tab
+6. Select the destination GeoJSON file (e.g. `static/lamai/locations.geojson`)
+7. Paste your new feature(s) following the schema in `llms_schema.txt`, or load a local file
+8. Fill in a branch name and PR title, then click **Submit PR**
+9. The tool will fork `alx/travel-guide` under your account (if not already forked), commit the updated GeoJSON to a new branch, and open a pull request via the GitHub API
+
+### Option B — CLI / Git workflow
+
+**Step 1 — Fork the repository**
+
+```bash
+# Via GitHub CLI
+gh repo fork alx/travel-guide --clone --remote
+
+# Or manually: fork on github.com, then:
+git clone https://github.com/<your-username>/travel-guide.git
+cd travel-guide
+git remote add upstream https://github.com/alx/travel-guide.git
+```
+
+**Step 2 — Create a feature branch**
+
+```bash
+git checkout -b add-lamai-places
+```
+
+**Step 3 — Edit the GeoJSON file**
+
+Open `static/lamai/locations.geojson` (or another destination) and append new features to the `"features"` array. Keep JSON valid — run a quick check:
+
+```bash
+python3 -c "import json; json.load(open('static/lamai/locations.geojson')); print('valid')"
+```
+
+Minimal example of a new feature to append:
+
+```json
+{
+  "type": "Feature",
+  "id": "lamai-042",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [100.0491, 9.4703]
+  },
+  "properties": {
+    "id": "lamai-042",
+    "name": "My Favourite Café",
+    "category": "Café",
+    "icon": "☕",
+    "address": "42 Haad Lamai Road, Tambon Maret, Ko Samui",
+    "notes": "Tiny roaster run by a Thai-French couple. Best cold brew on the beach road.",
+    "hours": "08:00–16:00",
+    "phone": "+66 81 234 5678",
+    "coord_source": "google_maps_pin",
+    "coord_accuracy": "high"
+  }
+}
+```
+
+> **Tip — get coordinates**: right-click any location in Google Maps → "What's here?" shows `lat, lng`. Reverse the order to `[lng, lat]` for GeoJSON.
+
+**Step 4 — Commit and push**
+
+```bash
+git add static/lamai/locations.geojson
+git commit -m "lamai: add My Favourite Café and 2 other spots"
+git push origin add-lamai-places
+```
+
+**Step 5 — Open a Pull Request**
+
+```bash
+gh pr create \
+  --repo alx/travel-guide \
+  --title "lamai: add 3 new spots" \
+  --body "Added: My Favourite Café (Café), Jungle Smoothie Bar (Bar), Beach Yoga Club (Fitness). All GPS-verified on-site."
+```
+
+### PR Guidelines
+
+- One destination per PR is preferred
+- GeoJSON must be valid (no trailing commas, correct coordinate order)
+- Include `notes` describing *why* a place is worth visiting — not just its type
+- `hours`, `phone`, and `url` are optional but strongly encouraged
+- Coordinates must be from `coord_source` ∈ `['google_maps_pin','nominatim','research','estimated','on_site_gps']`
+- Do not include `"premium": true` — that field is managed by maintainers
+
+### Adding a New Destination (requires Hugo files)
+
+To add a completely new destination (not just POIs to an existing map):
+
+1. Create `static/<destination>/locations.geojson` — the GeoJSON data file
+2. Create `content/<destination>/_index.md` — minimal Hugo content file:
+   ```yaml
+   ---
+   title: "My Destination"
+   ---
+   ```
+3. Copy `layouts/lamai/list.html` to `layouts/<destination>/list.html` and update:
+   - `window.MAP_CONFIG.title`
+   - `window.MAP_CONFIG.geojsonUrl` → `'/<destination>/locations.geojson'`
+   - `window.MAP_CONFIG.embedPath` → `'/<destination>/'`
+   - Initial map centre: `map.setView([lat, lng], zoom)`
+   - `CATEGORY_COLORS` and `CATEGORY_ICONS` for the new destination's categories
+   - Page header text in `{{ define "main" }}`
+4. Open a PR with all three files
+
+### Auto-generating a map from a Reddit thread
+
+Use `scripts/reddit_to_map.py` to pipeline a Reddit submission URL into a ready-to-merge PR:
+
+```bash
+# Setup (once)
+cd /path/to/travel-guide
+uv venv && uv add praw spacy requests python-dotenv
+uv run python -m spacy download en_core_web_sm
+
+# Copy .env.example → .env and fill in REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET
+cp scripts/.env.example .env
+
+# Run
+uv run python scripts/reddit_to_map.py \
+  "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/" \
+  --context "Thailand Phuket Krabi roadtrip"
+
+# With optional Reddit reply after PR is created (needs REDDIT_USERNAME + REDDIT_PASSWORD in .env)
+uv run python scripts/reddit_to_map.py <url> --reply
+```
+
+The script:
+1. Fetches comments (PRAW, score ≥ 1 by default)
+2. Extracts location entities via spaCy NER (GPE/LOC/FAC labels)
+3. Geocodes via Photon → Nominatim → LocationIQ cascade
+4. Deduplicates by rounded coordinates (3dp ≈ 100m)
+5. Writes `static/<slug>/locations.geojson` + `layouts/<slug>/list.html` + `content/<slug>/_index.md`
+6. Validates GeoJSON, creates git branch, opens GitHub PR via `gh` CLI
+7. Optionally posts a comment on the original Reddit submission linking to the map
+
+See `llms_geocoding.txt` for the geocoding cascade details and API documentation.

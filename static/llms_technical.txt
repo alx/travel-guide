@@ -1,0 +1,96 @@
+# Maps — Technical Stack & Key Files
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: tech stack, TopoJSON format, Hugo layout structure, key file paths
+
+## Technical Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Static site | Hugo |
+| Maps | Leaflet.js 1.9.4 + OpenStreetMap tiles |
+| Data formats | GeoJSON · TopoJSON (topojson-client@3) |
+| Auth | GitHub Device Flow via Cloudflare Worker CORS proxy |
+| Forms | Formspree (mqegoqqz) |
+| Analytics | Google Analytics G-WDJF6L9P30 |
+| Hosting | GitHub Pages — maps.girard-davila.net |
+| CI/CD | GitHub Actions → upload-pages-artifact → deploy-pages |
+| DNS | Cloudflare (CNAME flattening, apex → www redirect) |
+| Scripts | uv + praw + spacy + requests (Python 3.11) |
+
+## Hugo Layout Structure
+
+Each map is a Hugo section with its own `layouts/<destination>/list.html`. All maps share:
+
+- `layouts/_default/baseof.html` — site shell; injects embed-mode CSS + GitHub config; `{{ block "head" }}`, `{{ block "main" }}`, `{{ block "scripts" }}`
+- `layouts/partials/map-toolbar.html` — toolbar with download/GPX/embed/share/load/GitHub
+- `layouts/partials/contact-form.html` — floating Formspree contact form
+- `layouts/partials/map-geolocation.html` — geolocation JS (`navigator.geolocation`)
+
+Maps call `{{ partial "map-toolbar.html" . }}` inside their `{{ define "main" }}` block and `{{ partial "map-geolocation.html" . }}` at the end of `{{ define "scripts" }}`.
+
+## TopoJSON Format
+
+The fishing-boat expedition uses non-quantized TopoJSON (no `transform`). Arc coordinates are absolute `[lng, lat]` pairs. Two named objects:
+- `route` — LineString geometries referencing arc indices; properties: `name`, `day` (int), `color`, `notes`
+- `waypoints` — Point geometries with direct `coordinates`; properties: `name`, `category`, `icon`, `notes`, `hours`
+
+Loaded via `topojson.feature(topo, topo.objects.<name>)` from `topojson-client@3`.
+
+## Key Files
+
+| Path | Purpose |
+|------|---------|
+| `static/lamai/locations.geojson` | Lamai Beach POI data |
+| `static/koh-samui/locations.geojson` | Koh Samui island overview POIs |
+| `static/hoi-an/locations.geojson` | Hoi An POI data |
+| `static/fishing-boat/route.topojson` | Fishing expedition — route + waypoints |
+| `static/711-samui/locations.geojson` | 7-Eleven stores on Koh Samui (65 POIs) |
+| `static/where-do-i-stay-in-koh-samui/locations.geojson` | Reddit-sourced Koh Samui accommodation map |
+| `static/roadtrip-phuket-krabi-koh-yao-yai-phuket/locations.geojson` | Reddit roadtrip itinerary (10 stops, Days 1–5) |
+| `static/llms.txt` | AI agent index — links to topic sub-files |
+| `static/llms_destinations.txt` | Destinations list, project overview, changelog |
+| `static/llms_schema.txt` | GeoJSON schema, coord_source enum, category tables |
+| `static/llms_contributing.txt` | How to add POIs (in-browser, CLI, reddit_to_map.py) |
+| `static/llms_geocoding.txt` | Nominatim, LocationIQ, Photon API docs + code examples |
+| `static/llms_toolbar.txt` | Toolbar, embed mode, GitHub integration, OsmAnd/GPX |
+| `static/llms_technical.txt` | This file — tech stack, Hugo structure, TopoJSON format |
+| `layouts/lamai/list.html` | Lamai map: Leaflet, categories, sidebar, filters |
+| `layouts/koh-samui/list.html` | Koh Samui map |
+| `layouts/hoi-an/list.html` | Hoi An map |
+| `layouts/fishing-boat/list.html` | TopoJSON expedition demo with day filter tabs |
+| `layouts/711-samui/list.html` | 7-Eleven map with SVG logo markers and area pills |
+| `layouts/roadtrip-phuket-krabi-koh-yao-yai-phuket/list.html` | Roadtrip map with day-coloured markers + tabs |
+| `layouts/partials/map-toolbar.html` | Shared toolbar partial |
+| `layouts/partials/contact-form.html` | Floating contact form |
+| `layouts/partials/map-geolocation.html` | Geolocation JS |
+| `layouts/_default/baseof.html` | Site shell; embed-mode; GitHub config injection |
+| `workers/github-proxy.js` | Cloudflare Worker: GitHub Device Flow CORS proxy |
+| `scripts/reddit_to_map.py` | Reddit → spaCy NER → GeoJSON → Hugo → GitHub PR pipeline |
+| `scripts/.env.example` | Environment variable template |
+| `hugo.toml` | Site config — GitHub OAuth params, baseURL |
+| `.github/workflows/` | CI/CD: Hugo build → Firebase Hosting (main branch) |
+
+## window.MAP_CONFIG
+
+Every map sets a `window.MAP_CONFIG` object consumed by `map-toolbar.html`:
+
+```javascript
+window.MAP_CONFIG = {
+  title:       'My Map — Maps',   // used in GPX filename + embed preview
+  geojsonUrl:  '/destination/locations.geojson',
+  geojsonData: null,              // populated after fetch(); used for GeoJSON download
+  embedPath:   '/destination/',   // used to build the embed iframe src
+  previewImage: '/images/map-previews/my-map.png',  // optional embed preview
+};
+```
+
+## Environment Variables (scripts/.env)
+
+```
+REDDIT_CLIENT_ID=<praw script app client_id>
+REDDIT_CLIENT_SECRET=<praw script app client_secret>
+REDDIT_USER_AGENT=reddit-to-map/1.0 by u/<your_username>
+REDDIT_USERNAME=<your_reddit_username>   # only needed for --reply flag
+REDDIT_PASSWORD=<your_reddit_password>   # only needed for --reply flag
+LOCATIONIQ_API_KEY=pk.<your_key>         # optional; fallback geocoder
+```
