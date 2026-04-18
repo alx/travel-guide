@@ -22,6 +22,9 @@ Credentials:
         REDDIT_CLIENT_ID=...
         REDDIT_CLIENT_SECRET=...
         REDDIT_USER_AGENT=...
+    Reddit posting (required for --reply):
+        REDDIT_USERNAME=...
+        REDDIT_PASSWORD=...
     Optional geocoding boost:
         LOCATIONIQ_API_KEY=...
 """
@@ -59,18 +62,61 @@ def load_env(path: Path | None = None) -> None:
 # Reddit — PRAW
 # ---------------------------------------------------------------------------
 
-def init_reddit():
+def init_reddit(write: bool = False):
+    """
+    Initialise a PRAW Reddit instance.
+    write=True adds username/password for authenticated posting.
+    Requires REDDIT_USERNAME + REDDIT_PASSWORD in .env.
+    """
     import praw  # installed via uv in rpp venv
-    return praw.Reddit(
+    kwargs = dict(
         client_id=os.environ["REDDIT_CLIENT_ID"],
         client_secret=os.environ["REDDIT_CLIENT_SECRET"],
         user_agent=os.environ.get("REDDIT_USER_AGENT", "reddit-to-map/1.0"),
     )
+    if write:
+        username = os.environ.get("REDDIT_USERNAME")
+        password = os.environ.get("REDDIT_PASSWORD")
+        if not username or not password:
+            raise RuntimeError(
+                "REDDIT_USERNAME and REDDIT_PASSWORD required for posting.\n"
+                "Add them to .env and ensure the Reddit app is 'script' type."
+            )
+        kwargs["username"] = username
+        kwargs["password"] = password
+    return praw.Reddit(**kwargs)
 
 
-def fetch_comments(reddit, url: str, min_score: int = 1) -> tuple[dict, list[dict]]:
-    """Return (post_meta, flat_comments_list)."""
-    submission = reddit.submission(url=url)
+BASE_URL = "https://maps.girard-davila.net"
+
+
+def post_reply(submission, map_url: str, map_name: str, feature_count: int) -> str | None:
+    """
+    Post a top-level comment on the submission with a link to the generated map.
+    Returns the permalink of the posted comment, or None on failure.
+    """
+    body = (
+        f"🗺️ I mapped the locations mentioned in this thread — "
+        f"**[{map_name}]({map_url})**\n\n"
+        f"The map shows **{feature_count} locations** extracted automatically from "
+        f"the comments using NLP (spaCy) and geocoded via OpenStreetMap. "
+        f"Click any pin to get OsmAnd / Google Maps links.\n\n"
+        f"*Built with [maps.girard-davila.net]({BASE_URL}) · "
+        f"[source](https://github.com/alx/travel-guide)*"
+    )
+    try:
+        comment = submission.reply(body)
+        return f"https://reddit.com{comment.permalink}"
+    except Exception as e:
+        print(f"  ⚠️  Could not post reply: {e}")
+        return None
+
+
+def fetch_comments(reddit, url: str, min_score: int = 1,
+                   submission=None) -> tuple[dict, list[dict]]:
+    """Return (post_meta, flat_comments_list). Pass existing submission to avoid re-fetch."""
+    if submission is None:
+        submission = reddit.submission(url=url)
     submission.comments.replace_more(limit=None)  # expand all MoreComments
 
     post = {
@@ -735,6 +781,11 @@ def main():
                         help="Path to travel-guide repo root")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print GeoJSON; skip git / PR")
+    parser.add_argument("--reply", action="store_true",
+                        help="Post a reply comment on the submission linking to the map. "
+                             "Requires REDDIT_USERNAME + REDDIT_PASSWORD in .env.")
+    parser.add_argument("--site-url", default=BASE_URL,
+                        help=f"Public base URL for map links (default: {BASE_URL})")
     args = parser.parse_args()
 
     # Load credentials
@@ -746,8 +797,9 @@ def main():
 
     # ── 1. Fetch Reddit data ─────────────────────────────────────────────
     print("\n[1/5] Fetching Reddit submission…")
-    reddit = init_reddit()
-    post, comments = fetch_comments(reddit, args.url, args.min_score)
+    reddit = init_reddit(write=args.reply)
+    submission = reddit.submission(url=args.url)  # keep ref for --reply
+    post, comments = fetch_comments(reddit, args.url, args.min_score, submission=submission)
 
     # ── 2. Extract location entities ─────────────────────────────────────
     print("\n[2/5] Extracting location entities with spaCy NER…")
@@ -839,6 +891,22 @@ def main():
     print(f"\n✅ PR created: {pr_url}")
     print(f"   Map path:  /{slug}/")
     print(f"   Locations: {len(geocoded)} geocoded from {len(comments)} comments")
+
+    # ── 6. (optional) Reply on Reddit ────────────────────────────────────
+    if args.reply:
+        map_url = f"{args.site_url.rstrip('/')}/{slug}/"
+        print(f"\n[6/6] Posting reply on Reddit…")
+        print(f"      Map URL: {map_url}")
+        permalink = post_reply(submission, map_url, name, len(geocoded))
+        if permalink:
+            print(f"  ✅ Comment posted: {permalink}")
+        else:
+            print("  ❌ Reply failed — check credentials or subreddit posting rules.")
+    else:
+        map_url = f"{args.site_url.rstrip('/')}/{slug}/"
+        print(f"\n💡 To auto-reply on Reddit, re-run with --reply")
+        print(f"   (set REDDIT_USERNAME + REDDIT_PASSWORD in .env first)")
+        print(f"   Map URL will be: {map_url}")
 
 
 if __name__ == "__main__":
