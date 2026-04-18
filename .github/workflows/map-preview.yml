@@ -1,0 +1,148 @@
+name: Map Preview
+
+# Trigger on any PR that touches GeoJSON / TopoJSON data files
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'static/**/*.geojson'
+      - 'static/**/*.topojson'
+
+permissions:
+  contents: write        # push screenshots to the PR branch
+  pull-requests: write   # create / update the preview comment
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+
+      # ── 1. Checkout the PR branch (with push access) ────────────────────
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          # Use a PAT or the default GITHUB_TOKEN.
+          # GITHUB_TOKEN works for same-repo PRs; fork PRs need a PAT.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0   # full history so we can diff against base
+
+      # ── 2. Detect which map slugs have changed GeoJSON/TopoJSON ─────────
+      - name: Detect changed map slugs
+        id: slugs
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          SLUGS=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep -E '^static/.+\.(geojson|topojson)$' \
+            | sed 's|^static/||; s|/.*||' \
+            | sort -u \
+            | tr '\n' ' ' \
+            | xargs)
+          echo "slugs=$SLUGS" >> $GITHUB_OUTPUT
+          if [ -z "$SLUGS" ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+          else
+            echo "found=true"  >> $GITHUB_OUTPUT
+            echo "Changed map slugs: $SLUGS"
+          fi
+
+      # All subsequent steps are skipped if no GeoJSON changes found
+      # (path filter should catch this, but guarding explicitly is safer)
+
+      # ── 3. Build Hugo site ───────────────────────────────────────────────
+      - name: Setup Hugo
+        if: steps.slugs.outputs.found == 'true'
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.0'
+          extended: true
+
+      - name: Build site
+        if: steps.slugs.outputs.found == 'true'
+        run: hugo --minify
+
+      # ── 4. Setup Node + Playwright ───────────────────────────────────────
+      - name: Setup Node
+        if: steps.slugs.outputs.found == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.slugs.outputs.found == 'true'
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        if: steps.slugs.outputs.found == 'true'
+        run: npx playwright install chromium --with-deps
+
+      # ── 5. Serve public/ and generate screenshots ────────────────────────
+      - name: Serve built site
+        if: steps.slugs.outputs.found == 'true'
+        run: |
+          npx --yes serve public --listen 1414 &
+          # Wait until server is ready (up to 30 s)
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:1414/ > /dev/null && break
+            echo "Waiting for server… ($i)"
+            sleep 1
+          done
+
+      - name: Generate map screenshots
+        if: steps.slugs.outputs.found == 'true'
+        run: |
+          node scripts/generate-map-previews.js ${{ steps.slugs.outputs.slugs }}
+        env:
+          PREVIEW_BASE_URL: http://localhost:1414
+
+      # ── 6. Commit screenshots to the PR branch ───────────────────────────
+      - name: Commit previews
+        if: steps.slugs.outputs.found == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/previews/
+          if git diff --staged --quiet; then
+            echo "No preview changes to commit."
+          else
+            git commit -m "ci: auto-generate map previews for ${{ steps.slugs.outputs.slugs }} [skip ci]"
+            git push origin ${{ github.head_ref }}
+          fi
+
+      # ── 7. Post / update preview comment on the PR ───────────────────────
+      - name: Post preview comment
+        if: steps.slugs.outputs.found == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const slugs = '${{ steps.slugs.outputs.slugs }}'.trim().split(/\s+/).filter(Boolean);
+            const { owner, repo } = context.repo;
+            const pr = context.payload.pull_request.number;
+            const sha = context.payload.pull_request.head.sha;
+
+            // Build comment body — one image per changed map
+            let body = '## 🗺️ Map Previews\n\n';
+            body += `> Auto-generated from commit ${sha.slice(0, 7)}.\n\n`;
+            for (const slug of slugs) {
+              const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${sha}/.github/previews/${slug}.png`;
+              const mapUrl = `https://maps.girard-davila.net/${slug}/`;
+              body += `### [\`${slug}\`](${mapUrl})\n`;
+              body += `![${slug} preview](${rawUrl})\n\n`;
+            }
+            body += '_Updated automatically whenever a GeoJSON or TopoJSON file changes._';
+
+            // Find an existing preview comment to update (avoid duplicates)
+            const comments = await github.rest.issues.listComments({ owner, repo, issue_number: pr });
+            const marker   = '## 🗺️ Map Previews';
+            const existing = comments.data.find(c =>
+              c.user.login === 'github-actions[bot]' && c.body.startsWith(marker)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+              console.log(`Updated comment #${existing.id}`);
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number: pr, body });
+              console.log('Created new preview comment');
+            }
