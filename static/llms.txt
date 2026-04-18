@@ -298,17 +298,94 @@ Use `coord_source: "nominatim"` for LocationIQ results (same underlying OSM data
 
 ---
 
-### Choosing between the two
+### Photon (Komoot) — bulk POI search by brand/name, no key required
 
-| | Nominatim | LocationIQ |
-|---|---|---|
-| Cost | Free | Free tier 5k req/day |
-| Rate limit | 1 req/s | 2 req/s |
-| API key | None | Required |
-| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding |
-| Local-language fallback | Often needed | Same OSM data |
+API endpoint: `https://photon.komoot.io/api/`
 
-**Workflow for a new destination**: start with Nominatim name-search. If a result is missing or imprecise, look up the place on `openstreetmap.org`, copy the way/node ID from the URL, and use `osm_way_centroid()` above for a building-level centroid.
+Photon is an OSM-backed geocoder optimised for **forward search and POI lookup**. Unlike Nominatim it returns multiple nearby results ranked by relevance, making it ideal for fetching all instances of a branded chain (7-Eleven, McDonald's, PTT, etc.) within a bounding box in a single pass.
+
+**Required header**: `User-Agent: <your-app>` — strongly recommended to avoid being blocked.
+
+**Search for all branded stores in a bounding box**
+
+```python
+import urllib.request, json, urllib.parse, time
+
+BBOX = (9.38, 99.88, 9.66, 100.10)  # (lat_min, lon_min, lat_max, lon_max)
+
+def in_bbox(coords):
+    """coords = [lon, lat] — GeoJSON order"""
+    lon, lat = coords
+    return BBOX[0] <= lat <= BBOX[2] and BBOX[1] <= lon <= BBOX[3]
+
+def photon_search(query, center_lat, center_lon, limit=50):
+    params = {"q": query, "lat": str(center_lat), "lon": str(center_lon), "limit": limit}
+    url = "https://photon.komoot.io/api/?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"User-Agent": "maps.girard-davila.net/1.0"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.loads(r.read()).get("features", [])
+
+# Multi-center search to ensure full island coverage
+search_centers = [
+    (9.52, 100.06),  # Chaweng
+    (9.48, 100.05),  # Lamai
+    (9.56, 99.99),   # Maenam
+    (9.53, 99.93),   # Nathon
+]
+
+seen, stores = set(), []
+for lat, lon in search_centers:
+    for f in photon_search("7-Eleven", lat, lon):
+        coords = f["geometry"]["coordinates"]   # [lon, lat]
+        if not in_bbox(coords):
+            continue
+        key = (round(coords[0], 4), round(coords[1], 4))
+        if key in seen:
+            continue
+        seen.add(key)
+        p = f["properties"]
+        if "7" not in p.get("name", "") and "eleven" not in p.get("name", "").lower():
+            continue
+        stores.append({
+            "lon": coords[0], "lat": coords[1],
+            "name": p.get("name"),
+            "city": p.get("city") or p.get("suburb") or p.get("district", ""),
+            "osm_id": p.get("osm_id"),
+            "osm_type": p.get("osm_type"),   # N=node, W=way, R=relation
+        })
+    time.sleep(1)
+
+print(f"Found {len(stores)} unique stores")
+```
+
+**Response properties of interest**
+
+| Property | Description |
+|----------|-------------|
+| `osm_id` | OSM node/way/relation ID — use for cross-referencing |
+| `osm_type` | `N` (node), `W` (way), `R` (relation) |
+| `name` | Display name (may be in local script) |
+| `city` / `suburb` | Neighbourhood or city name |
+| `country` | Country name |
+
+Use `coord_source: "nominatim"` and `coord_accuracy: "high"` for Photon results (backed by OSM node coordinates).
+
+**Rate limits**: no hard limit documented, but apply 1 req/s courtesy delay for multi-center searches. No API key needed.
+
+---
+
+### Choosing between the three
+
+| | Nominatim | LocationIQ | Photon |
+|---|---|---|---|
+| Cost | Free | Free tier 5k req/day | Free |
+| Rate limit | 1 req/s | 2 req/s | ~1 req/s (courtesy) |
+| API key | None | Required | None |
+| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding | Bulk POI brand search |
+| Returns | 1 best match | 1 best match | Up to 50 ranked results |
+| Local-language fallback | Often needed | Same OSM data | Built-in OSM names |
+
+**Workflow for a new destination**: start with Photon brand-search for chain POIs (7-Eleven, supermarkets, petrol stations). For unique landmarks, use Nominatim name-search or `osm_way_centroid()` for building-level precision. If a result is missing, look up the place on `openstreetmap.org` and use the node/way ID directly.
 
 ## Map Toolbar
 
