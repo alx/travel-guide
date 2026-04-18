@@ -1,0 +1,208 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    -89.602635,
+    7.893891,
+    99.824674,
+    40.707527
+  ],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-18T05:08:14.984584+00:00",
+    "source": "Reddit r/ThailandTourism \u2014 https://www.reddit.com/gallery/1snb8az"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.340803,
+          8.08891
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-001",
+        "name": "Krabi",
+        "category": "Place",
+        "icon": "\ud83d\udccd",
+        "display_name": "Bus Station (Bus going Takua Pa/Khao Lak and other nearby Provinces like Krabi, Nakhon, Surat, Had Yai)",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "702254203",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.408341,
+          7.934884
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-002",
+        "name": "Thailand",
+        "category": "Pier",
+        "icon": "\u2693",
+        "display_name": "Koh Yao Yai pier",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "5201851521",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.602635,
+          40.707527
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-003",
+        "name": "Heaven View Krabi",
+        "category": "Place",
+        "icon": "\ud83d\udccd",
+        "display_name": "Heaven's View Christian Fellowship",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "63727257",
+        "osm_type": "W"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.820331,
+          8.033122
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-004",
+        "name": "Ao Nang beach",
+        "category": "Resort",
+        "icon": "\ud83c\udfe8",
+        "display_name": "Ao Nang Beach Resort",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "2557144885",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.74419,
+          8.085555
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-005",
+        "name": "Phulay Bay",
+        "category": "Resort",
+        "icon": "\ud83c\udfe8",
+        "display_name": "Phulay Bay Resort",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "19742125",
+        "osm_type": "R"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.824674,
+          10.06718
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-006",
+        "name": "Laem Haad Beach",
+        "category": "Beach",
+        "icon": "\ud83c\udfd6\ufe0f",
+        "display_name": "Laem Klong Sea View",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "4504305797",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.602044,
+          8.032095
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-007",
+        "name": "Royal Yao Yai",
+        "category": "Villa",
+        "icon": "\ud83c\udfe1",
+        "display_name": "Koh Yao Yai Village",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "2594846538",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.294961,
+          7.893891
+        ]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-008",
+        "name": "Patong beach",
+        "category": "Beach",
+        "icon": "\ud83c\udfd6\ufe0f",
+        "display_name": "Patong Beach",
+        "source_post": "https://www.reddit.com/gallery/1snb8az",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "10958521382",
+        "osm_type": "N"
+      }
+    }
+  ]
+}
