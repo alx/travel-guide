@@ -8,7 +8,7 @@
   ],
   "_meta": {
     "crs": "EPSG:4326",
-    "generated": "2026-04-18T01:33:56.258574+00:00",
+    "generated": "2026-04-18T01:35:27.002619+00:00",
     "source": "Reddit r/kohsamui \u2014 https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/"
   },
   "features": [
@@ -30,7 +30,7 @@
         "display_name": "Koh Samui Language School",
         "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
         "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
+        "coord_source": "nominatim",
         "coord_accuracy": "high",
         "osm_id": "4421539096",
         "osm_type": "N"
@@ -54,7 +54,7 @@
         "display_name": "Vikasa Yoga Retreat Koh Samui Thailand",
         "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
         "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
+        "coord_source": "nominatim",
         "coord_accuracy": "high",
         "osm_id": "528060818",
         "osm_type": "W"
@@ -66,22 +66,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.067675,
-          9.476669
+          100.044007,
+          9.465103
         ]
       },
       "properties": {
         "id": "where-do-i-stay-in-koh-samui-003",
-        "name": "Songthaew",
-        "category": "Place",
-        "icon": "\ud83d\udccd",
-        "display_name": "Vikasa Yoga Retreat Koh Samui Thailand",
+        "name": "Pattra Vill Resort",
+        "category": "Resort",
+        "icon": "\ud83c\udfe8",
+        "display_name": "Pattra Vill Resort Koh Samui Thailand",
         "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
         "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
+        "coord_source": "nominatim",
         "coord_accuracy": "high",
-        "osm_id": "528060818",
-        "osm_type": "W"
+        "osm_id": "12700466401",
+        "osm_type": "N"
       }
     },
     {
@@ -90,84 +90,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.067675,
-          9.476669
-        ]
-      },
-      "properties": {
-        "id": "where-do-i-stay-in-koh-samui-004",
-        "name": "brazil",
-        "category": "Place",
-        "icon": "\ud83d\udccd",
-        "display_name": "Vikasa Yoga Retreat Koh Samui Thailand",
-        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
-        "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
-        "coord_accuracy": "high",
-        "osm_id": "528060818",
-        "osm_type": "W"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "where-do-i-stay-in-koh-samui-005",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.067675,
-          9.476669
-        ]
-      },
-      "properties": {
-        "id": "where-do-i-stay-in-koh-samui-005",
-        "name": "Samui",
-        "category": "Place",
-        "icon": "\ud83d\udccd",
-        "display_name": "Vikasa Yoga Retreat Koh Samui Thailand",
-        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
-        "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
-        "coord_accuracy": "high",
-        "osm_id": "528060818",
-        "osm_type": "W"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "where-do-i-stay-in-koh-samui-006",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.044007,
-          9.465103
-        ]
-      },
-      "properties": {
-        "id": "where-do-i-stay-in-koh-samui-006",
-        "name": "Pattra Vill Resort",
-        "category": "Resort",
-        "icon": "\ud83c\udfe8",
-        "display_name": "Pattra Vill Resort Koh Samui Thailand",
-        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
-        "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
-        "coord_accuracy": "high",
-        "osm_id": "12700466401",
-        "osm_type": "N"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "where-do-i-stay-in-koh-samui-007",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           100.031507,
           9.558976
         ]
       },
       "properties": {
-        "id": "where-do-i-stay-in-koh-samui-007",
+        "id": "where-do-i-stay-in-koh-samui-004",
         "name": "Fisherman\u2019s Village",
         "category": "Villa",
         "icon": "\ud83c\udfe1",
@@ -182,7 +110,7 @@
     },
     {
       "type": "Feature",
-      "id": "where-do-i-stay-in-koh-samui-008",
+      "id": "where-do-i-stay-in-koh-samui-005",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -191,14 +119,14 @@
         ]
       },
       "properties": {
-        "id": "where-do-i-stay-in-koh-samui-008",
+        "id": "where-do-i-stay-in-koh-samui-005",
         "name": "Melia",
         "category": "Place",
         "icon": "\ud83d\udccd",
         "display_name": "Melia Koh Samui",
         "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
         "source_subreddit": "r/kohsamui",
-        "coord_source": "photon",
+        "coord_source": "nominatim",
         "coord_accuracy": "high",
         "osm_id": "8132828571",
         "osm_type": "N"

@@ -98,7 +98,7 @@ Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: tru
 window._mapCategoryColors = { 'Place': CAT_COLOR };
 window._mapCategoryIcons  = { 'Place': '📍' };
 
-map = L.map('map').setView([9.5081, 100.0553], 11);
+map = L.map('map').setView([9.527, 100.0479], 11);
 window._leafletMap = map;
 map.on('click', clearFocus);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
