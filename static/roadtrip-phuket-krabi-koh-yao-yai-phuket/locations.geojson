@@ -1,0 +1,241 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [98.2950, 7.8939, 98.8856, 8.2252],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-18T05:08:14.984584+00:00",
+    "source": "Reddit r/ThailandTourism — https://www.reddit.com/r/ThailandTourism/comments/1snb8az/roadtrip_phuket_krabi_koh_yao_yai_phuket/"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.340803, 8.08891]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-001",
+        "name": "Krabi",
+        "category": "City",
+        "icon": "🏙️",
+        "display_name": "Krabi, Thailand",
+        "day": 1,
+        "notes": "Starting point — rented car from SixT at Krabi Airport (15 min process).",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "702254203",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.443220, 8.225240]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-002",
+        "name": "Samet Nangshe Viewpoint",
+        "category": "Viewpoint",
+        "icon": "🌅",
+        "display_name": "Samet Nangshe Goodview, Phang Nga",
+        "day": 1,
+        "notes": "Visited Beyond Skywalk (road to main viewpoint was closed). Best at sunrise or sunset.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "samet-nangshe",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.854618, 8.027232]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-003",
+        "name": "Heaven View Krabi",
+        "category": "Hotel",
+        "icon": "🏨",
+        "display_name": "Heaven View Krabi",
+        "day": 1,
+        "notes": "10/10 hospitality — quiet, decently distanced from Ao Nang beach marketplace.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.820331, 8.033122]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-004",
+        "name": "Ao Nang Beach",
+        "category": "Beach",
+        "icon": "🏖️",
+        "display_name": "Ao Nang Beach, Krabi",
+        "day": 2,
+        "notes": "Main marketplace area near Heaven View Krabi. Beach day and market strolls.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "2557144885",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.744190, 8.085555]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-005",
+        "name": "Phulay Bay, Ritz-Carlton",
+        "category": "Resort",
+        "icon": "✨",
+        "display_name": "Phulay Bay, a Ritz-Carlton Reserve",
+        "day": 2,
+        "notes": "Early dinner — 'What a magical place! Highlight of the whole trip. Just beautiful vistas.'",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "19742125",
+        "osm_type": "R"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.614145, 8.081832]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-006",
+        "name": "Laem Had Beach",
+        "category": "Beach",
+        "icon": "🏖️",
+        "display_name": "Laem Had Beach, Koh Yao Yai",
+        "day": 3,
+        "notes": "Instagram-famous beach. Tried smoothies at the entrance. Big enough not to feel crowded.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "laem-had-beach",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.602044, 8.032095]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-007",
+        "name": "Royal Yao Yai",
+        "category": "Hotel",
+        "icon": "🏨",
+        "display_name": "Royal Yao Yai Resort, Koh Yao Yai",
+        "day": 3,
+        "notes": "Stayed here Days 3–4. Food disappointing — went to Anantara for meals instead.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "2594846538",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.607139, 8.041938]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-008",
+        "name": "Anantara Koh Yao Yai",
+        "category": "Resort",
+        "icon": "✨",
+        "display_name": "Anantara Koh Yao Yai Resort & Villas",
+        "day": 4,
+        "notes": "Had a meal here to access their campus and beaches. 'Definitely doing this more now.'",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "anantara-koh-yao-yai",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.408341, 7.934884]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-009",
+        "name": "Koh Yao Yai Ferry Pier (Phuket)",
+        "category": "Pier",
+        "icon": "⛴️",
+        "display_name": "Koh Yao Yai pier, Phuket side",
+        "day": 5,
+        "notes": "KITT Connect car ferry from Koh Yao Yai → Phuket. 90-min crossing. Pier is 10 min from Royal Yao Yai.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "5201851521",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [98.294961, 7.893891]
+      },
+      "properties": {
+        "id": "roadtrip-phuket-krabi-koh-yao-yai-phuket-010",
+        "name": "Patong Beach",
+        "category": "Beach",
+        "icon": "🏖️",
+        "display_name": "Patong Beach, Phuket",
+        "day": 5,
+        "notes": "Lunch stop — found it overcrowded, moved further north. Famous Phuket beach.",
+        "source_post": "https://www.reddit.com/r/ThailandTourism/comments/1snb8az/",
+        "source_subreddit": "r/ThailandTourism",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "10958521382",
+        "osm_type": "N"
+      }
+    }
+  ]
+}

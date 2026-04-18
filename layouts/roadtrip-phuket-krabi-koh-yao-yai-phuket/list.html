@@ -1,0 +1,299 @@
+{{ define "head" }}
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header h1 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .overlay-card .page-header p { font-size: 0.8rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  #list-toggle { display: none; }
+  .reddit-source { font-size: 0.7rem; color: #888; margin-top: 0.3rem; }
+  .reddit-source a { color: #ff4500; text-decoration: none; font-weight: 600; }
+  .reddit-source a:hover { text-decoration: underline; }
+
+  /* Day legend strip */
+  .day-legend { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .day-pip { display: flex; align-items: center; gap: 0.25rem; font-size: 0.68rem; color: #555; }
+  .day-pip-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Day filter tabs */
+  .day-tabs { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+  .day-tab {
+    padding: 0.25rem 0.65rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.74rem; font-weight: 500; transition: all 0.15s;
+  }
+  .day-tab.active { color: white; border-color: transparent; }
+
+  /* POI cards */
+  .poi-card { background: white; border-radius: 10px; padding: 0.75rem 0.85rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .poi-card .poi-notes { font-size: 0.78rem; color: #555; line-height: 1.4; margin-top: 0.25rem; }
+  .poi-card .poi-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.35rem; }
+  .poi-card .poi-actions a { font-size: 0.72rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .cat-badge { display: inline-block; font-size: 0.68rem; padding: 0.12rem 0.45rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.2rem; }
+  .day-badge { display: inline-block; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 20px; font-weight: 700; margin-left: 0.3rem; color: white; vertical-align: middle; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🌴 Phuket › Krabi › Koh Yao Yai Roadtrip</h1>
+      <p>7-day family road trip itinerary — 10 stops</p>
+    </div>
+    <div class="reddit-source">
+      From <a href="https://www.reddit.com/r/ThailandTourism/comments/1snb8az/" target="_blank">r/ThailandTourism</a> · 6 comments analysed
+    </div>
+    <div class="day-legend" id="day-legend"></div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">📍 Places</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable">
+    <div class="day-tabs" id="day-tabs"></div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+<button class="embed-overlay-toggle" id="overlay-toggle-btn" title="Show list">☰</button>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: "Phuket › Krabi › Koh Yao Yai Roadtrip — Maps",
+  geojsonUrl: '{{ "/roadtrip-phuket-krabi-koh-yao-yai-phuket/locations.geojson" | relURL }}',
+  embedPath: '/roadtrip-phuket-krabi-koh-yao-yai-phuket/',
+};
+
+const DAY_COLORS = {
+  1: '#0ea5e9',
+  2: '#f97316',
+  3: '#22c55e',
+  4: '#8b5cf6',
+  5: '#ef4444',
+  6: '#6b7280',
+  7: '#6b7280',
+};
+const DAY_LABELS = {
+  1: 'Day 1 — Krabi arrival & viewpoint',
+  2: 'Day 2 — Beaches & Phulay Bay',
+  3: 'Day 3 — Ferry to Koh Yao Yai',
+  4: 'Day 4 — Island & Anantara',
+  5: 'Day 5 — Ferry back & Phuket',
+};
+
+window._mapCategoryColors = { 'City':'#1a3a5c','Hotel':'#6b7280','Viewpoint':'#0ea5e9','Beach':'#22c55e','Resort':'#f97316','Pier':'#8b5cf6' };
+window._mapCategoryIcons  = { 'City':'🏙️','Hotel':'🏨','Viewpoint':'🌅','Beach':'🏖️','Resort':'✨','Pier':'⛴️' };
+
+let map, allPOIs = [], markers = {}, activeDay = 'all', activeCard = null;
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+
+map = L.map('map').setView([8.0, 98.55], 10);
+window._leafletMap = map;
+map.on('click', clearFocus);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(p) {
+  const day = p.day;
+  const color = DAY_COLORS[day] || '#1a3a5c';
+  const icon = p.icon || '📍';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-18]
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  map.flyTo([lat, lng], 14, {duration: 0.7});
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+}
+
+function renderSidebar() {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const visible = allPOIs.filter(f => activeDay === 'all' || String(f.properties.day) === activeDay);
+  if (!visible.length) {
+    list.innerHTML = '<p style="color:#888;font-size:0.85rem;padding:0.5rem 0;">No stops for this day.</p>';
+    return;
+  }
+  visible.forEach(f => {
+    const p = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const dayColor = DAY_COLORS[p.day] || '#6b7280';
+    const card = document.createElement('div');
+    card.className = 'poi-card'; card.id = 'card-' + f._id;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${dayColor}22;color:${dayColor};">${p.icon || '📍'} ${p.category}</span>
+      <span class="day-badge" style="background:${dayColor};">Day ${p.day}</span>
+      <h3>${p.name}</h3>
+      ${p.notes ? `<div class="poi-notes">${p.notes}</div>` : ''}
+      <div class="poi-actions">
+        <a href="geo:${lat},${lng}" title="OsmAnd">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function filterDay(day, btn) {
+  activeDay = day;
+  document.querySelectorAll('.day-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderSidebar();
+  updateMarkers();
+}
+
+function updateMarkers() {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+  const visible = allPOIs.filter(f => activeDay === 'all' || String(f.properties.day) === activeDay);
+  visible.forEach(f => {
+    const p = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const dayColor = DAY_COLORS[p.day] || '#1a3a5c';
+    const m = L.marker([lat, lng], {icon: makeIcon(p)})
+      .addTo(map)
+      .bindPopup(`<b>${p.name}</b><br><small style="color:${dayColor};font-weight:600;">Day ${p.day} · ${p.category}</small>${p.notes ? '<br><em style="font-size:0.8rem;">' + p.notes + '</em>' : ''}`);
+    m.on('click', () => focusPOI(f));
+    markers[f._id] = m;
+  });
+}
+
+function setupDayTabs(pois) {
+  const days = [...new Set(pois.map(f => f.properties.day))].sort((a,b)=>a-b);
+
+  // Legend strip in header
+  const legend = document.getElementById('day-legend');
+  days.forEach(d => {
+    const pip = document.createElement('div');
+    pip.className = 'day-pip';
+    pip.innerHTML = `<div class="day-pip-dot" style="background:${DAY_COLORS[d]||'#6b7280'};"></div><span>Day ${d}</span>`;
+    legend.appendChild(pip);
+  });
+
+  // Day tab buttons
+  const container = document.getElementById('day-tabs');
+  const allBtn = document.createElement('button');
+  allBtn.className = 'day-tab active';
+  allBtn.textContent = 'All';
+  allBtn.style.setProperty('--day-color','#1a3a5c');
+  allBtn.onclick = () => filterDay('all', allBtn);
+  container.appendChild(allBtn);
+
+  days.forEach(d => {
+    const btn = document.createElement('button');
+    btn.className = 'day-tab';
+    btn.textContent = `Day ${d}`;
+    const color = DAY_COLORS[d] || '#6b7280';
+    btn.onclick = () => {
+      btn.classList.add('active');
+      btn.style.background = color;
+      filterDay(String(d), btn);
+    };
+    container.appendChild(btn);
+  });
+
+  // Style active button with day color
+  document.querySelectorAll('.day-tab').forEach(b => {
+    b.addEventListener('click', function() {
+      document.querySelectorAll('.day-tab').forEach(x => { x.classList.remove('active'); x.style.background=''; });
+      this.classList.add('active');
+    });
+  });
+  allBtn.style.background = '#1a3a5c';
+}
+
+fetch(window.MAP_CONFIG.geojsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+    setupDayTabs(allPOIs);
+    renderSidebar();
+    updateMarkers();
+    if (Object.keys(markers).length > 0) {
+      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.12));
+      if (document.documentElement.classList.contains('embed-mode')) {
+        map.once('moveend', function() {
+          var isPortrait = window.innerWidth <= window.innerHeight || window.innerWidth <= 768;
+          if (!isPortrait) { map.zoomOut(1); map.once('zoomend', () => map.panBy([-170, 0], {animate:false})); }
+        });
+      }
+    }
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded.</p>';
+  });
+
+// Embed overlay toggle
+(function() {
+  if (!document.documentElement.classList.contains('embed-mode')) return;
+  var overlay = document.querySelector('.map-overlay');
+  var btn = document.getElementById('overlay-toggle-btn');
+  if (!overlay || !btn) return;
+  function setOverlay(open) {
+    overlay.style.display = open ? 'flex' : 'none';
+    btn.textContent = open ? '✕' : '☰';
+    btn.title = open ? 'Hide list' : 'Show list';
+  }
+  btn.addEventListener('click', function() {
+    setOverlay(overlay.style.display === 'none' || overlay.style.display === '');
+  });
+  setOverlay(new URLSearchParams(location.search).get('overlay') === '1');
+})();
+</script>
+{{ partial "map-geolocation.html" . }}
+{{ end }}
