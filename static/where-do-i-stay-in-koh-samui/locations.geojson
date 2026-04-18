@@ -1,0 +1,136 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    100.012949,
+    9.465103,
+    100.083491,
+    9.569112
+  ],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-18T01:35:27.002619+00:00",
+    "source": "Reddit r/kohsamui \u2014 https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "where-do-i-stay-in-koh-samui-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.012949,
+          9.565043
+        ]
+      },
+      "properties": {
+        "id": "where-do-i-stay-in-koh-samui-001",
+        "name": "Maenam",
+        "category": "Place",
+        "icon": "\ud83d\udccd",
+        "display_name": "Koh Samui Language School",
+        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
+        "source_subreddit": "r/kohsamui",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "4421539096",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "where-do-i-stay-in-koh-samui-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.067675,
+          9.476669
+        ]
+      },
+      "properties": {
+        "id": "where-do-i-stay-in-koh-samui-002",
+        "name": "Koh Samui",
+        "category": "Place",
+        "icon": "\ud83d\udccd",
+        "display_name": "Vikasa Yoga Retreat Koh Samui Thailand",
+        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
+        "source_subreddit": "r/kohsamui",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "528060818",
+        "osm_type": "W"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "where-do-i-stay-in-koh-samui-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.044007,
+          9.465103
+        ]
+      },
+      "properties": {
+        "id": "where-do-i-stay-in-koh-samui-003",
+        "name": "Pattra Vill Resort",
+        "category": "Resort",
+        "icon": "\ud83c\udfe8",
+        "display_name": "Pattra Vill Resort Koh Samui Thailand",
+        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
+        "source_subreddit": "r/kohsamui",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "12700466401",
+        "osm_type": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "where-do-i-stay-in-koh-samui-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.031507,
+          9.558976
+        ]
+      },
+      "properties": {
+        "id": "where-do-i-stay-in-koh-samui-004",
+        "name": "Fisherman\u2019s Village",
+        "category": "Villa",
+        "icon": "\ud83c\udfe1",
+        "display_name": "Fisherman's Village Bophut Walking Street, Thanon Bo Phut, Baan Bo Phut, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19",
+        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
+        "source_subreddit": "r/kohsamui",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "1156240707",
+        "osm_type": "way"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "where-do-i-stay-in-koh-samui-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.083491,
+          9.569112
+        ]
+      },
+      "properties": {
+        "id": "where-do-i-stay-in-koh-samui-005",
+        "name": "Melia",
+        "category": "Place",
+        "icon": "\ud83d\udccd",
+        "display_name": "Melia Koh Samui",
+        "source_post": "https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/",
+        "source_subreddit": "r/kohsamui",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high",
+        "osm_id": "8132828571",
+        "osm_type": "N"
+      }
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{{ define "head" }}
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .overlay-card .page-header p { font-size: 0.82rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  .filter-btn { padding: 0.3rem 0.7rem; border-radius: 20px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.78rem; font-weight: 500; transition: all 0.15s; }
+  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  #filter-btns { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .poi-card { background: white; border-radius: 10px; padding: 0.75rem 0.85rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .poi-card .poi-meta { font-size: 0.75rem; color: #888; margin-bottom: 0.35rem; }
+  .poi-card .poi-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.35rem; }
+  .poi-card .poi-actions a { font-size: 0.73rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .cat-badge { display: inline-block; font-size: 0.68rem; padding: 0.12rem 0.45rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.25rem; background: #1a3a5c22; color: #1a3a5c; }
+  .search-box { width: 100%; padding: 0.45rem 0.7rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.84rem; }
+  .search-box:focus { outline: none; border-color: #1a3a5c; }
+  .reddit-source { font-size: 0.7rem; color: #888; margin-top: 0.3rem; }
+  .reddit-source a { color: #ff4500; text-decoration: none; }
+  .reddit-source a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🌴 Where do i stay in Koh Samui ?</h1>
+      <p>Locations mentioned in r/kohsamui · Where do i stay in Koh Samui ?</p>
+    </div>
+    <div class="reddit-source">
+      From <a href="https://www.reddit.com/r/kohsamui/comments/1snhkv5/where_do_i_stay_in_koh_samui/" target="_blank">r/kohsamui</a> · 4 comments analysed
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">📍 Places</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My position">📍 Me</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable">
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+<button class="embed-overlay-toggle" id="overlay-toggle-btn" title="Show list">☰</button>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: "Where do i stay in Koh Samui ? \u2014 Maps",
+  geojsonUrl: '{{ "/where-do-i-stay-in-koh-samui/locations.geojson" | relURL }}',
+  embedPath: '/where-do-i-stay-in-koh-samui/',
+};
+const GEOJSON_URL = window.MAP_CONFIG.geojsonUrl;
+const CAT_COLOR = '#1a3a5c';
+
+let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+window._mapCategoryColors = { 'Place': CAT_COLOR };
+window._mapCategoryIcons  = { 'Place': '📍' };
+
+map = L.map('map').setView([9.527, 100.0479], 11);
+window._leafletMap = map;
+map.on('click', clearFocus);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(icon) {
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:#1a3a5c;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    iconSize: [30,30], iconAnchor: [15,15], popupAnchor: [0,-18]
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  map.flyTo([lat, lng], 15, {duration: 0.7});
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+}
+
+function renderSidebar() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  allPOIs.filter(f => {
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search);
+    return matchCat && matchSearch;
+  }).forEach(f => {
+    const p = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const card = document.createElement('div');
+    card.className = 'poi-card'; card.id = 'card-' + f._id;
+    card.innerHTML = `
+      <span class="cat-badge">${p.icon || '📍'} ${p.category}</span>
+      <h3>${p.name}</h3>
+      ${p.display_name ? `<div class="poi-meta">${p.display_name}</div>` : ''}
+      <div class="poi-actions">
+        <a href="geo:${lat},${lng}" title="OsmAnd">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function filterPOIs() { renderSidebar(); updateMarkers(); }
+
+function updateMarkers() {
+  const search = document.getElementById('search').value.toLowerCase();
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search);
+    if (!matchCat || !matchSearch) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const m = L.marker([lat, lng], {icon: makeIcon(p.icon || '📍')})
+      .addTo(map).bindPopup(`<b>${p.name}</b><br><small>${p.category}</small><br><em>${p.display_name || ''}</em>`);
+    m.on('click', () => focusPOI(f));
+    markers[f._id] = m;
+  });
+}
+
+function setupFilters(pois) {
+  const cats = ['All', ...new Set(pois.map(f => f.properties.category))];
+  const container = document.getElementById('filter-btns');
+  container.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
+    btn.textContent = cat;
+    btn.onclick = () => {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterPOIs();
+    };
+    container.appendChild(btn);
+  });
+}
+
+fetch(GEOJSON_URL)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+    setupFilters(allPOIs);
+    renderSidebar();
+    updateMarkers();
+    if (Object.keys(markers).length > 0) {
+      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.1));
+    }
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded.</p>';
+  });
+
+// Embed toggle
+(function() {
+  if (!document.documentElement.classList.contains('embed-mode')) return;
+  var overlay = document.querySelector('.map-overlay');
+  var btn = document.getElementById('overlay-toggle-btn');
+  if (!overlay || !btn) return;
+  function setOverlay(open) {
+    overlay.style.display = open ? 'flex' : 'none';
+    btn.textContent = open ? '✕' : '☰';
+  }
+  btn.addEventListener('click', function() {
+    setOverlay(overlay.style.display === 'none' || overlay.style.display === '');
+  });
+  setOverlay(new URLSearchParams(location.search).get('overlay') === '1');
+})();
+</script>
+{ partial "map-geolocation.html" . }
+{{ end }}
