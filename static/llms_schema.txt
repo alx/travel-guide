@@ -43,6 +43,7 @@ Only `name`, `category`, `icon`, and `geometry` are strictly required. All other
 | Value | Meaning |
 |-------|---------|
 | `google_maps_pin` | Dropped pin from Google Maps |
+| `google_places` | Google Places API (New) programmatic result |
 | `nominatim` | Nominatim, LocationIQ, or Photon (OSM-backed) search result |
 | `research` | Manual research from web sources |
 | `estimated` | Approximate position, neighbourhood level |

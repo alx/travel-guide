@@ -183,22 +183,94 @@ print(f"Found {len(stores)} unique stores")
 
 ---
 
-### Choosing between the three
+### Google Places API (New) — freshest commercial POI data, requires API key
 
-| | Nominatim | LocationIQ | Photon |
-|---|---|---|---|
-| Cost | Free | Free 5k/day | Free |
-| Rate limit | 1 req/s | 2 req/s | ~1 req/s (courtesy) |
-| API key | None | Required | None |
-| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding | Bulk branded POI search |
-| Results per query | 1 | 1 | Up to 50 ranked |
-| Local-language fallback | Needed | Same OSM data | Built-in |
+API endpoint: `POST https://places.googleapis.com/v1/places:searchText`
+
+Enable **Places API (New)** in Google Cloud Console. Set key: `export GOOGLE_MAPS_API_KEY=AIza...`
+
+Best for **branded chains** (7-Eleven, PTT, McDonald's) where Google's commercial database is more complete and fresher than OSM.
+
+**Text search with bounding box (paginated)**
+
+```python
+import os, json, sys, time, urllib.request
+
+API_KEY = os.environ["GOOGLE_MAPS_API_KEY"]
+ENDPOINT = "https://places.googleapis.com/v1/places:searchText"
+
+BBOX = {
+    "low":  {"latitude": 9.38, "longitude": 99.88},   # Koh Samui
+    "high": {"latitude": 9.66, "longitude": 100.10},
+}
+
+FIELD_MASK = "places.id,places.displayName,places.location,places.addressComponents,places.regularOpeningHours,nextPageToken"
+
+def text_search(query, page_token=None):
+    body = {"textQuery": query, "locationRestriction": {"rectangle": BBOX}, "maxResultCount": 20}
+    if page_token:
+        body["pageToken"] = page_token
+    req = urllib.request.Request(
+        ENDPOINT,
+        data=json.dumps(body).encode(),
+        method="POST",
+        headers={"Content-Type": "application/json", "X-Goog-Api-Key": API_KEY, "X-Goog-FieldMask": FIELD_MASK},
+    )
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.loads(r.read())
+
+places, page_token = [], None
+while True:
+    resp = text_search("7-Eleven Koh Samui", page_token)
+    places.extend(resp.get("places", []))
+    page_token = resp.get("nextPageToken")
+    if not page_token:
+        break
+    time.sleep(2)
+
+for place in places:
+    loc = place["location"]
+    print(f'[{loc["longitude"]:.6f}, {loc["latitude"]:.6f}]  {place["displayName"]["text"]}')
+```
+
+**Response fields**
+
+| Field | Description |
+|-------|-------------|
+| `id` | Stable Place ID (e.g. `ChIJ...`) — use as `place_id` property |
+| `displayName.text` | Localised display name |
+| `location.latitude` / `.longitude` | Coordinates (convert to `[lon, lat]` for GeoJSON) |
+| `addressComponents` | Array of components; check `types` for `sublocality_level_1`, `neighborhood` |
+| `regularOpeningHours.periods` | Opening periods; single period with no `close` key = 24 h |
+| `nextPageToken` | Pass as `pageToken` on next request to get the next page |
+
+**Rate limits**: No hard limit published. 2 req/s is safe; use `time.sleep(2)` between paginated requests.
+
+`coord_source` mapping: use `"google_places"`, `coord_accuracy: "high"` for POI-level results. Replace `osm_id`/`osm_type` with `place_id`.
+
+**Cost**: Text Search (New) is billed per request ($32/1000). A full Koh Samui 7-Eleven fetch (~65 stores) uses 3–4 requests ≈ negligible.
+
+---
+
+### Choosing between the four
+
+| | Nominatim | LocationIQ | Photon | Google Places |
+|---|---|---|---|---|
+| Cost | Free | Free 5k/day | Free | Pay-per-use ($32/1k) |
+| Rate limit | 1 req/s | 2 req/s | ~1 req/s (courtesy) | 2 req/s safe |
+| API key | None | Required | None | Required |
+| Best for | Single lookups, OSM way centroids | Batch geocoding, reverse geocoding | Bulk branded POI search (OSM) | Branded chains, freshest data |
+| Results per query | 1 | 1 | Up to 50 ranked | 20 per page (paginated) |
+| Data freshness | OSM (community-updated) | OSM | OSM | Google (commercial, frequent updates) |
 
 **Recommended cascade for `scripts/reddit_to_map.py`**:
 Photon first (50 results, relevant ranking) → Nominatim (fallback) → LocationIQ (final fallback).
 
 **Recommended workflow for a new destination**:
 Photon brand-search for chains → Nominatim name-search for unique landmarks → `osm_way_centroid()` for building-level precision when OSM way ID is known.
+
+**Use Google Places API when**:
+OSM coverage is incomplete for a specific brand (common for convenience stores in SE Asia). See `scripts/fetch_711_samui.py` for a full implementation example.
 
 ---
 
