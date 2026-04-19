@@ -146,7 +146,10 @@ function clearFocus() {
 
 map = L.map('map').setView([4.5, 101.8], 7);
 window._leafletMap = map;
+let _flyingTo = false;
 map.on('click', clearFocus);
+map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
+map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
@@ -192,7 +195,9 @@ function renderSidebar() {
 
 function focusPOI(f) {
   const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
   map.flyTo([lat, lng], 12, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
   if (markers[f._id]) markers[f._id].openPopup();
   if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
   activeCard = f._id;
