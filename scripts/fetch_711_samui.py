@@ -4,12 +4,17 @@
 Outputs GeoJSON to stdout — pipe directly into the dataset file:
 
     export GOOGLE_MAPS_API_KEY=AIza...
-    python scripts/fetch_711_samui.py > static/711-samui/locations.geojson
+    uv run scripts/fetch_711_samui.py > static/711-samui/locations.geojson
 
 Requires: GOOGLE_MAPS_API_KEY environment variable (Google Cloud project with
 Places API (New) enabled).
+
+The API caps results at 60 per query (3 pages × 20). To avoid missing stores,
+the island is tiled into a 3×2 grid of smaller bounding boxes; each cell is
+queried independently and results are deduplicated by place_id.
 """
 import datetime
+import itertools
 import json
 import os
 import sys
@@ -22,11 +27,21 @@ if not API_KEY:
 
 ENDPOINT = "https://places.googleapis.com/v1/places:searchText"
 
-# Koh Samui bounding box
-BBOX = {
-    "low":  {"latitude": 9.38, "longitude": 99.88},
-    "high": {"latitude": 9.66, "longitude": 100.10},
-}
+# Koh Samui bounding box split into a 3-column × 2-row grid.
+# Each cell stays well under the 60-result API cap (~10–15 stores per cell).
+_LAT_SPLITS = [9.38, 9.52, 9.66]
+_LON_SPLITS = [99.88, 99.955, 100.03, 100.10]
+
+GRID = [
+    {
+        "low":  {"latitude": lat0, "longitude": lon0},
+        "high": {"latitude": lat1, "longitude": lon1},
+    }
+    for (lat0, lat1), (lon0, lon1) in itertools.product(
+        zip(_LAT_SPLITS, _LAT_SPLITS[1:]),
+        zip(_LON_SPLITS, _LON_SPLITS[1:]),
+    )
+]
 
 FIELD_MASK = ",".join([
     "places.id",
@@ -84,10 +99,10 @@ AREA_ALIASES = {
 AREA_TYPES = ("sublocality_level_1", "neighborhood", "sublocality", "locality")
 
 
-def text_search(query: str, page_token: str | None = None) -> dict:
+def text_search(query: str, bbox: dict, page_token: str | None = None) -> dict:
     body: dict = {
         "textQuery": query,
-        "locationRestriction": {"rectangle": BBOX},
+        "locationRestriction": {"rectangle": bbox},
         "maxResultCount": 20,
     }
     if page_token:
@@ -136,35 +151,40 @@ def is_24h(opening_hours: dict | None) -> bool:
 
 
 def main() -> None:
-    places: list[dict] = []
-    page_token: str | None = None
-    page = 0
-
-    while True:
-        page += 1
-        print(f"Fetching page {page}...", file=sys.stderr)
-        resp = text_search("7-Eleven Koh Samui", page_token)
-        batch = resp.get("places", [])
-        places.extend(batch)
-        print(f"  → {len(batch)} results (total so far: {len(places)})", file=sys.stderr)
-
-        page_token = resp.get("nextPageToken")
-        if not page_token:
-            break
-        time.sleep(2)
-
-    print(f"\nTotal places fetched: {len(places)}", file=sys.stderr)
-
-    # Deduplicate by place_id (shouldn't happen but safe)
     seen: set[str] = set()
     unique: list[dict] = []
-    for p in places:
-        pid = p.get("id", "")
-        if pid and pid not in seen:
-            seen.add(pid)
-            unique.append(p)
 
-    print(f"Unique places: {len(unique)}", file=sys.stderr)
+    for cell_idx, bbox in enumerate(GRID, 1):
+        lat0 = bbox["low"]["latitude"]
+        lat1 = bbox["high"]["latitude"]
+        lon0 = bbox["low"]["longitude"]
+        lon1 = bbox["high"]["longitude"]
+        print(
+            f"Cell {cell_idx}/{len(GRID)}: lat {lat0}–{lat1}, lon {lon0}–{lon1}",
+            file=sys.stderr,
+        )
+        page_token: str | None = None
+        page = 0
+        while True:
+            page += 1
+            resp = text_search("7-Eleven", bbox, page_token)
+            for p in resp.get("places", []):
+                pid = p.get("id", "")
+                if pid and pid not in seen:
+                    seen.add(pid)
+                    unique.append(p)
+            print(
+                f"  page {page}: {len(resp.get('places', []))} results "
+                f"(unique total: {len(unique)})",
+                file=sys.stderr,
+            )
+            page_token = resp.get("nextPageToken")
+            if not page_token:
+                break
+            time.sleep(2)
+        time.sleep(1)
+
+    print(f"\nTotal unique places: {len(unique)}", file=sys.stderr)
 
     lons, lats = [], []
     features: list[dict] = []

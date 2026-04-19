@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "bbox": [
-    99.9308506,
+    99.9307461,
     9.4211803,
     100.0823042,
     9.5780152
@@ -18,886 +18,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0705831,
-          9.5392438
-        ]
-      },
-      "properties": {
-        "id": "samui-711-001",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJAcxZOC7wVDARUnhEk2LZLqg",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-002",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0542913,
-          9.5159956
-        ]
-      },
-      "properties": {
-        "id": "samui-711-002",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJMTEiyr7xVDARndY_dIN39cI",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-003",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0427138,
-          9.5335936
-        ]
-      },
-      "properties": {
-        "id": "samui-711-003",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJF4F2SVPwVDARVRyjlu7Y5sM",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-004",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.056191,
-          9.5228728
-        ]
-      },
-      "properties": {
-        "id": "samui-711-004",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJL0q5mbfxVDARts7h_zdWTIY",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-005",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0649979,
-          9.5702661
-        ]
-      },
-      "properties": {
-        "id": "samui-711-005",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ7THJtw7wVDARNU5M-SY3IVY",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-006",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.063897,
-          9.5342287
-        ]
-      },
-      "properties": {
-        "id": "samui-711-006",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJr_-B4crxVDAR0UVL2O87SAk",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-007",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0655169,
-          9.5329101
-        ]
-      },
-      "properties": {
-        "id": "samui-711-007",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJGUhnNjPwVDAR6lW8nExF2zI",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-008",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9688334,
-          9.5777401
-        ]
-      },
-      "properties": {
-        "id": "samui-711-008",
-        "name": "7-Eleven Maenam",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Maenam",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJm5xmdWD3VDARr26kDtTe_DY",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-009",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0436813,
-          9.4637631
-        ]
-      },
-      "properties": {
-        "id": "samui-711-009",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ_derGknyVDARuGTboNRJXN4",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-010",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0673287,
-          9.5491938
-        ]
-      },
-      "properties": {
-        "id": "samui-711-010",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJVXbQ7IPxVDARAOQRe9ZCa_I",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-011",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0196389,
-          9.5632412
-        ]
-      },
-      "properties": {
-        "id": "samui-711-011",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJj-fAMZHwVDARhzjXZjXB0Dc",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-012",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0533026,
-          9.5075848
-        ]
-      },
-      "properties": {
-        "id": "samui-711-012",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJO0oaL5TxVDARHKbpj__b7ao",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-013",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0561921,
-          9.5168142
-        ]
-      },
-      "properties": {
-        "id": "samui-711-013",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJDayZ0bjxVDARGU_GBaUa0hE",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-014",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.026453,
-          9.5583187
-        ]
-      },
-      "properties": {
-        "id": "samui-711-014",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJf52UoI3wVDAR-QND2gyet-k",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-015",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0823042,
-          9.5694704
-        ]
-      },
-      "properties": {
-        "id": "samui-711-015",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJUcZm6v3vVDARMqprVtgGu0E",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-016",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0085009,
-          9.5653324
-        ]
-      },
-      "properties": {
-        "id": "samui-711-016",
-        "name": "7-Eleven Maenam",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Maenam",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJKZirnbzwVDAR3LLbmfkJnfM",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-017",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0505859,
-          9.5143359
-        ]
-      },
-      "properties": {
-        "id": "samui-711-017",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJgcUIULzxVDARBckLVTWCNSY",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-018",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0311646,
-          9.5576209
-        ]
-      },
-      "properties": {
-        "id": "samui-711-018",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJTzadcIvwVDARHCq8XbuRrR0",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-019",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0529666,
-          9.5564634
-        ]
-      },
-      "properties": {
-        "id": "samui-711-019",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ-5kQIWrwVDARYZCqTEosVQ4",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-020",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0258197,
-          9.4466224
-        ]
-      },
-      "properties": {
-        "id": "samui-711-020",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJiWINoPTzVDARM4EYmkr9cM4",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-021",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0650085,
-          9.4758429
-        ]
-      },
-      "properties": {
-        "id": "samui-711-021",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJAZhbDTvzVDARUX2rY4YL84c",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-022",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.020925,
-          9.442982
-        ]
-      },
-      "properties": {
-        "id": "samui-711-022",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJySbDCwnzVDARNtJrnQdB3hs",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-023",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0471199,
-          9.5353214
-        ]
-      },
-      "properties": {
-        "id": "samui-711-023",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJIbYag1LwVDARc3daPeKMwkQ",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-024",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0323834,
-          9.5584565
-        ]
-      },
-      "properties": {
-        "id": "samui-711-024",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJD6ahgYDxVDAR7KtFDjydkfA",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-025",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0497566,
-          9.4712458
-        ]
-      },
-      "properties": {
-        "id": "samui-711-025",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJY39NNwDzVDARMdCbuD3Dc1s",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-026",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0805461,
-          9.5624888
-        ]
-      },
-      "properties": {
-        "id": "samui-711-026",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ5waUfh3wVDAREqZ404gGuFI",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-027",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9378346,
-          9.5197903
-        ]
-      },
-      "properties": {
-        "id": "samui-711-027",
-        "name": "7-Eleven Nathon",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Nathon",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJxUALflv2VDARwHK2HHLODe0",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-028",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9806784,
-          9.5780152
-        ]
-      },
-      "properties": {
-        "id": "samui-711-028",
-        "name": "7-Eleven Maenam",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Maenam",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ0UE1VQD3VDAR55xidakMxdk",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-029",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9308506,
-          9.4824029
-        ]
-      },
-      "properties": {
-        "id": "samui-711-029",
-        "name": "7-Eleven Lipa Noi",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lipa Noi",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ-88bRNv1VDARwPXRSCw1zVo",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-030",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9454923,
-          9.4983404
-        ]
-      },
-      "properties": {
-        "id": "samui-711-030",
-        "name": "7-Eleven Lipa Noi",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lipa Noi",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJgxsWPXz2VDARFxfN1_cbGeM",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-031",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0415562,
-          9.4720881
-        ]
-      },
-      "properties": {
-        "id": "samui-711-031",
-        "name": "7-Eleven Lamai",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Lamai",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ9zKOpzbyVDAR_dRczXqExMk",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-032",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0623055,
-          9.5655913
-        ]
-      },
-      "properties": {
-        "id": "samui-711-032",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJXfTCrUTxVDARaKleorxG_T8",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-033",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9420292,
-          9.5779003
-        ]
-      },
-      "properties": {
-        "id": "samui-711-033",
-        "name": "7-Eleven Maenam",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Maenam",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJQQ7K3ID3VDAR2YX1WKzzKPg",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-034",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0400403,
-          9.542587
-        ]
-      },
-      "properties": {
-        "id": "samui-711-034",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJh-HTFFfwVDARwlVqe0t60nw",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-035",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0543746,
-          9.5470456
-        ]
-      },
-      "properties": {
-        "id": "samui-711-035",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ7zmntQPxVDARtzLnfKAE09U",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-036",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9908421,
-          9.4572272
-        ]
-      },
-      "properties": {
-        "id": "samui-711-036",
-        "name": "7-Eleven South Samui",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "South Samui",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJTU2uBXj0VDARv9yznpSsE1k",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-037",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0526232,
-          9.5412239
-        ]
-      },
-      "properties": {
-        "id": "samui-711-037",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJNQX-KE_wVDARRntkMwKXX_Q",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-038",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0482236,
-          9.5217611
-        ]
-      },
-      "properties": {
-        "id": "samui-711-038",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJTcZZobrxVDARgf47VO4kVaU",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-039",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           99.9451521,
           9.4299007
         ]
       },
       "properties": {
-        "id": "samui-711-039",
+        "id": "samui-711-001",
         "name": "7-Eleven Taling Ngam",
         "category": "Convenience",
         "icon": "🏪",
@@ -911,99 +37,76 @@
     },
     {
       "type": "Feature",
-      "id": "samui-711-040",
+      "id": "samui-711-002",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          99.9333617,
-          9.5427362
+          99.9454923,
+          9.4983404
         ]
       },
       "properties": {
-        "id": "samui-711-040",
+        "id": "samui-711-002",
+        "name": "7-Eleven Lipa Noi",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lipa Noi",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJgxsWPXz2VDARFxfN1_cbGeM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9308506,
+          9.4824029
+        ]
+      },
+      "properties": {
+        "id": "samui-711-003",
+        "name": "7-Eleven Lipa Noi",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lipa Noi",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ-88bRNv1VDARwPXRSCw1zVo",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9378346,
+          9.5197903
+        ]
+      },
+      "properties": {
+        "id": "samui-711-004",
         "name": "7-Eleven Nathon",
         "category": "Convenience",
         "icon": "🏪",
         "area": "Nathon",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJte4MmrH3VDARv_lBsNPGyNY",
+        "place_id": "ChIJxUALflv2VDARwHK2HHLODe0",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-041",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0050082,
-          9.4475982
-        ]
-      },
-      "properties": {
-        "id": "samui-711-041",
-        "name": "7-Eleven South Samui",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "South Samui",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJGTEJnp3zVDARzBwRssEWOP8",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-042",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0588899,
-          9.5595566
-        ]
-      },
-      "properties": {
-        "id": "samui-711-042",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJgcZWrhTwVDARio2Dx1xis3I",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-043",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          100.0677645,
-          9.5749758
-        ]
-      },
-      "properties": {
-        "id": "samui-711-043",
-        "name": "7-Eleven Bophut",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Bophut",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJ-8eWkVDxVDARYX73G2I1ldU",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-044",
+      "id": "samui-711-005",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -1012,7 +115,7 @@
         ]
       },
       "properties": {
-        "id": "samui-711-044",
+        "id": "samui-711-005",
         "name": "7-Eleven Taling Ngam",
         "category": "Convenience",
         "icon": "🏪",
@@ -1026,145 +129,145 @@
     },
     {
       "type": "Feature",
-      "id": "samui-711-045",
+      "id": "samui-711-006",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0024534,
-          9.566555
+          99.9544169,
+          9.4818822
         ]
       },
       "properties": {
-        "id": "samui-711-045",
-        "name": "7-Eleven Maenam",
+        "id": "samui-711-006",
+        "name": "7-Eleven Lipa Noi",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Maenam",
+        "area": "Lipa Noi",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJETV19A_xVDARzzNz6-L-ZtE",
+        "place_id": "ChIJi3I2gan1VDARiBg65kti4nw",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-046",
+      "id": "samui-711-007",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0570597,
-          9.4722367
+          99.9491927,
+          9.4936643
         ]
       },
       "properties": {
-        "id": "samui-711-046",
+        "id": "samui-711-007",
+        "name": "7-Eleven Lipa Noi",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lipa Noi",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJayV-1iv0VDAR_9jujHilnLM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0258197,
+          9.4466224
+        ]
+      },
+      "properties": {
+        "id": "samui-711-008",
         "name": "7-Eleven Lamai",
         "category": "Convenience",
         "icon": "🏪",
         "area": "Lamai",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJ4V-MwcXzVDARRhlFruV47PE",
+        "place_id": "ChIJiWINoPTzVDARM4EYmkr9cM4",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-047",
+      "id": "samui-711-009",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          99.9951114,
-          9.5693176
+          100.020925,
+          9.442982
         ]
       },
       "properties": {
-        "id": "samui-711-047",
-        "name": "7-Eleven Maenam",
+        "id": "samui-711-009",
+        "name": "7-Eleven Lamai",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Maenam",
+        "area": "Lamai",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJlUsGYOXxVDARTAyoWWlsEe4",
+        "place_id": "ChIJySbDCwnzVDARNtJrnQdB3hs",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-048",
+      "id": "samui-711-010",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0750309,
-          9.5675765
+          99.9908421,
+          9.4572272
         ]
       },
       "properties": {
-        "id": "samui-711-048",
-        "name": "7-Eleven Bophut",
+        "id": "samui-711-010",
+        "name": "7-Eleven South Samui",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Bophut",
+        "area": "South Samui",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJX6nm4cnxVDARuxp5ckCNa3w",
+        "place_id": "ChIJTU2uBXj0VDARv9yznpSsE1k",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-049",
+      "id": "samui-711-011",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0318855,
-          9.5547812
+          99.9867665,
+          9.4287845
         ]
       },
       "properties": {
-        "id": "samui-711-049",
-        "name": "7-Eleven Bophut",
+        "id": "samui-711-011",
+        "name": "7-Eleven ตำบล บางกะเจ้า",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Bophut",
+        "area": "ตำบล บางกะเจ้า",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJ67PS1h7xVDARgQy_dzvuC2A",
+        "place_id": "ChIJiZOYwZ70VDARfAX2JB6zKzA",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
     },
     {
       "type": "Feature",
-      "id": "samui-711-050",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          99.9838906,
-          9.5716625
-        ]
-      },
-      "properties": {
-        "id": "samui-711-050",
-        "name": "7-Eleven Maenam",
-        "category": "Convenience",
-        "icon": "🏪",
-        "area": "Maenam",
-        "hours": "24h",
-        "brand": "7-Eleven",
-        "place_id": "ChIJgQuUf1b3VDARuySzYCDW148",
-        "coord_source": "google_places",
-        "coord_accuracy": "high"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "samui-711-051",
+      "id": "samui-711-012",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -1173,7 +276,7 @@
         ]
       },
       "properties": {
-        "id": "samui-711-051",
+        "id": "samui-711-012",
         "name": "7-Eleven Taling Ngam",
         "category": "Convenience",
         "icon": "🏪",
@@ -1187,7 +290,283 @@
     },
     {
       "type": "Feature",
-      "id": "samui-711-052",
+      "id": "samui-711-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0050082,
+          9.4475982
+        ]
+      },
+      "properties": {
+        "id": "samui-711-013",
+        "name": "7-Eleven South Samui",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJGTEJnp3zVDARzBwRssEWOP8",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0129935,
+          9.4323736
+        ]
+      },
+      "properties": {
+        "id": "samui-711-014",
+        "name": "7-Eleven South Samui",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJy1PFFgDzVDARl9uts3t9MPI",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9991227,
+          9.4518786
+        ]
+      },
+      "properties": {
+        "id": "samui-711-015",
+        "name": "7-Eleven South Samui",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "South Samui",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ_wT7YunzVDARnnr6VSfJrwE",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0268894,
+          9.4492005
+        ]
+      },
+      "properties": {
+        "id": "samui-711-016",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJPRPCeUbzVDARbkeb8ZL-75A",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0198729,
+          9.4435621
+        ]
+      },
+      "properties": {
+        "id": "samui-711-017",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJbRxOeQDzVDAR8ITX-145I5w",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0486657,
+          9.4700862
+        ]
+      },
+      "properties": {
+        "id": "samui-711-018",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJYfK5dljzVDARgdYgSiZ485o",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0497566,
+          9.4712458
+        ]
+      },
+      "properties": {
+        "id": "samui-711-019",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJY39NNwDzVDARMdCbuD3Dc1s",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0467817,
+          9.4719828
+        ]
+      },
+      "properties": {
+        "id": "samui-711-020",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJIREN_rHzVDARrqnIKl0dsNo",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0415562,
+          9.4720881
+        ]
+      },
+      "properties": {
+        "id": "samui-711-021",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ9zKOpzbyVDAR_dRczXqExMk",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0445539,
+          9.473114
+        ]
+      },
+      "properties": {
+        "id": "samui-711-022",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJHcg4dgDzVDAReEkXswzpA4o",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0570597,
+          9.4722367
+        ]
+      },
+      "properties": {
+        "id": "samui-711-023",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ4V-MwcXzVDARRhlFruV47PE",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0436813,
+          9.4637631
+        ]
+      },
+      "properties": {
+        "id": "samui-711-024",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ_derGknyVDARuGTboNRJXN4",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-025",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -1196,7 +575,7 @@
         ]
       },
       "properties": {
-        "id": "samui-711-052",
+        "id": "samui-711-025",
         "name": "7-Eleven Lamai",
         "category": "Convenience",
         "icon": "🏪",
@@ -1210,23 +589,644 @@
     },
     {
       "type": "Feature",
-      "id": "samui-711-053",
+      "id": "samui-711-026",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0452545,
-          9.5282701
+          100.0409289,
+          9.4705553
         ]
       },
       "properties": {
-        "id": "samui-711-053",
+        "id": "samui-711-026",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJGyQvuALzVDAR20fGShCTTJA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0384681,
+          9.4559775
+        ]
+      },
+      "properties": {
+        "id": "samui-711-027",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJQe-55QnzVDAROK2bBpxjjSA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0650085,
+          9.4758429
+        ]
+      },
+      "properties": {
+        "id": "samui-711-028",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJAZhbDTvzVDARUX2rY4YL84c",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0533026,
+          9.5075848
+        ]
+      },
+      "properties": {
+        "id": "samui-711-029",
         "name": "7-Eleven Bophut",
         "category": "Convenience",
         "icon": "🏪",
         "area": "Bophut",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJC-jOxK3xVDARdEvTwARgJRc",
+        "place_id": "ChIJO0oaL5TxVDARHKbpj__b7ao",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0542913,
+          9.5159956
+        ]
+      },
+      "properties": {
+        "id": "samui-711-030",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJMTEiyr7xVDARndY_dIN39cI",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.055383,
+          9.471909
+        ]
+      },
+      "properties": {
+        "id": "samui-711-031",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ5xsMRADzVDARBPdkbtxc-TA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0442632,
+          9.4648037
+        ]
+      },
+      "properties": {
+        "id": "samui-711-032",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJveLyNADzVDARuQ5ExnXKbSI",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0505859,
+          9.5143359
+        ]
+      },
+      "properties": {
+        "id": "samui-711-033",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJgcUIULzxVDARBckLVTWCNSY",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0561921,
+          9.5168142
+        ]
+      },
+      "properties": {
+        "id": "samui-711-034",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJDayZ0bjxVDARGU_GBaUa0hE",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0424047,
+          9.4611406
+        ]
+      },
+      "properties": {
+        "id": "samui-711-035",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ-bC2eADzVDARXgz4aukF66Y",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0558843,
+          9.515236
+        ]
+      },
+      "properties": {
+        "id": "samui-711-036",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJUWwieADxVDARWJ2goSBLdsY",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0492453,
+          9.5190099
+        ]
+      },
+      "properties": {
+        "id": "samui-711-037",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJg49sljbxVDARrDM3nQEwIpU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0448888,
+          9.4661553
+        ]
+      },
+      "properties": {
+        "id": "samui-711-038",
+        "name": "7-Eleven Lamai",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Lamai",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJu-1L2-LzVDARfpc7DuIy_aM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0557166,
+          9.5151193
+        ]
+      },
+      "properties": {
+        "id": "samui-711-039",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJHfuEFQDxVDARpPvdgkhq7BU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9420292,
+          9.5779003
+        ]
+      },
+      "properties": {
+        "id": "samui-711-040",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJQQ7K3ID3VDAR2YX1WKzzKPg",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9356073,
+          9.5386421
+        ]
+      },
+      "properties": {
+        "id": "samui-711-041",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJrf0cEyL3VDARC_3eiS3IodA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9308909,
+          9.5512678
+        ]
+      },
+      "properties": {
+        "id": "samui-711-042",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJCw-M06b3VDAREaVIcilert4",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9333617,
+          9.5427362
+        ]
+      },
+      "properties": {
+        "id": "samui-711-043",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJte4MmrH3VDARv_lBsNPGyNY",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9358755,
+          9.533222
+        ]
+      },
+      "properties": {
+        "id": "samui-711-044",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJWXwljV73VDARLY1tedribl8",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9411156,
+          9.5241103
+        ]
+      },
+      "properties": {
+        "id": "samui-711-045",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJuaVE3SH3VDARR82pMYvYRYU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9429059,
+          9.5778715
+        ]
+      },
+      "properties": {
+        "id": "samui-711-046",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJzfCxQgD3VDARWBg7A8HUl_o",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9352682,
+          9.5359431
+        ]
+      },
+      "properties": {
+        "id": "samui-711-047",
+        "name": "7-Eleven Nathon",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Nathon",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJT_qXAwD3VDARom2XcB1Zj_Q",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9307461,
+          9.551315
+        ]
+      },
+      "properties": {
+        "id": "samui-711-048",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ9X2VfgD3VDAR9YJW6_gMHdk",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.026453,
+          9.5583187
+        ]
+      },
+      "properties": {
+        "id": "samui-711-049",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJf52UoI3wVDAR-QND2gyet-k",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0085009,
+          9.5653324
+        ]
+      },
+      "properties": {
+        "id": "samui-711-050",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJKZirnbzwVDAR3LLbmfkJnfM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0196389,
+          9.5632412
+        ]
+      },
+      "properties": {
+        "id": "samui-711-051",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJj-fAMZHwVDARhzjXZjXB0Dc",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9951114,
+          9.5693176
+        ]
+      },
+      "properties": {
+        "id": "samui-711-052",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJlUsGYOXxVDARTAyoWWlsEe4",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.9806784,
+          9.5780152
+        ]
+      },
+      "properties": {
+        "id": "samui-711-053",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ0UE1VQD3VDAR55xidakMxdk",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
@@ -1260,19 +1260,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          99.9358755,
-          9.533222
+          99.9838906,
+          9.5716625
         ]
       },
       "properties": {
         "id": "samui-711-055",
-        "name": "7-Eleven Nathon",
+        "name": "7-Eleven Maenam",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Nathon",
+        "area": "Maenam",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJWXwljV73VDARLY1tedribl8",
+        "place_id": "ChIJgQuUf1b3VDARuySzYCDW148",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
@@ -1283,19 +1283,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          99.9991227,
-          9.4518786
+          99.9688334,
+          9.5777401
         ]
       },
       "properties": {
         "id": "samui-711-056",
-        "name": "7-Eleven South Samui",
+        "name": "7-Eleven Maenam",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "South Samui",
+        "area": "Maenam",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJ_wT7YunzVDARnnr6VSfJrwE",
+        "place_id": "ChIJm5xmdWD3VDARr26kDtTe_DY",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
@@ -1306,19 +1306,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0486657,
-          9.4700862
+          100.0024534,
+          9.566555
         ]
       },
       "properties": {
         "id": "samui-711-057",
-        "name": "7-Eleven Lamai",
+        "name": "7-Eleven Maenam",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Lamai",
+        "area": "Maenam",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJYfK5dljzVDARgdYgSiZ485o",
+        "place_id": "ChIJETV19A_xVDARzzNz6-L-ZtE",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
@@ -1329,19 +1329,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          99.9308909,
-          9.5512678
+          99.9856064,
+          9.5745988
         ]
       },
       "properties": {
         "id": "samui-711-058",
-        "name": "7-Eleven Nathon",
+        "name": "7-Eleven Maenam",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Nathon",
+        "area": "Maenam",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJCw-M06b3VDAREaVIcilert4",
+        "place_id": "ChIJvU68S2T3VDARQiRYRsguGzo",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
@@ -1352,12 +1352,633 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          99.9936577,
+          9.5699844
+        ]
+      },
+      "properties": {
+        "id": "samui-711-059",
+        "name": "7-Eleven Maenam",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Maenam",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJbW6OfhbxVDARubIzhZ4w4sU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.056191,
+          9.5228728
+        ]
+      },
+      "properties": {
+        "id": "samui-711-060",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJL0q5mbfxVDARts7h_zdWTIY",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0673287,
+          9.5491938
+        ]
+      },
+      "properties": {
+        "id": "samui-711-061",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJVXbQ7IPxVDARAOQRe9ZCa_I",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0649979,
+          9.5702661
+        ]
+      },
+      "properties": {
+        "id": "samui-711-062",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ7THJtw7wVDARNU5M-SY3IVY",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0805461,
+          9.5624888
+        ]
+      },
+      "properties": {
+        "id": "samui-711-063",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ5waUfh3wVDAREqZ404gGuFI",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-064",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0705831,
+          9.5392438
+        ]
+      },
+      "properties": {
+        "id": "samui-711-064",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJAcxZOC7wVDARUnhEk2LZLqg",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0311646,
+          9.5576209
+        ]
+      },
+      "properties": {
+        "id": "samui-711-065",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJTzadcIvwVDARHCq8XbuRrR0",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-066",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0323834,
+          9.5584565
+        ]
+      },
+      "properties": {
+        "id": "samui-711-066",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJD6ahgYDxVDAR7KtFDjydkfA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0823042,
+          9.5694704
+        ]
+      },
+      "properties": {
+        "id": "samui-711-067",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJUcZm6v3vVDARMqprVtgGu0E",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0655169,
+          9.5329101
+        ]
+      },
+      "properties": {
+        "id": "samui-711-068",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJGUhnNjPwVDAR6lW8nExF2zI",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-069",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0543746,
+          9.5470456
+        ]
+      },
+      "properties": {
+        "id": "samui-711-069",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ7zmntQPxVDARtzLnfKAE09U",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.063897,
+          9.5342287
+        ]
+      },
+      "properties": {
+        "id": "samui-711-070",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJr_-B4crxVDAR0UVL2O87SAk",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-071",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0529666,
+          9.5564634
+        ]
+      },
+      "properties": {
+        "id": "samui-711-071",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ-5kQIWrwVDARYZCqTEosVQ4",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0427138,
+          9.5335936
+        ]
+      },
+      "properties": {
+        "id": "samui-711-072",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJF4F2SVPwVDARVRyjlu7Y5sM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-073",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0400403,
+          9.542587
+        ]
+      },
+      "properties": {
+        "id": "samui-711-073",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJh-HTFFfwVDARwlVqe0t60nw",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-074",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0588899,
+          9.5595566
+        ]
+      },
+      "properties": {
+        "id": "samui-711-074",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJgcZWrhTwVDARio2Dx1xis3I",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-075",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0482236,
+          9.5217611
+        ]
+      },
+      "properties": {
+        "id": "samui-711-075",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJTcZZobrxVDARgf47VO4kVaU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-076",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0471199,
+          9.5353214
+        ]
+      },
+      "properties": {
+        "id": "samui-711-076",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJIbYag1LwVDARc3daPeKMwkQ",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-077",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0429625,
+          9.5436985
+        ]
+      },
+      "properties": {
+        "id": "samui-711-077",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJizRu_XbxVDARTVhSXZ6EarM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-078",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0452545,
+          9.5282701
+        ]
+      },
+      "properties": {
+        "id": "samui-711-078",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJC-jOxK3xVDARdEvTwARgJRc",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-079",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.046545,
+          9.5255749
+        ]
+      },
+      "properties": {
+        "id": "samui-711-079",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJJ-z0xOjxVDAR034QP44j86Q",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0318855,
+          9.5547812
+        ]
+      },
+      "properties": {
+        "id": "samui-711-080",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ67PS1h7xVDARgQy_dzvuC2A",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-081",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0430582,
+          9.53173
+        ]
+      },
+      "properties": {
+        "id": "samui-711-081",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJt_d5-yPxVDAR9YmPJB5JvbU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0677645,
+          9.5749758
+        ]
+      },
+      "properties": {
+        "id": "samui-711-082",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ-8eWkVDxVDARYX73G2I1ldU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0623055,
+          9.5655913
+        ]
+      },
+      "properties": {
+        "id": "samui-711-083",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJXfTCrUTxVDARaKleorxG_T8",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0692514,
+          9.5680556
+        ]
+      },
+      "properties": {
+        "id": "samui-711-084",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJI_C-0jrxVDAR08W7yTnKDMM",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0526232,
+          9.5412239
+        ]
+      },
+      "properties": {
+        "id": "samui-711-085",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJNQX-KE_wVDARRntkMwKXX_Q",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           100.0446474,
           9.533576
         ]
       },
       "properties": {
-        "id": "samui-711-059",
+        "id": "samui-711-086",
         "name": "7-Eleven Bophut",
         "category": "Convenience",
         "icon": "🏪",
@@ -1371,23 +1992,276 @@
     },
     {
       "type": "Feature",
-      "id": "samui-711-060",
+      "id": "samui-711-087",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0384681,
-          9.4559775
+          100.0490759,
+          9.5361613
         ]
       },
       "properties": {
-        "id": "samui-711-060",
-        "name": "7-Eleven Lamai",
+        "id": "samui-711-087",
+        "name": "7-Eleven Bophut",
         "category": "Convenience",
         "icon": "🏪",
-        "area": "Lamai",
+        "area": "Bophut",
         "hours": "24h",
         "brand": "7-Eleven",
-        "place_id": "ChIJQe-55QnzVDAROK2bBpxjjSA",
+        "place_id": "ChIJ0U6UFQDxVDARYjv954-AZiA",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-088",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0525254,
+          9.5208284
+        ]
+      },
+      "properties": {
+        "id": "samui-711-088",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJzx8wHbrxVDARlvW1SAW-emk",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-089",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0750309,
+          9.5675765
+        ]
+      },
+      "properties": {
+        "id": "samui-711-089",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJX6nm4cnxVDARuxp5ckCNa3w",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0375612,
+          9.5472862
+        ]
+      },
+      "properties": {
+        "id": "samui-711-090",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJn1t4vSnxVDARjpujvZZLlII",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-091",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.063289,
+          9.5590453
+        ]
+      },
+      "properties": {
+        "id": "samui-711-091",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJL10lwYbxVDARZ4DPAfZ3Q2I",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0682653,
+          9.536407
+        ]
+      },
+      "properties": {
+        "id": "samui-711-092",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJN9Y9YADxVDARbIbdL3EpVh4",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-093",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0673933,
+          9.5493044
+        ]
+      },
+      "properties": {
+        "id": "samui-711-093",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ2fn9RQDxVDARPCnzM_d3u0E",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-094",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.065744,
+          9.534591
+        ]
+      },
+      "properties": {
+        "id": "samui-711-094",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJpXUlIQDxVDARJV6lcFPh5FU",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-095",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0472257,
+          9.52384
+        ]
+      },
+      "properties": {
+        "id": "samui-711-095",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJ7QU-CQDxVDARMoGjXgis5ws",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-096",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0694784,
+          9.5378034
+        ]
+      },
+      "properties": {
+        "id": "samui-711-096",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJTx57aSHxVDARTR81QjrFd1g",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-097",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.053223,
+          9.556566
+        ]
+      },
+      "properties": {
+        "id": "samui-711-097",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJm1HxWRfxVDARFnDlBmZ5Yz0",
+        "coord_source": "google_places",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "samui-711-098",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0652304,
+          9.550863
+        ]
+      },
+      "properties": {
+        "id": "samui-711-098",
+        "name": "7-Eleven Bophut",
+        "category": "Convenience",
+        "icon": "🏪",
+        "area": "Bophut",
+        "hours": "24h",
+        "brand": "7-Eleven",
+        "place_id": "ChIJp_VqBQDxVDAR7HMUU92BDo4",
         "coord_source": "google_places",
         "coord_accuracy": "high"
       }
