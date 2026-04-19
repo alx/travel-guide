@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 VALID_COORD_SOURCES = {
-    "google_maps_pin", "nominatim", "research", "estimated", "on_site_gps"
+    "google_maps_pin", "google_places", "nominatim", "research", "estimated", "on_site_gps"
 }
 VALID_COORD_ACCURACIES = {"high", "medium", "low"}
 
