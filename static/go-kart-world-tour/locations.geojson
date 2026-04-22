@@ -1,0 +1,205 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [-4.52594, 10.01587, 140.5035, 48.47383],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-22T00:00:00Z",
+    "source": "Google Maps list — Karting Tour by Alexandre Girard",
+    "source_url": "https://maps.app.goo.gl/agARtkq3HX2GNTUh6",
+    "total_features": 12
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "gokart-001",
+      "geometry": { "type": "Point", "coordinates": [-4.52594, 48.47383] },
+      "properties": {
+        "id": "gokart-001",
+        "name": "Karting Brest",
+        "category": "Karting",
+        "icon": "🏎️",
+        "country": "France",
+        "city": "Brest, Brittany",
+        "description": "Indoor/outdoor karting circuit in the Brest area, Brittany.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-002",
+      "geometry": { "type": "Point", "coordinates": [105.78429, 21.02687] },
+      "properties": {
+        "id": "gokart-002",
+        "name": "ONION Gaming Club (Tây Hồ)",
+        "category": "Gaming",
+        "icon": "🎮",
+        "country": "Vietnam",
+        "city": "Hanoi — Tây Hồ",
+        "description": "Gaming and entertainment club with go-kart attractions in Hanoi's Tây Hồ district.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-003",
+      "geometry": { "type": "Point", "coordinates": [105.82676, 21.01073] },
+      "properties": {
+        "id": "gokart-003",
+        "name": "ONION Gaming Club (Cầu Giấy)",
+        "category": "Gaming",
+        "icon": "🎮",
+        "country": "Vietnam",
+        "city": "Hanoi — Cầu Giấy",
+        "description": "Second ONION Gaming Club branch in Hanoi's Cầu Giấy district.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-004",
+      "geometry": { "type": "Point", "coordinates": [105.87436, 21.05703] },
+      "properties": {
+        "id": "gokart-004",
+        "name": "Công Viên Thượng Thanh",
+        "category": "Park",
+        "icon": "🌿",
+        "country": "Vietnam",
+        "city": "Hanoi — Long Biên",
+        "description": "Riverside park in Long Biên district with go-kart and entertainment facilities.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-005",
+      "geometry": { "type": "Point", "coordinates": [113.22668, 23.428] },
+      "properties": {
+        "id": "gokart-005",
+        "name": "Karting Track — Guangdong (West)",
+        "category": "Karting",
+        "icon": "🏎️",
+        "country": "China",
+        "city": "Guangdong Province",
+        "description": "Go-kart venue in Guangdong, China (GPS pin — 23°25'40.8\"N 113°13'36.0\"E).",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-006",
+      "geometry": { "type": "Point", "coordinates": [105.79099, 10.04938] },
+      "properties": {
+        "id": "gokart-006",
+        "name": "Song Hau Park",
+        "category": "Park",
+        "icon": "🌿",
+        "country": "Vietnam",
+        "city": "Cần Thơ — Mekong Delta",
+        "description": "Amusement park in the Mekong Delta with go-kart and family attractions.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-007",
+      "geometry": { "type": "Point", "coordinates": [105.80843, 10.01587] },
+      "properties": {
+        "id": "gokart-007",
+        "name": "Khu Vui Chơi 586",
+        "category": "Gaming",
+        "icon": "🎮",
+        "country": "Vietnam",
+        "city": "Cần Thơ — Mekong Delta",
+        "description": "Entertainment complex 586 in Cần Thơ with arcade and go-kart facilities.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-008",
+      "geometry": { "type": "Point", "coordinates": [113.234, 23.4331] },
+      "properties": {
+        "id": "gokart-008",
+        "name": "Karting Track — Guangdong (East)",
+        "category": "Karting",
+        "icon": "🏎️",
+        "country": "China",
+        "city": "Guangdong Province",
+        "description": "Second go-kart venue in Guangdong, China (GPS pin — 23°25'59.2\"N 113°14'02.4\"E).",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-009",
+      "geometry": { "type": "Point", "coordinates": [140.5035, 35.58982] },
+      "properties": {
+        "id": "gokart-009",
+        "name": "Hasunuma Park — Children's Square",
+        "category": "Park",
+        "icon": "🌿",
+        "country": "Japan",
+        "city": "Chiba Prefecture (near Tokyo)",
+        "description": "Public park in Chiba with children's go-kart circuit and outdoor activities.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-010",
+      "geometry": { "type": "Point", "coordinates": [139.77055, 35.70054] },
+      "properties": {
+        "id": "gokart-010",
+        "name": "D.D.R AKIBA 本店",
+        "category": "Gaming",
+        "icon": "🎮",
+        "country": "Japan",
+        "city": "Tokyo — Akihabara",
+        "description": "Multi-floor gaming and entertainment complex in Akihabara. Includes karting simulator and arcade attractions.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-011",
+      "geometry": { "type": "Point", "coordinates": [98.96444, 18.79394] },
+      "properties": {
+        "id": "gokart-011",
+        "name": "Drift Trike Zone",
+        "category": "Drift",
+        "icon": "⚡",
+        "country": "Thailand",
+        "city": "Chiang Mai",
+        "description": "Drift trike and go-kart attraction on the outskirts of Chiang Mai.",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokart-012",
+      "geometry": { "type": "Point", "coordinates": [100.52287, 13.73834] },
+      "properties": {
+        "id": "gokart-012",
+        "name": "E-Gokart Track สนามโกคาร์ทไฟฟ้า",
+        "category": "Karting",
+        "icon": "🏎️",
+        "country": "Thailand",
+        "city": "Bangkok — Chula area",
+        "description": "Electric go-kart track near Chulalongkorn University on Banthat Thong Road (สนามโกคาร์ทไฟฟ้า / 电动卡丁车赛道).",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high"
+      }
+    }
+  ]
+}
