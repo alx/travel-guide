@@ -1,0 +1,221 @@
+{
+  "_meta": {
+    "generated_at": "2026-04-22T03:07:37.791077+00:00",
+    "map_count": 9,
+    "generator": "scripts/generate_map_index.py"
+  },
+  "maps": [
+    {
+      "slug": "koh-samui",
+      "url": "/koh-samui/",
+      "title": "Koh Samui Map — Best Spots",
+      "description": "Curated map of Koh Samui: beaches, spas, restaurants and activities with GPS coordinates, opening hours and prices.",
+      "emoji": "🏝️",
+      "section": "curated",
+      "weight": 10,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🏖️ Beaches",
+        "🎯 Activities",
+        "🍽️ Restaurants",
+        "🔒 VIP Spots"
+      ],
+      "poi_count": 7,
+      "categories": [
+        "Activity",
+        "Area Guide",
+        "Beach",
+        "Restaurant",
+        "Shopping"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "lamai",
+      "url": "/lamai/",
+      "title": "Lamai Beach — Local Spots & Hidden Gems",
+      "description": "Curated map of Lamai Beach, Koh Samui: local restaurants, Muay Thai gyms, fresh markets, beachfront bars, spas, and natural landmarks — away from the Chaweng crowds.",
+      "emoji": "🏖️",
+      "section": "curated",
+      "weight": 20,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🏖️ Beaches",
+        "🍽️ Restaurants",
+        "💆 Wellness"
+      ],
+      "poi_count": 28,
+      "categories": [
+        "Bakery",
+        "Bar",
+        "Beach",
+        "Café",
+        "Fitness",
+        "Landmark",
+        "Market",
+        "Muay Thai",
+        "Restaurant",
+        "Shopping",
+        "Spa",
+        "Temple"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "hoi-an",
+      "url": "/hoi-an/",
+      "title": "Hoi An Map — An Hoi Peninsula",
+      "description": "Curated map of Hoi An's An Hoi peninsula: restaurants, cafés, the local market, pagoda and river viewpoints.",
+      "emoji": "🏮",
+      "section": "curated",
+      "weight": 30,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🍽️ Restaurants",
+        "☕ Cafés",
+        "🎯 Activities"
+      ],
+      "poi_count": 10,
+      "categories": [
+        "Activity",
+        "Cafe",
+        "Hotel",
+        "Restaurant",
+        "Shopping"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "711-samui",
+      "url": "/711-samui/",
+      "title": "7-Eleven Koh Samui — All Stores",
+      "description": "Complete map of 7-Eleven convenience stores on Koh Samui, Thailand. 65 locations across Chaweng, Lamai, Bophut, Maenam, Nathon, Choeng Mon, Hua Thanon and more — open 24/7. Coordinates sourced from OpenStreetMap.",
+      "emoji": "🏪",
+      "section": "curated",
+      "weight": 40,
+      "accent_color": "#00a651",
+      "tags": [
+        "🏪 65 stores",
+        "🗺️ OSM data",
+        "🕐 24h open"
+      ],
+      "poi_count": 98,
+      "categories": [
+        "Convenience"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "malaysia-mai-2026",
+      "url": "/malaysia-mai-2026/",
+      "title": "Malaisie — Mai 2026",
+      "description": "Itinéraire familial Surat Thani → Ipoh → Iskandar Puteri → Malacca → Cameron Highlands → retour Thaïlande. 3 semaines, 4 étapes, Legoland et Singapour.",
+      "emoji": "🚂",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🛤️ Route",
+        "📅 Timeline",
+        "🏙️ 8 Stops"
+      ],
+      "poi_count": 9,
+      "categories": [
+        "Départ",
+        "Excursion",
+        "Transit",
+        "_route",
+        "Étape"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "go-kart-world-tour",
+      "url": "/go-kart-world-tour/",
+      "title": "Go-Kart World Tour",
+      "description": "12 karting venues across France, Vietnam, China, Japan and Thailand — from indoor circuits to drift trikes and electric karts.",
+      "emoji": "🏎️",
+      "section": "curated",
+      "weight": 60,
+      "accent_color": "#e53e3e",
+      "tags": [
+        "🏎️ Karting",
+        "🇫🇷🇻🇳🇨🇳🇯🇵🇹🇭 5 countries",
+        "⚡ Drift"
+      ],
+      "poi_count": 12,
+      "categories": [
+        "Drift",
+        "Gaming",
+        "Karting",
+        "Park"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "where-do-i-stay-in-koh-samui",
+      "url": "/where-do-i-stay-in-koh-samui/",
+      "title": "Where do i stay in Koh Samui ?",
+      "description": "Locations mentioned in r/kohsamui: Where do i stay in Koh Samui ?",
+      "emoji": "🌴",
+      "section": "community",
+      "weight": 10,
+      "accent_color": "#ff4500",
+      "tags": [
+        "🤖 AI-extracted",
+        "📍 5 locations",
+        "r/kohsamui"
+      ],
+      "poi_count": 5,
+      "categories": [
+        "Place",
+        "Resort",
+        "Villa"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "roadtrip-phuket-krabi-koh-yao-yai-phuket",
+      "url": "/roadtrip-phuket-krabi-koh-yao-yai-phuket/",
+      "title": "Roadtrip : Phuket > Krabi > Koh Yao Yai > Phuket",
+      "description": "Locations mentioned in r/ThailandTourism: Roadtrip : Phuket > Krabi > Koh Yao Yai > Phuket",
+      "emoji": "🛵",
+      "section": "community",
+      "weight": 20,
+      "accent_color": "#ff4500",
+      "tags": [
+        "🤖 AI-extracted",
+        "r/ThailandTourism",
+        "🗺️ Route"
+      ],
+      "poi_count": 10,
+      "categories": [
+        "Beach",
+        "City",
+        "Hotel",
+        "Pier",
+        "Resort",
+        "Viewpoint"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "fishing-boat",
+      "url": "/fishing-boat/",
+      "title": "Gulf of Thailand Fishing Expedition",
+      "description": "A 2-day fishing boat expedition from Koh Samui into the Gulf of Thailand — red snapper, tuna, overnight anchorage. TopoJSON demo with route + waypoints.",
+      "emoji": "⚓",
+      "section": "demo",
+      "weight": 10,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "📐 TopoJSON",
+        "🎣 Routes + Waypoints",
+        "🗺️ GPX export"
+      ],
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": false
+    }
+  ]
+}
