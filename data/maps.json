@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-04-22T03:07:37.791077+00:00",
-    "map_count": 9,
+    "generated_at": "2026-04-24T09:13:37.054597+00:00",
+    "map_count": 10,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -216,6 +216,20 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
+    },
+    {
+      "slug": "paris-2026-04-24",
+      "url": "/paris-2026-04-24/",
+      "title": "Paris, France — Recently Reviewed",
+      "description": "0 venues reviewed in last 7 days",
+      "emoji": "📍",
+      "section": "community",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": true
     }
   ]
 }
