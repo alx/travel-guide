@@ -1,6 +1,6 @@
 ---
 title: "Lamai, Koh Samui, Thailand — Recently Reviewed Spots"
-description: "6 food & drink venues reviewed in the last 30 days. Generated from Google Maps reviews."
+description: "5 food & drink venues reviewed in the last 30 days. Generated from Google Maps reviews."
 emoji: "📍"
 section: "community"
 weight: 50
