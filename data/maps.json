@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-04-22T03:07:37.791077+00:00",
+    "generated_at": "2026-04-24T09:06:49.671404+00:00",
     "map_count": 9,
     "generator": "scripts/generate_map_index.py"
   },
@@ -27,37 +27,6 @@
         "Beach",
         "Restaurant",
         "Shopping"
-      ],
-      "has_geojson": true
-    },
-    {
-      "slug": "lamai",
-      "url": "/lamai/",
-      "title": "Lamai Beach — Local Spots & Hidden Gems",
-      "description": "Curated map of Lamai Beach, Koh Samui: local restaurants, Muay Thai gyms, fresh markets, beachfront bars, spas, and natural landmarks — away from the Chaweng crowds.",
-      "emoji": "🏖️",
-      "section": "curated",
-      "weight": 20,
-      "accent_color": "#1a3a5c",
-      "tags": [
-        "🏖️ Beaches",
-        "🍽️ Restaurants",
-        "💆 Wellness"
-      ],
-      "poi_count": 28,
-      "categories": [
-        "Bakery",
-        "Bar",
-        "Beach",
-        "Café",
-        "Fitness",
-        "Landmark",
-        "Market",
-        "Muay Thai",
-        "Restaurant",
-        "Shopping",
-        "Spa",
-        "Temple"
       ],
       "has_geojson": true
     },
@@ -216,6 +185,26 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
+    },
+    {
+      "slug": "lamai",
+      "url": "/lamai/",
+      "title": "Lamai, Koh Samui, Thailand — Recently Reviewed",
+      "description": "5 venues reviewed in last 30 days",
+      "emoji": "📍",
+      "section": "community",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "Bar",
+        "Restaurant"
+      ],
+      "poi_count": 5,
+      "categories": [
+        "Bar",
+        "Restaurant"
+      ],
+      "has_geojson": true
     }
   ]
 }
