@@ -1,9 +1,9 @@
 ---
-title: "Lamai Beach — Local Spots & Hidden Gems"
-description: "Curated map of Lamai Beach, Koh Samui: local restaurants, Muay Thai gyms, fresh markets, beachfront bars, spas, and natural landmarks — away from the Chaweng crowds."
-emoji: "🏖️"
-section: "curated"
-weight: 20
+title: "Lamai, Koh Samui, Thailand — Recently Reviewed Spots"
+description: "6 food & drink venues reviewed in the last 30 days. Generated from Google Maps reviews."
+emoji: "📍"
+section: "community"
+weight: 50
 accent_color: "#1a3a5c"
-tags: ["🏖️ Beaches", "🍽️ Restaurants", "💆 Wellness"]
+tags: ["Bar", "Restaurant"]
 ---
