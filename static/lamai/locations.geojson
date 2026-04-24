@@ -28,26 +28,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          100.0612974,
-          9.4727379
-        ]
-      },
-      "properties": {
-        "name": "Lamai Thai food",
-        "category": "Restaurant",
-        "icon": "🍜",
-        "notes": "Recently reviewed: Eat, give 5 stars, and eat again. The best service, top quality food, amazing service, i strongly recommend this restaurant!!!",
-        "coord_source": "google_maps_pin",
-        "coord_accuracy": "high",
-        "hours": "Monday: 12:00 PM – 12:00 AM"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "lamai-002",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           100.0426835,
           9.4629528
         ]
@@ -64,7 +44,7 @@
     },
     {
       "type": "Feature",
-      "id": "lamai-003",
+      "id": "lamai-002",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -85,7 +65,7 @@
     },
     {
       "type": "Feature",
-      "id": "lamai-004",
+      "id": "lamai-003",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -107,7 +87,7 @@
     },
     {
       "type": "Feature",
-      "id": "lamai-005",
+      "id": "lamai-004",
       "geometry": {
         "type": "Point",
         "coordinates": [
