@@ -91,7 +91,7 @@ jobs:
       - name: Generate map screenshots
         if: steps.slugs.outputs.found == 'true'
         run: |
-          node scripts/generate-map-previews.js ${{ steps.slugs.outputs.slugs }}
+          node scripts/ci/generate-map-previews.js ${{ steps.slugs.outputs.slugs }}
         env:
           PREVIEW_BASE_URL: http://localhost:1414
 
