@@ -1,0 +1,516 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-28T09:38:17.632613+00:00",
+    "source": "OSM Overpass + Google Places — https://www.airbnb.fr/rooms/1369287976724904445",
+    "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445",
+    "center": {
+      "lat": 1.4644,
+      "lon": 103.7273
+    },
+    "radius_m": 1000
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7274656,
+          1.4647407
+        ]
+      },
+      "properties": {
+        "name": "Oh My Store",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.727468,
+          1.4648268
+        ]
+      },
+      "properties": {
+        "name": "Hongtai China Market宏泰中国超市",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7278817,
+          1.4648903
+        ]
+      },
+      "properties": {
+        "name": "168中国超市",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72672730000001,
+          1.4650305
+        ]
+      },
+      "properties": {
+        "name": "Azah Aziz Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7264513,
+          1.4651309000000001
+        ]
+      },
+      "properties": {
+        "name": "KK SUPER MART Johor, Danga Bay (JDB)",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7284554,
+          1.4645823
+        ]
+      },
+      "properties": {
+        "name": "Grand Kitchen",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72650639999999,
+          1.4653391999999998
+        ]
+      },
+      "properties": {
+        "name": "Faaz Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7265185,
+          1.4653737
+        ]
+      },
+      "properties": {
+        "name": "Noble Supermart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72863439999999,
+          1.4641655000000002
+        ]
+      },
+      "properties": {
+        "name": "Health Lane Family Pharmacy Danga",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7284488,
+          1.463218
+        ]
+      },
+      "properties": {
+        "name": "AEON Danga Bay",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7289875,
+          1.4643046
+        ]
+      },
+      "properties": {
+        "name": "myNEWS @ Baypoint Shopping Mall (G Floor)",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72902030000002,
+          1.4642404
+        ]
+      },
+      "properties": {
+        "name": "The Baskit Grocer",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7266368,
+          1.4700837999999998
+        ]
+      },
+      "properties": {
+        "name": "Batper projeckt",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7260742,
+          1.4639754
+        ]
+      },
+      "properties": {
+        "name": "Country garden dangabay beach",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72902030000002,
+          1.4642404
+        ]
+      },
+      "properties": {
+        "name": "Beletime Danga Bay",
+        "category": "Playground",
+        "icon": "🛝",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7297317,
+          1.464387
+        ]
+      },
+      "properties": {
+        "name": "Opposite M-Suites",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72975,
+          1.4645299999999999
+        ]
+      },
+      "properties": {
+        "name": "Beletime / OPP M-Suites",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7297574,
+          1.4644139999999999
+        ]
+      },
+      "properties": {
+        "name": "Beletime Danga Bay",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72993,
+          1.4647299999999999
+        ]
+      },
+      "properties": {
+        "name": "Opp Beletime / M-Suites",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.731573,
+          1.4631939999999999
+        ]
+      },
+      "properties": {
+        "name": "After International School of Johor",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.73155,
+          1.46304
+        ]
+      },
+      "properties": {
+        "name": "Johor International School",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.731507,
+          1.462704
+        ]
+      },
+      "properties": {
+        "name": "Opp International School of Johor",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.73158,
+          1.4627999999999999
+        ]
+      },
+      "properties": {
+        "name": "Opp Johor International School",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72483,
+          1.47297
+        ]
+      },
+      "properties": {
+        "name": "Danga Bay Marina Club",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-1-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72927589999999,
+          1.4640609999999998
+        ]
+      },
+      "properties": {
+        "name": "Mr Player Danga Bay",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1369287976724904445"
+      }
+    }
+  ]
+}
