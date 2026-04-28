@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-04-22T03:07:37.791077+00:00",
-    "map_count": 9,
+    "generated_at": "2026-04-28T01:36:28.911078+00:00",
+    "map_count": 10,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -216,6 +216,32 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
+    },
+    {
+      "slug": "ipoh-airbnb",
+      "url": "/ipoh-airbnb/",
+      "title": "Ipoh — Autour de l'Airbnb",
+      "description": "Supermarchés, parcs, aires de jeux, transports et activités pour enfants à 2 km de l'Airbnb à Ipoh, Perak (Malaisie).",
+      "emoji": "🏠",
+      "section": "community",
+      "weight": 55,
+      "accent_color": "#1a6b3c",
+      "tags": [
+        "🛒 Supermarché",
+        "🌳 Parcs",
+        "🛝 Aires de jeux",
+        "🚌 Transports",
+        "🎠 Activités"
+      ],
+      "poi_count": 98,
+      "categories": [
+        "Supermarket",
+        "Park",
+        "Playground",
+        "Transit",
+        "Activity"
+      ],
+      "has_geojson": true
     }
   ]
 }
