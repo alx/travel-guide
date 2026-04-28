@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 VALID_COORD_SOURCES = {
-    "google_maps_pin", "google_places", "nominatim", "research", "estimated", "on_site_gps"
+    "google_maps_pin", "google_places", "nominatim", "research", "estimated", "on_site_gps", "osm"
 }
 VALID_COORD_ACCURACIES = {"high", "medium", "low"}
 
@@ -28,6 +28,7 @@ errors = []
 warnings = []
 all_ids = {}  # id -> file path, for uniqueness check
 
+repo_root = Path(__file__).parent.parent.parent
 
 def err(path, msg):
     errors.append(f"  ERROR  {path}: {msg}")
@@ -38,7 +39,7 @@ def warn(path, msg):
 
 
 def validate_file(fpath: Path):
-    rel = fpath.relative_to(Path(__file__).parent.parent)
+    rel = fpath.relative_to(repo_root)
 
     # 1. JSON syntax
     try:
@@ -121,7 +122,6 @@ def validate_file(fpath: Path):
 
 
 def main():
-    repo_root = Path(__file__).parent.parent
     geojson_files = sorted(repo_root.glob("static/**/locations.geojson"))
 
     if not geojson_files:
