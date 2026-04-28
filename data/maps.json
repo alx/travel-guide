@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-04-28T01:36:28.911078+00:00",
-    "map_count": 10,
+    "generated_at": "2026-04-28T09:38:25.078567+00:00",
+    "map_count": 11,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -240,6 +240,32 @@
         "Playground",
         "Transit",
         "Activity"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "airbnb-malaysia-202605-johor-bahru-1",
+      "url": "/airbnb-malaysia-202605-johor-bahru-1/",
+      "title": "Airbnb - Malaysia - Johor Bahru - Choice 1",
+      "description": "25 POIs within 1.0 km of the Airbnb listing. Source: OSM Overpass.",
+      "emoji": "🏠",
+      "section": "community",
+      "weight": 55,
+      "accent_color": "#1a6b3c",
+      "tags": [
+        "🛒 Supermarket",
+        "🌳 Park",
+        "🛝 Playground",
+        "🚌 Transit",
+        "🎠 Activity"
+      ],
+      "poi_count": 25,
+      "categories": [
+        "Activity",
+        "Park",
+        "Playground",
+        "Supermarket",
+        "Transit"
       ],
       "has_geojson": true
     }
