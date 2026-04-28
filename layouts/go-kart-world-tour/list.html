@@ -1,0 +1,290 @@
+{{ define "head" }}
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header h1 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .overlay-card .page-header p  { font-size: 0.8rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  #list-toggle { display: none; }
+
+  /* Country flag strip */
+  .country-strip { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .country-chip { font-size: 0.68rem; padding: 0.1rem 0.45rem; border-radius: 20px; background: #f0f4ff; color: #1a3a5c; font-weight: 500; }
+
+  /* Category filters */
+  .filter-btn { padding: 0.28rem 0.65rem; border-radius: 20px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.76rem; font-weight: 500; transition: all 0.15s; }
+  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  #filter-btns { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+
+  /* Search */
+  .search-box { width: 100%; padding: 0.42rem 0.7rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.84rem; }
+  .search-box:focus { outline: none; border-color: #1a3a5c; }
+
+  /* POI cards */
+  .poi-card { background: white; border-radius: 10px; padding: 0.72rem 0.85rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.87rem; font-weight: 600; margin-bottom: 0.1rem; }
+  .poi-card .poi-country { font-size: 0.72rem; color: #888; margin-bottom: 0.25rem; }
+  .poi-card .poi-desc { font-size: 0.74rem; color: #555; line-height: 1.45; margin-bottom: 0.35rem; }
+  .poi-card .poi-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .poi-card .poi-actions a { font-size: 0.72rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .cat-badge { display: inline-block; font-size: 0.66rem; padding: 0.1rem 0.42rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.2rem; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🏎️ Go-Kart World Tour</h1>
+      <p>12 venues · 5 countries · 3 continents</p>
+    </div>
+    <div class="country-strip">
+      <span class="country-chip">🇫🇷 France</span>
+      <span class="country-chip">🇻🇳 Vietnam</span>
+      <span class="country-chip">🇨🇳 China</span>
+      <span class="country-chip">🇯🇵 Japan</span>
+      <span class="country-chip">🇹🇭 Thailand</span>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">📍 Places</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable">
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search venues…" oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+<button class="embed-overlay-toggle" id="overlay-toggle-btn" title="Show list">☰</button>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: "Go-Kart World Tour",
+  geojsonUrl: '{{ "/go-kart-world-tour/locations.geojson" | relURL }}',
+  embedPath: '/go-kart-world-tour/',
+};
+
+const CAT_COLORS = {
+  "Karting": "#e53e3e",
+  "Gaming":  "#805ad5",
+  "Park":    "#38a169",
+  "Drift":   "#dd6b20",
+};
+const CAT_ICONS = {
+  "Karting": "🏎️",
+  "Gaming":  "🎮",
+  "Park":    "🌿",
+  "Drift":   "⚡",
+};
+window._mapCategoryColors = CAT_COLORS;
+window._mapCategoryIcons  = CAT_ICONS;
+
+let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+
+// World-view initial position — centred on Southeast Asia to show most pins
+map = L.map('map').setView([24, 100], 4);
+window._leafletMap = map;
+
+function clearFocus() {
+  if (activeCard !== null) {
+    document.getElementById('card-' + activeCard)?.classList.remove('active');
+    activeCard = null;
+  }
+}
+let _flyingTo = false;
+map.on('click', clearFocus);
+map.on('dragstart',  () => { if (!_flyingTo) clearFocus(); });
+map.on('zoomstart',  () => { if (!_flyingTo) clearFocus(); });
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors',
+  maxZoom: 19,
+}).addTo(map);
+
+function makeIcon(p) {
+  const color = CAT_COLORS[p.category] || '#1a3a5c';
+  const icon  = p.icon || CAT_ICONS[p.category] || '📍';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 2px 8px rgba(0,0,0,0.35);border:2.5px solid white;">${icon}</div>`,
+    iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -20],
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
+  map.flyTo([lat, lng], 14, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  if (markers[f._id]) markers[f._id].openPopup();
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function renderSidebar() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const list   = document.getElementById('poi-list');
+  list.innerHTML = '';
+
+  const visible = allPOIs.filter(f => {
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchQ   = !search || p.name.toLowerCase().includes(search)
+                              || (p.country || '').toLowerCase().includes(search)
+                              || (p.city || '').toLowerCase().includes(search);
+    return matchCat && matchQ;
+  });
+
+  if (!visible.length) {
+    list.innerHTML = '<p style="color:#888;font-size:0.83rem;padding:0.5rem;">No venues match.</p>';
+    return;
+  }
+
+  visible.forEach(f => {
+    const p = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const color = CAT_COLORS[p.category] || '#1a3a5c';
+    const card  = document.createElement('div');
+    card.className = 'poi-card';
+    card.id = 'card-' + f._id;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${p.icon || '📍'} ${p.category}</span>
+      <h3>${p.name}</h3>
+      <div class="poi-country">📍 ${p.city || ''}, ${p.country || ''}</div>
+      <div class="poi-desc">${p.description || ''}</div>
+      <div class="poi-actions">
+        <a href="geo:${lat},${lng}">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function filterPOIs() { renderSidebar(); updateMarkers(); }
+
+function updateMarkers() {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+
+  const search = document.getElementById('search').value.toLowerCase();
+  allPOIs.filter(f => {
+    const p = f.properties;
+    return (activeFilter === 'All' || p.category === activeFilter)
+        && (!search || p.name.toLowerCase().includes(search)
+                    || (p.country || '').toLowerCase().includes(search)
+                    || (p.city || '').toLowerCase().includes(search));
+  }).forEach(f => {
+    const p = f.properties;
+    const [lng, lat] = f.geometry.coordinates;
+    const color = CAT_COLORS[p.category] || '#1a3a5c';
+    const m = L.marker([lat, lng], { icon: makeIcon(p) }).addTo(map)
+      .bindPopup(`<b>${p.name}</b><br><small style="color:${color};font-weight:600;">${p.category}</small><br><small style="color:#888;">${p.city}, ${p.country}</small>`);
+    m.on('click', () => focusPOI(f));
+    markers[f._id] = m;
+  });
+}
+
+function setupFilters(pois) {
+  const cats = ['All', ...Object.keys(CAT_COLORS)];
+  const container = document.getElementById('filter-btns');
+  container.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+    const icon = cat === 'All' ? '' : (CAT_ICONS[cat] + ' ');
+    btn.textContent = icon + cat;
+    btn.onclick = () => {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterPOIs();
+    };
+    container.appendChild(btn);
+  });
+}
+
+fetch(window.MAP_CONFIG.geojsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+    setupFilters(allPOIs);
+    renderSidebar();
+    updateMarkers();
+    // Fit to all markers
+    if (Object.keys(markers).length) {
+      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.1));
+      // Compensate for the sidebar in desktop view
+      if (document.documentElement.classList.contains('embed-mode') && window.innerWidth > 768) {
+        map.once('moveend', () => map.panBy([-170, 0], { animate: false }));
+      }
+    }
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML =
+      '<p style="color:#888;font-size:0.85rem;padding:1rem;">Could not load venue data.</p>';
+  });
+
+// Embed overlay toggle
+(function () {
+  if (!document.documentElement.classList.contains('embed-mode')) return;
+  const overlay = document.querySelector('.map-overlay');
+  const btn = document.getElementById('overlay-toggle-btn');
+  if (!overlay || !btn) return;
+  function setOverlay(open) {
+    overlay.style.display = open ? 'flex' : 'none';
+    btn.textContent = open ? '✕' : '☰';
+    btn.title = open ? 'Hide list' : 'Show list';
+  }
+  btn.addEventListener('click', () => {
+    setOverlay(overlay.style.display === 'none' || overlay.style.display === '');
+  });
+  setOverlay(new URLSearchParams(location.search).get('overlay') === '1');
+})();
+</script>
+{{ partial "map-geolocation.html" . }}
+{{ end }}
