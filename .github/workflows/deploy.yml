@@ -38,6 +38,9 @@ jobs:
       - name: Validate GeoJSON
         run: python3 scripts/ci/validate_geojson.py
 
+      - name: Generate map index
+        run: python3 scripts/generate_map_index.py
+
       - name: Build site
         run: hugo --minify
 

@@ -1,0 +1,1976 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-28T01:33:59.689308+00:00",
+    "source": "OSM Overpass + Google Places — https://www.airbnb.fr/rooms/1612148974271274765",
+    "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765",
+    "center": {
+      "lat": 4.588657,
+      "lon": 101.095776
+    },
+    "radius_m": 2000.0
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0899074,
+          4.5924929
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0908733,
+          4.5836056
+        ]
+      },
+      "properties": {
+        "name": "The Store",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0899351,
+          4.5925968
+        ]
+      },
+      "properties": {
+        "name": "FamilyMart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0895068,
+          4.5839643
+        ]
+      },
+      "properties": {
+        "name": "Great World Centre",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0898537,
+          4.5956615
+        ]
+      },
+      "properties": {
+        "name": "Jaya Grocer",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.086256,
+          4.5924792
+        ]
+      },
+      "properties": {
+        "name": "CU",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0953967,
+          4.5991041
+        ]
+      },
+      "properties": {
+        "name": "16 Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0955499,
+          4.5991219
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0867889,
+          4.5830663
+        ]
+      },
+      "properties": {
+        "name": "Ee Chan Convenience Store Sdn. Bhd.",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0925207,
+          4.5987187
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0961634,
+          4.5995691
+        ]
+      },
+      "properties": {
+        "name": "FamilyMart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0916037,
+          4.5987919
+        ]
+      },
+      "properties": {
+        "name": "Night nkt",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0844965,
+          4.5908258
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0961194,
+          4.6001198
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0962288,
+          4.5771008
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0847436,
+          4.5924436
+        ]
+      },
+      "properties": {
+        "name": "Sin Yee Huat",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0854039,
+          4.5940631
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0842291,
+          4.5907567
+        ]
+      },
+      "properties": {
+        "name": "Seven-Eleven 7-11",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0937037,
+          4.6005262
+        ]
+      },
+      "properties": {
+        "name": "Guardian",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0847103,
+          4.5936576
+        ]
+      },
+      "properties": {
+        "name": "KK Super Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.085032,
+          4.5947946
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0869124,
+          4.5973146
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0845429,
+          4.5939228
+        ]
+      },
+      "properties": {
+        "name": "myNEWS.com",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0857577,
+          4.5965403
+        ]
+      },
+      "properties": {
+        "name": "SAVE",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0842517,
+          4.5943978
+        ]
+      },
+      "properties": {
+        "name": "Taste",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0860174,
+          4.5974453
+        ]
+      },
+      "properties": {
+        "name": "KK Super Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0826619,
+          4.5914256
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0833816,
+          4.5955062
+        ]
+      },
+      "properties": {
+        "name": "MiX",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0838999,
+          4.5964357
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1065041,
+          4.5983624
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0940296,
+          4.6031694
+        ]
+      },
+      "properties": {
+        "name": "Econsave",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0851013,
+          4.5990565
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0818897,
+          4.582446
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1023334,
+          4.6026082
+        ]
+      },
+      "properties": {
+        "name": "Kedai Serbaneka Pernama",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0834273,
+          4.5979441
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0838643,
+          4.5994289
+        ]
+      },
+      "properties": {
+        "name": "The Store",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0813871,
+          4.59651
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0813196,
+          4.5964417
+        ]
+      },
+      "properties": {
+        "name": "KK Super Mart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.10359,
+          4.5742159
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1110329,
+          4.595238
+        ]
+      },
+      "properties": {
+        "name": "Street mkt",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0822179,
+          4.5782984
+        ]
+      },
+      "properties": {
+        "name": "99 Speedmart",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0816617,
+          4.5779578
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0826907,
+          4.6009669
+        ]
+      },
+      "properties": {
+        "name": "Vintage market",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0911277,
+          4.5988137
+        ]
+      },
+      "properties": {
+        "name": "Dataran Ipoh",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0911876,
+          4.5720853
+        ]
+      },
+      "properties": {
+        "name": "Taman Pinggir Sungai Pasir Pinji",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0792445,
+          4.5940543
+        ]
+      },
+      "properties": {
+        "name": "People's Park",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1116985,
+          4.596123
+        ]
+      },
+      "properties": {
+        "name": "Taman Rekreasi Sultan Abdul Aziz",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0834559,
+          4.6041474
+        ]
+      },
+      "properties": {
+        "name": "Taman D.R Seenivasagam",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0947315,
+          4.5892752
+        ]
+      },
+      "properties": {
+        "name": "Impiana Hotel",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0937901,
+          4.5895143
+        ]
+      },
+      "properties": {
+        "name": "Impiana Hotel",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0962996,
+          4.5941768
+        ]
+      },
+      "properties": {
+        "name": "KPJ Ipoh",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0944968,
+          4.5832051
+        ]
+      },
+      "properties": {
+        "name": "Quest International University Perak",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.096174,
+          4.5943767
+        ]
+      },
+      "properties": {
+        "name": "KPJ Ipoh",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0962028,
+          4.5828125
+        ]
+      },
+      "properties": {
+        "name": "SMJK Perempuan Perak",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.091282,
+          4.5843712
+        ]
+      },
+      "properties": {
+        "name": "The Store / Econsave",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0898609,
+          4.5843956
+        ]
+      },
+      "properties": {
+        "name": "The Store / Econsave",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1004888,
+          4.5818303
+        ]
+      },
+      "properties": {
+        "name": "PCSH",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-058",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1008638,
+          4.5819465
+        ]
+      },
+      "properties": {
+        "name": "PCSH",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.089637,
+          4.5950307
+        ]
+      },
+      "properties": {
+        "name": "08 WEIL Hotel / Ipoh Parade",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0896325,
+          4.5950545
+        ]
+      },
+      "properties": {
+        "name": "Ipoh Parade",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0953405,
+          4.5985422
+        ]
+      },
+      "properties": {
+        "name": "CIMB Bank Greentown",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0864159,
+          4.591991
+        ]
+      },
+      "properties": {
+        "name": "Eu Yan Sang Jalan Sultan Iskandar",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0896389,
+          4.5977549
+        ]
+      },
+      "properties": {
+        "name": "Ipoh Parade",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-064",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0845574,
+          4.5870782
+        ]
+      },
+      "properties": {
+        "name": "SKMGS",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0855489,
+          4.5948453
+        ]
+      },
+      "properties": {
+        "name": "10 Octagon (Yau Tet Shin Market)",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-066",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0993578,
+          4.6009498
+        ]
+      },
+      "properties": {
+        "name": "Wisma Perkeso",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0843998,
+          4.5954983
+        ]
+      },
+      "properties": {
+        "name": "09 Gerbang Malam",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0824394,
+          4.5897594
+        ]
+      },
+      "properties": {
+        "name": "Sri Maju Bus Station",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-069",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0825816,
+          4.5911868
+        ]
+      },
+      "properties": {
+        "name": "Taiwa",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0826166,
+          4.5916324
+        ]
+      },
+      "properties": {
+        "name": "11 The Majestic",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-071",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0847965,
+          4.5967449
+        ]
+      },
+      "properties": {
+        "name": "Gerbang Malam / Pekan Baru 2",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0847617,
+          4.5967449
+        ]
+      },
+      "properties": {
+        "name": "07 Brewster Road",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-073",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0835935,
+          4.594941
+        ]
+      },
+      "properties": {
+        "name": "Kamdar Jalan Raja Musa Aziz",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-074",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0959982,
+          4.6025442
+        ]
+      },
+      "properties": {
+        "name": "Flat Ashby Road",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-075",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0839119,
+          4.5960672
+        ]
+      },
+      "properties": {
+        "name": "Medan Selera Taman Kanak-Kanak",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-076",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.081734,
+          4.5895036
+        ]
+      },
+      "properties": {
+        "name": "Sri Maju",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-077",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0961233,
+          4.6027884
+        ]
+      },
+      "properties": {
+        "name": "Flat Ashby Road",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-078",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0949416,
+          4.6031708
+        ]
+      },
+      "properties": {
+        "name": "Angsana Mall",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-079",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0829437,
+          4.5961425
+        ]
+      },
+      "properties": {
+        "name": "UTC Ipoh Perak",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.094919,
+          4.6034771
+        ]
+      },
+      "properties": {
+        "name": "Angsana Mall",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-081",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0863135,
+          4.6002401
+        ]
+      },
+      "properties": {
+        "name": "Jalan Dato' Seri Ahmad Said",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0812012,
+          4.5940165
+        ]
+      },
+      "properties": {
+        "name": "Hugh Low Street",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0819744,
+          4.5808281
+        ]
+      },
+      "properties": {
+        "name": "SMK Jalan Pasir Puteh",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0813437,
+          4.5954462
+        ]
+      },
+      "properties": {
+        "name": "Pasar Ayam Amanjaya Ipoh",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0864717,
+          4.601777
+        ]
+      },
+      "properties": {
+        "name": "Klinik Greentown",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0862655,
+          4.6018849
+        ]
+      },
+      "properties": {
+        "name": "Klinik Greentown",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-087",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0907347,
+          4.6042647
+        ]
+      },
+      "properties": {
+        "name": "Hospital Raja Permaisuri Bainun",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-088",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0906947,
+          4.6045136
+        ]
+      },
+      "properties": {
+        "name": "Hospital Raja Permaisuri Bainun",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-089",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0796358,
+          4.5944566
+        ]
+      },
+      "properties": {
+        "name": "12 Panglima Kinta Mosque",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0882595,
+          4.6042177
+        ]
+      },
+      "properties": {
+        "name": "SMK Anderson",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-091",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1028347,
+          4.5912596
+        ]
+      },
+      "properties": {
+        "name": "Perak Turf Club",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.101917,
+          4.5822547
+        ]
+      },
+      "properties": {
+        "name": "Lok Lum Club",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-093",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0860996,
+          4.5888319
+        ]
+      },
+      "properties": {
+        "name": "Kelab Rekreasi Cina Perak",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-094",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.102166,
+          4.580803
+        ]
+      },
+      "properties": {
+        "name": "Ipoh City & Country Club",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-095",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0872267,
+          4.5820638
+        ]
+      },
+      "properties": {
+        "name": "Persatuan Chee Fee Tai-Chi Choy-Lee-Fat",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-096",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.0801705,
+          4.5897048
+        ]
+      },
+      "properties": {
+        "name": "Kelab Ipoh Diraja",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-097",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1085374,
+          4.5787037
+        ]
+      },
+      "properties": {
+        "name": "Ipoh Swimming Club",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-nearby-098",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.1019152,
+          4.6086084
+        ]
+      },
+      "properties": {
+        "name": "Kompleks Sukan Dewan Bandaraya Ipoh",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1612148974271274765"
+      }
+    }
+  ]
+}

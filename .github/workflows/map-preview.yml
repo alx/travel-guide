@@ -97,6 +97,7 @@ jobs:
 
       # ── 6. Commit screenshots to the PR branch ───────────────────────────
       - name: Commit previews
+        id: commit_previews
         if: steps.slugs.outputs.found == 'true'
         run: |
           git config user.name  "github-actions[bot]"
@@ -104,9 +105,11 @@ jobs:
           git add .github/previews/
           if git diff --staged --quiet; then
             echo "No preview changes to commit."
+            echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           else
             git commit -m "ci: auto-generate map previews for ${{ steps.slugs.outputs.slugs }} [skip ci]"
             git push origin ${{ github.head_ref }}
+            echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           fi
 
       # ── 7. Post / update preview comment on the PR ───────────────────────
@@ -118,7 +121,9 @@ jobs:
             const slugs = '${{ steps.slugs.outputs.slugs }}'.trim().split(/\s+/).filter(Boolean);
             const { owner, repo } = context.repo;
             const pr = context.payload.pull_request.number;
-            const sha = context.payload.pull_request.head.sha;
+            // Use the SHA *after* the screenshot commit, not the trigger SHA.
+            // If no new commit was made the value is still the current HEAD.
+            const sha = '${{ steps.commit_previews.outputs.sha }}';
 
             // Build comment body — one image per changed map
             let body = '## 🗺️ Map Previews\n\n';
