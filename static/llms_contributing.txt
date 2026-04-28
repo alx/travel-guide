@@ -151,3 +151,88 @@ The script:
 7. Optionally posts a comment on the original Reddit submission linking to the map
 
 See `llms_geocoding.txt` for the geocoding cascade details and API documentation.
+
+### Auto-generating a nearby POI map from an Airbnb listing
+
+Use `scripts/airbnb_env/airbnb_nearby.py` to find family-friendly POIs near an
+Airbnb and publish them as a live map in one command.
+
+**Prerequisites**
+
+- `uv` installed (`pip install uv`)
+- `GITHUB_TOKEN` in `.env` (repo scope) — only required with `--pr`
+- `GOOGLE_MAPS_API_KEY` in `.env` — optional; enables Google Places fallback on top of OSM
+
+**Finding the Google Maps URL**
+
+On the Airbnb listing page, click **"Show on map"** in the host section. The
+embedded Google Maps URL contains the exact coordinates in the `?ll=` parameter:
+
+```
+https://www.google.com/maps?ll=4.588657,101.095776&z=16&t=m&hl=fr&gl=FR&mapclient=apiv3
+```
+
+Pass this as `--gmaps` for the most accurate results. Without it, the script
+falls back to scraping the Airbnb page HTML (less reliable).
+
+**Local preview (table output)**
+
+```bash
+uv run --script scripts/airbnb_env/airbnb_nearby.py \
+  https://www.airbnb.fr/rooms/1612148974271274765 \
+  --gmaps "https://www.google.com/maps?ll=4.588657,101.095776&z=16&..."
+```
+
+**Create a ready-to-merge PR in one step**
+
+```bash
+uv run --script scripts/airbnb_env/airbnb_nearby.py \
+  https://www.airbnb.fr/rooms/1612148974271274765 \
+  --gmaps "https://www.google.com/maps?ll=4.588657,101.095776&z=16&..." \
+  --slug ipoh-airbnb \
+  --title "Ipoh — Autour de l'Airbnb" \
+  --radius 2000 \
+  --pr
+```
+
+The script will:
+1. Extract coordinates from the Google Maps URL (or scrape the Airbnb page)
+2. Query **OSM Overpass** for supermarkets, parks, playgrounds, transit stops, and kid activities
+3. Optionally query **Google Places** (if `GOOGLE_MAPS_API_KEY` is set) and merge results
+4. Create branch `airbnb/{slug}` on `alx/travel-guide` (or a fork)
+5. Commit four files:
+   - `static/{slug}/locations.geojson` — POI data
+   - `content/{slug}/_index.md` — Hugo front matter
+   - `layouts/{slug}/list.html` — full Leaflet map with Airbnb pin and category filters
+   - `data/maps.json` — updated map index
+6. Open the pull request and print its URL
+
+**CLI reference**
+
+| Argument | Default | Description |
+|---|---|---|
+| `airbnb_url` | required | Airbnb listing URL — embedded as link in all outputs |
+| `--gmaps URL` | — | Google Maps embed URL (`?ll=lat,lon`) — preferred coord source |
+| `--radius METRES` | `1000` | Search radius around the listing |
+| `--output` | `table` | `table`, `json`, or `geojson` (without `--pr`) |
+| `--categories` | all | Comma-separated subset: `supermarket,park,playground,transit,activities` |
+| `--lat` / `--lon` | — | Manual coordinate override — skips all URL parsing |
+| `--no-google` | off | Disable Google Places even if API key is set |
+| `--pr` | off | Create GitHub PR |
+| `--slug SLUG` | `airbnb-{id[-8:]}` | URL slug for the map |
+| `--title TEXT` | auto | Map title in the sidebar |
+| `--description TEXT` | auto | Description in the Hugo content file |
+| `--github-token TOKEN` | `$GITHUB_TOKEN` | GitHub PAT with repo scope |
+| `--env FILE` | auto | Path to `.env` credentials file |
+
+**Coordinate resolution priority:** `--lat`/`--lon` → `--gmaps ?ll=` → Airbnb HTML scraping.
+
+**POI categories queried**
+
+| Key | Label | OSM tags |
+|---|---|---|
+| `supermarket` | 🛒 Supermarket | `shop=supermarket\|grocery\|convenience` |
+| `park` | 🌳 Park | `leisure=park\|garden` |
+| `playground` | 🛝 Playground | `leisure=playground` |
+| `transit` | 🚌 Transit | `highway=bus_stop`, `amenity=bus_station`, `railway=station\|tram_stop\|halt` |
+| `activities` | 🎠 Activity | `tourism=museum\|aquarium\|theme_park`, `leisure=swimming_pool\|water_park\|miniature_golf\|sports_centre` |
