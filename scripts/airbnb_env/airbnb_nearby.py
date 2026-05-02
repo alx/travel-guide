@@ -68,6 +68,7 @@ CATEGORIES: dict[str, dict] = {
     "supermarket": {
         "label": "Supermarket",
         "icon": "🛒",
+        "radius": 300,
         "overpass": (
             'node(around:{r},{lat},{lon})["shop"~"^(supermarket|grocery|convenience)$"];'
             'way(around:{r},{lat},{lon})["shop"~"^(supermarket|grocery|convenience)$"];'
@@ -77,6 +78,7 @@ CATEGORIES: dict[str, dict] = {
     "park": {
         "label": "Park",
         "icon": "🌳",
+        "radius": 1000,
         "overpass": (
             'node(around:{r},{lat},{lon})["leisure"~"^(park|garden)$"];'
             'way(around:{r},{lat},{lon})["leisure"~"^(park|garden)$"];'
@@ -87,6 +89,7 @@ CATEGORIES: dict[str, dict] = {
     "playground": {
         "label": "Playground",
         "icon": "🛝",
+        "radius": 1000,
         "overpass": (
             'node(around:{r},{lat},{lon})["leisure"="playground"];'
             'way(around:{r},{lat},{lon})["leisure"="playground"];'
@@ -96,6 +99,7 @@ CATEGORIES: dict[str, dict] = {
     "transit": {
         "label": "Transit",
         "icon": "🚌",
+        "radius": 300,
         "overpass": (
             'node(around:{r},{lat},{lon})["highway"="bus_stop"];'
             'node(around:{r},{lat},{lon})["amenity"="bus_station"];'
@@ -107,6 +111,7 @@ CATEGORIES: dict[str, dict] = {
     "activities": {
         "label": "Activity",
         "icon": "🎠",
+        "radius": 1000,
         "overpass": (
             'node(around:{r},{lat},{lon})["tourism"~"^(museum|aquarium|theme_park)$"];'
             'way(around:{r},{lat},{lon})["tourism"~"^(museum|aquarium|theme_park)$"];'
@@ -337,7 +342,8 @@ def _fmt_dist(metres: float) -> str:
 # ---------------------------------------------------------------------------
 
 def _overpass_query(category_key: str, lat: float, lon: float, radius: float) -> list[dict]:
-    filters = CATEGORIES[category_key]["overpass"].format(r=int(radius), lat=lat, lon=lon)
+    overpass_radius = int(CATEGORIES[category_key].get("radius", radius))
+    filters = CATEGORIES[category_key]["overpass"].format(r=overpass_radius, lat=lat, lon=lon)
     try:
         response = _overpass_api.get(
             f"({filters});",
@@ -591,7 +597,7 @@ emoji: "🏠"
 section: "community"
 weight: 55
 accent_color: "#1a6b3c"
-tags: {json.dumps(tags)}
+tags: {json.dumps(tags, ensure_ascii=False)}
 ---
 """
 

@@ -48,7 +48,7 @@
     },
     "coord_source": {
       "type": "string",
-      "enum": ["google_maps_pin", "nominatim", "research", "estimated", "on_site_gps"],
+      "enum": ["google_maps_pin", "nominatim", "research", "estimated", "on_site_gps", "osm"],
       "description": "How coordinates were obtained. 'google_maps_pin' = from a Maps share link; 'nominatim' = OSM geocoder; 'research' = cross-referenced from web sources; 'estimated' = approximate, needs verification; 'on_site_gps' = recorded on location."
     },
     "coord_accuracy": {
