@@ -50,7 +50,7 @@
   .poi-card .poi-actions a { font-size: 0.75rem; color: #1a6b3c; text-decoration: none; font-weight: 500; }
   .poi-card .poi-actions a:hover { text-decoration: underline; }
   .cat-badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem; }
-  .search-box { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; }
+  .search-box { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; margin: 0.5rem 0 0.25rem; }
   .search-box:focus { outline: none; border-color: #1a6b3c; }
   .airbnb-badge {
     background: #fff0f0; border: 1.5px solid #ff5a5f; border-radius: 8px;
@@ -89,13 +89,13 @@
       <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
       <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Places ▾':'📍 Places'">📍 Places</button>
       <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My location">📍 Location</button>
+      <button class="header-btn" onclick="window.open('https://www.airbnb.fr/rooms/1369287976724904445','_blank')">🏠 Airbnb</button>
     </div>
-    <a class="airbnb-badge" href="https://www.airbnb.fr/rooms/1369287976724904445" target="_blank">🏠 View Airbnb listing ↗</a>
     {{- partial "map-toolbar.html" . }}
-  </div>
-  <div class="overlay-card scrollable">
     <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
     <div id="filter-btns"></div>
+  </div>
+  <div class="overlay-card scrollable">
     <div id="poi-list"></div>
   </div>
 </div>
