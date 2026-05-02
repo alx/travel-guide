@@ -341,8 +341,8 @@ def _fmt_dist(metres: float) -> str:
 # Overpass
 # ---------------------------------------------------------------------------
 
-def _overpass_query(category_key: str, lat: float, lon: float) -> list[dict]:
-    overpass_radius = int(CATEGORIES[category_key]["radius"])
+def _overpass_query(category_key: str, lat: float, lon: float, radius: float) -> list[dict]:
+    overpass_radius = int(CATEGORIES[category_key].get("radius", radius))
     filters = CATEGORIES[category_key]["overpass"].format(r=overpass_radius, lat=lat, lon=lon)
     try:
         response = _overpass_api.get(
@@ -386,7 +386,7 @@ def query_overpass(categories: list[str], lat: float, lon: float, radius: float)
         if i > 0:
             time.sleep(1)
         print(f"  Querying OSM for {cat}...", file=sys.stderr)
-        results[cat] = _overpass_query(cat, lat, lon)
+        results[cat] = _overpass_query(cat, lat, lon, radius)
     return results
 
 
