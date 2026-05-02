@@ -1,0 +1,95 @@
+<style>
+  /* ── Full-viewport map mode (Windy-style) ── */
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
+
+  /* Floating left sidebar */
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header { margin: 0; }
+  .overlay-card .page-header h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .overlay-card .page-header p { font-size: 0.82rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  /* Toolbar hidden by default — toggled via header button */
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  #list-toggle { display: none; }
+
+  /* Filter + POI cards */
+  .filter-btn {
+    padding: 0.35rem 0.75rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: all 0.15s;
+  }
+  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  .filter-btn.vip-btn { border-color: #f59e0b; }
+  .filter-btn.vip-btn.active { background: #f59e0b; color: white; border-color: #f59e0b; }
+  #filter-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .poi-card {
+    background: white; border-radius: 10px; padding: 0.85rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0;
+  }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .poi-card .poi-addr { font-size: 0.78rem; color: #555; line-height: 1.4; }
+  .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .poi-card .poi-actions a { font-size: 0.75rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .poi-card .poi-actions a:hover { text-decoration: underline; }
+  .cat-badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem; }
+  .search-box { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; }
+  .search-box:focus { outline: none; border-color: #1a3a5c; }
+  .poi-card.premium-card { position: relative; overflow: hidden; }
+  .poi-card.premium-card .premium-overlay {
+    position: absolute; inset: 0; background: rgba(255,255,255,0.85);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.25rem; border-radius: 10px;
+  }
+  .poi-card.premium-card .premium-overlay span { font-size: 1.5rem; }
+  .poi-card.premium-card .premium-overlay p { font-size: 0.8rem; color: #888; margin: 0; }
+  .custom-layer-badge {
+    background: #fef3c7; border: 1.5px solid #f59e0b; border-radius: 8px;
+    padding: 0.4rem 0.7rem; font-size: 0.78rem; color: #92400e; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
+  }
+  /* POI permalink / focus */
+  .poi-card.faded { opacity: 0.25; transition: opacity 0.25s; }
+  .copy-toast {
+    position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
+    background: rgba(26,58,92,0.92); color: white; padding: 0.35rem 0.9rem;
+    border-radius: 20px; font-size: 0.78rem; z-index: 9000;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
+  }
+  .copy-toast.show { opacity: 1; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    /* gap:0 removes phantom space between flex items when card is collapsed */
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card:first-child { border-radius: 0; }
+    /* padding:0 collapses card's own internal height; transitions smoothly */
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>

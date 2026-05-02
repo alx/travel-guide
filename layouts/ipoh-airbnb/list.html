@@ -97,10 +97,10 @@
     </div>
     <a class="airbnb-badge" href="https://www.airbnb.fr/rooms/1612148974271274765" target="_blank">🏠 Voir l'annonce Airbnb ↗</a>
     {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
   </div>
   <div class="overlay-card scrollable">
-    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher..." oninput="filterPOIs()">
-    <div id="filter-btns"></div>
     <div id="poi-list"></div>
   </div>
 </div>

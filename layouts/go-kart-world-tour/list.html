@@ -85,10 +85,10 @@
       <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">📍 Places</button>
     </div>
     {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
   </div>
   <div class="overlay-card scrollable">
-    <input class="search-box" type="text" id="search" placeholder="🔍 Search venues…" oninput="filterPOIs()">
-    <div id="filter-btns"></div>
     <div id="poi-list"></div>
   </div>
 </div>

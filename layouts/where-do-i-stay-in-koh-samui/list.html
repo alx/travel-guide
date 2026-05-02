@@ -72,10 +72,10 @@
       <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My position">📍 Me</button>
     </div>
     {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
   </div>
   <div class="overlay-card scrollable">
-    <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
-    <div id="filter-btns"></div>
     <div id="poi-list"></div>
   </div>
 </div>

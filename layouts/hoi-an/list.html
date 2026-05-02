@@ -1,103 +1,23 @@
 {{ define "head" }}
-<style>
-  /* ── Full-viewport map mode (Windy-style) ── */
-  body { overflow: hidden; }
-  .site-header, footer { display: none !important; }
-  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
-
-  /* Floating left sidebar */
-  .map-overlay {
-    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
-    width: 340px; z-index: 100;
-    display: flex; flex-direction: column; gap: 0.5rem;
-    pointer-events: none;
-  }
-  .map-overlay > * { pointer-events: all; }
-  .overlay-card {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px; padding: 0.85rem 1rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
-  }
-  .overlay-card.scrollable {
-    flex: 1; min-height: 0; overflow-y: auto;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .overlay-card .page-header { margin: 0; }
-  .overlay-card .page-header h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.25rem; }
-  .overlay-card .page-header p { font-size: 0.82rem; color: #666; }
-  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
-  .site-brand:hover { opacity: 1; }
-  /* Toolbar hidden by default — toggled via header button */
-  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
-  #map-toolbar.tb-visible { display: flex !important; }
-  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
-  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
-  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
-  #list-toggle { display: none; }
-
-  /* Filter + POI cards */
-  .filter-btn {
-    padding: 0.35rem 0.75rem; border-radius: 20px; border: 1.5px solid #ddd;
-    background: white; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: all 0.15s;
-  }
-  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
-  .filter-btn.vip-btn { border-color: #f59e0b; }
-  .filter-btn.vip-btn.active { background: #f59e0b; color: white; border-color: #f59e0b; }
-  #filter-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .poi-card {
-    background: white; border-radius: 10px; padding: 0.85rem 1rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
-    border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0;
-  }
-  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
-  .poi-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .poi-card .poi-addr { font-size: 0.78rem; color: #555; line-height: 1.4; }
-  .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .poi-card .poi-actions a { font-size: 0.75rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
-  .poi-card .poi-actions a:hover { text-decoration: underline; }
-  .cat-badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem; }
-  .search-box { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; }
-  .search-box:focus { outline: none; border-color: #1a3a5c; }
-  .poi-card.premium-card { position: relative; overflow: hidden; }
-  .poi-card.premium-card .premium-overlay {
-    position: absolute; inset: 0; background: rgba(255,255,255,0.85);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.25rem; border-radius: 10px;
-  }
-  .poi-card.premium-card .premium-overlay span { font-size: 1.5rem; }
-  .poi-card.premium-card .premium-overlay p { font-size: 0.8rem; color: #888; margin: 0; }
-  .custom-layer-badge {
-    background: #fef3c7; border: 1.5px solid #f59e0b; border-radius: 8px;
-    padding: 0.4rem 0.7rem; font-size: 0.78rem; color: #92400e; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;
-  }
-  /* POI permalink / focus */
-  .poi-card.faded { opacity: 0.25; transition: opacity 0.25s; }
-  .copy-toast {
-    position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
-    background: rgba(26,58,92,0.92); color: white; padding: 0.35rem 0.9rem;
-    border-radius: 20px; font-size: 0.78rem; z-index: 9000;
-    opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
-  }
-  .copy-toast.show { opacity: 1; }
-
-  @media (max-width: 768px) {
-    #list-toggle { display: inline-block; }
-    /* gap:0 removes phantom space between flex items when card is collapsed */
-    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
-    .overlay-card { border-radius: 0; }
-    .overlay-card:first-child { border-radius: 0; }
-    /* padding:0 collapses card's own internal height; transitions smoothly */
-    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
-    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
-  }
-</style>
+{{ partial "map-poi-styles.html" . }}
 {{ end }}
 
 {{ define "main" }}
 <div id="map"></div>
+
+<!-- Paywall modal -->
+<div id="paywall-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:380px;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔒</div>
+    <h3 style="margin-bottom:0.5rem;">Unlock VIP Access</h3>
+    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive spots, hidden gems, and traveler-curated local tips.</p>
+    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:0.5rem;">€4.99 / month</div>
+    <p style="color:#aaa;font-size:0.75rem;margin-bottom:1.25rem;">Recurring · Cancel anytime · Powered by Stripe</p>
+    <a href="{{ .Site.Params.stripePaymentLink }}" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">🔓 Unlock Now — €4.99/mo</a>
+    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:0.82rem;margin-bottom:0.5rem;">Maybe later</button>
+    <button onclick="window.unlockVIP && window.unlockVIP()" style="display:block;width:100%;background:none;border:none;color:#bbb;cursor:pointer;font-size:0.75rem;text-decoration:underline;">Already a member? Restore access</button>
+  </div>
+</div>
 
 <!-- Floating left overlay -->
 <div class="map-overlay">
@@ -113,29 +33,15 @@
       <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position sur la carte">📍 Position</button>
     </div>
     {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
   </div>
   <div class="overlay-card scrollable">
-    <input class="search-box" type="text" id="search" placeholder="🔍 Search locations..." oninput="filterPOIs()">
-    <div id="filter-btns"></div>
     <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
       📂 <span id="custom-layer-name">Custom layer loaded</span>
       <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
     </div>
     <div id="poi-list"></div>
-  </div>
-</div>
-
-<!-- Paywall modal -->
-<div id="paywall-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:380px;text-align:center;">
-    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔒</div>
-    <h3 style="margin-bottom:0.5rem;">Unlock VIP Access</h3>
-    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive spots, hidden gems, and traveler-curated local tips.</p>
-    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:0.5rem;">€4.99 / month</div>
-    <p style="color:#aaa;font-size:0.75rem;margin-bottom:1.25rem;">Recurring · Cancel anytime · Powered by Stripe</p>
-    <a href="{{ .Site.Params.stripePaymentLink }}" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">🔓 Unlock Now — €4.99/mo</a>
-    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:0.82rem;margin-bottom:0.5rem;">Maybe later</button>
-    <button onclick="window.unlockVIP && window.unlockVIP()" style="display:block;width:100%;background:none;border:none;color:#bbb;cursor:pointer;font-size:0.75rem;text-decoration:underline;">Already a member? Restore access</button>
   </div>
 </div>
 {{ partial "contact-form.html" . }}
@@ -150,12 +56,12 @@ window.MAP_CONFIG = {
   title: 'Hoi An — Maps',
   geojsonUrl: '{{ "/hoi-an/locations.geojson" | relURL }}',
   embedPath: '/hoi-an/',
-  previewImage: '/images/map-previews/hoi-an.png'
+  previewImage: '/images/map-previews/hoi-an.png',
+  center: [15.873326, 108.367462],
+  zoom: 16,
+  focusZoom: 17
 };
-
-const GEOJSON_URL = window.MAP_CONFIG.geojsonUrl;
-
-const CATEGORY_COLORS = {
+window.CATEGORY_COLORS = {
   'Restaurant': '#f97316',
   'Cafe': '#f59e0b',
   'Activity': '#22c55e',
@@ -164,248 +70,11 @@ const CATEGORY_COLORS = {
   'Other': '#6b7280',
   'VIP': '#f59e0b'
 };
-const CATEGORY_ICONS = {
+window.CATEGORY_ICONS = {
   'Restaurant': '🍽️', 'Cafe': '☕', 'Activity': '🎯',
   'Hotel': '🏨', 'Shopping': '🛍️', 'Other': '📍', 'VIP': '🔒'
 };
-
-let map, allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', activeCard = null;
-// Expose allPOIs to map-toolbar.html via a live getter (local let is not on window)
-Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
-window._mapCategoryColors = CATEGORY_COLORS;
-window._mapCategoryIcons  = CATEGORY_ICONS;
-function getVIP() { return window.isVIP === true; }
-
-function slugify(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-function showToast(msg) {
-  const t = document.getElementById('copy-toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 1800);
-}
-function fadePOIs(activeId) {
-  Object.entries(markers).forEach(([id, m]) => {
-    const el = m.getElement();
-    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.2';
-  });
-  document.querySelectorAll('.poi-card').forEach(c =>
-    c.classList.toggle('faded', c.id !== 'card-' + activeId));
-}
-function clearFocus() {
-  if (activeCard === null) return;
-  document.getElementById('card-' + activeCard)?.classList.remove('active');
-  activeCard = null;
-  Object.values(markers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
-  document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('faded'));
-  const u = new URL(window.location.href);
-  u.searchParams.delete('poi');
-  history.replaceState({}, '', u);
-  window.clearRoute?.();
-}
-
-map = L.map('map').setView([15.873326, 108.367462], 16);
-window._leafletMap = map; // expose for map-toolbar.html (window.map is the <div>)
-let _flyingTo = false;
-map.on('click', clearFocus);
-map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
-map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-function makeIcon(category) {
-  const color = CATEGORY_COLORS[category] || '#6b7280';
-  const icon = CATEGORY_ICONS[category] || '📍';
-  return L.divIcon({
-    className: '',
-    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
-    iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
-  });
-}
-
-function renderSidebar() {
-  const search = document.getElementById('search').value.toLowerCase();
-  const list = document.getElementById('poi-list');
-  list.innerHTML = '';
-  const filtered = allPOIs.filter(f => {
-    const p = f.properties;
-    const matchCat = activeFilter === 'All' || p.category === activeFilter;
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
-    return matchCat && matchSearch;
-  });
-  filtered.forEach(f => {
-    const p = f.properties;
-    const cat = p.category || 'Other';
-    const color = CATEGORY_COLORS[cat] || '#6b7280';
-    const icon = CATEGORY_ICONS[cat] || '📍';
-    const card = document.createElement('div');
-    const isPremium = p.premium && !getVIP();
-    const [lng, lat] = f.geometry.coordinates;
-    card.className = 'poi-card' + (isPremium ? ' premium-card' : '');
-    card.id = 'card-' + f._id;
-    if (isPremium) {
-      card.innerHTML = `
-        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-        <h3 style="filter:blur(4px);user-select:none;">${p.name}</h3>
-        ${p.address ? `<div class="poi-addr" style="filter:blur(3px);user-select:none;">📍 ${p.address}</div>` : ''}
-        <div class="premium-overlay"><span>🔒</span><p>Members only</p></div>`;
-      card.onclick = () => { document.getElementById('paywall-modal').style.display = 'flex'; };
-    } else {
-      const slug = slugify(p.name);
-      card.innerHTML = `
-        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-        <h3>${p.name}</h3>
-        ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
-        ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
-        ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours}</div>` : ''}
-        <div class="poi-actions">
-          <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
-          ${p.url ? `<a href="${p.url}" target="_blank">Source ↗</a>` : ''}
-          <a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>
-          <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
-        </div>`;
-      card.onclick = () => focusPOI(f);
-    }
-    list.appendChild(card);
-  });
-}
-
-function focusPOI(f) {
-  const [lng, lat] = f.geometry.coordinates;
-  _flyingTo = true;
-  map.flyTo([lat, lng], 17, { duration: 0.8 });
-  map.once('moveend', () => { _flyingTo = false; });
-  if (markers[f._id]) markers[f._id].openPopup();
-  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
-  activeCard = f._id;
-  document.getElementById('card-' + f._id)?.classList.add('active');
-  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  const u = new URL(window.location.href);
-  u.searchParams.set('poi', slugify(f.properties.name));
-  u.searchParams.delete('filter');
-  history.replaceState({}, '', u);
-  fadePOIs(f._id);
-}
-
-function filterPOIs() { renderSidebar(); updateMarkers(); }
-
-function updateMarkers() {
-  const search = document.getElementById('search').value.toLowerCase();
-  Object.values(markers).forEach(m => map.removeLayer(m));
-  Object.keys(markers).forEach(k => delete markers[k]);
-  allPOIs.forEach(f => {
-    const p = f.properties;
-    const cat = p.category || 'Other';
-    const matchCat = activeFilter === 'All' || cat === activeFilter;
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
-    if (!matchCat || !matchSearch) return;
-    const [lng, lat] = f.geometry.coordinates;
-    const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
-      .addTo(map)
-      .bindPopup(`<b>${(p.premium && !getVIP()) ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${(p.notes && !(p.premium && !getVIP())) ? '<br><em>' + p.notes + '</em>' : ''}`);
-    if (!p.premium || getVIP()) {
-      marker.on('click', () => focusPOI(f));
-    } else {
-      marker.on('click', () => { document.getElementById('paywall-modal').style.display = 'flex'; });
-    }
-    markers[f._id] = marker;
-  });
-}
-
-function setupFilters(pois) {
-  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium || getVIP()).map(f => f.properties.category || 'Other'))];
-  const container = document.getElementById('filter-btns');
-  container.innerHTML = '';
-  cats.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
-    btn.dataset.cat = cat;
-    btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
-    btn.onclick = () => {
-      activeFilter = cat;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterPOIs();
-    };
-    container.appendChild(btn);
-  });
-
-  const vipBtn = document.createElement('button');
-  vipBtn.className = 'filter-btn vip-btn' + (getVIP() ? ' active' : '');
-  vipBtn.dataset.cat = 'VIP';
-  vipBtn.textContent = getVIP() ? '🔓 VIP' : '🔒 VIP';
-  vipBtn.onclick = () => {
-    if (getVIP()) {
-      activeFilter = 'VIP';
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      vipBtn.classList.add('active');
-      filterPOIs();
-    } else {
-      document.getElementById('paywall-modal').style.display = 'flex';
-    }
-  };
-  container.appendChild(vipBtn);
-}
-
-window.loadCustomData = function(geojson, sourceName) {
-  if (customLayer) { map.removeLayer(customLayer); customLayer = null; }
-  const features = geojson.features || [];
-  const customPOIs = features.filter(f => f.geometry?.type === 'Point').map((f, i) => ({ ...f, _id: 'custom-' + i, _custom: true }));
-  const nonPoints = features.filter(f => f.geometry?.type !== 'Point');
-  if (nonPoints.length) {
-    customLayer = L.geoJSON({ type: 'FeatureCollection', features: nonPoints }, {
-      style: () => ({ color: '#f59e0b', weight: 3, opacity: 0.8 }),
-      onEachFeature: (f, l) => { if (f.properties?.name) l.bindPopup(`<b>${f.properties.name}</b>`); }
-    }).addTo(map);
-  }
-  allPOIs = [...allPOIs.filter(f => !f._custom), ...customPOIs];
-  window.MAP_CONFIG.geojsonData = geojson;
-  const badge = document.getElementById('custom-layer-info');
-  badge.style.display = 'flex';
-  document.getElementById('custom-layer-name').textContent = sourceName || 'Custom layer loaded';
-  setupFilters(allPOIs);
-  renderSidebar();
-  updateMarkers();
-  if (customPOIs.length) {
-    const lls = customPOIs.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
-    map.fitBounds(L.latLngBounds(lls).pad(0.1));
-  }
-};
-
-window.removeCustomLayer = function() {
-  if (customLayer) { map.removeLayer(customLayer); customLayer = null; }
-  allPOIs = allPOIs.filter(f => !f._custom);
-  document.getElementById('custom-layer-info').style.display = 'none';
-  setupFilters(allPOIs);
-  renderSidebar();
-  updateMarkers();
-};
-
-fetch(GEOJSON_URL)
-  .then(r => r.json())
-  .then(data => {
-    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
-    window.MAP_CONFIG.geojsonData = data;
-    setupFilters(allPOIs);
-    renderSidebar();
-    updateMarkers();
-    const params = new URLSearchParams(window.location.search);
-    const urlFilter = params.get('filter');
-    if (urlFilter) {
-      const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
-      if (btn) btn.click();
-    }
-    const urlPOI = params.get('poi');
-    if (urlPOI) {
-      const match = allPOIs.find(f => slugify(f.properties.name) === urlPOI);
-      if (match) setTimeout(() => focusPOI(match), 350);
-    }
-  })
-  .catch(() => {
-    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded yet.</p>';
-  });
 </script>
+{{ partial "map-poi-helpers.html" . }}
 {{ partial "map-geolocation.html" . }}
 {{ end }}
