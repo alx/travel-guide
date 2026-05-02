@@ -1,0 +1,716 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-04-28T09:38:50.868700+00:00",
+    "source": "OSM Overpass + Google Places — https://www.airbnb.fr/rooms/1547655466947863733",
+    "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733",
+    "center": {
+      "lat": 1.42489,
+      "lon": 103.6403
+    },
+    "radius_m": 1000
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63429029999999,
+          1.4274471
+        ]
+      },
+      "properties": {
+        "name": "7-Eleven",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63416400000001,
+          1.4276195
+        ]
+      },
+      "properties": {
+        "name": "NOBLE SUPERMART LEGOLAND",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63314810000001,
+          1.4275554
+        ]
+      },
+      "properties": {
+        "name": "Ben's Independent Grocer, Mall of Medini",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6335082,
+          1.4285272999999998
+        ]
+      },
+      "properties": {
+        "name": "myNEWS @ Medini Mall (G Floor)",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6333963,
+          1.428868
+        ]
+      },
+      "properties": {
+        "name": "Working Place",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.638142,
+          1.4239652
+        ]
+      },
+      "properties": {
+        "name": "AdumiVerse.",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6376401,
+          1.424286
+        ]
+      },
+      "properties": {
+        "name": "Mahkota Park",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.637264,
+          1.4227663
+        ]
+      },
+      "properties": {
+        "name": "Paradiso Nuova Park",
+        "category": "Park",
+        "icon": "🌳",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6330562,
+          1.4279742
+        ]
+      },
+      "properties": {
+        "name": "FunMax@Legoland",
+        "category": "Playground",
+        "icon": "🛝",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63260659999999,
+          1.427934
+        ]
+      },
+      "properties": {
+        "name": "Playground at Mall of Medini",
+        "category": "Playground",
+        "icon": "🛝",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63240739999999,
+          1.4277815
+        ]
+      },
+      "properties": {
+        "name": "SnowLand JB",
+        "category": "Playground",
+        "icon": "🛝",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6322804,
+          1.4278256999999999
+        ]
+      },
+      "properties": {
+        "name": "Haha Happy Land",
+        "category": "Playground",
+        "icon": "🛝",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.64257099999999,
+          1.4232960000000001
+        ]
+      },
+      "properties": {
+        "name": "Sekolah Kebangsaan Medini,Lebuh Medini Utama",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.642859,
+          1.423537
+        ]
+      },
+      "properties": {
+        "name": "Sekolah Agama Medini,Lebuh Medini Utama",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63843999999999,
+          1.42109
+        ]
+      },
+      "properties": {
+        "name": "Iskandar Residence (Opp)",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63841,
+          1.42091
+        ]
+      },
+      "properties": {
+        "name": "Iskandar Residence",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63632899999999,
+          1.427373
+        ]
+      },
+      "properties": {
+        "name": "Gleanegeous Medini Medical Centre,Lebuh Medini Utama",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63671,
+          1.4193
+        ]
+      },
+      "properties": {
+        "name": "1 Medini Hub",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63418,
+          1.42762
+        ]
+      },
+      "properties": {
+        "name": "Opp Legoland",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.634141,
+          1.427568
+        ]
+      },
+      "properties": {
+        "name": "Opposite Persiaran Medini 01",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63665999999999,
+          1.41915
+        ]
+      },
+      "properties": {
+        "name": "Opp Medini Hub",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63396,
+          1.4278199999999999
+        ]
+      },
+      "properties": {
+        "name": "Legoland",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63385799999999,
+          1.4277819999999999
+        ]
+      },
+      "properties": {
+        "name": "Mall of Medini / Legoland",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63577,
+          1.4192399999999998
+        ]
+      },
+      "properties": {
+        "name": "One Medini Hub",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63577,
+          1.41902
+        ]
+      },
+      "properties": {
+        "name": "One Medini Hub (Opp)",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.632652,
+          1.4229589999999999
+        ]
+      },
+      "properties": {
+        "name": "Grand Medini Residence,Persiaran Medini",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63261999999999,
+          1.42293
+        ]
+      },
+      "properties": {
+        "name": "Lebuh Medini Utama",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63238,
+          1.423168
+        ]
+      },
+      "properties": {
+        "name": "1 Residence Medini",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63239999999999,
+          1.42306
+        ]
+      },
+      "properties": {
+        "name": "Opp Lebuh Medini Utama",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63358,
+          1.4294499999999999
+        ]
+      },
+      "properties": {
+        "name": "Lebuh Medini Utara",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.63373000000001,
+          1.4298899999999999
+        ]
+      },
+      "properties": {
+        "name": "Lebuh Medini Utara (Opp)",
+        "category": "Transit",
+        "icon": "🚌",
+        "coord_source": "google_maps_pin",
+        "coord_accuracy": "high",
+        "source": "google",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6316603,
+          1.4277119
+        ]
+      },
+      "properties": {
+        "name": "SEA LIFE Malaysia",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.631158,
+          1.4250339
+        ]
+      },
+      "properties": {
+        "name": "LEGO Wave Pool",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6303841,
+          1.4254987
+        ]
+      },
+      "properties": {
+        "name": "Legoland Malaysia Waterpark",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-malaysia-202605-johor-bahru-2-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6288626,
+          1.4277203
+        ]
+      },
+      "properties": {
+        "name": "Legoland Malaysia",
+        "category": "Activity",
+        "icon": "🎠",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "source": "osm",
+        "listing_url": "https://www.airbnb.fr/rooms/1547655466947863733"
+      }
+    }
+  ]
+}
