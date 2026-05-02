@@ -159,7 +159,7 @@ def main():
         print(f"  ✓ [{section:10}] {slug} — {geo['poi_count']} POIs")
 
     # Sort: by section order then weight
-    SECTION_ORDER = {"curated": 0, "community": 1, "demo": 2}
+    SECTION_ORDER = {"curated": 0, "community": 1, "airbnb": 2, "demo": 3}
     maps.sort(key=lambda m: (SECTION_ORDER.get(m["section"], 99), m["weight"]))
 
     output = {
