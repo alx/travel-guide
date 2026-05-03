@@ -3,15 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - 'static/**/*.geojson'
-      - 'static/**/*.topojson'
-      - 'content/**'
-      - 'layouts/**'
-      - 'themes/**'
-      - 'config.*'
-      - 'hugo.toml'
-      - 'hugo.yaml'
   workflow_dispatch:
 
 permissions:

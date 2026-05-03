@@ -112,7 +112,10 @@
 {{ end }}
 
 {{ define "scripts" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 window.MAP_CONFIG = {
   title: 'France — Grands Projets Stratégiques',
@@ -146,7 +149,7 @@ const CATEGORY_ICONS = {
   'Industrie':              '🏭',
 };
 
-let map, allPOIs = [], markers = {}, activeCard = null, activeFilter = null;
+let map, allPOIs = [], markers = {}, clusterGroup, activeCard = null, activeFilter = null;
 Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
 window._mapCategoryColors = CATEGORY_COLORS;
 window._mapCategoryIcons  = CATEGORY_ICONS;
@@ -173,6 +176,19 @@ map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
+
+clusterGroup = L.markerClusterGroup({
+  maxClusterRadius: 50,
+  iconCreateFunction(cluster) {
+    const n = cluster.getChildCount();
+    return L.divIcon({
+      className: '',
+      html: `<div style="background:#1a3a5c;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">${n}</div>`,
+      iconSize: [36, 36], iconAnchor: [18, 18],
+    });
+  },
+});
+map.addLayer(clusterGroup);
 
 function makeIcon(category) {
   const color = CATEGORY_COLORS[category] || '#6b7280';
@@ -236,25 +252,22 @@ function setFilter(cat) {
 
 function applyFilters() {
   const query = (document.getElementById('search-box').value || '').toLowerCase();
+  const toAdd = [], toRemove = [];
   let visible = 0;
   allPOIs.forEach(f => {
     const p = f.properties;
-    const matchCat = !activeFilter || p.category === activeFilter;
-    const matchSearch = !query ||
-      (p.name || '').toLowerCase().includes(query) ||
-      (p.ville || '').toLowerCase().includes(query) ||
-      (p.projet || '').toLowerCase().includes(query) ||
-      (p.departement || '').toLowerCase().includes(query) ||
-      (p.region || '').toLowerCase().includes(query);
+    const matchCat    = !activeFilter || p.category === activeFilter;
+    const matchSearch = !query || [p.name, p.ville, p.projet, p.departement, p.region]
+      .some(v => (v || '').toLowerCase().includes(query));
     const show = matchCat && matchSearch;
     const m = markers[f._id];
-    if (m) {
-      if (show) { m.addTo(map); } else { m.remove(); }
-    }
+    if (m) (show ? toAdd : toRemove).push(m);
     const card = document.getElementById('card-' + f._id);
     if (card) card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
+  clusterGroup.removeLayers(toRemove);
+  clusterGroup.addLayers(toAdd);
   const countEl = document.getElementById('result-count');
   countEl.textContent = visible === allPOIs.length ? '' : `${visible} résultats`;
 }
@@ -287,19 +300,22 @@ function renderSidebar() {
 }
 
 function focusPOI(f) {
-  const [lng, lat] = f.geometry.coordinates;
-  _flyingTo = true;
-  map.flyTo([lat, lng], 13, { duration: 0.8 });
-  map.once('moveend', () => { _flyingTo = false; });
-  if (markers[f._id]) markers[f._id].openPopup();
+  const m = markers[f._id];
   if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
   activeCard = f._id;
   document.getElementById('card-' + f._id)?.classList.add('active');
   document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  Object.entries(markers).forEach(([id, m]) => {
-    const el = m.getElement();
-    if (el) el.style.opacity = String(id) === String(f._id) ? '1' : '0.25';
-  });
+  if (m) {
+    _flyingTo = true;
+    clusterGroup.zoomToShowLayer(m, () => {
+      _flyingTo = false;
+      m.openPopup();
+      Object.entries(markers).forEach(([id, mk]) => {
+        const el = mk.getElement();
+        if (el) el.style.opacity = String(id) === String(f._id) ? '1' : '0.25';
+      });
+    });
+  }
 }
 
 fetch(window.MAP_CONFIG.geojsonUrl)
@@ -315,7 +331,7 @@ fetch(window.MAP_CONFIG.geojsonUrl)
       const p   = f.properties;
       const cat = p.category || 'Industrie';
       const m = L.marker([lat, lng], { icon: makeIcon(cat) })
-        .addTo(map)
+        .addTo(clusterGroup)
         .bindPopup(`<b>${p.name}</b><br><small>${p.ville} · ${p.departement}</small><br><em style="font-size:0.82em">${(p.projet||'').slice(0,90)}${(p.projet||'').length>90?'…':''}</em>`);
       m.on('click', () => focusPOI(f));
       markers[f._id] = m;
