@@ -1,0 +1,334 @@
+{{ define "head" }}
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 350px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .overlay-card .page-header { margin: 0; }
+  .overlay-card .page-header h1 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .overlay-card .page-header p  { font-size: 0.78rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  #map-toolbar { display: none !important; margin: 0.6rem 0 0 !important; }
+  #map-toolbar.tb-visible { display: flex !important; }
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
+  #list-toggle { display: none; }
+
+  /* Search + filter */
+  #search-box {
+    width: 100%; box-sizing: border-box;
+    border: 1.5px solid #e5e7eb; border-radius: 8px;
+    padding: 0.4rem 0.65rem; font-size: 0.8rem; margin-top: 0.5rem;
+    outline: none; transition: border-color 0.15s;
+  }
+  #search-box:focus { border-color: #1a3a5c; }
+  #filter-btns { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .filter-btn {
+    padding: 0.18rem 0.5rem; border-radius: 14px; border: 1.5px solid #e5e7eb;
+    background: white; cursor: pointer; font-size: 0.67rem; color: #555;
+    transition: all 0.15s; white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: #1a3a5c; color: #1a3a5c; }
+  .filter-btn.active { color: white; border-color: transparent; }
+  #result-count { font-size: 0.7rem; color: #888; margin-top: 0.3rem; }
+
+  /* POI cards */
+  .poi-card {
+    background: white; border-radius: 10px; padding: 0.75rem 0.9rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0;
+    border-left-width: 4px;
+  }
+  .poi-card:hover, .poi-card.active { box-shadow: 0 2px 10px rgba(0,0,0,0.13); }
+  .poi-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .poi-card .poi-ville { font-size: 0.7rem; color: #888; margin-bottom: 0.2rem; }
+  .poi-card .poi-notes { font-size: 0.76rem; color: #555; line-height: 1.4; margin-top: 0.2rem; }
+  .poi-card .poi-actions { margin-top: 0.4rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .poi-card .poi-actions a { font-size: 0.72rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .poi-card .poi-actions a:hover { text-decoration: underline; }
+  .cat-badge { display: inline-block; font-size: 0.67rem; padding: 0.1rem 0.42rem; border-radius: 20px; font-weight: 700; margin-bottom: 0.25rem; }
+  .copy-toast {
+    position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
+    background: rgba(26,58,92,0.92); color: white; padding: 0.35rem 0.9rem;
+    border-radius: 20px; font-size: 0.78rem; z-index: 9000;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
+  }
+  .copy-toast.show { opacity: 1; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🏭 France — Grands Projets</h1>
+      <p>Projets industriels et d'investissement stratégiques</p>
+    </div>
+    <input id="search-box" type="search" placeholder="🔍 Rechercher entreprise, ville…" oninput="applyFilters()">
+    <div id="filter-btns"></div>
+    <div id="result-count"></div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Projets ▾':'📍 Projets'">📍 Projets</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+  </div>
+  <div class="overlay-card scrollable" id="poi-list"></div>
+</div>
+
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'France — Grands Projets Stratégiques',
+  geojsonUrl: '{{ "/france-grands-projets-strategiques/locations.geojson" | relURL }}',
+  embedPath: '/france-grands-projets-strategiques/',
+  previewImage: '/images/map-previews/france-grands-projets-strategiques.png'
+};
+
+const CATEGORY_COLORS = {
+  'Data Center & IA':       '#3b82f6',
+  'Énergie & Nucléaire':    '#f59e0b',
+  'Recyclage':              '#22c55e',
+  'Matériaux critiques':    '#8b5cf6',
+  'Aéronautique & Défense': '#0369a1',
+  'Sidérurgie':             '#ef4444',
+  'Biocarburants':          '#84cc16',
+  'Électromobilité':        '#06b6d4',
+  'Agroalimentaire':        '#f97316',
+  'Industrie':              '#6366f1',
+};
+const CATEGORY_ICONS = {
+  'Data Center & IA':       '🖥️',
+  'Énergie & Nucléaire':    '⚡',
+  'Recyclage':              '♻️',
+  'Matériaux critiques':    '🔋',
+  'Aéronautique & Défense': '✈️',
+  'Sidérurgie':             '⚙️',
+  'Biocarburants':          '🌿',
+  'Électromobilité':        '🚗',
+  'Agroalimentaire':        '🌾',
+  'Industrie':              '🏭',
+};
+
+let map, allPOIs = [], markers = {}, activeCard = null, activeFilter = null;
+Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+window._mapCategoryColors = CATEGORY_COLORS;
+window._mapCategoryIcons  = CATEGORY_ICONS;
+
+function showToast(msg) {
+  const t = document.getElementById('copy-toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+  Object.values(markers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
+}
+
+map = L.map('map').setView([46.5, 2.5], 6);
+window._leafletMap = map;
+let _flyingTo = false;
+map.on('click', clearFocus);
+map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
+map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(category) {
+  const color = CATEGORY_COLORS[category] || '#6b7280';
+  const icon  = CATEGORY_ICONS[category]  || '🏭';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
+  });
+}
+
+function buildFilterButtons() {
+  const counts = {};
+  allPOIs.forEach(f => {
+    const c = f.properties.category || 'Industrie';
+    counts[c] = (counts[c] || 0) + 1;
+  });
+  const container = document.getElementById('filter-btns');
+  container.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.dataset.cat = '';
+  allBtn.textContent = `Tous (${allPOIs.length})`;
+  allBtn.style.background = '#1a3a5c';
+  allBtn.style.color = 'white';
+  allBtn.style.borderColor = 'transparent';
+  allBtn.onclick = () => setFilter(null);
+  container.appendChild(allBtn);
+
+  Object.entries(counts).sort((a, b) => b[1] - a[1]).forEach(([cat, count]) => {
+    const color = CATEGORY_COLORS[cat] || '#6b7280';
+    const icon  = CATEGORY_ICONS[cat]  || '🏭';
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.cat = cat;
+    btn.textContent = `${icon} ${cat} (${count})`;
+    btn.onclick = () => setFilter(cat);
+    container.appendChild(btn);
+  });
+}
+
+function setFilter(cat) {
+  activeFilter = cat;
+  clearFocus();
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const isCurrent = btn.dataset.cat === (cat || '');
+    btn.classList.toggle('active', isCurrent);
+    const color = cat ? (CATEGORY_COLORS[cat] || '#1a3a5c') : '#1a3a5c';
+    if (isCurrent) {
+      btn.style.background = color;
+      btn.style.color = 'white';
+      btn.style.borderColor = 'transparent';
+    } else {
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const query = (document.getElementById('search-box').value || '').toLowerCase();
+  let visible = 0;
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const matchCat = !activeFilter || p.category === activeFilter;
+    const matchSearch = !query ||
+      (p.name || '').toLowerCase().includes(query) ||
+      (p.ville || '').toLowerCase().includes(query) ||
+      (p.projet || '').toLowerCase().includes(query) ||
+      (p.departement || '').toLowerCase().includes(query) ||
+      (p.region || '').toLowerCase().includes(query);
+    const show = matchCat && matchSearch;
+    const m = markers[f._id];
+    if (m) {
+      if (show) { m.addTo(map); } else { m.remove(); }
+    }
+    const card = document.getElementById('card-' + f._id);
+    if (card) card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  const countEl = document.getElementById('result-count');
+  countEl.textContent = visible === allPOIs.length ? '' : `${visible} résultats`;
+}
+
+function renderSidebar() {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  allPOIs.forEach(f => {
+    const p     = f.properties;
+    const cat   = p.category || 'Industrie';
+    const color = CATEGORY_COLORS[cat] || '#6b7280';
+    const icon  = CATEGORY_ICONS[cat]  || '🏭';
+    const [lng, lat] = f.geometry.coordinates;
+    const card = document.createElement('div');
+    card.className = 'poi-card';
+    card.id = 'card-' + f._id;
+    card.style.borderLeftColor = color;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+      <h3>${p.name}</h3>
+      <div class="poi-ville">📍 ${p.ville} · ${p.departement} · ${p.region}</div>
+      ${p.projet ? `<div class="poi-notes">${p.projet.length > 120 ? p.projet.slice(0,120) + '…' : p.projet}</div>` : ''}
+      <div class="poi-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+        <a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=14" target="_blank">OSM ↗</a>
+      </div>`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
+  map.flyTo([lat, lng], 13, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = String(id) === String(f._id) ? '1' : '0.25';
+  });
+}
+
+fetch(window.MAP_CONFIG.geojsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features
+      .filter(f => f.geometry && f.geometry.type === 'Point')
+      .map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+
+    allPOIs.forEach(f => {
+      const [lng, lat] = f.geometry.coordinates;
+      const p   = f.properties;
+      const cat = p.category || 'Industrie';
+      const m = L.marker([lat, lng], { icon: makeIcon(cat) })
+        .addTo(map)
+        .bindPopup(`<b>${p.name}</b><br><small>${p.ville} · ${p.departement}</small><br><em style="font-size:0.82em">${(p.projet||'').slice(0,90)}${(p.projet||'').length>90?'…':''}</em>`);
+      m.on('click', () => focusPOI(f));
+      markers[f._id] = m;
+    });
+
+    buildFilterButtons();
+    renderSidebar();
+
+    const lls = allPOIs.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+    if (lls.length) map.fitBounds(L.latLngBounds(lls).pad(0.08));
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Impossible de charger les projets.</p>';
+  });
+</script>
+{{ end }}
