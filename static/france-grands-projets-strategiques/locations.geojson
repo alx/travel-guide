@@ -1,0 +1,1535 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-05-03",
+    "source": "CSV projets_industriels_france_villes + Nominatim",
+    "count": 69
+  },
+  "bbox": [
+    -4.0916875,
+    43.1396789,
+    7.953219,
+    51.0347708
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "france-projet-001-imerys",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.93389,
+          46.1841
+        ]
+      },
+      "properties": {
+        "name": "Imerys",
+        "category": "Matériaux critiques",
+        "icon": "🔋",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Allier",
+        "ville": "Échassières",
+        "projet": "Projet de mine souterraine de lithium visant à produire 34 000 tonnes d’hydroxyde de lithium par an pour soutenir la filière des véhicules électriques",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-002-safran",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.85831,
+          45.6738
+        ]
+      },
+      "properties": {
+        "name": "Safran",
+        "category": "Aéronautique & Défense",
+        "icon": "✈️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Ain",
+        "ville": "Feyzin / Saint-Vulbas",
+        "projet": "Usine de freins carbone : projet d’usine de production de freins carbone pour l’aéronautique, avec une mise en service prévue à l’horizon 2030",
+        "coord_source": "nominatim",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-003-schneider-electric",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.5986733,
+          44.7352708
+        ]
+      },
+      "properties": {
+        "name": "Schneider Electric",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Ardèche",
+        "ville": "Privas",
+        "projet": "Investissements industriels pour soutenir les marchés de l’énergie, du nucléaire et des datacenters",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-004-sesterce",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8611902,
+          44.5156368
+        ]
+      },
+      "properties": {
+        "name": "Sesterce",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Drôme",
+        "ville": "Rochefort-en-Valdaine",
+        "projet": "Data center – Projet de centre de données nouvelle génération",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-005-magreesource",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6321969,
+          45.2438413
+        ]
+      },
+      "properties": {
+        "name": "MagREEsource",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Isère",
+        "ville": "Noyarey",
+        "projet": "Mag Factory : projet industriel de fabrication d’aimants permanents recyclés pour renforcer la souveraineté européenne",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-006-dataone-oreus-core-42",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7357819,
+          45.1875602
+        ]
+      },
+      "properties": {
+        "name": "DataOne - Oreus - Core 42",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Isère",
+        "ville": "Grenoble",
+        "projet": "Data center",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-007-urgo",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.2892399,
+          45.5622913
+        ]
+      },
+      "properties": {
+        "name": "Urgo",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Loire",
+        "ville": "Veauche",
+        "projet": "Construction d’un site de production de textile médical de pointe dédié à la compression médicale",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-008-derichebourg",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.855816,
+          45.6329361
+        ]
+      },
+      "properties": {
+        "name": "Derichebourg",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Auvergne-Rhône-Alpes",
+        "departement": "Rhône",
+        "ville": "Saint-Symphorien-d'Ozon",
+        "projet": "Projet de recyclage de ballons d’eau chaude avec valorisation des matériaux et réduction des émissions de CO₂",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-009-bordet",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.6457483,
+          46.8696643
+        ]
+      },
+      "properties": {
+        "name": "Bordet",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Bourgogne-Franche-Comté",
+        "departement": "Nièvre",
+        "ville": "Cercy-la-Tour",
+        "projet": "Développement d’un site de production de charbon végétal",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-010-jimmy-energy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4285961,
+          46.8054064
+        ]
+      },
+      "properties": {
+        "name": "Jimmy Energy",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Bourgogne-Franche-Comté",
+        "departement": "Saône-et-Loire",
+        "ville": "Le Creusot",
+        "projet": "Réacteur nucléaire innovant : développement d’un petit réacteur pour produire de la chaleur industrielle décarbonée",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-011-fiat-powrtrain",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.7737674,
+          46.6193905
+        ]
+      },
+      "properties": {
+        "name": "Fiat Powrtrain",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Bourgogne-Franche-Comté",
+        "departement": "Saône-et-Loire",
+        "ville": "Bourbon-Lancy",
+        "projet": "Conception de moteurs pour camions et engins agricoles",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-012-prysmian",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2470551,
+          48.1785718
+        ]
+      },
+      "properties": {
+        "name": "Prysmian",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Bourgogne-Franche-Comté",
+        "departement": "Yonne",
+        "ville": "Paron / Gron",
+        "projet": "CAPA-PILASER – Extension d’un site de production de câbles électriques pour accompagner l’électrification",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-013-cailabs",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6800198,
+          48.1113387
+        ]
+      },
+      "properties": {
+        "name": "Cailabs",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Bretagne",
+        "departement": "Ille-et-Vilaine",
+        "ville": "Rennes",
+        "projet": "Construction d’un site industriel pour produire des stations de communication laser",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-014-cooperl",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.538592,
+          48.4622954
+        ]
+      },
+      "properties": {
+        "name": "Cooperl",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Bretagne",
+        "departement": "Côte d'Armor",
+        "ville": "Lamballe",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-015-ldc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0916875,
+          48.1968026
+        ]
+      },
+      "properties": {
+        "name": "LDC",
+        "category": "Agroalimentaire",
+        "icon": "🌾",
+        "region": "Bretagne",
+        "departement": "Finistère",
+        "ville": "Châteaulin",
+        "projet": "Création d'une usine d'abattage de volaille",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-016-sigmaphi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7599079,
+          47.6586772
+        ]
+      },
+      "properties": {
+        "name": "Sigmaphi",
+        "category": "Matériaux critiques",
+        "icon": "🔋",
+        "region": "Bretagne",
+        "departement": "Morbihan",
+        "ville": "Vannes",
+        "projet": "Construction d'une nouvelle usine d'assemblage d'aimants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-017-mbda",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.399125,
+          47.0811658
+        ]
+      },
+      "properties": {
+        "name": "MBDA",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Cher",
+        "ville": "Bourges",
+        "projet": "Agrandissement",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-018-knds",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.399125,
+          47.0811658
+        ]
+      },
+      "properties": {
+        "name": "KNDS",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Cher",
+        "ville": "Bourges",
+        "projet": "Agrandissement",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-019-google",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7010433,
+          46.8267767
+        ]
+      },
+      "properties": {
+        "name": "Google",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Centre-Val de Loire",
+        "departement": "Indre",
+        "ville": "Déols / Châteauroux",
+        "projet": "Data center",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-020-intact",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.0024518,
+          48.2372201
+        ]
+      },
+      "properties": {
+        "name": "Intact",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Loiret",
+        "ville": "Baudreville",
+        "projet": "Création d'une usine d'ingrédients protéiques végétaux innovants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-021-thales",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9208883,
+          47.9309156
+        ]
+      },
+      "properties": {
+        "name": "Thales",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Loiret",
+        "ville": "Fleury-les-Aubrais",
+        "projet": "Augmentation de la capacité de production",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-022-barbas-plailly",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7434925,
+          47.3592182
+        ]
+      },
+      "properties": {
+        "name": "Barbas & Plailly",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Loir-et-Cher",
+        "ville": "Romorantin-Lanthenay",
+        "projet": "Augmentation de la capacité de production",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-023-aresia",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4478281,
+          47.8514582
+        ]
+      },
+      "properties": {
+        "name": "Aresia",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Loir-et-Cher",
+        "ville": "Saint-Laurent-des-Bois",
+        "projet": "Extension de site",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-024-bertin-technologies",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9930862,
+          48.3109425
+        ]
+      },
+      "properties": {
+        "name": "Bertin technologies",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Centre-Val de Loire",
+        "departement": "Eure et Loir",
+        "ville": "Thiron-Gardais",
+        "projet": "Modernisation et développement",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-025-arverne",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.953219,
+          48.9027356
+        ]
+      },
+      "properties": {
+        "name": "Arverne",
+        "category": "Matériaux critiques",
+        "icon": "🔋",
+        "region": "Grand Est",
+        "departement": "Bas-Rhin",
+        "ville": "Rittershoffen",
+        "projet": "Extraction directe de lithium",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-026-edf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5360223,
+          47.915436
+        ]
+      },
+      "properties": {
+        "name": "EDF",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Grand Est",
+        "departement": "Haut-Rhin",
+        "ville": "Fessenheim",
+        "projet": "Technocentre de Fessenheim : usine de recyclage de métaux faiblement radioactifs issus du nucléaire",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-027-carbios",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.8023036,
+          49.5339956
+        ]
+      },
+      "properties": {
+        "name": "Carbios",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Grand Est",
+        "departement": "Meurthe-et-Moselle",
+        "ville": "Longlaville",
+        "projet": "Usine de biorecyclage – Première usine mondiale de recyclage",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-029-holosolis",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0372308,
+          49.0613593
+        ]
+      },
+      "properties": {
+        "name": "Holosolis",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Grand Est",
+        "departement": "Moselle",
+        "ville": "Hambach",
+        "projet": "Gigafactory photovoltaïque – Production de panneaux solaires à grande échelle",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-029-eclairion",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1897,
+          49.1694
+        ]
+      },
+      "properties": {
+        "name": "Eclairion",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Grand Est",
+        "departement": "Moselle",
+        "ville": "La Maxe et Richemont",
+        "projet": "Datacenters La Maxe et Richemont – Projet de supercalculateurs et centres de données",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-030-circ",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7071754,
+          49.1043397
+        ]
+      },
+      "properties": {
+        "name": "CIRC",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Grand Est",
+        "departement": "Moselle",
+        "ville": "Saint-Avold",
+        "projet": "Usine de recyclage textile – Recyclage et valorisation de textiles complexes",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-031-verso-energy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2918511,
+          49.6558465
+        ]
+      },
+      "properties": {
+        "name": "Verso Energy",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Hauts de France",
+        "departement": "Aisne",
+        "ville": "Tergnier",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-032-axens",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3772525,
+          51.0347708
+        ]
+      },
+      "properties": {
+        "name": "Axens",
+        "category": "Matériaux critiques",
+        "icon": "🔋",
+        "region": "Hauts de France",
+        "departement": "Nord",
+        "ville": "Dunkerque",
+        "projet": "Production de matériaux cathodiques pour batteries",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-033-crystalrod",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3772525,
+          51.0347708
+        ]
+      },
+      "properties": {
+        "name": "Crystalrod",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Hauts de France",
+        "departement": "Nord",
+        "ville": "Dunkerque",
+        "projet": "Usine d’aluminium – Recyclage et transformation de câbles en aluminium",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-034-arcelor-mittal",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3772525,
+          51.0347708
+        ]
+      },
+      "properties": {
+        "name": "Arcelor Mittal",
+        "category": "Sidérurgie",
+        "icon": "⚙️",
+        "region": "Hauts de France",
+        "departement": "Nord",
+        "ville": "Dunkerque",
+        "projet": "Four électrique",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-035-windrose-technology",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3772525,
+          51.0347708
+        ]
+      },
+      "properties": {
+        "name": "Windrose Technology",
+        "category": "Électromobilité",
+        "icon": "🚗",
+        "region": "Hauts de France",
+        "departement": "Nord",
+        "ville": "Dunkerque",
+        "projet": "Production de camions électriques",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-036-nexans",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8319805,
+          50.4291723
+        ]
+      },
+      "properties": {
+        "name": "Nexans",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Hauts de France",
+        "departement": "Pas-de-Calais",
+        "ville": "Lens",
+        "projet": "Nexagreen : production de cuivre recyclé pour câbles bas carbone",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-037-fertighy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9304343,
+          49.7476535
+        ]
+      },
+      "properties": {
+        "name": "Fertighy",
+        "category": "Agroalimentaire",
+        "icon": "🌾",
+        "region": "Hauts de France",
+        "departement": "Somme",
+        "ville": "Languevoisin-Quiquery / Nesle",
+        "projet": "Construction d'une usine de production d'engrais à faible émission de carbone",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-038-eclairion",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1909499,
+          48.5922609
+        ]
+      },
+      "properties": {
+        "name": "Eclairion",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Ile-de-France",
+        "departement": "Essonne",
+        "ville": "Bruyères-le-Châtel",
+        "projet": "Infrastructure dédiée au calcul intensif et aux data centers",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-039-harmattan-ai",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.172576,
+          48.7305162
+        ]
+      },
+      "properties": {
+        "name": "Harmattan AI",
+        "category": "Data Center & IA",
+        "icon": "🖥️",
+        "region": "Ile-de-France",
+        "departement": "Essonne",
+        "ville": "Saclay / Palaiseau",
+        "projet": "Usine de production de drones",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-040-mersen-france",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2940122,
+          48.9254221
+        ]
+      },
+      "properties": {
+        "name": "Mersen France",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Hauts-de-Seine",
+        "ville": "Gennevilliers",
+        "projet": "Augmentation de la production",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-041-wandercraft",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.320041,
+          48.8588897
+        ]
+      },
+      "properties": {
+        "name": "Wandercraft",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Paris",
+        "ville": "Paris",
+        "projet": "Production de robots pour la santé et l'industrie automobile",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-042-mgx",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7171086,
+          48.8389953
+        ]
+      },
+      "properties": {
+        "name": "MGX",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Seine-et-Marne",
+        "ville": "Bussy-Saint-Georges",
+        "projet": "Projet de centre de données",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-043-opcore",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7171086,
+          48.8389953
+        ]
+      },
+      "properties": {
+        "name": "Opcore",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Seine-et-Marne",
+        "ville": "Bussy-Saint-Georges",
+        "projet": "Projet de centre de données porté avec Iliad",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-044-derichebourg",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1513279,
+          49.0992941
+        ]
+      },
+      "properties": {
+        "name": "Derichebourg",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Ile-de-France",
+        "departement": "Val d'Oise",
+        "ville": "Saint-Ouen-l'Aumône",
+        "projet": "Recyclage de batteries de véhicules électriques",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-045-semmaris",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4500537,
+          48.9863555
+        ]
+      },
+      "properties": {
+        "name": "Semmaris",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Val d'Oise",
+        "ville": "Gonesse",
+        "projet": "Pôle agroalimentaire complémentaire",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-046-solmax",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.7140683,
+          48.9891971
+        ]
+      },
+      "properties": {
+        "name": "Solmax",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Yvelines",
+        "ville": "Mantes-la-Jolie",
+        "projet": "Regrouper et décarboner des productions",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-047-soredab",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9554697,
+          48.7555258
+        ]
+      },
+      "properties": {
+        "name": "Soredab",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Ile-de-France",
+        "departement": "Yvelines",
+        "ville": "La Verrière",
+        "projet": "Extension de son site R&D",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-048-tertu",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0848064,
+          48.8280791
+        ]
+      },
+      "properties": {
+        "name": "Tertu",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Normandie",
+        "departement": "Calvados",
+        "ville": "Villedieu-les-Poêles",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-049-maiaspace",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4857205,
+          49.0932008
+        ]
+      },
+      "properties": {
+        "name": "MaiaSpace",
+        "category": "Aéronautique & Défense",
+        "icon": "✈️",
+        "region": "Normandie",
+        "departement": "Eure",
+        "ville": "Vernon",
+        "projet": "Usine de production de lanceurs spaciaux réutilisables",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-050-eastman",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6005386,
+          49.505435
+        ]
+      },
+      "properties": {
+        "name": "Eastman",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Normandie",
+        "departement": "Seine-Maritime",
+        "ville": "Port-Jérôme-sur-Seine",
+        "projet": "Recyclage avancé des plastiques",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-051-verso-energy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6005386,
+          49.505435
+        ]
+      },
+      "properties": {
+        "name": "Verso Energy",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Normandie",
+        "departement": "Seine-Maritime",
+        "ville": "Port-Jérôme-sur-Seine",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-052-engie",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1079732,
+          49.4938975
+        ]
+      },
+      "properties": {
+        "name": "Engie",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Normandie",
+        "departement": "Seine-Maritime",
+        "ville": "Le Havre",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-053-lhyfe",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1079732,
+          49.4938975
+        ]
+      },
+      "properties": {
+        "name": "Lhyfe",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Normandie",
+        "departement": "Seine-Maritime",
+        "ville": "Le Havre",
+        "projet": "Approvisionnement en H2 bas carbone",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-054-cabot-carbone",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.534411,
+          49.5188282
+        ]
+      },
+      "properties": {
+        "name": "Cabot Carbone",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Normandie",
+        "departement": "Seine-Maritime",
+        "ville": "Lillebonne",
+        "projet": "Création d'un energy center",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-055-kl-1-ag",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6300363,
+          44.9088982
+        ]
+      },
+      "properties": {
+        "name": "KL 1 AG",
+        "category": "Matériaux critiques",
+        "icon": "🔋",
+        "region": "Nouvelle-Aquitaine",
+        "departement": "Gironde",
+        "ville": "Blanquefort",
+        "projet": "Investissement industriel et technologique dédié à la conversion de métaux critiques",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-056-verso-energy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8095934,
+          43.8323121
+        ]
+      },
+      "properties": {
+        "name": "Verso Energy",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Nouvelle-Aquitaine",
+        "departement": "Landes",
+        "ville": "Tartas",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-057-carester-caremag",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6200209,
+          43.4127204
+        ]
+      },
+      "properties": {
+        "name": "Carester Caremag",
+        "category": "Recyclage",
+        "icon": "♻️",
+        "region": "Nouvelle-Aquitaine",
+        "departement": "Pyrénées-Atlantiques",
+        "ville": "Lacq",
+        "projet": "Recyclage d’aimants et production de terres rares pour sécuriser les approvisionnements",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-058-elyse-energy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6200209,
+          43.4127204
+        ]
+      },
+      "properties": {
+        "name": "Elyse Energy",
+        "category": "Biocarburants",
+        "icon": "🌿",
+        "region": "Nouvelle-Aquitaine",
+        "departement": "Pyrénées-Atlantiques",
+        "ville": "Lacq",
+        "projet": "Production de biocarburants",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-059-aura-aero",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3588178,
+          43.535474
+        ]
+      },
+      "properties": {
+        "name": "Aura Aéro",
+        "category": "Aéronautique & Défense",
+        "icon": "✈️",
+        "region": "Occitanie",
+        "departement": "Haute-Garonne",
+        "ville": "Toulouse (Francazal)",
+        "projet": "Développement d'avions hybrides et électriques pour décarboner l'aviation",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-060-siat",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4976209,
+          43.6294985
+        ]
+      },
+      "properties": {
+        "name": "Siat",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Occitanie",
+        "departement": "Tarn",
+        "ville": "Brassac",
+        "projet": "Transformation de la scierie",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-061-naval-group",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6830354,
+          47.1964482
+        ]
+      },
+      "properties": {
+        "name": "Naval Group",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Pays de la Loire",
+        "departement": "Loire Atlantique",
+        "ville": "Indret (Nantes)",
+        "projet": "Augmentation des capacités de production",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-062-briand",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5515588,
+          47.4739884
+        ]
+      },
+      "properties": {
+        "name": "Briand",
+        "category": "Sidérurgie",
+        "icon": "⚙️",
+        "region": "Pays de la Loire",
+        "departement": "Maine-et-Loire",
+        "ville": "Angers / Cholet",
+        "projet": "Acier décarboné : projet de four électrique pour production d'aciers plats",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-063-goco",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7174,
+          48.1214342
+        ]
+      },
+      "properties": {
+        "name": "GOCO²",
+        "category": "Énergie & Nucléaire",
+        "icon": "⚡",
+        "region": "Pays de la Loire",
+        "departement": "Mayenne",
+        "ville": "Louverné",
+        "projet": "Capture et stockage de CO2",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-064-eclairion",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1967849,
+          48.0073849
+        ]
+      },
+      "properties": {
+        "name": "Eclairion",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Pays de la Loire",
+        "departement": "Sarthe",
+        "ville": "Le Mans",
+        "projet": "Projet de centre de données",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-065-airbus-helicopters",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2145269,
+          43.4162193
+        ]
+      },
+      "properties": {
+        "name": "Airbus Helicopters",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "departement": "Bouches-du-Rhône",
+        "ville": "Marignane",
+        "projet": "Modernisation industrielle du site de Marignane",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-066-marcegaglia",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.945595,
+          43.4380714
+        ]
+      },
+      "properties": {
+        "name": "Marcegaglia",
+        "category": "Sidérurgie",
+        "icon": "⚙️",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "departement": "Bouches-du-Rhône",
+        "ville": "Fos-sur-Mer",
+        "projet": "Modernisation d’une aciérie et production d’acier bas carbone",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-067-gravithy",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.945595,
+          43.4380714
+        ]
+      },
+      "properties": {
+        "name": "Gravithy",
+        "category": "Sidérurgie",
+        "icon": "⚙️",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "departement": "Bouches-du-Rhône",
+        "ville": "Fos-sur-Mer",
+        "projet": "Procédé innovant de production de fer sans haut-fourneau",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-068-alteo",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4710661,
+          43.455613
+        ]
+      },
+      "properties": {
+        "name": "Alteo",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "departement": "Bouches-du-Rhône",
+        "ville": "Gardanne",
+        "projet": "Développement d’une filière de composants pour batteries",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "france-projet-069-naval-group",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.8483598,
+          43.1396789
+        ]
+      },
+      "properties": {
+        "name": "Naval Group",
+        "category": "Industrie",
+        "icon": "🏭",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "departement": "Var",
+        "ville": "Ollioules / Toulon",
+        "projet": "Investissement industriel",
+        "coord_source": "nominatim",
+        "coord_accuracy": "high"
+      }
+    }
+  ]
+}
