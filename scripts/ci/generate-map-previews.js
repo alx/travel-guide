@@ -27,7 +27,7 @@ const path = require('path');
 const fs   = require('fs');
 
 const BASE_URL = process.env.PREVIEW_BASE_URL || 'http://localhost:1414';
-const ROOT     = path.join(__dirname, '..');
+const ROOT     = path.join(__dirname, '../..');
 
 /** Known maps — used in full-build mode (no CLI args) */
 const KNOWN_MAPS = [
