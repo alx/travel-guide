@@ -1,0 +1,400 @@
+{{ define "head" }}
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* ── Base reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    min-height: 100vh;
+  }
+
+  /* ── Map view (shown when GeoJSON found) ── */
+  #map-view { display: none; flex-direction: column; height: 100vh; }
+  #map-view.active { display: flex; }
+
+  .map-topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px;
+    background: #181c26;
+    border-bottom: 1px solid #2a2f3e;
+    z-index: 1000;
+  }
+  .map-topbar a { color: #6b7fcc; text-decoration: none; font-size: 13px; }
+  .map-topbar .sep { color: #3a3f50; }
+  .map-topbar h1 { font-size: 14px; font-weight: 600; color: #e8eaf0; flex: 1; }
+  .edit-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 6px;
+    background: #6b7fcc; color: #fff;
+    font-size: 12px; font-weight: 600; text-decoration: none;
+    transition: background .2s;
+  }
+  .edit-btn:hover { background: #7f91e0; }
+
+  #map { flex: 1; }
+
+  /* ── Fallback CTA (shown when no GeoJSON) ── */
+  #fallback-view {
+    display: none;
+    min-height: 100vh;
+    background: #0f1117;
+  }
+  #fallback-view.active { display: block; }
+
+  /* hero */
+  .hero {
+    position: relative;
+    padding: 80px 24px 64px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(107,127,204,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    padding: 4px 14px; border-radius: 20px;
+    background: rgba(107,127,204,.15);
+    border: 1px solid rgba(107,127,204,.3);
+    color: #6b7fcc; font-size: 12px; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700; line-height: 1.15;
+    color: #fff; margin-bottom: 20px;
+  }
+  .hero h1 span { color: #6b7fcc; }
+  .hero p {
+    max-width: 520px; margin: 0 auto 36px;
+    color: #8b90a8; font-size: 16px; line-height: 1.65;
+  }
+
+  /* CTA button */
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px; border-radius: 10px;
+    background: linear-gradient(135deg, #6b7fcc, #9b8de8);
+    color: #fff; font-size: 15px; font-weight: 700;
+    text-decoration: none; letter-spacing: .02em;
+    box-shadow: 0 8px 32px rgba(107,127,204,.35);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(107,127,204,.45); }
+
+  /* airbnb id pill */
+  .listing-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 8px;
+    background: #181c26; border: 1px solid #2a2f3e;
+    font-size: 13px; color: #8b90a8; margin-top: 24px;
+  }
+  .listing-pill code { color: #6b7fcc; font-family: monospace; }
+
+  /* features grid */
+  .features {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    padding: 24px;
+    background: #181c26;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+    transition: border-color .2s, transform .2s;
+  }
+  .feature-card:hover { border-color: #6b7fcc44; transform: translateY(-2px); }
+  .feature-icon { font-size: 24px; margin-bottom: 12px; }
+  .feature-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #e8eaf0; }
+  .feature-card p { font-size: 13px; color: #8b90a8; line-height: 1.55; }
+
+  /* how it works */
+  .how-section {
+    max-width: 700px; margin: 0 auto;
+    padding: 0 24px 80px;
+    text-align: center;
+  }
+  .how-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 32px; }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex; gap: 16px; align-items: flex-start;
+    text-align: left; padding: 20px 0;
+    border-bottom: 1px solid #2a2f3e;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(107,127,204,.15);
+    border: 1px solid rgba(107,127,204,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #6b7fcc;
+  }
+  .step-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .step-body p { font-size: 13px; color: #8b90a8; line-height: 1.5; }
+
+  /* loader */
+  #loader {
+    position: fixed; inset: 0;
+    background: #0f1117;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  .spinner {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 3px solid #2a2f3e;
+    border-top-color: #6b7fcc;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* leaflet overrides */
+  .leaflet-popup-content-wrapper {
+    background: #1e2330; border: 1px solid #2a2f3e;
+    color: #e8eaf0; border-radius: 10px;
+  }
+  .leaflet-popup-tip { background: #1e2330; }
+  .leaflet-popup-content { margin: 12px 14px; }
+  .popup-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .popup-category { font-size: 12px; color: #8b90a8; margin-bottom: 6px; }
+  .popup-notes { font-size: 13px; line-height: 1.5; }
+  .popup-hours { font-size: 12px; color: #6b7fcc; margin-top: 4px; }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap');
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+{{ end }}
+
+{{ define "main" }}
+
+<!-- ── Loader ── -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- ── Map view ── -->
+<div id="map-view">
+  <div class="map-topbar">
+    <a href="/">🗺️ Maps</a>
+    <span class="sep">›</span>
+    <h1 id="map-title">Airbnb Map</h1>
+    <a href="/airbnb/{{ .File.BaseFileName }}/edit/" class="edit-btn">✏️ Edit Map</a>
+  </div>
+  <div id="map"></div>
+</div>
+
+<!-- ── Fallback CTA ── -->
+<div id="fallback-view">
+  <div class="hero">
+    <div class="hero-badge">For Airbnb Hosts</div>
+    <h1>Give your guests a<br><span>neighbourhood map</span><br>they'll actually use.</h1>
+    <p>
+      We hand-build a custom map of everything around your listing —
+      supermarkets, parks, restaurants, transit — so guests arrive informed
+      and leave happy reviews.
+    </p>
+    <a href="/#contact-form-float" class="cta-btn">
+      📍 Get my map — from €29
+    </a>
+    <div class="listing-pill">
+      Listing detected: <code>{{ .File.BaseFileName }}</code>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🛒</div>
+      <h3>Practical spots only</h3>
+      <p>Supermarkets, pharmacies, ATMs, laundry — the things guests actually search for at 10pm.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏖️</div>
+      <h3>Local favourites</h3>
+      <p>Restaurants and cafés we'd recommend to a friend, not just what ranks on TripAdvisor.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📍</div>
+      <h3>GPS-precise, embeddable</h3>
+      <p>Every pin is verified. Embed the live map directly in your Airbnb guide or welcome doc.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✏️</div>
+      <h3>You keep control</h3>
+      <p>Add, edit or remove spots yourself after delivery. No subscription, no gatekeeping.</p>
+    </div>
+  </div>
+
+  <div class="how-section">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Send us your listing URL</h4>
+          <p>We need nothing else. The Airbnb URL tells us the location and we take it from there.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>We research &amp; build</h4>
+          <p>We map everything within walking and driving distance: 40–80 curated spots, in 3–5 days.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>You get a live embeddable map</h4>
+          <p>Shareable link + embed code for your welcome guide. We walk you through adding it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Edit it yourself, forever</h4>
+          <p>Use our editor to update spots any time. Your map, your data, no lock-in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(async () => {
+  const airbnbId = {{ .File.BaseFileName | jsonify }};
+  const geojsonUrl = `/airbnb/${airbnbId}/locations.geojson`;
+  const loader = document.getElementById('loader');
+  const mapView = document.getElementById('map-view');
+  const fallbackView = document.getElementById('fallback-view');
+
+  let geojsonData = null;
+  try {
+    const res = await fetch(geojsonUrl);
+    if (!res.ok) throw new Error('not found');
+    geojsonData = await res.json();
+    if (!geojsonData.features || geojsonData.features.length === 0) throw new Error('empty');
+  } catch {
+    // Show fallback
+    loader.style.display = 'none';
+    fallbackView.classList.add('active');
+    return;
+  }
+
+  // ── Show map ──
+  loader.style.display = 'none';
+  mapView.classList.add('active');
+
+  // Set title from GeoJSON metadata if present
+  const meta = geojsonData.metadata || {};
+  if (meta.title) document.getElementById('map-title').textContent = meta.title;
+
+  const CATEGORY_COLORS = {
+    'Supermarket': '#22c55e',
+    'Park':        '#4ade80',
+    'Playground':  '#fb923c',
+    'Transit':     '#38bdf8',
+    'Activity':    '#a78bfa',
+    'Restaurant':  '#f97316',
+    'Café':        '#92400e',
+    'Beach':       '#0ea5e9',
+    'Other':       '#6b7280',
+  };
+  const CATEGORY_ICONS = {
+    'Supermarket': '🛒',
+    'Park':        '🌳',
+    'Playground':  '🛝',
+    'Transit':     '🚌',
+    'Activity':    '🎠',
+    'Restaurant':  '🍽️',
+    'Café':        '☕',
+    'Beach':       '🏖️',
+    'Other':       '📍',
+  };
+
+  function makeIcon(category) {
+    const color = CATEGORY_COLORS[category] || CATEGORY_COLORS['Other'];
+    const emoji = CATEGORY_ICONS[category] || '📍';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40">
+      <ellipse cx="16" cy="38" rx="6" ry="2" fill="rgba(0,0,0,.3)"/>
+      <path d="M16 0C9.37 0 4 5.37 4 12c0 9 12 26 12 26S28 21 28 12C28 5.37 22.63 0 16 0z" fill="${color}"/>
+      <circle cx="16" cy="12" r="8" fill="rgba(255,255,255,.95)"/>
+      <text x="16" y="16" text-anchor="middle" font-size="10">${emoji}</text>
+    </svg>`;
+    return L.divIcon({
+      html: svg,
+      className: '',
+      iconSize: [32, 40],
+      iconAnchor: [16, 40],
+      popupAnchor: [0, -42],
+    });
+  }
+
+  // Compute bounds from features
+  const coords = geojsonData.features
+    .filter(f => f.geometry && f.geometry.type === 'Point')
+    .map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+
+  const map = L.map('map', { zoomControl: true });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19,
+  }).addTo(map);
+
+  if (coords.length > 0) {
+    const bounds = L.latLngBounds(coords);
+    map.fitBounds(bounds, { padding: [40, 40] });
+  } else {
+    map.setView([0, 0], 2);
+  }
+
+  // Airbnb pin (from metadata)
+  if (meta.lat && meta.lon) {
+    const airbnbIcon = L.divIcon({
+      html: `<div style="background:#FF5A5F;border:3px solid #fff;border-radius:50%;width:20px;height:20px;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,
+      className: '',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+    });
+    L.marker([meta.lat, meta.lon], { icon: airbnbIcon })
+      .bindPopup('<div class="popup-name">🏠 Your Airbnb</div>')
+      .addTo(map);
+  }
+
+  L.geoJSON(geojsonData, {
+    pointToLayer(feature, latlng) {
+      const cat = feature.properties.category || 'Other';
+      return L.marker(latlng, { icon: makeIcon(cat) });
+    },
+    onEachFeature(feature, layer) {
+      const p = feature.properties;
+      layer.bindPopup(`
+        <div class="popup-name">${p.icon || ''} ${p.name || 'Unnamed'}</div>
+        <div class="popup-category">${p.category || ''}</div>
+        ${p.notes ? `<div class="popup-notes">${p.notes}</div>` : ''}
+        ${p.hours ? `<div class="popup-hours">🕐 ${p.hours}</div>` : ''}
+        ${p.address ? `<div class="popup-hours">📌 ${p.address}</div>` : ''}
+      `);
+    },
+  }).addTo(map);
+
+  window.MAP_CONFIG = {
+    title: meta.title || `Airbnb ${airbnbId}`,
+    geojsonUrl,
+    geojsonData,
+    embedPath: `/airbnb/${airbnbId}/`,
+  };
+})();
+</script>
+{{ end }}

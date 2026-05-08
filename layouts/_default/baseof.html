@@ -73,8 +73,6 @@
     html.embed-mode .page-header   { display: none !important; }
     html.embed-mode #map-toolbar   { display: none !important; }
     html.embed-mode .contact-form-float { display: none !important; }
-    html.embed-mode #paywall-modal { display: none !important; }
-    html.embed-mode .map-layout    { height: 100vh !important; min-height: 100vh !important; gap: 0 !important; }
     html.embed-mode #map           { height: 100% !important; border-radius: 0 !important; box-shadow: none !important; }
     /* Hide sidebar in embed — map-only */
     html.embed-mode .sidebar       { display: none !important; }
@@ -110,14 +108,9 @@
     gtag('js', new Date());
     gtag('config', 'G-WDJF6L9P30');
   </script>
+  {{ partial "og-image.html" . }}
 </head>
 <body>
-  {{ partial "vip-manager.html" . }}
-  <script>
-    // GitHub OAuth config (from hugo.toml)
-    window.GITHUB_CLIENT_ID = {{ .Site.Params.githubClientId | default "" | jsonify }};
-    window.GITHUB_WORKER_URL = {{ .Site.Params.githubWorkerUrl | default "" | jsonify }};
-  </script>
   <header class="site-header">
     <a href="{{ "/" | relURL }}">🗺️ Maps</a>
     <nav class="site-nav">

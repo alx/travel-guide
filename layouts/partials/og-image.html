@@ -1,0 +1,55 @@
+{{/*
+  layouts/partials/og-image.html
+
+  Usage: {{ partial "og-image.html" . }}
+
+  Resolution order for og:image:
+  1. Front matter `og_image` (explicit override per page)
+  2. Generated map preview screenshot at /images/map-previews/<slug>.png
+     — present after the screenshots CI job has run
+  3. Airbnb map preview at /images/map-previews/airbnb-<id>.png
+  4. Global fallback: /images/og-travels.png
+
+  The generated previews are 1200×630px PNG files produced by Playwright
+  in the `screenshots` GitHub Actions job and injected into the build
+  artifact before deployment.
+*/}}
+
+{{- $baseURL  := .Site.BaseURL | strings.TrimSuffix "/" -}}
+{{- $section  := .Section -}}
+{{- $slug     := .File.BaseFileName -}}
+{{- $ogImage  := "" -}}
+
+{{/* 1. Explicit front matter override */}}
+{{- with .Params.og_image -}}
+  {{- $ogImage = . -}}
+{{- end -}}
+
+{{/* 2. Generated map preview — regular destinations */}}
+{{- if not $ogImage -}}
+  {{- $previewPath := printf "images/map-previews/%s.png" $slug -}}
+  {{- if fileExists (printf "static/%s" $previewPath) -}}
+    {{- $ogImage = printf "%s/%s" $baseURL $previewPath -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 3. Airbnb map preview */}}
+{{- if not $ogImage -}}
+  {{- if eq $section "airbnb" -}}
+    {{- $previewPath := printf "images/map-previews/airbnb-%s.png" $slug -}}
+    {{- if fileExists (printf "static/%s" $previewPath) -}}
+      {{- $ogImage = printf "%s/%s" $baseURL $previewPath -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 4. Global fallback */}}
+{{- if not $ogImage -}}
+  {{- $ogImage = printf "%s/images/og-travels.png" $baseURL -}}
+{{- end -}}
+
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{{ $ogImage }}">
+<meta name="twitter:card" content="summary_large_image">

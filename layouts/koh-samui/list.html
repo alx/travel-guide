@@ -5,22 +5,6 @@
 {{ define "main" }}
 <div id="map"></div>
 
-<!-- Paywall modal -->
-<div id="paywall-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:white;border-radius:12px;padding:2rem;width:90%;max-width:400px;text-align:center;">
-    <div style="font-size:2.5rem;margin-bottom:0.75rem;">🔒</div>
-    <h3 style="margin-bottom:0.5rem;">Unlock VIP Access</h3>
-    <p style="color:#555;font-size:0.9rem;margin-bottom:1rem;">Get access to exclusive spots, private beaches, and expat-curated hidden gems on Koh Samui and all destinations.</p>
-    <div style="font-size:1.5rem;font-weight:700;color:#f59e0b;margin-bottom:0.5rem;">€4.99 / month</div>
-    <p style="color:#aaa;font-size:0.75rem;margin-bottom:1.25rem;">Recurring · Cancel anytime · Powered by Stripe</p>
-    <a id="stripe-unlock-btn" href="{{ .Site.Params.stripePaymentLink }}" style="display:block;background:#f59e0b;color:white;padding:0.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-bottom:0.75rem;">
-      🔓 Unlock Now — €4.99/mo
-    </a>
-    <button onclick="document.getElementById('paywall-modal').style.display='none'" style="display:block;width:100%;background:none;border:none;color:#aaa;cursor:pointer;font-size:0.82rem;margin-bottom:0.5rem;">Maybe later</button>
-    <button onclick="window.unlockVIP && window.unlockVIP()" style="display:block;width:100%;background:none;border:none;color:#bbb;cursor:pointer;font-size:0.75rem;text-decoration:underline;">Already a member? Restore access</button>
-  </div>
-</div>
-
 <!-- Floating left overlay -->
 <div class="map-overlay">
   <div class="overlay-card">
@@ -70,12 +54,11 @@ window.CATEGORY_COLORS = {
   'Hotel': '#8b5cf6',
   'Shopping': '#ec4899',
   'Area Guide': '#1a3a5c',
-  'Other': '#6b7280',
-  'VIP': '#f59e0b'
+  'Other': '#6b7280'
 };
 window.CATEGORY_ICONS = {
   'Beach': '🏖️', 'Restaurant': '🍽️', 'Activity': '🎯',
-  'Hotel': '🏨', 'Shopping': '🛍️', 'Area Guide': '🗺️', 'Other': '📍', 'VIP': '🔒'
+  'Hotel': '🏨', 'Shopping': '🛍️', 'Area Guide': '🗺️', 'Other': '📍'
 };
 </script>
 {{ partial "map-poi-helpers.html" . }}

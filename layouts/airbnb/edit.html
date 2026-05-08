@@ -1,0 +1,966 @@
+{{ define "head" }}
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:      #0d0f14;
+  --surf:    #13161f;
+  --surf2:   #1a1e2a;
+  --border:  #1f2435;
+  --border2: #2a3048;
+  --text:    #d8dce8;
+  --muted:   #6b7090;
+  --accent:  #5d7cef;
+  --green:   #22c55e;
+  --orange:  #f97316;
+  --red:     #ef4444;
+  --airbnb:  #FF5A5F;
+  --topbar:  48px;
+  --tabbar:  56px; /* mobile bottom tab bar */
+}
+
+html, body { height: 100%; overflow: hidden; font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+/* ═══════════════════════════════════════════
+   TOPBAR — always visible
+═══════════════════════════════════════════ */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--topbar);
+  display: flex; align-items: center; gap: 10px; padding: 0 12px;
+  background: var(--surf); border-bottom: 1px solid var(--border);
+  z-index: 200;
+}
+.topbar-back { color: var(--accent); font-size: 13px; text-decoration: none; white-space: nowrap; }
+.topbar-sep  { color: var(--border2); flex-shrink: 0; }
+.topbar-title { font-size: 13px; color: var(--muted); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; }
+.topbar-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 6px 12px; border-radius: 7px; border: none; cursor: pointer;
+  font-size: 12px; font-weight: 600; font-family: inherit; transition: all .15s; white-space: nowrap;
+}
+.btn-ghost   { background: transparent; color: var(--muted); border: 1px solid var(--border2); }
+.btn-ghost:hover { color: var(--text); border-color: var(--accent); }
+.btn-accent  { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: #6d8ef5; }
+.btn-green   { background: var(--green); color: #fff; }
+.btn-green:hover { background: #16a34a; }
+.btn-red     { background: transparent; color: var(--red); border: 1px solid #ef444433; }
+.btn-red:hover { background: #ef44441a; }
+.btn-sm      { padding: 4px 9px; font-size: 11px; }
+.btn-icon    { padding: 6px; border-radius: 7px; font-size: 16px; background: transparent; border: 1px solid var(--border2); color: var(--muted); cursor: pointer; transition: all .15s; }
+.btn-icon:hover { color: var(--text); border-color: var(--accent); }
+
+/* ═══════════════════════════════════════════
+   DESKTOP LAYOUT (≥768px)
+   Two-column: sidebar | map
+   Drawer slides from right
+═══════════════════════════════════════════ */
+.layout {
+  position: fixed;
+  top: var(--topbar); left: 0; right: 0; bottom: 0;
+  display: flex;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 320px; flex-shrink: 0;
+  display: flex; flex-direction: column;
+  background: var(--surf); border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+.sidebar-head {
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.sidebar-head h2 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.poi-count { font-size: 11px; color: var(--muted); }
+.poi-count strong { color: var(--accent); }
+
+.searchbox {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 8px; padding: 0 10px;
+  background: var(--bg); border: 1px solid var(--border2); border-radius: 7px;
+}
+.searchbox input {
+  flex: 1; padding: 7px 0; background: none; border: none; outline: none;
+  font-size: 13px; color: var(--text); font-family: inherit;
+}
+.searchbox input::placeholder { color: var(--muted); }
+
+.cat-bar {
+  display: flex; gap: 5px; flex-wrap: wrap;
+  padding: 8px 12px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.cat-pill {
+  padding: 3px 9px; border-radius: 20px; cursor: pointer;
+  font-size: 11px; font-weight: 600;
+  background: transparent; border: 1px solid var(--border2); color: var(--muted);
+  transition: all .15s; white-space: nowrap;
+}
+.cat-pill.active { color: #fff; border-color: transparent; }
+
+.poi-list { flex: 1; overflow-y: auto; padding: 6px; }
+.poi-list::-webkit-scrollbar { width: 3px; }
+.poi-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.poi-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 9px; border-radius: 8px; cursor: pointer;
+  transition: background .12s; border: 1px solid transparent; margin-bottom: 1px;
+}
+.poi-item:hover { background: var(--bg); }
+.poi-item.active { background: var(--bg); border-color: var(--accent); }
+.poi-emoji { font-size: 17px; flex-shrink: 0; width: 26px; text-align: center; }
+.poi-info { flex: 1; min-width: 0; }
+.poi-name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.poi-cat  { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.poi-acts { display: flex; gap: 3px; opacity: 0; transition: opacity .12s; flex-shrink: 0; }
+.poi-item:hover .poi-acts, .poi-item.active .poi-acts { opacity: 1; }
+
+.add-btn {
+  margin: 6px; padding: 9px; width: calc(100% - 12px);
+  border: 1px dashed var(--border2); border-radius: 8px;
+  background: none; cursor: pointer; color: var(--accent);
+  font-size: 13px; font-weight: 600; font-family: inherit;
+  transition: all .15s;
+}
+.add-btn:hover { background: rgba(93,124,239,.08); border-color: var(--accent); }
+
+/* ── Map container ── */
+.map-wrap { flex: 1; position: relative; overflow: hidden; }
+#map { width: 100%; height: 100%; }
+
+/* ── Drawer (desktop: slides from right) ── */
+.drawer {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 360px; max-width: 100%;
+  background: var(--surf); border-left: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+  z-index: 100;
+}
+.drawer.open { transform: translateX(0); }
+
+.drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.drawer-head h3 { font-size: 14px; font-weight: 700; }
+.drawer-body { flex: 1; overflow-y: auto; padding: 14px; }
+.drawer-body::-webkit-scrollbar { width: 3px; }
+.drawer-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+.drawer-foot {
+  padding: 10px 14px; border-top: 1px solid var(--border);
+  display: flex; gap: 7px; justify-content: flex-end; flex-shrink: 0;
+}
+
+/* ── Map click hint ── */
+.map-hint {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  padding: 7px 16px; border-radius: 20px;
+  background: rgba(13,15,20,.92); border: 1px solid var(--border2);
+  font-size: 12px; color: var(--muted); pointer-events: none;
+  z-index: 50; opacity: 0; transition: opacity .2s; white-space: nowrap;
+}
+.map-hint.show { opacity: 1; }
+
+/* ── FAB (mobile add button) ── */
+.fab {
+  display: none;
+  position: absolute; right: 16px; bottom: calc(var(--tabbar) + 16px);
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--accent); color: #fff; font-size: 24px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(93,124,239,.5);
+  z-index: 150; transition: transform .15s, box-shadow .15s;
+}
+.fab:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(93,124,239,.6); }
+
+/* ═══════════════════════════════════════════
+   MOBILE LAYOUT (<768px)
+   Map fills screen. Sidebar = bottom panel.
+   Drawer = bottom sheet.
+   Tab bar at bottom for navigation.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+  :root { --topbar: 44px; }
+
+  .topbar { padding: 0 10px; gap: 8px; }
+  .topbar-back { font-size: 12px; }
+  .topbar-title { font-size: 11px; }
+  .btn { font-size: 11px; padding: 5px 9px; }
+
+  /* Hide desktop sidebar */
+  .sidebar { display: none; }
+
+  /* Map takes full remaining height */
+  .layout { bottom: var(--tabbar); }
+  .map-wrap { flex: 1; }
+
+  /* FAB visible on mobile */
+  .fab { display: flex; align-items: center; justify-content: center; }
+
+  /* Drawer becomes bottom sheet */
+  .drawer {
+    position: fixed;
+    top: auto; right: 0; left: 0; bottom: 0;
+    width: 100%;
+    height: 85vh;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    border-radius: 16px 16px 0 0;
+    transform: translateY(100%);
+  }
+  .drawer.open { transform: translateY(0); }
+
+  /* Drag handle on bottom sheet */
+  .drawer-head::before {
+    content: '';
+    position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    width: 36px; height: 4px; border-radius: 2px; background: var(--border2);
+  }
+  .drawer-head { position: relative; padding-top: 20px; }
+
+  /* Backdrop when drawer open */
+  .drawer-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 99;
+  }
+  .drawer-backdrop.show { display: block; }
+
+  /* Map hint above FAB */
+  .map-hint { bottom: calc(var(--tabbar) + 70px); }
+}
+
+/* ═══════════════════════════════════════════
+   BOTTOM TAB BAR (mobile only)
+═══════════════════════════════════════════ */
+.tabbar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: var(--tabbar);
+  background: var(--surf); border-top: 1px solid var(--border);
+  z-index: 200;
+  display: none; /* hidden on desktop */
+}
+.tabbar-inner {
+  display: flex; height: 100%;
+}
+.tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; cursor: pointer; border: none; background: none; color: var(--muted);
+  font-size: 10px; font-weight: 600; font-family: inherit; transition: color .15s;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab .tab-icon { font-size: 18px; line-height: 1; }
+.tab.active { color: var(--accent); }
+
+@media (max-width: 767px) {
+  .tabbar { display: flex; }
+  .tabbar > .tabbar-inner { display: flex; }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE SPOT LIST PANEL
+   Slides up from bottom when "Spots" tab active
+═══════════════════════════════════════════ */
+.spot-panel {
+  display: none;
+  position: fixed; bottom: var(--tabbar); left: 0; right: 0;
+  height: 60vh;
+  background: var(--surf); border-top: 1px solid var(--border);
+  z-index: 180;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+}
+.spot-panel.open { transform: translateY(0); }
+
+@media (max-width: 767px) {
+  .spot-panel { display: flex; }
+}
+
+.spot-panel-head {
+  padding: 12px 14px 8px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.spot-panel-head h2 { font-size: 14px; font-weight: 700; }
+.spot-panel-search {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 8px; padding: 0 10px;
+  background: var(--bg); border: 1px solid var(--border2); border-radius: 7px;
+}
+.spot-panel-search input {
+  flex: 1; padding: 7px 0; background: none; border: none; outline: none;
+  font-size: 13px; color: var(--text); font-family: inherit;
+}
+.spot-panel-search input::placeholder { color: var(--muted); }
+.spot-panel-cats {
+  display: flex; gap: 5px; overflow-x: auto; padding: 8px 12px;
+  border-bottom: 1px solid var(--border); flex-shrink: 0; -webkit-overflow-scrolling: touch;
+}
+.spot-panel-cats::-webkit-scrollbar { display: none; }
+.spot-panel-list { flex: 1; overflow-y: auto; padding: 6px; -webkit-overflow-scrolling: touch; }
+
+/* ═══════════════════════════════════════════
+   FORM FIELDS
+═══════════════════════════════════════════ */
+.field { margin-bottom: 13px; }
+.field label {
+  display: block; font-size: 10px; font-weight: 700;
+  color: var(--muted); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 4px;
+}
+.field input, .field select, .field textarea {
+  width: 100%; padding: 8px 10px;
+  background: var(--bg); border: 1px solid var(--border2); border-radius: 7px;
+  color: var(--text); font-size: 13px; font-family: inherit; outline: none;
+  transition: border-color .15s; -webkit-appearance: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
+.field textarea { resize: vertical; min-height: 64px; line-height: 1.5; }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7090' fill='none' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+.field select option { background: var(--surf); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.coord-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.coord-hint { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+.field-hint { font-size: 11px; color: var(--accent); font-weight: 600; }
+
+/* ═══════════════════════════════════════════
+   EXPORT MODAL
+═══════════════════════════════════════════ */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.7);
+  z-index: 1000; display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+@media (min-width: 768px) {
+  .overlay { align-items: center; }
+}
+.overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--surf); border: 1px solid var(--border2);
+  border-radius: 16px 16px 0 0; width: 100%; max-height: 85vh;
+  display: flex; flex-direction: column;
+}
+@media (min-width: 768px) {
+  .modal { border-radius: 12px; width: 580px; max-height: 80vh; }
+}
+.modal-head { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.modal-head h3 { font-size: 15px; font-weight: 700; }
+.modal-body { flex: 1; overflow: auto; padding: 14px 18px; }
+.modal-body p { font-size: 13px; color: var(--muted); margin-bottom: 10px; line-height: 1.5; }
+.modal-body pre {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; font-size: 11px; font-family: 'IBM Plex Mono', monospace;
+  color: #a8b4d0; overflow: auto; white-space: pre; max-height: 320px;
+}
+.modal-foot { padding: 10px 18px; border-top: 1px solid var(--border); display: flex; gap: 7px; justify-content: flex-end; flex-wrap: wrap; }
+
+/* ═══════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════ */
+.toast {
+  position: fixed; bottom: calc(var(--tabbar) + 16px); left: 50%; transform: translateX(-50%);
+  padding: 9px 18px; border-radius: 8px;
+  background: var(--green); color: #fff; font-size: 13px; font-weight: 600;
+  z-index: 2000; pointer-events: none; opacity: 0; transition: opacity .2s; white-space: nowrap;
+}
+@media (min-width: 768px) { .toast { bottom: 24px; } }
+.toast.err { background: var(--red); }
+.toast.show { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   LEAFLET OVERRIDES
+═══════════════════════════════════════════ */
+.leaflet-popup-content-wrapper {
+  background: #1e2330; border: 1px solid var(--border2);
+  color: var(--text); border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+.leaflet-popup-tip { background: #1e2330; }
+.leaflet-popup-content { margin: 10px 12px; }
+.pop-name { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+.pop-cat  { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+.pop-note { font-size: 12px; line-height: 1.45; }
+.pop-hours { font-size: 11px; color: var(--accent); margin-top: 4px; }
+
+/* temp placement marker pulse */
+.temp-pulse {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid var(--accent); background: rgba(93,124,239,.25);
+  animation: pulse .9s ease-out infinite;
+}
+@keyframes pulse { to { transform: scale(2.2); opacity: 0; } }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+{{ end }}
+
+{{ define "main" }}
+
+<!-- ── Top bar ── -->
+<header class="topbar">
+  <a class="topbar-back" href="/airbnb/{{ .File.BaseFileName }}/">← Map</a>
+  <span class="topbar-sep">›</span>
+  <span class="topbar-title">airbnb/{{ .File.BaseFileName }}/edit</span>
+  <div class="topbar-actions">
+    <button class="btn btn-ghost btn-sm" onclick="App.importJSON()" title="Import GeoJSON">📂</button>
+    <button class="btn btn-accent btn-sm" onclick="App.openExport()">Export</button>
+  </div>
+</header>
+
+<!-- ── Main layout ── -->
+<div class="layout">
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <h2>Spots <span class="poi-count">— <strong id="d-count">0</strong></span></h2>
+      <div class="searchbox">
+        <span style="color:var(--muted)">🔍</span>
+        <input type="text" id="d-search" placeholder="Search…" oninput="App.filter()">
+      </div>
+    </div>
+    <div class="cat-bar" id="d-cats"></div>
+    <div class="poi-list" id="d-list"></div>
+    <button class="add-btn" onclick="App.startAdd()">＋ Add a spot</button>
+  </aside>
+
+  <!-- Map -->
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="map-hint" id="map-hint">Tap the map to place the spot</div>
+    <!-- Mobile FAB -->
+    <button class="fab" onclick="App.startAdd()" title="Add spot">＋</button>
+  </div>
+
+</div>
+
+<!-- ── Mobile spot panel ── -->
+<div class="spot-panel" id="spot-panel">
+  <div class="spot-panel-head">
+    <h2>Spots — <strong id="m-count">0</strong></h2>
+    <div class="spot-panel-search">
+      <span style="color:var(--muted)">🔍</span>
+      <input type="text" id="m-search" placeholder="Search…" oninput="App.filter()">
+    </div>
+  </div>
+  <div class="spot-panel-cats" id="m-cats"></div>
+  <div class="spot-panel-list" id="m-list"></div>
+</div>
+
+<!-- ── Bottom tab bar (mobile) ── -->
+<nav class="tabbar">
+  <div class="tabbar-inner">
+    <button class="tab active" id="tab-map" onclick="App.showTab('map')">
+      <span class="tab-icon">🗺️</span>Map
+    </button>
+    <button class="tab" id="tab-spots" onclick="App.showTab('spots')">
+      <span class="tab-icon">📍</span>Spots
+    </button>
+    <button class="tab" id="tab-export" onclick="App.openExport()">
+      <span class="tab-icon">📥</span>Export
+    </button>
+  </div>
+</nav>
+
+<!-- ── POI drawer (desktop: right panel / mobile: bottom sheet) ── -->
+<div class="drawer-backdrop" id="backdrop" onclick="App.closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3 id="drawer-title">Add Spot</h3>
+    <button class="btn-icon btn-sm" onclick="App.closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <input type="hidden" id="f-id">
+
+    <div class="field">
+      <label>Name *</label>
+      <input type="text" id="f-name" placeholder="e.g. Big C Supermarket" autocomplete="off">
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Category *</label>
+        <select id="f-cat" onchange="App.onCatChange()">
+          <option value="Supermarket">🛒 Supermarket</option>
+          <option value="Park">🌳 Park</option>
+          <option value="Playground">🛝 Playground</option>
+          <option value="Transit">🚌 Transit</option>
+          <option value="Activity">🎠 Activity</option>
+          <option value="Restaurant">🍽️ Restaurant</option>
+          <option value="Café">☕ Café</option>
+          <option value="Beach">🏖️ Beach</option>
+          <option value="Other">📍 Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Icon</label>
+        <input type="text" id="f-icon" placeholder="🛒" maxlength="4">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>
+        Coordinates *
+        <span class="field-hint" id="coord-hint-label"> — tap the map to place</span>
+      </label>
+      <div class="coord-row">
+        <input type="number" id="f-lat" placeholder="Lat" step="0.000001" inputmode="decimal">
+        <input type="number" id="f-lon" placeholder="Lon" step="0.000001" inputmode="decimal">
+      </div>
+      <p class="coord-hint">e.g. 9.4703, 100.0491 — or tap the map</p>
+    </div>
+
+    <div class="field">
+      <label>Address</label>
+      <input type="text" id="f-addr" placeholder="Street or area" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>Why we picked it</label>
+      <textarea id="f-notes" placeholder="What makes this spot worth visiting?"></textarea>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Hours</label>
+        <input type="text" id="f-hours" placeholder="09:00–20:00">
+      </div>
+      <div class="field">
+        <label>Price</label>
+        <input type="text" id="f-price" placeholder="Free / €5">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Website</label>
+      <input type="url" id="f-url" placeholder="https://…" inputmode="url">
+    </div>
+
+    <div class="field">
+      <label>Phone</label>
+      <input type="tel" id="f-phone" placeholder="+66 77 …" inputmode="tel">
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <button class="btn btn-red btn-sm" id="del-btn" onclick="App.deletePOI()" style="display:none;margin-right:auto">🗑</button>
+    <button class="btn btn-ghost btn-sm" onclick="App.closeDrawer()">Cancel</button>
+    <button class="btn btn-green" onclick="App.save()">💾 Save</button>
+  </div>
+</div>
+
+<!-- ── Export modal ── -->
+<div class="overlay" id="export-overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Export GeoJSON</h3>
+      <button class="btn-icon btn-sm" onclick="App.closeExport()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>Commit this file to <code style="color:var(--accent);font-family:monospace">static/airbnb/{{ .File.BaseFileName }}/locations.geojson</code> to publish the live map.</p>
+      <pre id="export-pre"></pre>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="App.closeExport()">Close</button>
+      <button class="btn btn-ghost" onclick="App.copyGeoJSON()">📋 Copy</button>
+      <button class="btn btn-accent" onclick="App.downloadGeoJSON()">⬇️ Download</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<!-- ── Hidden file input ── -->
+<input type="file" id="file-import" accept=".geojson,.json" style="display:none" onchange="App.handleImport(event)">
+
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const AIRBNB_ID = {{ .File.BaseFileName | jsonify }};
+
+/* ══════════════════════════════════════════
+   SEED DATA
+══════════════════════════════════════════ */
+const SEED = {
+  type: "FeatureCollection",
+  metadata: {
+    airbnb_id: AIRBNB_ID,
+    title: `Airbnb ${AIRBNB_ID} — Neighbourhood Map`,
+    lat: 9.4703, lon: 100.0491,
+    generated_by: "maps.girard-davila.net editor"
+  },
+  features: [
+    { type:"Feature", id:`${AIRBNB_ID}-001`,
+      geometry:{ type:"Point", coordinates:[100.0529,9.4747] },
+      properties:{ id:`${AIRBNB_ID}-001`, name:"Big C Supermarket", category:"Supermarket", icon:"🛒",
+        address:"Maret, Ko Samui", notes:"Large supermarket. Good for weekly shops.", hours:"09:00–22:00",
+        coord_source:"google_maps_pin", coord_accuracy:"high" } },
+    { type:"Feature", id:`${AIRBNB_ID}-002`,
+      geometry:{ type:"Point", coordinates:[100.0445,9.4665] },
+      properties:{ id:`${AIRBNB_ID}-002`, name:"Lamai Beach Park", category:"Park", icon:"🌳",
+        address:"Lamai Beach Road", notes:"Shaded park along the beachfront. Great for morning walks.", hours:"Always open",
+        coord_source:"google_maps_pin", coord_accuracy:"high" } },
+    { type:"Feature", id:`${AIRBNB_ID}-003`,
+      geometry:{ type:"Point", coordinates:[100.0491,9.4703] },
+      properties:{ id:`${AIRBNB_ID}-003`, name:"Playground Lamai", category:"Playground", icon:"🛝",
+        address:"Maret, Ko Samui", notes:"Fenced playground, safe for toddlers.", hours:"06:00–20:00",
+        coord_source:"nominatim", coord_accuracy:"medium" } },
+    { type:"Feature", id:`${AIRBNB_ID}-004`,
+      geometry:{ type:"Point", coordinates:[100.0510,9.4720] },
+      properties:{ id:`${AIRBNB_ID}-004`, name:"Songthaew Stop", category:"Transit", icon:"🚌",
+        address:"Route 4169, Lamai", notes:"Red songthaew to Chaweng every 20 mins. ฿40/person.", hours:"07:00–18:00",
+        coord_source:"google_maps_pin", coord_accuracy:"high" } },
+    { type:"Feature", id:`${AIRBNB_ID}-005`,
+      geometry:{ type:"Point", coordinates:[100.0466,9.4680] },
+      properties:{ id:`${AIRBNB_ID}-005`, name:"Lamai Muay Thai Gym", category:"Activity", icon:"🎠",
+        address:"Soi 4, Lamai", notes:"Drop-in classes for beginners. ฿500/session. AC ring.", hours:"07:00–12:00, 15:00–20:00",
+        coord_source:"google_maps_pin", coord_accuracy:"high" } },
+  ]
+};
+
+const CAT_ICONS = { Supermarket:'🛒', Park:'🌳', Playground:'🛝', Transit:'🚌', Activity:'🎠', Restaurant:'🍽️', 'Café':'☕', Beach:'🏖️', Other:'📍' };
+const CAT_COLORS = { Supermarket:'#22c55e', Park:'#4ade80', Playground:'#fb923c', Transit:'#38bdf8', Activity:'#a78bfa', Restaurant:'#f97316', 'Café':'#92400e', Beach:'#0ea5e9', Other:'#6b7280' };
+
+/* ══════════════════════════════════════════
+   APP
+══════════════════════════════════════════ */
+const App = (() => {
+  let features = [], metadata = {};
+  let selectedId = null, filterCat = 'All', filterText = '';
+  let isAdding = false, tempMarker = null;
+  let activeTab = 'map'; // mobile tab state
+  let map, markersLayer;
+
+  /* ── Init ── */
+  function init() {
+    features = JSON.parse(JSON.stringify(SEED.features));
+    metadata = JSON.parse(JSON.stringify(SEED.metadata));
+
+    const saved = localStorage.getItem(`ae-${AIRBNB_ID}`);
+    if (saved) {
+      try {
+        const p = JSON.parse(saved);
+        features = p.features; metadata = p.metadata || metadata;
+        toast('Loaded your saved edits');
+      } catch {}
+    }
+
+    initMap();
+    renderCats();
+    renderList();
+    refreshMarkers();
+  }
+
+  /* ── Map ── */
+  function initMap() {
+    map = L.map('map', { zoomControl: true });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:'© OpenStreetMap contributors', maxZoom:19 }).addTo(map);
+    markersLayer = L.layerGroup().addTo(map);
+
+    if (metadata.lat && metadata.lon) {
+      const airbnbIcon = L.divIcon({
+        html:`<div style="background:var(--airbnb);border:3px solid #fff;border-radius:50%;width:20px;height:20px;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,
+        className:'', iconSize:[20,20], iconAnchor:[10,10],
+      });
+      L.marker([metadata.lat,metadata.lon],{icon:airbnbIcon}).bindPopup('🏠 Your Airbnb').addTo(map);
+    }
+
+    fitBounds();
+    map.on('click', onMapClick);
+  }
+
+  function fitBounds() {
+    const pts = features.filter(f=>f.geometry?.type==='Point').map(f=>[f.geometry.coordinates[1],f.geometry.coordinates[0]]);
+    if (pts.length) map.fitBounds(L.latLngBounds(pts),{padding:[40,40]});
+    else map.setView([9.47,100.05],14);
+  }
+
+  function makeIcon(cat, sel) {
+    const c = CAT_COLORS[cat]||CAT_COLORS.Other, e = CAT_ICONS[cat]||'📍';
+    const ring = sel ? `<circle cx="16" cy="12" r="14" fill="none" stroke="${c}" stroke-width="2.5" opacity=".4"/>` : '';
+    return L.divIcon({
+      html:`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40">${ring}<ellipse cx="16" cy="38" rx="5" ry="1.5" fill="rgba(0,0,0,.3)"/><path d="M16 1C9.9 1 5 5.9 5 12c0 8.5 11 25 11 25S27 20.5 27 12C27 5.9 22.1 1 16 1z" fill="${c}" stroke="rgba(255,255,255,.25)" stroke-width="1"/><circle cx="16" cy="12" r="7.5" fill="rgba(255,255,255,.95)"/><text x="16" y="16" text-anchor="middle" font-size="9">${e}</text></svg>`,
+      className:'', iconSize:[32,40], iconAnchor:[16,40], popupAnchor:[0,-44],
+    });
+  }
+
+  function refreshMarkers() {
+    markersLayer.clearLayers();
+    features.forEach(f => {
+      if (f.geometry?.type !== 'Point') return;
+      const [lon,lat] = f.geometry.coordinates, p = f.properties;
+      const m = L.marker([lat,lon],{icon:makeIcon(p.category, f.id===selectedId)});
+      m.on('click', () => { selectPOI(f.id); if(isMobile()) showTab('map'); });
+      m.bindTooltip(p.name,{permanent:false,direction:'top'});
+      markersLayer.addLayer(m);
+    });
+  }
+
+  function onMapClick(e) {
+    if (!isAdding) return;
+    const {lat,lng} = e.latlng;
+    document.getElementById('f-lat').value = lat.toFixed(6);
+    document.getElementById('f-lon').value = lng.toFixed(6);
+    if (tempMarker) map.removeLayer(tempMarker);
+    tempMarker = L.marker([lat,lng],{
+      icon:L.divIcon({html:'<div class="temp-pulse"></div>',className:'',iconSize:[16,16],iconAnchor:[8,8]})
+    }).addTo(map);
+    document.getElementById('map-hint').classList.remove('show');
+    isAdding = false;
+    map.getContainer().style.cursor = '';
+    document.getElementById('coord-hint-label').textContent = ' — placed ✓';
+  }
+
+  /* ── Category pills ── */
+  function renderCats() {
+    const cats = ['All',...Object.keys(CAT_ICONS)];
+    const html = cats.map(c => {
+      const style = c!=='All'&&c===filterCat ? `background:${CAT_COLORS[c]||'#6b7280'}` : '';
+      return `<button class="cat-pill${c===filterCat?' active':''}" style="${style}" onclick="App.setCat('${c}')">${c==='All'?'All':CAT_ICONS[c]+' '+c}</button>`;
+    }).join('');
+    document.getElementById('d-cats').innerHTML = html;
+    document.getElementById('m-cats').innerHTML = html;
+  }
+
+  function setCat(cat) { filterCat = cat; renderCats(); renderList(); }
+
+  /* ── POI list ── */
+  function renderList() {
+    const q = filterText.toLowerCase();
+    const vis = features.filter(f => {
+      if (filterCat!=='All' && f.properties.category!==filterCat) return false;
+      if (q && !f.properties.name.toLowerCase().includes(q) && !(f.properties.notes||'').toLowerCase().includes(q)) return false;
+      return true;
+    });
+    const html = vis.length ? vis.map(f => {
+      const p = f.properties, c = CAT_COLORS[p.category]||CAT_COLORS.Other;
+      return `<div class="poi-item${f.id===selectedId?' active':''}" onclick="App.selectPOI('${f.id}')">
+        <span class="poi-emoji">${p.icon||CAT_ICONS[p.category]||'📍'}</span>
+        <div class="poi-info">
+          <div class="poi-name">${p.name}</div>
+          <div class="poi-cat" style="color:${c}">${p.category}</div>
+        </div>
+        <div class="poi-acts">
+          <button class="btn-icon btn-sm" onclick="event.stopPropagation();App.editPOI('${f.id}')">✏️</button>
+        </div>
+      </div>`;
+    }).join('') : `<div style="text-align:center;padding:28px 16px;color:var(--muted);font-size:13px">No spots found</div>`;
+
+    document.getElementById('d-list').innerHTML = html;
+    document.getElementById('m-list').innerHTML = html;
+    const n = features.length;
+    document.getElementById('d-count').textContent = n;
+    document.getElementById('m-count').textContent = n;
+  }
+
+  function filter() {
+    filterText = (document.getElementById('d-search').value || document.getElementById('m-search').value);
+    renderList();
+  }
+
+  /* ── Select / edit ── */
+  function selectPOI(id) {
+    selectedId = id;
+    renderList();
+    refreshMarkers();
+    const f = features.find(f=>f.id===id);
+    if (f?.geometry?.type==='Point') {
+      const [lon,lat] = f.geometry.coordinates;
+      map.panTo([lat,lon]);
+    }
+    editPOI(id);
+  }
+
+  function editPOI(id) {
+    const f = features.find(f=>f.id===id);
+    if (!f) return;
+    const p = f.properties;
+    document.getElementById('drawer-title').textContent = 'Edit Spot';
+    document.getElementById('del-btn').style.display = '';
+    document.getElementById('f-id').value = f.id;
+    document.getElementById('f-name').value = p.name||'';
+    document.getElementById('f-cat').value = p.category||'Other';
+    document.getElementById('f-icon').value = p.icon||'';
+    document.getElementById('f-addr').value = p.address||'';
+    document.getElementById('f-notes').value = p.notes||'';
+    document.getElementById('f-hours').value = p.hours||'';
+    document.getElementById('f-price').value = p.price||'';
+    document.getElementById('f-url').value = p.url||'';
+    document.getElementById('f-phone').value = p.phone||'';
+    if (f.geometry?.type==='Point') {
+      document.getElementById('f-lat').value = f.geometry.coordinates[1];
+      document.getElementById('f-lon').value = f.geometry.coordinates[0];
+    }
+    document.getElementById('coord-hint-label').textContent = ' — tap to reposition';
+    openDrawer();
+  }
+
+  /* ── Add ── */
+  function startAdd() {
+    selectedId = null; isAdding = true;
+    renderList(); refreshMarkers();
+    document.getElementById('drawer-title').textContent = 'Add Spot';
+    document.getElementById('del-btn').style.display = 'none';
+    ['f-id','f-name','f-addr','f-notes','f-hours','f-price','f-url','f-phone','f-lat','f-lon'].forEach(id => document.getElementById(id).value='');
+    document.getElementById('f-cat').value = 'Other';
+    document.getElementById('f-icon').value = '📍';
+    document.getElementById('coord-hint-label').textContent = ' — tap the map to place';
+    openDrawer();
+    // Switch to map view on mobile so user can tap to place
+    if (isMobile()) showTab('map');
+    map.getContainer().style.cursor = 'crosshair';
+    document.getElementById('map-hint').classList.add('show');
+  }
+
+  function onCatChange() {
+    const c = document.getElementById('f-cat').value;
+    document.getElementById('f-icon').value = CAT_ICONS[c]||'📍';
+  }
+
+  /* ── Save ── */
+  function save() {
+    const id    = document.getElementById('f-id').value;
+    const name  = document.getElementById('f-name').value.trim();
+    const cat   = document.getElementById('f-cat').value;
+    const lat   = parseFloat(document.getElementById('f-lat').value);
+    const lon   = parseFloat(document.getElementById('f-lon').value);
+
+    if (!name)          { toast('Name is required','err'); return; }
+    if (isNaN(lat)||isNaN(lon)) { toast('Tap the map to place the spot','err'); return; }
+
+    const props = {
+      id: id || genId(),
+      name, category: cat,
+      icon: document.getElementById('f-icon').value || CAT_ICONS[cat]||'📍',
+      address: document.getElementById('f-addr').value.trim(),
+      notes:   document.getElementById('f-notes').value.trim(),
+      hours:   document.getElementById('f-hours').value.trim(),
+      price:   document.getElementById('f-price').value.trim(),
+      url:     document.getElementById('f-url').value.trim(),
+      phone:   document.getElementById('f-phone').value.trim(),
+      coord_source:'google_maps_pin', coord_accuracy:'high',
+    };
+    Object.keys(props).forEach(k => { if(props[k]==='') delete props[k]; });
+
+    if (id) {
+      const i = features.findIndex(f=>f.id===id);
+      if (i>=0) features[i] = {type:'Feature',id:props.id,geometry:{type:'Point',coordinates:[lon,lat]},properties:props};
+    } else {
+      features.push({type:'Feature',id:props.id,geometry:{type:'Point',coordinates:[lon,lat]},properties:props});
+    }
+
+    if (tempMarker) { map.removeLayer(tempMarker); tempMarker=null; }
+    selectedId = props.id;
+    saveLocal(); renderList(); refreshMarkers(); closeDrawer();
+    toast(id ? 'Spot updated ✓' : 'Spot added ✓');
+  }
+
+  /* ── Delete ── */
+  function deletePOI() {
+    const id = document.getElementById('f-id').value;
+    if (!id||!confirm('Delete this spot?')) return;
+    features = features.filter(f=>f.id!==id);
+    selectedId = null;
+    saveLocal(); renderList(); refreshMarkers(); closeDrawer();
+    toast('Spot deleted');
+  }
+
+  /* ── Drawer ── */
+  function openDrawer() {
+    document.getElementById('drawer').classList.add('open');
+    if (isMobile()) document.getElementById('backdrop').classList.add('show');
+  }
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('backdrop').classList.remove('show');
+    isAdding = false;
+    map.getContainer().style.cursor = '';
+    document.getElementById('map-hint').classList.remove('show');
+    if (tempMarker) { map.removeLayer(tempMarker); tempMarker=null; }
+  }
+
+  /* ── Mobile tabs ── */
+  function showTab(tab) {
+    activeTab = tab;
+    document.getElementById('tab-map').classList.toggle('active', tab==='map');
+    document.getElementById('tab-spots').classList.toggle('active', tab==='spots');
+    document.getElementById('spot-panel').classList.toggle('open', tab==='spots');
+    if (tab==='map') map.invalidateSize();
+  }
+
+  /* ── Export / import ── */
+  function buildGeoJSON() {
+    return {type:'FeatureCollection',metadata:{...metadata,exported_at:new Date().toISOString()},features};
+  }
+  function openExport() {
+    document.getElementById('export-pre').textContent = JSON.stringify(buildGeoJSON(),null,2);
+    document.getElementById('export-overlay').classList.add('open');
+  }
+  function closeExport() { document.getElementById('export-overlay').classList.remove('open'); }
+  function copyGeoJSON() {
+    navigator.clipboard.writeText(JSON.stringify(buildGeoJSON(),null,2))
+      .then(()=>toast('Copied ✓')).catch(()=>toast('Use Download instead','err'));
+  }
+  function downloadGeoJSON() {
+    const a = Object.assign(document.createElement('a'),{
+      href: URL.createObjectURL(new Blob([JSON.stringify(buildGeoJSON(),null,2)],{type:'application/json'})),
+      download:`airbnb-${AIRBNB_ID}-locations.geojson`,
+    });
+    a.click();
+  }
+  function importJSON() { document.getElementById('file-import').click(); }
+  function handleImport(e) {
+    const f = e.target.files[0]; if(!f) return;
+    const r = new FileReader();
+    r.onload = ev => {
+      try {
+        const d = JSON.parse(ev.target.result);
+        if (d.type!=='FeatureCollection') throw 0;
+        features = d.features||[]; metadata = d.metadata||metadata;
+        saveLocal(); renderList(); refreshMarkers(); fitBounds();
+        toast(`Imported ${features.length} spots ✓`);
+      } catch { toast('Invalid GeoJSON','err'); }
+    };
+    r.readAsText(f);
+    e.target.value='';
+  }
+
+  /* ── Helpers ── */
+  function saveLocal() {
+    try { localStorage.setItem(`ae-${AIRBNB_ID}`, JSON.stringify(buildGeoJSON())); } catch {}
+  }
+  function genId() { return `${AIRBNB_ID}-${String(features.length+1).padStart(3,'0')}`; }
+  function isMobile() { return window.innerWidth < 768; }
+  function toast(msg, type='') {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.className = `toast${type?' '+type:''} show`;
+    setTimeout(()=>t.classList.remove('show'),2800);
+  }
+
+  return { init, selectPOI, editPOI, startAdd, save, deletePOI,
+           closeDrawer, openExport, closeExport, copyGeoJSON, downloadGeoJSON,
+           importJSON, handleImport, filter, setCat, onCatChange, showTab };
+})();
+
+document.addEventListener('DOMContentLoaded', () => App.init());
+
+// Invalidate map size when layout shifts (e.g. tab switch)
+window.addEventListener('resize', () => {
+  if (typeof map !== 'undefined') map?.invalidateSize?.();
+});
+</script>
+{{ end }}

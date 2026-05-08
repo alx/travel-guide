@@ -1,119 +1,105 @@
 #!/usr/bin/env node
 /**
- * generate-map-previews.js
+ * scripts/ci/generate-map-previews.js
  *
- * Screenshots Leaflet map pages and saves PNG previews.
+ * Called by .github/workflows/map-preview.yml after `hugo --minify` + `serve public`.
  *
- * Two modes:
+ * Usage:
+ *   node scripts/ci/generate-map-previews.js <slug1> [slug2] ...
  *
- *   1. CI / PR preview — pass slug(s) as CLI args:
- *        node scripts/generate-map-previews.js 711-samui roadtrip-phuket-krabi-koh-yao-yai-phuket
- *      Saves to .github/previews/<slug>.png (committed to the PR branch)
+ * Environment variables:
+ *   PREVIEW_BASE_URL  Base URL of the served Hugo site (default: http://localhost:1414)
  *
- *   2. Full build — no args:
- *        npx serve public -l 1414 &
- *        node scripts/generate-map-previews.js
- *      Screenshots all known maps → public/images/map-previews/<name>.png
+ * Output:
+ *   .github/previews/<slug>.png   — 1200×630 screenshot of the map in embed mode
  *
- * Env:
- *   PREVIEW_BASE_URL  default: http://localhost:1414
- *
- * Requires: playwright (devDependency in package.json)
- *   npm ci && npx playwright install chromium --with-deps
+ * The screenshots are committed back to the PR branch by the CI workflow and
+ * referenced via raw.githubusercontent.com in the PR comment.
+ * The same files are also used as og:image by the Hugo partial
+ * layouts/partials/og-image.html — which reads from .github/previews/ at build time.
  */
 
 const { chromium } = require('playwright');
-const path = require('path');
 const fs   = require('fs');
+const path = require('path');
 
-const BASE_URL = process.env.PREVIEW_BASE_URL || 'http://localhost:1414';
-const ROOT     = path.join(__dirname, '../..');
+const BASE_URL   = process.env.PREVIEW_BASE_URL || 'http://localhost:1414';
+const OUT_DIR    = path.resolve('.github/previews');
+const OG_WIDTH   = 1200;
+const OG_HEIGHT  = 630;
+// Extra ms to wait after networkidle — lets Leaflet finish rendering tiles + markers
+const TILE_WAIT  = 3000;
 
-/** Known maps — used in full-build mode (no CLI args) */
-const KNOWN_MAPS = [
-  { slug: 'koh-samui',    waitFor: '.leaflet-marker-icon' },
-  { slug: 'lamai',        waitFor: '.leaflet-marker-icon' },
-  { slug: 'hoi-an',       waitFor: '.leaflet-marker-icon' },
-  { slug: 'fishing-boat', waitFor: '#map .leaflet-overlay-pane path' },
-  { slug: '711-samui',    waitFor: '.leaflet-marker-icon' },
-];
+// Slugs passed as CLI arguments
+const slugs = process.argv.slice(2).filter(Boolean);
 
-/** Infer the best wait-for selector from the slug */
-function waitSelector(slug) {
-  if (slug === 'fishing-boat') return '#map .leaflet-overlay-pane path';
-  return '.leaflet-marker-icon';
+if (slugs.length === 0) {
+  console.error('No slugs provided. Usage: node generate-map-previews.js <slug1> [slug2] ...');
+  process.exit(1);
 }
 
-async function screenshotMap(page, slug, outFile) {
-  const url     = `${BASE_URL}/${slug}/`;
-  const waitFor = waitSelector(slug);
-
-  console.log(`  → ${slug}: ${url}`);
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30_000 });
-  await page.waitForSelector('#map', { timeout: 15_000 });
-
-  try {
-    await page.waitForSelector(waitFor, { timeout: 14_000 });
-  } catch {
-    console.warn(`    ⚠ "${waitFor}" not found within timeout — using fixed delay`);
-  }
-
-  // Let tiles settle
-  await page.waitForTimeout(2500);
-
-  const mapEl = await page.$('#map');
-  if (!mapEl) throw new Error(`#map not found on ${url}`);
-
-  fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  await mapEl.screenshot({ path: outFile, type: 'png' });
-  console.log(`  ✓ saved ${path.relative(process.cwd(), outFile)}`);
-  return outFile;
-}
+fs.mkdirSync(OUT_DIR, { recursive: true });
 
 (async () => {
-  const cliSlugs = process.argv.slice(2).filter(Boolean);
-  const ciMode   = cliSlugs.length > 0;
+  const browser = await chromium.launch();
+  let exitCode = 0;
 
-  // Determine which maps to screenshot and where to save
-  const jobs = ciMode
-    ? cliSlugs.map(slug => ({
-        slug,
-        outFile: path.join(ROOT, '.github', 'previews', `${slug}.png`),
-      }))
-    : KNOWN_MAPS.map(({ slug }) => ({
-        slug,
-        outFile: path.join(ROOT, 'public', 'images', 'map-previews', `${slug}.png`),
-      }));
+  for (const slug of slugs) {
+    // Normalise: airbnb listings live at /airbnb/<id>/
+    // but their slug in the changed-files list is "airbnb" (the section folder).
+    // The workflow passes the directory name under static/ so we build the URL
+    // accordingly.
+    let urlPath;
+    if (slug.startsWith('airbnb/')) {
+      // e.g. static/airbnb/1612148974271274765/locations.geojson → slug "airbnb/1612..."
+      urlPath = `/${slug}/`;
+    } else {
+      urlPath = `/${slug}/`;
+    }
 
-  if (jobs.length === 0) {
-    console.log('Nothing to screenshot.');
-    process.exit(0);
-  }
+    const url    = `${BASE_URL}${urlPath}?embed=1`;
+    const outFile = path.join(OUT_DIR, `${slug.replace(/\//g, '-')}.png`);
 
-  const mode = ciMode ? `PR preview (${cliSlugs.join(', ')})` : 'full build';
-  console.log(`\n🗺  Generating map previews — ${mode}\n`);
+    console.log(`📸  ${slug}`);
+    console.log(`    URL : ${url}`);
+    console.log(`    OUT : ${outFile}`);
 
-  const browser = await chromium.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-  const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+    const page = await browser.newPage();
 
-  const results = [];
-  for (const { slug, outFile } of jobs) {
     try {
-      await screenshotMap(page, slug, outFile);
-      results.push({ slug, outFile, ok: true });
+      await page.setViewportSize({ width: OG_WIDTH, height: OG_HEIGHT });
+
+      // Some map pages redirect if the GeoJSON is missing (airbnb fallback CTA).
+      // We still want a screenshot of whatever renders.
+      await page.goto(url, {
+        waitUntil: 'networkidle',
+        timeout: 45_000,
+      });
+
+      // Wait for Leaflet tiles to paint — networkidle fires before tiles finish.
+      await page.waitForTimeout(TILE_WAIT);
+
+      // Optionally wait for a Leaflet-specific element to confirm map rendered.
+      // Fail gracefully if it never appears (e.g. fallback CTA page).
+      try {
+        await page.waitForSelector('.leaflet-tile-loaded', { timeout: 8_000 });
+        // One more beat after first tile loaded
+        await page.waitForTimeout(1_000);
+      } catch {
+        console.log(`    ⚠  No Leaflet tiles detected — screenshotting as-is`);
+      }
+
+      await page.screenshot({ path: outFile, type: 'png' });
+      console.log(`    ✓ saved`);
+
     } catch (err) {
-      console.error(`  ✗ ${slug}: ${err.message}`);
-      results.push({ slug, ok: false, error: err.message });
+      console.error(`    ✗ FAILED: ${err.message}`);
+      exitCode = 1;
+    } finally {
+      await page.close();
     }
   }
 
   await browser.close();
-
-  const ok  = results.filter(r => r.ok).length;
-  const bad = results.filter(r => !r.ok).length;
-  console.log(`\n✅ Done — ${ok} screenshot(s) saved${bad ? `, ${bad} failed` : ''}.\n`);
-
-  if (bad > 0) process.exit(1);
+  process.exit(exitCode);
 })();

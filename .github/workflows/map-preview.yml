@@ -22,32 +22,55 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          # Use a PAT or the default GITHUB_TOKEN.
-          # GITHUB_TOKEN works for same-repo PRs; fork PRs need a PAT.
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0   # full history so we can diff against base
+          fetch-depth: 0
 
       # ── 2. Detect which map slugs have changed GeoJSON/TopoJSON ─────────
+      #
+      #    Changed file examples and their resulting slugs:
+      #      static/lamai/locations.geojson              → lamai
+      #      static/koh-samui/locations.geojson          → koh-samui
+      #      static/airbnb/1612148974271274765/locations.geojson
+      #                                                  → airbnb/1612148974271274765
+      #
+      #    The script receives these slugs and builds URLs accordingly:
+      #      lamai            → http://localhost:1414/lamai/?embed=1
+      #      airbnb/123...   → http://localhost:1414/airbnb/123.../?embed=1
+      #
+      #    The output PNG name replaces / with - to stay filename-safe:
+      #      lamai            → .github/previews/lamai.png
+      #      airbnb/123...   → .github/previews/airbnb-123....png
       - name: Detect changed map slugs
         id: slugs
         run: |
           git fetch origin ${{ github.base_ref }} --depth=1
+
+          # Extract changed geojson/topojson paths relative to static/
+          # For top-level maps:   static/lamai/locations.geojson   → lamai
+          # For airbnb maps:      static/airbnb/123/locations.geojson → airbnb/123
           SLUGS=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
             | grep -E '^static/.+\.(geojson|topojson)$' \
-            | sed 's|^static/||; s|/.*||' \
+            | sed 's|^static/||' \
+            | awk -F'/' '{
+                if ($1 == "airbnb" && NF >= 3) {
+                  print $1"/"$2          # airbnb/<id>
+                } else {
+                  print $1               # top-level slug
+                }
+              }' \
             | sort -u \
             | tr '\n' ' ' \
             | xargs)
+
           echo "slugs=$SLUGS" >> $GITHUB_OUTPUT
+
           if [ -z "$SLUGS" ]; then
             echo "found=false" >> $GITHUB_OUTPUT
+            echo "No changed map slugs detected."
           else
             echo "found=true"  >> $GITHUB_OUTPUT
             echo "Changed map slugs: $SLUGS"
           fi
-
-      # All subsequent steps are skipped if no GeoJSON changes found
-      # (path filter should catch this, but guarding explicitly is safer)
 
       # ── 3. Build Hugo site ───────────────────────────────────────────────
       - name: Setup Hugo
@@ -81,7 +104,6 @@ jobs:
         if: steps.slugs.outputs.found == 'true'
         run: |
           npx --yes serve public --listen 1414 &
-          # Wait until server is ready (up to 30 s)
           for i in $(seq 1 30); do
             curl -sf http://localhost:1414/ > /dev/null && break
             echo "Waiting for server… ($i)"
@@ -120,23 +142,26 @@ jobs:
           script: |
             const slugs = '${{ steps.slugs.outputs.slugs }}'.trim().split(/\s+/).filter(Boolean);
             const { owner, repo } = context.repo;
-            const pr = context.payload.pull_request.number;
-            // Use the SHA *after* the screenshot commit, not the trigger SHA.
-            // If no new commit was made the value is still the current HEAD.
+            const pr  = context.payload.pull_request.number;
             const sha = '${{ steps.commit_previews.outputs.sha }}';
 
-            // Build comment body — one image per changed map
             let body = '## 🗺️ Map Previews\n\n';
             body += `> Auto-generated from commit ${sha.slice(0, 7)}.\n\n`;
+
             for (const slug of slugs) {
-              const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${sha}/.github/previews/${slug}.png`;
-              const mapUrl = `https://maps.girard-davila.net/${slug}/`;
+              // PNG filename: slash → dash  (airbnb/123 → airbnb-123)
+              const pngName = slug.replace(/\//g, '-');
+              const rawUrl  = `https://raw.githubusercontent.com/${owner}/${repo}/${sha}/.github/previews/${pngName}.png`;
+
+              // Live map URL: slug is already URL-path-shaped
+              const mapUrl  = `https://maps.girard-davila.net/${slug}/`;
+
               body += `### [\`${slug}\`](${mapUrl})\n`;
               body += `![${slug} preview](${rawUrl})\n\n`;
             }
+
             body += '_Updated automatically whenever a GeoJSON or TopoJSON file changes._';
 
-            // Find an existing preview comment to update (avoid duplicates)
             const comments = await github.rest.issues.listComments({ owner, repo, issue_number: pr });
             const marker   = '## 🗺️ Map Previews';
             const existing = comments.data.find(c =>

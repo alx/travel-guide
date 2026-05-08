@@ -7,7 +7,6 @@ let allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', active
 Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
 window._mapCategoryColors = CATEGORY_COLORS;
 window._mapCategoryIcons  = CATEGORY_ICONS;
-function getVIP() { return window.isVIP === true; }
 
 const map = L.map('map').setView(MAP_CONFIG.center, MAP_CONFIG.zoom);
 window._leafletMap = map;
@@ -75,36 +74,26 @@ function renderSidebar() {
     const color = CATEGORY_COLORS[cat] || '#6b7280';
     const icon = CATEGORY_ICONS[cat] || '📍';
     const card = document.createElement('div');
-    const isPremium = p.premium && !getVIP();
-    card.className = 'poi-card' + (isPremium ? ' premium-card' : '');
+    card.className = 'poi-card';
     card.id = 'card-' + f._id;
     const [lng, lat] = f.geometry.coordinates;
-    if (isPremium) {
-      card.innerHTML = `
-        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-        <h3 style="filter:blur(4px);user-select:none;">${p.name}</h3>
-        ${p.address ? `<div class="poi-addr" style="filter:blur(3px);user-select:none;">📍 ${p.address}</div>` : ''}
-        <div class="premium-overlay"><span>🔒</span><p>Members only</p></div>`;
-      card.onclick = () => { document.getElementById('paywall-modal').style.display = 'flex'; };
-    } else {
-      const slug = slugify(p.name);
-      card.innerHTML = `
-        <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-        <h3>${p.name}</h3>
-        ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
-        ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
-        ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours}</div>` : ''}
-        ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
-        ${p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
-        <div class="poi-actions">
-          <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
-          ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : 'Source ↗'}</a>` : ''}
-          <a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>
-          <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
-        </div>`;
-      card.onclick = () => focusPOI(f);
-    }
+    const slug = slugify(p.name);
+    card.innerHTML = `
+    <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+    <h3>${p.name}</h3>
+    ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
+    ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
+    ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours}</div>` : ''}
+    ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
+    ${p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
+    <div class="poi-actions">
+        <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+        ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : 'Source ↗'}</a>` : ''}
+        <a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>
+        <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
+    </div>`;
+    card.onclick = () => focusPOI(f);
     list.appendChild(card);
   });
 }
@@ -141,18 +130,14 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${(p.premium && !getVIP()) ? '🔒 Members only' : p.name}</b><br><small>${cat}</small>${(p.notes && !(p.premium && !getVIP())) ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
-    if (!p.premium || getVIP()) {
-      marker.on('click', () => focusPOI(f));
-    } else {
-      marker.on('click', () => { document.getElementById('paywall-modal').style.display = 'flex'; });
-    }
+      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${(p.notes ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
+    marker.on('click', () => focusPOI(f));
     markers[f._id] = marker;
   });
 }
 
 function setupFilters(pois) {
-  const cats = ['All', ...new Set(pois.filter(f => !f.properties.premium || getVIP()).map(f => f.properties.category || 'Other'))];
+  const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
   container.innerHTML = '';
   cats.forEach(cat => {
@@ -168,21 +153,6 @@ function setupFilters(pois) {
     };
     container.appendChild(btn);
   });
-  const vipBtn = document.createElement('button');
-  vipBtn.className = 'filter-btn vip-btn' + (getVIP() ? ' active' : '');
-  vipBtn.dataset.cat = 'VIP';
-  vipBtn.textContent = getVIP() ? '🔓 VIP' : '🔒 VIP';
-  vipBtn.onclick = () => {
-    if (getVIP()) {
-      activeFilter = 'VIP';
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      vipBtn.classList.add('active');
-      filterPOIs();
-    } else {
-      document.getElementById('paywall-modal').style.display = 'flex';
-    }
-  };
-  container.appendChild(vipBtn);
 }
 
 window.loadCustomData = function(geojson, sourceName) {

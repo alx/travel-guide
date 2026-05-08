@@ -1,9 +1,8 @@
-name: Deploy to GitHub Pages
+name: Hugo Build & Deploy
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,13 +11,41 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Copy CI-generated map previews into static/ so Hugo serves them
+      # and so fileExists() in og-image.html resolves correctly.
+      #
+      # .github/previews/<slug>.png
+      #   → static/images/map-previews/<slug>.png
+      #
+      # These files are committed to main by the map-preview workflow
+      # each time a PR with GeoJSON changes is merged.
+      - name: Copy map previews into static/
+        run: |
+          PREVIEW_SRC=".github/previews"
+          PREVIEW_DST="static/images/map-previews"
+          if [ -d "$PREVIEW_SRC" ] && [ -n "$(ls -A $PREVIEW_SRC 2>/dev/null)" ]; then
+            mkdir -p "$PREVIEW_DST"
+            cp "$PREVIEW_SRC"/*.png "$PREVIEW_DST/" 2>/dev/null || true
+            echo "Copied previews:"
+            ls "$PREVIEW_DST"
+          else
+            echo "No previews in $PREVIEW_SRC — skipping"
+          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -26,27 +53,19 @@ jobs:
           hugo-version: '0.147.0'
           extended: true
 
-      - name: Validate GeoJSON
-        run: python3 scripts/ci/validate_geojson.py
+      - name: Build Hugo site
+        run: hugo --minify --baseURL "https://maps.girard-davila.net/"
+        env:
+          HUGO_ENVIRONMENT: production
 
-      - name: Generate map index
-        run: python3 scripts/generate_map_index.py
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Build site
-        run: hugo --minify
-
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

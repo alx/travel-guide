@@ -5,5 +5,5 @@ emoji: "🏝️"
 section: "curated"
 weight: 10
 accent_color: "#1a3a5c"
-tags: ["🏖️ Beaches", "🎯 Activities", "🍽️ Restaurants", "🔒 VIP Spots"]
+tags: ["🏖️ Beaches", "🎯 Activities", "🍽️ Restaurants"]
 ---
