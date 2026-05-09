@@ -130,7 +130,7 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${(p.notes ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
+      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${p.notes ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
     marker.on('click', () => focusPOI(f));
     markers[f._id] = marker;
   });
