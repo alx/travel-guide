@@ -29,7 +29,7 @@ function showToast(msg) {
 function fadePOIs(activeId) {
   Object.entries(markers).forEach(([id, m]) => {
     const el = m.getElement();
-    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.2';
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.5';
   });
   document.querySelectorAll('.poi-card').forEach(c =>
     c.classList.toggle('faded', c.id !== 'card-' + activeId));
