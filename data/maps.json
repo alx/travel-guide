@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-04-28T09:38:25.078567+00:00",
-    "map_count": 11,
+    "generated_at": "2026-05-09T10:31:56.957107+00:00",
+    "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -85,6 +85,30 @@
       "has_geojson": true
     },
     {
+      "slug": "toulouse-burgers",
+      "url": "/toulouse-burgers/",
+      "title": "Toulouse Burgers — Le Guide",
+      "description": "18 adresses burgers à Toulouse : restaurants, food trucks, chaînes et livraisons. Coordonnées GPS, horaires et contacts.",
+      "emoji": "🍔",
+      "section": "curated",
+      "weight": 30,
+      "accent_color": "#c0392b",
+      "tags": [
+        "🍔 Burger Restaurant",
+        "🚚 Food Truck",
+        "🏭 Chain",
+        "📦 Delivery Only"
+      ],
+      "poi_count": 18,
+      "categories": [
+        "Burger Restaurant",
+        "Chain",
+        "Delivery Only",
+        "Food Truck"
+      ],
+      "has_geojson": true
+    },
+    {
       "slug": "711-samui",
       "url": "/711-samui/",
       "title": "7-Eleven Koh Samui — All Stores",
@@ -103,6 +127,20 @@
         "Convenience"
       ],
       "has_geojson": true
+    },
+    {
+      "slug": "airbnb",
+      "url": "/airbnb/",
+      "title": "Airbnb Maps",
+      "description": "",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": false
     },
     {
       "slug": "malaysia-mai-2026",
@@ -125,6 +163,37 @@
         "Transit",
         "_route",
         "Étape"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "france-grands-projets-strategiques",
+      "url": "/france-grands-projets-strategiques/",
+      "title": "France — Grands Projets Stratégiques",
+      "description": "69 projets industriels stratégiques en France : data centers, recyclage, énergie, matériaux critiques, aéronautique, sidérurgie et biocarburants.",
+      "emoji": "🏭",
+      "section": "curated",
+      "weight": 60,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🏭 Industrie",
+        "🔋 Batteries",
+        "♻️ Recyclage",
+        "⚡ Énergie",
+        "✈️ Aéronautique"
+      ],
+      "poi_count": 69,
+      "categories": [
+        "Agroalimentaire",
+        "Aéronautique & Défense",
+        "Biocarburants",
+        "Data Center & IA",
+        "Industrie",
+        "Matériaux critiques",
+        "Recyclage",
+        "Sidérurgie",
+        "Électromobilité",
+        "Énergie & Nucléaire"
       ],
       "has_geojson": true
     },
@@ -199,56 +268,12 @@
       "has_geojson": true
     },
     {
-      "slug": "fishing-boat",
-      "url": "/fishing-boat/",
-      "title": "Gulf of Thailand Fishing Expedition",
-      "description": "A 2-day fishing boat expedition from Koh Samui into the Gulf of Thailand — red snapper, tuna, overnight anchorage. TopoJSON demo with route + waypoints.",
-      "emoji": "⚓",
-      "section": "demo",
-      "weight": 10,
-      "accent_color": "#1a3a5c",
-      "tags": [
-        "📐 TopoJSON",
-        "🎣 Routes + Waypoints",
-        "🗺️ GPX export"
-      ],
-      "poi_count": 0,
-      "categories": [],
-      "has_geojson": false
-    },
-    {
-      "slug": "ipoh-airbnb",
-      "url": "/ipoh-airbnb/",
-      "title": "Ipoh — Autour de l'Airbnb",
-      "description": "Supermarchés, parcs, aires de jeux, transports et activités pour enfants à 2 km de l'Airbnb à Ipoh, Perak (Malaisie).",
-      "emoji": "🏠",
-      "section": "community",
-      "weight": 55,
-      "accent_color": "#1a6b3c",
-      "tags": [
-        "🛒 Supermarché",
-        "🌳 Parcs",
-        "🛝 Aires de jeux",
-        "🚌 Transports",
-        "🎠 Activités"
-      ],
-      "poi_count": 98,
-      "categories": [
-        "Supermarket",
-        "Park",
-        "Playground",
-        "Transit",
-        "Activity"
-      ],
-      "has_geojson": true
-    },
-    {
       "slug": "airbnb-malaysia-202605-johor-bahru-1",
       "url": "/airbnb-malaysia-202605-johor-bahru-1/",
       "title": "Airbnb - Malaysia - Johor Bahru - Choice 1",
       "description": "25 POIs within 1.0 km of the Airbnb listing. Source: OSM Overpass.",
       "emoji": "🏠",
-      "section": "community",
+      "section": "airbnb",
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
@@ -267,13 +292,14 @@
         "Transit"
       ],
       "has_geojson": true
-    }, {
+    },
+    {
       "slug": "airbnb-malaysia-202605-johor-bahru-2",
       "url": "/airbnb-malaysia-202605-johor-bahru-2/",
       "title": "Airbnb - Malaysia - Johor Bahru - Choice 2",
       "description": "35 POIs within 1.0 km of the Airbnb listing. Source: OSM Overpass.",
       "emoji": "🏠",
-      "section": "community",
+      "section": "airbnb",
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
@@ -292,6 +318,49 @@
         "Transit"
       ],
       "has_geojson": true
+    },
+    {
+      "slug": "ipoh-airbnb",
+      "url": "/ipoh-airbnb/",
+      "title": "Ipoh — Autour de l'Airbnb",
+      "description": "Commerces, parcs, aires de jeux, transports et activités pour enfants à moins de 2 km de l'Airbnb à Ipoh, Perak.",
+      "emoji": "🏠",
+      "section": "airbnb",
+      "weight": 55,
+      "accent_color": "#1a6b3c",
+      "tags": [
+        "🛒 Supermarché",
+        "🌳 Parcs",
+        "🛝 Aires de jeux",
+        "🚌 Transports",
+        "🎠 Activités"
+      ],
+      "poi_count": 98,
+      "categories": [
+        "Activity",
+        "Park",
+        "Supermarket",
+        "Transit"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "fishing-boat",
+      "url": "/fishing-boat/",
+      "title": "Gulf of Thailand Fishing Expedition",
+      "description": "A 2-day fishing boat expedition from Koh Samui into the Gulf of Thailand — red snapper, tuna, overnight anchorage. TopoJSON demo with route + waypoints.",
+      "emoji": "⚓",
+      "section": "demo",
+      "weight": 10,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "📐 TopoJSON",
+        "🎣 Routes + Waypoints",
+        "🗺️ GPX export"
+      ],
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": false
     }
   ]
 }

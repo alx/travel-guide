@@ -1,0 +1,403 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-05-09",
+    "source": "Google Places API + manual",
+    "center": {
+      "lat": 43.6047,
+      "lon": 1.4442
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4427203,
+          43.605451099999996
+        ]
+      },
+      "properties": {
+        "name": "Antidot",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "10 Rue du Taur, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:45 – 14:15, 18:45 – 21:30; mardi: 11:30 – 14:15, 18:30 – 21:15; mercredi: Fermé; jeudi: 11:45 – 14:15, 18:45 – 21:30; vendredi: 11:45 – 14:15, 18:45 – 22:00; samedi: 11:45 – 14:30, 18:45 – 22:00; dimanche: 11:45 – 14:15, 18:45 – 21:30",
+        "phone": "06 87 80 65 66",
+        "url": "https://antidot-burger.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.420567,
+          43.640353399999995
+        ]
+      },
+      "properties": {
+        "name": "La Planque des Affranchis",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "10 Imp. Edmond Audran, 31200 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:45 – 14:30; mardi: 11:45 – 14:30; mercredi: 11:45 – 14:30, 16:30 – 21:30; jeudi: 11:45 – 14:30, 16:30 – 21:30; vendredi: 11:45 – 14:30, 16:30 – 21:30; samedi: Fermé; dimanche: Fermé",
+        "phone": "09 88 41 82 89",
+        "url": "https://www.lesaffranchisfoodtruck.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4483209,
+          43.6102594
+        ]
+      },
+      "properties": {
+        "name": "Seven Sisters",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "26 Rue Raymond IV, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 17:00 – 00:00; mardi: 17:00 – 00:00; mercredi: 17:00 – 00:00; jeudi: 17:00 – 02:00; vendredi: 17:00 – 02:00; samedi: 17:00 – 02:00; dimanche: 17:00 – 00:00",
+        "phone": "09 61 65 19 38",
+        "url": "http://www.seven-sisters.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4397221999999998,
+          43.607499999999995
+        ]
+      },
+      "properties": {
+        "name": "Coyote Burger",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "3 Pl. du Peyrou, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 12:00 – 14:30, 19:00 – 23:00; mardi: 12:00 – 14:30, 19:00 – 23:00; mercredi: 12:00 – 14:30, 19:00 – 23:00; jeudi: 12:00 – 14:30, 19:00 – 23:00; vendredi: 12:00 – 14:30, 19:00 – 23:00; samedi: 12:00 – 14:30, 19:00 – 23:00; dimanche: 19:00 – 23:00",
+        "phone": "05 62 21 02 10",
+        "url": "http://www.coyoteburgers.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4386588999999999,
+          43.6120945
+        ]
+      },
+      "properties": {
+        "name": "Novo Burger",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "6 Av. Honoré Serres, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:00 – 15:00, 18:00 – 00:00; mardi: 11:00 – 02:00; mercredi: 11:00 – 02:00; jeudi: 11:00 – 02:00; vendredi: 11:00 – 02:00; samedi: 11:00 – 02:00; dimanche: 11:00 – 02:00",
+        "phone": "05 81 60 40 44",
+        "url": "https://novoburger-serres.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4328422,
+          43.5990143
+        ]
+      },
+      "properties": {
+        "name": "Superette",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "7 Pl. de l'Estrapade, 31300 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 12:00 – 14:30, 19:00 – 22:30; mardi: 12:00 – 14:30, 19:00 – 22:30; mercredi: 12:00 – 14:30, 19:00 – 22:30; jeudi: 12:00 – 14:30, 19:00 – 22:30; vendredi: 12:00 – 14:00, 19:00 – 22:30; samedi: 12:00 – 14:30, 19:00 – 22:30; dimanche: 12:00 – 14:30, 19:00 – 22:30",
+        "url": "http://www.superette-burger.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4457730000000002,
+          43.603601
+        ]
+      },
+      "properties": {
+        "name": "Five Guys",
+        "category": "Chain",
+        "icon": "🍔",
+        "address": "24 Rue d'Alsace Lorraine, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 10:30 – 23:00; mardi: 10:30 – 23:00; mercredi: 10:30 – 23:00; jeudi: 10:30 – 23:00; vendredi: 10:30 – 23:00; samedi: 10:30 – 23:00; dimanche: 10:30 – 23:00",
+        "phone": "05 32 78 38 72",
+        "url": "https://restaurants.fiveguys.fr/occitanie/24-rue-alsace-lorraine"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4576243,
+          43.5675561
+        ]
+      },
+      "properties": {
+        "name": "JFK Burger",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "91 Rte de Narbonne, 31400 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:00 – 14:30, 18:00 – 22:45; mardi: 11:00 – 14:30, 18:00 – 22:45; mercredi: 11:00 – 14:30, 18:00 – 22:45; jeudi: 11:00 – 14:30, 18:00 – 22:45; vendredi: 11:00 – 14:30, 18:00 – 22:45; samedi: 11:00 – 14:30, 18:00 – 22:45; dimanche: 18:00 – 22:45",
+        "phone": "05 32 26 31 73",
+        "url": "https://www.jfkburger.io/fr/toulouse-chicken-wizz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.444243,
+          43.5989839
+        ]
+      },
+      "properties": {
+        "name": "Bouche B",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "36 Rue des Filatiers, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4498339999999998,
+          43.594465899999996
+        ]
+      },
+      "properties": {
+        "name": "Le Mec au Camion",
+        "category": "Food Truck",
+        "icon": "🚚",
+        "address": "37 All. Jules Guesde, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:45 – 13:45; mardi: 11:45 – 13:45, 19:00 – 22:00; mercredi: 11:45 – 13:45, 19:00 – 22:00; jeudi: 19:00 – 22:00; vendredi: 11:45 – 13:45, 19:00 – 22:00; samedi: 11:45 – 14:30, 19:00 – 22:00; dimanche: 11:45 – 14:30",
+        "url": "http://lesmecsaucamion.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4499388,
+          43.6048453
+        ]
+      },
+      "properties": {
+        "name": "Tommy's Diner",
+        "category": "Chain",
+        "icon": "🍔",
+        "address": "52 Bd Lazare Carnot, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:30 – 22:30; mardi: 11:30 – 22:30; mercredi: 11:30 – 22:30; jeudi: 11:30 – 22:30; vendredi: 11:30 – 23:00; samedi: 11:30 – 23:00; dimanche: 11:30 – 22:30",
+        "phone": "09 74 13 00 14",
+        "url": "https://www.tommys-diner.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4422042000000002,
+          43.6053109
+        ]
+      },
+      "properties": {
+        "name": "Burgers de Papa",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "14 Rue des Lois, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:30 – 22:30; mardi: 11:30 – 22:30; mercredi: 11:30 – 22:30; jeudi: 11:30 – 22:30; vendredi: 11:30 – 23:00; samedi: 11:30 – 23:00; dimanche: 11:30 – 23:00",
+        "phone": "05 34 66 10 44",
+        "url": "https://restaurants.lesburgersdepapa.fr/toulouse-capitole/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4342388,
+          43.5986593
+        ]
+      },
+      "properties": {
+        "name": "Carson City",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "16 Pl. Olivier, 31300 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 12:00 – 23:30; mardi: 12:00 – 23:30; mercredi: 12:00 – 23:30; jeudi: 12:00 – 23:30; vendredi: 12:00 – 23:30; samedi: 12:00 – 23:30; dimanche: 12:00 – 23:30",
+        "phone": "05 61 42 02 22",
+        "url": "https://www.restaurants-carson.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4539475,
+          43.6013369
+        ]
+      },
+      "properties": {
+        "name": "Burger N Co",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "11 Rue Pierre-Paul Riquet, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: Fermé; mardi: 11:45 – 14:00, 19:00 – 22:00; mercredi: 11:45 – 14:00, 19:00 – 22:00; jeudi: 11:45 – 14:00, 19:00 – 22:30; vendredi: 11:45 – 14:00, 19:00 – 22:30; samedi: 11:45 – 14:00, 19:00 – 22:30; dimanche: Fermé",
+        "phone": "09 60 14 89 88",
+        "url": "https://linktr.ee/burgernco.tls"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4454510999999999,
+          43.590149
+        ]
+      },
+      "properties": {
+        "name": "Le Malabar",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "125 Gd Rue Saint-Michel, 31400 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 11:00 – 14:00, 18:30 – 23:00; mardi: 11:00 – 14:00, 18:30 – 23:00; mercredi: 11:00 – 14:00, 18:30 – 23:00; jeudi: 11:00 – 14:00, 18:30 – 23:00; vendredi: 18:30 – 23:00; samedi: 11:45 – 14:00, 18:30 – 22:30; dimanche: 11:00 – 16:00, 18:00 – 23:00",
+        "phone": "05 62 26 53 05",
+        "url": "https://malabarburger.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4437898999999998,
+          43.5991772
+        ]
+      },
+      "properties": {
+        "name": "Junk",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "41 Rue des Filatiers, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: 12:00 – 22:30; mardi: 12:00 – 22:30; mercredi: 12:00 – 22:30; jeudi: 12:00 – 22:30; vendredi: 12:00 – 22:30; samedi: 12:00 – 22:30; dimanche: 12:00 – 22:30",
+        "phone": "09 56 32 52 27",
+        "url": "https://www.junkburgers.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4491516,
+          43.5898061
+        ]
+      },
+      "properties": {
+        "name": "Les Filoches",
+        "category": "Burger Restaurant",
+        "icon": "🍔",
+        "address": "1 Rue Saint-Joseph, 31400 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "lundi: Fermé; mardi: 11:30 – 14:00, 19:00 – 22:00; mercredi: 11:30 – 14:00, 19:00 – 22:00; jeudi: 11:30 – 14:00, 19:00 – 22:00; vendredi: 11:30 – 14:00, 19:00 – 22:00; samedi: 11:30 – 14:00, 19:00 – 22:00; dimanche: Fermé",
+        "phone": "05 62 83 24 77",
+        "url": "https://www.instagram.com/lesfiloches/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-burgers-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4442,
+          43.6047
+        ]
+      },
+      "properties": {
+        "name": "Hype Smash Burger",
+        "category": "Delivery Only",
+        "icon": "📦",
+        "address": "Toulouse (livraison uniquement)",
+        "notes": "Uber Eats uniquement — pas d'adresse physique. Livraison sur Toulouse.",
+        "coord_source": "city_center_fallback",
+        "coord_accuracy": "low"
+      }
+    }
+  ]
+}
