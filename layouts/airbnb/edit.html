@@ -494,7 +494,7 @@ html.embed-mode .layout { top: 0; }
       <div class="field">
         <label>Category *</label>
         <select id="f-cat" onchange="App.onCatChange()">
-          <option value="Supermarket">🛒 Supermarket</option>
+          <option value="Supermarket">🧺 Supermarket</option>
           <option value="Park">🌳 Park</option>
           <option value="Playground">🛝 Playground</option>
           <option value="Transit">🚌 Transit</option>
@@ -507,7 +507,7 @@ html.embed-mode .layout { top: 0; }
       </div>
       <div class="field">
         <label>Icon</label>
-        <input type="text" id="f-icon" placeholder="🛒" maxlength="4">
+        <input type="text" id="f-icon" placeholder="🧺" maxlength="4">
       </div>
     </div>
 
@@ -608,7 +608,7 @@ const SEED = {
   features: [
     { type:"Feature", id:`${AIRBNB_ID}-001`,
       geometry:{ type:"Point", coordinates:[100.0529,9.4747] },
-      properties:{ id:`${AIRBNB_ID}-001`, name:"Big C Supermarket", category:"Supermarket", icon:"🛒",
+      properties:{ id:`${AIRBNB_ID}-001`, name:"Big C Supermarket", category:"Supermarket", icon:"🧺",
         address:"Maret, Ko Samui", notes:"Large supermarket. Good for weekly shops.", hours:"09:00–22:00",
         coord_source:"google_maps_pin", coord_accuracy:"high" } },
     { type:"Feature", id:`${AIRBNB_ID}-002`,
@@ -634,8 +634,8 @@ const SEED = {
   ]
 };
 
-const CAT_ICONS = { Supermarket:'🛒', Park:'🌳', Playground:'🛝', Transit:'🚌', Activity:'🎠', Restaurant:'🍽️', 'Café':'☕', Beach:'🏖️', Other:'📍' };
-const CAT_COLORS = { Supermarket:'#22c55e', Park:'#4ade80', Playground:'#fb923c', Transit:'#38bdf8', Activity:'#a78bfa', Restaurant:'#f97316', 'Café':'#92400e', Beach:'#0ea5e9', Other:'#6b7280' };
+const CAT_ICONS = { Supermarket:'🧺', Park:'🌳', Playground:'🛝', Transit:'🚌', Activity:'🎠', Restaurant:'🍽️', 'Café':'☕', Beach:'🏖️', Other:'📍' };
+const CAT_COLORS = { Supermarket:'#22c55e', Park:'#fef9c3', Playground:'#fb923c', Transit:'#38bdf8', Activity:'#a78bfa', Restaurant:'#f97316', 'Café':'#92400e', Beach:'#0ea5e9', Other:'#6b7280' };
 
 /* ══════════════════════════════════════════
    APP
