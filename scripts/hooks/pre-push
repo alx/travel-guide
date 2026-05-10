@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+# Pre-push hook: ensures og:image previews exist for all maps with GeoJSON changes.
+# Install: cp scripts/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+PREVIEW_DIR="$REPO_ROOT/static/images/map-previews"
+CI_PREVIEW_DIR="$REPO_ROOT/.github/previews"
+HUGO_PORT=1414
+HUGO_URL="http://localhost:$HUGO_PORT"
+HUGO_PID=""
+
+# Read push info from stdin (format: <local_sha> <local_ref> <remote_sha> <remote_ref>)
+while read local_ref local_sha remote_ref remote_sha; do
+  # Determine the range of commits being pushed
+  if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+    # New branch — check all commits
+    range="$local_sha"
+  else
+    range="$remote_sha..$local_sha"
+  fi
+
+  # Find GeoJSON/TopoJSON files changed in the push
+  changed_geo=$(git diff --name-only "$range" -- 'static/**/*.geojson' 'static/**/*.topojson' 2>/dev/null || true)
+
+  if [ -z "$changed_geo" ]; then
+    exit 0
+  fi
+
+  # Derive slugs from file paths (e.g. static/airbnb/10349749/locations.geojson → airbnb/10349749)
+  missing_slugs=()
+  all_slugs=()
+  while IFS= read -r filepath; do
+    # Strip "static/" prefix and filename, keep the directory
+    slug=$(echo "$filepath" | sed 's|^static/||' | sed 's|/[^/]*$||')
+    all_slugs+=("$slug")
+    # Convert slug to preview filename (slashes → dashes)
+    preview_file="$PREVIEW_DIR/${slug//\//-}.png"
+    if [ ! -f "$preview_file" ]; then
+      missing_slugs+=("$slug")
+    fi
+  done <<< "$changed_geo"
+
+  if [ ${#missing_slugs[@]} -eq 0 ]; then
+    exit 0
+  fi
+
+  echo "pre-push: missing og:image previews for: ${missing_slugs[*]}"
+  echo "pre-push: generating previews..."
+
+  # Start Hugo server if not already running
+  hugo_started=0
+  if ! curl -sf "$HUGO_URL" > /dev/null 2>&1; then
+    echo "pre-push: starting Hugo server on port $HUGO_PORT..."
+    cd "$REPO_ROOT"
+    hugo server -p "$HUGO_PORT" --disableFastRender > /tmp/hugo-prepush.log 2>&1 &
+    HUGO_PID=$!
+    hugo_started=1
+
+    # Wait up to 20s for Hugo to be ready
+    for i in $(seq 1 20); do
+      if curl -sf "$HUGO_URL" > /dev/null 2>&1; then
+        echo "pre-push: Hugo ready."
+        break
+      fi
+      sleep 1
+      if [ "$i" -eq 20 ]; then
+        echo "pre-push: Hugo failed to start. Check /tmp/hugo-prepush.log"
+        kill "$HUGO_PID" 2>/dev/null || true
+        exit 1
+      fi
+    done
+  fi
+
+  # Generate previews
+  cd "$REPO_ROOT"
+  PREVIEW_BASE_URL="$HUGO_URL" node scripts/ci/generate-map-previews.js "${missing_slugs[@]}"
+
+  # Copy from .github/previews/ to static/images/map-previews/
+  mkdir -p "$PREVIEW_DIR"
+  for slug in "${missing_slugs[@]}"; do
+    src="$CI_PREVIEW_DIR/${slug//\//-}.png"
+    dst="$PREVIEW_DIR/${slug//\//-}.png"
+    if [ -f "$src" ]; then
+      cp "$src" "$dst"
+      echo "pre-push: saved $dst"
+    else
+      echo "pre-push: WARNING — no preview generated for $slug"
+    fi
+  done
+
+  # Stop Hugo if we started it
+  if [ "$hugo_started" -eq 1 ] && [ -n "$HUGO_PID" ]; then
+    kill "$HUGO_PID" 2>/dev/null || true
+  fi
+
+  # Stage and commit the new previews
+  git add "$PREVIEW_DIR"
+  if ! git diff --cached --quiet; then
+    git commit -m "chore(previews): generate og:image for ${missing_slugs[*]}"
+    echo "pre-push: previews committed — push will include them."
+  fi
+done
+
+exit 0
