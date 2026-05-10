@@ -31,8 +31,10 @@ import json
 import math
 import os
 import re
+import subprocess
 import sys
 import time
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -52,6 +54,11 @@ GOOGLE_NEARBY_URL = "https://places.googleapis.com/v1/places:searchNearby"
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 UPSTREAM_REPO = "alx/travel-guide"
 GITHUB_API = "https://api.github.com"
+REPO_ROOT = Path(__file__).parent.parent.parent
+
+MAX_PER_CAT = 10
+MIN_RATING  = 3.5
+MIN_REVIEWS = 10
 
 _overpass_api = overpass_lib.API(timeout=40, headers={"User-Agent": "travel-guide-airbnb-nearby/1.0"})
 
@@ -236,14 +243,41 @@ def _find_coords_recursive(obj, depth: int = 0) -> tuple[float, float] | None:
     return None
 
 
-def coords_from_airbnb_url(url: str) -> tuple[float, float]:
-    print("Fetching Airbnb page to extract coordinates...", file=sys.stderr)
-    resp = requests.get(url, headers=BROWSER_HEADERS, timeout=20)
-    if resp.status_code != 200:
-        print(f"Error: Airbnb returned HTTP {resp.status_code}", file=sys.stderr)
-        sys.exit(1)
+_airbnb_soup_cache: dict[str, BeautifulSoup] = {}
 
-    soup = BeautifulSoup(resp.text, "html.parser")
+
+def _get_airbnb_soup(url: str) -> BeautifulSoup:
+    if url not in _airbnb_soup_cache:
+        print("Fetching Airbnb page to extract coordinates...", file=sys.stderr)
+        resp = requests.get(url, headers=BROWSER_HEADERS, timeout=20)
+        if resp.status_code != 200:
+            print(f"Error: Airbnb returned HTTP {resp.status_code}", file=sys.stderr)
+            sys.exit(1)
+        _airbnb_soup_cache[url] = BeautifulSoup(resp.text, "html.parser")
+    return _airbnb_soup_cache[url]
+
+
+def title_from_airbnb_url(url: str) -> str | None:
+    """Extract the listing title from an Airbnb page (h2 → og:title → <title>)."""
+    soup = _get_airbnb_soup(url)
+    h2 = soup.find("h2")
+    if isinstance(h2, Tag):
+        text = h2.get_text(strip=True)
+        if len(text) > 4:
+            return text
+    og = soup.find("meta", property="og:title")
+    if isinstance(og, Tag):
+        content = og.get("content", "")
+        if content:
+            return str(content)
+    t = soup.find("title")
+    if isinstance(t, Tag):
+        return t.get_text(strip=True).split(" - ")[0].split(" | ")[0]
+    return None
+
+
+def coords_from_airbnb_url(url: str) -> tuple[float, float]:
+    soup = _get_airbnb_soup(url)
 
     # Pass 1: targeted script IDs
     for script_id in ("data-deferred-state", "data-state", "__NEXT_DATA__"):
@@ -402,7 +436,10 @@ def query_google_nearby(
     radius: float,
 ) -> dict[str, list[dict]]:
     results: dict[str, list[dict]] = {}
-    field_mask = "places.id,places.displayName,places.location,places.types"
+    field_mask = (
+        "places.id,places.displayName,places.location,"
+        "places.types,places.rating,places.userRatingCount"
+    )
     for cat in categories:
         types = CATEGORIES[cat]["google_types"]
         body = {
@@ -452,17 +489,34 @@ def query_google_nearby(
                 "source": "google",
                 "coord_source": "google_maps_pin",
                 "coord_accuracy": "high",
+                "rating": place.get("rating"),
+                "user_rating_count": place.get("userRatingCount", 0),
             })
         results[cat] = pois
     return results
 
 
 # ---------------------------------------------------------------------------
-# Merge + dedup
+# Merge + dedup + filter
 # ---------------------------------------------------------------------------
 
 def _dedup_key(poi: dict) -> tuple[float, float]:
     return round(poi["lat"], 4), round(poi["lon"], 4)
+
+
+def _normalize_name(name: str) -> str:
+    n = name.lower().strip()
+    n = "".join(c for c in unicodedata.normalize("NFD", n) if unicodedata.category(c) != "Mn")
+    n = re.sub(r"[^\w\s]", " ", n)
+    return re.sub(r"\s+", " ", n).strip()
+
+
+def _names_similar(a: str, b: str) -> bool:
+    na, nb = _normalize_name(a), _normalize_name(b)
+    if na == nb:
+        return True
+    shorter, longer = (na, nb) if len(na) <= len(nb) else (nb, na)
+    return len(shorter) >= 5 and shorter in longer
 
 
 def merge_results(
@@ -471,17 +525,51 @@ def merge_results(
 ) -> dict[str, list[dict]]:
     merged: dict[str, list[dict]] = {}
     for cat in osm:
-        seen: set[tuple[float, float]] = set()
+        seen_coords: set[tuple[float, float]] = set()
         pois = list(osm.get(cat, []))
         for p in pois:
-            seen.add(_dedup_key(p))
-        if google and cat in google:
-            for gp in google[cat]:
-                if _dedup_key(gp) not in seen:
-                    pois.append(gp)
-                    seen.add(_dedup_key(gp))
+            seen_coords.add(_dedup_key(p))
+        for gp in (google or {}).get(cat, []):
+            if _dedup_key(gp) in seen_coords:
+                continue
+            matched = next(
+                (
+                    p for p in pois
+                    if _names_similar(p["name"], gp["name"])
+                    and haversine(p["lat"], p["lon"], gp["lat"], gp["lon"]) < 150
+                ),
+                None,
+            )
+            if matched:
+                matched.setdefault("rating", gp.get("rating"))
+                matched.setdefault("user_rating_count", gp.get("user_rating_count", 0))
+            else:
+                pois.append(gp)
+                seen_coords.add(_dedup_key(gp))
         merged[cat] = pois
     return merged
+
+
+def filter_and_limit(
+    results: dict[str, list[dict]],
+    lat: float,
+    lon: float,
+    max_per_cat: int = MAX_PER_CAT,
+) -> dict[str, list[dict]]:
+    filtered: dict[str, list[dict]] = {}
+    for cat, pois in results.items():
+        by_dist = sorted(pois, key=lambda p: haversine(lat, lon, p["lat"], p["lon"]))
+        kept: list[dict] = []
+        for p in by_dist:
+            rating = p.get("rating")
+            reviews = p.get("user_rating_count", 0)
+            if rating is not None and rating < MIN_RATING and reviews >= MIN_REVIEWS:
+                continue
+            kept.append(p)
+            if len(kept) >= max_per_cat:
+                break
+        filtered[cat] = kept
+    return filtered
 
 
 # ---------------------------------------------------------------------------
@@ -550,13 +638,21 @@ def output_table(
         if not pois:
             console.print(f"[dim]{label} — none found within {_fmt_dist(radius)}[/dim]\n")
             continue
+        has_ratings = any(p.get("rating") is not None for p in pois)
         t = Table(title=f"{label} ({len(pois)})", show_header=True, header_style="bold")
         t.add_column("Name", style="cyan", no_wrap=False)
         t.add_column("Distance", justify="right")
+        if has_ratings:
+            t.add_column("Rating", justify="right", style="yellow")
         t.add_column("Source", style="dim")
         for p in sorted(pois, key=lambda x: haversine(lat, lon, x["lat"], x["lon"])):
             dist = haversine(lat, lon, p["lat"], p["lon"])
-            t.add_row(p["name"], _fmt_dist(dist), p["source"].upper())
+            row = [p["name"], _fmt_dist(dist)]
+            if has_ratings:
+                r = p.get("rating")
+                row.append(f"{r:.1f} ★" if r is not None else "—")
+            row.append(p["source"].upper())
+            t.add_row(*row)
         console.print(t)
         console.print()
 
@@ -585,24 +681,107 @@ def output_json(
 
 
 # ---------------------------------------------------------------------------
+# Local Hugo file writer
+# ---------------------------------------------------------------------------
+
+def _update_maps_json(slug: str, title: str, description: str, categories: list[str], n_pois: int) -> None:
+    maps_path = REPO_ROOT / "data" / "maps.json"
+    try:
+        doc = json.loads(maps_path.read_text(encoding="utf-8")) if maps_path.exists() else {"maps": [], "_meta": {}}
+    except Exception:
+        doc = {"maps": [], "_meta": {}}
+    doc["maps"] = [m for m in doc.get("maps", []) if m.get("slug") != slug]
+    doc["maps"].append({
+        "slug": slug,
+        "url": f"/{slug}/",
+        "title": title,
+        "description": description,
+        "emoji": "🏠",
+        "section": "airbnb",
+        "weight": 55,
+        "accent_color": "#1a6b3c",
+        "tags": [f"{CATEGORIES[c]['icon']} {CATEGORIES[c]['label']}" for c in categories if c in CATEGORIES],
+        "poi_count": n_pois,
+        "categories": sorted({CATEGORIES[c]["label"] for c in categories if c in CATEGORIES}),
+        "has_geojson": True,
+    })
+    doc.setdefault("_meta", {})["map_count"] = len(doc["maps"])
+    doc["_meta"]["generated_at"] = datetime.now(timezone.utc).isoformat()
+    maps_path.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_local_hugo_files(
+    slug: str,
+    title: str,
+    description: str,
+    airbnb_url: str,
+    lat: float,
+    lon: float,
+    geojson: dict,
+    categories: list[str],
+) -> None:
+    layout_name = _slug_layout_name(slug)
+    files: dict[Path, str] = {
+        REPO_ROOT / "static" / slug / "locations.geojson": json.dumps(geojson, ensure_ascii=False, indent=2),
+        REPO_ROOT / "content" / slug / "_index.md": _hugo_content(title, description, categories, layout=layout_name),
+        REPO_ROOT / _slug_layout_path(slug): _layout_html(slug, title, airbnb_url, lat, lon),
+    }
+    print("\nWriting Hugo map files...", file=sys.stderr)
+    for path, content in files.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+        print(f"  ✓ {path.relative_to(REPO_ROOT)}", file=sys.stderr)
+    # For nested slugs (e.g. airbnb/10349749), generate_map_index.py only scans
+    # top-level content/ dirs and would miss this page — update maps.json directly.
+    if "/" in slug:
+        n_pois = len(geojson.get("features", []))
+        _update_maps_json(slug, title, description, categories, n_pois)
+        print("  ✓ data/maps.json", file=sys.stderr)
+    else:
+        index_script = REPO_ROOT / "scripts" / "generate_map_index.py"
+        if index_script.exists():
+            subprocess.run(["uv", "run", "--script", str(index_script)], check=False)
+            print("  ✓ data/maps.json", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
 # PR content builders
 # ---------------------------------------------------------------------------
 
-def _hugo_content(title: str, description: str, categories: list[str]) -> str:
+def _hugo_content(title: str, description: str, categories: list[str], layout: str | None = None) -> str:
     tags = [f"{CATEGORIES[c]['icon']} {CATEGORIES[c]['label']}" for c in categories if c in CATEGORIES]
+    layout_line = f'\nlayout: "{layout}"' if layout else ""
     return f"""---
 title: "{title}"
 description: "{description}"
 emoji: "🏠"
-section: "community"
+section: "airbnb"
 weight: 55
 accent_color: "#1a6b3c"
-tags: {json.dumps(tags, ensure_ascii=False)}
+tags: {json.dumps(tags, ensure_ascii=False)}{layout_line}
 ---
 """
 
 
-def _layout_html(slug: str, title: str, description: str, airbnb_url: str, lat: float, lon: float) -> str:
+def _slug_layout_path(slug: str) -> str:
+    """Return the relative layout file path for a slug.
+
+    Flat slug  'toulouse-burgers'  → 'layouts/toulouse-burgers/list.html'
+    Nested slug 'airbnb/10349749' → 'layouts/airbnb/10349749.html'
+    """
+    parts = slug.split("/")
+    if len(parts) > 1:
+        return f"layouts/{'/'.join(parts[:-1])}/{parts[-1]}.html"
+    return f"layouts/{slug}/list.html"
+
+
+def _slug_layout_name(slug: str) -> str | None:
+    """Return the explicit layout name for nested slugs (None for flat slugs)."""
+    parts = slug.split("/")
+    return parts[-1] if len(parts) > 1 else None
+
+
+def _layout_html(slug: str, title: str, airbnb_url: str, lat: float, lon: float) -> str:
     # Escape single quotes for inline JS string literals
     js_title = title.replace("'", "\\'")
     return f"""{{{{ define "head" }}}}
@@ -660,11 +839,11 @@ def _layout_html(slug: str, title: str, description: str, airbnb_url: str, lat: 
   .search-box {{ width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; }}
   .search-box:focus {{ outline: none; border-color: #1a6b3c; }}
   .airbnb-badge {{
-    background: #fff0f0; border: 1.5px solid #ff5a5f; border-radius: 8px;
-    padding: 0.35rem 0.7rem; font-size: 0.78rem; color: #cc2030; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; text-decoration: none;
+    padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ff5a5f;
+    background: #fff0f0; font-size: 0.72rem; color: #cc2030; font-weight: 500;
+    text-decoration: none; white-space: nowrap;
   }}
-  .airbnb-badge:hover {{ background: #ffe0e1; }}
+  .airbnb-badge:hover {{ background: #ffe0e1; border-color: #cc2030; }}
   .poi-card.faded {{ opacity: 0.25; transition: opacity 0.25s; }}
   .copy-toast {{
     position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%);
@@ -689,20 +868,19 @@ def _layout_html(slug: str, title: str, description: str, airbnb_url: str, lat: 
   <div class="overlay-card">
     <a href="{{{{ "/" | relURL }}}}" class="site-brand">🗺️ Maps</a>
     <div class="page-header">
-      <h1>🏠 {title}</h1>
-      <p>{description}</p>
+      <h1>{{{{.Params.emoji}}}} {{{{.Title}}}}</h1>
+      <p>{{{{.Description}}}}</p>
     </div>
     <div class="header-actions">
-      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
       <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Places ▾':'📍 Places'">📍 Places</button>
-      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My location">📍 Location</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My position">📍 My position</button>
+      <a class="airbnb-badge" href="{airbnb_url}" target="_blank">🏠 Listing ↗</a>
     </div>
-    <a class="airbnb-badge" href="{airbnb_url}" target="_blank">🏠 View Airbnb listing ↗</a>
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()" style="margin-top:0.5rem;">
+    <div id="filter-btns" style="margin-top:0.4rem;"></div>
     {{{{- partial "map-toolbar.html" . }}}}
   </div>
   <div class="overlay-card scrollable">
-    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
-    <div id="filter-btns"></div>
     <div id="poi-list"></div>
   </div>
 </div>
@@ -1027,13 +1205,13 @@ def build_pr(
 
     content_path = f"content/{slug}/_index.md"
     _put_file(token, working_repo, content_path,
-              _hugo_content(title, description, categories),
+              _hugo_content(title, description, categories, layout=_slug_layout_name(slug)),
               branch, f"feat({slug}): add Hugo content file")
     print(f"  ✓ {content_path}", file=sys.stderr)
 
-    layout_path = f"layouts/{slug}/list.html"
+    layout_path = _slug_layout_path(slug)
     _put_file(token, working_repo, layout_path,
-              _layout_html(slug, title, description, airbnb_url, lat, lon),
+              _layout_html(slug, title, airbnb_url, lat, lon),
               branch, f"feat({slug}): add map layout")
     print(f"  ✓ {layout_path}", file=sys.stderr)
 
@@ -1047,7 +1225,7 @@ def build_pr(
         "title": title,
         "description": description,
         "emoji": "🏠",
-        "section": "community",
+        "section": "airbnb",
         "weight": 55,
         "accent_color": "#1a6b3c",
         "tags": [f"{CATEGORIES[c]['icon']} {CATEGORIES[c]['label']}" for c in categories if c in CATEGORIES],
@@ -1092,7 +1270,7 @@ def build_pr(
 ### Files added
 - `static/{slug}/locations.geojson`
 - `content/{slug}/_index.md`
-- `layouts/{slug}/list.html`
+- `{layout_path}`
 - `data/maps.json` updated
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code) · `scripts/airbnb_env/airbnb_nearby.py`
@@ -1149,16 +1327,16 @@ def main() -> None:
     elif not api_key:
         print("  GOOGLE_MAPS_API_KEY not set — using OSM only", file=sys.stderr)
 
-    results = merge_results(osm_results, google_results)
+    results = filter_and_limit(merge_results(osm_results, google_results), lat, lon)
 
     # --- Slug / title defaults ---
     listing_id = listing_id_from_url(args.airbnb_url)
-    slug = args.slug or f"airbnb-{listing_id[-8:]}"
-    title = args.title or f"Airbnb — Nearby Places ({slug})"
+    slug = args.slug or f"airbnb/{listing_id}"
+    title = args.title or title_from_airbnb_url(args.airbnb_url) or f"Airbnb — Nearby Places ({listing_id})"
     n_pois = sum(len(v) for v in results.values())
     description = (
         args.description
-        or f"{n_pois} POIs within {_fmt_dist(args.radius)} of the Airbnb listing. Source: OSM Overpass."
+        or f"{n_pois} POIs within {_fmt_dist(args.radius)} of the Airbnb listing. Source: OSM Overpass + Google Places."
     )
 
     # --- PR mode ---
@@ -1186,6 +1364,9 @@ def main() -> None:
     # --- Local output ---
     if args.output == "table":
         output_table(args.airbnb_url, lat, lon, results, args.radius)
+        geojson = build_geojson(args.airbnb_url, lat, lon, results, args.radius, slug)
+        write_local_hugo_files(slug, title, description, args.airbnb_url, lat, lon, geojson, requested)
+        print(f"\nMap at: http://localhost:1313/{slug}/  (run: hugo serve)", file=sys.stderr)
     elif args.output == "json":
         output_json(args.airbnb_url, lat, lon, results, args.radius)
     else:
