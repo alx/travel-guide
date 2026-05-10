@@ -1,0 +1,276 @@
+{{ define "head" }}
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, system-ui, sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+  }
+
+  .site-header, footer { display: none !important; }
+
+  /* ── Hero ── */
+  .ab-hero {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0f1117 100%);
+    border-bottom: 1px solid #2a2f3e;
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  .ab-hero-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #6b7fcc; text-decoration: none; font-size: 13px; font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .ab-hero-badge {
+    display: inline-block;
+    background: rgba(107,127,204,0.15);
+    border: 1px solid rgba(107,127,204,0.3);
+    color: #6b7fcc; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .ab-hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800; line-height: 1.2; margin-bottom: 12px;
+  }
+  .ab-hero h1 span { color: #6b7fcc; }
+  .ab-hero p {
+    font-size: 1rem; color: #8b90a8; line-height: 1.65;
+    max-width: 540px; margin: 0 auto 28px;
+  }
+  .ab-hero-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #6b7fcc; color: #fff;
+    padding: 12px 28px; border-radius: 8px;
+    font-size: 14px; font-weight: 700; text-decoration: none;
+    transition: background .2s;
+    cursor: pointer; border: none;
+  }
+  .ab-hero-cta:hover { background: #7f91e0; }
+
+  /* ── Available maps ── */
+  .ab-maps {
+    max-width: 900px; margin: 0 auto;
+    padding: 48px 24px 0;
+  }
+  .ab-maps-title {
+    font-size: 18px; font-weight: 700; margin-bottom: 6px;
+  }
+  .ab-maps-sub {
+    font-size: 13px; color: #8b90a8; margin-bottom: 24px;
+  }
+  .ab-map-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .ab-map-card {
+    background: #181c26; border: 1px solid #2a2f3e;
+    border-radius: 12px; padding: 20px;
+    text-decoration: none; color: inherit;
+    transition: border-color .2s, transform .2s;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .ab-map-card:hover { border-color: #6b7fcc44; transform: translateY(-2px); }
+  .ab-map-emoji { font-size: 28px; line-height: 1; margin-bottom: 4px; }
+  .ab-map-title { font-size: 14px; font-weight: 700; color: #e8eaf0; }
+  .ab-map-desc { font-size: 12px; color: #8b90a8; line-height: 1.5; }
+  .ab-map-poi {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    background: rgba(74,222,128,0.1); color: #4ade80;
+    padding: 2px 8px; border-radius: 20px; margin-top: 4px;
+  }
+
+  /* ── Editor preview ── */
+  .ab-editor {
+    background: linear-gradient(180deg, #13161f 0%, #0f1117 100%);
+    border-top: 1px solid #2a2f3e;
+    border-bottom: 1px solid #2a2f3e;
+    padding: 56px 24px 64px;
+    margin-bottom: 48px;
+  }
+  .ab-editor-inner { max-width: 900px; margin: 0 auto; }
+  .ab-editor-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #6b7fcc;
+    background: rgba(107,127,204,.12); border: 1px solid rgba(107,127,204,.25);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .ab-editor-headline {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800; line-height: 1.25; margin-bottom: 12px;
+  }
+  .ab-editor-sub {
+    font-size: 14px; color: #8b90a8; line-height: 1.65;
+    max-width: 560px; margin-bottom: 32px;
+  }
+  .ab-editor-features {
+    display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .ab-editor-feat {
+    display: flex; align-items: flex-start; gap: 10px;
+    flex: 1; min-width: 160px;
+  }
+  .ab-editor-feat-icon {
+    font-size: 20px; flex-shrink: 0; margin-top: 2px;
+  }
+  .ab-editor-feat-body strong {
+    display: block; font-size: 13px; font-weight: 700;
+    color: #e8eaf0; margin-bottom: 2px;
+  }
+  .ab-editor-feat-body span {
+    font-size: 12px; color: #8b90a8; line-height: 1.5;
+  }
+  /* browser chrome mockup */
+  .ab-editor-browser {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid #2a2f3e;
+    box-shadow: 0 8px 48px rgba(0,0,0,.6);
+  }
+  .ab-editor-chrome {
+    background: #1a1f2e; border-bottom: 1px solid #2a2f3e;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .ab-editor-dots {
+    display: flex; gap: 5px;
+  }
+  .ab-editor-dots span {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #3a3f50;
+  }
+  .ab-editor-url {
+    flex: 1; background: #0f1117; border: 1px solid #2a2f3e;
+    border-radius: 6px; padding: 4px 10px;
+    font-size: 11px; color: #6b7fcc; font-family: monospace;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .ab-editor-frame {
+    display: block; width: 100%; border: none;
+  }
+
+  /* ── CTA section ── */
+  .ab-cta {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+  .ab-cta-box {
+    background: #181c26; border: 1px solid #2a2f3e;
+    border-radius: 16px; padding: 40px 32px;
+    text-align: center;
+  }
+  .ab-cta-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .ab-cta-box p { font-size: 14px; color: #8b90a8; line-height: 1.6; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .ab-cta-price {
+    font-size: 13px; color: #6b7fcc; font-weight: 600; margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .ab-map-grid { grid-template-columns: 1fr; }
+    .ab-cta-box { padding: 28px 20px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+{{ $airbnbMaps := where .Site.Data.maps.maps "section" "airbnb" }}
+
+<!-- Hero -->
+<div class="ab-hero">
+  <div><a href="/" class="ab-hero-back">← Back to Maps</a></div>
+  <div class="ab-hero-badge">For Airbnb Hosts</div>
+  <h1>Give your guests a<br><span>neighbourhood map</span><br>they'll actually use.</h1>
+  <p>We hand-build a custom map of everything around your listing — supermarkets, parks, restaurants, transit — so guests arrive informed and leave happy reviews.</p>
+  <button class="ab-hero-cta" onclick="document.getElementById('contact-form-float').classList.add('open')">
+    📍 Get my map — from €29
+  </button>
+</div>
+
+{{ if $airbnbMaps }}
+<!-- Available maps -->
+<div class="ab-maps">
+  <div class="ab-maps-title">Available maps</div>
+  <div class="ab-maps-sub">Delivered maps you can explore and edit.</div>
+  <div class="ab-map-grid">
+    {{ range $airbnbMaps }}
+    <a href="{{ .url }}" class="ab-map-card">
+      <div class="ab-map-emoji">{{ .emoji }}</div>
+      <div class="ab-map-title">{{ .title }}</div>
+      <div class="ab-map-desc">{{ .description }}</div>
+      {{ if gt .poi_count 0 }}
+      <span class="ab-map-poi">📍 {{ .poi_count }} spots</span>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+<!-- Editor preview -->
+<div class="ab-editor">
+  <div class="ab-editor-inner">
+    <div class="ab-editor-tag">Built-in editor</div>
+    <h2 class="ab-editor-headline">Your map, your data.<br>Edit it yourself — forever.</h2>
+    <p class="ab-editor-sub">Every delivered map comes with a live editor. Add a new restaurant you discovered, remove a spot that closed, update opening hours — no code, no subscriptions, no lock-in.</p>
+
+    <div class="ab-editor-features">
+      <div class="ab-editor-feat">
+        <div class="ab-editor-feat-icon">📍</div>
+        <div class="ab-editor-feat-body">
+          <strong>Click to place</strong>
+          <span>Tap anywhere on the map to drop a new pin at exact GPS coordinates.</span>
+        </div>
+      </div>
+      <div class="ab-editor-feat">
+        <div class="ab-editor-feat-icon">✏️</div>
+        <div class="ab-editor-feat-body">
+          <strong>Edit any spot</strong>
+          <span>Name, category, hours, notes, phone — click a pin to update instantly.</span>
+        </div>
+      </div>
+      <div class="ab-editor-feat">
+        <div class="ab-editor-feat-icon">⬇️</div>
+        <div class="ab-editor-feat-body">
+          <strong>Export &amp; publish</strong>
+          <span>Download the updated GeoJSON and send it to us — we publish it in minutes.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ab-editor-browser">
+      <div class="ab-editor-chrome">
+        <div class="ab-editor-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="ab-editor-url">maps.girard-davila.net/airbnb/johor-bahru-2/edit/</div>
+      </div>
+      <iframe
+        class="ab-editor-frame"
+        src="/airbnb/demo/edit/"
+        height="580"
+        loading="lazy"
+        title="Airbnb map editor — live demo">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="ab-cta">
+  <div class="ab-cta-box">
+    <h2>Want a map for your listing?</h2>
+    <p>Send us your Airbnb URL. We research the neighbourhood and deliver a live embeddable map in 3–5 days.</p>
+    <div class="ab-cta-price">Starting at €29 · One-time · You keep full edit access</div>
+    <button class="ab-hero-cta" onclick="document.getElementById('contact-form-float').classList.add('open')">
+      → Request your map
+    </button>
+  </div>
+</div>
+
+{{ partial "contact-form.html" . }}
+{{ end }}

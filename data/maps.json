@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-05-09T10:31:56.957107+00:00",
-    "map_count": 15,
+    "generated_at": "2026-05-10T04:13:37.179028+00:00",
+    "map_count": 14,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -85,30 +85,6 @@
       "has_geojson": true
     },
     {
-      "slug": "toulouse-burgers",
-      "url": "/toulouse-burgers/",
-      "title": "Toulouse Burgers — Le Guide",
-      "description": "18 adresses burgers à Toulouse : restaurants, food trucks, chaînes et livraisons. Coordonnées GPS, horaires et contacts.",
-      "emoji": "🍔",
-      "section": "curated",
-      "weight": 30,
-      "accent_color": "#c0392b",
-      "tags": [
-        "🍔 Burger Restaurant",
-        "🚚 Food Truck",
-        "🏭 Chain",
-        "📦 Delivery Only"
-      ],
-      "poi_count": 18,
-      "categories": [
-        "Burger Restaurant",
-        "Chain",
-        "Delivery Only",
-        "Food Truck"
-      ],
-      "has_geojson": true
-    },
-    {
       "slug": "711-samui",
       "url": "/711-samui/",
       "title": "7-Eleven Koh Samui — All Stores",
@@ -127,20 +103,6 @@
         "Convenience"
       ],
       "has_geojson": true
-    },
-    {
-      "slug": "airbnb",
-      "url": "/airbnb/",
-      "title": "Airbnb Maps",
-      "description": "",
-      "emoji": "🗺️",
-      "section": "curated",
-      "weight": 50,
-      "accent_color": "#1a3a5c",
-      "tags": [],
-      "poi_count": 0,
-      "categories": [],
-      "has_geojson": false
     },
     {
       "slug": "malaysia-mai-2026",
@@ -264,6 +226,30 @@
         "Pier",
         "Resort",
         "Viewpoint"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-burgers",
+      "url": "/toulouse-burgers/",
+      "title": "Toulouse Burgers — Le Guide",
+      "description": "18 adresses burgers à Toulouse : restaurants, food trucks, chaînes et livraisons. Coordonnées GPS, horaires et contacts.",
+      "emoji": "🍔",
+      "section": "community",
+      "weight": 30,
+      "accent_color": "#c0392b",
+      "tags": [
+        "🍔 Burger Restaurant",
+        "🚚 Food Truck",
+        "🏭 Chain",
+        "📦 Delivery Only"
+      ],
+      "poi_count": 18,
+      "categories": [
+        "Burger Restaurant",
+        "Chain",
+        "Delivery Only",
+        "Food Truck"
       ],
       "has_geojson": true
     },

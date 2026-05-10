@@ -18,7 +18,13 @@
 {{- $baseURL  := .Site.BaseURL | strings.TrimSuffix "/" -}}
 {{- $section  := .Section -}}
 {{- $slug     := "" -}}
-{{- with .File }}{{- $slug = .BaseFileName -}}{{ end -}}
+{{- with .File -}}
+  {{- if eq .BaseFileName "_index" -}}
+    {{- $slug = $section -}}
+  {{- else -}}
+    {{- $slug = .BaseFileName -}}
+  {{- end -}}
+{{- end -}}
 {{- $ogImage  := "" -}}
 
 {{/* 1. Explicit front matter override */}}

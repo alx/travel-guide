@@ -17,13 +17,10 @@
   <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
-  <meta property="og:image" content="{{ .Site.BaseURL }}images/og-travels.png">
-
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}">
   <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-travels.png">
 
   <!-- Structured Data -->
   {{ if .IsHome }}
@@ -73,6 +70,7 @@
     html.embed-mode .page-header   { display: none !important; }
     html.embed-mode #map-toolbar   { display: none !important; }
     html.embed-mode .contact-form-float { display: none !important; }
+    html.embed-mode .map-footer-cta     { display: none !important; }
     html.embed-mode #map           { height: 100% !important; border-radius: 0 !important; box-shadow: none !important; }
     /* Hide sidebar in embed — map-only */
     html.embed-mode .sidebar       { display: none !important; }
@@ -119,5 +117,8 @@
   <main>{{ block "main" . }}{{ end }}</main>
   <footer>Built with Hugo · Open data · <a href="https://github.com/alx/travel-guide" target="_blank">GitHub</a></footer>
   {{ block "scripts" . }}{{ end }}
+  {{ if and .Params.section (ne .Params.section "airbnb") (ne .Params.section "hidden") }}
+  {{ partial "map-footer-cta.html" . }}
+  {{ end }}
 </body>
 </html>

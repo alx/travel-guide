@@ -1,4 +1,4 @@
 ---
 title: "Airbnb Maps"
-layout: "single"
+section: "hidden"
 ---

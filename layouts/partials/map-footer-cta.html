@@ -1,0 +1,30 @@
+<div class="map-footer-cta">
+  📍 Like this map? <a href="/#custom-maps">Get a custom one for your trip →</a>
+</div>
+
+<style>
+.map-footer-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 7000;
+  background: rgba(26,58,92,0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  padding-bottom: calc(0.55rem + env(safe-area-inset-bottom));
+}
+.map-footer-cta a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  transition: border-color 0.15s;
+}
+.map-footer-cta a:hover { border-color: #fff; }
+</style>

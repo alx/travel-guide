@@ -103,7 +103,7 @@
     max-width: 900px; margin: 0 auto;
     padding: 0 24px 80px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
   .feature-card {
@@ -201,12 +201,14 @@
       supermarkets, parks, restaurants, transit — so guests arrive informed
       and leave happy reviews.
     </p>
-    <a href="/#contact-form-float" class="cta-btn">
+    <button class="cta-btn" onclick="document.getElementById('contact-form-float').classList.add('open')">
       📍 Get my map — from €29
-    </a>
+    </button>
+    {{ if and .File (ne .File.BaseFileName "_index") }}
     <div class="listing-pill">
       Listing detected: <code>{{ .File.BaseFileName }}</code>
     </div>
+    {{ end }}
   </div>
 
   <div class="features">
@@ -266,6 +268,8 @@
     </div>
   </div>
 </div>
+
+{{ partial "contact-form.html" . }}
 
 {{ end }}
 

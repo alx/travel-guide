@@ -2,15 +2,15 @@
   <div class="contact-form-panel" role="dialog" aria-label="Ask a question">
     <div class="cfp-header">
       <div>
-        <p>Tell us your destination, travel dates, and style (family / solo / foodie / adventure).</p>
+        <p>Tell us about your map request.</p>
         <p>We'll send you a sample and a quote within 24h.</p>
       </div>
       <button class="cfp-close" onclick="document.getElementById('contact-form-float').classList.remove('open')" aria-label="Close">✕</button>
     </div>
     <form action="https://formspree.io/f/mqegoqqz" method="POST">
-      <input  class="cfp-input" type="text"  name="name"    placeholder="Your name"      required>
-      <input  class="cfp-input" type="email" name="email"   placeholder="Email"          required>
-      <textarea class="cfp-input cfp-textarea" name="message" placeholder="Your message…" rows="3" required></textarea>
+      <input  class="cfp-input" type="text"  name="name"         placeholder="Your name"                      required>
+      <input  class="cfp-input" type="email" name="email"        placeholder="Email"                          required>
+<textarea class="cfp-input cfp-textarea" name="message" placeholder="Anything else to share…" rows="2"></textarea>
       <button class="cfp-submit" type="submit">Send →</button>
     </form>
   </div>
@@ -106,8 +106,7 @@
   transition: border-color 0.15s, background 0.15s;
 }
 .cfp-input:focus { outline: none; border-color: #1a3a5c; background: white; }
-.cfp-textarea { resize: vertical; min-height: 72px; }
-.cfp-submit {
+.cfp-textarea { resize: vertical; min-height: 52px; }.cfp-submit {
   width: 100%;
   background: #1a3a5c;
   color: white;
