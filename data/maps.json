@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-05-10T04:13:37.179028+00:00",
-    "map_count": 14,
+    "generated_at": "2026-05-10T11:08:38.423113+00:00",
+    "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -263,7 +263,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🛒 Supermarket",
+        "🧺 Supermarket",
         "🌳 Park",
         "🛝 Playground",
         "🚌 Transit",
@@ -289,7 +289,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🛒 Supermarket",
+        "🧺 Supermarket",
         "🌳 Park",
         "🛝 Playground",
         "🚌 Transit",
@@ -315,7 +315,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🛒 Supermarché",
+        "🧺 Supermarché",
         "🌳 Parcs",
         "🛝 Aires de jeux",
         "🚌 Transports",
@@ -347,6 +347,32 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
+    },
+    {
+      "slug": "airbnb/10349749",
+      "url": "/airbnb/10349749/",
+      "title": "Appartement en résidence · Toulouse",
+      "description": "49 POIs within 1.0 km of the Airbnb listing. Source: OSM Overpass + Google Places.",
+      "emoji": "🏠",
+      "section": "airbnb",
+      "weight": 55,
+      "accent_color": "#1a6b3c",
+      "tags": [
+        "🧺 Supermarket",
+        "🌳 Park",
+        "🛝 Playground",
+        "🚌 Transit",
+        "🎠 Activity"
+      ],
+      "poi_count": 47,
+      "categories": [
+        "Activity",
+        "Park",
+        "Playground",
+        "Supermarket",
+        "Transit"
+      ],
+      "has_geojson": true
     }
   ]
 }
