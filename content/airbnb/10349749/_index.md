@@ -1,10 +1,10 @@
 ---
 title: "Appartement en résidence · Toulouse"
-description: "49 POIs within 1.0 km of the Airbnb listing. Source: OSM Overpass + Google Places."
+description: "118 POIs around the Airbnb listing. Source: OSM Overpass, Google Places + GPX tracks."
 emoji: "🏠"
 section: "airbnb"
 weight: 55
 accent_color: "#1a6b3c"
-tags: ["🧺 Supermarket", "🌳 Park", "🛝 Playground", "🚌 Transit", "🎠 Activity"]
+tags: ["🛍️ Commerce", "🌳 Park", "🛝 Playground", "🚌 Transit", "🚲 Bike Share", "🍽️ Restaurant", "🏛️ Culture", "💊 Health", "🎠 Activity"]
 layout: "10349749"
 ---
