@@ -494,12 +494,15 @@ html.embed-mode .layout { top: 0; }
       <div class="field">
         <label>Category *</label>
         <select id="f-cat" onchange="App.onCatChange()">
-          <option value="Supermarket">🧺 Supermarket</option>
+          <option value="Commerce">🛍️ Commerce</option>
           <option value="Park">🌳 Park</option>
           <option value="Playground">🛝 Playground</option>
           <option value="Transit">🚌 Transit</option>
+          <option value="Bike Share">🚲 Bike Share</option>
           <option value="Activity">🎠 Activity</option>
           <option value="Restaurant">🍽️ Restaurant</option>
+          <option value="Culture">🏛️ Culture</option>
+          <option value="Health">💊 Health</option>
           <option value="Café">☕ Café</option>
           <option value="Beach">🏖️ Beach</option>
           <option value="Other">📍 Other</option>
@@ -591,8 +594,10 @@ html.embed-mode .layout { top: 0; }
 {{ define "scripts" }}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
-const AIRBNB_ID = "{{ with .Params.airbnb_id }}{{ . }}{{ else }}{{ .File.BaseFileName }}{{ end }}";
+const AIRBNB_ID  = "{{ with .Params.airbnb_id }}{{ . }}{{ else }}{{ .File.BaseFileName }}{{ end }}";
 const GEOJSON_URL = {{ with .Params.geojson_url }}"{{ . }}"{{ else }}null{{ end }};
+const AIRBNB_LAT  = {{ with .Params.airbnb_lat }}{{ . }}{{ else }}null{{ end }};
+const AIRBNB_LON  = {{ with .Params.airbnb_lon }}{{ . }}{{ else }}null{{ end }};
 
 /* ══════════════════════════════════════════
    SEED DATA
@@ -602,7 +607,7 @@ const SEED = {
   metadata: {
     airbnb_id: AIRBNB_ID,
     title: `Airbnb ${AIRBNB_ID} — Neighbourhood Map`,
-    lat: 9.4703, lon: 100.0491,
+    lat: AIRBNB_LAT ?? 9.4703, lon: AIRBNB_LON ?? 100.0491,
     generated_by: "maps.girard-davila.net editor"
   },
   features: [
@@ -634,8 +639,8 @@ const SEED = {
   ]
 };
 
-const CAT_ICONS = { Supermarket:'🧺', Park:'🌳', Playground:'🛝', Transit:'🚌', Activity:'🎠', Restaurant:'🍽️', 'Café':'☕', Beach:'🏖️', Other:'📍' };
-const CAT_COLORS = { Supermarket:'#22c55e', Park:'#fef9c3', Playground:'#fb923c', Transit:'#38bdf8', Activity:'#a78bfa', Restaurant:'#f97316', 'Café':'#92400e', Beach:'#0ea5e9', Other:'#6b7280' };
+const CAT_ICONS = { Park:'🌳', Playground:'🛝', Transit:'🚌', 'Bike Share':'🚲', Activity:'🎠', Restaurant:'🍽️', Culture:'🏛️', Commerce:'🛍️', Health:'💊', 'Café':'☕', Beach:'🏖️', Other:'📍' };
+const CAT_COLORS = { Park:'#65a30d', Playground:'#f97316', Transit:'#2563eb', 'Bike Share':'#0284c7', Activity:'#9333ea', Restaurant:'#ef4444', Culture:'#0891b2', Commerce:'#d97706', Health:'#db2777', 'Café':'#92400e', Beach:'#0ea5e9', Other:'#6b7280' };
 
 /* ══════════════════════════════════════════
    APP
@@ -676,6 +681,17 @@ const App = (() => {
     renderCats();
     renderList();
     refreshMarkers();
+    if (features.length > 0) {
+      const demo = features.find(f => f.properties.name === 'Marché Saint-Aubin') || features[0];
+      selectedId = demo.id;
+      renderList();
+      refreshMarkers();
+      editPOI(demo.id);
+      if (demo.geometry?.type === 'Point') {
+        const [lon, lat] = demo.geometry.coordinates;
+        map.setView([lat, lon], 17);
+      }
+    }
   }
 
   /* ── Map ── */
@@ -703,8 +719,8 @@ const App = (() => {
     else map.setView([9.47,100.05],14);
   }
 
-  function makeIcon(cat, sel) {
-    const c = CAT_COLORS[cat]||CAT_COLORS.Other, e = CAT_ICONS[cat]||'📍';
+  function makeIcon(cat, sel, poiIcon) {
+    const c = CAT_COLORS[cat]||CAT_COLORS.Other, e = poiIcon || CAT_ICONS[cat]||'📍';
     const outline = sel ? `outline:3px solid ${c};outline-offset:2px;` : '';
     return L.divIcon({
       className: '',
@@ -720,7 +736,7 @@ const App = (() => {
     features.forEach(f => {
       if (f.geometry?.type !== 'Point') return;
       const [lon,lat] = f.geometry.coordinates, p = f.properties;
-      const m = L.marker([lat,lon],{icon:makeIcon(p.category, f.id===selectedId)});
+      const m = L.marker([lat,lon],{icon:makeIcon(p.category, f.id===selectedId, p.icon)});
       m.on('click', () => { selectPOI(f.id); if(isMobile()) showTab('map'); });
       m.bindTooltip(p.name,{permanent:false,direction:'top'});
       markersLayer.addLayer(m);
