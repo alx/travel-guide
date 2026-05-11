@@ -40,7 +40,7 @@
   #filter-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .poi-card {
     background: white; border-radius: 10px; padding: 0.85rem 1rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    cursor: pointer;
     border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0;
   }
   .poi-card:hover, .poi-card.active { border-color: #1a6b3c; }
@@ -116,18 +116,26 @@ const GEOJSON_URL = window.MAP_CONFIG.geojsonUrl;
 const AIRBNB_LAT = 43.60498, AIRBNB_LON = 1.45783;
 
 const CATEGORY_COLORS = {
-  'Supermarket': '#16a34a',
-  'Park':        '#fef9c3',
+  'Park':        '#65a30d',
   'Playground':  '#f97316',
   'Transit':     '#2563eb',
+  'Bike Share':  '#0284c7',
   'Activity':    '#9333ea',
+  'Restaurant':  '#ef4444',
+  'Culture':     '#0891b2',
+  'Commerce':    '#d97706',
+  'Health':      '#db2777',
 };
 const CATEGORY_ICONS = {
-  'Supermarket': '🧺',
   'Park':        '🌳',
   'Playground':  '🛝',
   'Transit':     '🚌',
+  'Bike Share':  '🚲',
   'Activity':    '🎠',
+  'Restaurant':  '🍽️',
+  'Culture':     '🏛️',
+  'Commerce':    '🛍️',
+  'Health':      '💊',
 };
 
 let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
@@ -151,7 +159,7 @@ function fmtDist(m) { return m < 1000 ? Math.round(m) + ' m' : (m/1000).toFixed(
 function fadePOIs(activeId) {
   Object.entries(markers).forEach(([id, m]) => {
     const el = m.getElement();
-    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.2';
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.5';
   });
   document.querySelectorAll('.poi-card').forEach(c =>
     c.classList.toggle('faded', c.id !== 'card-' + activeId));
@@ -172,6 +180,7 @@ map = L.map('map').setView([AIRBNB_LAT, AIRBNB_LON], 15);
 window._leafletMap = map;
 let _flyingTo = false;
 map.on('click', clearFocus);
+map.on('popupclose', clearFocus);
 map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
 map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -187,9 +196,9 @@ L.marker([AIRBNB_LAT, AIRBNB_LON], { icon: airbnbIcon, zIndexOffset: 1000 })
   .addTo(map)
   .bindPopup('<b>🏠 Airbnb</b><br><a href="https://www.airbnb.fr/rooms/10349749" target="_blank">View listing ↗</a>');
 
-function makeIcon(category) {
+function makeIcon(category, poiIcon) {
   const color = CATEGORY_COLORS[category] || '#6b7280';
-  const icon = CATEGORY_ICONS[category] || '📍';
+  const icon = poiIcon || CATEGORY_ICONS[category] || '📍';
   return L.divIcon({
     className: '',
     html: `<div style="background:${color};width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
@@ -260,7 +269,7 @@ function updateMarkers() {
     if ((activeFilter !== 'All' && cat !== activeFilter) ||
         (search && !p.name.toLowerCase().includes(search))) return;
     const [lng, lat] = f.geometry.coordinates;
-    const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
+    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.icon) })
       .addTo(map)
       .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>`);
     marker.on('click', () => focusPOI(f));
