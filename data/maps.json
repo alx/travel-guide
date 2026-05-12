@@ -328,14 +328,13 @@
       "slug": "airbnb/10349749",
       "url": "/airbnb/10349749/",
       "title": "Appartement en résidence · Toulouse",
-      "description": "27 POIs autour de l'Airbnb à Toulouse : supermarchés, parcs, restaurants, transports, commerces et activités. Source : OSM Overpass, Google Places + tracks GPX.",
+      "description": "25 POIs autour de l'Airbnb à Toulouse : supermarchés, parcs, restaurants, transports, commerces et activités. Source : OSM Overpass, Google Places + tracks GPX.",
       "emoji": "🏠",
       "section": "airbnb",
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
         "🧺 Supermarket",
-        "🌳 Park",
         "🚌 Transit",
         "🚲 Bike Share",
         "🍽️ Restaurant",
@@ -343,7 +342,7 @@
         "💊 Health",
         "🎠 Activity"
       ],
-      "poi_count": 27,
+      "poi_count": 25,
       "categories": [
         "Activity",
         "Bakery & Food",
@@ -352,7 +351,6 @@
         "Health",
         "Market",
         "Night Shop",
-        "Park",
         "Restaurant",
         "Supermarket",
         "Transit"
