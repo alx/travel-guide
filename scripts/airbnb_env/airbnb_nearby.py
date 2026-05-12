@@ -1520,17 +1520,18 @@ def main() -> None:
         print(f"  Neighbourhood: {location['neighbourhood']}, {location.get('city', '')}", file=sys.stderr)
 
     # B10 / C03 — coord sanity check against city centroid
-    if confidence != "high" and not getattr(args, 'skip_coord_check', False):
-        query_str = args.title or slug.replace("/", " ").replace("-", " ")
+    # Only run when we have a meaningful place name to search; skip for raw slug/ID strings.
+    _sanity_query = args.title or location.get("city")
+    if confidence != "high" and not getattr(args, 'skip_coord_check', False) and _sanity_query:
         try:
             nom = requests.get(NOMINATIM_URL,
-                               params={"q": query_str, "format": "json", "limit": 1},
+                               params={"q": _sanity_query, "format": "json", "limit": 1},
                                headers={"User-Agent": "travel-guide/1.0"}, timeout=10)
             if nom.ok and nom.json():
                 city_lat, city_lon = float(nom.json()[0]["lat"]), float(nom.json()[0]["lon"])
                 dist_from_city = haversine(lat, lon, city_lat, city_lon)
                 if dist_from_city > 15_000:
-                    print(f"  ⚠ Coords are {dist_from_city/1000:.1f}km from '{query_str}' centroid", file=sys.stderr)
+                    print(f"  ⚠ Coords are {dist_from_city/1000:.1f}km from '{_sanity_query}' centroid", file=sys.stderr)
                     confidence = "low"
         except Exception:
             pass
