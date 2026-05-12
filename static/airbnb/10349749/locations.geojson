@@ -49,11 +49,6 @@
         "color": "#b45309",
         "count": 1
       },
-      "Park": {
-        "icon": "🌳",
-        "color": "#15803d",
-        "count": 2
-      },
       "Bike Share": {
         "icon": "🚲",
         "color": "#0891b2",
@@ -409,58 +404,6 @@
         "coord_source": "gpx",
         "coord_accuracy": "high",
         "original_id": "062",
-        "listing_url": "https://www.airbnb.fr/rooms/10349749",
-        "opening_hours": null,
-        "phone": null,
-        "website": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb-10349749-019",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.453255,
-          43.6045122
-        ]
-      },
-      "properties": {
-        "name": "Erika - Robot - Rose",
-        "category": "Park",
-        "icon": "🌳",
-        "color": "#15803d",
-        "distance_m": 372,
-        "source": "gpx_curated",
-        "coord_source": "gpx",
-        "coord_accuracy": "high",
-        "original_id": "015",
-        "listing_url": "https://www.airbnb.fr/rooms/10349749",
-        "opening_hours": null,
-        "phone": null,
-        "website": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb-10349749-020",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.4587439,
-          43.6085897
-        ]
-      },
-      "properties": {
-        "name": "Jardins Synthétiques",
-        "category": "Park",
-        "icon": "🌳",
-        "color": "#15803d",
-        "distance_m": 408,
-        "source": "gpx_curated",
-        "coord_source": "gpx",
-        "coord_accuracy": "high",
-        "original_id": "016",
         "listing_url": "https://www.airbnb.fr/rooms/10349749",
         "opening_hours": null,
         "phone": null,
