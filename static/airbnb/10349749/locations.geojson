@@ -2,723 +2,782 @@
   "type": "FeatureCollection",
   "_meta": {
     "crs": "EPSG:4326",
-    "generated": "2026-05-11T00:00:00.000000+00:00",
-    "source": "OSM Overpass + Google Places + GPX tracks — https://www.airbnb.fr/rooms/10349749",
+    "generated": "2026-05-12T07:18:11Z",
+    "source": "GPX curation + OSM — Quartier Saint-Aubin, Toulouse",
     "listing_url": "https://www.airbnb.fr/rooms/10349749",
     "center": {
       "lat": 43.60498,
       "lon": 1.45783
     },
-    "radius_m": 1000
+    "radius_m": 1300,
+    "neighbourhood": "Quartier Saint-Aubin",
+    "city": "Toulouse",
+    "country": "France",
+    "coord_confidence": "high",
+    "n_pois": 27,
+    "filter_params": {
+      "dedup_radius_m": 80
+    },
+    "categories": {
+      "Transit": {
+        "icon": "🚌",
+        "color": "#2563eb",
+        "count": 4
+      },
+      "Health": {
+        "icon": "💊",
+        "color": "#dc2626",
+        "count": 3
+      },
+      "Supermarket": {
+        "icon": "🛒",
+        "color": "#16a34a",
+        "count": 2
+      },
+      "Night Shop": {
+        "icon": "🌙",
+        "color": "#0e7490",
+        "count": 1
+      },
+      "Bakery & Food": {
+        "icon": "🥖",
+        "color": "#ca8a04",
+        "count": 2
+      },
+      "Market": {
+        "icon": "🏪",
+        "color": "#b45309",
+        "count": 1
+      },
+      "Park": {
+        "icon": "🌳",
+        "color": "#15803d",
+        "count": 2
+      },
+      "Bike Share": {
+        "icon": "🚲",
+        "color": "#0891b2",
+        "count": 3
+      },
+      "Restaurant": {
+        "icon": "🍽️",
+        "color": "#9333ea",
+        "count": 4
+      },
+      "Activity": {
+        "icon": "🎠",
+        "color": "#7c3aed",
+        "count": 2
+      },
+      "Culture": {
+        "icon": "🏛️",
+        "color": "#1d4ed8",
+        "count": 3
+      }
+    }
   },
   "features": [
     {
       "type": "Feature",
-      "id": "airbnb/10349749-001",
-      "geometry": { "type": "Point", "coordinates": [1.4579864, 43.6055135] },
-      "properties": { "name": "Carrefour City", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-002",
-      "geometry": { "type": "Point", "coordinates": [1.4584747, 43.6053594] },
-      "properties": { "name": "Le Petit Casino", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-003",
-      "geometry": { "type": "Point", "coordinates": [1.4564534, 43.604396] },
-      "properties": { "name": "Carrefour City", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-005",
-      "geometry": { "type": "Point", "coordinates": [1.4543548, 43.604698] },
-      "properties": { "name": "l'Epicerie de nuit", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-006",
-      "geometry": { "type": "Point", "coordinates": [1.4542533, 43.6045548] },
-      "properties": { "name": "Spar", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-007",
-      "geometry": { "type": "Point", "coordinates": [1.4546123, 43.6062674] },
-      "properties": { "name": "Épicerie de nuit", "category": "Commerce", "icon": "🛍️", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-008",
-      "geometry": { "type": "Point", "coordinates": [1.4524318999999999, 43.604276399999996] },
-      "properties": { "name": "Panda Market", "category": "Commerce", "icon": "🛍️", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-009",
-      "geometry": { "type": "Point", "coordinates": [1.4524556, 43.6064611] },
-      "properties": { "name": "Carrefour City", "category": "Commerce", "icon": "🛍️", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-010",
-      "geometry": { "type": "Point", "coordinates": [1.4515901, 43.606694] },
-      "properties": { "name": "Asie Bazar Indien", "category": "Commerce", "icon": "🛍️", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-011",
-      "geometry": { "type": "Point", "coordinates": [1.4610227, 43.605928] },
-      "properties": { "name": "Monument aux Morts des Quartiers Providence, Cimetière et Soupetard", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-012",
-      "geometry": { "type": "Point", "coordinates": [1.4544533, 43.6035714] },
-      "properties": { "name": "Monument aux Morts des Quartiers Saint-Aubin et Dupuy", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-013",
-      "geometry": { "type": "Point", "coordinates": [1.4543979999999999, 43.6031708] },
-      "properties": { "name": "Caniparc", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-014",
-      "geometry": { "type": "Point", "coordinates": [1.4610192, 43.607071399999995] },
-      "properties": { "name": "Monument des Mobiles de la Haute-Garonne", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-015",
-      "geometry": { "type": "Point", "coordinates": [1.453255, 43.604512199999995] },
-      "properties": { "name": "Erika - Robot - Rose", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-016",
-      "geometry": { "type": "Point", "coordinates": [1.4587439, 43.608589699999996] },
-      "properties": { "name": "Jardins Synthétiques", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-017",
-      "geometry": { "type": "Point", "coordinates": [1.4596766, 43.6095117] },
-      "properties": { "name": "Jardin Charles Gaspard", "category": "Park", "icon": "🌳", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-019",
-      "geometry": { "type": "Point", "coordinates": [1.4633505000000002, 43.6018264] },
-      "properties": { "name": "Parc Saccarin", "category": "Park", "icon": "🌳", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-020",
-      "geometry": { "type": "Point", "coordinates": [1.4634031, 43.601862] },
-      "properties": { "name": "Jardin Sacarin", "category": "Park", "icon": "🌳", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-021",
-      "geometry": { "type": "Point", "coordinates": [1.4554031, 43.6037895] },
-      "properties": { "name": "Michelet Nord", "category": "Playground", "icon": "🛝", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-022",
-      "geometry": { "type": "Point", "coordinates": [1.4553414, 43.6038023] },
-      "properties": { "name": "Aire de Jeux (Saint-Aubin)", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-023",
-      "geometry": { "type": "Point", "coordinates": [1.4544006999999999, 43.6031693] },
-      "properties": { "name": "Caniparc de la Ville de Toulouse - PARVIS EGLISE DE ST AUBIN", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-024",
-      "geometry": { "type": "Point", "coordinates": [1.4526645999999999, 43.6081144] },
-      "properties": { "name": "Aire de jeux", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-025",
-      "geometry": { "type": "Point", "coordinates": [1.4525482, 43.6080353] },
-      "properties": { "name": "Jean Jaurès 2", "category": "Playground", "icon": "🛝", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-026",
-      "geometry": { "type": "Point", "coordinates": [1.4569587, 43.610323099999995] },
-      "properties": { "name": "Caniparc de la Ville de Toulouse - RUE MOIROUD", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-027",
-      "geometry": { "type": "Point", "coordinates": [1.4592994, 43.6104847] },
-      "properties": { "name": "Caniparc de la Ville de Toulouse - JARDIN GASPARD", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-028",
-      "geometry": { "type": "Point", "coordinates": [1.4564469, 43.6108577] },
-      "properties": { "name": "Place de la légion d'honneur", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-029",
-      "geometry": { "type": "Point", "coordinates": [1.4497422, 43.6067158] },
-      "properties": { "name": "Jean Jaurès", "category": "Playground", "icon": "🛝", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-030",
-      "geometry": { "type": "Point", "coordinates": [1.4622797, 43.6106173] },
-      "properties": { "name": "City de Rin Itoshi", "category": "Playground", "icon": "🛝", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-031",
-      "geometry": { "type": "Point", "coordinates": [1.4582812, 43.6054301] },
-      "properties": { "name": "Providence", "category": "Transit", "icon": "🚌", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-032",
-      "geometry": { "type": "Point", "coordinates": [1.4584098, 43.6053759] },
-      "properties": { "name": "Providence", "category": "Transit", "icon": "🚌", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-033",
-      "geometry": { "type": "Point", "coordinates": [1.4566294, 43.6060276] },
-      "properties": { "name": "Colombette", "category": "Transit", "icon": "🚌", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-034",
-      "geometry": { "type": "Point", "coordinates": [1.4562458, 43.6058663] },
-      "properties": { "name": "Colombette", "category": "Transit", "icon": "🚌", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-035",
-      "geometry": { "type": "Point", "coordinates": [1.457145, 43.6035659] },
-      "properties": { "name": "Guilhemery", "category": "Transit", "icon": "🚌", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-036",
-      "geometry": { "type": "Point", "coordinates": [1.45118, 43.60337] },
-      "properties": { "name": "St-Georges", "category": "Transit", "icon": "🚌", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-037",
-      "geometry": { "type": "Point", "coordinates": [1.4533211, 43.6090838] },
-      "properties": { "name": "Riquet", "category": "Transit", "icon": "🚌", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-038",
-      "geometry": { "type": "Point", "coordinates": [1.4523017, 43.600464699999996] },
-      "properties": { "name": "François Verdier", "category": "Transit", "icon": "🚌", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-039",
-      "geometry": { "type": "Point", "coordinates": [1.4550756, 43.6107647] },
-      "properties": { "name": "Marengo", "category": "Transit", "icon": "🚌", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-040",
-      "geometry": { "type": "Point", "coordinates": [1.4492554, 43.6058556] },
-      "properties": { "name": "Jean-Jaurès", "category": "Transit", "icon": "🚌", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-041",
-      "geometry": { "type": "Point", "coordinates": [1.4546413, 43.6072321] },
-      "properties": { "name": "Centre sportif Léo Lagrange", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-042",
-      "geometry": { "type": "Point", "coordinates": [1.4548695, 43.6074301] },
-      "properties": { "name": "Grand bassin Léo Lagrange", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-043",
-      "geometry": { "type": "Point", "coordinates": [1.454765, 43.6074964] },
-      "properties": { "name": "Petit bassin Léo Lagrange", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-044",
-      "geometry": { "type": "Point", "coordinates": [1.4541612, 43.607196599999995] },
-      "properties": { "name": "Piscine Léo Lagrange", "category": "Activity", "icon": "🎠", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-045",
-      "geometry": { "type": "Point", "coordinates": [1.4652102, 43.605496] },
-      "properties": { "name": "L'Union des Arts / Le Labo des Arts", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-046",
-      "geometry": { "type": "Point", "coordinates": [1.4527406999999999, 43.6001519] },
-      "properties": { "name": "Cabinet de Kinésithérapie , Balnéothérapie, Soins à domicile", "category": "Activity", "icon": "🎠", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-047",
-      "geometry": { "type": "Point", "coordinates": [1.4475091, 43.6054879] },
-      "properties": { "name": "Nathalie Grenet muséographe", "category": "Activity", "icon": "🎠", "coord_source": "google_maps_pin", "coord_accuracy": "high", "source": "google", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-048",
-      "geometry": { "type": "Point", "coordinates": [1.4545664, 43.5978542] },
-      "properties": { "name": "Gymnase Calvinhac", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-049",
-      "geometry": { "type": "Point", "coordinates": [1.4463424, 43.6010357] },
-      "properties": { "name": "Musée des Augustins", "category": "Activity", "icon": "🎠", "coord_source": "osm", "coord_accuracy": "high", "source": "osm", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-050",
-      "geometry": { "type": "Point", "coordinates": [1.4540255, 43.605334] },
-      "properties": { "name": "Au rendez-vous des Yogis, Hatha Yoga", "category": "Activity", "icon": "🎠", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-051",
-      "geometry": { "type": "Point", "coordinates": [1.4205033, 43.6199842] },
-      "properties": { "name": "Solo Escalade", "category": "Activity", "icon": "🎠", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-052",
-      "geometry": { "type": "Point", "coordinates": [1.4585316, 43.6057457] },
-      "properties": { "name": "Boucherie Filhos Jérôme", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-053",
-      "geometry": { "type": "Point", "coordinates": [1.4538485, 43.6045027] },
-      "properties": { "name": "Boucherie Saint-Aubin", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-054",
-      "geometry": { "type": "Point", "coordinates": [1.4442354, 43.6030188] },
-      "properties": { "name": "Ceci & cela", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-055",
-      "geometry": { "type": "Point", "coordinates": [1.4842433, 43.6315442] },
-      "properties": { "name": "Espace Gramont", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-056",
-      "geometry": { "type": "Point", "coordinates": [1.4573354, 43.605097] },
-      "properties": { "name": "La Glanerie", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-057",
-      "geometry": { "type": "Point", "coordinates": [1.454047, 43.6002646] },
-      "properties": { "name": "La Halle aux Pains", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-058",
-      "geometry": { "type": "Point", "coordinates": [1.4542347, 43.6046814] },
-      "properties": { "name": "La Pétrie", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-059",
-      "geometry": { "type": "Point", "coordinates": [1.4589125, 43.6055709] },
-      "properties": { "name": "Le Panier d'Or", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-060",
-      "geometry": { "type": "Point", "coordinates": [1.4526308, 43.6068838] },
-      "properties": { "name": "Le Recantou", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-061",
-      "geometry": { "type": "Point", "coordinates": [1.455828, 43.5975569] },
-      "properties": { "name": "Lidl", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-062",
-      "geometry": { "type": "Point", "coordinates": [1.4562035, 43.6036442] },
-      "properties": { "name": "Marché Saint-Aubin", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-063",
-      "geometry": { "type": "Point", "coordinates": [1.4541328, 43.6034811] },
-      "properties": { "name": "Saint Aubin Services Plus", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-064",
-      "geometry": { "type": "Point", "coordinates": [1.4539021, 43.5997246] },
-      "properties": { "name": "Xavier et marie", "category": "Commerce", "icon": "🛍️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-065",
-      "geometry": { "type": "Point", "coordinates": [1.4467782, 43.6039861] },
-      "properties": { "name": "American Cosmograph", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-066",
-      "geometry": { "type": "Point", "coordinates": [1.4420789, 43.6084803] },
-      "properties": { "name": "Basilique Saint-Sernin", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-067",
-      "geometry": { "type": "Point", "coordinates": [1.4468479, 43.6033684] },
-      "properties": { "name": "Bibliothèque de quartier - Duranti", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-068",
-      "geometry": { "type": "Point", "coordinates": [1.444155, 43.6041414] },
-      "properties": { "name": "Capitole - Mairie de Toulouse", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-069",
-      "geometry": { "type": "Point", "coordinates": [1.4479154, 43.6045454] },
-      "properties": { "name": "Gaumont Wilson", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-070",
-      "geometry": { "type": "Point", "coordinates": [1.478101, 43.5727621] },
-      "properties": { "name": "Halle de La Machine", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-071",
-      "geometry": { "type": "Point", "coordinates": [1.4513808, 43.5927899] },
-      "properties": { "name": "Jardin des Plantes", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-072",
-      "geometry": { "type": "Point", "coordinates": [1.4320904, 43.6119255] },
-      "properties": { "name": "Jardin Japonais", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-073",
-      "geometry": { "type": "Point", "coordinates": [1.4593095, 43.5901285] },
-      "properties": { "name": "Jardin Monplaisir", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-074",
-      "geometry": { "type": "Point", "coordinates": [1.4545083, 43.59988] },
-      "properties": { "name": "La Halle aux Grains", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-075",
-      "geometry": { "type": "Point", "coordinates": [1.4856756, 43.5479493] },
-      "properties": { "name": "Le Bikini", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-076",
-      "geometry": { "type": "Point", "coordinates": [1.4295959, 43.6009211] },
-      "properties": { "name": "Les Abattoirs", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-077",
-      "geometry": { "type": "Point", "coordinates": [1.475687, 43.5733218] },
-      "properties": { "name": "Les Jardins de la Ligne", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-078",
-      "geometry": { "type": "Point", "coordinates": [1.4532208, 43.6038113] },
-      "properties": { "name": "Les Ludotines, ludothèque", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-079",
-      "geometry": { "type": "Point", "coordinates": [1.4762396, 43.5736055] },
-      "properties": { "name": "Manège Carré Sénart", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-080",
-      "geometry": { "type": "Point", "coordinates": [1.4557958, 43.6101582] },
-      "properties": { "name": "Médiathèque José Cabanis", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-081",
-      "geometry": { "type": "Point", "coordinates": [1.4495677, 43.593396] },
-      "properties": { "name": "Muséum d'Histoire Naturelle", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-082",
-      "geometry": { "type": "Point", "coordinates": [1.4425081, 43.6030421] },
-      "properties": { "name": "Ombres Blanches", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-083",
-      "geometry": { "type": "Point", "coordinates": [1.4627749, 43.6120847] },
-      "properties": { "name": "Parc de l'Observatoire de Jolimont", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-084",
-      "geometry": { "type": "Point", "coordinates": [1.4604682, 43.6128693] },
-      "properties": { "name": "Parc Félix Lavit", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-085",
-      "geometry": { "type": "Point", "coordinates": [1.4300144, 43.6001481] },
-      "properties": { "name": "Parc Raymond VI", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-086",
-      "geometry": { "type": "Point", "coordinates": [1.4618415, 43.6113972] },
-      "properties": { "name": "Point de vue", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-087",
-      "geometry": { "type": "Point", "coordinates": [1.4368862, 43.5953036] },
-      "properties": { "name": "Prairie des Filtres", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-088",
-      "geometry": { "type": "Point", "coordinates": [1.4371673, 43.6021876] },
-      "properties": { "name": "Promenade Henri-Martin", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-089",
-      "geometry": { "type": "Point", "coordinates": [1.4510804, 43.5945227] },
-      "properties": { "name": "Quai des savoirs", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-090",
-      "geometry": { "type": "Point", "coordinates": [1.4537734, 43.5986835] },
-      "properties": { "name": "Théâtre du Grand Rond", "category": "Culture", "icon": "🏛️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-091",
-      "geometry": { "type": "Point", "coordinates": [1.4541757, 43.6028518] },
-      "properties": { "name": "Au Poêle de la Bête", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-092",
-      "geometry": { "type": "Point", "coordinates": [1.4532316, 43.600183] },
-      "properties": { "name": "Banh mi", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-093",
-      "geometry": { "type": "Point", "coordinates": [1.4541006, 43.6012358] },
-      "properties": { "name": "Burger' N'Co", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-094",
-      "geometry": { "type": "Point", "coordinates": [1.4445573, 43.5974248] },
-      "properties": { "name": "Cécile", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-095",
-      "geometry": { "type": "Point", "coordinates": [1.4406574, 43.6020088] },
-      "properties": { "name": "Chez nous les Libanais", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-096",
-      "geometry": { "type": "Point", "coordinates": [1.4537895, 43.6071946] },
-      "properties": { "name": "Hwaban", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-097",
-      "geometry": { "type": "Point", "coordinates": [1.454916, 43.6048135] },
-      "properties": { "name": "Jifu Fondue Asiatique", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-098",
-      "geometry": { "type": "Point", "coordinates": [1.4538109, 43.6029528] },
-      "properties": { "name": "La Belle Verte", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-099",
-      "geometry": { "type": "Point", "coordinates": [1.4462095, 43.5930347] },
-      "properties": { "name": "La Nouvelle Lune", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-100",
-      "geometry": { "type": "Point", "coordinates": [1.4445251, 43.597654] },
-      "properties": { "name": "Loge 24", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-101",
-      "geometry": { "type": "Point", "coordinates": [1.4511019, 43.6044911] },
-      "properties": { "name": "Mazzolina", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-102",
-      "geometry": { "type": "Point", "coordinates": [1.453886, 43.6009833] },
-      "properties": { "name": "Petit London", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-103",
-      "geometry": { "type": "Point", "coordinates": [1.4439082, 43.5978987] },
-      "properties": { "name": "Solides", "category": "Restaurant", "icon": "🍽️", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-104",
-      "geometry": { "type": "Point", "coordinates": [1.4544225, 43.6046037] },
-      "properties": { "name": "Pharmacie Colombette", "category": "Health", "icon": "💊", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-105",
-      "geometry": { "type": "Point", "coordinates": [1.4538753, 43.6033335] },
-      "properties": { "name": "Dentiste", "category": "Health", "icon": "💊", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-106",
-      "geometry": { "type": "Point", "coordinates": [1.4547122, 43.6003384] },
-      "properties": { "name": "Laboratoire de Biologie Médicale Biolab Avenir La Halle", "category": "Health", "icon": "💊", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-107",
-      "geometry": { "type": "Point", "coordinates": [1.4828056, 43.6291291] },
-      "properties": { "name": "Balma-Gramont", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-108",
-      "geometry": { "type": "Point", "coordinates": [1.4536554, 43.6045649] },
-      "properties": { "name": "Vélib - Colombette", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-109",
-      "geometry": { "type": "Point", "coordinates": [1.4561498, 43.6016204] },
-      "properties": { "name": "Vélib - Dauriac", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-110",
-      "geometry": { "type": "Point", "coordinates": [1.4521372, 43.6007347] },
-      "properties": { "name": "François Verdier (métro)", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-111",
-      "geometry": { "type": "Point", "coordinates": [1.4580488, 43.6068333] },
-      "properties": { "name": "Vélib - Compans", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-112",
-      "geometry": { "type": "Point", "coordinates": [1.4564502, 43.6019933] },
-      "properties": { "name": "Guilhemery (bus)", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-113",
-      "geometry": { "type": "Point", "coordinates": [1.4633811, 43.6153044] },
-      "properties": { "name": "Jolimont (métro)", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-114",
-      "geometry": { "type": "Point", "coordinates": [1.4743352, 43.5735666] },
-      "properties": { "name": "Latécoère (bus)", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-115",
-      "geometry": { "type": "Point", "coordinates": [1.4554363, 43.6108146] },
-      "properties": { "name": "Marengo-SNCF", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-116",
-      "geometry": { "type": "Point", "coordinates": [1.4534569, 43.6110516] },
-      "properties": { "name": "Matabiau Gare SNCF", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-117",
-      "geometry": { "type": "Point", "coordinates": [1.454916, 43.606208] },
-      "properties": { "name": "Vélib - Peri", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-118",
-      "geometry": { "type": "Point", "coordinates": [1.4542508, 43.6074509] },
-      "properties": { "name": "Vélib - Piscine Léo Lagrange", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-119",
-      "geometry": { "type": "Point", "coordinates": [1.4544278, 43.6027003] },
-      "properties": { "name": "Vélib - Saint-Aubin", "category": "Bike Share", "icon": "🚲", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
-    },
-    {
-      "type": "Feature",
-      "id": "airbnb/10349749-120",
-      "geometry": { "type": "Point", "coordinates": [1.4522338, 43.61358] },
-      "properties": { "name": "Toulouse Gare Routière", "category": "Transit", "icon": "🚌", "coord_source": "gpx", "coord_accuracy": "high", "source": "gpx-track", "listing_url": "https://www.airbnb.fr/rooms/10349749" }
+      "id": "airbnb-10349749-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4582812,
+          43.6054301
+        ]
+      },
+      "properties": {
+        "name": "Providence",
+        "category": "Transit",
+        "icon": "🚌",
+        "color": "#2563eb",
+        "distance_m": 62,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "031",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4566294,
+          43.6060276
+        ]
+      },
+      "properties": {
+        "name": "Colombette",
+        "category": "Transit",
+        "icon": "🚌",
+        "color": "#2563eb",
+        "distance_m": 151,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "033",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.457145,
+          43.6035659
+        ]
+      },
+      "properties": {
+        "name": "Guilhemery",
+        "category": "Transit",
+        "icon": "🚌",
+        "color": "#2563eb",
+        "distance_m": 167,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "035",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4521372,
+          43.6007347
+        ]
+      },
+      "properties": {
+        "name": "François Verdier (métro)",
+        "category": "Transit",
+        "icon": "🚌",
+        "color": "#2563eb",
+        "distance_m": 658,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "110",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4544225,
+          43.6046037
+        ]
+      },
+      "properties": {
+        "name": "Pharmacie Colombette",
+        "category": "Health",
+        "icon": "💊",
+        "color": "#dc2626",
+        "distance_m": 278,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "104",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4538753,
+          43.6033335
+        ]
+      },
+      "properties": {
+        "name": "Dentiste",
+        "category": "Health",
+        "icon": "💊",
+        "color": "#dc2626",
+        "distance_m": 367,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "105",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4547122,
+          43.6003384
+        ]
+      },
+      "properties": {
+        "name": "Laboratoire Biolab",
+        "category": "Health",
+        "icon": "💊",
+        "color": "#dc2626",
+        "distance_m": 574,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "106",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4579864,
+          43.6055135
+        ]
+      },
+      "properties": {
+        "name": "Carrefour City (Rue Riquet)",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "color": "#16a34a",
+        "distance_m": 61,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "001",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4564534,
+          43.604396
+        ]
+      },
+      "properties": {
+        "name": "Carrefour City (Rue des Fleurs)",
+        "category": "Supermarket",
+        "icon": "🛒",
+        "color": "#16a34a",
+        "distance_m": 128,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "003",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4543548,
+          43.604698
+        ]
+      },
+      "properties": {
+        "name": "l'Epicerie de nuit",
+        "category": "Night Shop",
+        "icon": "🌙",
+        "color": "#0e7490",
+        "distance_m": 282,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "005",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4585316,
+          43.6057457
+        ]
+      },
+      "properties": {
+        "name": "Boucherie Filhos Jérôme",
+        "category": "Bakery & Food",
+        "icon": "🥖",
+        "color": "#ca8a04",
+        "distance_m": 102,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "052",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4542347,
+          43.6046814
+        ]
+      },
+      "properties": {
+        "name": "La Pétrie",
+        "category": "Bakery & Food",
+        "icon": "🥖",
+        "color": "#ca8a04",
+        "distance_m": 291,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "058",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4562035,
+          43.6036442
+        ]
+      },
+      "properties": {
+        "name": "Marché Saint-Aubin",
+        "category": "Market",
+        "icon": "🏪",
+        "color": "#b45309",
+        "distance_m": 198,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "062",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.453255,
+          43.6045122
+        ]
+      },
+      "properties": {
+        "name": "Erika - Robot - Rose",
+        "category": "Park",
+        "icon": "🌳",
+        "color": "#15803d",
+        "distance_m": 372,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "015",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4587439,
+          43.6085897
+        ]
+      },
+      "properties": {
+        "name": "Jardins Synthétiques",
+        "category": "Park",
+        "icon": "🌳",
+        "color": "#15803d",
+        "distance_m": 408,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "016",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4580488,
+          43.6068333
+        ]
+      },
+      "properties": {
+        "name": "Vélib - Compans",
+        "category": "Bike Share",
+        "icon": "🚲",
+        "color": "#0891b2",
+        "distance_m": 207,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "111",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.454916,
+          43.606208
+        ]
+      },
+      "properties": {
+        "name": "Vélib - Peri",
+        "category": "Bike Share",
+        "icon": "🚲",
+        "color": "#0891b2",
+        "distance_m": 271,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "117",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4536554,
+          43.6045649
+        ]
+      },
+      "properties": {
+        "name": "Vélib - Colombette",
+        "category": "Bike Share",
+        "icon": "🚲",
+        "color": "#0891b2",
+        "distance_m": 339,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "108",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.454916,
+          43.6048135
+        ]
+      },
+      "properties": {
+        "name": "Jifu Fondue Asiatique",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "color": "#9333ea",
+        "distance_m": 235,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "097",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4541757,
+          43.6028518
+        ]
+      },
+      "properties": {
+        "name": "Au Poêle de la Bête",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "color": "#9333ea",
+        "distance_m": 378,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "091",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4537895,
+          43.6071946
+        ]
+      },
+      "properties": {
+        "name": "Hwaban (coréen)",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "color": "#9333ea",
+        "distance_m": 408,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "096",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4541006,
+          43.6012358
+        ]
+      },
+      "properties": {
+        "name": "Burger'N'Co",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "color": "#9333ea",
+        "distance_m": 513,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "093",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4546413,
+          43.6072321
+        ]
+      },
+      "properties": {
+        "name": "Centre sportif Léo Lagrange",
+        "category": "Activity",
+        "icon": "🎠",
+        "color": "#7c3aed",
+        "distance_m": 359,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "041",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4532208,
+          43.6038113
+        ]
+      },
+      "properties": {
+        "name": "Les Ludotines (ludothèque)",
+        "category": "Activity",
+        "icon": "🎠",
+        "color": "#7c3aed",
+        "distance_m": 393,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "078",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4557958,
+          43.6101582
+        ]
+      },
+      "properties": {
+        "name": "Médiathèque José Cabanis",
+        "category": "Culture",
+        "icon": "🏛️",
+        "color": "#1d4ed8",
+        "distance_m": 599,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "080",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4545083,
+          43.59988
+        ]
+      },
+      "properties": {
+        "name": "La Halle aux Grains (concerts)",
+        "category": "Culture",
+        "icon": "🏛️",
+        "color": "#1d4ed8",
+        "distance_m": 627,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "074",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "airbnb-10349749-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4537734,
+          43.5986835
+        ]
+      },
+      "properties": {
+        "name": "Théâtre du Grand Rond",
+        "category": "Culture",
+        "icon": "🏛️",
+        "color": "#1d4ed8",
+        "distance_m": 773,
+        "source": "gpx_curated",
+        "coord_source": "gpx",
+        "coord_accuracy": "high",
+        "original_id": "090",
+        "listing_url": "https://www.airbnb.fr/rooms/10349749",
+        "opening_hours": null,
+        "phone": null,
+        "website": null
+      }
     }
   ]
 }
