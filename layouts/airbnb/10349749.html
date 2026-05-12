@@ -49,6 +49,10 @@
   .poi-card .poi-actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .poi-card .poi-actions a { font-size: 0.75rem; color: #1a6b3c; text-decoration: none; font-weight: 500; }
   .poi-card .poi-actions a:hover { text-decoration: underline; }
+  .poi-hours { font-size: 0.72rem; margin: 0.2rem 0; }
+  .poi-hours.open { color: #16a34a; }
+  .poi-hours.closed { color: #dc2626; }
+  .poi-hours.unknown { color: #aaa; }
   .cat-badge { display: inline-block; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.35rem; }
   .search-box { width: 100%; padding: 0.5rem 0.75rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.85rem; }
   .search-box:focus { outline: none; border-color: #1a6b3c; }
@@ -66,6 +70,11 @@
     opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap;
   }
   .copy-toast.show { opacity: 1; }
+  .offline-banner {
+    background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px;
+    padding: 0.4rem 0.75rem; font-size: 0.75rem; color: #92400e;
+    display: none; text-align: center;
+  }
   @media (max-width: 768px) {
     #list-toggle { display: inline-block; }
     .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
@@ -85,9 +94,11 @@
       <h1>{{ .Params.emoji }} {{ .Title }}</h1>
       <p>{{ .Description }}</p>
     </div>
+    <div id="offline-banner" class="offline-banner">📡 Offline — showing cached data</div>
     <div class="header-actions">
       <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Places ▾':'📍 Places'">📍 Places</button>
       <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="My position">📍 My position</button>
+      <button class="header-btn" onclick="showAll()">🗺️ Show all</button>
       <a class="airbnb-badge" href="https://www.airbnb.fr/rooms/10349749" target="_blank">🏠 Listing ↗</a>
     </div>
     <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()" style="margin-top:0.5rem;">
@@ -115,33 +126,24 @@ window.MAP_CONFIG = {
 const GEOJSON_URL = window.MAP_CONFIG.geojsonUrl;
 const AIRBNB_LAT = 43.60498, AIRBNB_LON = 1.45783;
 
-const CATEGORY_COLORS = {
-  'Park':        '#65a30d',
-  'Playground':  '#f97316',
-  'Transit':     '#2563eb',
-  'Bike Share':  '#0284c7',
-  'Activity':    '#9333ea',
-  'Restaurant':  '#ef4444',
-  'Culture':     '#0891b2',
-  'Commerce':    '#d97706',
-  'Health':      '#db2777',
-};
-const CATEGORY_ICONS = {
-  'Park':        '🌳',
-  'Playground':  '🛝',
-  'Transit':     '🚌',
-  'Bike Share':  '🚲',
-  'Activity':    '🎠',
-  'Restaurant':  '🍽️',
-  'Culture':     '🏛️',
-  'Commerce':    '🛍️',
-  'Health':      '💊',
-};
+// B07 — color palette; CATEGORY_COLORS/ICONS populated from GeoJSON _meta after fetch
+const COLOR_PALETTE = [
+  '#16a34a','#2563eb','#f97316','#9333ea','#dc2626',
+  '#0891b2','#ca8a04','#be185d','#15803d','#1d4ed8',
+  '#ea580c','#7c3aed','#b91c1c','#0e7490',
+];
+let CATEGORY_COLORS = {};
+let CATEGORY_ICONS  = {};
+let MAP_LABELS      = {};  // B13 — localised labels
+
+// A05 — units ('metric' or 'imperial'), set from _meta.units after fetch
+window.MAP_UNITS = 'metric';
+// C02 — walking route toggle
+window.MAP_ROUTING = true;
 
 let map, allPOIs = [], markers = {}, activeFilter = 'All', activeCard = null;
+let airbnbMarker = null;
 Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
-window._mapCategoryColors = CATEGORY_COLORS;
-window._mapCategoryIcons  = CATEGORY_ICONS;
 
 function slugify(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 function showToast(msg) {
@@ -154,7 +156,29 @@ function haversine(a, b, c, d) {
   const x = Math.sin(dL/2)**2 + Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dO/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
 }
-function fmtDist(m) { return m < 1000 ? Math.round(m) + ' m' : (m/1000).toFixed(1) + ' km'; }
+// A05 — units-aware distance formatter
+function fmtDist(m) {
+  if (window.MAP_UNITS === 'imperial') {
+    const mi = m / 1609.344;
+    return mi >= 0.1 ? mi.toFixed(1) + ' mi' : Math.round(m * 3.281) + ' ft';
+  }
+  return m < 1000 ? Math.round(m) + ' m' : (m/1000).toFixed(1) + ' km';
+}
+
+// A02 — show all POIs in viewport
+function showAll() {
+  const group = L.featureGroup(Object.values(markers));
+  if (group.getLayers().length > 0) map.fitBounds(group.getBounds().pad(0.12));
+}
+
+// C01 — opening hours status
+function renderOpenStatus(oh) {
+  if (!oh) return '';
+  if (oh.open_now === true)  return '<div class="poi-hours open">● Open now</div>';
+  if (oh.open_now === false) return '<div class="poi-hours closed">● Closed</div>';
+  if (oh.raw) return `<div class="poi-hours unknown" title="${oh.raw}">🕐 Hours available</div>`;
+  return '';
+}
 
 function fadePOIs(activeId) {
   Object.entries(markers).forEach(([id, m]) => {
@@ -173,10 +197,11 @@ function clearFocus() {
   const u = new URL(window.location.href);
   u.searchParams.delete('poi');
   history.replaceState({}, '', u);
-  window.clearRoute?.();
+  // C02 — remove route layer
+  window._routeLayer?.remove(); window._routeLayer = null;
 }
 
-map = L.map('map').setView([AIRBNB_LAT, AIRBNB_LON], 15);
+map = L.map('map').setView([AIRBNB_LAT, AIRBNB_LON], 16);
 window._leafletMap = map;
 let _flyingTo = false;
 map.on('click', clearFocus);
@@ -192,7 +217,8 @@ const airbnbIcon = L.divIcon({
   html: `<div style="background:#ff5a5f;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.4);border:3px solid white;">🏠</div>`,
   iconSize: [36, 36], iconAnchor: [18, 18]
 });
-L.marker([AIRBNB_LAT, AIRBNB_LON], { icon: airbnbIcon, zIndexOffset: 1000 })
+// B11 — store reference so popup can be updated with neighbourhood after GeoJSON loads
+airbnbMarker = L.marker([AIRBNB_LAT, AIRBNB_LON], { icon: airbnbIcon, zIndexOffset: 1000 })
   .addTo(map)
   .bindPopup('<b>🏠 Airbnb</b><br><a href="https://www.airbnb.fr/rooms/10349749" target="_blank">View listing ↗</a>');
 
@@ -222,18 +248,35 @@ function renderSidebar() {
     const icon = CATEGORY_ICONS[cat] || '📍';
     const [lng, lat] = f.geometry.coordinates;
     const dist = haversine(AIRBNB_LAT, AIRBNB_LON, lat, lng);
-    const slug = slugify(p.name);
+    // B12 — use stable GeoJSON feature id for deep-links
+    const poiId = f.id || slugify(p.name);
+    // B13 — localised category label
+    const catLabel = MAP_LABELS[cat] || cat;
+    // B03 — italic for generated names
+    const nameHtml = p.generated_name ? `<i style="color:#aaa">${p.name}</i>` : p.name;
+    // A01 — platform-aware navigation link
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isDesktop = !/Mobi|Android/.test(navigator.userAgent);
+    const navHref = isIOS ? `https://maps.apple.com/?q=${lat},${lng}`
+      : isDesktop ? `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}`
+      : `geo:${lat},${lng}`;
+    const navLabel = isIOS ? '🗺️ Apple Maps' : isDesktop ? '🗺️ OpenStreetMap ↗' : '🗺️ OsmAnd';
+    // B05 — price level for restaurants
+    const priceHtml = (p.price_level && cat === 'Restaurant') ? ` <span style="color:#ca8a04">${p.price_level}</span>` : '';
     const card = document.createElement('div');
     card.className = 'poi-card';
     card.id = 'card-' + f._id;
     card.innerHTML = `
-      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
-      <h3>${p.name}</h3>
+      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${catLabel}${priceHtml}</span>
+      <h3>${nameHtml}</h3>
       <div class="poi-dist">📏 ${fmtDist(dist)} from Airbnb</div>
+      ${renderOpenStatus(p.opening_hours)}
       <div class="poi-actions">
-        <a href="geo:${lat},${lng}" title="Open in OsmAnd">🗺️ OsmAnd</a>
+        <a href="${navHref}">${navLabel}</a>
         <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
-        <a href="#" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));">🔗</a>
+        ${p.phone ? `<a href="tel:${p.phone}">📞 Call</a>` : ''}
+        ${p.website ? `<a href="${p.website}" target="_blank">🌐 Website ↗</a>` : ''}
+        <a href="#" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${poiId}').then(()=>showToast('🔗 Link copied!'));">🔗</a>
       </div>`;
     card.onclick = () => focusPOI(f);
     list.appendChild(card);
@@ -251,10 +294,30 @@ function focusPOI(f) {
   activeCard = f._id;
   document.getElementById('card-' + f._id)?.classList.add('active');
   document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // B12 — use stable GeoJSON feature id in URL
   const u = new URL(window.location.href);
-  u.searchParams.set('poi', slugify(f.properties.name));
+  u.searchParams.set('poi', f.id || slugify(f.properties.name));
   history.replaceState({}, '', u);
   fadePOIs(f._id);
+  // C02 — walking route (opt-in)
+  if (window.MAP_ROUTING) {
+    window._routeLayer?.remove();
+    fetch(`https://router.project-osrm.org/route/v1/foot/${AIRBNB_LON},${AIRBNB_LAT};${lng},${lat}?overview=full&geometries=geojson`)
+      .then(r => r.json())
+      .then(routeData => {
+        if (routeData.code !== 'Ok') return;
+        window._routeLayer = L.geoJSON(routeData.routes[0].geometry, {
+          style: {color:'#1a6b3c', weight:3, dashArray:'6 4', opacity:0.7}
+        }).addTo(map);
+        const mins = Math.round(routeData.routes[0].duration / 60);
+        const distEl = document.getElementById('card-' + f._id)?.querySelector('.poi-dist');
+        if (distEl) distEl.textContent = `🚶 ${mins} min walk`;
+      })
+      .catch(() => {
+        window._routeLayer = L.polyline([[AIRBNB_LAT,AIRBNB_LON],[lat,lng]],
+          {color:'#1a6b3c',weight:2,dashArray:'4 4',opacity:0.5}).addTo(map);
+      });
+  }
 }
 
 function filterPOIs() { renderSidebar(); updateMarkers(); }
@@ -271,7 +334,7 @@ function updateMarkers() {
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.icon) })
       .addTo(map)
-      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>`);
+      .bindPopup(`<b>${p.name}</b><br><small>${MAP_LABELS[cat] || cat}</small>`);
     marker.on('click', () => focusPOI(f));
     markers[f._id] = marker;
   });
@@ -285,7 +348,9 @@ function setupFilters(pois) {
     const btn = document.createElement('button');
     btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
     btn.dataset.cat = cat;
-    btn.textContent = (CATEGORY_ICONS[cat] ? CATEGORY_ICONS[cat] + ' ' : '') + cat;
+    // B13 — localised label in filter buttons
+    const label = cat === 'All' ? 'All' : (MAP_LABELS[cat] || cat);
+    btn.textContent = (CATEGORY_ICONS[cat] ? CATEGORY_ICONS[cat] + ' ' : '') + label;
     btn.onclick = () => {
       activeFilter = cat;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -301,26 +366,88 @@ fetch(GEOJSON_URL)
   .then(data => {
     allPOIs = data.features.filter(f => f.geometry?.type === 'Point').map((f, i) => ({ ...f, _id: i }));
     window.MAP_CONFIG.geojsonData = data;
+
+    // B07 — build CATEGORY_COLORS and CATEGORY_ICONS from _meta.category_meta,
+    // falling back to feature properties.icon for GeoJSON without category_meta
+    const catMeta = data._meta?.category_meta || {};
+    const allCatLabels = [...new Set(allPOIs.map(f => f.properties.category).filter(Boolean))];
+    allCatLabels.forEach((cat, i) => {
+      CATEGORY_COLORS[cat] = catMeta[cat]?.color || COLOR_PALETTE[i % COLOR_PALETTE.length];
+      CATEGORY_ICONS[cat]  = catMeta[cat]?.icon
+        || allPOIs.find(f => f.properties.category === cat)?.properties.icon
+        || '📍';
+    });
+    window._mapCategoryColors = CATEGORY_COLORS;
+    window._mapCategoryIcons  = CATEGORY_ICONS;
+
+    // B13 — localised labels from _meta.labels
+    MAP_LABELS = data._meta?.labels || {};
+
+    // A05 — units from _meta.units
+    if (data._meta?.units) window.MAP_UNITS = data._meta.units;
+
+    // C02 — routing flag from _meta
+    if (data._meta?.routing === false) window.MAP_ROUTING = false;
+
     setupFilters(allPOIs);
     renderSidebar();
     updateMarkers();
-    if (Object.keys(markers).length > 0)
-      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.12));
+
+    // A02 — stay centred on Airbnb at zoom 16 (not fitBounds)
+    map.setView([AIRBNB_LAT, AIRBNB_LON], 16);
+
+    // A04 — show last updated date
+    const gen = data._meta?.generated;
+    if (gen) {
+      const d = new Date(gen);
+      document.querySelector('.overlay-card .page-header p')?.insertAdjacentHTML(
+        'afterend',
+        `<p style="font-size:0.7rem;color:#aaa;margin-top:0.25rem;">Updated ${d.toLocaleDateString('en', {month:'short',year:'numeric'})}</p>`
+      );
+    }
+
+    // B11 — update Airbnb popup with neighbourhood from _meta.location
+    const loc = data._meta?.location;
+    if (loc?.neighbourhood && airbnbMarker) {
+      airbnbMarker.setPopupContent(
+        `<b>🏠 Airbnb</b><br><small>${loc.neighbourhood}, ${loc.city || ''}</small><br><a href="https://www.airbnb.fr/rooms/10349749" target="_blank">View listing ↗</a>`
+      );
+    }
+
+    // D01 — pre-cache GeoJSON for offline use
+    if ('caches' in window) {
+      caches.open('travel-guide-v1').then(c => c.put(GEOJSON_URL, new Response(JSON.stringify(data), {headers:{'Content-Type':'application/json'}})));
+    }
+
+    // URL params
     const params = new URLSearchParams(window.location.search);
     const urlFilter = params.get('filter');
     if (urlFilter) {
       const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
       if (btn) btn.click();
     }
+    // B12 — use stable feature id for poi deep-link
     const urlPOI = params.get('poi');
     if (urlPOI) {
-      const match = allPOIs.find(f => slugify(f.properties.name) === urlPOI);
+      const match = allPOIs.find(f => (f.id || slugify(f.properties.name)) === urlPOI);
       if (match) setTimeout(() => focusPOI(match), 350);
     }
   })
   .catch(() => {
     document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">Could not load locations.</p>';
   });
+
+// D01 — offline detection
+if (!navigator.onLine) {
+  document.getElementById('offline-banner').style.display = 'block';
+}
+window.addEventListener('online',  () => { document.getElementById('offline-banner').style.display = 'none'; });
+window.addEventListener('offline', () => { document.getElementById('offline-banner').style.display = 'block'; });
+
+// D01 — register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
 </script>
 {{- partial "map-geolocation.html" . }}
 {{ end }}
