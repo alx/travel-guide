@@ -1,0 +1,58 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🦋 Minute Papillons</h1>
+      <p>Photobooths analogiques à Toulouse. <a href="https://www.minutepapillons.org/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">minutepapillons.org</a></p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'🦋 Spots ▾':'🦋 Spots'">🦋 Spots</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position sur la carte">📍 Position</button>
+    </div>
+    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher..." oninput="filterPOIs()">
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
+      📂 <span id="custom-layer-name">Custom layer loaded</span>
+      <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
+    </div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'Minute Papillons — Photobooths Toulouse',
+  geojsonUrl: '{{ "/toulouse-minute-papillons/locations.geojson" | relURL }}',
+  embedPath: '/toulouse-minute-papillons/',
+  center: [43.595, 1.445],
+  zoom: 12,
+  focusZoom: 17,
+  hidePhone: true,
+  hideOsmAnd: true,
+  hideRoute: true,
+  urlLabel: '🌐 Web'
+};
+window.CATEGORY_COLORS = {
+  'Photobooth': '#7c3aed'
+};
+window.CATEGORY_ICONS = {
+  'Photobooth': '📸'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+{{ end }}

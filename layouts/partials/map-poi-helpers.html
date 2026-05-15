@@ -86,12 +86,12 @@ function renderSidebar() {
     ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
     ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours.split(/;\s*/).join('<br>')}</div>` : ''}
     ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
-    ${p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
+    ${!MAP_CONFIG.hidePhone && p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
     <div class="poi-actions">
-        <a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>
+        ${!MAP_CONFIG.hideOsmAnd ? `<a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>` : ''}
         <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
-        ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : 'Source ↗'}</a>` : ''}
-        <a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>
+        ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : (MAP_CONFIG.urlLabel || 'Source ↗')}</a>` : ''}
+        ${!MAP_CONFIG.hideRoute ? `<a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>` : ''}
         <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
     </div>`;
     card.onclick = () => focusPOI(f);
@@ -140,6 +140,7 @@ function updateMarkers() {
 function setupFilters(pois) {
   const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
+  if (!container) return;
   container.innerHTML = '';
   cats.forEach(cat => {
     const btn = document.createElement('button');

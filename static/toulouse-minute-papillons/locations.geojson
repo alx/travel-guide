@@ -1,0 +1,161 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-05-15",
+    "source": "Google Places API",
+    "center": {
+      "lat": 43.595,
+      "lon": 1.445
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.450545, 43.641382]
+      },
+      "properties": {
+        "name": "Le Metronum",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "2 Rdpt Madame de Mondonville, 31200 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "phone": "+33 5 32 26 38 43",
+        "url": "http://lemetronum.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.408160, 43.602272]
+      },
+      "properties": {
+        "name": "Les 500",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "1 Place de la Charte des Libertés Communales, 31300 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: Closed; Tuesday: 10:30 AM – 12:00 AM; Wednesday: 10:30 AM – 12:00 AM; Thursday: 10:30 AM – 12:30 AM; Friday: 10:30 AM – 12:30 AM; Saturday: 10:30 AM – 1:00 AM; Sunday: 10:30 AM – 5:30 PM",
+        "phone": "+33 5 32 74 16 23",
+        "url": "http://www.les-500.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.407371, 43.599765]
+      },
+      "properties": {
+        "name": "La Cabane à la Halle de la Cartoucherie",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "16 ter Av. Raymond Badiou, 31300 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "url": "https://halles-cartoucherie.fr/la-cabane/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.407651, 43.601752]
+      },
+      "properties": {
+        "name": "Les Halles de la Cartoucherie",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "10 Place de la Charte des Libertés Communales, 31300 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: 8:00 AM – 12:00 AM; Tuesday: 8:00 AM – 12:00 AM; Wednesday: 8:00 AM – 12:00 AM; Thursday: 8:00 AM – 1:00 AM; Friday: 8:00 AM – 1:00 AM; Saturday: 8:00 AM – 1:00 AM; Sunday: 8:00 AM – 12:00 AM",
+        "url": "https://halles-cartoucherie.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.433975, 43.604364]
+      },
+      "properties": {
+        "name": "Flashback Café",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "5 All. de Brienne, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: 4:00 PM – 2:00 AM; Tuesday: 4:00 PM – 2:00 AM; Wednesday: 10:00 AM – 2:00 AM; Thursday: 10:00 AM – 2:00 AM; Friday: 10:00 AM – 2:00 AM; Saturday: 10:00 AM – 3:00 AM; Sunday: 10:00 AM – 12:00 AM",
+        "phone": "+33 5 62 17 30 50",
+        "url": "https://www.flashbackcafe.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.444233, 43.596526]
+      },
+      "properties": {
+        "name": "Suzon",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "33 Rue Pharaon, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: Closed; Tuesday: 11:00 AM – 7:00 PM; Wednesday: 11:00 AM – 7:00 PM; Thursday: 11:00 AM – 7:00 PM; Friday: 11:00 AM – 7:00 PM; Saturday: 11:00 AM – 7:00 PM; Sunday: Closed",
+        "phone": "+33 5 64 72 11 64",
+        "url": "https://www.instagram.com/shopsuzon"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.453113, 43.609124]
+      },
+      "properties": {
+        "name": "Little O'Clock",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "75 All. Jean Jaurès, 31000 Toulouse, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: 11:00 AM – 2:00 AM; Tuesday: 11:00 AM – 2:00 AM; Wednesday: 11:00 AM – 2:00 AM; Thursday: 11:00 AM – 2:00 AM; Friday: 11:00 AM – 2:00 AM; Saturday: 3:00 PM – 3:00 AM; Sunday: Closed",
+        "phone": "+33 5 32 58 03 80"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "toulouse-minute-papillons-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.485405, 43.548049]
+      },
+      "properties": {
+        "name": "Le Bikini",
+        "category": "Photobooth",
+        "icon": "📸",
+        "address": "Rue Théodore Monod, Parc Technologique du Canal, 31520 Ramonville-Saint-Agne, France",
+        "coord_source": "google_places_api",
+        "coord_accuracy": "high",
+        "hours": "Monday: Closed; Tuesday: 6:30 PM – 12:00 AM; Wednesday: 6:00 PM – 12:00 AM; Thursday: 6:00 PM – 12:00 AM; Friday: 6:00 PM – 5:30 AM; Saturday: 6:00 PM – 5:30 AM; Sunday: Closed",
+        "phone": "+33 5 62 24 09 50",
+        "url": "http://www.lebikini.com/"
+      }
+    }
+  ]
+}

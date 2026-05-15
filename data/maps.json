@@ -1,10 +1,34 @@
 {
   "_meta": {
-    "generated_at": "2026-05-10T11:08:38.423113+00:00",
-    "map_count": 14,
+    "generated_at": "2026-05-15T09:39:32.032815+00:00",
+    "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
+    {
+      "slug": "koh-samui",
+      "url": "/koh-samui/",
+      "title": "Koh Samui Map — Best Spots",
+      "description": "Curated map of Koh Samui: beaches, spas, restaurants and activities with GPS coordinates, opening hours and prices.",
+      "emoji": "🏝️",
+      "section": "curated",
+      "weight": 10,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🏖️ Beaches",
+        "🎯 Activities",
+        "🍽️ Restaurants"
+      ],
+      "poi_count": 7,
+      "categories": [
+        "Activity",
+        "Area Guide",
+        "Beach",
+        "Restaurant",
+        "Shopping"
+      ],
+      "has_geojson": true
+    },
     {
       "slug": "lamai",
       "url": "/lamai/",
@@ -230,6 +254,24 @@
       "has_geojson": true
     },
     {
+      "slug": "toulouse-minute-papillons",
+      "url": "/toulouse-minute-papillons/",
+      "title": "Minute Papillons — Photobooths Toulouse",
+      "description": "8 photobooths analogiques à Toulouse. La photo qui prend son temps.",
+      "emoji": "🦋",
+      "section": "community",
+      "weight": 35,
+      "accent_color": "#7c3aed",
+      "tags": [
+        "📸 Photobooth"
+      ],
+      "poi_count": 8,
+      "categories": [
+        "Photobooth"
+      ],
+      "has_geojson": true
+    },
+    {
       "slug": "airbnb-malaysia-202605-johor-bahru-1",
       "url": "/airbnb-malaysia-202605-johor-bahru-1/",
       "title": "Airbnb - Malaysia - Johor Bahru - Choice 1",
@@ -239,7 +281,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🧺 Supermarket",
+        "🛒 Supermarket",
         "🌳 Park",
         "🛝 Playground",
         "🚌 Transit",
@@ -265,7 +307,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🧺 Supermarket",
+        "🛒 Supermarket",
         "🌳 Park",
         "🛝 Playground",
         "🚌 Transit",
@@ -291,7 +333,7 @@
       "weight": 55,
       "accent_color": "#1a6b3c",
       "tags": [
-        "🧺 Supermarché",
+        "🛒 Supermarché",
         "🌳 Parcs",
         "🛝 Aires de jeux",
         "🚌 Transports",
@@ -323,39 +365,6 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
-    },
-    {
-      "slug": "airbnb/10349749",
-      "url": "/airbnb/10349749/",
-      "title": "Appartement en résidence · Toulouse",
-      "description": "25 POIs autour de l'Airbnb à Toulouse : supermarchés, parcs, restaurants, transports, commerces et activités. Source : OSM Overpass, Google Places + tracks GPX.",
-      "emoji": "🏠",
-      "section": "airbnb",
-      "weight": 55,
-      "accent_color": "#1a6b3c",
-      "tags": [
-        "🧺 Supermarket",
-        "🚌 Transit",
-        "🚲 Bike Share",
-        "🍽️ Restaurant",
-        "🏛️ Culture",
-        "💊 Health",
-        "🎠 Activity"
-      ],
-      "poi_count": 25,
-      "categories": [
-        "Activity",
-        "Bakery & Food",
-        "Bike Share",
-        "Culture",
-        "Health",
-        "Market",
-        "Night Shop",
-        "Restaurant",
-        "Supermarket",
-        "Transit"
-      ],
-      "has_geojson": true
     }
   ]
 }
