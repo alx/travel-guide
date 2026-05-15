@@ -48,6 +48,12 @@ jobs:
             echo "No previews in $PREVIEW_SRC — skipping"
           fi
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Regenerate maps.json
+        run: uv run scripts/generate_map_index.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-05-15T09:39:32.032815+00:00",
+    "generated_at": "2026-05-15T10:05:20.454949+00:00",
     "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
@@ -257,7 +257,7 @@
       "slug": "toulouse-minute-papillons",
       "url": "/toulouse-minute-papillons/",
       "title": "Minute Papillons — Photobooths Toulouse",
-      "description": "8 photobooths analogiques à Toulouse. La photo qui prend son temps.",
+      "description": "En 2023 Minute papillons fait une incursion dans le numérique mais à sa sauce en créant des cabines au look vintage.",
       "emoji": "🦋",
       "section": "community",
       "weight": 35,
