@@ -1,6 +1,6 @@
 baseURL = "https://maps.girard-davila.net/"
 languageCode = "en-us"
-title = "Maps — Curated Travel Maps"
+title = "Curated Travel Maps"
 canonifyURLs = false
 
 [params]
