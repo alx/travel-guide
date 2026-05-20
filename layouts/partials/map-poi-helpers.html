@@ -89,10 +89,10 @@ function renderSidebar() {
     ${!MAP_CONFIG.hidePhone && p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
     <div class="poi-actions">
         ${!MAP_CONFIG.hideOsmAnd ? `<a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>` : ''}
-        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">${MAP_CONFIG.googleMapsLabel || 'Google Maps ↗'}</a>
         ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : (MAP_CONFIG.urlLabel || 'Source ↗')}</a>` : ''}
         ${!MAP_CONFIG.hideRoute ? `<a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>` : ''}
-        <a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>
+        ${!MAP_CONFIG.hidePermalink ? `<a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>` : ''}
     </div>`;
     card.onclick = () => focusPOI(f);
     list.appendChild(card);

@@ -1,10 +1,38 @@
 {
   "_meta": {
-    "generated_at": "2026-05-15T10:05:20.454949+00:00",
-    "map_count": 15,
+    "generated_at": "2026-05-20T02:10:00.768351+00:00",
+    "map_count": 16,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
+    {
+      "slug": "toulouse-mange-bien",
+      "url": "/toulouse-mange-bien/",
+      "title": "Toulouse Mange Bien 2026",
+      "description": "Toulouse regorge de restaurants, de bars et de chef-fes talentueux. Des lieux sincères, des cuisines engagées, des personnalités fortes.",
+      "emoji": "📖",
+      "section": "curated",
+      "weight": 5,
+      "accent_color": "#781e6f",
+      "tags": [
+        "🍽️ Restaurant",
+        "☕ Café",
+        "🥐 Boulangerie",
+        "🍕 Pizzeria",
+        "🧁 Pâtisserie",
+        "🥩 Boucherie"
+      ],
+      "poi_count": 36,
+      "categories": [
+        "Boucherie",
+        "Boulangerie",
+        "Café",
+        "Pizzeria",
+        "Pâtisserie",
+        "Restaurant"
+      ],
+      "has_geojson": true
+    },
     {
       "slug": "koh-samui",
       "url": "/koh-samui/",

@@ -1,0 +1,84 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<style>
+.tmb-book-wrap { display: block; margin: .5rem 0; text-align: center; }
+.tmb-book-img { width: 100%; max-width: 180px; border-radius: 6px; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+.tmb-cta {
+  display: block; margin: .75rem 0 .25rem;
+  background: #781e6f; color: #fff;
+  text-align: center; padding: .6rem 1rem;
+  border-radius: 6px; font-weight: 700; font-size: .9rem;
+  text-decoration: none; letter-spacing: .01em;
+  transition: background .15s;
+}
+.tmb-cta:hover { background: #5e175a; color: #fda2e0; }
+.page-header p { color: #555; font-size: .82rem; line-height: 1.45; margin: .4rem 0 0; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>📖 Toulouse Mange Bien</h1>
+      <a href="https://fr.ulule.com/toulousemangebien/" target="_blank" rel="noopener" class="tmb-book-wrap">
+        <img src="/images/toulousemangebien_book.png" alt="Toulouse Mange Bien 2026" class="tmb-book-img">
+      </a>
+      <p>Toulouse regorge de restaurants, de bars et de chef-fes talentueux. Des lieux sincères, des cuisines engagées, des personnalités fortes.</p>
+      <a href="https://fr.ulule.com/toulousemangebien/" target="_blank" rel="noopener" class="tmb-cta">🎁 Soutenir le livre sur Ulule</a>
+    </div>
+    <input type="text" id="search" style="display:none" readonly>
+    <div id="filter-btns" style="display:none"></div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
+      📂 <span id="custom-layer-name">Custom layer loaded</span>
+      <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
+    </div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'Toulouse Mange Bien 2026',
+  geojsonUrl: '{{ "/toulouse-mange-bien/locations.geojson" | relURL }}',
+  embedPath: '/toulouse-mange-bien/',
+  center: [43.6047, 1.4442],
+  zoom: 13,
+  focusZoom: 16,
+  hideOsmAnd: true,
+  hideRoute: true,
+  hidePermalink: true,
+  googleMapsLabel: '🗺️ GMaps',
+  urlLabel: '🔗 Web'
+};
+window.CATEGORY_COLORS = {
+  'Restaurant':  '#781e6f',
+  'Café':        '#c0569a',
+  'Boulangerie': '#e9a020',
+  'Pâtisserie':  '#d063a8',
+  'Boucherie':   '#c0392b',
+  'Pizzeria':    '#d35400'
+};
+window.CATEGORY_ICONS = {
+  'Restaurant':  '🍽️',
+  'Café':        '☕',
+  'Boulangerie': '🥐',
+  'Pâtisserie':  '🧁',
+  'Boucherie':   '🥩',
+  'Pizzeria':    '🍕'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+{{ end }}
