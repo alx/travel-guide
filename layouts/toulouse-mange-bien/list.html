@@ -41,7 +41,7 @@
     <div id="poi-list"></div>
   </div>
 </div>
-{{ partial "contact-form.html" . }}
+{{ if not .Params.hide_contact_form }}{{ partial "contact-form.html" . }}{{ end }}
 <div class="copy-toast" id="copy-toast"></div>
 {{ end }}
 
