@@ -79,6 +79,10 @@
       <a href="#maps" style="background:white;color:#1a3a5c;padding:0.75rem 2rem;border-radius:24px;font-weight:700;text-decoration:none;font-size:0.95rem;">Explore Maps ↓</a>
       <a href="/airbnb/" style="background:rgba(255,255,255,0.15);color:white;padding:0.75rem 2rem;border-radius:24px;font-weight:700;text-decoration:none;font-size:0.95rem;border:2px solid rgba(255,255,255,0.4);backdrop-filter:blur(4px);">🏠 Airbnb Host Maps</a>
     </div>
+    <div style="margin-top:2rem;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+      <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);padding:0.5rem 0.75rem;background:rgba(0,0,0,0.2);">Live embed preview</div>
+      <iframe src="/fishing-boat/?embed=1&overlay=1" width="100%" height="360" style="display:block;border:none;" loading="lazy" title="Gulf of Thailand — embed demo"></iframe>
+    </div>
   </div>
 </section>
 
@@ -88,24 +92,18 @@
     <h2 style="font-size:1.4rem;font-weight:700;color:#1a3a5c;">Available Destinations</h2>
     <span style="font-size:0.72rem;font-weight:600;color:#888;background:#f1f5f9;padding:0.15rem 0.55rem;border-radius:20px;">{{ len $curated }} maps</span>
   </div>
-  <p style="color:#666;margin-bottom:2rem;font-size:0.92rem;">Each map is built from personal travel experience — not tourist brochures.</p>
-
-  <div style="display:flex;flex-direction:column;gap:1.25rem;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;">
     {{ range $curated }}
     {{ $accent := .accent_color | default "#1a3a5c" }}
-    <a href="{{ .url }}" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='{{ $accent }}'" onmouseout="this.style.borderColor='#e5e7eb'">
-      <div style="font-size:2.5rem;flex-shrink:0;line-height:1;">{{ .emoji }}</div>
-      <div style="flex:1;min-width:0;">
-        <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">{{ .title }}</div>
-        <div style="font-size:0.85rem;color:#555;line-height:1.5;">{{ .description }}</div>
-        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
-          {{ range .tags }}
-          <span style="font-size:0.72rem;background:#f1f5f9;color:#475569;padding:0.2rem 0.5rem;border-radius:20px;">{{ . }}</span>
-          {{ end }}
-          {{ if gt .poi_count 0 }}
-          <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">📍 {{ .poi_count }} spots</span>
-          {{ end }}
-        </div>
+    <a href="{{ .url }}" style="display:block;border-radius:12px;overflow:hidden;border:1.5px solid #e5e7eb;text-decoration:none;color:inherit;background:white;transition:border-color 0.15s;" onmouseover="this.style.borderColor='{{ $accent }}'" onmouseout="this.style.borderColor='#e5e7eb'">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:#f1f5f9;">
+        <img src="/images/map-previews/{{ .slug }}.png" alt="{{ .title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+      </div>
+      <div style="padding:0.65rem 0.85rem;">
+        <div style="font-weight:700;font-size:0.92rem;color:#1a3a5c;line-height:1.3;">{{ .title }}</div>
+        {{ if gt .poi_count 0 }}
+        <div style="font-size:0.72rem;color:#16a34a;margin-top:0.2rem;">📍 {{ .poi_count }} spots</div>
+        {{ end }}
       </div>
     </a>
     {{ end }}
@@ -119,24 +117,18 @@
     <h2 style="font-size:1.4rem;font-weight:700;color:#1a3a5c;">Reddit Post Maps</h1>
     <span style="font-size:0.72rem;font-weight:700;background:#ff4500;color:white;padding:0.15rem 0.55rem;border-radius:20px;letter-spacing:0.04em;">Reddit</span>
   </div>
-  <p style="color:#666;margin-bottom:2rem;font-size:0.92rem;">Locations extracted automatically from Reddit threads using NLP — places mentioned by real travellers, geocoded and mapped.</p>
-
-  <div style="display:flex;flex-direction:column;gap:1.25rem;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;">
     {{ range $community }}
     {{ $accent := .accent_color | default "#ff4500" }}
-    <a href="{{ .url }}" style="display:flex;gap:1.25rem;background:white;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color 0.15s;" onmouseover="this.style.borderColor='{{ $accent }}'" onmouseout="this.style.borderColor='#e5e7eb'">
-      <div style="font-size:2.5rem;flex-shrink:0;line-height:1;">{{ .emoji }}</div>
-      <div style="flex:1;min-width:0;">
-        <div style="font-weight:700;font-size:1.05rem;color:#1a3a5c;margin-bottom:0.25rem;">{{ .title }}</div>
-        <div style="font-size:0.85rem;color:#555;line-height:1.5;">{{ .description }}</div>
-        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
-          {{ range .tags }}
-          <span style="font-size:0.72rem;background:#fff1ee;color:#c2410c;padding:0.2rem 0.5rem;border-radius:20px;">{{ . }}</span>
-          {{ end }}
-          {{ if gt .poi_count 0 }}
-          <span style="font-size:0.72rem;background:#f0fdf4;color:#166534;padding:0.2rem 0.5rem;border-radius:20px;">📍 {{ .poi_count }} spots</span>
-          {{ end }}
-        </div>
+    <a href="{{ .url }}" style="display:block;border-radius:12px;overflow:hidden;border:1.5px solid #e5e7eb;text-decoration:none;color:inherit;background:white;transition:border-color 0.15s;" onmouseover="this.style.borderColor='{{ $accent }}'" onmouseout="this.style.borderColor='#e5e7eb'">
+      <div style="aspect-ratio:16/9;overflow:hidden;background:#f1f5f9;">
+        <img src="/images/map-previews/{{ .slug }}.png" alt="{{ .title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+      </div>
+      <div style="padding:0.65rem 0.85rem;">
+        <div style="font-weight:700;font-size:0.92rem;color:#1a3a5c;line-height:1.3;">{{ .title }}</div>
+        {{ if gt .poi_count 0 }}
+        <div style="font-size:0.72rem;color:#16a34a;margin-top:0.2rem;">📍 {{ .poi_count }} spots</div>
+        {{ end }}
       </div>
     </a>
     {{ end }}
@@ -166,21 +158,6 @@
         </div>
       </div>
     </a>
-
-    <!-- Live embed demo -->
-    <div style="margin-bottom:1.25rem;">
-      <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1a3a5c;margin-bottom:0.75rem;">Live embed preview</div>
-      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #bfdbfe;box-shadow:0 4px 16px rgba(26,58,92,0.10);">
-        <iframe
-          src="/fishing-boat/?embed=1&overlay=1"
-          width="100%"
-          height="420"
-          style="display:block;border:none;"
-          loading="lazy"
-          title="Gulf of Thailand Expedition — embed demo">
-        </iframe>
-      </div>
-    </div>
 
     <!-- Embed code snippet -->
     <div style="background:#0f172a;border-radius:10px;padding:1.25rem 1.5rem;">
