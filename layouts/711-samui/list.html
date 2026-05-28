@@ -4,7 +4,7 @@
   body { overflow: hidden; }
   .site-header, footer { display: none !important; }
   main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; }
+  #map { position: fixed; inset: 0; z-index: 0; border-radius: 0 !important; box-shadow: none !important; transition: left 0.25s ease, bottom 0.25s ease; }
 
   /* Floating left sidebar */
   .map-overlay {
@@ -271,9 +271,30 @@ fetch(GEOJSON_URL)
   var btn     = document.getElementById('overlay-toggle-btn');
   if (!overlay || !btn) return;
   function setOverlay(open) {
+    var mapEl = document.getElementById('map');
+    var firstCard = overlay.querySelector('.overlay-card:not(.scrollable)');
     overlay.style.display = open ? 'flex' : 'none';
+    if (firstCard) firstCard.style.display = open ? 'block' : '';
     btn.textContent = open ? '✕' : '☰';
     btn.title       = open ? 'Hide list' : 'Show list';
+    if (mapEl) {
+      if (open) {
+        requestAnimationFrame(function () {
+          if (window.innerWidth > 768) {
+            mapEl.style.left   = overlay.offsetWidth + 'px';
+            mapEl.style.bottom = '';
+          } else {
+            mapEl.style.bottom = overlay.offsetHeight + 'px';
+            mapEl.style.left   = '';
+          }
+          if (window.map) window.map.invalidateSize();
+        });
+      } else {
+        mapEl.style.left   = '';
+        mapEl.style.bottom = '';
+        if (window.map) window.map.invalidateSize();
+      }
+    }
   }
   btn.addEventListener('click', function () {
     setOverlay(overlay.style.display === 'none' || overlay.style.display === '');
