@@ -1,4 +1,4 @@
 ---
 title: "Maps — Curated Travel Maps"
-description: "Hand-picked travel maps from real family stays — and custom maps built for your trip. GPS-precise spots, honest notes, opening hours."
+description: "Skip the tourist traps. Every spot on these maps was actually visited — then rated honestly, so you don't waste a single day."
 ---
