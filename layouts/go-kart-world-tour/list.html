@@ -286,10 +286,10 @@ fetch(window.MAP_CONFIG.geojsonUrl)
       if (open) {
         requestAnimationFrame(function () {
           if (window.innerWidth > 768) {
-            mapEl.style.left   = overlay.offsetWidth + 'px';
+            mapEl.style.left   = (overlay.offsetWidth / 2) + 'px';
             mapEl.style.bottom = '';
           } else {
-            mapEl.style.bottom = overlay.offsetHeight + 'px';
+            mapEl.style.bottom = (overlay.offsetHeight / 2) + 'px';
             mapEl.style.left   = '';
           }
           if (window.map) window.map.invalidateSize();
