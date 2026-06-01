@@ -30,7 +30,8 @@
         "hours": "lundi: 12:00 – 15:00; mardi: 12:00 – 14:30, 19:00 – 23:30; mercredi: 12:00 – 14:30, 19:00 – 23:30; jeudi: 12:00 – 14:30, 19:00 – 23:30; vendredi: 12:00 – 15:00, 19:00 – 23:30; samedi: Fermé; dimanche: Fermé",
         "phone": "06 84 58 30 80",
         "url": "http://bacaro-toulouse.fr/",
-        "youtube_url": "https://youtu.be/-Zye2Wwe8ys"
+        "youtube_url": "https://youtu.be/-Zye2Wwe8ys",
+        "youtube_vertical": true
       }
     },
     {
@@ -53,7 +54,8 @@
         "hours": "lundi: Fermé; mardi: 12:00 – 14:00, 19:00 – 22:00; mercredi: 12:00 – 14:00, 19:00 – 22:00; jeudi: 12:00 – 14:00, 19:00 – 22:00; vendredi: 12:00 – 14:00, 19:00 – 22:00; samedi: 12:00 – 14:00, 19:00 – 22:00; dimanche: Fermé",
         "phone": "06 50 17 19 48",
         "url": "https://www.instagram.com/bastapizze",
-        "youtube_url": "https://youtu.be/ywfvUgt4Rtg"
+        "youtube_url": "https://youtu.be/ywfvUgt4Rtg",
+        "youtube_vertical": true
       }
     },
     {
@@ -76,7 +78,8 @@
         "hours": "lundi: 08:30 – 02:00; mardi: 08:30 – 02:00; mercredi: 08:30 – 02:00; jeudi: 08:30 – 02:00; vendredi: 08:30 – 02:00; samedi: 09:30 – 03:00; dimanche: 09:30 – 02:00",
         "phone": "05 31 22 74 35",
         "url": "https://www.instagram.com/bistrot12/",
-        "youtube_url": "https://youtu.be/sHXZaGdKmxc"
+        "youtube_url": "https://youtu.be/sHXZaGdKmxc",
+        "youtube_vertical": true
       }
     },
     {
@@ -99,7 +102,8 @@
         "hours": "lundi: Fermé; mardi: Fermé; mercredi: 12:00 – 14:00, 19:00 – 22:00; jeudi: 12:00 – 14:00, 19:00 – 22:00; vendredi: 12:00 – 14:00, 19:00 – 22:00; samedi: 12:00 – 14:00, 19:00 – 22:30; dimanche: 12:00 – 15:00",
         "phone": "07 56 44 12 41",
         "url": "https://www.instagram.com/bistrot.august/",
-        "youtube_url": "https://youtu.be/OsKHjMCnIVU"
+        "youtube_url": "https://youtu.be/OsKHjMCnIVU",
+        "youtube_vertical": true
       }
     },
     {
@@ -121,7 +125,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 10:00 – 13:00, 15:00 – 19:30; mercredi: 10:00 – 13:00, 15:00 – 23:30; jeudi: 10:00 – 13:00, 15:00 – 23:30; vendredi: 10:00 – 13:00, 15:00 – 23:30; samedi: 09:30 – 23:30; dimanche: Fermé",
         "phone": "05 32 58 05 49",
-        "url": "https://www.boucheriegras.com/"
+        "url": "https://www.boucheriegras.com/",
+        "youtube_url": "https://youtu.be/6Z-kX_5fAhY",
+        "youtube_vertical": true
       }
     },
     {
@@ -142,7 +148,9 @@
         "coord_source": "google_places_api",
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 10:30 – 13:00, 14:30 – 19:00; mercredi: 10:30 – 13:00, 14:30 – 19:00; jeudi: 10:30 – 13:00, 15:00 – 19:00; vendredi: 10:30 – 13:00, 14:30 – 19:00; samedi: Fermé; dimanche: Fermé",
-        "url": "https://boulangeriemaurice.com/"
+        "url": "https://boulangeriemaurice.com/",
+        "youtube_url": "https://youtu.be/s7ok0x2iJi4",
+        "youtube_vertical": true
       }
     },
     {
@@ -164,7 +172,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 09:00 – 01:30; mardi: 09:00 – 01:30; mercredi: 09:00 – 01:30; jeudi: 09:00 – 01:30; vendredi: 09:00 – 01:30; samedi: 09:00 – 02:30; dimanche: 09:00 – 01:30",
         "phone": "09 52 48 94 08",
-        "url": "https://www.cafemanine.fr/"
+        "url": "https://www.cafemanine.fr/",
+        "youtube_url": "https://youtu.be/WOZCUDMVGK8",
+        "youtube_vertical": true
       }
     },
     {
@@ -186,7 +196,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 14:30, 19:00 – 22:00; mardi: 12:00 – 14:30, 19:00 – 22:00; mercredi: 12:00 – 14:30, 19:00 – 22:00; jeudi: 12:00 – 14:30, 19:00 – 22:00; vendredi: 12:00 – 14:30, 19:00 – 22:00; samedi: 12:00 – 14:30, 19:00 – 22:00; dimanche: 12:00 – 14:30, 19:00 – 22:00",
         "phone": "05 61 21 08 27",
-        "url": "https://www.capoul.fr/fr/"
+        "url": "https://www.capoul.fr/fr/",
+        "youtube_url": "https://youtu.be/BLpZmwUVb0c",
+        "youtube_vertical": true
       }
     },
     {
@@ -207,7 +219,9 @@
         "coord_source": "google_places_api",
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 14:00 – 18:30; mercredi: 12:00 – 18:00; jeudi: 12:00 – 18:00; vendredi: 12:00 – 18:00; samedi: 10:00 – 17:30; dimanche: 10:00 – 12:30",
-        "phone": "05 62 30 04 56"
+        "phone": "05 62 30 04 56",
+        "youtube_url": "https://youtu.be/Z_aKgfkXv9U",
+        "youtube_vertical": true
       }
     },
     {
@@ -229,7 +243,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 09:00 – 02:00; mardi: 09:00 – 02:00; mercredi: 09:00 – 02:00; jeudi: 09:00 – 02:00; vendredi: 09:00 – 02:00; samedi: 15:00 – 02:00; dimanche: 15:00 – 02:00",
         "phone": "05 62 84 20 47",
-        "url": "https://reservation.laddition.com/booking/grave?utm_source=ig&utm_medium=social&utm_content=link_in_bio#/date"
+        "url": "https://reservation.laddition.com/booking/grave?utm_source=ig&utm_medium=social&utm_content=link_in_bio#/date",
+        "youtube_url": "https://youtu.be/jIHY7gVWey0",
+        "youtube_vertical": true
       }
     },
     {
@@ -250,7 +266,9 @@
         "coord_source": "google_places_api",
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: Fermé; mercredi: 19:00 – 02:00; jeudi: 19:00 – 02:00; vendredi: 19:00 – 02:00; samedi: 19:00 – 02:00; dimanche: Fermé",
-        "url": "https://www.instagram.com/kodomo_bar"
+        "url": "https://www.instagram.com/kodomo_bar",
+        "youtube_url": "https://youtu.be/k1784VBol-Y",
+        "youtube_vertical": true
       }
     },
     {
@@ -272,7 +290,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 08:00 – 18:00; mercredi: 08:00 – 18:00; jeudi: 08:00 – 18:00; vendredi: 08:00 – 18:00; samedi: 08:00 – 18:00; dimanche: Fermé",
         "phone": "05 34 41 12 18",
-        "url": "https://kopicoffeeshop.com/"
+        "url": "https://kopicoffeeshop.com/",
+        "youtube_url": "https://youtu.be/jOlvWPcLyyk",
+        "youtube_vertical": true
       }
     },
     {
@@ -294,7 +314,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: Fermé; mercredi: 10:00 – 14:00, 19:30 – 21:30; jeudi: 10:00 – 14:00, 19:30 – 21:30; vendredi: 10:00 – 14:00, 19:30 – 21:30; samedi: 10:00 – 14:30, 19:30 – 21:30; dimanche: 10:00 – 14:00",
         "phone": "05 61 14 10 07",
-        "url": "http://www.larpete.fr/"
+        "url": "http://www.larpete.fr/",
+        "youtube_url": "https://youtu.be/ayzLPECPl2o",
+        "youtube_vertical": true
       }
     },
     {
@@ -316,7 +338,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 14:00, 18:00 – 02:00; mardi: 12:00 – 14:00, 18:00 – 00:00; mercredi: 12:00 – 14:00, 18:00 – 00:00; jeudi: 12:00 – 14:00, 18:00 – 01:00; vendredi: 12:00 – 14:00, 18:00 – 02:00; samedi: 19:00 – 03:00; dimanche: Fermé",
         "phone": "09 74 64 17 89",
-        "url": "http://www.heuredusinge.com/"
+        "url": "http://www.heuredusinge.com/",
+        "youtube_url": "https://youtu.be/vzkUIXnshRI",
+        "youtube_vertical": true
       }
     },
     {
@@ -338,7 +362,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 14:00, 19:30 – 23:00; mardi: 12:00 – 14:00, 19:30 – 23:00; mercredi: 19:30 – 23:00; jeudi: 12:00 – 14:00, 19:30 – 23:00; vendredi: 12:00 – 14:00, 19:30 – 23:00; samedi: Fermé; dimanche: Fermé",
         "phone": "06 27 09 01 13",
-        "url": "https://www.instagram.com/loctave0011/"
+        "url": "https://www.instagram.com/loctave0011/",
+        "youtube_url": "https://youtu.be/fTD717BJcPU",
+        "youtube_vertical": true
       }
     },
     {
@@ -360,7 +386,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 13:15, 19:30 – 21:15; mardi: 12:00 – 13:15, 19:30 – 21:15; mercredi: 12:00 – 13:15, 19:30 – 21:15; jeudi: 12:00 – 13:15, 19:30 – 21:15; vendredi: 12:00 – 13:15, 19:30 – 21:15; samedi: Fermé; dimanche: Fermé",
         "phone": "05 32 02 43 39",
-        "url": "https://lecoqenpate-restaurant.fr/"
+        "url": "https://lecoqenpate-restaurant.fr/",
+        "youtube_url": "https://youtu.be/jwQx1xvtwUs",
+        "youtube_vertical": true
       }
     },
     {
@@ -382,7 +410,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 11:00 – 16:00; mardi: 11:00 – 16:00; mercredi: 11:00 – 16:00; jeudi: 11:00 – 16:00; vendredi: 11:00 – 16:00; samedi: 11:00 – 16:00; dimanche: Fermé",
         "phone": "06 12 05 39 65",
-        "url": "http://www.le-detaillant.fr/"
+        "url": "http://www.le-detaillant.fr/",
+        "youtube_url": "https://youtu.be/TZL1sKFTtxM",
+        "youtube_vertical": true
       }
     },
     {
@@ -403,7 +433,9 @@
         "coord_source": "google_places_api",
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 12:00 – 14:15, 19:45 – 22:00; mercredi: 12:00 – 14:15, 19:45 – 22:00; jeudi: 12:00 – 14:15, 19:45 – 22:00; vendredi: 12:00 – 14:15, 19:45 – 22:00; samedi: 09:00 – 14:15, 19:45 – 22:00; dimanche: Fermé",
-        "phone": "05 34 30 80 38"
+        "phone": "05 34 30 80 38",
+        "youtube_url": "https://youtu.be/lReLKqFWFTo",
+        "youtube_vertical": true
       }
     },
     {
@@ -425,7 +457,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 14:00, 19:30 – 21:45; mardi: 12:00 – 14:00, 19:30 – 21:45; mercredi: 12:00 – 14:00; jeudi: 12:00 – 14:00, 19:30 – 21:45; vendredi: 12:00 – 14:00, 19:30 – 21:45; samedi: Fermé; dimanche: Fermé",
         "phone": "09 87 37 74 92",
-        "url": "http://les-impulsifs.fr/"
+        "url": "http://les-impulsifs.fr/",
+        "youtube_url": "https://youtu.be/yzFOjIS2AIQ",
+        "youtube_vertical": true
       }
     },
     {
@@ -447,7 +481,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 12:00 – 14:00, 19:30 – 22:00; mercredi: 12:00 – 14:00, 19:30 – 22:00; jeudi: 12:00 – 14:00, 19:30 – 22:00; vendredi: 12:00 – 14:00, 19:30 – 22:00; samedi: 12:00 – 14:00, 19:30 – 22:00; dimanche: 12:00 – 14:00, 19:30 – 22:00",
         "phone": "07 65 25 47 56",
-        "url": "https://www.lespassionnes-restaurant.fr/"
+        "url": "https://www.lespassionnes-restaurant.fr/",
+        "youtube_url": "https://youtu.be/Ap2iZwFvvgE",
+        "youtube_vertical": true
       }
     },
     {
@@ -469,7 +505,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: Fermé; mardi: 12:00 – 13:30, 20:00 – 21:30; mercredi: 12:00 – 13:30, 20:00 – 21:30; jeudi: 12:00 – 13:30, 20:00 – 21:30; vendredi: 12:00 – 13:30, 20:00 – 21:30; samedi: 20:00 – 21:30; dimanche: Fermé",
         "phone": "05 61 13 40 41",
-        "url": "https://www.instagram.com/lestetesdail?igsh=MTNleG9scXp3ZnBqeA%3D%3D&utm_source=qr"
+        "url": "https://www.instagram.com/lestetesdail?igsh=MTNleG9scXp3ZnBqeA%3D%3D&utm_source=qr",
+        "youtube_url": "https://youtu.be/9N0VkiCfO5g",
+        "youtube_vertical": true
       }
     },
     {
@@ -491,7 +529,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 08:00 – 02:00; mardi: 08:00 – 02:00; mercredi: 08:00 – 02:00; jeudi: 08:00 – 02:00; vendredi: 08:00 – 02:00; samedi: 09:00 – 03:00; dimanche: 09:00 – 02:00",
         "phone": "05 61 52 44 30",
-        "url": "https://www.instagram.com/lestilleuls_toulouse/"
+        "url": "https://www.instagram.com/lestilleuls_toulouse/",
+        "youtube_url": "https://youtu.be/0sn76bcrTvg",
+        "youtube_vertical": true
       }
     },
     {
@@ -513,7 +553,9 @@
         "coord_accuracy": "high",
         "hours": "lundi: 12:00 – 14:00, 19:45 – 22:00; mardi: 12:00 – 14:00, 19:45 – 22:00; mercredi: 12:00 – 14:00, 19:45 – 22:00; jeudi: 12:00 – 14:00, 19:45 – 22:00; vendredi: 12:00 – 14:30, 19:45 – 22:00; samedi: 12:00 – 14:30, 19:45 – 22:00; dimanche: 12:00 – 14:00, 19:45 – 22:00",
         "phone": "06 14 62 04 47",
-        "url": "https://restaurantmado.fr/"
+        "url": "https://restaurantmado.fr/",
+        "youtube_url": "https://youtu.be/CyZS_SocmHo",
+        "youtube_vertical": true
       }
     },
     {
