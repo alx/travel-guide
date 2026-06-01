@@ -91,6 +91,7 @@ function renderSidebar() {
         ${!MAP_CONFIG.hideOsmAnd ? `<a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>` : ''}
         <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">${MAP_CONFIG.googleMapsLabel || 'Google Maps ↗'}</a>
         ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : (MAP_CONFIG.urlLabel || 'Source ↗')}</a>` : ''}
+        ${p.youtube_url ? `<a href="${p.youtube_url}" target="_blank">▶️ YouTube</a>` : ''}
         ${!MAP_CONFIG.hideRoute ? `<a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>` : ''}
         ${!MAP_CONFIG.hidePermalink ? `<a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>` : ''}
     </div>`;
@@ -129,9 +130,19 @@ function updateMarkers() {
     const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
     if (!matchCat || !matchSearch) return;
     const [lng, lat] = f.geometry.coordinates;
+    const ytId = p.youtube_url ? (p.youtube_url.match(/(?:youtu\.be\/|[?&]v=)([^&?#]+)/)?.[1] || null) : null;
     const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
       .addTo(map)
-      .bindPopup(`<b>${p.name}</b><br><small>${cat}</small>${p.notes ? '<br><em>' + p.notes + '</em>' : ''}${p.hours ? '<br>🕐 ' + p.hours.split(/;\s*/).join('<br>') : ''}${p.price ? '<br>💰 ' + p.price : ''}`);
+      .bindPopup(
+        `<b>${p.name}</b><br><small>${cat}</small>`
+        + (ytId
+            ? `<div style="margin-top:0.5rem;"><iframe width="280" height="157" src="https://www.youtube-nocookie.com/embed/${ytId}" frameborder="0" allowfullscreen style="border-radius:6px;display:block;"></iframe></div>`
+            : (p.notes ? '<br><em>' + p.notes + '</em>' : '')
+              + (p.hours ? '<br>🕐 ' + p.hours.split(/;\s*/).join('<br>') : '')
+              + (p.price ? '<br>💰 ' + p.price : '')
+        ),
+        ytId ? { maxWidth: 300 } : {}
+      );
     marker.on('click', () => focusPOI(f));
     markers[f._id] = marker;
   });
