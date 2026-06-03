@@ -463,6 +463,19 @@ def title_from_airbnb_url(url: str) -> str | None:
     return None
 
 
+def photo_from_airbnb_url(url: str) -> str | None:
+    try:
+        soup = _get_airbnb_soup(url)
+        og = soup.find("meta", property="og:image")
+        if isinstance(og, Tag):
+            content = og.get("content", "")
+            if content:
+                return str(content)
+    except Exception:
+        pass
+    return None
+
+
 def coords_from_airbnb_url(url: str) -> tuple[float, float, str]:
     """Returns (lat, lon, confidence) where confidence is 'medium' or 'low'."""
     soup = _get_airbnb_soup(url)
@@ -940,6 +953,30 @@ def generate_preview(lat: float, lon: float, pois: list[dict], output_path: Path
         print(f"  ⚠ Preview image generation failed: {e}", file=sys.stderr)
 
 
+def _curate_statuses(features: list) -> None:
+    """Auto-assign primary/secondary status based on category-specific curation rules.
+
+    Features within each category are already sorted by distance (nearest first)
+    because build_geojson iterates pois sorted by haversine distance.
+    """
+    # Only the nearest instance is primary; duplicates are secondary
+    single_primary = {"Health", "Supermarket"}
+    # Generated-name entries (no real label from OSM) are secondary noise
+    generated_name_secondary = {"Park", "Playground", "Bakery & Food"}
+
+    seen_primary: set = set()
+    for f in features:
+        props = f["properties"]
+        cat = props["category"]
+        if cat in single_primary:
+            props["status"] = "primary" if cat not in seen_primary else "secondary"
+            seen_primary.add(cat)
+        elif props.get("generated_name") and cat in generated_name_secondary:
+            props["status"] = "secondary"
+        else:
+            props["status"] = "primary"
+
+
 def build_geojson(
     airbnb_url: str,
     lat: float,
@@ -983,6 +1020,7 @@ def build_geojson(
                 "properties": props,
             })
             seq += 1
+    _curate_statuses(features)
     # B07 — category_meta for dynamic colors/icons in the frontend
     cat_keys = list(CATEGORIES.keys())
     category_meta: dict = {}

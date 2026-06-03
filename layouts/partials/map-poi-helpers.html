@@ -4,6 +4,7 @@ const CATEGORY_ICONS  = window.CATEGORY_ICONS;
 const MAP_CONFIG      = window.MAP_CONFIG;
 
 let allPOIs = [], customLayer = null, markers = {}, activeFilter = 'All', activeCard = null;
+let secondaryIds = new Set();
 Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
 window._mapCategoryColors = CATEGORY_COLORS;
 window._mapCategoryIcons  = CATEGORY_ICONS;
@@ -30,7 +31,8 @@ function showToast(msg) {
 function fadePOIs(activeId) {
   Object.entries(markers).forEach(([id, m]) => {
     const el = m.getElement();
-    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1' : '0.5';
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1'
+      : secondaryIds.has(String(id)) ? '0.3' : '0.5';
   });
   document.querySelectorAll('.poi-card').forEach(c =>
     c.classList.toggle('faded', c.id !== 'card-' + activeId));
@@ -39,7 +41,10 @@ function clearFocus() {
   if (activeCard === null) return;
   document.getElementById('card-' + activeCard)?.classList.remove('active');
   activeCard = null;
-  Object.values(markers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = secondaryIds.has(String(id)) ? '0.55' : '1';
+  });
   document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('faded'));
   const u = new URL(window.location.href);
   u.searchParams.delete('poi');
@@ -47,15 +52,20 @@ function clearFocus() {
   window.clearRoute?.();
 }
 
-function makeIcon(category) {
+function makeIcon(category, status) {
   const color = CATEGORY_COLORS[category] || '#6b7280';
   const icon = CATEGORY_ICONS[category] || '📍';
+  const secondary = status === 'secondary';
+  const size = secondary ? 22 : 32;
+  const fs   = secondary ? 11 : 16;
+  const border = secondary ? '#bbb' : 'white';
+  const opacity = secondary ? '0.55' : '1';
   return L.divIcon({
     className: '',
-    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
-    iconSize: [32, 32],
-    iconAnchor: [16, 16],
-    popupAnchor: [0, -20]
+    html: `<div style="background:${color};width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid ${border};opacity:${opacity};">${icon}</div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+    popupAnchor: [0, -(size / 2) - 4]
   });
 }
 
@@ -133,7 +143,7 @@ function updateMarkers() {
     const ytId = p.youtube_url ? (p.youtube_url.match(/(?:youtu\.be\/|[?&]v=)([^&?#]+)/)?.[1] || null) : null;
     const ytW = p.youtube_vertical ? 180 : 280;
     const ytH = p.youtube_vertical ? 320 : 157;
-    const marker = L.marker([lat, lng], { icon: makeIcon(cat) })
+    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.status) })
       .addTo(map)
       .bindPopup(
         `<b>${p.name}</b><br><small>${cat}</small>`
@@ -186,6 +196,7 @@ window.loadCustomData = function(geojson, sourceName) {
     }).addTo(map);
   }
   allPOIs = [...allPOIs.filter(f => !f._custom), ...customPOIs];
+  secondaryIds = new Set(allPOIs.filter(f => f.properties.status === 'secondary').map(f => String(f._id)));
   window.MAP_CONFIG.geojsonData = geojson;
   const badge = document.getElementById('custom-layer-info');
   badge.style.display = 'flex';
@@ -212,6 +223,7 @@ fetch(MAP_CONFIG.geojsonUrl)
   .then(r => r.json())
   .then(data => {
     allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    secondaryIds = new Set(allPOIs.filter(f => f.properties.status === 'secondary').map(f => String(f._id)));
     window.MAP_CONFIG.geojsonData = data;
     setupFilters(allPOIs);
     renderSidebar();
