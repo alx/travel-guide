@@ -186,7 +186,7 @@
     <a href="/">🗺️ Maps</a>
     <span class="sep">›</span>
     <h1 id="map-title">Airbnb Map</h1>
-    <a href="/airbnb/{{ .File.BaseFileName }}/edit/" class="edit-btn">✏️ Edit Map</a>
+    <a href="/airbnb/{{ .File.ContentBaseName }}/edit/" class="edit-btn">✏️ Edit Map</a>
   </div>
   <div id="map"></div>
 </div>
@@ -204,9 +204,9 @@
     <button class="cta-btn" onclick="document.getElementById('contact-form-float').classList.add('open')">
       📍 Get my map — from €29
     </button>
-    {{ if and .File (ne .File.BaseFileName "_index") }}
+    {{ if and .File (ne .File.ContentBaseName "_index") }}
     <div class="listing-pill">
-      Listing detected: <code>{{ .File.BaseFileName }}</code>
+      Listing detected: <code>{{ .File.ContentBaseName }}</code>
     </div>
     {{ end }}
   </div>
@@ -277,7 +277,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 (async () => {
-  const airbnbId = {{ .File.BaseFileName | jsonify }};
+  const airbnbId = {{ .File.ContentBaseName | jsonify }};
   const geojsonUrl = `/airbnb/${airbnbId}/locations.geojson`;
   const loader = document.getElementById('loader');
   const mapView = document.getElementById('map-view');
@@ -327,10 +327,14 @@
     'Other':       '📍',
   };
 
-  function makeIcon(category) {
+  function makeIcon(category, status) {
     const color = CATEGORY_COLORS[category] || CATEGORY_COLORS['Other'];
     const emoji = CATEGORY_ICONS[category] || '📍';
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40">
+    const secondary = status === 'secondary';
+    const w = secondary ? 22 : 32;
+    const h = secondary ? 28 : 40;
+    const opacity = secondary ? '0.55' : '1';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 32 40" style="opacity:${opacity}">
       <ellipse cx="16" cy="38" rx="6" ry="2" fill="rgba(0,0,0,.3)"/>
       <path d="M16 0C9.37 0 4 5.37 4 12c0 9 12 26 12 26S28 21 28 12C28 5.37 22.63 0 16 0z" fill="${color}"/>
       <circle cx="16" cy="12" r="8" fill="rgba(255,255,255,.95)"/>
@@ -339,9 +343,9 @@
     return L.divIcon({
       html: svg,
       className: '',
-      iconSize: [32, 40],
-      iconAnchor: [16, 40],
-      popupAnchor: [0, -42],
+      iconSize: [w, h],
+      iconAnchor: [w / 2, h],
+      popupAnchor: [0, -(h + 2)],
     });
   }
 
@@ -379,7 +383,7 @@
   L.geoJSON(geojsonData, {
     pointToLayer(feature, latlng) {
       const cat = feature.properties.category || 'Other';
-      return L.marker(latlng, { icon: makeIcon(cat) });
+      return L.marker(latlng, { icon: makeIcon(cat, feature.properties.status) });
     },
     onEachFeature(feature, layer) {
       const p = feature.properties;
