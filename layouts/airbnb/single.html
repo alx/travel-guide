@@ -277,7 +277,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 (async () => {
-  const airbnbId = {{ .File.ContentBaseName | jsonify }};
+  const airbnbId = "{{ .File.ContentBaseName }}";
   const geojsonUrl = `/airbnb/${airbnbId}/locations.geojson`;
   const loader = document.getElementById('loader');
   const mapView = document.getElementById('map-view');
