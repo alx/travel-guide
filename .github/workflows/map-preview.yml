@@ -43,7 +43,7 @@ jobs:
       - name: Detect changed map slugs
         id: slugs
         run: |
-          git fetch origin ${{ github.base_ref }} --depth=1
+          git fetch origin ${{ github.base_ref }}
 
           # Extract changed geojson/topojson paths relative to static/
           # For top-level maps:   static/lamai/locations.geojson   → lamai
