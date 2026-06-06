@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-06T12:46:12.202310+00:00",
+    "generated_at": "2026-06-06T13:16:57.836090+00:00",
     "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
@@ -136,7 +136,7 @@
       "slug": "yoga-france",
       "url": "/yoga-france/",
       "title": "Yoga en France — Tous les Studios",
-      "description": "Carte complète des studios et cours de yoga en France. Plus de 300 lieux référencés dans l'OpenStreetMap, des grandes villes aux villages.",
+      "description": "Carte complète des studios et cours de yoga en France métropolitaine et en Corse. Lieux référencés dans l'OpenStreetMap, des grandes villes aux villages.",
       "emoji": "🧘",
       "section": "curated",
       "weight": 50,
@@ -146,7 +146,7 @@
         "🗺️ OSM data",
         "🇫🇷 France"
       ],
-      "poi_count": 315,
+      "poi_count": 939,
       "categories": [
         "Yoga"
       ],

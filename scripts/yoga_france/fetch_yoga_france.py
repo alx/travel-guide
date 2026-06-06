@@ -26,14 +26,21 @@ import urllib.parse
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 
+# Bounding box for metropolitan France + Corsica (south, west, north, east)
+METRO_FRANCE_BBOX = (41.333, -5.143, 51.089, 9.560)
+
 OVERPASS_QUERY = """
 [out:json][timeout:180];
-area["ISO3166-1"="FR"]["admin_level"="2"]->.country;
 (
-  nwr["sport"="yoga"](area.country);
+  nwr["sport"="yoga"]({south},{west},{north},{east});
 );
 out center tags;
-""".strip()
+""".format(
+    south=METRO_FRANCE_BBOX[0],
+    west=METRO_FRANCE_BBOX[1],
+    north=METRO_FRANCE_BBOX[2],
+    east=METRO_FRANCE_BBOX[3],
+).strip()
 
 
 def fetch_overpass(query: str) -> dict:
@@ -74,6 +81,10 @@ def element_to_feature(el: dict, index: int) -> dict | None:
         lat, lon = center.get("lat"), center.get("lon")
 
     if lat is None or lon is None:
+        return None
+
+    south, west, north, east = METRO_FRANCE_BBOX
+    if not (south <= lat <= north and west <= lon <= east):
         return None
 
     lon = round(lon, 7)
@@ -151,7 +162,7 @@ def main() -> None:
         "_meta": {
             "crs": "EPSG:4326",
             "generated": datetime.date.today().isoformat(),
-            "source": "OpenStreetMap via Overpass API — sport=yoga in France",
+            "source": "OpenStreetMap via Overpass API — sport=yoga in metropolitan France and Corsica",
         },
         "features": features,
     }

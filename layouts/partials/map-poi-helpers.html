@@ -11,6 +11,11 @@ window._mapCategoryIcons  = CATEGORY_ICONS;
 
 const map = L.map('map').setView(MAP_CONFIG.center, MAP_CONFIG.zoom);
 window._leafletMap = map;
+let markerCluster = null;
+if (MAP_CONFIG.useClustering && typeof L.markerClusterGroup === 'function') {
+  markerCluster = L.markerClusterGroup({ chunkedLoading: true });
+  map.addLayer(markerCluster);
+}
 let _flyingTo = false;
 map.on('click', clearFocus);
 map.on('popupclose', clearFocus);
@@ -131,7 +136,11 @@ function filterPOIs() { renderSidebar(); updateMarkers(); }
 
 function updateMarkers() {
   const search = document.getElementById('search').value.toLowerCase();
-  Object.values(markers).forEach(m => map.removeLayer(m));
+  if (markerCluster) {
+    markerCluster.clearLayers();
+  } else {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+  }
   Object.keys(markers).forEach(k => delete markers[k]);
   allPOIs.forEach(f => {
     const p = f.properties;
@@ -143,19 +152,23 @@ function updateMarkers() {
     const ytId = p.youtube_url ? (p.youtube_url.match(/(?:youtu\.be\/|[?&]v=)([^&?#]+)/)?.[1] || null) : null;
     const ytW = p.youtube_vertical ? 180 : 280;
     const ytH = p.youtube_vertical ? 320 : 157;
-    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.status) })
-      .addTo(map)
-      .bindPopup(
-        `<b>${p.name}</b><br><small>${cat}</small>`
-        + (ytId
-            ? `<div style="margin-top:0.5rem;"><iframe width="${ytW}" height="${ytH}" src="https://www.youtube-nocookie.com/embed/${ytId}" frameborder="0" allowfullscreen style="border-radius:6px;display:block;"></iframe></div>`
-            : (p.notes ? '<br><em>' + p.notes + '</em>' : '')
-              + (p.hours ? '<br>🕐 ' + p.hours.split(/;\s*/).join('<br>') : '')
-              + (p.price ? '<br>💰 ' + p.price : '')
-        ),
-        ytId ? { maxWidth: p.youtube_vertical ? 200 : 300 } : {}
-      );
+    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.status) });
+    marker.bindPopup(
+      `<b>${p.name}</b><br><small>${cat}</small>`
+      + (ytId
+          ? `<div style="margin-top:0.5rem;"><iframe width="${ytW}" height="${ytH}" src="https://www.youtube-nocookie.com/embed/${ytId}" frameborder="0" allowfullscreen style="border-radius:6px;display:block;"></iframe></div>`
+          : (p.notes ? '<br><em>' + p.notes + '</em>' : '')
+            + (p.hours ? '<br>🕐 ' + p.hours.split(/;\s*/).join('<br>') : '')
+            + (p.price ? '<br>💰 ' + p.price : '')
+      ),
+      ytId ? { maxWidth: p.youtube_vertical ? 200 : 300 } : {}
+    );
     marker.on('click', () => focusPOI(f));
+    if (markerCluster) {
+      markerCluster.addLayer(marker);
+    } else {
+      marker.addTo(map);
+    }
     markers[f._id] = marker;
   });
 }

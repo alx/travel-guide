@@ -1,6 +1,6 @@
 ---
 title: "Yoga en France — Tous les Studios"
-description: "Carte complète des studios et cours de yoga en France. Plus de 300 lieux référencés dans l'OpenStreetMap, des grandes villes aux villages."
+description: "Carte complète des studios et cours de yoga en France métropolitaine et en Corse. Lieux référencés dans l'OpenStreetMap, des grandes villes aux villages."
 emoji: "🧘"
 section: "curated"
 weight: 50

@@ -1,5 +1,7 @@
 {{ define "head" }}
 {{ partial "map-poi-styles.html" . }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 <style>
   :root { --map-accent: #7b5ea7; }
   .filter-btn.active { background: var(--map-accent); border-color: var(--map-accent); }
@@ -43,6 +45,7 @@
 
 {{ define "scripts" }}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
 <script>
 window.MAP_CONFIG = {
@@ -50,7 +53,8 @@ window.MAP_CONFIG = {
   geojsonUrl: '{{ "/yoga-france/locations.geojson" | relURL }}',
   embedPath: '/yoga-france/',
   center: [46.5, 2.5],
-  zoom: 6
+  zoom: 6,
+  useClustering: true
 };
 window.CATEGORY_COLORS = { 'Yoga': '#7b5ea7' };
 window.CATEGORY_ICONS  = { 'Yoga': '🧘' };
