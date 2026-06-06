@@ -9,7 +9,7 @@ Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: tru
 window._mapCategoryColors = CATEGORY_COLORS;
 window._mapCategoryIcons  = CATEGORY_ICONS;
 
-const map = L.map('map').setView(MAP_CONFIG.center, MAP_CONFIG.zoom);
+const map = L.map('map', { maxZoom: 19 }).setView(MAP_CONFIG.center, MAP_CONFIG.zoom);
 window._leafletMap = map;
 let markerCluster = null;
 if (MAP_CONFIG.useClustering && typeof L.markerClusterGroup === 'function') {
