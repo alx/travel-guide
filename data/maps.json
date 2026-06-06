@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-05-20T02:10:00.768351+00:00",
-    "map_count": 16,
+    "generated_at": "2026-06-06T12:46:12.202310+00:00",
+    "map_count": 15,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -30,30 +30,6 @@
         "Pizzeria",
         "Pâtisserie",
         "Restaurant"
-      ],
-      "has_geojson": true
-    },
-    {
-      "slug": "koh-samui",
-      "url": "/koh-samui/",
-      "title": "Koh Samui Map — Best Spots",
-      "description": "Curated map of Koh Samui: beaches, spas, restaurants and activities with GPS coordinates, opening hours and prices.",
-      "emoji": "🏝️",
-      "section": "curated",
-      "weight": 10,
-      "accent_color": "#1a3a5c",
-      "tags": [
-        "🏖️ Beaches",
-        "🎯 Activities",
-        "🍽️ Restaurants"
-      ],
-      "poi_count": 7,
-      "categories": [
-        "Activity",
-        "Area Guide",
-        "Beach",
-        "Restaurant",
-        "Shopping"
       ],
       "has_geojson": true
     },
@@ -157,6 +133,26 @@
       "has_geojson": true
     },
     {
+      "slug": "yoga-france",
+      "url": "/yoga-france/",
+      "title": "Yoga en France — Tous les Studios",
+      "description": "Carte complète des studios et cours de yoga en France. Plus de 300 lieux référencés dans l'OpenStreetMap, des grandes villes aux villages.",
+      "emoji": "🧘",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#7b5ea7",
+      "tags": [
+        "🧘 Yoga",
+        "🗺️ OSM data",
+        "🇫🇷 France"
+      ],
+      "poi_count": 315,
+      "categories": [
+        "Yoga"
+      ],
+      "has_geojson": true
+    },
+    {
       "slug": "france-grands-projets-strategiques",
       "url": "/france-grands-projets-strategiques/",
       "title": "France — Grands Projets Stratégiques",
@@ -207,28 +203,6 @@
         "Gaming",
         "Karting",
         "Park"
-      ],
-      "has_geojson": true
-    },
-    {
-      "slug": "where-do-i-stay-in-koh-samui",
-      "url": "/where-do-i-stay-in-koh-samui/",
-      "title": "Where do i stay in Koh Samui ?",
-      "description": "Locations mentioned in r/kohsamui: Where do i stay in Koh Samui ?",
-      "emoji": "🌴",
-      "section": "community",
-      "weight": 10,
-      "accent_color": "#ff4500",
-      "tags": [
-        "🤖 AI-extracted",
-        "📍 5 locations",
-        "r/kohsamui"
-      ],
-      "poi_count": 5,
-      "categories": [
-        "Place",
-        "Resort",
-        "Villa"
       ],
       "has_geojson": true
     },
