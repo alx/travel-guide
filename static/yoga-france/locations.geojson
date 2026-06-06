@@ -1,0 +1,6405 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    -143.044135,
+    -20.7016237,
+    9.1503341,
+    51.0452114
+  ],
+  "_meta": {
+    "crs": "EPSG:4326",
+    "generated": "2026-06-06",
+    "source": "OpenStreetMap via Overpass API — sport=yoga in France"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "yoga-france-0001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.686557,
+          47.3892526
+        ]
+      },
+      "properties": {
+        "name": "L'espace d'un instant",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/968852881",
+        "address": "7 Rue George Sand"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.815998,
+          44.1364689
+        ]
+      },
+      "properties": {
+        "name": "Centre Movimento",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1300464983",
+        "address": "Orange",
+        "phone": "+33 6 61 72 67 62",
+        "url": "https://www.centre-movimento.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2578859,
+          48.8401487
+        ]
+      },
+      "properties": {
+        "name": "Body & Brain",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1640452952"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4908833,
+          48.4469256
+        ]
+      },
+      "properties": {
+        "name": "Maison du Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1780098825"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8653361,
+          43.6101706
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga des Arceaux",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1795770152",
+        "address": "1 Rue Duval-Jouve",
+        "phone": "+33961385138",
+        "url": "http://yoga-montpellier.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3994073,
+          51.0435918
+        ]
+      },
+      "properties": {
+        "name": "La palma zen",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1988078159",
+        "address": "120 Boulevard de la République - François Mitterrand 59240 Dunkerque"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.39385,
+          48.8706475
+        ]
+      },
+      "properties": {
+        "name": "Espace Jaya",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/1990798379",
+        "url": "https://www.jayaparis.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6947263,
+          45.186551
+        ]
+      },
+      "properties": {
+        "name": "Le Clair de L'Aube",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2166243881",
+        "address": "2 Rue d'Alpignano 38600 Fontaine"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2536878,
+          45.7249094
+        ]
+      },
+      "properties": {
+        "name": "Gaëlle Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2281925128",
+        "phone": "+33 6 26 07 68 60",
+        "url": "https://gaelleyoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2573353,
+          48.914697
+        ]
+      },
+      "properties": {
+        "name": "Studio selíni",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2347328882"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7218087,
+          45.1882289
+        ]
+      },
+      "properties": {
+        "name": "La Boîte à Plumes",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2373745782",
+        "hours": "Mo-Fr 09:30-19:30; Sa 09:00-13:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0318461,
+          45.6321741
+        ]
+      },
+      "properties": {
+        "name": "Yoga #12",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2466334530"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8061306,
+          44.1383015
+        ]
+      },
+      "properties": {
+        "name": "Rendez-vous en Provence",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2542663482",
+        "address": "9 Rue Victor Hugo Orange",
+        "url": "https://enjoy-studio.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4137488,
+          48.5574703
+        ]
+      },
+      "properties": {
+        "name": "Studio Padma",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2702848584"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2897029,
+          48.8350353
+        ]
+      },
+      "properties": {
+        "name": "Espace Yuzu",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2799009834"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.0431778,
+          48.0465533
+        ]
+      },
+      "properties": {
+        "name": "Ashram de Yoga Sivananda",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2871779733",
+        "address": "24 Impasse du Bignon 45170 Neuville-aux-Bois",
+        "phone": "+33 2 38 91 88 82",
+        "url": "https://www.sivananda.org/orleans/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4515131,
+          43.6042871
+        ]
+      },
+      "properties": {
+        "name": "Yoga Samadhi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/2927499411",
+        "address": "Rue de la Colombette Toulouse",
+        "url": "http://www.yogasamadhi.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.5407667,
+          44.3885337
+        ]
+      },
+      "properties": {
+        "name": "La Grange",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3012360792",
+        "url": "http://www.la-grange-yoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1475925,
+          46.1554802
+        ]
+      },
+      "properties": {
+        "name": "Centre Iyengar",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3057474209",
+        "phone": "+33681577541"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7529402,
+          48.5815933
+        ]
+      },
+      "properties": {
+        "name": "Yogamoves",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3062712000",
+        "url": "https://yogamoves.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.36845,
+          48.8595209
+        ]
+      },
+      "properties": {
+        "name": "Eclats de surya",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3072948582"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2126255,
+          48.1238449
+        ]
+      },
+      "properties": {
+        "name": "Yoga-Home Center",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3157172751"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8436044,
+          45.7668476
+        ]
+      },
+      "properties": {
+        "name": "O Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3276226892",
+        "phone": "+33 4 78 41 09 82",
+        "url": "https://www.oyogastudio.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3549541,
+          48.87475
+        ]
+      },
+      "properties": {
+        "name": "CasaYoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3305453871",
+        "url": "http://www.casayoga-paris.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1857996,
+          48.7972327
+        ]
+      },
+      "properties": {
+        "name": "Manashanti Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3541202746",
+        "address": "24 bis Rue Albert Perdreaux 78140 Vélizy-Villacoublay",
+        "phone": "+33 1 39 46 44 96",
+        "url": "https://www.manashantiyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8768047,
+          43.6125855
+        ]
+      },
+      "properties": {
+        "name": "Iyengar Shakti",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3633000713",
+        "address": "18 Rue de l'Université 34000 Montpellier"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3819716,
+          48.8593169
+        ]
+      },
+      "properties": {
+        "name": "Om sweet om",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/3781110493",
+        "address": "17-19 Rue Camille Desmoulins 75011"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5812419,
+          44.8526355
+        ]
+      },
+      "properties": {
+        "name": "Yoga Pop",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4019939938",
+        "address": "5 Rue Vantrasson",
+        "hours": "Mo 12:00-20:00; Tu-Fr 09:00-20:00; Sa 09:00-18:00; Su 09:00-20:00",
+        "url": "https://yogapop.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.38832,
+          45.4418164
+        ]
+      },
+      "properties": {
+        "name": "Salle Chanoupa",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4073547095"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.102829,
+          49.4859111
+        ]
+      },
+      "properties": {
+        "name": "Yoga #30",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4155637241"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5819272,
+          47.8107343
+        ]
+      },
+      "properties": {
+        "name": "Auxerre Pilates",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4203034663"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.620471,
+          49.0997484
+        ]
+      },
+      "properties": {
+        "name": "Vital Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4557321909",
+        "address": "41 bis Allée des Châteaux 27300 Menneval"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.968775,
+          43.6571815
+        ]
+      },
+      "properties": {
+        "name": "L'arbre en soi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4711927823"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6613535,
+          43.386673
+        ]
+      },
+      "properties": {
+        "name": "Yogang",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/4741244723",
+        "address": "7 Avenue Joachim Labrouche 64500 Saint-Jean-de-Luz",
+        "hours": "Mo-Su 09:00-21:00",
+        "phone": "+33 5 59 85 81 75",
+        "url": "https://yogang.fr/yogang-saint-jean-de-luz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1688698,
+          48.7116877
+        ]
+      },
+      "properties": {
+        "name": "Association Arc en Ciel",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5068091832",
+        "url": "https://arc-en-ciel-association.over-blog.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7123756,
+          45.1862196
+        ]
+      },
+      "properties": {
+        "name": "Espace Tandem",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5077718856",
+        "phone": "+33 6 71 61 54 34"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9054201,
+          43.5925772
+        ]
+      },
+      "properties": {
+        "name": "Yogivibe",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5094848075",
+        "address": "1348 Avenue Raymond Dugrand 34000 Montpellier"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402237,
+          43.2688349
+        ]
+      },
+      "properties": {
+        "name": "Yogapur",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5149892658",
+        "hours": "Mo-Sa 08:30-20:00",
+        "phone": "+33 4 91 86 25 97",
+        "url": "https://www.yogapur.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6830542,
+          47.4163793
+        ]
+      },
+      "properties": {
+        "name": "Iris Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5205977506",
+        "url": "https://www.iriscentrebienetre.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4645513,
+          43.5699311
+        ]
+      },
+      "properties": {
+        "name": "Yogaland",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5406105329",
+        "address": "1069 Avenue de la Plage 40440 Ondres",
+        "hours": "Mo 09:30-11:15,13:00-21:00; Tu 07:00-12:15,18:15-20:45; We 09:30-11:15,16:30-20:00; Th 08:45-12:15,17:30-20:00; Fr 09:30-11:45,13:00-19:15; Sa 10:00-11:15",
+        "phone": "+33 6 76 43 30 08",
+        "url": "https://www.yogaland.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3507376,
+          48.8616632
+        ]
+      },
+      "properties": {
+        "name": "Kitten & Puppi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5445508333",
+        "address": "61 Rue Quincampoix 75004 Paris"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0612199,
+          50.639934
+        ]
+      },
+      "properties": {
+        "name": "Studio Inspir",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5509181237",
+        "url": "https://www.studio-inspir.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0585756,
+          50.6309314
+        ]
+      },
+      "properties": {
+        "name": "Les Yogis",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5701699237",
+        "hours": "Mo-Su 07:30-21:00",
+        "phone": "+33 9 87 02 19 41",
+        "url": "https://lesyogis.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5935853,
+          45.127297
+        ]
+      },
+      "properties": {
+        "name": "Centre symbiole",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5745364841"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.5926873,
+          43.2149117
+        ]
+      },
+      "properties": {
+        "name": "ARBRE DU YOGA",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5914544601",
+        "address": "Chemin de la Mairie 31350 Sarrecave",
+        "phone": "+33 5 61 88 27 62"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3461719,
+          48.8515214
+        ]
+      },
+      "properties": {
+        "name": "Rasa Yoga Rive Gauche",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5926021821",
+        "address": "21 Rue Saint-Jacques",
+        "url": "https://www.rasa-yogarivegauche.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5051306,
+          50.18378
+        ]
+      },
+      "properties": {
+        "name": "Gymnastics Pavilion",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5973966456"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5681734,
+          47.2043773
+        ]
+      },
+      "properties": {
+        "name": "Elephant Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/5996004066",
+        "hours": "07:00-21:00",
+        "url": "https://www.elephantyoga.studio/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5665186,
+          47.2106464
+        ]
+      },
+      "properties": {
+        "name": "Yug iN",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6040004325",
+        "phone": "+33 6 47 33 30 19",
+        "url": "https://www.yugin.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.322099,
+          48.814981
+        ]
+      },
+      "properties": {
+        "name": "Les Oiseaux Parleurs",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6141069687",
+        "address": "3 Rue de la Solidarité 92120 Montrouge",
+        "phone": "+33 6 86 56 29 18",
+        "url": "https://cielesoiseauxparleur.wixsite.com/lesoiseauxparleurs"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.0862507,
+          49.4403262
+        ]
+      },
+      "properties": {
+        "name": "Yogart",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6148641265",
+        "address": "13",
+        "phone": "+336185476 04",
+        "url": "https://yogart-rouen.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3848753,
+          45.4450214
+        ]
+      },
+      "properties": {
+        "name": "Om'yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6220820047",
+        "url": "https://omy-goodness.business.site"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.3814916,
+          47.8156465
+        ]
+      },
+      "properties": {
+        "name": "Centre de Relaxation Bien-Être",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6341478186"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3741868,
+          48.8549907
+        ]
+      },
+      "properties": {
+        "name": "Kalari 7",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6386811635",
+        "url": "https://www.kalari7.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3272556,
+          48.81588
+        ]
+      },
+      "properties": {
+        "name": "Body Om",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6447595322",
+        "hours": "Mo-Sa 10:00-20:00",
+        "phone": "+33 1 85 76 50 22",
+        "url": "https://www.bodyom.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4822008,
+          43.4941875
+        ]
+      },
+      "properties": {
+        "name": "Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6637677140"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3788593,
+          46.942546
+        ]
+      },
+      "properties": {
+        "name": "Du yoga sous les toits",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6683452700",
+        "url": "https://sites.google.com/view/duyogasouslestoits/accueil"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0058",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8457217,
+          45.7451139
+        ]
+      },
+      "properties": {
+        "name": "Centre de yoga Lyon Jean Macé",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6712118933",
+        "url": "http://centredeyoga-lyon-jean-mace.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2647148,
+          43.701777
+        ]
+      },
+      "properties": {
+        "name": "GAIA Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6803391661",
+        "address": "Rue Pierre Mendès France 40800 Aire-sur-l'Adour",
+        "phone": "+33 6 63 21 06 20"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0602477,
+          43.7245681
+        ]
+      },
+      "properties": {
+        "name": "Yoga Sukha 40",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6813019987",
+        "address": "731 Avenue de la Résistance"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3715461,
+          48.8311502
+        ]
+      },
+      "properties": {
+        "name": "Centre Terre & Ciel",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6840982600",
+        "address": "18 Rue Charcot 75013 Paris",
+        "url": "https://yoga-paris-centreterreciel.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1666091,
+          48.7674882
+        ]
+      },
+      "properties": {
+        "name": "The New Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6848641051",
+        "address": "7 Avenue Gambetta 55000 Bar-le-Duc",
+        "phone": "+33 3 29 76 21 21",
+        "url": "https://danse-fitness.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.4937489,
+          44.3968292
+        ]
+      },
+      "properties": {
+        "name": "Yoga Discover Your Heart",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6979672473",
+        "address": "1 Rue Gabriel Charretier 47260 Castelmoron-sur-Lot",
+        "url": "https://yoga-47.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0064",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0407071,
+          49.2478814
+        ]
+      },
+      "properties": {
+        "name": "Yoga Reims",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6982224685",
+        "address": "96 Rue du Barbâtre 51100",
+        "phone": "+33 6 95 10 54 15",
+        "url": "https://yogareims.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8294089,
+          45.7503946
+        ]
+      },
+      "properties": {
+        "name": "École de Yoga Mysore",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/6991069738"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0066",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.1332186,
+          49.4393616
+        ]
+      },
+      "properties": {
+        "name": "Estelle Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7043448153",
+        "address": "31",
+        "phone": "+33 6 71 11 50 40",
+        "url": "https://www.estelleyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0387067,
+          49.2559055
+        ]
+      },
+      "properties": {
+        "name": "Centre Oscaria",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7069022785",
+        "address": "34 Rue Ponsardin 51100 Reims",
+        "hours": "Mo-Su 07:00-22:00",
+        "phone": "+33 6 69 11 49 77",
+        "url": "https://www.oscaria.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4048207,
+          49.1862278
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga Sruti",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7088569424",
+        "phone": "+33 2 31 73 26 41",
+        "url": "https://centredeyogasruthi.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0069",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.706594,
+          47.6463077
+        ]
+      },
+      "properties": {
+        "name": "Om Yoga Vannes",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7109167048",
+        "address": "14 Rue Jacques Cartier 56450 Theix-Noyalo",
+        "phone": "+33 7 82 75 56 51",
+        "url": "http://www.om-yoga-vannes.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4426473,
+          43.6009993
+        ]
+      },
+      "properties": {
+        "name": "Peacock Toulouse",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7149425176",
+        "hours": "Mo 10:00-19:00;Tu-Fr 08:30-19:00;Sa 10:00-19:00;Su 11:00-16:00",
+        "url": "https://peacock-toulouse.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0071",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5598205,
+          47.4790994
+        ]
+      },
+      "properties": {
+        "name": "Yoga #71",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7211963108"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4610086,
+          43.5222995
+        ]
+      },
+      "properties": {
+        "name": "Yama",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7221248672",
+        "address": "4 Rue Pierre de Coubertin 13100 Aix-en-Provence",
+        "url": "https://www.yama-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0073",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2491181,
+          44.8354625
+        ]
+      },
+      "properties": {
+        "name": "Shala Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7252983484"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0074",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0468069,
+          48.6346602
+        ]
+      },
+      "properties": {
+        "name": "Hatha Yogarmonie",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7376334358",
+        "address": "7",
+        "phone": "+33 6 78423094",
+        "url": "https://hatha-yogarmonie.blogspot.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0075",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.432083,
+          43.3210392
+        ]
+      },
+      "properties": {
+        "name": "Yoga #75",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7409944109"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0076",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3762861,
+          43.3026058
+        ]
+      },
+      "properties": {
+        "name": "Studio de Yoga Iyengar de Pau",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7472331273",
+        "phone": "+33 6 17 46 24 63",
+        "url": "https://www.studioyogaiyengarpau.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0077",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3247668,
+          48.8356582
+        ]
+      },
+      "properties": {
+        "name": "Le temps du yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7472967287"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0078",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0394257,
+          49.2528644
+        ]
+      },
+      "properties": {
+        "name": "L'Atelier du Bien être",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7559366859",
+        "phone": "+33 6 81 56 57 14"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0079",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1638058,
+          44.3950864
+        ]
+      },
+      "properties": {
+        "name": "Yoga Biscarrosse",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7649849158",
+        "address": "236 Avenue Alphonse Daudet 40600 Biscarrosse",
+        "phone": "+33 6 52 73 94 44",
+        "url": "https://www.yogabiscarrosse.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2789229,
+          48.1986601
+        ]
+      },
+      "properties": {
+        "name": "Nymphea",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7684585203",
+        "phone": "+33 7 85 82 42 84",
+        "url": "https://nympheayoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0081",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6865113,
+          48.117959
+        ]
+      },
+      "properties": {
+        "name": "Yoga Shala",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7685474428",
+        "url": "https://yogashalarennes.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1595785,
+          50.6245395
+        ]
+      },
+      "properties": {
+        "name": "Yoga holi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7756161339",
+        "address": "1 Rue de l'Attelage 59493 Villeneuve-d'Ascq",
+        "hours": "Mo 09:00-21:00; Tu 09:00-21:00; We 09:00-20:00; Th 09:00-21:00; Fr 09:00-20:00; Sa 09:00-12:30; Su 09:00-12:30,17:30-19:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1795801,
+          49.1180964
+        ]
+      },
+      "properties": {
+        "name": "Studio Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7897020391"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.3150506,
+          46.7537892
+        ]
+      },
+      "properties": {
+        "name": "Le Yoga d'Émilie",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/7948982264",
+        "address": "47 Rue du Bief Blanc",
+        "hours": "Mo 17:45-19:15; Tu 09:00-19:00; We 18:00-19:15; Th 09:00-18:00",
+        "phone": "+33 6 09 60 14 77"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.371349,
+          48.8323797
+        ]
+      },
+      "properties": {
+        "name": "Core Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8025496115",
+        "url": "https://www.coreyogaparis.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.608285,
+          43.2059075
+        ]
+      },
+      "properties": {
+        "name": "Shambaya",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8090646491",
+        "address": "260 Voie Atlas 13600 La Ciotat"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0087",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8349262,
+          45.7668904
+        ]
+      },
+      "properties": {
+        "name": "Yoga Korner",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8114540430",
+        "hours": "Mo-Su 10:00-19:00",
+        "phone": "+33426006294",
+        "url": "https://yogakorner.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0088",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8245857,
+          45.767255
+        ]
+      },
+      "properties": {
+        "name": "Saône et Soi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8118959755",
+        "url": "http://saone-et-soi.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0089",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8440963,
+          45.7617636
+        ]
+      },
+      "properties": {
+        "name": "Tiny Yoga Club",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8151750855",
+        "url": "https://www.tiny-studio.co/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0242195,
+          47.308689
+        ]
+      },
+      "properties": {
+        "name": "Le centre",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8194478179",
+        "url": "https://www.lecentre-dijon.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0091",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.651962,
+          44.8844156
+        ]
+      },
+      "properties": {
+        "name": "Centre Ayurveda d’Aquitaine",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8230871334",
+        "address": "3 Rue Gabriel Moussa 33320 Eysines",
+        "url": "https://www.massages-ayurvedique.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2826973,
+          47.7363397
+        ]
+      },
+      "properties": {
+        "name": "Yoga origins",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8252503684"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0093",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8389474,
+          45.7497316
+        ]
+      },
+      "properties": {
+        "name": "Sesam",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8259779617",
+        "hours": "\"Dépend des horaires de cours\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0094",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8444848,
+          45.7515265
+        ]
+      },
+      "properties": {
+        "name": "Oblique",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8290649817",
+        "hours": "\"Agenda suivant les cours\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0095",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3745858,
+          48.8682797
+        ]
+      },
+      "properties": {
+        "name": "Yoga vision",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8306561078",
+        "url": "https://www.yoga-vision.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0096",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8499841,
+          45.833371
+        ]
+      },
+      "properties": {
+        "name": "Yoga #96",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8368118971"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0097",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4174221,
+          48.8923664
+        ]
+      },
+      "properties": {
+        "name": "Yoga FlowInLife Pantin",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8402135867",
+        "address": "9 Rue François Arago 93500 Pantin",
+        "phone": "+33 7 67 57 93 58",
+        "url": "https://www.yogaflowinlife.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0098",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.075536,
+          43.5608496
+        ]
+      },
+      "properties": {
+        "name": "Studio Effet Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8467825621",
+        "address": "149 Rue des Artisans 34280 La Grande-Motte",
+        "phone": "+33 6 59 39 91 63",
+        "url": "https://effet-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0099",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9997545,
+          43.9083936
+        ]
+      },
+      "properties": {
+        "name": "Salle Sadhana",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8493490961",
+        "phone": "+33646839023"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6544153,
+          48.094406
+        ]
+      },
+      "properties": {
+        "name": "Association Ananda",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8498122328",
+        "address": "16 Rue Blaise Pascal 35200 Rennes",
+        "url": "https://www.yoga-inspiration-tibetaine-rennes.com/location-salle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0101",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3814674,
+          43.6701469
+        ]
+      },
+      "properties": {
+        "name": "Mana Yoga Center",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8506547454",
+        "address": "455 Avenue de Pascouaou 40150 Soorts-Hossegor",
+        "phone": "+33671028003",
+        "url": "https://manayogacenter.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0102",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3833267,
+          43.6691245
+        ]
+      },
+      "properties": {
+        "name": "Yoga bikram",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8524825492",
+        "address": "407 Avenue de la Tuilerie 40150 Soorts-Hossegor",
+        "phone": "+33970359277",
+        "url": "https://www.yogabikramhossegor.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0103",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.395155,
+          43.6643298
+        ]
+      },
+      "properties": {
+        "name": "Whisper Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8524874187",
+        "address": "19 Avenue du Centre 40150 Soorts-Hossegor",
+        "phone": "+33611187123",
+        "url": "https://www.whisperyoga.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0104",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2535471,
+          48.9126635
+        ]
+      },
+      "properties": {
+        "name": "Sensa",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8532210831"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0105",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9012177,
+          47.8648608
+        ]
+      },
+      "properties": {
+        "name": "Charlotte Grodet Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8589534694",
+        "address": "307 Rue Marcel Belot 45160 Olivet",
+        "phone": "+33 6 58 57 95 92",
+        "url": "https://naturopathieyoga.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0106",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8361675,
+          45.7768287
+        ]
+      },
+      "properties": {
+        "name": "Centre Tao Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8634688170"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0107",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3700598,
+          48.8685269
+        ]
+      },
+      "properties": {
+        "name": "Satya Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8648602257",
+        "address": "17 Rue de la Fontaine au Roi",
+        "phone": "+33 6 61 22 00 52",
+        "url": "https://satya-yoga.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0108",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8338993,
+          45.7763489
+        ]
+      },
+      "properties": {
+        "name": "L'Atelier du Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8699441652",
+        "url": "https://www.atelier-du-yoga.fr/lyon/index.php"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0109",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4514881,
+          48.5698011
+        ]
+      },
+      "properties": {
+        "name": "Omkari",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8724090992",
+        "address": "Rue de Tournenfils 91540 Ormoy",
+        "url": "https://yogaomkari.wixsite.com/yogaomkari"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0110",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6956771,
+          43.3857339
+        ]
+      },
+      "properties": {
+        "name": "Cours Yoga Eva Durisova",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8731019261",
+        "address": "10 Rue Mendiartze Urrugne",
+        "phone": "+33 6 66 98 29 21"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0111",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8071435,
+          45.7745389
+        ]
+      },
+      "properties": {
+        "name": "Pachamama",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8743017791",
+        "url": "https://yoga-pachamama.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0112",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4882679,
+          43.4866769
+        ]
+      },
+      "properties": {
+        "name": "Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8904841159"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0113",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2522566,
+          48.9865045
+        ]
+      },
+      "properties": {
+        "name": "College national de yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8952440694",
+        "phone": "+33 1 34 14 48 23"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0114",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.541831,
+          47.2339641
+        ]
+      },
+      "properties": {
+        "name": "Gobo Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/8968998862"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0115",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.0996929,
+          49.4415389
+        ]
+      },
+      "properties": {
+        "name": "La Salle Yoga Rouen",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9083910674",
+        "address": "190",
+        "url": "https://www.iyoga.fr/la-salle.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0116",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6711839,
+          48.1066384
+        ]
+      },
+      "properties": {
+        "name": "My Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9170256826",
+        "address": "6 bis Avenue Louis Barthou 35000 Rennes",
+        "phone": "+336 20 82 05 79",
+        "url": "https://mystudio-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0117",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3645778,
+          48.8729239
+        ]
+      },
+      "properties": {
+        "name": "Jivamukti Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9178471511",
+        "url": "https://www.jivamuktiyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0118",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3686605,
+          43.5056916
+        ]
+      },
+      "properties": {
+        "name": "MD Fit Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9274038270",
+        "address": "15 Rue Camille Desmoulins 34720 Caux"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0119",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3898697,
+          48.8767866
+        ]
+      },
+      "properties": {
+        "name": "Le Souffle de Jourdain",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9346941312",
+        "url": "https://lesouffledejourdain.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0120",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9319768,
+          43.1256476
+        ]
+      },
+      "properties": {
+        "name": "Kundalini Yoga Saran",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9347171961",
+        "address": "8 Rue Picot 83000 Toulon",
+        "phone": "+33 6 64 43 63 44"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0121",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9343816,
+          43.1255571
+        ]
+      },
+      "properties": {
+        "name": "Yoga & Danse Mediterranee",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9347171962",
+        "address": "45 Rue Victor Clappier 83000 Toulon",
+        "phone": "+33 6 09 41 75 86"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0122",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9339728,
+          43.1254126
+        ]
+      },
+      "properties": {
+        "name": "Charlemagne",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9347171963",
+        "address": "10 Rue d'Antrechaus 83000 Toulon",
+        "phone": "+33 4 94 89 54 31"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0123",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2762148,
+          47.0889265
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9419536644"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0124",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.6723379,
+          45.6193186
+        ]
+      },
+      "properties": {
+        "name": "La ressource",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9427772537",
+        "phone": "+33681146983",
+        "url": "https://www.celinesoulier.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0125",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0571669,
+          50.6303613
+        ]
+      },
+      "properties": {
+        "name": "Atelier de Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9507450382",
+        "hours": "\"sur inscription uniquement\"",
+        "url": "https://www.yoga-kubiak.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0126",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3174253,
+          48.8908931
+        ]
+      },
+      "properties": {
+        "name": "Yoga Village",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9542944858"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0127",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.5128323,
+          16.2764601
+        ]
+      },
+      "properties": {
+        "name": "Éclore Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9603359481",
+        "address": "Rue Firmin Moulin 97139 Les Abymes",
+        "phone": "+590690931716",
+        "url": "https://eclore-yoga.business.site/?utm_source=gmb&utm_medium=referral"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0128",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.405696,
+          43.650058
+        ]
+      },
+      "properties": {
+        "name": "Cap Yoga Club",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9642719662",
+        "address": "2 Rue de la Couarte 40130 Capbreton",
+        "phone": "+33 5 58 77 94 25",
+        "url": "https://www.capyogaclub.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0129",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5807811,
+          43.4467151
+        ]
+      },
+      "properties": {
+        "name": "Lā kāśa",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9658464388",
+        "address": "5 Avenue Cumba 64210 Bidart",
+        "phone": "+33 6 24 59 24 61",
+        "url": "https://la-kasa.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7179603,
+          49.099272
+        ]
+      },
+      "properties": {
+        "name": "Centre Spirales",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9682616446",
+        "url": "http://centre-spirales.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0131",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3976917,
+          51.0452114
+        ]
+      },
+      "properties": {
+        "name": "Yoga #131",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9732499425"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0132",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3726836,
+          43.8518297
+        ]
+      },
+      "properties": {
+        "name": "Punky Yoga School",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9749330801",
+        "address": "5 Place de la Palle 40660 Moliets-et-Maâ",
+        "phone": "+33 6 34 22 49 95"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0133",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8403703,
+          47.8342183
+        ]
+      },
+      "properties": {
+        "name": "La Maison de l'Inspir",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9769132283",
+        "address": "3 le porado 56500 Moustoir-Ac",
+        "url": "https://chrystelleboisroux.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0134",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3786334,
+          48.8147171
+        ]
+      },
+      "properties": {
+        "name": "Hot yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9787603875"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0135",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3673442,
+          48.8550961
+        ]
+      },
+      "properties": {
+        "name": "Naya",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9796100975",
+        "address": "26 Rue des Tournelles 75004 Paris",
+        "url": "https://nayastudio.paris/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0136",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3981246,
+          43.4409211
+        ]
+      },
+      "properties": {
+        "name": "Yoga #136",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9849853417"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0137",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3744045,
+          48.8510777
+        ]
+      },
+      "properties": {
+        "name": "Treize",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9864085807"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0138",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6584438,
+          46.4349515
+        ]
+      },
+      "properties": {
+        "name": "Yoga #138",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9883477915"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0139",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5796241,
+          44.8439441
+        ]
+      },
+      "properties": {
+        "name": "Le Shala",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9963731723",
+        "url": "https://leshala.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0140",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3759612,
+          48.8595354
+        ]
+      },
+      "properties": {
+        "name": "The Well",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9968290019"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0141",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3169159,
+          48.8435623
+        ]
+      },
+      "properties": {
+        "name": "Espace Falguière",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/9977851268"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0142",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5516311,
+          47.2118001
+        ]
+      },
+      "properties": {
+        "name": "Sattvic Element",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10007278381"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0143",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4520945,
+          49.0542808
+        ]
+      },
+      "properties": {
+        "name": "Yoganne",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10007345304",
+        "address": "20 Les Hauts de la Vallée 50200 COUTANCES",
+        "url": "https://yoganne-coutances.wixsite.com/site"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0144",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3737579,
+          48.8254646
+        ]
+      },
+      "properties": {
+        "name": "Karine Doucerain",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10050441781"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0145",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.827315,
+          48.5771855
+        ]
+      },
+      "properties": {
+        "name": "Ty Shala Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10083280896",
+        "address": "1 Grande Rue Morlaix",
+        "url": "https://tyshala.yoga/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0146",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.042303,
+          47.3328065
+        ]
+      },
+      "properties": {
+        "name": "L'atelier perché",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10131913051",
+        "url": "https://www.atelier-perche-dijon.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0147",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.5759253,
+          48.5859416
+        ]
+      },
+      "properties": {
+        "name": "Yogarts",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10199820922",
+        "url": "https://yogarts-paris.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0148",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4850576,
+          47.492836
+        ]
+      },
+      "properties": {
+        "name": "Yoga Leymen",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10247412407",
+        "url": "https://yoga-leymen.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0149",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3699147,
+          48.8565971
+        ]
+      },
+      "properties": {
+        "name": "Modo Yoga Paris",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10261401878",
+        "url": "https://modoyoga.com/paris/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0150",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1597362,
+          43.0687051
+        ]
+      },
+      "properties": {
+        "name": "La Yourte d'Hélène",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10305091445"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0151",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.434149,
+          45.4447975
+        ]
+      },
+      "properties": {
+        "name": "Pilates & Core",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10313173610",
+        "address": "20 Rue James Sclafer"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0152",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5505966,
+          47.87271
+        ]
+      },
+      "properties": {
+        "name": "Maison du Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10314463223",
+        "phone": "+33 6 11 54 98 30",
+        "url": "https://yoga-quimperle.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0153",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1193305,
+          46.4441299
+        ]
+      },
+      "properties": {
+        "name": "La petite Havane",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10558985509",
+        "address": "18 Route de Poisson 71600 Paray-le-Monial",
+        "hours": "Mo 09:30-11:00, 18:30-20:00; Tu 09:30-11:00, 12:20-13:50; We 16:00-17:00, 17:30-18:30; Th 18:00-19:30, 20:00-21:30",
+        "phone": "+33 3 85 81 31 16",
+        "url": "https://lapetitehavane.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0154",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7145222,
+          45.1850284
+        ]
+      },
+      "properties": {
+        "name": "Au fil du yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10711754905"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0155",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3906646,
+          48.8502191
+        ]
+      },
+      "properties": {
+        "name": "L'art de vivre",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10747045703"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0156",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.380527,
+          48.8485526
+        ]
+      },
+      "properties": {
+        "name": "Espace Crozatier",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10750312127",
+        "address": "46 Rue Crozatier 75012 Paris",
+        "phone": "+33 6 19 60 78 76"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0157",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4800223,
+          48.3869337
+        ]
+      },
+      "properties": {
+        "name": "L'Atelier du Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10766110926"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0158",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6988991,
+          44.1523808
+        ]
+      },
+      "properties": {
+        "name": "La Roane",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10783707356"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0159",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2743482,
+          43.5884431
+        ]
+      },
+      "properties": {
+        "name": "Yam Yoga Farm",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10792479451",
+        "address": "100 Chemin de Guilhem Cazaux 40390 saint martin de hinx",
+        "phone": "+33 6 63 37 77 73",
+        "url": "https://www.yamyogafarm.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0160",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2714867,
+          48.6383421
+        ]
+      },
+      "properties": {
+        "name": "Bien-être et Cie",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10812995353"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0161",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3443153,
+          48.8643471
+        ]
+      },
+      "properties": {
+        "name": "Yuj - Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10814991390"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0162",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5471384,
+          43.4813198
+        ]
+      },
+      "properties": {
+        "name": "Yogang",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10873162752",
+        "url": "https://yogang-biarritz.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0163",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.4103959,
+          43.3996444
+        ]
+      },
+      "properties": {
+        "name": "Tousyogis",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10916670604",
+        "url": "https://www.tousyogis.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0164",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3348577,
+          48.8815938
+        ]
+      },
+      "properties": {
+        "name": "Yay",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10940356054"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0165",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3772261,
+          48.8583349
+        ]
+      },
+      "properties": {
+        "name": "Mu:v",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/10976553569",
+        "address": "6 Passage Lisa 75011 Paris"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0166",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1506639,
+          46.1612749
+        ]
+      },
+      "properties": {
+        "name": "Angèle Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11011583748",
+        "phone": "+33608660700",
+        "url": "https://angele.yoga/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0167",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1493948,
+          46.1601001
+        ]
+      },
+      "properties": {
+        "name": "Paradox",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11062540180",
+        "url": "https://paradox-larochelle.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0168",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1482173,
+          46.1591891
+        ]
+      },
+      "properties": {
+        "name": "Paradox",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11063115553"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0169",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3701041,
+          43.2981458
+        ]
+      },
+      "properties": {
+        "name": "Yogavie",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11115188941",
+        "phone": "+33 6 42 05 81 27",
+        "url": "https://yogavieapau.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0170",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7729805,
+          46.8369972
+        ]
+      },
+      "properties": {
+        "name": "Yoga #170",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11123090091"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0171",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.38719,
+          45.4369783
+        ]
+      },
+      "properties": {
+        "name": "Mood Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11189814278",
+        "url": "https://www.moodyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0172",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3316843,
+          48.8415336
+        ]
+      },
+      "properties": {
+        "name": "Studio Métamorphose",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11202486801",
+        "hours": "Mo-Tu,Th 09:00-20:00, We 09:00-18:00, Fr 09:00-16:00, Sa 09:00-14:00",
+        "url": "https://www.studio-metamorphose-paris.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0173",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3090545,
+          48.8842721
+        ]
+      },
+      "properties": {
+        "name": "Yay Yoga And You",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11212318408",
+        "hours": "\"Sur planning\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0174",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3520628,
+          48.876922
+        ]
+      },
+      "properties": {
+        "name": "Baba Yoga Club",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11233035604"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0175",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5295644,
+          48.0181428
+        ]
+      },
+      "properties": {
+        "name": "Shereen",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11266682207"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0176",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3285032,
+          48.8439078
+        ]
+      },
+      "properties": {
+        "name": "Yoga Raspail",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11349888533",
+        "url": "https://www.yogaraspail.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0177",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5640789,
+          47.4778118
+        ]
+      },
+      "properties": {
+        "name": "Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11396596883"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0178",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0881468,
+          43.6026057
+        ]
+      },
+      "properties": {
+        "name": "Thalgo",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11412169124"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0179",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6926079,
+          48.0849624
+        ]
+      },
+      "properties": {
+        "name": "Studio Soha Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11456002157",
+        "address": "5 Place Albert Bayet 35200 Rennes",
+        "url": "https://www.sohayogapilates.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0180",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5899268,
+          44.8510844
+        ]
+      },
+      "properties": {
+        "name": "Act Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11506286823",
+        "address": "48 Rue Calvé 33000 Bordeaux",
+        "hours": "Mo-Su 09:00-21:00",
+        "url": "https://www.actyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0181",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3847155,
+          43.3007777
+        ]
+      },
+      "properties": {
+        "name": "Académie de Hatha-Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11516298270"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0182",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7318503,
+          45.1830748
+        ]
+      },
+      "properties": {
+        "name": "Auro-Myra",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11546068781",
+        "hours": "\"selon programme\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0183",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1784897,
+          49.1133849
+        ]
+      },
+      "properties": {
+        "name": "Yoga #183",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11552210146"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0184",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8317536,
+          45.7444915
+        ]
+      },
+      "properties": {
+        "name": "Cocon Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11687512970",
+        "url": "https://coconyoga.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0185",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0554553,
+          43.4085999
+        ]
+      },
+      "properties": {
+        "name": "UPAKRAMA YOGA",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11828678646",
+        "hours": "\"atelier et site\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0186",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5232485,
+          50.3600339
+        ]
+      },
+      "properties": {
+        "name": "Harmonie Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11869821971"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0187",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3706121,
+          48.8848353
+        ]
+      },
+      "properties": {
+        "name": "Yoga & Co",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11876923321",
+        "address": "15 Quai de la Seine",
+        "hours": "Mo-Su 08:00-21:00",
+        "phone": "+33 1 42 09 20 78",
+        "url": "https://yogaandco.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0188",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0318086,
+          45.6243128
+        ]
+      },
+      "properties": {
+        "name": "OM studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11881441061"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0189",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.8994793,
+          45.8874806
+        ]
+      },
+      "properties": {
+        "name": "Centre de yoga et ayurvéda",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11895555076",
+        "url": "https://www.nathalie-yoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0190",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9009254,
+          45.8867628
+        ]
+      },
+      "properties": {
+        "name": "Le bonheur en soi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11929312731",
+        "url": "https://lebonheurensoi.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0191",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3441293,
+          43.6076808
+        ]
+      },
+      "properties": {
+        "name": "Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/11929559736"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0192",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1188965,
+          43.5777773
+        ]
+      },
+      "properties": {
+        "name": "Kamanao",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12001490387",
+        "phone": "+33 6 81 74 40 60"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0193",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3253213,
+          43.4643666
+        ]
+      },
+      "properties": {
+        "name": "Studio Shen Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12014601016"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0194",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5310151,
+          47.2227013
+        ]
+      },
+      "properties": {
+        "name": "Sahaja Yoga Centre",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12076941061"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0195",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8541566,
+          45.7649115
+        ]
+      },
+      "properties": {
+        "name": "The Good Flow",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12083956452",
+        "hours": "Mo-We,Fr 10:00-18:30; Th 12:00-18:30",
+        "phone": "+33481653478",
+        "url": "https://thegoodflow-yoga.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0196",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3329795,
+          49.1395402
+        ]
+      },
+      "properties": {
+        "name": "Prana Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12139658992",
+        "phone": "+33 6 76739875",
+        "url": "https://www.prana-yoga-caen.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0197",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3639308,
+          49.1668103
+        ]
+      },
+      "properties": {
+        "name": "Lumo Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12153444653",
+        "phone": "+33 6 81370306",
+        "url": "https://lumoyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0198",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.909046,
+          47.9007678
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga et de relaxation",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12164936353",
+        "address": "13 Rue Étienne Dolet 45000 Orléans",
+        "url": "https://centredeyogaetderelaxation.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0199",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3488997,
+          48.865622
+        ]
+      },
+      "properties": {
+        "name": "Sputnik Yoga Space",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12178483651",
+        "url": "https://fr.sputnikyogaspace.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0200",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3535714,
+          48.848328
+        ]
+      },
+      "properties": {
+        "name": "Heartspot",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12188738601"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0201",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7318968,
+          45.1905607
+        ]
+      },
+      "properties": {
+        "name": "Happy Shala",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12190214661"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0202",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8481296,
+          45.757433
+        ]
+      },
+      "properties": {
+        "name": "Yoga Citta",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12195053251",
+        "phone": "+33659689205"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0203",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1963525,
+          49.2814211
+        ]
+      },
+      "properties": {
+        "name": "Yoga & bien-être",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12205206286",
+        "address": "53 Route de Cabourg 14810 Merville-Franceville-Plage",
+        "phone": "+33 6 03 96 26 81",
+        "url": "https://www.kurmayogaworld.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0204",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0747244,
+          44.0940466
+        ]
+      },
+      "properties": {
+        "name": "Osmonde",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12206870573"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0205",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.247759,
+          48.9061085
+        ]
+      },
+      "properties": {
+        "name": "Mama Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12248449602",
+        "address": "50 Rue de l'Aigle 92250 La Garenne-Colombes",
+        "url": "https://mamayoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0206",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.0519448,
+          48.7685088
+        ]
+      },
+      "properties": {
+        "name": "Studio Coaching",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12248908158"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0207",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1732731,
+          49.1145127
+        ]
+      },
+      "properties": {
+        "name": "Surya - Association de Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12269321602",
+        "phone": "+33 3 87 74 47 74",
+        "url": "https://yoga-metz.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0208",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5598821,
+          47.4790991
+        ]
+      },
+      "properties": {
+        "name": "L'art de vivre",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12285059608"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0209",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3593442,
+          48.8747268
+        ]
+      },
+      "properties": {
+        "name": "Centre Sivananda de Yoga Vedanta",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12290487967",
+        "url": "https://sivanandaparis.org/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0210",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1736819,
+          49.1109575
+        ]
+      },
+      "properties": {
+        "name": "Aurels - Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12319142639",
+        "url": "https://aurelsyoga.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0211",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7222371,
+          45.1484121
+        ]
+      },
+      "properties": {
+        "name": "Esprit pilates",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12387981544",
+        "address": "46 Avenue de Grugliasco 38130 Échirolles",
+        "hours": "\"sur rendez-vous ou cours collectifs\"",
+        "phone": "+33 6 63 94 66 34",
+        "url": "https://mbonfand.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0212",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2835501,
+          46.0183725
+        ]
+      },
+      "properties": {
+        "name": "Sat Narayan",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12492702948",
+        "address": "7 Rue des Combrailles 23190 Champagnat",
+        "hours": "Mo,Th 18:30-20:00; ",
+        "phone": "+33607448306",
+        "url": "https://www.satnarayan.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0213",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8491524,
+          45.7629657
+        ]
+      },
+      "properties": {
+        "name": "Yoga Room",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12565734589",
+        "address": "92 Cours Lafayette 69003 Lyon",
+        "phone": "+33 4 86 91 49 90",
+        "url": "https://www.yoga-room.academy/post/studio-les-halles-lyon"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0214",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4561102,
+          43.6086989
+        ]
+      },
+      "properties": {
+        "name": "Eka Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12568464445",
+        "address": "32 Rue du Général Jean Compans"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0215",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2550357,
+          43.710362
+        ]
+      },
+      "properties": {
+        "name": "Superstudio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12595580517",
+        "address": "8 Rue Cros de Capeu Nice",
+        "phone": "+33 7 71 32 24 78",
+        "url": "https://superstudio.yoga/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0216",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2516264,
+          45.5538938
+        ]
+      },
+      "properties": {
+        "name": "Yoga Shivaya",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12596116575"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0217",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8896213,
+          43.5991538
+        ]
+      },
+      "properties": {
+        "name": "Sattva Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12604284822",
+        "address": "465 Avenue du Pont Trinquat 34070 Montpellier",
+        "phone": "+336 17 80 17 88",
+        "url": "https://www.centre-yoga-montpellier.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0218",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9084948,
+          42.6949781
+        ]
+      },
+      "properties": {
+        "name": "Bloom Studio Yoga & Ayurveda",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12621484373"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0219",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7345633,
+          45.167069
+        ]
+      },
+      "properties": {
+        "name": "salle de Yoga des Jardins de la Bruyère",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12702421163"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0220",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.7955595,
+          43.6487854
+        ]
+      },
+      "properties": {
+        "name": "Shine Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12758062164",
+        "address": "21 Rue du Château 34790 Grabels",
+        "phone": "+33 6 03 41 17 88",
+        "url": "https://shinestudiomontpellier.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0221",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7840339,
+          44.9085764
+        ]
+      },
+      "properties": {
+        "name": "Sorelle bien être",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12773028881"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0222",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8067801,
+          45.7731945
+        ]
+      },
+      "properties": {
+        "name": "Centre de yoga Narayan",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12794234630",
+        "url": "https://narayan-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0223",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.429483,
+          45.1674643
+        ]
+      },
+      "properties": {
+        "name": "Yoga des cimes",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12794648415",
+        "url": "https://www.valloire.net/commerce-et-service/yoga-des-cimes-valloire/;https://www.valloire.net/activite/yoga-des-cimes-valloire-2/;https://www.agathe-yogadescimes.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0224",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2752663,
+          45.594369
+        ]
+      },
+      "properties": {
+        "name": "Namasté Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12819722371",
+        "url": "https://namastestudio.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0225",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6053517,
+          43.1930722
+        ]
+      },
+      "properties": {
+        "name": "Iti Mana Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12829835516"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0226",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2690105,
+          48.8222714
+        ]
+      },
+      "properties": {
+        "name": "Le Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12836350944"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0227",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4174643,
+          48.8406311
+        ]
+      },
+      "properties": {
+        "name": "Genesis",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12877641360",
+        "url": "https://www.genesisyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0228",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3441013,
+          47.5808343
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12880889822"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0229",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.175495,
+          45.7411881
+        ]
+      },
+      "properties": {
+        "name": "Gaia Tree Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12899361002"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0230",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0784899,
+          44.0987092
+        ]
+      },
+      "properties": {
+        "name": "Atelier du Yoga de Millau",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12906849690",
+        "address": "17 Rue du Mandarous",
+        "hours": "Sep-Aug, Jul off",
+        "phone": "+33 6 61 79 52 90"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0231",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7581486,
+          48.5654209
+        ]
+      },
+      "properties": {
+        "name": "Yogamoves",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12914149130",
+        "url": "https://yogamoves.fr/club-yoga/neudorf/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0232",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4875164,
+          48.0424
+        ]
+      },
+      "properties": {
+        "name": "Yoga #232",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12922085125"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0233",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1672217,
+          48.8053177
+        ]
+      },
+      "properties": {
+        "name": "Le Shala",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12926369496",
+        "url": "https://le-shala.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0234",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1672011,
+          48.8053173
+        ]
+      },
+      "properties": {
+        "name": "Être Aujourd'hui Viroflay",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12926370285",
+        "url": "https://etreaujourdhuiviroflay.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0235",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3562564,
+          44.0174939
+        ]
+      },
+      "properties": {
+        "name": "Harmony Pilates Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12927462643"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0236",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3486401,
+          48.8649944
+        ]
+      },
+      "properties": {
+        "name": "Baba",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12933141370",
+        "address": "10 Rue Dussoubs",
+        "url": "https://www.babayogaclub.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0237",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3732666,
+          48.865345
+        ]
+      },
+      "properties": {
+        "name": "Ashtanga Yoga Paris",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12964149143",
+        "address": "40 Avenue de la République 75011 Paris",
+        "phone": "+33 1 45 80 19 96",
+        "url": "https://www.ashtangayogaparis.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0238",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.267502,
+          49.5880723
+        ]
+      },
+      "properties": {
+        "name": "Nathur & Fly",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12983114067",
+        "address": "17 Rue Gautier 50550 Saint-Vaast-la-Hougue",
+        "url": "https://nathurfly.jimdosite.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0239",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2373126,
+          48.8443481
+        ]
+      },
+      "properties": {
+        "name": "M yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12983168180",
+        "address": "14 Boulevard Jean Jaurès",
+        "phone": "+33 1 41 10 90 04",
+        "url": "https://m-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0240",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1119211,
+          49.4925993
+        ]
+      },
+      "properties": {
+        "name": "L'autre rive",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12990285275",
+        "address": "5 Place Léon Meyer 76600 Le Havre",
+        "url": "https://yoga-autrerive.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0241",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.115403,
+          49.2890287
+        ]
+      },
+      "properties": {
+        "name": "Adiyoga studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/12992809304",
+        "url": "https://adiyogastudio.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0242",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0180028,
+          44.7304861
+        ]
+      },
+      "properties": {
+        "name": "Yoga Crest 26",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13004690049",
+        "address": "41 Rue Sadi Carnot 26400 Crest",
+        "url": "https://www.yoga-crest26.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0243",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7450847,
+          48.5866043
+        ]
+      },
+      "properties": {
+        "name": "Centre de Yoga Iyengar de Strasbourg",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13009118879",
+        "url": "https://www.yoga-iyengar-strasbourg.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0244",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5855933,
+          44.8501759
+        ]
+      },
+      "properties": {
+        "name": "Abhyasa Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13014023921",
+        "address": "213 Rue Fondaudège"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0245",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2611283,
+          45.8272622
+        ]
+      },
+      "properties": {
+        "name": "Yoga #245",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13045536674"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0246",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5703599,
+          44.8529115
+        ]
+      },
+      "properties": {
+        "name": "Yoga Searcher",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13046462422",
+        "hours": "Tu-Th 13:00-18:30; Fr 13:30-18:30; Sa 11:00-19:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0247",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.395351,
+          45.4310239
+        ]
+      },
+      "properties": {
+        "name": "Chaï Corner",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13056796359",
+        "url": "https://chaicorner.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0248",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4847823,
+          48.8018681
+        ]
+      },
+      "properties": {
+        "name": "Subtil yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13082164024"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0249",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6661601,
+          48.1119379
+        ]
+      },
+      "properties": {
+        "name": "Centre de yoga Iyengar du Thabor",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13092573516"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0250",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4118857,
+          48.6859125
+        ]
+      },
+      "properties": {
+        "name": "Lunea Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13103958932"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0251",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4849391,
+          48.3863229
+        ]
+      },
+      "properties": {
+        "name": "Anahata Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13108240483",
+        "address": "39 Rue Voltaire 29200 Brest",
+        "phone": "+33661807256",
+        "url": "https://www.yoga-brest-anahata.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0252",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.7450147,
+          44.5535238
+        ]
+      },
+      "properties": {
+        "name": "Yoga Ea",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13108925638",
+        "address": "15 Avenue John Kennedy 26200 Montélimar",
+        "hours": "Mo-Fr 09:00–18:00",
+        "url": "https://www.yogaea.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0253",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5413004,
+          45.458822
+        ]
+      },
+      "properties": {
+        "name": "Studio YOGA St. Germain l'Herm",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13113039235"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0254",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1120623,
+          43.5700927
+        ]
+      },
+      "properties": {
+        "name": "Joy",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13116173418",
+        "phone": "+33 6 95 28 71 48"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0255",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.748711,
+          44.5566675
+        ]
+      },
+      "properties": {
+        "name": "Alexia Fleuret - Le yoga pour tous - Montélimar",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13121789978",
+        "address": "6 Rue Adhémar 26200 Montélimar",
+        "hours": "Mo-Tu 19:00–21:00; We 19:30–21:30; Th 11:00–13:00",
+        "url": "https://alexiafleuret.wixsite.com/yogamontelimar"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0256",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6765017,
+          48.1097876
+        ]
+      },
+      "properties": {
+        "name": "Studio Chat Perché",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13124860642"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0257",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1728431,
+          49.3527674
+        ]
+      },
+      "properties": {
+        "name": "Association Mosellane de Hatha Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13186288001",
+        "address": "9 Rue des Artisans 57100",
+        "url": "http://www.yoga-lorraine.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0258",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3646778,
+          48.8801062
+        ]
+      },
+      "properties": {
+        "name": "Yoga #258",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13229752890"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0259",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8321279,
+          45.7691949
+        ]
+      },
+      "properties": {
+        "name": "Yoga Horizon",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13235108321",
+        "phone": "+33478289863",
+        "url": "https://www.yoga-horizon.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0260",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.7202526,
+          45.9910986
+        ]
+      },
+      "properties": {
+        "name": "Yog'attitude",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13236566121"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0261",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8817136,
+          45.7686787
+        ]
+      },
+      "properties": {
+        "name": "Vima yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13241263656",
+        "hours": "Mo 09:15-20:45; Tu 09:15-22:00; We 12:15-20:00; Th 07:30-20:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0262",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.203785,
+          49.1099473
+        ]
+      },
+      "properties": {
+        "name": "La Maison du Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13248333028",
+        "url": "https://lamaisonduyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0263",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.827735,
+          45.7522044
+        ]
+      },
+      "properties": {
+        "name": "Elixir Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13250704368",
+        "hours": "Mo-Fr 09:00-14:00, 17:00-20:45; Sa 09:00-12:00",
+        "phone": "+33426170723"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0264",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4961082,
+          44.538971
+        ]
+      },
+      "properties": {
+        "name": "Salle des  Petits Ruisseaux / Prana Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13287134836",
+        "address": "87 Rue Guillaume Apollinaire 05200 Baratier",
+        "url": "https://www.prana-yoga.fr/toutes-les-infos/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0265",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.6211385,
+          16.232565
+        ]
+      },
+      "properties": {
+        "name": "L'Atelier du Bien-Être",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13299759236",
+        "address": "Rue Albert Dupont",
+        "url": "https://latelierdubienetre971.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0266",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4775184,
+          43.5327062
+        ]
+      },
+      "properties": {
+        "name": "Layama",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13303012895",
+        "address": "785 Chemin de Bibémus 13100 Aix-en-Provence",
+        "url": "https://layama.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0267",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3645824,
+          48.8729305
+        ]
+      },
+      "properties": {
+        "name": "Jivamukti Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13313059720"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0268",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3644609,
+          48.8730978
+        ]
+      },
+      "properties": {
+        "name": "Jivamukti Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13313076341"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0269",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.771631,
+          44.2360577
+        ]
+      },
+      "properties": {
+        "name": "Sol OLSSON",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13316341682",
+        "address": "1 Rue de l'Église 82160 Caylus",
+        "url": "https://sol-yoga-massage.reservio.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0270",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5695301,
+          44.8257984
+        ]
+      },
+      "properties": {
+        "name": "Sahaja Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13330242396",
+        "address": "110 Cours de l'Yser"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0271",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3155551,
+          48.7803676
+        ]
+      },
+      "properties": {
+        "name": "Yoga Place",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13345951702",
+        "hours": "Mo-Su 09:00-21:00",
+        "phone": "+33 6 95 64 81 36",
+        "url": "https://www.yogaplace.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0272",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8324092,
+          45.7805027
+        ]
+      },
+      "properties": {
+        "name": "Savasana",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13374219736"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0273",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3151052,
+          47.3974999
+        ]
+      },
+      "properties": {
+        "name": "Françoise Guillaume - Professeure d'Hatha-Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13423942364",
+        "hours": "\"sur rendez-vous 06 83 50 55 24\""
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0274",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6321875,
+          43.2137252
+        ]
+      },
+      "properties": {
+        "name": "Pilates Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13452453021"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0275",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3098287,
+          48.9720408
+        ]
+      },
+      "properties": {
+        "name": "Pure Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13456748666",
+        "url": "https://pureyogastudio.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0276",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4550585,
+          48.7889856
+        ]
+      },
+      "properties": {
+        "name": "Centre Yoga et Sens",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13507391078",
+        "url": "https://www.yogaetsens.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0277",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3880273,
+          43.6048021
+        ]
+      },
+      "properties": {
+        "name": "Yoga #277",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13639265020",
+        "address": "70 Chemin de Baluffet 31300 Toulouse",
+        "hours": "Mo-Fr 08:00-20:00",
+        "phone": "+33 5 82 95 09 08",
+        "url": "https://msp-constellation-baluffet.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0278",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4763878,
+          43.4901909
+        ]
+      },
+      "properties": {
+        "name": "Yoga Baiona Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13643552556",
+        "url": "https://www.yogabaiona.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0279",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.520699,
+          47.2715128
+        ]
+      },
+      "properties": {
+        "name": "Phénix yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13667446339"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0280",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.4031244,
+          48.8357638
+        ]
+      },
+      "properties": {
+        "name": "Association Equilibre Viniyoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13697674402",
+        "address": "140 Rue de Picpus 75012 Paris",
+        "hours": "We 9:00-14:00",
+        "url": "https://www.equilibre-viniyoga.com"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0281",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.0852911,
+          48.9942468
+        ]
+      },
+      "properties": {
+        "name": "is-ok",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13699165038",
+        "address": "35 Rue du Maréchal Joffre",
+        "url": "https://is-ok.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0282",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2581606,
+          48.9356002
+        ]
+      },
+      "properties": {
+        "name": "Amma Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13711002680"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0283",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4481248,
+          44.9927311
+        ]
+      },
+      "properties": {
+        "name": "Eyll bien-être et yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13711045246",
+        "address": "62 Rue Nationale"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0284",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9600731,
+          50.6077211
+        ]
+      },
+      "properties": {
+        "name": "Studio Kara",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13734665222",
+        "address": "130 Rue des Bourreliers"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0285",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.7061408,
+          44.5530571
+        ]
+      },
+      "properties": {
+        "name": "Yogardeche - cours de yoga Montélimar / Le Teil",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13738430409",
+        "address": "Route du Teil",
+        "url": "https://www.yogardeche.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0286",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3003121,
+          48.8501563
+        ]
+      },
+      "properties": {
+        "name": "Lomey Yoga Studio",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13740817187",
+        "url": "https://www.lomey-yoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0287",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.233092,
+          43.6002126
+        ]
+      },
+      "properties": {
+        "name": "Chemins vers Soi",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13741211321",
+        "address": "72ter Avenue de Gascogne 31490 Léguevin",
+        "phone": "+33688969046",
+        "url": "https://chemins-vers-soi.net/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0288",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.175237,
+          49.101323
+        ]
+      },
+      "properties": {
+        "name": "Wisdom of Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13753472613",
+        "url": "https://www.wisdomyoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0289",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.5146223,
+          47.5761294
+        ]
+      },
+      "properties": {
+        "name": "Yoga Sof",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13753494283",
+        "url": "https://yoga-sof.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0290",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4580538,
+          43.5783133
+        ]
+      },
+      "properties": {
+        "name": "Yoga Shala",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13828527218",
+        "address": "58 Avenue Albert Bedouce 31400 Toulouse",
+        "url": "https://www.acupuncture-yoga-toulouse.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0291",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6187554,
+          44.2046108
+        ]
+      },
+      "properties": {
+        "name": "Inspriyog",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13855451555",
+        "phone": "+33 6 31 35 81 95",
+        "url": "https://inspriyog.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0292",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6095314,
+          44.2046948
+        ]
+      },
+      "properties": {
+        "name": "L'Espace Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13858996801",
+        "address": "61 Rue Duvergé",
+        "hours": "Mo-Fr,Su 10:00-20:00",
+        "phone": "+33 6 73 29 38 19",
+        "url": "https://lespaceyoga.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0293",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3672038,
+          48.8543853
+        ]
+      },
+      "properties": {
+        "name": "not yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13859584624",
+        "address": "13 Rue des Tournelles 75004 Paris"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0294",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9005392,
+          48.8135326
+        ]
+      },
+      "properties": {
+        "name": "Ananda - Yulka",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13865858720"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0295",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2736843,
+          48.905071
+        ]
+      },
+      "properties": {
+        "name": "Mon studio de yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13892281059",
+        "url": "https://monstudio-yoga.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0296",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1503341,
+          42.3064288
+        ]
+      },
+      "properties": {
+        "name": "L'atelier Yoga et Pilate",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13894376302"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0297",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5177875,
+          48.3924181
+        ]
+      },
+      "properties": {
+        "name": "La Maison de la Tortue",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/42570347",
+        "address": "8 Rue Hegel 29200 Brest",
+        "url": "https://lamaisondelatortue.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0298",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2975161,
+          48.8391338
+        ]
+      },
+      "properties": {
+        "name": "Académie Yoga Ayurveda Sagesse & Harmonie",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/53777469",
+        "hours": "Mo 10:30-20:30; Tu-We 10:30-22:00; Th-Fr 10:30-20:30; Sa-Su 10:15-18:15",
+        "phone": "+33611330735"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0299",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0795492,
+          44.1020001
+        ]
+      },
+      "properties": {
+        "name": "Yoga Pour Tous",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/68683296",
+        "address": "28 Avenue Jean Jaurès"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0300",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.884641,
+          43.6067118
+        ]
+      },
+      "properties": {
+        "name": "Sunsud",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/75042967"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0301",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1028855,
+          50.587409
+        ]
+      },
+      "properties": {
+        "name": "Vasana",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/123474429",
+        "address": "87 Rue Pasteur 59810 Lesquin",
+        "url": "https://www.studiovasana.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0302",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5200405,
+          47.459628
+        ]
+      },
+      "properties": {
+        "name": "Yoga #302",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/147368869"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0303",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.179407,
+          43.1071835
+        ]
+      },
+      "properties": {
+        "name": "Centre Sportif Municipal de l'Aygade",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/221887553"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0304",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6492149,
+          44.731834
+        ]
+      },
+      "properties": {
+        "name": "Yoga Cestas",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/308031747",
+        "address": "23 Allée des Grépins 33610 Cestas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0305",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7074607,
+          48.1145008
+        ]
+      },
+      "properties": {
+        "name": "Yoga #305",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/321091658"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0306",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2062205,
+          48.9675225
+        ]
+      },
+      "properties": {
+        "name": "Salle de Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/391242621",
+        "address": "Route d'Argenteuil 95240 Cormeilles en Parisis"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0307",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0849391,
+          50.6871991
+        ]
+      },
+      "properties": {
+        "name": "Villa Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/761048516",
+        "address": "143 Parc de l'Aérodrome 59700 Bondues",
+        "phone": "+33 3 20 57 77 57",
+        "url": "https://www.villayoga.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0308",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -143.044135,
+          -20.7016237
+        ]
+      },
+      "properties": {
+        "name": "Yoga #308",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1037024568"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0309",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.2782067,
+          49.9413076
+        ]
+      },
+      "properties": {
+        "name": "Le Domaine St. Antoine",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1052236079"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0310",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3445959,
+          48.8647908
+        ]
+      },
+      "properties": {
+        "name": "Riise",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1097410546",
+        "address": "43 Rue Étienne Marcel 75001 Paris"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0311",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.037689,
+          43.3260037
+        ]
+      },
+      "properties": {
+        "name": "Xibiouz la Grotte",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1193209181",
+        "address": "235 Rue Oxidoy 64120 Saint-Palais",
+        "phone": "+33 7 60 71 63 11",
+        "url": "https://xibiouz.fr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0312",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0894084,
+          47.7186308
+        ]
+      },
+      "properties": {
+        "name": "Harmonie Yoga Eva",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1314191837",
+        "address": "22 Chemin Divori 72200 La Flèche",
+        "phone": "+33 7 86 53 93 40",
+        "url": "https://www.facebook.com/people/Harmonie-Yoga-Eva/100063589956694/?sk=about"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0313",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6589532,
+          43.2525404
+        ]
+      },
+      "properties": {
+        "name": "Yoga",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1366536547"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0314",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6863811,
+          48.1110064
+        ]
+      },
+      "properties": {
+        "name": "La Nouvelle Lune, Yoga & Soins",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1423255961",
+        "address": "4 Quai d'Ille et Rance 35000 Rennes",
+        "hours": "Mo-Su 08:00-22:00, Th 07:30-22:00",
+        "url": "https://www.lanouvellelune-rennes.fr"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0315",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3191739,
+          43.821899
+        ]
+      },
+      "properties": {
+        "name": "Yoga #315",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:way/1499815110"
+      }
+    }
+  ]
+}
