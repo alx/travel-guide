@@ -8,7 +8,7 @@
   ],
   "_meta": {
     "crs": "EPSG:4326",
-    "generated": "2026-06-06",
+    "generated": "2026-06-07",
     "source": "OpenStreetMap via Overpass API — sport=yoga in metropolitan France and Corsica"
   },
   "features": [
@@ -18255,6 +18255,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          8.3054326,
+          47.4770943
+        ]
+      },
+      "properties": {
+        "name": "hierYOGA",
+        "category": "Yoga",
+        "icon": "🧘",
+        "coord_source": "osm",
+        "coord_accuracy": "high",
+        "place_id": "osm:node/13914659408",
+        "address": "17 Dynamostrasse 5400 Baden",
+        "url": "https://hieryoga.ch/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yoga-france-0894",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -4.5177875,
           48.3924181
         ]
@@ -18272,7 +18293,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0894",
+      "id": "yoga-france-0895",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18293,7 +18314,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0895",
+      "id": "yoga-france-0896",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18313,7 +18334,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0896",
+      "id": "yoga-france-0897",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18332,7 +18353,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0897",
+      "id": "yoga-france-0898",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18352,7 +18373,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0898",
+      "id": "yoga-france-0899",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18372,7 +18393,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0899",
+      "id": "yoga-france-0900",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18393,7 +18414,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0900",
+      "id": "yoga-france-0901",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18414,7 +18435,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0901",
+      "id": "yoga-france-0902",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18435,7 +18456,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0902",
+      "id": "yoga-france-0903",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18444,7 +18465,7 @@
         ]
       },
       "properties": {
-        "name": "Yoga #902",
+        "name": "Yoga #903",
         "category": "Yoga",
         "icon": "🧘",
         "coord_source": "osm",
@@ -18454,7 +18475,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0903",
+      "id": "yoga-france-0904",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18476,7 +18497,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0904",
+      "id": "yoga-france-0905",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18497,7 +18518,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0905",
+      "id": "yoga-france-0906",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18517,7 +18538,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0906",
+      "id": "yoga-france-0907",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18538,7 +18559,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0907",
+      "id": "yoga-france-0908",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18558,7 +18579,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0908",
+      "id": "yoga-france-0909",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18577,7 +18598,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0909",
+      "id": "yoga-france-0910",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18597,7 +18618,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0910",
+      "id": "yoga-france-0911",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18617,7 +18638,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0911",
+      "id": "yoga-france-0912",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18639,7 +18660,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0912",
+      "id": "yoga-france-0913",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18648,7 +18669,7 @@
         ]
       },
       "properties": {
-        "name": "Yoga #912",
+        "name": "Yoga #913",
         "category": "Yoga",
         "icon": "🧘",
         "coord_source": "osm",
@@ -18661,7 +18682,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0913",
+      "id": "yoga-france-0914",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18681,7 +18702,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0914",
+      "id": "yoga-france-0915",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18690,7 +18711,7 @@
         ]
       },
       "properties": {
-        "name": "Yoga #914",
+        "name": "Yoga #915",
         "category": "Yoga",
         "icon": "🧘",
         "coord_source": "osm",
@@ -18700,7 +18721,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0915",
+      "id": "yoga-france-0916",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18720,7 +18741,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0916",
+      "id": "yoga-france-0917",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18741,7 +18762,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0917",
+      "id": "yoga-france-0918",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18762,7 +18783,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0918",
+      "id": "yoga-france-0919",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18782,7 +18803,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0919",
+      "id": "yoga-france-0920",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18802,7 +18823,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0920",
+      "id": "yoga-france-0921",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18821,7 +18842,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0921",
+      "id": "yoga-france-0922",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18843,7 +18864,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0922",
+      "id": "yoga-france-0923",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18863,7 +18884,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0923",
+      "id": "yoga-france-0924",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18885,7 +18906,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0924",
+      "id": "yoga-france-0925",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18905,7 +18926,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0925",
+      "id": "yoga-france-0926",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18925,7 +18946,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0926",
+      "id": "yoga-france-0927",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18944,7 +18965,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0927",
+      "id": "yoga-france-0928",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18965,7 +18986,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0928",
+      "id": "yoga-france-0929",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -18985,7 +19006,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0929",
+      "id": "yoga-france-0930",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19004,7 +19025,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0930",
+      "id": "yoga-france-0931",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19024,7 +19045,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0931",
+      "id": "yoga-france-0932",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19045,7 +19066,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0932",
+      "id": "yoga-france-0933",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19067,7 +19088,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0933",
+      "id": "yoga-france-0934",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19086,7 +19107,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0934",
+      "id": "yoga-france-0935",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19106,7 +19127,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0935",
+      "id": "yoga-france-0936",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19128,7 +19149,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0936",
+      "id": "yoga-france-0937",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19147,7 +19168,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0937",
+      "id": "yoga-france-0938",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19166,7 +19187,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0938",
+      "id": "yoga-france-0939",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19188,7 +19209,7 @@
     },
     {
       "type": "Feature",
-      "id": "yoga-france-0939",
+      "id": "yoga-france-0940",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -19197,7 +19218,7 @@
         ]
       },
       "properties": {
-        "name": "Yoga #939",
+        "name": "Yoga #940",
         "category": "Yoga",
         "icon": "🧘",
         "coord_source": "osm",

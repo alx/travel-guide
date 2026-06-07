@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-06-06T13:16:57.836090+00:00",
-    "map_count": 15,
+    "generated_at": "2026-06-07T14:45:18.339207+00:00",
+    "map_count": 17,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -146,9 +146,55 @@
         "🗺️ OSM data",
         "🇫🇷 France"
       ],
-      "poi_count": 939,
+      "poi_count": 940,
       "categories": [
         "Yoga"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "videosurveillance-france",
+      "url": "/videosurveillance-france/",
+      "title": "Vidéosurveillance en France",
+      "description": "Carte des caméras de surveillance et radars en France métropolitaine et Corse, référencés dans OpenStreetMap.",
+      "emoji": "📹",
+      "section": "curated",
+      "weight": 55,
+      "accent_color": "#374151",
+      "tags": [
+        "📹 Caméras",
+        "🗺️ OSM data",
+        "🇫🇷 France"
+      ],
+      "poi_count": 119699,
+      "categories": [
+        "Caméra dôme",
+        "Caméra fixe",
+        "LAPI / ANPR",
+        "Radar vitesse"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "videoprotection-toulouse",
+      "url": "/videoprotection-toulouse/",
+      "title": "Vidéoprotection Toulouse",
+      "description": "Carte des caméras de surveillance et radars sur l'agglomération toulousaine, référencés dans OpenStreetMap.",
+      "emoji": "🎥",
+      "section": "curated",
+      "weight": 56,
+      "accent_color": "#1e3a5f",
+      "tags": [
+        "🎥 Caméras",
+        "🗺️ OSM data",
+        "🏙️ Toulouse"
+      ],
+      "poi_count": 2269,
+      "categories": [
+        "Caméra dôme",
+        "Caméra fixe",
+        "LAPI / ANPR",
+        "Radar vitesse"
       ],
       "has_geojson": true
     },

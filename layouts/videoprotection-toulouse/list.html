@@ -1,0 +1,120 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+<style>
+  :root { --map-accent: #1e3a5f; }
+  .filter-btn.active { background: var(--map-accent); border-color: var(--map-accent); }
+  .poi-card:hover, .poi-card.active { border-color: var(--map-accent); }
+  .search-box:focus { border-color: var(--map-accent); }
+  .header-btn:hover, .header-btn.active { border-color: var(--map-accent); color: var(--map-accent); background: #f0f4f8; }
+  .poi-card .poi-actions a { color: var(--map-accent); }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🎥 Vidéoprotection Toulouse</h1>
+      <p>{{ .Description }}</p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position">📍 Position</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+  </div>
+</div>
+<div id="poi-list" style="display:none;"></div>
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'Vidéoprotection Toulouse',
+  geojsonUrl: '{{ "/videoprotection-toulouse/locations.geojson" | relURL }}',
+  embedPath: '/videoprotection-toulouse/',
+  center: [43.605, 1.444],
+  zoom: 13,
+  useClustering: true,
+  hideRoute: true,
+  hidePermalink: false
+};
+window.CATEGORY_COLORS = {
+  'Caméra fixe':   '#374151',
+  'Caméra dôme':   '#1d4ed8',
+  'Caméra PTZ':    '#7c3aed',
+  'LAPI / ANPR':   '#d97706',
+  'Radar vitesse': '#dc2626'
+};
+window.CATEGORY_ICONS = {
+  'Caméra fixe':   '📹',
+  'Caméra dôme':   '🎥',
+  'Caméra PTZ':    '🎯',
+  'LAPI / ANPR':   '🔍',
+  'Radar vitesse': '⚡'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+<script>
+// Multi-category layer toggle system (overrides single-filter from map-poi-helpers)
+window.activeCategories = new Set(Object.keys(window.CATEGORY_COLORS));
+
+window.setupFilters = function(pois) {
+  const cats = [...new Set(pois.map(f => f.properties.category || 'Other'))];
+  const container = document.getElementById('filter-btns');
+  if (!container) return;
+  container.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    const color = CATEGORY_COLORS[cat] || '#6b7280';
+    btn.className = 'filter-btn active';
+    btn.dataset.cat = cat;
+    btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
+    btn.style.cssText = `background:${color};border-color:${color};color:white;`;
+    btn.onclick = () => {
+      if (window.activeCategories.has(cat)) {
+        window.activeCategories.delete(cat);
+        btn.style.cssText = `background:white;border-color:${color};color:${color};`;
+        btn.classList.remove('active');
+      } else {
+        window.activeCategories.add(cat);
+        btn.style.cssText = `background:${color};border-color:${color};color:white;`;
+        btn.classList.add('active');
+      }
+      updateMarkers();
+    };
+    container.appendChild(btn);
+  });
+};
+
+const _origUpdateMarkers = updateMarkers;
+window.updateMarkers = function() {
+  activeFilter = 'All';
+  _origUpdateMarkers();
+  if (!window.activeCategories) return;
+  Object.entries(markers).forEach(([id, m]) => {
+    const f = allPOIs.find(f => String(f._id) === String(id));
+    if (!f) return;
+    const cat = f.properties.category || 'Other';
+    if (!window.activeCategories.has(cat)) {
+      if (markerCluster) markerCluster.removeLayer(m);
+      else map.removeLayer(m);
+      delete markers[id];
+    }
+  });
+};
+</script>
+{{ end }}
