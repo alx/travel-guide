@@ -13,7 +13,7 @@ const map = L.map('map', { maxZoom: 19 }).setView(MAP_CONFIG.center, MAP_CONFIG.
 window._leafletMap = map;
 let markerCluster = null;
 if (MAP_CONFIG.useClustering && typeof L.markerClusterGroup === 'function') {
-  markerCluster = L.markerClusterGroup({ chunkedLoading: true });
+  markerCluster = L.markerClusterGroup(Object.assign({ chunkedLoading: true }, MAP_CONFIG.clusterOptions || {}));
   map.addLayer(markerCluster);
 }
 let _flyingTo = false;
