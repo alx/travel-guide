@@ -85,7 +85,9 @@ function renderSidebar() {
     const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address||'').toLowerCase().includes(search);
     return matchCat && matchSearch;
   });
-  filtered.forEach(f => {
+  const limit = MAP_CONFIG.maxSidebarItems;
+  const visible = limit ? filtered.slice(0, limit) : filtered;
+  visible.forEach(f => {
     const p = f.properties;
     const cat = p.category || 'Other';
     const color = CATEGORY_COLORS[cat] || '#6b7280';
@@ -114,6 +116,12 @@ function renderSidebar() {
     card.onclick = () => focusPOI(f);
     list.appendChild(card);
   });
+  if (limit && filtered.length > limit) {
+    const note = document.createElement('p');
+    note.style.cssText = 'color:#888;font-size:0.8rem;padding:0.5rem 1rem;text-align:center;';
+    note.textContent = `… et ${(filtered.length - limit).toLocaleString()} autres. Utilisez la recherche pour affiner.`;
+    list.appendChild(note);
+  }
 }
 
 function focusPOI(f) {
@@ -236,7 +244,9 @@ window.removeCustomLayer = function() {
 fetch(MAP_CONFIG.geojsonUrl)
   .then(r => r.json())
   .then(data => {
-    allPOIs = data.features.map((f, i) => ({ ...f, _id: i }));
+    allPOIs = (data.v === 1 && window._expandCompact)
+      ? window._expandCompact(data)
+      : data.features.map((f, i) => ({ ...f, _id: i }));
     secondaryIds = new Set(allPOIs.filter(f => f.properties.status === 'secondary').map(f => String(f._id)));
     window.MAP_CONFIG.geojsonData = data;
     setupFilters(allPOIs);

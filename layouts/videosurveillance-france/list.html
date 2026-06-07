@@ -44,13 +44,14 @@
 <script>
 window.MAP_CONFIG = {
   title: 'Vidéosurveillance en France',
-  geojsonUrl: '{{ "/videosurveillance-france/locations.geojson" | relURL }}',
+  geojsonUrl: '{{ "/videosurveillance-france/locations.min.json" | relURL }}',
   embedPath: '/videosurveillance-france/',
   center: [46.5, 2.5],
   zoom: 6,
   useClustering: true,
   hideRoute: true,
-  hidePermalink: false
+  hidePermalink: false,
+  maxSidebarItems: 200
 };
 window.CATEGORY_COLORS = {
   'Caméra fixe':   '#374151',
@@ -65,6 +66,20 @@ window.CATEGORY_ICONS = {
   'Caméra PTZ':    '🎯',
   'LAPI / ANPR':   '🔍',
   'Radar vitesse': '⚡'
+};
+window._expandCompact = function(data) {
+  return data.lons.map(function(lon, i) {
+    return {
+      _id: i,
+      geometry: { type: 'Point', coordinates: [lon, data.lats[i]] },
+      properties: {
+        name:     data.name[i],
+        category: data.cats[data.cat[i]],
+        place_id: 'osm:' + data.pid[i],
+        address:  data.addr[String(i)] || null
+      }
+    };
+  });
 };
 </script>
 {{ partial "map-poi-helpers.html" . }}
@@ -86,7 +101,10 @@ function darkenHex(hex, factor) {
   return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
 }
 
+const _iconCache = {};
 function makeIcon(category, status) {
+  const key = category + ':' + (status || '');
+  if (_iconCache[key]) return _iconCache[key];
   const color = CATEGORY_COLORS[category] || '#6b7280';
   const faClass = window.CATEGORY_FA_ICONS[category] || 'fa-solid fa-location-dot';
   const secondary = status === 'secondary';
@@ -95,13 +113,13 @@ function makeIcon(category, status) {
   const border = secondary ? '#bbb' : 'white';
   const opacity = secondary ? '0.55' : '1';
   const bg = darkenHex(color, 0.75);
-  return L.divIcon({
+  return (_iconCache[key] = L.divIcon({
     className: '',
     html: `<div style="background:${bg};width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid ${border};opacity:${opacity};"><i class="${faClass}" style="color:white;"></i></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     popupAnchor: [0, -(size / 2) - 4]
-  });
+  }));
 }
 
 // Multi-category layer toggle system (overrides single-filter from map-poi-helpers)
@@ -136,13 +154,19 @@ window.setupFilters = function(pois) {
   });
 };
 
+// Rebuild O(1) lookup index whenever allPOIs changes
+window._rebuildPoiIndex = function() {
+  window._poiById = new Map(allPOIs.map(f => [String(f._id), f]));
+};
+
 const _origUpdateMarkers = updateMarkers;
 window.updateMarkers = function() {
   activeFilter = 'All';
+  if (!window._poiById || window._poiById.size !== allPOIs.length) window._rebuildPoiIndex();
   _origUpdateMarkers();
   if (!window.activeCategories) return;
   Object.entries(markers).forEach(([id, m]) => {
-    const f = allPOIs.find(f => String(f._id) === String(id));
+    const f = window._poiById.get(String(id));
     if (!f) return;
     const cat = f.properties.category || 'Other';
     if (!window.activeCategories.has(cat)) {
