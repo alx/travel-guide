@@ -1,0 +1,201 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<style>
+/* ── Distorama monochrome theme ── */
+body { background: #0a0a0a; }
+.overlay-card {
+  background: rgba(12,12,12,0.97) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7) !important;
+}
+.overlay-card .page-header h1 { color: #fff; font-size: 1.15rem; }
+.overlay-card .page-header p { color: #666; }
+.site-brand { color: #555 !important; }
+.header-btn { background: #1a1a1a !important; border-color: #333 !important; color: #bbb !important; }
+.header-btn:hover, .header-btn.active { border-color: #fff !important; color: #fff !important; background: #2a2a2a !important; }
+.search-box { background: #111 !important; border-color: #2a2a2a !important; color: #eee !important; }
+.search-box::placeholder { color: #444; }
+.search-box:focus { border-color: #555 !important; }
+#filter-btns { display: none; }
+.poi-card { background: #111 !important; border-color: transparent !important; padding: 0.75rem 1rem; }
+.poi-card:hover, .poi-card.active { border-color: rgba(255,255,255,0.3) !important; }
+.poi-card .venue-name { color: #eee; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+.poi-card .event-item { border-top: 1px solid #1e1e1e; padding: 0.35rem 0; }
+.poi-card .event-meta { font-size: 0.75rem; color: #555; }
+.poi-card .event-desc { font-size: 0.83rem; color: #ccc; line-height: 1.4; }
+.poi-card .event-links { margin-top: 0.2rem; display: flex; gap: 0.6rem; }
+.poi-card .event-links a { font-size: 0.72rem; color: #666; text-decoration: none; }
+.poi-card .event-links a:hover { color: #bbb; }
+.show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
+.copy-toast { background: rgba(255,255,255,0.12) !important; }
+.leaflet-popup-content-wrapper { background: #111; border: 1px solid #2a2a2a; color: #eee; border-radius: 8px; min-width: 200px; }
+.leaflet-popup-tip { background: #111; }
+.leaflet-popup-content { margin: 0.6rem 0.8rem; }
+.leaflet-popup-content a { color: #888; }
+/* Distorama quick-nav */
+.disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
+.disto-nav a {
+  font-size: 0.68rem; padding: 0.15rem 0.55rem; border-radius: 20px;
+  border: 1px solid #2a2a2a; color: #666; text-decoration: none;
+  transition: all 0.15s;
+}
+.disto-nav a:hover { border-color: #555; color: #ccc; }
+.disto-nav a.active { border-color: rgba(255,255,255,0.4); color: #ccc; background: #1a1a1a; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <nav class="disto-nav">
+      <a href="{{ "/toulouse-distorama/" | relURL }}">Lieux</a>
+      <a href="{{ "/toulouse-distorama-this-week/" | relURL }}"{{ if eq .Params.distorama_window "this-week" }} class="active"{{ end }}>Cette semaine</a>
+      <a href="{{ "/toulouse-distorama-next-week/" | relURL }}"{{ if eq .Params.distorama_window "next-week" }} class="active"{{ end }}>Sem. prochaine</a>
+      <a href="{{ printf "/toulouse-distorama-%s/" (now.Format "2006-01") | relURL }}"{{ if eq .Params.distorama_window (now.Format "2006-01") }} class="active"{{ end }}>{{ now.Format "01/2006" }}</a>
+      <a href="{{ "/toulouse-distorama/agenda/" | relURL }}">Agenda →</a>
+    </nav>
+    <div class="page-header">
+      <h1>{{ .Title }}</h1>
+      <p>Source : <a href="https://distorama.neocities.org/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">distorama.neocities.org</a></p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');">🎵 Événements</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Ma position">📍 Position</button>
+    </div>
+    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher un lieu ou artiste…" oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="poi-list"></div>
+  </div>
+</div>
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: '{{ .Title | safeJS }}',
+  geojsonUrl: '{{ .Params.geojson_url | safeJS }}',
+  center: [43.6047, 1.4442],
+  zoom: 13,
+  focusZoom: 16,
+  tiles: {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19,
+    subdomains: 'abcd'
+  }
+};
+window.CATEGORY_COLORS = {
+  'Concert Bar': '#ffffff', 'Record Shop': '#ffffff', 'Cinema': '#ffffff',
+  'Radio': '#ffffff', 'Studio': '#ffffff', 'Boutique': '#ffffff', 'Merch/Print': '#ffffff'
+};
+window.CATEGORY_ICONS = {
+  'Concert Bar': '🎵', 'Record Shop': '💿', 'Cinema': '🎬',
+  'Radio': '📻', 'Studio': '🎙️', 'Boutique': '🛍️', 'Merch/Print': '🖨️'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+<script>
+/* ── Distorama events: override marker, popup, and sidebar ── */
+
+makeIcon = function(category, status) {
+  const secondary = status === 'secondary';
+  const size = secondary ? 22 : 34;
+  const icon = CATEGORY_ICONS[category] || '🎵';
+  const fs = secondary ? 10 : 15;
+  const opacity = secondary ? '0.55' : '1';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.55);opacity:${opacity};">${icon}</div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+    popupAnchor: [0, -(size / 2) - 4]
+  });
+};
+
+function makeEventPopup(p) {
+  let html = `<div style="font-weight:600;color:#eee;margin-bottom:0.3rem;">${p.name}</div>`;
+  (p.events || []).forEach(ev => {
+    const artist = ev.artist;
+    const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
+    const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
+    const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+    html += `<div style="border-top:1px solid #222;margin-top:0.35rem;padding-top:0.35rem;">`;
+    if (meta) html += `<div style="font-size:0.75rem;color:#666;margin-bottom:0.15rem;">${meta}</div>`;
+    html += `<div style="font-size:0.83rem;color:#ccc;">${ev.desc}</div>`;
+    if (bcUrl) {
+      html += `<div style="margin-top:0.25rem;display:flex;gap:0.6rem;">`;
+      html += `<a href="${bcUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">🎵 Bandcamp</a>`;
+      html += `<a href="${ytUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">▶ YouTube</a>`;
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+  return html;
+}
+
+/* Override updateMarkers to use event popup */
+updateMarkers = function() {
+  const search = document.getElementById('search').value.toLowerCase();
+  if (markerCluster) {
+    markerCluster.clearLayers();
+  } else {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+  }
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const matchSearch = !search || p.name.toLowerCase().includes(search)
+      || (p.events || []).some(e => e.desc.toLowerCase().includes(search));
+    if (!matchSearch) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
+    marker.bindPopup(makeEventPopup(p), { maxWidth: 280 });
+    marker.on('click', () => focusPOI(f));
+    if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
+    markers[f._id] = marker;
+  });
+};
+
+/* Override renderSidebar for event cards */
+renderSidebar = function() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const filtered = allPOIs.filter(f => {
+    const p = f.properties;
+    return !search || p.name.toLowerCase().includes(search)
+      || (p.events || []).some(e => e.desc.toLowerCase().includes(search));
+  });
+  filtered.forEach(f => {
+    const p = f.properties;
+    const card = document.createElement('div');
+    card.className = 'poi-card';
+    card.id = 'card-' + f._id;
+    let evHtml = (p.events || []).map(ev => {
+      const artist = ev.artist;
+      const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
+      const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
+      const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+      return `<div class="event-item">
+        ${meta ? `<div class="event-meta">${meta}</div>` : ''}
+        <div class="event-desc">${ev.desc}</div>
+        ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">🎵 Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">▶ YouTube</a></div>` : ''}
+      </div>`;
+    }).join('');
+    card.innerHTML = `<div class="venue-name">${CATEGORY_ICONS[p.category] || '🎵'} ${p.name}</div>${evHtml}`;
+    card.onclick = () => focusPOI(f);
+    list.appendChild(card);
+  });
+  if (filtered.length === 0) {
+    list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">Aucun événement trouvé.</p>';
+  }
+};
+</script>
+{{ end }}

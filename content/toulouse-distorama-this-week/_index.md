@@ -1,0 +1,7 @@
+---
+title: "Distorama — Cette semaine"
+description: "Concerts et événements underground à Toulouse cette semaine (lundi 8 juin 2026 – dimanche 14 juin 2026)."
+type: "toulouse-distorama-event"
+distorama_window: "this-week"
+geojson_url: "/toulouse-distorama/events/this-week.geojson"
+---

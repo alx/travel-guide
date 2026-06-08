@@ -1,0 +1,3 @@
+# Hugo build-time generation for time-scoped Distorama event maps
+
+Time-scoped event maps (`toulouse-distorama-this-week`, `next-week`, `YYYY-MM`, `YYYY-MM-DD`) generate one GeoJSON per time window at Hugo build time rather than filtering client-side from a full events dataset. Client-side filtering was a viable alternative — always fresh, no rebuild needed — but it would ship the entire ~800-event dataset to every page load. Build-time generation keeps each map's GeoJSON small, makes each date a independently linkable and cacheable URL, and lets the cron rebuild schedule encode the freshness contract explicitly (near-future maps rebuilt frequently, monthly archives once a month).

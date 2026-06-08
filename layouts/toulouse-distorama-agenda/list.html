@@ -1,0 +1,129 @@
+{{ define "head" }}
+<style>
+body { background: #0a0a0a; color: #eee; font-family: system-ui, sans-serif; }
+.site-header, footer { display: none !important; }
+main { max-width: 640px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.site-brand { font-size: 0.7rem; color: #444; text-decoration: none; display: block; margin-bottom: 1.5rem; }
+.site-brand:hover { color: #888; }
+h1 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.subtitle { font-size: 0.82rem; color: #555; margin-bottom: 1.5rem; }
+.subtitle a { color: inherit; text-decoration: underline; }
+/* Quick-nav */
+.disto-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
+.disto-nav a {
+  font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 20px;
+  border: 1px solid #2a2a2a; color: #666; text-decoration: none; transition: all 0.15s;
+}
+.disto-nav a:hover { border-color: #555; color: #ccc; }
+.disto-nav a.highlight { border-color: rgba(255,255,255,0.3); color: #ccc; background: #161616; }
+/* Rolling maps */
+.rolling { display: flex; gap: 0.75rem; margin-bottom: 2.5rem; }
+.rolling a {
+  flex: 1; padding: 0.9rem 1rem; background: #111; border-radius: 10px;
+  border: 1px solid #1e1e1e; text-decoration: none; transition: all 0.15s;
+}
+.rolling a:hover { border-color: rgba(255,255,255,0.2); background: #161616; }
+.rolling a .label { font-size: 0.7rem; color: #555; margin-bottom: 0.2rem; }
+.rolling a .title { font-size: 0.9rem; color: #ddd; font-weight: 500; }
+/* Month sections */
+.month-section { margin-bottom: 2rem; }
+.month-heading {
+  font-size: 0.7rem; font-weight: 600; color: #444; text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 0.6rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+.month-link {
+  display: inline-block; font-size: 0.72rem; color: #555; text-decoration: none;
+  margin-left: 0.5rem; padding: 0.1rem 0.4rem; border-radius: 4px;
+  border: 1px solid #1e1e1e; transition: all 0.1s;
+}
+.month-link:hover { color: #aaa; border-color: #333; }
+.day-grid { display: flex; flex-direction: column; gap: 0.2rem; }
+.day-item {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding: 0.4rem 0.6rem; border-radius: 6px; text-decoration: none;
+  transition: background 0.1s;
+}
+.day-item:hover { background: #111; }
+.day-item .dow { font-size: 0.72rem; color: #444; width: 1.8rem; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.day-item .day-title { font-size: 0.85rem; color: #bbb; }
+.day-item.today .day-title { color: #fff; font-weight: 600; }
+.day-item.today .dow { color: #777; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+{{ $today := now.Format "2006-01-02" }}
+{{ $thisMonth := now.Format "2006-01" }}
+
+{{ $eventPages := where site.AllPages "Params.distorama_window" "!=" nil }}
+
+{{/* Separate rolling (this-week / next-week) from dated pages */}}
+{{ $rollingPages := slice }}
+{{ $datedPages := slice }}
+{{ range $eventPages }}
+  {{ $w := .Params.distorama_window }}
+  {{ if or (eq $w "this-week") (eq $w "next-week") }}
+    {{ $rollingPages = $rollingPages | append . }}
+  {{ else }}
+    {{ $datedPages = $datedPages | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Group dated pages by YYYY-MM prefix */}}
+{{ $byMonth := dict }}
+{{ range $datedPages }}
+  {{ $w := .Params.distorama_window }}
+  {{ if ge (len $w) 7 }}
+    {{ $month := substr $w 0 7 }}
+    {{ $existing := index $byMonth $month | default slice }}
+    {{ $byMonth = merge $byMonth (dict $month ($existing | append .)) }}
+  {{ end }}
+{{ end }}
+
+<main>
+  <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+
+  <h1>Distorama — Agenda</h1>
+  <p class="subtitle">Concerts et événements underground à Toulouse. Source&nbsp;: <a href="https://distorama.neocities.org/" target="_blank" rel="noopener">distorama.neocities.org</a></p>
+
+  <nav class="disto-nav">
+    <a href="{{ "/toulouse-distorama/" | relURL }}">← Lieux</a>
+    <a href="{{ printf "/toulouse-distorama-%s/" $thisMonth | relURL }}" class="highlight">{{ now.Format "01/2006" }}</a>
+  </nav>
+
+  {{/* Rolling maps */}}
+  <div class="rolling">
+    {{ range $rollingPages }}
+    <a href="{{ .RelPermalink }}">
+      <div class="label">{{ if eq .Params.distorama_window "this-week" }}Cette semaine{{ else }}Semaine prochaine{{ end }}</div>
+      <div class="title">{{ .Title | replaceRE "^Distorama — " "" }}</div>
+    </a>
+    {{ end }}
+  </div>
+
+  {{/* Monthly sections */}}
+  {{ range $month, $pages := $byMonth }}
+    {{ $sortedPages := sort $pages "Params.distorama_window" }}
+    {{/* Only show months that have day-level pages */}}
+    {{ $dayPages := where $sortedPages "Params.distorama_window" "like" "^\\d{4}-\\d{2}-\\d{2}$" }}
+    {{ $monthPage := index (where $sortedPages "Params.distorama_window" $month) 0 }}
+    <div class="month-section">
+      <div class="month-heading">
+        {{ $month }}
+        {{ with $monthPage }}<a href="{{ .RelPermalink }}" class="month-link">voir le mois →</a>{{ end }}
+      </div>
+      <div class="day-grid">
+        {{ range $dayPages }}
+        {{ $w := .Params.distorama_window }}
+        {{ $isToday := eq $w $today }}
+        <a href="{{ .RelPermalink }}" class="day-item{{ if $isToday }} today{{ end }}">
+          <span class="dow">{{ substr .Params.distorama_window 8 2 }}</span>
+          <span class="day-title">{{ .Title | replaceRE "^Distorama — " "" }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</main>
+{{ end }}

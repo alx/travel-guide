@@ -21,9 +21,11 @@ map.on('click', clearFocus);
 map.on('popupclose', clearFocus);
 map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
 map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors',
-  maxZoom: 19
+const _tiles = MAP_CONFIG.tiles || {};
+L.tileLayer(_tiles.url || 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: _tiles.attribution || '© OpenStreetMap contributors',
+  maxZoom: _tiles.maxZoom || 19,
+  subdomains: _tiles.subdomains || 'abc'
 }).addTo(map);
 
 function slugify(name) {
