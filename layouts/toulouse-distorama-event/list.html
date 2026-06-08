@@ -33,20 +33,6 @@ body { background: #0a0a0a; }
 .leaflet-popup-tip { background: #111; }
 .leaflet-popup-content { margin: 0.6rem 0.8rem; }
 .leaflet-popup-content a { color: #888; }
-/* Tooltip below marker */
-.leaflet-tooltip.disto-tooltip {
-  background: #111;
-  border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  padding: 0.6rem 0.8rem;
-  min-width: 180px;
-  max-width: 280px;
-  color: #eee;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.7);
-  pointer-events: none;
-}
-.leaflet-tooltip.disto-tooltip.leaflet-tooltip-bottom::before { border-bottom-color: #2a2a2a; }
-.disto-tooltip a { color: #888; font-size: 0.72rem; }
 /* Distorama quick-nav */
 .disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
 .disto-nav a {
@@ -165,7 +151,8 @@ function makeEventContent(p, events) {
   return html;
 }
 
-/* Override updateMarkers: filter past events, tooltip on hover below marker */
+/* Override updateMarkers: filter past events, popup on hover (auto-close) or click (sticky) */
+let _stickyMarker = null;
 updateMarkers = function() {
   const search = document.getElementById('search').value.toLowerCase();
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -186,15 +173,23 @@ updateMarkers = function() {
     const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
     const content = makeEventContent(p, futureEvents);
     marker.bindPopup(content, { maxWidth: 280 });
-    marker.bindTooltip(content, {
-      direction: 'bottom',
-      offset: L.point(0, 12),
-      className: 'disto-tooltip',
-      opacity: 1,
-      sticky: false
+    marker.on('mouseover', function() {
+      if (_stickyMarker !== marker) marker.openPopup();
     });
-    marker.on('click', () => focusPOI(f));
-    marker.on('mouseover', () => focusPOI(f));
+    marker.on('mouseout', function() {
+      if (_stickyMarker !== marker) marker.closePopup();
+    });
+    marker.on('click', function() {
+      if (_stickyMarker === marker) {
+        _stickyMarker = null;
+        marker.closePopup();
+      } else {
+        if (_stickyMarker) _stickyMarker.closePopup();
+        _stickyMarker = marker;
+        focusPOI(f);
+      }
+    });
+    map.on('popupclose', function() { _stickyMarker = null; });
     if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
     markers[f._id] = marker;
   });
