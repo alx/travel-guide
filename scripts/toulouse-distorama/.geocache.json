@@ -226,5 +226,61 @@
   "Rond-Point de Mondonville 31200 Toulouse": {
     "lat": 43.6415,
     "lon": 1.4506
+  },
+  "Le Déclic Toulouse": {
+    "lat": 43.6041704,
+    "lon": 1.4543659
+  },
+  "L'Astronef Toulouse": {
+    "lat": 43.5769862,
+    "lon": 1.4602098
+  },
+  "Dagobar Toulouse": {
+    "lat": 43.5983682,
+    "lon": 1.4437868
+  },
+  "Le Motor Toulouse": {
+    "lat": 43.6225201,
+    "lon": 1.4502034
+  },
+  "Le Bikini Toulouse": {
+    "lat": 43.5480492,
+    "lon": 1.4854047
+  },
+  "Le Rex Toulouse": {
+    "lat": 43.6119889,
+    "lon": 1.438322
+  },
+  "Le Circographe Toulouse": {
+    "lat": 43.6196165,
+    "lon": 1.4222551
+  },
+  "Le Bijou Toulouse": {
+    "lat": 43.584414,
+    "lon": 1.427542
+  },
+  "La Cabane Toulouse": {
+    "lat": 43.5997655,
+    "lon": 1.4073706
+  },
+  "Le Chorus Toulouse": {
+    "lat": 43.5852109,
+    "lon": 1.428844
+  },
+  "Café Ginette Toulouse": {
+    "lat": 43.6180919,
+    "lon": 1.4369407
+  },
+  "Café Populaire Toulouse": {
+    "lat": 43.6043395,
+    "lon": 1.4514434
+  },
+  "Jacobins Toulouse": {
+    "lat": 43.6034816,
+    "lon": 1.4404851
+  },
+  "Chapelle Des Carmélites Toulouse": {
+    "lat": 43.607489,
+    "lon": 1.4432711
   }
 }

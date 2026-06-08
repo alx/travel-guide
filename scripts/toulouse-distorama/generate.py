@@ -147,11 +147,14 @@ def load_venues() -> tuple[list[dict], dict[str, dict]]:
 
 
 def normalize_venue_name(name: str) -> str:
+    import unicodedata
     name = name.lower().strip()
     # Normalize curly/smart apostrophes and quotes to straight apostrophe
-    name = name.replace("’", "'").replace("‘", "'").replace("ʼ", "'")
+    name = name.replace("’", "’").replace("‘", "’").replace("ʼ", "’")
+    # Strip accents so "Cafe Populaire" matches "Café Populaire" etc.
+    name = "".join(c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c))
     # Strip leading articles for fuzzy matching
-    for prefix in ("le ", "la ", "l'", "les ", "au ", "aux ", "the "):
+    for prefix in ("le ", "la ", "l’", "les ", "au ", "aux ", "the "):
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
