@@ -1,5 +1,6 @@
 {{ define "head" }}
 {{ partial "map-poi-styles.html" . }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 /* ── Distorama monochrome theme ── */
 body { background: #0a0a0a; }
@@ -31,6 +32,18 @@ body { background: #0a0a0a; }
 .leaflet-popup-content-wrapper { background: #111; border: 1px solid #333; color: #eee; border-radius: 8px; }
 .leaflet-popup-tip { background: #111; }
 .leaflet-popup-content a { color: #aaa; }
+/* Tooltip below marker */
+.leaflet-tooltip.disto-tooltip {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  min-width: 120px;
+  color: #eee;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+.leaflet-tooltip.disto-tooltip.leaflet-tooltip-bottom::before { border-bottom-color: #2a2a2a; }
 /* Distorama quick-nav */
 .disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
 .disto-nav a {
@@ -99,35 +112,88 @@ window.CATEGORY_COLORS = {
   'Merch/Print': '#ffffff'
 };
 window.CATEGORY_ICONS = {
-  'Concert Bar': '🎵',
-  'Record Shop': '💿',
-  'Cinema': '🎬',
-  'Radio': '📻',
-  'Studio': '🎙️',
-  'Boutique': '🛍️',
-  'Merch/Print': '🖨️'
+  'Concert Bar': 'fa-music',
+  'Record Shop': 'fa-record-vinyl',
+  'Cinema': 'fa-film',
+  'Radio': 'fa-tower-broadcast',
+  'Studio': 'fa-microphone',
+  'Boutique': 'fa-store',
+  'Merch/Print': 'fa-print'
 };
 </script>
 {{ partial "map-poi-helpers.html" . }}
 {{ partial "map-geolocation.html" . }}
 <script>
-/* ── Distorama venues: override makeIcon for logo support ── */
+/* ── Distorama venues: override icon, markers, sidebar, filters ── */
+
 makeIcon = function(category, status) {
   const secondary = status === 'secondary';
   const size = secondary ? 22 : 34;
-  const icon = CATEGORY_ICONS[category] || '🎵';
+  const cls = CATEGORY_ICONS[category] || 'fa-location-dot';
   const fs = secondary ? 10 : 15;
   const opacity = secondary ? '0.55' : '1';
   return L.divIcon({
     className: '',
-    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.6);opacity:${opacity};">${icon}</div>`,
+    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.6);opacity:${opacity};"><i class="fa-solid ${cls}" style="color:#fff;font-size:${fs}px;"></i></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     popupAnchor: [0, -(size / 2) - 4]
   });
 };
 
-/* Override renderSidebar for venues — category badge + URL link */
+/* Override updateMarkers: add tooltip on hover below marker */
+updateMarkers = function() {
+  const search = document.getElementById('search').value.toLowerCase();
+  if (markerCluster) {
+    markerCluster.clearLayers();
+  } else {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+  }
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const cat = p.category || 'Other';
+    const matchCat = activeFilter === 'All' || cat === activeFilter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address || '').toLowerCase().includes(search);
+    if (!matchCat || !matchSearch) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.status) });
+    const cls = CATEGORY_ICONS[cat] || 'fa-location-dot';
+    marker.bindPopup(`<b>${p.name}</b><br><small style="color:#aaa">${cat}</small>`, { maxWidth: 240 });
+    marker.bindTooltip(
+      `<div style="font-weight:600;color:#eee;">${p.name}</div><div style="font-size:0.8rem;color:#888;margin-top:0.15rem;"><i class="fa-solid ${cls}" style="color:#fff;font-size:0.7rem;margin-right:0.3em;"></i>${cat}</div>`,
+      { direction: 'bottom', offset: L.point(0, 12), className: 'disto-tooltip', opacity: 1 }
+    );
+    marker.on('click', () => focusPOI(f));
+    marker.on('mouseover', () => focusPOI(f));
+    if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
+    markers[f._id] = marker;
+  });
+};
+
+/* Override setupFilters: use FA icon HTML in filter chips */
+setupFilters = function(pois) {
+  const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
+  const container = document.getElementById('filter-btns');
+  if (!container) return;
+  container.innerHTML = '';
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
+    btn.dataset.cat = cat;
+    const cls = CATEGORY_ICONS[cat];
+    btn.innerHTML = cls ? `<i class="fa-solid ${cls}" style="margin-right:0.3em;"></i>${cat}` : cat;
+    btn.onclick = () => {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterPOIs();
+    };
+    container.appendChild(btn);
+  });
+};
+
+/* Override renderSidebar: FA icon in cat-badge */
 renderSidebar = function() {
   const search = document.getElementById('search').value.toLowerCase();
   const list = document.getElementById('poi-list');
@@ -143,9 +209,9 @@ renderSidebar = function() {
     const card = document.createElement('div');
     card.className = 'poi-card';
     card.id = 'card-' + f._id;
-    const icon = CATEGORY_ICONS[p.category] || '';
+    const cls = CATEGORY_ICONS[p.category] || 'fa-location-dot';
     card.innerHTML = `
-      <span class="cat-badge">${icon} ${p.category}</span>
+      <span class="cat-badge"><i class="fa-solid ${cls}" style="color:#fff;margin-right:0.3em;"></i>${p.category}</span>
       <h3>${p.name}</h3>
       ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
       <div class="poi-actions">

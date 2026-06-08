@@ -365,6 +365,7 @@ def main() -> None:
                 continue
             artist = parse_artist(ev.get("desc", ""))
             event_record = {
+                "date": date_str,
                 "time": time_val or "",
                 "price": price or "",
                 "desc": ev.get("desc", ""),
@@ -461,6 +462,7 @@ def main() -> None:
             "type": "toulouse-distorama",
             "accent_color": "#ffffff",
             "section": "community",
+            "hide_footer_cta": "true",
         })
 
     # Agenda index

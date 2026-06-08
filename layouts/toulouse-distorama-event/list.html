@@ -1,5 +1,6 @@
 {{ define "head" }}
 {{ partial "map-poi-styles.html" . }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 /* ── Distorama monochrome theme ── */
 body { background: #0a0a0a; }
@@ -32,6 +33,20 @@ body { background: #0a0a0a; }
 .leaflet-popup-tip { background: #111; }
 .leaflet-popup-content { margin: 0.6rem 0.8rem; }
 .leaflet-popup-content a { color: #888; }
+/* Tooltip below marker */
+.leaflet-tooltip.disto-tooltip {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  min-width: 180px;
+  max-width: 280px;
+  color: #eee;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+.leaflet-tooltip.disto-tooltip.leaflet-tooltip-bottom::before { border-bottom-color: #2a2a2a; }
+.disto-tooltip a { color: #888; font-size: 0.72rem; }
 /* Distorama quick-nav */
 .disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
 .disto-nav a {
@@ -95,44 +110,54 @@ window.CATEGORY_COLORS = {
   'Radio': '#ffffff', 'Studio': '#ffffff', 'Boutique': '#ffffff', 'Merch/Print': '#ffffff'
 };
 window.CATEGORY_ICONS = {
-  'Concert Bar': '🎵', 'Record Shop': '💿', 'Cinema': '🎬',
-  'Radio': '📻', 'Studio': '🎙️', 'Boutique': '🛍️', 'Merch/Print': '🖨️'
+  'Concert Bar': 'fa-music', 'Record Shop': 'fa-record-vinyl', 'Cinema': 'fa-film',
+  'Radio': 'fa-tower-broadcast', 'Studio': 'fa-microphone', 'Boutique': 'fa-store', 'Merch/Print': 'fa-print'
 };
 </script>
 {{ partial "map-poi-helpers.html" . }}
 {{ partial "map-geolocation.html" . }}
 <script>
-/* ── Distorama events: override marker, popup, and sidebar ── */
+/* ── Distorama events: override marker, popup, sidebar ── */
 
 makeIcon = function(category, status) {
   const secondary = status === 'secondary';
   const size = secondary ? 22 : 34;
-  const icon = CATEGORY_ICONS[category] || '🎵';
+  const cls = CATEGORY_ICONS[category] || 'fa-music';
   const fs = secondary ? 10 : 15;
   const opacity = secondary ? '0.55' : '1';
   return L.divIcon({
     className: '',
-    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.55);opacity:${opacity};">${icon}</div>`,
+    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.55);opacity:${opacity};"><i class="fa-solid ${cls}" style="color:#fff;font-size:${fs}px;"></i></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     popupAnchor: [0, -(size / 2) - 4]
   });
 };
 
-function makeEventPopup(p) {
-  let html = `<div style="font-weight:600;color:#eee;margin-bottom:0.3rem;">${p.name}</div>`;
-  (p.events || []).forEach(ev => {
+function fmtEventDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  const days = ['Dim.','Lun.','Mar.','Mer.','Jeu.','Ven.','Sam.'];
+  const months = ['jan.','fév.','mar.','avr.','mai','juin','juil.','août','sep.','oct.','nov.','déc.'];
+  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
+}
+
+function makeEventContent(p, events) {
+  const cls = CATEGORY_ICONS[p.category] || 'fa-music';
+  let html = `<div style="font-weight:600;color:#eee;margin-bottom:0.3rem;"><i class="fa-solid ${cls}" style="color:#fff;font-size:0.8rem;margin-right:0.35em;"></i>${p.name}</div>`;
+  events.forEach(ev => {
     const artist = ev.artist;
     const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
     const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
-    const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+    const datePart = ev.date ? fmtEventDate(ev.date) : '';
+    const meta = [datePart, ev.time, ev.price].filter(Boolean).join(' · ');
     html += `<div style="border-top:1px solid #222;margin-top:0.35rem;padding-top:0.35rem;">`;
     if (meta) html += `<div style="font-size:0.75rem;color:#666;margin-bottom:0.15rem;">${meta}</div>`;
     html += `<div style="font-size:0.83rem;color:#ccc;">${ev.desc}</div>`;
     if (bcUrl) {
       html += `<div style="margin-top:0.25rem;display:flex;gap:0.6rem;">`;
-      html += `<a href="${bcUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">🎵 Bandcamp</a>`;
-      html += `<a href="${ytUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">▶ YouTube</a>`;
+      html += `<a href="${bcUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">Bandcamp</a>`;
+      html += `<a href="${ytUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">YouTube</a>`;
       html += `</div>`;
     }
     html += `</div>`;
@@ -140,9 +165,10 @@ function makeEventPopup(p) {
   return html;
 }
 
-/* Override updateMarkers to use event popup */
+/* Override updateMarkers: filter past events, tooltip on hover below marker */
 updateMarkers = function() {
   const search = document.getElementById('search').value.toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
   if (markerCluster) {
     markerCluster.clearLayers();
   } else {
@@ -151,49 +177,79 @@ updateMarkers = function() {
   Object.keys(markers).forEach(k => delete markers[k]);
   allPOIs.forEach(f => {
     const p = f.properties;
+    const futureEvents = (p.events || []).filter(ev => !ev.date || ev.date >= todayStr);
+    if (!futureEvents.length) return;
     const matchSearch = !search || p.name.toLowerCase().includes(search)
-      || (p.events || []).some(e => e.desc.toLowerCase().includes(search));
+      || futureEvents.some(e => e.desc.toLowerCase().includes(search));
     if (!matchSearch) return;
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
-    marker.bindPopup(makeEventPopup(p), { maxWidth: 280 });
+    const content = makeEventContent(p, futureEvents);
+    marker.bindPopup(content, { maxWidth: 280 });
+    marker.bindTooltip(content, {
+      direction: 'bottom',
+      offset: L.point(0, 12),
+      className: 'disto-tooltip',
+      opacity: 1,
+      sticky: false
+    });
     marker.on('click', () => focusPOI(f));
+    marker.on('mouseover', () => focusPOI(f));
     if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
     markers[f._id] = marker;
   });
 };
 
-/* Override renderSidebar for event cards */
+/* Override renderSidebar: filter past events, sort by date, FA icons */
 renderSidebar = function() {
   const search = document.getElementById('search').value.toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
   const list = document.getElementById('poi-list');
   list.innerHTML = '';
-  const filtered = allPOIs.filter(f => {
+
+  const withEvents = allPOIs.map(f => {
+    const p = f.properties;
+    const futureEvents = (p.events || [])
+      .filter(ev => !ev.date || ev.date >= todayStr)
+      .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+    return { f, futureEvents };
+  }).filter(({ f, futureEvents }) => {
+    if (!futureEvents.length) return false;
     const p = f.properties;
     return !search || p.name.toLowerCase().includes(search)
-      || (p.events || []).some(e => e.desc.toLowerCase().includes(search));
+      || futureEvents.some(e => e.desc.toLowerCase().includes(search));
   });
-  filtered.forEach(f => {
+
+  withEvents.sort((a, b) => {
+    const aDate = a.futureEvents.find(e => e.date)?.date || '';
+    const bDate = b.futureEvents.find(e => e.date)?.date || '';
+    return aDate.localeCompare(bDate);
+  });
+
+  withEvents.forEach(({ f, futureEvents }) => {
     const p = f.properties;
+    const cls = CATEGORY_ICONS[p.category] || 'fa-music';
     const card = document.createElement('div');
     card.className = 'poi-card';
     card.id = 'card-' + f._id;
-    let evHtml = (p.events || []).map(ev => {
+    let evHtml = futureEvents.map(ev => {
       const artist = ev.artist;
       const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
       const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
-      const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+      const datePart = ev.date ? fmtEventDate(ev.date) : '';
+      const meta = [datePart, ev.time, ev.price].filter(Boolean).join(' · ');
       return `<div class="event-item">
         ${meta ? `<div class="event-meta">${meta}</div>` : ''}
         <div class="event-desc">${ev.desc}</div>
-        ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">🎵 Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">▶ YouTube</a></div>` : ''}
+        ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">YouTube</a></div>` : ''}
       </div>`;
     }).join('');
-    card.innerHTML = `<div class="venue-name">${CATEGORY_ICONS[p.category] || '🎵'} ${p.name}</div>${evHtml}`;
+    card.innerHTML = `<div class="venue-name"><i class="fa-solid ${cls}" style="color:#fff;margin-right:0.35em;"></i>${p.name}</div>${evHtml}`;
     card.onclick = () => focusPOI(f);
     list.appendChild(card);
   });
-  if (filtered.length === 0) {
+
+  if (withEvents.length === 0) {
     list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">Aucun événement trouvé.</p>';
   }
 };
