@@ -148,6 +148,8 @@ def load_venues() -> tuple[list[dict], dict[str, dict]]:
 
 def normalize_venue_name(name: str) -> str:
     name = name.lower().strip()
+    # Normalize curly/smart apostrophes and quotes to straight apostrophe
+    name = name.replace("’", "'").replace("‘", "'").replace("ʼ", "'")
     # Strip leading articles for fuzzy matching
     for prefix in ("le ", "la ", "l'", "les ", "au ", "aux ", "the "):
         if name.startswith(prefix):
