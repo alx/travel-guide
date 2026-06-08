@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-06-07T14:45:18.339207+00:00",
-    "map_count": 17,
+    "generated_at": "2026-06-08T14:48:05.981770+00:00",
+    "map_count": 20,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -129,6 +129,40 @@
         "Transit",
         "_route",
         "Étape"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-distorama-next-week",
+      "url": "/toulouse-distorama-next-week/",
+      "title": "Distorama — Semaine prochaine",
+      "description": "Concerts et événements underground à Toulouse la semaine prochaine (lundi 15 juin 2026 – dimanche 21 juin 2026).",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 11,
+      "categories": [
+        "Cinema",
+        "Concert Bar"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-distorama-this-week",
+      "url": "/toulouse-distorama-this-week/",
+      "title": "Distorama — Cette semaine",
+      "description": "Concerts et événements underground à Toulouse cette semaine (lundi 8 juin 2026 – dimanche 14 juin 2026).",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 13,
+      "categories": [
+        "Boutique",
+        "Concert Bar"
       ],
       "has_geojson": true
     },
@@ -316,6 +350,27 @@
       "poi_count": 8,
       "categories": [
         "Photobooth"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-distorama",
+      "url": "/toulouse-distorama/",
+      "title": "Distorama — Toulouse underground",
+      "description": "La carte des lieux underground toulousains : bars concerts, disquaires, cinémas, radios, studios.",
+      "emoji": "🗺️",
+      "section": "community",
+      "weight": 50,
+      "accent_color": "#ffffff",
+      "tags": [],
+      "poi_count": 100,
+      "categories": [
+        "Boutique",
+        "Cinema",
+        "Concert Bar",
+        "Radio",
+        "Record Shop",
+        "Studio"
       ],
       "has_geojson": true
     },

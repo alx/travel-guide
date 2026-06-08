@@ -96,6 +96,10 @@ def geojson_stats(geojson_path: Path) -> dict:
 
 SKIP_SLUGS = {"docs"}  # content/ sub-dirs that are not maps
 
+# Distorama generates hundreds of per-day and per-month event slugs; only the
+# root venues map and the two rolling windows belong in the public index.
+_DISTORAMA_DATE_RE = re.compile(r"^toulouse-distorama-\d{4}")
+
 
 def main():
     # Find repo root (script lives in scripts/)
@@ -117,6 +121,8 @@ def main():
         slug = section_dir.name
         if slug in SKIP_SLUGS:
             continue
+        if _DISTORAMA_DATE_RE.match(slug):
+            continue
 
         index_md = section_dir / "_index.md"
         if not index_md.exists():
@@ -137,8 +143,11 @@ def main():
         accent_color = fm.get("accent_color", "#1a3a5c")
         tags = fm.get("tags", [])
 
-        # GeoJSON stats (optional)
+        # GeoJSON stats — prefer locations.geojson, fall back to geojson_url frontmatter
         geojson_path = static_dir / slug / "locations.geojson"
+        if not geojson_path.exists() and fm.get("geojson_url"):
+            # geojson_url is a site-root path like /foo/events/this-week.geojson
+            geojson_path = static_dir / fm["geojson_url"].lstrip("/")
         geo = geojson_stats(geojson_path) if geojson_path.exists() else {"poi_count": 0, "categories": []}
 
         entry = {
