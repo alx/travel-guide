@@ -116,7 +116,16 @@ function renderSidebar() {
     card.onclick = () => focusPOI(f);
     list.appendChild(card);
   });
-  if (limit && filtered.length > limit) {
+  const pill = document.getElementById('show-more-pill');
+  if (pill) {
+    const poiListHidden = getComputedStyle(list).display === 'none';
+    if (limit && filtered.length > limit && !poiListHidden) {
+      pill.textContent = `… et ${(filtered.length - limit).toLocaleString()} autres. Utilisez la recherche pour affiner.`;
+      pill.style.display = '';
+    } else {
+      pill.style.display = 'none';
+    }
+  } else if (limit && filtered.length > limit) {
     const note = document.createElement('p');
     note.style.cssText = 'color:#888;font-size:0.8rem;padding:0.5rem 1rem;text-align:center;';
     note.textContent = `… et ${(filtered.length - limit).toLocaleString()} autres. Utilisez la recherche pour affiner.`;

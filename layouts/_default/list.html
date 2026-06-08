@@ -15,7 +15,7 @@
 {{ define "main" }}
 <div id="map"></div>
 
-<div class="map-overlay">
+<div class="map-overlay" id="left-overlay">
   <div class="overlay-card">
     <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
     <div class="page-header">
@@ -31,7 +31,8 @@
     <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher..." oninput="filterPOIs()">
     <div id="filter-btns"></div>
   </div>
-  <div class="overlay-card scrollable">
+  <div class="show-more-pill" id="show-more-pill" style="display:none"></div>
+  <div class="overlay-card scrollable" id="poi-list-wrapper">
     <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
       📂 <span id="custom-layer-name">Custom layer loaded</span>
       <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
