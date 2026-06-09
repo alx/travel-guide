@@ -198,7 +198,7 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
         "key": api_key,
     })
     url = f"https://www.googleapis.com/youtube/v3/search?{params}"
-    for attempt in range(4):
+    for _ in range(4):
         try:
             req = urllib.request.Request(url)
             with urllib.request.urlopen(req, timeout=10) as r:
