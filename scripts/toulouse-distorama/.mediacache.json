@@ -2,7 +2,8 @@
   "*ANNULE!!* IRE": {
     "youtube_video_id": "V6JZW0rTqcs",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "100% Techno Live Machine → GRIT SALT + FABULATOR + REDRØWEN": {
     "youtube_video_id": "",
@@ -16,8 +17,9 @@
   },
   "15.15": {
     "youtube_video_id": "ymGQ9EBhsn8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://hairdel.bandcamp.com/track/151515151515151515151515151515",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "1FAM (live mental) + SHADOW REMINGTON (mix acidcore) + KRAT-R (live tribe) + SAITTHAM (mix hardtek) + RYUK (mix vinyle acidcore) + LOUVA (live tribe mental) + ÏLA (mix mental acidcore) + VÄKKARM (live tribe) + JEAN CALE": {
     "youtube_video_id": "",
@@ -42,7 +44,8 @@
   "7 ans de la Méca : DJs Set et Tombola": {
     "youtube_video_id": "",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "A TERRE (pk hxc/Pays Basque) + BLOD": {
     "youtube_video_id": "",
@@ -102,7 +105,8 @@
   "AM HIGGINS": {
     "youtube_video_id": "L2qH6mXrrSE",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "AMORPHIA (old school thrash metal/Inde) + RECTIFIER": {
     "youtube_video_id": "",
@@ -111,8 +115,9 @@
   },
   "ANDRÉ GÉRARD": {
     "youtube_video_id": "efCUysTS-EY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://andregerard.bandcamp.com/track/bilou",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "ANIIMA (modern metal) + WAY FOR NOTHING": {
     "youtube_video_id": "",
@@ -122,7 +127,8 @@
   "ANNULE !!! THE SHITS": {
     "youtube_video_id": "vuPqvD3yYj4",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "ANNULE -> CORRUPTION PACT (death metal/hxc) + SOUL HATER": {
     "youtube_video_id": "",
@@ -142,12 +148,14 @@
   "APRIL FOOLS": {
     "youtube_video_id": "UMG7AEq1gy4",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "ARNAVALL": {
     "youtube_video_id": "",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "ARRROGANT (pk noisy) + ROTI BONDAGE": {
     "youtube_video_id": "",
@@ -156,8 +164,9 @@
   },
   "ARTISANS BANGER": {
     "youtube_video_id": "KjseaUPSqTQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://italomoderni.bandcamp.com/album/mellow-bangers-vol-2",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "ASTAFFORT MODS + SENSITIVE SKIN": {
     "youtube_video_id": "",
@@ -182,17 +191,20 @@
   "AUTOCAMPER": {
     "youtube_video_id": "tZafPhT1w6E",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   },
   "Afterwork DJ set JUMIEN JUMINI": {
     "youtube_video_id": "",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Afterwork dj set JUMIEN JUMINI": {
     "youtube_video_id": "",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "BARIMORE (post hxc) + LOSING PATIENCE": {
     "youtube_video_id": "",
@@ -206,8 +218,9 @@
   },
   "Jam Session": {
     "youtube_video_id": "J5udg-imtjo",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://bandcamp.com/discover/jam-session",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SEUM (doom 'n' bass/Montréal)": {
     "youtube_video_id": "6oIrbIGm8Pw",
@@ -216,8 +229,9 @@
   },
   "KAALBAR": {
     "youtube_video_id": "3TAdepF9oQU",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://kaalbaar.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "LES RENTIERS (pk)": {
     "youtube_video_id": "MaS3Z89AHDw",
@@ -226,8 +240,9 @@
   },
   "MAGIC TÉNIA": {
     "youtube_video_id": "Seu0EGZ8tHk",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://bandcamp.com/discover/new-classical",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "THE LAST OATH (Goth-Rock)": {
     "youtube_video_id": "bcBEqSHKH0Y",
@@ -236,43 +251,51 @@
   },
   "MARK OF THE SPHINX": {
     "youtube_video_id": "Hu8FDQ48gfs",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://markofthesphinx.bandcamp.com/album/fracture",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Blindtest / bootyshake": {
     "youtube_video_id": "ZqWGbMUsLug",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "50/50 Release Party (rap) → RUNO": {
     "youtube_video_id": "4FsvXbeSdoo",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "MAI DE RIMAS": {
     "youtube_video_id": "M1or9jXeCK0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://elbeatman.bandcamp.com/track/sigo-de-pie",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SINCE": {
     "youtube_video_id": "T8DLCWW6EpY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://hotsince82.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SUN": {
     "youtube_video_id": "gemYQQ_oDSc",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://djcounselling.bandcamp.com/track/every-day-the-sun-comes-up",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "ABUDAM": {
     "youtube_video_id": "hW4uzjkOZrk",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "CARA": {
     "youtube_video_id": "z71MDm6lxX0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://allmyghostslipsia.bandcamp.com/album/amg021-anam-cara",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "LE PRINCE HARRY (electro synth pk)": {
     "youtube_video_id": "wn1RAW1frtk",
@@ -281,18 +304,21 @@
   },
   "FRACTURE SQUAD": {
     "youtube_video_id": "C0eEJSk_Iew",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://musicsquad.bandcamp.com/album/sqd005-dmr-fracture-ep",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SISMIK": {
     "youtube_video_id": "MwYYRKse8iI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://sismiklamazone.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Blues au Coin du Zinc": {
     "youtube_video_id": "DtH8ajkSaj4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://djparental.bandcamp.com/album/trouble",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "CLAIRE VON CORDA (spoken word)": {
     "youtube_video_id": "SVGhhhIWvqM",
@@ -301,13 +327,15 @@
   },
   "NUIT NOIRE": {
     "youtube_video_id": "XEdaNf47k14",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://crouxrecords.bandcamp.com/album/faerie-ber-alles",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SILLY WALK": {
     "youtube_video_id": "iV2ViNJFZC8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://sillywalk.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "VÉTUSTE (indie rk)": {
     "youtube_video_id": "tDhNDTpQ8NY",
@@ -316,8 +344,9 @@
   },
   "THE SLOB": {
     "youtube_video_id": "VVlbOmY3D30",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://lesliefish.bandcamp.com/track/jack-the-slob-and-the-goddess-of-love-2",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "MESTIZA (pk hxc/Barcelone)": {
     "youtube_video_id": "",
@@ -332,27 +361,32 @@
   "LENNY MARSOUIN": {
     "youtube_video_id": "56FkNhA72NI",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Fête de la Musique": {
     "youtube_video_id": "aFrAUkM_cNE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://bandcamp.com/discover/f%C3%AAte-de-la-musique",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Fête de la Musique → DJs set": {
     "youtube_video_id": "KO0OVehOKKE",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Fête de la Musique → DJ set acid oriental par OZAN": {
     "youtube_video_id": "",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "MONDOSHAWAN": {
     "youtube_video_id": "VOHZnGxBWXA",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://mondoshawan-stoner.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "AMORPHIA (old school thrash metal/Inde)": {
     "youtube_video_id": "N9Vsff1pDX4",
@@ -361,33 +395,39 @@
   },
   "RECTIFIER": {
     "youtube_video_id": "iMhGf1GMzCs",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://mindcontrolledrectifier.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Dj set COLLECTIF CARABINES": {
     "youtube_video_id": "civv4_Z_2l4",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Blind test organisé par Ju'": {
     "youtube_video_id": "8jX6k91-BT4",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "THOM SUYEUR ET LES PETIS GREGORYS": {
     "youtube_video_id": "zkalcxBsZhg",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "THE DIOGENES": {
     "youtube_video_id": "-A3IlRATIsI",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "SYNAPS": {
     "youtube_video_id": "WhowH0kb7n0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://hxagrmrecords.bandcamp.com/merch/somse-synaps-hxagrm030-unisex-t-shirt",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "PENNY ARCADE (indie pop)": {
     "youtube_video_id": "sovWvLhET0c",
@@ -396,8 +436,9 @@
   },
   "HINTERHEIM": {
     "youtube_video_id": "YQRQ2-29G6k",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://hinterheim.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "COEUR À L'INDEX (power pop/Brxl)": {
     "youtube_video_id": "",
@@ -406,23 +447,27 @@
   },
   "RUMEX": {
     "youtube_video_id": "_onPQcCsR_A",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://leifsounds.bandcamp.com/album/montpelier-rumex",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "BEN CALYPSO": {
     "youtube_video_id": "mIQa_fw5qW4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://benvanderbosch.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Fripe & Spritz": {
     "youtube_video_id": "cmSApBkT0HE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://kakakidsrecords.bandcamp.com/merch/t-shirt-massicot",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "MONDO CANE": {
     "youtube_video_id": "zpSmSHrwgCg",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://mikepatton.bandcamp.com/album/mondo-cane",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "ZING (pk)": {
     "youtube_video_id": "fEqm2BE-rmE",
@@ -431,18 +476,21 @@
   },
   "CHICANE'S": {
     "youtube_video_id": "uTJtfytoYy4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://djchicane.bandcamp.com/album/trampolines",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "FABULATOR": {
     "youtube_video_id": "b2S2VmuDtdQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://marshallbarbier.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "Ventes de vêtements à petits prix": {
     "youtube_video_id": "kS5-d_c0t08",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://christinecjs.bandcamp.com/track/lumi-res-c-lestes",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "RADICAL KITTEN (queer pk no-wave)": {
     "youtube_video_id": "9nwoD3Mmfd4",
@@ -452,7 +500,8 @@
   "MARIA CARESSES et karaoké autotuné": {
     "youtube_video_id": "GVyoC7mZ0t8",
     "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "THE SOBERS (pk rk/Marseille)": {
     "youtube_video_id": "Im9ReKhoN4o",
@@ -466,8 +515,9 @@
   },
   "LA DÉBÂCLE": {
     "youtube_video_id": "yEtl8_PmJAQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": ""
+    "bandcamp_url": "https://blancoteta.bandcamp.com/album/la-debacle-de-las-divas",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
   },
   "CASCADES (electro kraut prog)": {
     "youtube_video_id": "aKguuJklh80",
@@ -488,5 +538,2332 @@
     "youtube_video_id": "mOURozZHHnY",
     "bandcamp_url": "",
     "bandcamp_embed_url": ""
+  },
+  "CHEMICAL DISTRICT": {
+    "youtube_video_id": "CUWpvvToWS0",
+    "bandcamp_url": "https://m-tronic.bandcamp.com/album/chemical-elements-10",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "IRON LUNGS (stoner pk)": {
+    "youtube_video_id": "jrHEKAqLFIg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "LAME": {
+    "youtube_video_id": "1dJByPWiits",
+    "bandcamp_url": "https://lame-orecords.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "PRESIDENT BUTCHER": {
+    "youtube_video_id": "TGdPtZU8vug",
+    "bandcamp_url": "https://thejazzbutcher.bandcamp.com/track/president-reagans-birthday-present",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "FRANTIC FORMS": {
+    "youtube_video_id": "",
+    "bandcamp_url": "https://franticforms.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TINA": {
+    "youtube_video_id": "Cb3itxYmkDM",
+    "bandcamp_url": "https://tinadisco.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "PEONY POX": {
+    "youtube_video_id": "RQBzDwY9OSc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "SECOND MAJOR (post pk)": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "CHUTE LIBRE (pk hxc/Nantes)": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "ROBERT OPENIGHTMARE (heavy drünk rk)": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "TEMPÊTE TOUT LE TEMPS (socio-punk-electro)": {
+    "youtube_video_id": "mXKQyuza0r0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "AXEL DELAPAIX": {
+    "youtube_video_id": "",
+    "bandcamp_url": "https://axeldelapaix.bandcamp.com/album/face-au-ciel",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "SPACE BUCKET": {
+    "youtube_video_id": "4ARI4Q8XwEU",
+    "bandcamp_url": "https://spacebucket.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TY (eggpk)": {
+    "youtube_video_id": "Fjb9GuT_pJU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "PAUL VAL": {
+    "youtube_video_id": "",
+    "bandcamp_url": "https://paulval.bandcamp.com/album/steady-rock-and-roller",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TRAUM (noise instrumental)": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": ""
+  },
+  "CHICOS MACHINE": {
+    "youtube_video_id": "",
+    "bandcamp_url": "https://chicosmachine.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "LES RENTIERS": {
+    "youtube_video_id": "T7sQ602k8oI",
+    "bandcamp_url": "https://lesrentiers.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "SEUM": {
+    "youtube_video_id": "MpZdI8i8Nuw",
+    "bandcamp_url": "https://seumtheband.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "THE LAST OATH": {
+    "youtube_video_id": "jPlVLuiLTEI",
+    "bandcamp_url": "https://thelastoath.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "LE PRINCE HARRY": {
+    "youtube_video_id": "6axer0NCcdk",
+    "bandcamp_url": "https://leprinceharry.bandcamp.com/music",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "CLAIRE VON CORDA": {
+    "youtube_video_id": "EVjFByBgplk",
+    "bandcamp_url": "https://dead14.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "VÉTUSTE": {
+    "youtube_video_id": "Z1pA1JDkJGg",
+    "bandcamp_url": "https://reversetapes.bandcamp.com/album/wedge",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "MESTIZA": {
+    "youtube_video_id": "n2Z5cqkqkao",
+    "bandcamp_url": "https://mestizahc.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "DANGER ZOO": {
+    "youtube_video_id": "2RRafXjXvmg",
+    "bandcamp_url": "https://dangerzoo.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "AMORPHIA": {
+    "youtube_video_id": "-sygcCitcho",
+    "bandcamp_url": "https://amorphiathrash.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "PENNY ARCADE": {
+    "youtube_video_id": "FvqdEopJ2SI",
+    "bandcamp_url": "https://pennyarcade.bandcamp.com/album/double-exposure",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "COEUR À L'INDEX": {
+    "youtube_video_id": "L5Vf84lazuY",
+    "bandcamp_url": "https://lavidaesunmus.bandcamp.com/album/adieu-minette",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "CASCADES": {
+    "youtube_video_id": "ItNIwAOLZDw",
+    "bandcamp_url": "https://magic-wands.bandcamp.com/album/cascades",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "ZING": {
+    "youtube_video_id": "PGyMzSnCumY",
+    "bandcamp_url": "https://carolinedavismusic.bandcamp.com/album/magnetic-flux",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "LITTLE TRICKS": {
+    "youtube_video_id": "eouL3onhTeM",
+    "bandcamp_url": "https://littletricks.bandcamp.com/track/la-cit",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "RADICAL KITTEN": {
+    "youtube_video_id": "xK_kVpON5AE",
+    "bandcamp_url": "https://radicalkitten.bandcamp.com/album/uppercat",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "THE SOBERS": {
+    "youtube_video_id": "sriF-LGb8lw",
+    "bandcamp_url": "https://thesobers.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "100% live machine → REDRØWEN": {
+    "youtube_video_id": "Y54EdNWny1E",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "GRIT SALT": {
+    "youtube_video_id": "QLJfZ6-a04M",
+    "bandcamp_url": "https://streetsects.bandcamp.com/track/rock-salt",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "R325": {
+    "youtube_video_id": "BXJpQOQGAR0",
+    "bandcamp_url": "https://s8jfou.bandcamp.com/track/r325-interpolation",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "IRON LUNGS": {
+    "youtube_video_id": "i4sh-Dw4bzg",
+    "bandcamp_url": "https://ironlungrecords.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "SECOND MAJOR": {
+    "youtube_video_id": "mAlwzAuNpW8",
+    "bandcamp_url": "https://secondmajor.bandcamp.com/album/blooms",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "CHUTE LIBRE": {
+    "youtube_video_id": "JXeRd7noxz0",
+    "bandcamp_url": "https://chutelibrehardcore.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "ROBERT OPENIGHTMARE": {
+    "youtube_video_id": "L85SpiAnjZA",
+    "bandcamp_url": "https://openightmare.bandcamp.com/music",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TEMPÊTE TOUT LE TEMPS": {
+    "youtube_video_id": "rJnyvz5ilf8",
+    "bandcamp_url": "https://tempete-tout-le-temps.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TY": {
+    "youtube_video_id": "YLya5oeLkKo",
+    "bandcamp_url": "https://ty4listening.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "TRAUM": {
+    "youtube_video_id": "-LYUImiTLxs",
+    "bandcamp_url": "https://traumofficial.bandcamp.com/album/traum",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "Karaoke / Bootyshake": {
+    "youtube_video_id": "8IkdT8HxmBY",
+    "bandcamp_url": "https://fufurecordz.bandcamp.com/album/fox-rhythm-jack",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "ATTIC TED": {
+    "youtube_video_id": "75WIcqnEAs4",
+    "bandcamp_url": "https://atticted.bandcamp.com/album/starfish-as-man",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "SWESOR BRATHER": {
+    "youtube_video_id": "nIU9fobUjRg",
+    "bandcamp_url": "https://swesorbhrater.bandcamp.com/music",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "DJ set": {
+    "youtube_video_id": "eQ-OVsdK-hM",
+    "bandcamp_url": "https://fakebuild.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "KONSTROY": {
+    "youtube_video_id": "tHuEt9cxqy0",
+    "bandcamp_url": "https://bandcamp.com/konstroy",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "EVENS & THE SOULJACKERS": {
+    "youtube_video_id": "NywYUFy65Cw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "THE WYLDE TRYFLES": {
+    "youtube_video_id": "txPFBrDgOh4",
+    "bandcamp_url": "https://thewyldetryfles1.bandcamp.com/album/outta-tyme",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "DJ sets": {
+    "youtube_video_id": "eQ-OVsdK-hM",
+    "bandcamp_url": "https://bandcamp.com/discover/dj-set",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "PINK STILETTO": {
+    "youtube_video_id": "ZxIymA1ep8Y",
+    "bandcamp_url": "https://pinkstiletto.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "GLORIA BEFANA": {
+    "youtube_video_id": "dZazCVdPHmM",
+    "bandcamp_url": "https://derniereneige.bandcamp.com/album/mixtape-2-artists-from-2024",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true
+  },
+  "GOLIATH": {
+    "youtube_video_id": "RqU0NCl62Xo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JOE BOYLE": {
+    "youtube_video_id": "d04m6BumNrQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SHOESHINERS": {
+    "youtube_video_id": "NPCybXtjBfU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "EQUINOXIOUS": {
+    "youtube_video_id": "iaR7ZTzr6zg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GRIS FUTURO": {
+    "youtube_video_id": "HQf6CkzO3-Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SWIRLS": {
+    "youtube_video_id": "7V5tkxozj4w",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MONTEVIDEO": {
+    "youtube_video_id": "8SYvWPM2YWs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Quizz / Bootyshake": {
+    "youtube_video_id": "yTmSLHWx5pk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ARMURE": {
+    "youtube_video_id": "CPcYy3Xkuco",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE BAD PLUG": {
+    "youtube_video_id": "EUsf0zlRlls",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "I FINNEGANS": {
+    "youtube_video_id": "joT2FNq4eTs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NUIT BLEUE": {
+    "youtube_video_id": "OynWzCniyOk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FRÈRES POUETARDS": {
+    "youtube_video_id": "kSMhB9FiCgE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SUBTLE TURNHIPS": {
+    "youtube_video_id": "MMqfwZYX8a4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MAMMOÜTH": {
+    "youtube_video_id": "V9egQOXrWeo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj Pasteq": {
+    "youtube_video_id": "qDJubqN3VkY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MONKEY LEO": {
+    "youtube_video_id": "Mr0mKggInKY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MARTY WENT BACK": {
+    "youtube_video_id": "yPK8QtVjMF0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MAMELLE BENT": {
+    "youtube_video_id": "t6BYBVCBYYk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Jam session": {
+    "youtube_video_id": "WjoL8Pw3oDg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JEFF ZIMA": {
+    "youtube_video_id": "RGTG3t_AhJ4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PANIC MONSTER": {
+    "youtube_video_id": "arj7oStGLkU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAME SHOT!": {
+    "youtube_video_id": "d5_DQo8y3EU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JB HANAK": {
+    "youtube_video_id": "sQ0wze3Pixo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TEXARKANA": {
+    "youtube_video_id": "Tai1lWFS_jY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "WET DREAM WAR MACHINE": {
+    "youtube_video_id": "K-rVlxSoVg0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "friends": {
+    "youtube_video_id": "bXM8ZyJ9L_4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CASABLANCA": {
+    "youtube_video_id": "rjrcALUu8LY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BLUE HARRISON": {
+    "youtube_video_id": "3mN8STFsR4Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Karaoke et afterwork": {
+    "youtube_video_id": "7e6JR4Eif9U",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YAGUARATÉ CREW": {
+    "youtube_video_id": "q1Oq--SBr04",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DISCOZERO": {
+    "youtube_video_id": "TQi0n0D2vzI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANGRY ZETA": {
+    "youtube_video_id": "a3O2ZMYdeB8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CLOCHETTES": {
+    "youtube_video_id": "TlsGmt0ALpg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ARC-EN-CIEL": {
+    "youtube_video_id": "e1wbWhMOCaQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SRAIL": {
+    "youtube_video_id": "wg71FmiJVAU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Vermut Musical": {
+    "youtube_video_id": "VQo9DBkMXC4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FRANX": {
+    "youtube_video_id": "HsJ097Z3Rfg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ KONSTROY": {
+    "youtube_video_id": "JEyZfckbUaQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Blindtest et bootyshake": {
+    "youtube_video_id": "yTmSLHWx5pk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PRUNG": {
+    "youtube_video_id": "23rnAs9BHkk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DEADBANE": {
+    "youtube_video_id": "zrMNaehIMIA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DESERT DEW": {
+    "youtube_video_id": "kWYdTOxMipQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HOLYFISH": {
+    "youtube_video_id": "eN-nAVd9SUY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "RED QUIET (sludge/noise) - CHIHUAS OF DEPTHS (rock alternatif) - KAALBAÅR": {
+    "youtube_video_id": "polJWzHnbgU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NO SELF": {
+    "youtube_video_id": "uCldjIVqxAU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "AUGUST ANGST": {
+    "youtube_video_id": "ZW8AkJGNftw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ZAPOÏ": {
+    "youtube_video_id": "jtXzsO6TUbw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KESSLER SYNDROME": {
+    "youtube_video_id": "MmVW8f31vI8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TRES OMBRES": {
+    "youtube_video_id": "3-dxpinUORo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NESTTER DONUTS": {
+    "youtube_video_id": "hWDkz8zEcPc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "L'ORCHESTRE DE JÉRÔME SAGE": {
+    "youtube_video_id": "j920BAm3CQc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SLIM PAUL": {
+    "youtube_video_id": "XvK5CUpe0ww",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KAS PRODUCT RELOAD": {
+    "youtube_video_id": "q7ufDPbr35Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MALEFIXIO": {
+    "youtube_video_id": "NQKD-jLMEMM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OUTTA POCKET": {
+    "youtube_video_id": "N974XnBsxNM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HOLD MY OWN": {
+    "youtube_video_id": "N1y7G6UQi_0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PUSH!": {
+    "youtube_video_id": "HAkHqYlqops",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SPURCITIA": {
+    "youtube_video_id": "Tne8FZyySz4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAMPEROUGE": {
+    "youtube_video_id": "5ZYtHupa9io",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "1° partie": {
+    "youtube_video_id": "nU332ZdYPiU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "AKI GRATTE-CIEL": {
+    "youtube_video_id": "VRl1pUCFXxU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PS STAMPS BACK": {
+    "youtube_video_id": "mbKhDXKcOLs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NIGHTWATCHERS": {
+    "youtube_video_id": "yfGVJwbZjjM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YANNICK BOUDRUCHE": {
+    "youtube_video_id": "rtIec1eT17o",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HUMMINGBIRD": {
+    "youtube_video_id": "TENzstSjsus",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GUTBUGS": {
+    "youtube_video_id": "IDqMB6C1uys",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LITOVSK": {
+    "youtube_video_id": "MlfJNO7UMd8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Jam irlandaise": {
+    "youtube_video_id": "xviP4-z_iRY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MERCURE 22": {
+    "youtube_video_id": "fhWKMhQGlRs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LEUF DOR": {
+    "youtube_video_id": "gNHDocKL9TY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PARIASS": {
+    "youtube_video_id": "AoaB49_oLfE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PAL": {
+    "youtube_video_id": "w8LcxY43N5Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "COUP DROIT": {
+    "youtube_video_id": "5h56bKeGbHw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GRUESOME PLEDGE": {
+    "youtube_video_id": "S8ztvVYzxo4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SIGNIFICANT DAMAGE": {
+    "youtube_video_id": "gb5LjxW0nOI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "AUSTER": {
+    "youtube_video_id": "ffD9MCotZfQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PROJET SERPICO": {
+    "youtube_video_id": "cu3A3-mCg8k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Blind test par Ju’": {
+    "youtube_video_id": "Lc9VXAgm7rE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "EDGES": {
+    "youtube_video_id": "kEu1AGpw8L4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NEWBORN GHOST": {
+    "youtube_video_id": "VOl_xaBB7Zc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LIOTTA SEOUL": {
+    "youtube_video_id": "V8wImrvR8Tw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HOMEGROUND": {
+    "youtube_video_id": "YuPr4-rxlLo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PYROLIZ": {
+    "youtube_video_id": "BOpEtUhSWm0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SUKKUBE": {
+    "youtube_video_id": "E-xQrSI_nAg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "guest": {
+    "youtube_video_id": "3WPOXHmW200",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TWO SEASONS": {
+    "youtube_video_id": "IFLb3mGdoM4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAURA BOLT": {
+    "youtube_video_id": "Vc2Bu7TJgEs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FANTÔME JOSEPHA": {
+    "youtube_video_id": "V5TzrYF6Cr8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KOWAI MONO": {
+    "youtube_video_id": "awvGSZn4JUE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ Set BRUIT BLANC": {
+    "youtube_video_id": "FfOje5aIO1k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ICONOCLAST": {
+    "youtube_video_id": "5nIQ9hEZ_90",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NOTHING FOR FREE": {
+    "youtube_video_id": "WeOFimyghIA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DRAW ME A BUTT": {
+    "youtube_video_id": "UtSG1q_VAtE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "I.WOKE.UP.CHINESE": {
+    "youtube_video_id": "5iqgoer8P80",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Quizz et afterwork": {
+    "youtube_video_id": "xYpbZQE5Wn8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ELY PINEDA": {
+    "youtube_video_id": "hm4VY-t32x4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set CHEMICAL DISTRICT": {
+    "youtube_video_id": "yOXo3q5d2Ak",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GIGI DUO": {
+    "youtube_video_id": "V2QMZxq2AKo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CERNIA": {
+    "youtube_video_id": "MRtjNc2EDMc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PUBLIC CIRCUIT": {
+    "youtube_video_id": "GGgBCQ5QiRc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BUTTER KNIFE": {
+    "youtube_video_id": "YzypzhnSbG0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "100% Techno Live Machine → GRIT SALT": {
+    "youtube_video_id": "n5FieRk-42Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "REDRØWEN": {
+    "youtube_video_id": "aHjji3fVj30",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SHADOW TIDES": {
+    "youtube_video_id": "NQv5pfLD1yY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TOTO SADYK": {
+    "youtube_video_id": "MCmJmaHiTIs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JÉRÔME SAGE": {
+    "youtube_video_id": "RKS3mRIHUf0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SCIENCE MAN": {
+    "youtube_video_id": "ELedm6W4Z08",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BARREL KICK": {
+    "youtube_video_id": "G25KJrETHMY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GOD SAVE THE CUIVRE": {
+    "youtube_video_id": "fU0l9qBdYTQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OLAIIA_": {
+    "youtube_video_id": "5KtG6A2sZsU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "STRIE [NON-LIEU]": {
+    "youtube_video_id": "tjaK23ZQVO4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VIOLETTE DU PASQUIER": {
+    "youtube_video_id": "dnoLtz3GTVU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LARME INCENDIE": {
+    "youtube_video_id": "ZUBtAulYrQM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "INDUSTRIAL MATERIAL": {
+    "youtube_video_id": "lcGNArUVIhI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VEMBERLAIN": {
+    "youtube_video_id": "lOyt38ooO0I",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PART TIME LEGEND": {
+    "youtube_video_id": "H42-yrCDO3g",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DAVE PERZO": {
+    "youtube_video_id": "cYsRimIYQlc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ZORRO DU CUL": {
+    "youtube_video_id": "hfCAO30pzbs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAO": {
+    "youtube_video_id": "q4cHTy_OdvI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Blind test et bootyshake": {
+    "youtube_video_id": "wRyD81oBUSM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Boum des Pussycat Molles → DULCINE": {
+    "youtube_video_id": "xfuBvv47qI0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FLUFFY MACHINE": {
+    "youtube_video_id": "IlVeeiTKuMU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OUTATIME BAND": {
+    "youtube_video_id": "kACximgiF60",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TH’ LOSIN STREAKS": {
+    "youtube_video_id": "r_hHCwN560o",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set ELDELSTEIN": {
+    "youtube_video_id": "t2vl0rxyTfE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MOLYKOTE": {
+    "youtube_video_id": "qcoi6yxmJO8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PARENTESIS 536": {
+    "youtube_video_id": "B95oY0lrXwc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "EDHOCHULI": {
+    "youtube_video_id": "brE7O94Wnwg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TROMBLON": {
+    "youtube_video_id": "orttPYKbIFI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PFFF…": {
+    "youtube_video_id": "HBJBxuIs6g0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OOG BOGO": {
+    "youtube_video_id": "Jhyk9DY-HmU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TIPI": {
+    "youtube_video_id": "G6CU5uHltIw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NATURE MORTE": {
+    "youtube_video_id": "LqIKle5atJI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "AETHERIA CONSCIENTIA": {
+    "youtube_video_id": "zX38w2K7-YA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CERNIA (rk fusion) - THE LAST INTERNATIONALE": {
+    "youtube_video_id": "UYVBQ2u6xIA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "POO POO TALKS": {
+    "youtube_video_id": "f7liH3xJGzU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FIVE BUCKS!": {
+    "youtube_video_id": "VLqioJ4sDdY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "M.I.T": {
+    "youtube_video_id": "C-4toIouEig",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THROUGHT": {
+    "youtube_video_id": "MAwI65CuQ9Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BUUG": {
+    "youtube_video_id": "TKIEeCvlNCQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANNULE -> CORRUPTION PACT": {
+    "youtube_video_id": "YwU4IgF2pvg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SOUL HATER": {
+    "youtube_video_id": "rtVLc_p98sg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "« HELLISHA SAUVAGE": {
+    "youtube_video_id": "Bj82ehzadyQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set CAT'ART": {
+    "youtube_video_id": "q8z9S1WMdFY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "RAINCHECK!": {
+    "youtube_video_id": "xXeyznlIrFY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "IGLOO BANANA": {
+    "youtube_video_id": "QHKTpqB4eig",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FWK": {
+    "youtube_video_id": "y8zTFbPQzxE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DRAWING HILLS": {
+    "youtube_video_id": "sJ72793Hi3M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE LONE WOLF": {
+    "youtube_video_id": "gMFc7agO09w",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PINK WONDER": {
+    "youtube_video_id": "rqk2SIZ53dg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANNULE ? DEPLACE? -> CAGNARD": {
+    "youtube_video_id": "XELD1Sfcn3k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set JUMIEN JUMINI": {
+    "youtube_video_id": "CahUsBmN1DQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GRAVERY": {
+    "youtube_video_id": "mEMxMWBOYjQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SICARIS": {
+    "youtube_video_id": "0NN3moYmc-U",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DÏBRA": {
+    "youtube_video_id": "EjL8UF6Lxgk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FRIDA": {
+    "youtube_video_id": "p98PjtSfNWo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LOVATARAXX": {
+    "youtube_video_id": "DTrBmGifAgQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BOURDY COLLECTIF": {
+    "youtube_video_id": "sYa_lxp4a1Q",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Les 3 ans du Bistrot : LAS BOMBAS": {
+    "youtube_video_id": "2-qcTvsotYw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PRIX LIBRE": {
+    "youtube_video_id": "y2tr0utKrnA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ADOLF HIBOU": {
+    "youtube_video_id": "vhFQz6ccQvw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set AUDREY LYS": {
+    "youtube_video_id": "4yiGMIfzbFc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Les Siestes": {
+    "youtube_video_id": "WwuD_zaY0B8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ONDORPHINE": {
+    "youtube_video_id": "lv7NHXQnhZg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BUUUG": {
+    "youtube_video_id": "Uzs2himpYGk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NAKED NUDES": {
+    "youtube_video_id": "MDlZson_R7o",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "K.A.R.L.": {
+    "youtube_video_id": "cSvXPQFZz1I",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Guest": {
+    "youtube_video_id": "7-5Upq2hcOA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Quizz culture générale et after work": {
+    "youtube_video_id": "bYidVOJb3aw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HOLLOW SHIP": {
+    "youtube_video_id": "ZQdtdKVRVi8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "REAGGAE WORKERS OF THE WORLD (RWW) & THE BANDULUS": {
+    "youtube_video_id": "3LQJUKFxb7E",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MONTAÑA": {
+    "youtube_video_id": "HIfrfjgl2Lg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TOWER OF ONE": {
+    "youtube_video_id": "BwkOZb3L_Ss",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TOM BYARS' OUT OF FIRE": {
+    "youtube_video_id": "9dcc6bJfOi4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LES FILS DE JOIE unplugged": {
+    "youtube_video_id": "3FCLKaPZH6Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TOTOROCK": {
+    "youtube_video_id": "0TONxhOSkTo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PARAZYTE PETALS": {
+    "youtube_video_id": "RVkq-EebO44",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YUNK": {
+    "youtube_video_id": "TbQHJvW1kkQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ERREUR JEAN": {
+    "youtube_video_id": "4tU2qKRzZQ8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CAGE": {
+    "youtube_video_id": "NG_fm-NhlNQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set PASTEQ": {
+    "youtube_video_id": "g1wYmoy8TRI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THIAZ ITCH": {
+    "youtube_video_id": "iK1VONoA0lc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "1FAM": {
+    "youtube_video_id": "J4utLqMCAWo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SHADOW REMINGTON": {
+    "youtube_video_id": "hVpXb8UpuS0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KRAT-R": {
+    "youtube_video_id": "tEXtuE9W2Ro",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SAITTHAM": {
+    "youtube_video_id": "u3wqBtnaIVk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "RYUK": {
+    "youtube_video_id": "ixMzyhG2xqo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LOUVA": {
+    "youtube_video_id": "pKIKi1D6bXU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ÏLA": {
+    "youtube_video_id": "zpzdgmqIHOQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VÄKKARM": {
+    "youtube_video_id": "jwf1xu2lHBk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JEAN CALE": {
+    "youtube_video_id": "CRegdxBdXIQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DANIEL MARK WILLIAMS": {
+    "youtube_video_id": "sf-_uvtz44Q",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TULAVIOK": {
+    "youtube_video_id": "9rWlTi4xaWc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TENIA CREW": {
+    "youtube_video_id": "txsdcQXYrbI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "« Island Orgy Fuck Party » : DJ set from boogaloo to synthwave": {
+    "youtube_video_id": "71Vcbq9Uo6M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YUCABA": {
+    "youtube_video_id": "c1x_JqiYcaw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FRACTION SQUAD": {
+    "youtube_video_id": "Lxre2s5nB5w",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Karaoke et after work": {
+    "youtube_video_id": "NjYDukkrBCM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BARREZ VOUS": {
+    "youtube_video_id": "7vPzWR0HBd8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VIVE LA POP": {
+    "youtube_video_id": "8O9qSgUjb1U",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "UNOM": {
+    "youtube_video_id": "E6DFgA6vTwg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PRRIEE PCION": {
+    "youtube_video_id": "4F-dmHKlWCg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set COLLECTIF CABANE": {
+    "youtube_video_id": "8I3KyZrAWiM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DANI BARN": {
+    "youtube_video_id": "a_PWx4oItlA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "POMMADE": {
+    "youtube_video_id": "4KDdbvbITBM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MAXWELL FARRINGTON": {
+    "youtube_video_id": "alMVgHS16vs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "UNDERTAKEN LIFE": {
+    "youtube_video_id": "bkDqD9hOkJw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LETHERNAL UTOPIA": {
+    "youtube_video_id": "bQ9BJh5fVTA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set EKYOZ": {
+    "youtube_video_id": "SJZoEN1yfB0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NICK WHEELDON & THE LIVING PAINTINGS": {
+    "youtube_video_id": "DmrqU5pSBnU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JULII SHARP": {
+    "youtube_video_id": "nH1FwoBXO3M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAST NITE": {
+    "youtube_video_id": "TOypSnKFHrE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SHITTY SHED": {
+    "youtube_video_id": "f3ZtyBwTSyU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ORGANES EN SOLDES": {
+    "youtube_video_id": "BjXDhk-XE4g",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "UMRA": {
+    "youtube_video_id": "skzo2XmFUv4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KONTAMINATE": {
+    "youtube_video_id": "bvOjQOBl60w",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LILITH SONG": {
+    "youtube_video_id": "4YQ8mgzXcxU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PRONOSTIC VITAL": {
+    "youtube_video_id": "LiO2-FRyTVE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KAYO DAYO BELIT": {
+    "youtube_video_id": "lCnZFKatP5M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SAJJRA": {
+    "youtube_video_id": "1x5yxQKWJmo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HELOÏSE FRANCESCHINI": {
+    "youtube_video_id": "AsHQQeaZKqQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DRY SOCKET": {
+    "youtube_video_id": "tRufy2Nnvvw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LAST DEFEAT": {
+    "youtube_video_id": "VOfiAorpZVc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VIDEOFLIP": {
+    "youtube_video_id": "OTi-er4Vwxo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LIEP": {
+    "youtube_video_id": "QLmDSEZV8Ro",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANGRY DEAD PIRATES": {
+    "youtube_video_id": "hCbhZXkbHJg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KILL KILL DIANA": {
+    "youtube_video_id": "QplR4iIIF3o",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ESCAPE-ISM": {
+    "youtube_video_id": "xnvm_R-XfM4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE CLAUSE": {
+    "youtube_video_id": "4wvudsshbGc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SUZ": {
+    "youtube_video_id": "U3_djdjsI5Q",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Blind test": {
+    "youtube_video_id": "wRyD81oBUSM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CHATEAU COSCO": {
+    "youtube_video_id": "xqXjQ3pjPGw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LUCAS PA": {
+    "youtube_video_id": "k24QZ0EhcCg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Guest?": {
+    "youtube_video_id": "7-5Upq2hcOA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set CARABINE": {
+    "youtube_video_id": "civv4_Z_2l4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FUKU": {
+    "youtube_video_id": "37SusVgFHqw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FOSCO": {
+    "youtube_video_id": "BcDf-Lbom_s",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MARC SENS": {
+    "youtube_video_id": "PJ3xxRVIWvc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Blues au coin du zinc": {
+    "youtube_video_id": "DtH8ajkSaj4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ZËRO": {
+    "youtube_video_id": "DIPKDEzJVpc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YAROSTAN": {
+    "youtube_video_id": "UvDNJSH7EWY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FRB": {
+    "youtube_video_id": "ljFL7h6Bhpg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JOSH AND THE DIRTY RAGS": {
+    "youtube_video_id": "C2hCAdCoG70",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TRAITRS": {
+    "youtube_video_id": "AFmeuYl3VC4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ORDER 89": {
+    "youtube_video_id": "ispj_lZfpK4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE CUTTER": {
+    "youtube_video_id": "XRGRsYg_fro",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "STILL ROOM": {
+    "youtube_video_id": "7w8olw_GQ0U",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BLACK VIIOLET": {
+    "youtube_video_id": "cZaRU5vwIgY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MISTY WHITE": {
+    "youtube_video_id": "pGISBvAWuxw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ZEPHY, ZSOFI": {
+    "youtube_video_id": "X5xhUED9thA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set THE ROOMMATES": {
+    "youtube_video_id": "f4eDOMk4ef0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SILVETHINGS": {
+    "youtube_video_id": "bGFMPVAT25M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set by OZAN": {
+    "youtube_video_id": "9VLyRQaFOY8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "VOLTA": {
+    "youtube_video_id": "C9Z8n_D6DsQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "JEFFERS WALDO": {
+    "youtube_video_id": "xyQhBjs6KiQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "HIGHSTYLE": {
+    "youtube_video_id": "fR6-ZWadVig",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FORÊT": {
+    "youtube_video_id": "Njpw2PVb1c0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FABRICE JOUSSOT": {
+    "youtube_video_id": "qskw0MAixvs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "copains": {
+    "youtube_video_id": "PT7U_GzRIv0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ASTROMILK": {
+    "youtube_video_id": "hxW1FqWtH8g",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE COOPER & FOREST POOKY EXPÉRIENCE": {
+    "youtube_video_id": "-jtx-pg9_yI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DEE PHI": {
+    "youtube_video_id": "AYPQIntoJeE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "KONTROLL TEK": {
+    "youtube_video_id": "I3YDzpxnhm0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LUNDI BRÛLE": {
+    "youtube_video_id": "HjoYs_3v5z4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Méga Braderie Face B Friperie": {
+    "youtube_video_id": "kdAHgrNPCk8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ENLÒC": {
+    "youtube_video_id": "gjG8x568uMs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LOGGERHEADS": {
+    "youtube_video_id": "2yzLHHbnFe8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set MAMELLE BENT": {
+    "youtube_video_id": "NHkRgjfLc64",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LE RENARD": {
+    "youtube_video_id": "BI5oLlWm6c8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CITY DRAGON": {
+    "youtube_video_id": "3uWwZyGkp1k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BUENO WHITE": {
+    "youtube_video_id": "Fm_82n8FqlY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DJ set R.2614": {
+    "youtube_video_id": "WEtM8HyWWlU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ACTION CLUB": {
+    "youtube_video_id": "ZOIOI5hnrDg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ATTENTION L'ORAGE": {
+    "youtube_video_id": "9r4_AsTLTuA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GLITSH": {
+    "youtube_video_id": "jL7lR0qh4m4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MAFIA SOFA": {
+    "youtube_video_id": "4i1x5gN8Gdk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OK.KENNY": {
+    "youtube_video_id": "Ujze28iIE4c",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set ULTRAVIOLLETTE": {
+    "youtube_video_id": "P5HhfqnqkFY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "D-STOP": {
+    "youtube_video_id": "WCxMMPeDUag",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set KRIS VAN RANCE": {
+    "youtube_video_id": "f9Ghz6BNfV8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NOVO SKELTER": {
+    "youtube_video_id": "rKpEKtP0PhU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CATCHY PERIL": {
+    "youtube_video_id": "HaenLpVy7oA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "RITA BRAGA": {
+    "youtube_video_id": "tVe9fHFq7nA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PAINTERBOY": {
+    "youtube_video_id": "B1M086va0ZA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "OLD TIMES": {
+    "youtube_video_id": "EZg4uaOzOf4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CATHERINE MIMOSA ⇄ DARK DANGER": {
+    "youtube_video_id": "dGyMPiNXbIA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "FERA": {
+    "youtube_video_id": "B0V6l5SBJp4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "INDIOS DIEGO": {
+    "youtube_video_id": "Q__5xQa0ZQM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SWESOR BHRATER": {
+    "youtube_video_id": "nIU9fobUjRg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DELIVER THE SUFFERING": {
+    "youtube_video_id": "8kA562gTff8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ROTI BONDAGE": {
+    "youtube_video_id": "QiiYGNbqqAk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set EKYOZ": {
+    "youtube_video_id": "SJZoEN1yfB0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DISTOPIANOMEN": {
+    "youtube_video_id": "NRHilPuS6Uo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ARRROGANT": {
+    "youtube_video_id": "xvAJzv-pAZI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TAK !": {
+    "youtube_video_id": "ba7YbGO2aq4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Scène ouverte aux femmes et minorité de genre": {
+    "youtube_video_id": "yKwRlPKlsZ8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NEUROTIC STRANGERS": {
+    "youtube_video_id": "3zpilrWe7nc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CHARLOTTE SUPERKICK": {
+    "youtube_video_id": "V-8Dw2GOAA4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GEHEN": {
+    "youtube_video_id": "J4Y5os6gHxI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NO FAITH IN MEDICINE": {
+    "youtube_video_id": "0mWM0S1dMro",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANTI-CLOCKWISE": {
+    "youtube_video_id": "0lqrO_F0vyg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DISTURBANCE": {
+    "youtube_video_id": "fV71Do9qhYY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GERCHI": {
+    "youtube_video_id": "Lb7yqWYIYx0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PÉNITENT": {
+    "youtube_video_id": "5tiACmg5ra8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BATAILLE": {
+    "youtube_video_id": "okV-BB8RVew",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "CP WESTMAN ORKESTER": {
+    "youtube_video_id": "A998DAF-a4k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "PAMELA NIGHTS": {
+    "youtube_video_id": "rUnn9Rc1de0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Dj set éclectique → ALEX ARMEN": {
+    "youtube_video_id": "ElV47f1rgp8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Tribute JANIS JOPLIN": {
+    "youtube_video_id": "xuJ-qXbjtm4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Fin de série DJ set": {
+    "youtube_video_id": "h7wcu7J-XA4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "THE TENSIONS": {
+    "youtube_video_id": "MQ6zQdzSmBg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BIG T AND THE NUTS": {
+    "youtube_video_id": "MU1nZ-ii1C4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "USERBAND": {
+    "youtube_video_id": "jAK8UAX7PMA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Marionnettissimo → Puppets night « Chouchou Tour »": {
+    "youtube_video_id": "0wBGlpMuMYw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YOUTH CRUSHER": {
+    "youtube_video_id": "WxFgvS2aeT4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ANIFORA": {
+    "youtube_video_id": "WJwXhhPYq2M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SPAGHETTICORE": {
+    "youtube_video_id": "AA9Tv065gzM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Karaoké": {
+    "youtube_video_id": "v-FXW8_SP0s",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "Bootyshake": {
+    "youtube_video_id": "ABCyJJGW0qs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "SONS OF ACHAB": {
+    "youtube_video_id": "h1TLaxs5tI0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BLACK DROP": {
+    "youtube_video_id": "OkCTC6bgskY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NATHAN ROCHE": {
+    "youtube_video_id": "bOZ2Rq1NqlI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MINITELLE XEROXE": {
+    "youtube_video_id": "vXQiWEHlsgg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "MUDDY": {
+    "youtube_video_id": "TaGaPGu7wdc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "BOUM DES PUSSYCAT MOLLES avec HELLISHA": {
+    "youtube_video_id": "wgaUJxE-0-U",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "NABLAST x ASKATA": {
+    "youtube_video_id": "MN_Dfmb-DV4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LADY MISS PENELOPE - Dj set vinyl Untypical girls": {
+    "youtube_video_id": "KDe2WUXPfio",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "DIS MIST": {
+    "youtube_video_id": "PsrO84vlFgc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "ARC EN CIEL": {
+    "youtube_video_id": "zTwu2X5yuSQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "YAPA": {
+    "youtube_video_id": "EbxilH695cw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GATTACA": {
+    "youtube_video_id": "NIIZ2P-fiyI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "REAL DEAL": {
+    "youtube_video_id": "KhF6VjBtSbs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "GET REAL": {
+    "youtube_video_id": "Q7IryRnlwsg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "TRAKOEUR": {
+    "youtube_video_id": "3EvHzgk7i6A",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
+  },
+  "LIIZI": {
+    "youtube_video_id": "tea_bz1WQZg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false
   }
 }

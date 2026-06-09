@@ -260,7 +260,7 @@ def _extract_bandcamp_embed(url: str) -> tuple[str, str]:
             return url, ""
 
     m_id = re.search(
-        r'<meta property="twitter:player" content="https://bandcamp\.com/EmbeddedPlayer/album=(\d+)/',
+        r'bandcamp\.com/EmbeddedPlayer/(?:v=2/)?album=(\d+)/',
         html,
     )
     if not m_id:
