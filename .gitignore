@@ -3,3 +3,4 @@ public/
 .hugo_build.lock
 node_modules/
 .playwright-mcp/
+data/france_project_newsletter/

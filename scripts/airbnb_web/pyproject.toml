@@ -1,0 +1,16 @@
+[project]
+name = "airbnb-web"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "flask>=3.0",
+  "python-dotenv",
+  "requests",
+  "beautifulsoup4",
+  "overpass",
+  "rich",
+  "staticmap",
+]
+
+[tool.uv]
+dev-dependencies = []

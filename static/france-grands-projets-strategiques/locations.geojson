@@ -32,7 +32,23 @@
         "ville": "Échassières",
         "projet": "Projet de mine souterraine de lithium visant à produire 34 000 tonnes d’hydroxyde de lithium par an pour soutenir la filière des véhicules électriques",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://www.imerys.com/rss",
+          "company_url": "https://www.imerys.com",
+          "changedetection_url": "https://www.imerys.com/media-room",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Imerys",
+            "lithium",
+            "Échassières",
+            "hydroxyde de lithium"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "430ff035-6cd6-4fa6-aa03-20f4098e4687"
+        }
       }
     },
     {
@@ -54,7 +70,23 @@
         "ville": "Feyzin / Saint-Vulbas",
         "projet": "Usine de freins carbone : projet d’usine de production de freins carbone pour l’aéronautique, avec une mise en service prévue à l’horizon 2030",
         "coord_source": "nominatim",
-        "coord_accuracy": "medium"
+        "coord_accuracy": "medium",
+        "feeds": {
+          "company_rss": "https://www.safran-group.com/rss/pressroom",
+          "company_url": "https://www.safran-group.com",
+          "changedetection_url": "https://www.safran-group.com/pressroom",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Safran",
+            "freins carbone",
+            "aéronautique",
+            "Saint-Vulbas"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "3e676572-d5f4-4af8-80f6-a6045669f989"
+        }
       }
     },
     {
@@ -76,7 +108,23 @@
         "ville": "Privas",
         "projet": "Investissements industriels pour soutenir les marchés de l’énergie, du nucléaire et des datacenters",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://blog.se.com/feed",
+          "company_url": "https://www.se.com/fr/fr/",
+          "changedetection_url": "https://www.se.com/fr/fr/about-us/newsroom/",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Schneider Electric",
+            "datacenter",
+            "nucléaire",
+            "Privas"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "4bccaec2-5b42-4210-a8c3-9d95cf5e756c"
+        }
       }
     },
     {
@@ -98,7 +146,22 @@
         "ville": "Rochefort-en-Valdaine",
         "projet": "Data center – Projet de centre de données nouvelle génération",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.sesterce.io",
+          "changedetection_url": "https://www.sesterce.io/actualites",
+          "keywords": [
+            "Sesterce",
+            "data center",
+            "Rochefort-en-Valdaine",
+            "Drôme"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "afa46a55-ee39-4444-88ef-7e9baa89066d"
+        }
       }
     },
     {
@@ -120,7 +183,22 @@
         "ville": "Noyarey",
         "projet": "Mag Factory : projet industriel de fabrication d’aimants permanents recyclés pour renforcer la souveraineté européenne",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.magreesource.com",
+          "changedetection_url": "https://www.magreesource.com/news",
+          "keywords": [
+            "MagREEsource",
+            "aimants permanents",
+            "Noyarey",
+            "terres rares"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b6ba5ab5-adbc-46fa-80b2-5d64d447d786"
+        }
       }
     },
     {
@@ -142,7 +220,23 @@
         "ville": "Grenoble",
         "projet": "Data center",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.dataone.fr",
+          "changedetection_url": "https://www.dataone.fr/actualites",
+          "keywords": [
+            "DataOne",
+            "Oreus",
+            "Core 42",
+            "data center",
+            "Grenoble"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "61deebe7-dfdb-4358-b955-d39a3268799e"
+        }
       }
     },
     {
@@ -164,7 +258,22 @@
         "ville": "Veauche",
         "projet": "Construction d’un site de production de textile médical de pointe dédié à la compression médicale",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.urgo.fr",
+          "changedetection_url": "https://www.urgo.fr/presse",
+          "keywords": [
+            "Urgo",
+            "textile médical",
+            "compression médicale",
+            "Veauche"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "f51a4ee5-8214-4b30-9a85-a7b562fa4bfe"
+        }
       }
     },
     {
@@ -186,7 +295,22 @@
         "ville": "Saint-Symphorien-d'Ozon",
         "projet": "Projet de recyclage de ballons d’eau chaude avec valorisation des matériaux et réduction des émissions de CO₂",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.derichebourg.com",
+          "changedetection_url": "https://www.derichebourg.com/presse",
+          "keywords": [
+            "Derichebourg",
+            "recyclage",
+            "Saint-Symphorien-d'Ozon",
+            "ballons d'eau chaude"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "14c3bb53-e632-468f-8c2d-129635470f53"
+        }
       }
     },
     {
@@ -208,7 +332,22 @@
         "ville": "Cercy-la-Tour",
         "projet": "Développement d’un site de production de charbon végétal",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.scierie-bordet.fr",
+          "changedetection_url": "https://www.icp.fr/a-propos-de-licp/agenda/mercredis-de-la-com-i-rencontre-avec-capucine-bordet-journaliste-a-cvm-presse",
+          "keywords": [
+            "Bordet",
+            "charbon végétal",
+            "Cercy-la-Tour",
+            "Nièvre"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "0f7a81c3-6aab-44f1-a3f2-327859bd11cf"
+        }
       }
     },
     {
@@ -230,7 +369,22 @@
         "ville": "Le Creusot",
         "projet": "Réacteur nucléaire innovant : développement d’un petit réacteur pour produire de la chaleur industrielle décarbonée",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.jimmy.energy",
+          "changedetection_url": "https://www.jimmy-energy.eu/actualites",
+          "keywords": [
+            "Jimmy Energy",
+            "réacteur nucléaire",
+            "chaleur industrielle",
+            "Le Creusot"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "cfee3e9d-d103-4784-ad04-244332a7e94a"
+        }
       }
     },
     {
@@ -252,7 +406,22 @@
         "ville": "Bourbon-Lancy",
         "projet": "Conception de moteurs pour camions et engins agricoles",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.fptindustrial.com",
+          "changedetection_url": "https://www.fptindustrial.com/media",
+          "keywords": [
+            "Fiat Powertrain",
+            "FPT Industrial",
+            "Bourbon-Lancy",
+            "moteurs camions"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b8648368-9f29-4717-9215-13f2d95c39be"
+        }
       }
     },
     {
@@ -274,7 +443,24 @@
         "ville": "Paron / Gron",
         "projet": "CAPA-PILASER – Extension d’un site de production de câbles électriques pour accompagner l’électrification",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.prysmiangroup.com",
+          "changedetection_url": "https://www.prysmiangroup.com/en/media/press-releases",
+          "keywords": [
+            "Prysmian",
+            "câbles électriques",
+            "CAPA-PILASER",
+            "Paron",
+            "Gron",
+            "Yonne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "0cfcd346-5167-4069-9657-045d9ee86f7b"
+        }
       }
     },
     {
@@ -296,7 +482,22 @@
         "ville": "Rennes",
         "projet": "Construction d’un site industriel pour produire des stations de communication laser",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.cailabs.com",
+          "changedetection_url": "https://www.cailabs.com/presse",
+          "keywords": [
+            "Cailabs",
+            "laser",
+            "communication laser",
+            "Rennes"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "9f7a2da7-5ef2-4f60-be98-d294839210a7"
+        }
       }
     },
     {
@@ -318,7 +519,22 @@
         "ville": "Lamballe",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "medium"
+        "coord_accuracy": "medium",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.cooperl.com",
+          "changedetection_url": "https://www.cooperl.com/actualites",
+          "keywords": [
+            "Cooperl",
+            "biocarburants",
+            "Lamballe",
+            "Côte d'Armor"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "da2af874-1a43-4755-847d-1f7a8a500f32"
+        }
       }
     },
     {
@@ -340,7 +556,23 @@
         "ville": "Châteaulin",
         "projet": "Création d'une usine d'abattage de volaille",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.ldc.fr",
+          "changedetection_url": "https://www.ldc.fr/actualites",
+          "keywords": [
+            "LDC",
+            "volaille",
+            "abattage",
+            "Châteaulin",
+            "Finistère"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "53a7939f-5f56-475c-9dc3-dde39b924a58"
+        }
       }
     },
     {
@@ -362,7 +594,22 @@
         "ville": "Vannes",
         "projet": "Construction d'une nouvelle usine d'assemblage d'aimants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.sigmaphi.fr",
+          "changedetection_url": "https://www.sigmaphi.fr/actualites",
+          "keywords": [
+            "Sigmaphi",
+            "aimants",
+            "Vannes",
+            "Morbihan"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "f5f06ada-98fb-4875-a032-cd8846a6d666"
+        }
       }
     },
     {
@@ -384,7 +631,22 @@
         "ville": "Bourges",
         "projet": "Agrandissement",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.mbda-systems.com",
+          "changedetection_url": "https://www.mbda-systems.com/newsroom/",
+          "keywords": [
+            "MBDA",
+            "missiles",
+            "défense",
+            "Bourges"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "bb70bd9e-17cf-48f2-a424-9980b031b752"
+        }
       }
     },
     {
@@ -406,7 +668,22 @@
         "ville": "Bourges",
         "projet": "Agrandissement",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.knds.com",
+          "changedetection_url": "https://www.knds.com/actualites",
+          "keywords": [
+            "KNDS",
+            "défense",
+            "armement",
+            "Bourges"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "40ea0b93-dd7f-49f2-882f-af98fac7c63a"
+        }
       }
     },
     {
@@ -428,7 +705,23 @@
         "ville": "Déols / Châteauroux",
         "projet": "Data center",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://blog.google/intl/fr-fr/",
+          "changedetection_url": "https://blog.google/intl/fr-fr/",
+          "keywords": [
+            "Google",
+            "data center",
+            "Déols",
+            "Châteauroux",
+            "cloud"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "72534fe0-f6c5-4e04-a905-6d032fa3d17a"
+        }
       }
     },
     {
@@ -450,7 +743,22 @@
         "ville": "Baudreville",
         "projet": "Création d'une usine d'ingrédients protéiques végétaux innovants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.intact-food.com",
+          "changedetection_url": "https://www.horizons-journal.fr/intact-ouvre-un-debouche-industriel-aux-legumineuses",
+          "keywords": [
+            "Intact",
+            "protéines végétales",
+            "Baudreville",
+            "Loiret"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "d5692861-f2f6-40a3-a1dc-10c1119fbc6c"
+        }
       }
     },
     {
@@ -472,7 +780,23 @@
         "ville": "Fleury-les-Aubrais",
         "projet": "Augmentation de la capacité de production",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://www.thalesgroup.com/en/feeds/press-room/rss.xml",
+          "company_url": "https://www.thalesgroup.com",
+          "changedetection_url": "https://www.thalesgroup.com/en/newsroom",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Thales",
+            "Fleury-les-Aubrais",
+            "Loiret",
+            "capacité de production"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "339afd38-63bf-432a-a99e-61d6eb512886"
+        }
       }
     },
     {
@@ -494,7 +818,22 @@
         "ville": "Romorantin-Lanthenay",
         "projet": "Augmentation de la capacité de production",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.barbas-plailly.com",
+          "changedetection_url": "https://fonderie-piwi.fr/barbas-plailly-une-fonderie-d-aluminium-dans-le-top-5-de-la-qualite/",
+          "keywords": [
+            "Barbas",
+            "Plailly",
+            "Romorantin-Lanthenay",
+            "Loir-et-Cher"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "e712bbf5-48c7-4c03-8b69-47f4defbaf92"
+        }
       }
     },
     {
@@ -516,7 +855,22 @@
         "ville": "Saint-Laurent-des-Bois",
         "projet": "Extension de site",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.aresia.fr",
+          "changedetection_url": "https://aresia.com/charte-de-confidentialite/",
+          "keywords": [
+            "Aresia",
+            "Saint-Laurent-des-Bois",
+            "Loir-et-Cher",
+            "aéronautique"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b4a8a3a2-608d-4d5e-99a2-b13ebe908fe9"
+        }
       }
     },
     {
@@ -538,7 +892,22 @@
         "ville": "Thiron-Gardais",
         "projet": "Modernisation et développement",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.bertin-technologies.com",
+          "changedetection_url": "https://www.bertin-technologies.com/fr/actualites",
+          "keywords": [
+            "Bertin Technologies",
+            "Thiron-Gardais",
+            "défense",
+            "nucléaire"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "ad995ade-7351-4d72-8fe7-d311d59a6caa"
+        }
       }
     },
     {
@@ -560,7 +929,23 @@
         "ville": "Rittershoffen",
         "projet": "Extraction directe de lithium",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.arverne.com",
+          "changedetection_url": "https://arverne.earth/cat/actualite/",
+          "keywords": [
+            "Arverne",
+            "lithium",
+            "extraction directe",
+            "Rittershoffen",
+            "Bas-Rhin"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "5c6644fc-c42c-4857-80a2-51ab33aab9c6"
+        }
       }
     },
     {
@@ -582,7 +967,24 @@
         "ville": "Fessenheim",
         "projet": "Technocentre de Fessenheim : usine de recyclage de métaux faiblement radioactifs issus du nucléaire",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://www.edf.fr/en/edf/rss-feeds-listing",
+          "company_url": "https://www.edf.fr",
+          "changedetection_url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases",
+          "changedetection_uuid": null,
+          "keywords": [
+            "EDF",
+            "Fessenheim",
+            "nucléaire",
+            "recyclage métaux",
+            "technocentre"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "3e7ad042-a78d-48f5-b4b6-774b70b32fd1"
+        }
       }
     },
     {
@@ -604,7 +1006,23 @@
         "ville": "Longlaville",
         "projet": "Usine de biorecyclage – Première usine mondiale de recyclage",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.carbios.com",
+          "changedetection_url": "https://www.carbios.com/newsroom/fr/",
+          "keywords": [
+            "Carbios",
+            "biorecyclage",
+            "PET",
+            "Longlaville",
+            "Meurthe-et-Moselle"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "1b24d8a7-624a-4d3f-b229-0f8de05cba54"
+        }
       }
     },
     {
@@ -626,7 +1044,23 @@
         "ville": "Hambach",
         "projet": "Gigafactory photovoltaïque – Production de panneaux solaires à grande échelle",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.holosolis.com",
+          "changedetection_url": "https://www.holosolis.com/presse",
+          "keywords": [
+            "Holosolis",
+            "photovoltaïque",
+            "panneaux solaires",
+            "Hambach",
+            "Moselle"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "6d7bc229-09df-4eda-bd70-1e3486698a6b"
+        }
       }
     },
     {
@@ -648,7 +1082,23 @@
         "ville": "La Maxe et Richemont",
         "projet": "Datacenters La Maxe et Richemont – Projet de supercalculateurs et centres de données",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.eclairion.com",
+          "changedetection_url": "https://www.eclairion.com/actualites",
+          "keywords": [
+            "Eclairion",
+            "datacenter",
+            "supercalculateur",
+            "La Maxe",
+            "Richemont"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "79368bfb-fca8-4033-94b4-401d02e2b47e"
+        }
       }
     },
     {
@@ -670,7 +1120,22 @@
         "ville": "Saint-Avold",
         "projet": "Usine de recyclage textile – Recyclage et valorisation de textiles complexes",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.circularfashion.com",
+          "changedetection_url": "https://www.circularfashion.com/news",
+          "keywords": [
+            "CIRC",
+            "recyclage textile",
+            "Saint-Avold",
+            "Moselle"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "0be551e7-14ed-4886-8106-6bfeda325583"
+        }
       }
     },
     {
@@ -692,7 +1157,22 @@
         "ville": "Tergnier",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.verso.energy",
+          "changedetection_url": "https://www.verso.energy/actualites",
+          "keywords": [
+            "Verso Energy",
+            "biocarburants",
+            "Tergnier",
+            "Aisne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "53ad0eee-aac1-472f-bce3-b542d6e89f8a"
+        }
       }
     },
     {
@@ -714,7 +1194,22 @@
         "ville": "Dunkerque",
         "projet": "Production de matériaux cathodiques pour batteries",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.axens.net",
+          "changedetection_url": "https://www.axens.net/resources-events/news",
+          "keywords": [
+            "Axens",
+            "matériaux cathodiques",
+            "batteries",
+            "Dunkerque"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a1986512-88b8-4596-a71a-8d2c513723ac"
+        }
       }
     },
     {
@@ -736,7 +1231,23 @@
         "ville": "Dunkerque",
         "projet": "Usine d’aluminium – Recyclage et transformation de câbles en aluminium",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.crystalrod.fr",
+          "changedetection_url": "https://fonderie-piwi.fr/les-contours-du-projet-de-fonderie-de-crystalrod/",
+          "keywords": [
+            "Crystalrod",
+            "aluminium",
+            "recyclage",
+            "câbles",
+            "Dunkerque"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b95c43ba-6e32-421b-967e-c180bac3eb20"
+        }
       }
     },
     {
@@ -758,7 +1269,22 @@
         "ville": "Dunkerque",
         "projet": "Four électrique",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://corporate.arcelormittal.com",
+          "changedetection_url": "https://corporate.arcelormittal.com/media/press-releases",
+          "keywords": [
+            "ArcelorMittal",
+            "four électrique",
+            "acier",
+            "Dunkerque"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "fb3d3932-0397-4ad7-b36b-2e4512eb8fbb"
+        }
       }
     },
     {
@@ -780,7 +1306,22 @@
         "ville": "Dunkerque",
         "projet": "Production de camions électriques",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.windrose-technology.com",
+          "changedetection_url": "https://www.hautsdefrance.fr/electromobilite-windrose-choisit-les-hauts-de-france-pour-sa-base-industrielle-europeenne/",
+          "keywords": [
+            "Windrose Technology",
+            "camions électriques",
+            "Dunkerque",
+            "électromobilité"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "494b6b32-4e45-41f3-a4ee-d7ddef29fd46"
+        }
       }
     },
     {
@@ -802,7 +1343,24 @@
         "ville": "Lens",
         "projet": "Nexagreen : production de cuivre recyclé pour câbles bas carbone",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://www.nexans.com/en/rss/",
+          "company_url": "https://www.nexans.com",
+          "changedetection_url": "https://www.nexans.com/news-media-room/press-releases/",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Nexans",
+            "Nexagreen",
+            "cuivre recyclé",
+            "câbles",
+            "Lens"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "57c05ead-cbdc-4af4-939d-94a83af76c96"
+        }
       }
     },
     {
@@ -824,7 +1382,23 @@
         "ville": "Languevoisin-Quiquery / Nesle",
         "projet": "Construction d'une usine de production d'engrais à faible émission de carbone",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.fertighy.com",
+          "changedetection_url": "https://www.fertighy.com/news",
+          "keywords": [
+            "Fertighy",
+            "engrais",
+            "bas carbone",
+            "Nesle",
+            "Somme"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "9baadc81-7812-47d0-8d64-dfebe293bddc"
+        }
       }
     },
     {
@@ -846,7 +1420,23 @@
         "ville": "Bruyères-le-Châtel",
         "projet": "Infrastructure dédiée au calcul intensif et aux data centers",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.eclairion.com",
+          "changedetection_url": "https://www.eclairion.com/actualites",
+          "keywords": [
+            "Eclairion",
+            "datacenter",
+            "calcul intensif",
+            "Bruyères-le-Châtel",
+            "Essonne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b30bf9c9-29a2-4c2c-b370-b2dafd867794"
+        }
       }
     },
     {
@@ -868,7 +1458,23 @@
         "ville": "Saclay / Palaiseau",
         "projet": "Usine de production de drones",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.harmattan.ai",
+          "changedetection_url": "https://www.harmattan.ai/news",
+          "keywords": [
+            "Harmattan AI",
+            "drones",
+            "Saclay",
+            "Palaiseau",
+            "Essonne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "3b6515f1-7866-455d-9e9d-2ba18efd0a06"
+        }
       }
     },
     {
@@ -890,7 +1496,22 @@
         "ville": "Gennevilliers",
         "projet": "Augmentation de la production",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.mersen.com",
+          "changedetection_url": "https://www.mersen.com/fr/presse",
+          "keywords": [
+            "Mersen",
+            "Gennevilliers",
+            "Hauts-de-Seine",
+            "matériaux"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "5a9b11f5-9332-4570-9582-9949aa04bff0"
+        }
       }
     },
     {
@@ -912,7 +1533,23 @@
         "ville": "Paris",
         "projet": "Production de robots pour la santé et l'industrie automobile",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.wandercraft.eu",
+          "changedetection_url": "https://www.wandercraft.eu/press",
+          "keywords": [
+            "Wandercraft",
+            "robots",
+            "santé",
+            "Paris",
+            "exosquelette"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "84e3790a-42b7-4dfe-9f69-b904f487342d"
+        }
       }
     },
     {
@@ -934,7 +1571,22 @@
         "ville": "Bussy-Saint-Georges",
         "projet": "Projet de centre de données",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.mgx.com",
+          "changedetection_url": "https://www.mgx.com/news",
+          "keywords": [
+            "MGX",
+            "data center",
+            "Bussy-Saint-Georges",
+            "Seine-et-Marne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b2be0636-9ccd-425f-bcbd-25a5a557227f"
+        }
       }
     },
     {
@@ -956,7 +1608,22 @@
         "ville": "Bussy-Saint-Georges",
         "projet": "Projet de centre de données porté avec Iliad",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.iliad.fr",
+          "changedetection_url": "https://www.iliad.fr/presse/communiques-de-presse",
+          "keywords": [
+            "Opcore",
+            "Iliad",
+            "data center",
+            "Bussy-Saint-Georges"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "458585b3-ed30-4a34-b003-b96992d2cf43"
+        }
       }
     },
     {
@@ -978,7 +1645,22 @@
         "ville": "Saint-Ouen-l'Aumône",
         "projet": "Recyclage de batteries de véhicules électriques",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.derichebourg.com",
+          "changedetection_url": "https://www.derichebourg.com/presse",
+          "keywords": [
+            "Derichebourg",
+            "batteries",
+            "véhicules électriques",
+            "Saint-Ouen-l'Aumône"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "7f7666fb-bcd7-4420-9808-f909edd1aad9"
+        }
       }
     },
     {
@@ -1000,7 +1682,23 @@
         "ville": "Gonesse",
         "projet": "Pôle agroalimentaire complémentaire",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.semmaris.fr",
+          "changedetection_url": "https://www.semmaris.fr/actualites",
+          "keywords": [
+            "Semmaris",
+            "Rungis",
+            "agroalimentaire",
+            "Gonesse",
+            "Val d'Oise"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b17b1c7f-219e-4a51-9292-4a42be1d601c"
+        }
       }
     },
     {
@@ -1022,7 +1720,22 @@
         "ville": "Mantes-la-Jolie",
         "projet": "Regrouper et décarboner des productions",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.solmax.com",
+          "changedetection_url": "https://www.solmax.com/fr/actualites",
+          "keywords": [
+            "Solmax",
+            "géosynthétiques",
+            "Mantes-la-Jolie",
+            "décarbonation"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "7f850371-b157-4ea6-8201-5c13f5117ddd"
+        }
       }
     },
     {
@@ -1044,7 +1757,22 @@
         "ville": "La Verrière",
         "projet": "Extension de son site R&D",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.soredab.com",
+          "changedetection_url": "https://www.vegepolys-valley.eu/le-pole/les-adherents-annuaire-et-carte/l-annuaire-des-adherents/14266-sa-soredab.html",
+          "keywords": [
+            "Soredab",
+            "R&D",
+            "La Verrière",
+            "Yvelines"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a53c50c3-960d-4b01-b907-b4e187b485ec"
+        }
       }
     },
     {
@@ -1066,7 +1794,22 @@
         "ville": "Villedieu-les-Poêles",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.tertu.fr",
+          "changedetection_url": "https://www.tertu.fr/actualites",
+          "keywords": [
+            "Tertu",
+            "biocarburants",
+            "Villedieu-les-Poêles",
+            "Calvados"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "0172d84e-1ac2-4386-81b6-fef68c856b26"
+        }
       }
     },
     {
@@ -1088,7 +1831,23 @@
         "ville": "Vernon",
         "projet": "Usine de production de lanceurs spaciaux réutilisables",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.maiaspace.com",
+          "changedetection_url": "https://www.ariane.group/transport-spatial/maia/",
+          "keywords": [
+            "MaiaSpace",
+            "lanceurs spatiaux",
+            "réutilisable",
+            "Vernon",
+            "Eure"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a175185c-d168-41ed-b413-dfa0051a4e9a"
+        }
       }
     },
     {
@@ -1110,7 +1869,22 @@
         "ville": "Port-Jérôme-sur-Seine",
         "projet": "Recyclage avancé des plastiques",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.eastman.com/fr",
+          "changedetection_url": "https://www.eastman.com/fr/news-and-events",
+          "keywords": [
+            "Eastman",
+            "recyclage plastiques",
+            "Port-Jérôme-sur-Seine",
+            "Seine-Maritime"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b4d7da7c-0090-428d-add4-0c57baf6fe64"
+        }
       }
     },
     {
@@ -1132,7 +1906,22 @@
         "ville": "Port-Jérôme-sur-Seine",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.verso.energy",
+          "changedetection_url": "https://www.verso.energy/actualites",
+          "keywords": [
+            "Verso Energy",
+            "biocarburants",
+            "Port-Jérôme-sur-Seine",
+            "Seine-Maritime"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "bc9d4749-d9fe-4ef6-a339-fe1e1d68b544"
+        }
       }
     },
     {
@@ -1154,7 +1943,23 @@
         "ville": "Le Havre",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://en.newsroom.engie.com/rss/",
+          "company_url": "https://www.engie.com",
+          "changedetection_url": "https://newsroom.engie.com/actualites/",
+          "changedetection_uuid": null,
+          "keywords": [
+            "ENGIE",
+            "biocarburants",
+            "Le Havre",
+            "Seine-Maritime"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "5cc9c394-e223-4eb7-85e4-4094aeae805a"
+        }
       }
     },
     {
@@ -1176,7 +1981,22 @@
         "ville": "Le Havre",
         "projet": "Approvisionnement en H2 bas carbone",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.lhyfe.com",
+          "changedetection_url": "https://www.lhyfe.com/newsroom",
+          "keywords": [
+            "Lhyfe",
+            "hydrogène",
+            "H2 bas carbone",
+            "Le Havre"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "b6583826-d3c7-465f-86ff-c00e965c9463"
+        }
       }
     },
     {
@@ -1198,7 +2018,22 @@
         "ville": "Lillebonne",
         "projet": "Création d'un energy center",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.cabot-corp.com",
+          "changedetection_url": "https://www.cabot-corp.com/news-center/press-releases",
+          "keywords": [
+            "Cabot",
+            "energy center",
+            "Lillebonne",
+            "Seine-Maritime"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "8ed0ec9f-8c9b-4349-99e3-34989e586628"
+        }
       }
     },
     {
@@ -1220,7 +2055,22 @@
         "ville": "Blanquefort",
         "projet": "Investissement industriel et technologique dédié à la conversion de métaux critiques",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.kl1ag.com",
+          "changedetection_url": "https://www.adi-na.fr/sites/default/files/2024-06/20240513-CP-ChooseFrance_ProjetsNouvelleAquitaine.pdf",
+          "keywords": [
+            "KL1AG",
+            "métaux critiques",
+            "Blanquefort",
+            "Gironde"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "c1f769be-84f1-491e-b6a5-28852a838d4f"
+        }
       }
     },
     {
@@ -1242,7 +2092,22 @@
         "ville": "Tartas",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.verso.energy",
+          "changedetection_url": "https://www.verso.energy/actualites",
+          "keywords": [
+            "Verso Energy",
+            "biocarburants",
+            "Tartas",
+            "Landes"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "6e3c99b5-6c2d-4c05-9c6f-6e3a878dfbff"
+        }
       }
     },
     {
@@ -1264,7 +2129,24 @@
         "ville": "Lacq",
         "projet": "Recyclage d’aimants et production de terres rares pour sécuriser les approvisionnements",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.carester.fr",
+          "changedetection_url": "https://www.carester.fr/actualites",
+          "keywords": [
+            "Carester",
+            "Caremag",
+            "terres rares",
+            "aimants",
+            "Lacq",
+            "Pyrénées-Atlantiques"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "f74e507f-47a5-4b12-bb33-d1e68403a2b5"
+        }
       }
     },
     {
@@ -1286,7 +2168,22 @@
         "ville": "Lacq",
         "projet": "Production de biocarburants",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.elyse.energy",
+          "changedetection_url": "https://www.elyse.energy/presse",
+          "keywords": [
+            "Elyse Energy",
+            "biocarburants",
+            "Lacq",
+            "Pyrénées-Atlantiques"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "784eacd1-4fa1-40f9-a5a0-ef4ba586e99c"
+        }
       }
     },
     {
@@ -1308,7 +2205,23 @@
         "ville": "Toulouse (Francazal)",
         "projet": "Développement d'avions hybrides et électriques pour décarboner l'aviation",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.aura.aero",
+          "changedetection_url": "https://www.aura.aero/news",
+          "keywords": [
+            "Aura Aéro",
+            "avions hybrides",
+            "électrique",
+            "Toulouse",
+            "Francazal"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "d44cd7e8-5c37-401d-a42b-4baeedfc4071"
+        }
       }
     },
     {
@@ -1330,7 +2243,23 @@
         "ville": "Brassac",
         "projet": "Transformation de la scierie",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.siat.fr",
+          "changedetection_url": "https://www.siat.fr/actualites",
+          "keywords": [
+            "Siat",
+            "scierie",
+            "Brassac",
+            "Tarn",
+            "bois"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a193eccb-2b75-40cc-b72d-8e78888a1495"
+        }
       }
     },
     {
@@ -1352,7 +2281,23 @@
         "ville": "Indret (Nantes)",
         "projet": "Augmentation des capacités de production",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.naval-group.com",
+          "changedetection_url": "https://www.naval-group.com/fr/actualites",
+          "keywords": [
+            "Naval Group",
+            "défense navale",
+            "Indret",
+            "Nantes",
+            "sous-marins"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "787b2c19-3494-4c4b-b6d6-3d36f290e14e"
+        }
       }
     },
     {
@@ -1374,7 +2319,23 @@
         "ville": "Angers / Cholet",
         "projet": "Acier décarboné : projet de four électrique pour production d'aciers plats",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.groupebriand.fr",
+          "changedetection_url": "https://www.groupebriand.fr/actualites",
+          "keywords": [
+            "Briand",
+            "acier décarboné",
+            "four électrique",
+            "Angers",
+            "Cholet"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "5b39b3ec-e44e-4b10-b05c-95b39515255b"
+        }
       }
     },
     {
@@ -1396,7 +2357,23 @@
         "ville": "Louverné",
         "projet": "Capture et stockage de CO2",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.goco2.fr",
+          "changedetection_url": "https://www.goco2.fr/actualites",
+          "keywords": [
+            "GOCO2",
+            "capture CO2",
+            "stockage",
+            "Louverné",
+            "Mayenne"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a2e5587a-5058-41fa-905c-83d95300a6f4"
+        }
       }
     },
     {
@@ -1418,7 +2395,22 @@
         "ville": "Le Mans",
         "projet": "Projet de centre de données",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.eclairion.com",
+          "changedetection_url": "https://www.eclairion.com/actualites",
+          "keywords": [
+            "Eclairion",
+            "datacenter",
+            "Le Mans",
+            "Sarthe"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "54a68230-536c-44d9-ba6b-d07ac9dd2d19"
+        }
       }
     },
     {
@@ -1440,7 +2432,23 @@
         "ville": "Marignane",
         "projet": "Modernisation industrielle du site de Marignane",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": "https://www.airbus.com/en/rss-feeds",
+          "company_url": "https://www.airbus.com/en/products-services/helicopters",
+          "changedetection_url": "https://www.airbus.com/en/newsroom/press-releases",
+          "changedetection_uuid": null,
+          "keywords": [
+            "Airbus Helicopters",
+            "Marignane",
+            "Bouches-du-Rhône",
+            "modernisation"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "rss_uuid": "c9fdf134-c973-41a4-afd8-1efbf309736e"
+        }
       }
     },
     {
@@ -1462,7 +2470,22 @@
         "ville": "Fos-sur-Mer",
         "projet": "Modernisation d’une aciérie et production d’acier bas carbone",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.marcegaglia.com",
+          "changedetection_url": "https://www.marcegaglia.com/en/press/news",
+          "keywords": [
+            "Marcegaglia",
+            "acier bas carbone",
+            "Fos-sur-Mer",
+            "Bouches-du-Rhône"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "8f7b13aa-bc14-487d-a3d0-b8020b40f2bf"
+        }
       }
     },
     {
@@ -1484,7 +2507,23 @@
         "ville": "Fos-sur-Mer",
         "projet": "Procédé innovant de production de fer sans haut-fourneau",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.gravithy.com",
+          "changedetection_url": "https://www.gravithy.com/news",
+          "keywords": [
+            "Gravithy",
+            "fer",
+            "haut-fourneau",
+            "Fos-sur-Mer",
+            "décarbonation acier"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "a275a728-a483-46b7-a29c-64ff48cac750"
+        }
       }
     },
     {
@@ -1506,7 +2545,23 @@
         "ville": "Gardanne",
         "projet": "Développement d’une filière de composants pour batteries",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.alteo-alumina.com",
+          "changedetection_url": "https://www.alteo-alumina.com/news",
+          "keywords": [
+            "Alteo",
+            "batteries",
+            "alumine",
+            "Gardanne",
+            "Bouches-du-Rhône"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "8f4ec85a-f8b0-40f1-9a76-c71aae9d6f22"
+        }
       }
     },
     {
@@ -1528,7 +2583,23 @@
         "ville": "Ollioules / Toulon",
         "projet": "Investissement industriel",
         "coord_source": "nominatim",
-        "coord_accuracy": "high"
+        "coord_accuracy": "high",
+        "feeds": {
+          "company_rss": null,
+          "company_url": "https://www.naval-group.com",
+          "changedetection_url": "https://www.naval-group.com/fr/actualites",
+          "keywords": [
+            "Naval Group",
+            "Ollioules",
+            "Toulon",
+            "Var",
+            "marine nationale"
+          ],
+          "sector_rss": [
+            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+          ],
+          "changedetection_uuid": "7a61af3f-9139-467e-90ba-3ea4608e2977"
+        }
       }
     }
   ]

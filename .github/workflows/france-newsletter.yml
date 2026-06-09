@@ -1,0 +1,72 @@
+name: France Grands Projets — Newsletter
+
+on:
+  schedule:
+    # Daily digest at 7am UTC (Mon–Fri)
+    - cron: "0 7 * * 1-5"
+    # Weekly digest also on Monday at 7am UTC (handled by --period weekly flag)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Newsletter mode"
+        type: choice
+        options: [daily, weekly]
+        default: daily
+      dry_run:
+        description: "Dry-run (render HTML only, do not send)"
+        type: boolean
+        default: false
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    # NOTE: changedetection.io runs on the private LAN host lamai270:5008.
+    # To reach it from CI, either:
+    #   (a) switch to a self-hosted runner on the same network, or
+    #   (b) expose via Cloudflare Tunnel and set CHANGEDETECTION_BASE_URL secret.
+    # Without access, fetch_digest.py skips changedetection.io and uses RSS only.
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Determine period
+        id: period
+        run: |
+          MODE="${{ github.event.inputs.mode || 'daily' }}"
+          # On Mondays also produce a weekly digest
+          DOW=$(date +%u)
+          if [ "$DOW" = "1" ] && [ "$MODE" = "daily" ]; then
+            echo "PERIOD=weekly" >> "$GITHUB_ENV"
+          else
+            echo "PERIOD=$MODE" >> "$GITHUB_ENV"
+          fi
+
+      - name: Fetch digest
+        run: uv run scripts/france_project_newsletter/fetch_digest.py --period "$PERIOD"
+        env:
+          CHANGEDETECTION_API_KEY: ${{ secrets.CHANGEDETECTION_API_KEY }}
+          CHANGEDETECTION_BASE_URL: ${{ secrets.CHANGEDETECTION_BASE_URL }}
+
+      - name: Send newsletter
+        run: |
+          DRY="${{ github.event.inputs.dry_run }}"
+          FLAGS="--mode $PERIOD"
+          [ "$DRY" = "true" ] && FLAGS="$FLAGS --dry-run"
+          uv run scripts/france_project_newsletter/send_mailchimp.py $FLAGS
+        env:
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
+          MAILCHIMP_SERVER_PREFIX: ${{ secrets.MAILCHIMP_SERVER_PREFIX }}
+
+      - name: Upload HTML preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-preview-${{ env.PERIOD }}-${{ github.run_number }}
+          path: data/france_project_newsletter/preview.html
+          retention-days: 7
