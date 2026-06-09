@@ -207,9 +207,7 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
             return items[0]["id"].get("videoId", "") if items else ""
         except urllib.error.HTTPError as e:
             if e.code == 429:
-                wait = 5 * (2 ** attempt)  # 5s, 10s, 20s, 40s
-                print(f"  ⚠ YouTube rate limit, waiting {wait}s…", file=sys.stderr)
-                time.sleep(wait)
+                raise _YouTubeQuotaExceeded()
             elif e.code == 403:
                 body = e.read().decode("utf-8", errors="replace")
                 if "quotaExceeded" in body or "dailyLimitExceeded" in body:
@@ -222,7 +220,7 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
         except Exception as e:
             print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
             return ""
-    raise _YouTubeQuotaExceeded()  # 429s exhausted — quota likely gone
+    return ""
 
 
 def _http_get_html(url: str) -> str:
