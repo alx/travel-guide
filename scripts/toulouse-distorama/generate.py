@@ -547,7 +547,7 @@ def main() -> None:
             stub_path.parent.mkdir(parents=True, exist_ok=True)
             lines = [
                 "---",
-                f'title: "Distorama — {"Cette semaine" if label == "this-week" else "Semaine prochaine"}"',
+                'title: "DistoraMaps"',
                 f'description: "Concerts et événements underground à Toulouse {"cette semaine" if label == "this-week" else "la semaine prochaine"} ({fr_date(start)} – {fr_date(end)})."',
                 'type: "toulouse-distorama-event"',
                 f'distorama_window: "{label}"',
