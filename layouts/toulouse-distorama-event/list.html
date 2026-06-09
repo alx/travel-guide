@@ -30,6 +30,8 @@ body { background: #0a0a0a; }
 .poi-card .event-links { margin-top: 0.2rem; display: flex; gap: 0.6rem; }
 .poi-card .event-links a { font-size: 0.72rem; color: #666; text-decoration: none; }
 .poi-card .event-links a:hover { color: #bbb; }
+.event-embeds { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.event-embeds iframe { border: 0; width: 100%; border-radius: 4px; }
 .show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
 .copy-toast { background: rgba(255,255,255,0.12) !important; }
 .leaflet-popup-content-wrapper { background: #111; border: 1px solid #2a2a2a; color: #eee; border-radius: 8px; min-width: 200px; }
@@ -137,8 +139,10 @@ function makeEventContent(p, events) {
   let html = `<div style="font-weight:600;color:#eee;margin-bottom:0.3rem;"><i class="fa-solid ${cls}" style="color:#fff;font-size:0.8rem;margin-right:0.35em;"></i>${p.name}</div>`;
   events.forEach(ev => {
     const artist = ev.artist;
-    const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
-    const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
+    const bcUrl = ev.bandcamp_url || (artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null);
+    const ytUrl = ev.youtube_video_id
+      ? `https://www.youtube.com/watch?v=${ev.youtube_video_id}`
+      : (artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null);
     const datePart = ev.date ? fmtEventDate(ev.date) : '';
     const meta = [datePart, ev.time, ev.price].filter(Boolean).join(' · ');
     html += `<div style="border-top:1px solid #222;margin-top:0.35rem;padding-top:0.35rem;">`;
@@ -247,14 +251,24 @@ renderSidebar = function() {
       const p = f.properties;
       const cls = CATEGORY_ICONS[p.category] || 'fa-music';
       const artist = ev.artist;
-      const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
-      const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
+      const bcUrl = ev.bandcamp_url || (artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null);
+      const ytUrl = ev.youtube_video_id
+        ? `https://www.youtube.com/watch?v=${ev.youtube_video_id}`
+        : (artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null);
       const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+      let embedHtml = '';
+      if (ev.youtube_video_id || ev.bandcamp_embed_url) {
+        embedHtml = '<div class="event-embeds">';
+        if (ev.youtube_video_id) embedHtml += `<iframe src="https://www.youtube.com/embed/${ev.youtube_video_id}" height="180" loading="lazy" allowfullscreen></iframe>`;
+        if (ev.bandcamp_embed_url) embedHtml += `<iframe src="${ev.bandcamp_embed_url}" height="120" loading="lazy" seamless></iframe>`;
+        embedHtml += '</div>';
+      }
       html += `<div class="event-item" data-venue-id="${f._id}">
         <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
         ${meta ? `<div class="event-meta">${meta}</div>` : ''}
         <div class="event-desc">${ev.desc}</div>
         ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">YouTube</a></div>` : ''}
+        ${embedHtml}
       </div>`;
     });
 

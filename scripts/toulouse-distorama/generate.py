@@ -23,6 +23,7 @@ Outputs:
 import argparse
 import csv
 import json
+import os
 import re
 import sys
 import time
@@ -35,9 +36,32 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent
 
+
+def _load_dotenv(path: Path) -> None:
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, val = line.partition("=")
+        key = key.strip()
+        val = val.strip().strip('"').strip("'")
+        os.environ.setdefault(key, val)
+
+
+_load_dotenv(REPO_ROOT / ".env")
+
 VENUES_CSV = SCRIPT_DIR / "venues.csv"
 GEOCACHE_PATH = SCRIPT_DIR / ".geocache.json"
+MEDIACACHE_PATH = SCRIPT_DIR / ".mediacache.json"
 UNMATCHED_PATH = SCRIPT_DIR / "unmatched-venues.txt"
+
+BANDCAMP_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
+}
 
 EVENTS_URL = "https://distorama.neocities.org/events.json"
 STATIC_DIR = REPO_ROOT / "static/toulouse-distorama"
@@ -130,6 +154,151 @@ def geocode_venues(venues: list[dict], dry_run: bool) -> dict:
     if updated:
         save_geocache(cache)
     return cache
+
+
+# ── Media enrichment ──────────────────────────────────────────────────────────
+
+def load_mediacache() -> dict:
+    if MEDIACACHE_PATH.exists():
+        return json.loads(MEDIACACHE_PATH.read_text())
+    return {}
+
+
+def save_mediacache(cache: dict) -> None:
+    MEDIACACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+
+
+def fetch_youtube_video_id(artist: str, api_key: str) -> str:
+    params = urllib.parse.urlencode({
+        "part": "id",
+        "type": "video",
+        "maxResults": 1,
+        "q": artist,
+        "key": api_key,
+    })
+    url = f"https://www.googleapis.com/youtube/v3/search?{params}"
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+        items = data.get("items", [])
+        if items:
+            return items[0]["id"].get("videoId", "")
+    except Exception as e:
+        print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+    return ""
+
+
+def _http_get_html(url: str) -> str:
+    try:
+        req = urllib.request.Request(url, headers=BANDCAMP_HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            return r.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"  ⚠ HTTP error fetching {url}: {e}", file=sys.stderr)
+    return ""
+
+
+def scrape_bandcamp(artist: str) -> tuple[str, str]:
+    """Returns (bandcamp_url, bandcamp_embed_url). Either may be empty string."""
+    params = urllib.parse.urlencode({"q": artist, "item_type": "b"})
+    search_html = _http_get_html(f"https://bandcamp.com/search?{params}")
+    if not search_html:
+        return "", ""
+
+    m = re.search(
+        r'class="searchresult band".*?<div class="heading">\s*<a href="([^"]+)"',
+        search_html, re.DOTALL,
+    )
+    if not m:
+        return "", ""
+
+    artist_url = m.group(1).strip()
+
+    artist_html = _http_get_html(artist_url)
+    if not artist_html:
+        return artist_url, ""
+
+    m_album = re.search(r'href="((?:https://[^"]+)?/album/[^"]+)"', artist_html)
+    if not m_album:
+        return artist_url, ""
+
+    album_path = m_album.group(1)
+    if album_path.startswith("/"):
+        base = re.match(r"(https://[^/]+)", artist_url)
+        album_url = (base.group(1) + album_path) if base else ""
+    else:
+        album_url = album_path
+
+    if not album_url:
+        return artist_url, ""
+
+    album_html = _http_get_html(album_url)
+    if not album_html:
+        return artist_url, ""
+
+    m_id = re.search(
+        r'<meta property="twitter:player" content="https://bandcamp\.com/EmbeddedPlayer/album=(\d+)/',
+        album_html,
+    )
+    if not m_id:
+        m_id = re.search(r'data-tralbumid="(\d+)"', album_html)
+    if not m_id:
+        return artist_url, ""
+
+    album_id = m_id.group(1)
+    embed_url = (
+        f"https://bandcamp.com/EmbeddedPlayer/album={album_id}"
+        f"/size=small/bgcol=111111/linkcol=ffffff/transparent=true/"
+    )
+    return artist_url, embed_url
+
+
+def split_artists(artist: str) -> list[str]:
+    return [a.strip() for a in artist.split("+") if a.strip()]
+
+
+def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
+    # Sort by newest event date descending so upcoming events are enriched first
+    new_artists = [
+        a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
+        if a and a not in mediacache
+    ]
+    if not new_artists:
+        print("  All artists already cached")
+        return mediacache
+
+    if not api_key:
+        print("  ⚠ YOUTUBE_API_KEY not set — YouTube enrichment skipped", file=sys.stderr)
+
+    print(f"  Enriching {len(new_artists)} new artists…")
+    for artist in new_artists:
+        if dry_run:
+            print(f"  [dry-run] would enrich: {artist}")
+            mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
+            continue
+
+        print(f"  Enriching: {artist}")
+        yt_id = ""
+        if api_key:
+            yt_id = fetch_youtube_video_id(artist, api_key)
+            if yt_id:
+                print(f"    YouTube: {yt_id}")
+            time.sleep(0.1)
+
+        bc_url, bc_embed = scrape_bandcamp(artist)
+        if bc_url:
+            print(f"    Bandcamp: {bc_url}")
+        time.sleep(1.1)
+
+        mediacache[artist] = {
+            "youtube_video_id": yt_id,
+            "bandcamp_url": bc_url,
+            "bandcamp_embed_url": bc_embed,
+        }
+        save_mediacache(mediacache)
+
+    return mediacache
 
 
 # ── Venue registry ─────────────────────────────────────────────────────────────
@@ -231,7 +400,26 @@ def slugify(text: str) -> str:
     return text.strip("-")
 
 
-def make_event_feature(venue: dict, coords: dict, events_at_venue: list[dict]) -> dict:
+def make_event_feature(venue: dict, coords: dict, events_at_venue: list[dict], mediacache: dict) -> dict:
+    enriched = []
+    for ev in events_at_venue:
+        media: dict = {}
+        for sub in split_artists(ev.get("artist", "")):
+            m = mediacache.get(sub, {})
+            if m.get("youtube_video_id") or m.get("bandcamp_url"):
+                media = m
+                break
+        if not media:
+            for sub in split_artists(ev.get("artist", "")):
+                if sub in mediacache:
+                    media = mediacache[sub]
+                    break
+        enriched.append({
+            **ev,
+            "youtube_video_id": media.get("youtube_video_id", ""),
+            "bandcamp_url": media.get("bandcamp_url", ""),
+            "bandcamp_embed_url": media.get("bandcamp_embed_url", ""),
+        })
     return {
         "type": "Feature",
         "id": f"toulouse-distorama-{slugify(venue['name'])}",
@@ -242,7 +430,7 @@ def make_event_feature(venue: dict, coords: dict, events_at_venue: list[dict]) -
             "icon": CATEGORY_ICONS.get(venue["category"], "fa-location-dot"),
             "address": venue["address"],
             "logo": venue["logo"],
-            "events": events_at_venue,
+            "events": enriched,
         },
     }
 
@@ -307,6 +495,7 @@ def write_stub(path: Path, frontmatter: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Skip Nominatim requests and file writes")
+    parser.add_argument("--no-enrich", action="store_true", help="Skip media enrichment (YouTube + Bandcamp)")
     args = parser.parse_args()
 
     # 1. Load venues
@@ -379,6 +568,22 @@ def main() -> None:
     print(f"  {resolved_events}/{total_events} events resolved to known venues")
     print(f"  {len(unmatched)} unmatched venue names")
 
+    # 5.5 Media enrichment
+    mediacache: dict = {}
+    if not args.no_enrich:
+        print("Enriching artists with YouTube + Bandcamp…")
+        artist_dates: dict[str, str] = {}
+        for date_str, venues_on_day in by_date.items():
+            for events in venues_on_day.values():
+                for ev in events:
+                    for sub in split_artists(ev.get("artist", "")):
+                        if sub not in artist_dates or date_str > artist_dates[sub]:
+                            artist_dates[sub] = date_str
+        mediacache = load_mediacache()
+        mediacache = enrich_artists(artist_dates, mediacache, os.environ.get("YOUTUBE_API_KEY", ""), args.dry_run)
+    else:
+        mediacache = load_mediacache()
+
     # 6. Write unmatched
     if unmatched:
         sorted_unmatched = sorted(unmatched)
@@ -401,7 +606,7 @@ def main() -> None:
             coords = geocache.get(venue["address"])
             if not coords:
                 continue
-            features.append(make_event_feature(venue, coords, events))
+            features.append(make_event_feature(venue, coords, events, mediacache))
             # Accumulate for monthly rollup
             by_month[month_str][venue_name].extend(events)
 
@@ -419,7 +624,7 @@ def main() -> None:
             coords = geocache.get(venue["address"])
             if not coords:
                 continue
-            features.append(make_event_feature(venue, coords, events))
+            features.append(make_event_feature(venue, coords, events, mediacache))
         if not args.dry_run:
             write_geojson(EVENTS_DIR / f"{month_str}.geojson", features)
 
@@ -446,7 +651,7 @@ def main() -> None:
             coords = geocache.get(venue["address"])
             if not coords:
                 continue
-            features.append(make_event_feature(venue, coords, events))
+            features.append(make_event_feature(venue, coords, events, mediacache))
         if not args.dry_run:
             write_geojson(EVENTS_DIR / f"{label}.geojson", features)
         print(f"  {label}: {len(features)} venues ({start} → {end})")

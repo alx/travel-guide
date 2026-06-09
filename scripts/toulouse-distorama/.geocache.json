@@ -282,5 +282,33 @@
   "Chapelle Des Carmélites Toulouse": {
     "lat": 43.607489,
     "lon": 1.4432711
+  },
+  "15 Rue de Toul": {
+    "lat": 48.8386542,
+    "lon": 2.4024357
+  },
+  "18 Av. Etienne Billières": {
+    "lat": 43.5974895,
+    "lon": 1.4281339
+  },
+  "12 Av. de Grande Bretagne": {
+    "lat": 45.7748336,
+    "lon": 4.8428389
+  },
+  "19 Rte des Crêtes, 31310 Latour": {
+    "lat": 43.198443,
+    "lon": 1.292754
+  },
+  "84 Rte de Paris, 31790 Saint-Jory": {
+    "lat": 43.7227571,
+    "lon": 1.3830391
+  },
+  "7 Pl. du Champ de Mars, 09290 Le Mas-d'Azil": {
+    "lat": 43.0797398,
+    "lon": 1.3609989
+  },
+  "11 Rue Pierre-Paul Riquet, 31000 Toulouse": {
+    "lat": 43.6013192,
+    "lon": 1.454009
   }
 }
