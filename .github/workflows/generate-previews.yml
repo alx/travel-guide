@@ -50,7 +50,8 @@ jobs:
         id: slugs
         run: |
           set -euo pipefail
-          BLOCKLIST="videosurveillance-france"
+          BLOCKLIST="videosurveillance-france
+toulouse-distorama/events"
 
           # Helper: filter out blocked slugs and empty lines
           filter() {

@@ -27,18 +27,29 @@ while read local_ref local_sha remote_ref remote_sha; do
     exit 0
   fi
 
-  # Derive slugs from file paths (e.g. static/airbnb/10349749/locations.geojson → airbnb/10349749)
+  # Derive slugs from file paths — same logic as generate-previews.yml:
+  #   airbnb/<id>  for static/airbnb/<id>/…
+  #   <dir>        for everything else (top-level dir only)
+  BLOCKLIST="videosurveillance-france
+toulouse-distorama/events"
+
+  declare -A seen_slugs
   missing_slugs=()
-  all_slugs=()
   while IFS= read -r filepath; do
-    # Strip "static/" prefix and filename, keep the directory
-    slug=$(echo "$filepath" | sed 's|^static/||' | sed 's|/[^/]*$||')
-    all_slugs+=("$slug")
-    # Convert slug to preview filename (slashes → dashes)
-    preview_file="$PREVIEW_DIR/${slug//\//-}.png"
-    if [ ! -f "$preview_file" ]; then
-      missing_slugs+=("$slug")
+    rel="${filepath#static/}"
+    if [[ "$rel" == airbnb/* ]]; then
+      slug="$(echo "$rel" | cut -d'/' -f1,2)"
+    else
+      slug="$(echo "$rel" | cut -d'/' -f1)"
     fi
+    # Skip blocklisted slugs
+    echo "$slug" | grep -qxF "$BLOCKLIST" && continue
+    # Deduplicate
+    [[ -n "${seen_slugs[$slug]+x}" ]] && continue
+    seen_slugs[$slug]=1
+    # Queue if preview is missing
+    preview_file="$PREVIEW_DIR/${slug//\//-}.png"
+    [ ! -f "$preview_file" ] && missing_slugs+=("$slug")
   done <<< "$changed_geo"
 
   if [ ${#missing_slugs[@]} -eq 0 ]; then
