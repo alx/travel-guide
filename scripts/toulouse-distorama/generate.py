@@ -184,7 +184,12 @@ def _scrape_youtube_video_id(artist: str) -> str:
     return ""
 
 
+class _YouTubeQuotaExceeded(Exception):
+    pass
+
+
 def fetch_youtube_video_id(artist: str, api_key: str) -> str:
+    """Call YouTube Data API v3. Raises _YouTubeQuotaExceeded when quota is gone."""
     params = urllib.parse.urlencode({
         "part": "id",
         "type": "video",
@@ -208,8 +213,7 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
             elif e.code == 403:
                 body = e.read().decode("utf-8", errors="replace")
                 if "quotaExceeded" in body or "dailyLimitExceeded" in body:
-                    print(f"  ⚠ YouTube quota exceeded, falling back to scrape for '{artist}'", file=sys.stderr)
-                    return _scrape_youtube_video_id(artist)
+                    raise _YouTubeQuotaExceeded()
                 print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
                 return ""
             else:
@@ -218,8 +222,7 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
         except Exception as e:
             print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
             return ""
-    print(f"  ⚠ YouTube API: quota likely exceeded, falling back to scrape for '{artist}'", file=sys.stderr)
-    return _scrape_youtube_video_id(artist)
+    raise _YouTubeQuotaExceeded()  # 429s exhausted — quota likely gone
 
 
 def _http_get_html(url: str) -> str:
@@ -303,8 +306,9 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         print("  All artists already cached")
         return mediacache
 
-    if not api_key:
-        print("  ⚠ YOUTUBE_API_KEY not set — using scrape fallback for YouTube", file=sys.stderr)
+    use_scrape = not api_key
+    if use_scrape:
+        print("  ⚠ YOUTUBE_API_KEY not set — using scrape for YouTube", file=sys.stderr)
 
     print(f"  Enriching {len(new_artists)} new artists…")
     for artist in new_artists:
@@ -314,10 +318,15 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             continue
 
         print(f"  Enriching: {artist}")
-        if api_key:
-            yt_id = fetch_youtube_video_id(artist, api_key)
-        else:
+        if use_scrape:
             yt_id = _scrape_youtube_video_id(artist)
+        else:
+            try:
+                yt_id = fetch_youtube_video_id(artist, api_key)
+            except _YouTubeQuotaExceeded:
+                print("  ⚠ YouTube quota exceeded — switching all remaining artists to scrape", file=sys.stderr)
+                use_scrape = True
+                yt_id = _scrape_youtube_video_id(artist)
         if yt_id:
             print(f"    YouTube: {yt_id}")
         time.sleep(0.5)
