@@ -94,13 +94,13 @@
     .map-overlay {
       left: 0; right: 0; bottom: 0; top: 60vh; width: 100%;
       flex-direction: column; gap: 0;
-      overflow-y: auto; pointer-events: all;
+      overflow: hidden; pointer-events: all;
       transition: top 0.3s ease;
     }
     .map-overlay.overlay-open { top: 10vh; }
     .overlay-card { border-radius: 0; }
-    /* Scrollable card: natural flow, visible at all times within the sheet */
-    .overlay-card.scrollable { flex: none; min-height: auto; max-height: none; overflow: visible; padding: 0.85rem 1rem !important; transition: none; }
+    /* Scrollable card: flex-grows to fill remaining sheet height and scrolls internally */
+    .overlay-card.scrollable { flex: 1; min-height: 0; overflow-y: auto; padding: 0.85rem 1rem !important; transition: none; }
     /* Handle spans full card width by compensating for card padding */
     .overlay-handle {
       display: flex; justify-content: center; align-items: center;
