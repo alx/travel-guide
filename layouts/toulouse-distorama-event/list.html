@@ -21,7 +21,11 @@ body { background: #0a0a0a; }
 .poi-card { background: #111 !important; border-color: transparent !important; padding: 0.75rem 1rem; }
 .poi-card:hover, .poi-card.active { border-color: rgba(255,255,255,0.3) !important; }
 .poi-card .venue-name { color: #eee; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+.poi-card .date-title { color: #fff; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem; letter-spacing: 0.02em; }
 .poi-card .event-item { border-top: 1px solid #1e1e1e; padding: 0.35rem 0; }
+.poi-card .event-item.active { background: rgba(255,255,255,0.04); border-radius: 4px; padding: 0.35rem 0.4rem; }
+.poi-card .event-venue { font-size: 0.82rem; color: #bbb; font-weight: 600; cursor: pointer; margin-bottom: 0.15rem; }
+.poi-card .event-venue:hover { color: #fff; }
 .poi-card .event-meta { font-size: 0.75rem; color: #555; }
 .poi-card .event-desc { font-size: 0.83rem; color: #ccc; line-height: 1.4; }
 .poi-card .event-links { margin-top: 0.2rem; display: flex; gap: 0.6rem; }
@@ -195,58 +199,99 @@ updateMarkers = function() {
   });
 };
 
-/* Override renderSidebar: filter past events, sort by date, FA icons */
+/* Override renderSidebar: group by date, show venue per event-item */
 renderSidebar = function() {
   const search = document.getElementById('search').value.toLowerCase();
   const todayStr = new Date().toISOString().slice(0, 10);
   const list = document.getElementById('poi-list');
   list.innerHTML = '';
 
-  const withEvents = allPOIs.map(f => {
+  // Flatten all future events across all venues
+  const rows = [];
+  allPOIs.forEach(f => {
     const p = f.properties;
-    const futureEvents = (p.events || [])
-      .filter(ev => !ev.date || ev.date >= todayStr)
-      .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
-    return { f, futureEvents };
-  }).filter(({ f, futureEvents }) => {
-    if (!futureEvents.length) return false;
-    const p = f.properties;
-    return !search || p.name.toLowerCase().includes(search)
-      || futureEvents.some(e => e.desc.toLowerCase().includes(search));
+    (p.events || []).forEach(ev => {
+      if (ev.date && ev.date < todayStr) return;
+      const match = !search
+        || p.name.toLowerCase().includes(search)
+        || (ev.desc && ev.desc.toLowerCase().includes(search));
+      if (match) rows.push({ date: ev.date || '', ev, f });
+    });
   });
 
-  withEvents.sort((a, b) => {
-    const aDate = a.futureEvents.find(e => e.date)?.date || '';
-    const bDate = b.futureEvents.find(e => e.date)?.date || '';
-    return aDate.localeCompare(bDate);
+  if (rows.length === 0) {
+    list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">Aucun événement trouvé.</p>';
+    return;
+  }
+
+  // Sort by date then venue name
+  rows.sort((a, b) =>
+    a.date.localeCompare(b.date) || a.f.properties.name.localeCompare(b.f.properties.name)
+  );
+
+  // Group by date
+  const byDate = new Map();
+  rows.forEach(row => {
+    if (!byDate.has(row.date)) byDate.set(row.date, []);
+    byDate.get(row.date).push(row);
   });
 
-  withEvents.forEach(({ f, futureEvents }) => {
-    const p = f.properties;
-    const cls = CATEGORY_ICONS[p.category] || 'fa-music';
+  // One card per date
+  byDate.forEach((dateRows, date) => {
     const card = document.createElement('div');
     card.className = 'poi-card';
-    card.id = 'card-' + f._id;
-    let evHtml = futureEvents.map(ev => {
+    card.id = 'card-date-' + date;
+
+    let html = `<div class="date-title">${date ? fmtEventDate(date) : 'Date inconnue'}</div>`;
+    dateRows.forEach(({ ev, f }) => {
+      const p = f.properties;
+      const cls = CATEGORY_ICONS[p.category] || 'fa-music';
       const artist = ev.artist;
       const bcUrl = artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null;
       const ytUrl = artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null;
-      const datePart = ev.date ? fmtEventDate(ev.date) : '';
-      const meta = [datePart, ev.time, ev.price].filter(Boolean).join(' · ');
-      return `<div class="event-item">
+      const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+      html += `<div class="event-item" data-venue-id="${f._id}">
+        <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
         ${meta ? `<div class="event-meta">${meta}</div>` : ''}
         <div class="event-desc">${ev.desc}</div>
         ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">YouTube</a></div>` : ''}
       </div>`;
-    }).join('');
-    card.innerHTML = `<div class="venue-name"><i class="fa-solid ${cls}" style="color:#fff;margin-right:0.35em;"></i>${p.name}</div>${evHtml}`;
-    card.onclick = () => focusPOI(f);
+    });
+
+    card.innerHTML = html;
+
+    // Click on venue name → focus that venue on the map
+    card.querySelectorAll('.event-item').forEach(item => {
+      const f = allPOIs.find(feat => feat._id === item.dataset.venueId);
+      if (!f) return;
+      item.querySelector('.event-venue').addEventListener('click', e => {
+        e.stopPropagation();
+        focusPOI(f);
+      });
+    });
+
     list.appendChild(card);
   });
-
-  if (withEvents.length === 0) {
-    list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">Aucun événement trouvé.</p>';
-  }
 };
+
+/* Override focusPOI: wrap base (map pan + popup + URL) then highlight event-items */
+const _baseFocusPOI = focusPOI;
+focusPOI = function(f) {
+  _baseFocusPOI(f);
+  // Highlight all event-items for this venue; scroll first one into view
+  let first = null;
+  document.querySelectorAll('.event-item').forEach(el => {
+    if (el.dataset.venueId === f._id) {
+      el.classList.add('active');
+      if (!first) first = el;
+    } else {
+      el.classList.remove('active');
+    }
+  });
+  first?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+};
+
+/* No card-level fading — cards are date groups, not venues */
+fadePOIs = function() {};
 </script>
 {{ end }}
