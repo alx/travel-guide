@@ -169,6 +169,21 @@ def save_mediacache(cache: dict) -> None:
     MEDIACACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
 
 
+def _scrape_youtube_video_id(artist: str) -> str:
+    """Fallback: scrape first video ID from YouTube search results page."""
+    params = urllib.parse.urlencode({"search_query": artist})
+    url = f"https://www.youtube.com/results?{params}"
+    try:
+        req = urllib.request.Request(url, headers=BANDCAMP_HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="replace")
+        m = re.search(r'"videoId":"([A-Za-z0-9_-]{11})"', html)
+        return m.group(1) if m else ""
+    except Exception as e:
+        print(f"  ⚠ YouTube scrape error for '{artist}': {e}", file=sys.stderr)
+    return ""
+
+
 def fetch_youtube_video_id(artist: str, api_key: str) -> str:
     params = urllib.parse.urlencode({
         "part": "id",
@@ -190,14 +205,21 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
                 wait = 5 * (2 ** attempt)  # 5s, 10s, 20s, 40s
                 print(f"  ⚠ YouTube rate limit, waiting {wait}s…", file=sys.stderr)
                 time.sleep(wait)
+            elif e.code == 403:
+                body = e.read().decode("utf-8", errors="replace")
+                if "quotaExceeded" in body or "dailyLimitExceeded" in body:
+                    print(f"  ⚠ YouTube quota exceeded, falling back to scrape for '{artist}'", file=sys.stderr)
+                    return _scrape_youtube_video_id(artist)
+                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+                return ""
             else:
                 print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
                 return ""
         except Exception as e:
             print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
             return ""
-    print(f"  ⚠ YouTube API: gave up after retries for '{artist}'", file=sys.stderr)
-    return ""
+    print(f"  ⚠ YouTube API: quota likely exceeded, falling back to scrape for '{artist}'", file=sys.stderr)
+    return _scrape_youtube_video_id(artist)
 
 
 def _http_get_html(url: str) -> str:
