@@ -58,7 +58,7 @@
   <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js" defer></script>
   <!-- html-to-image for 9:16 PNG social share card layout -->
   <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js" defer></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  {{ block "map-lib-css" . }}<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>{{ end }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }

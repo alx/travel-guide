@@ -1,0 +1,190 @@
+<script>
+(function () {
+  const CATEGORY_COLORS = window.CATEGORY_COLORS || {};
+  const MAP_CONFIG = window.MAP_CONFIG;
+
+  let allPOIs = [];
+  Object.defineProperty(window, 'allPOIs', { get: () => allPOIs, configurable: true });
+  window._mapCategoryColors = CATEGORY_COLORS;
+
+  const _tiles = MAP_CONFIG.tiles || {};
+  const map = new maplibregl.Map({
+    container: 'map',
+    style: _tiles.style || {
+      version: 8,
+      sources: {
+        'raster-tiles': {
+          type: 'raster',
+          tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
+          tileSize: 256,
+          attribution: _tiles.attribution || '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }
+      },
+      layers: [{ id: 'raster-bg', type: 'raster', source: 'raster-tiles' }]
+    },
+    center: [MAP_CONFIG.center[1], MAP_CONFIG.center[0]],
+    zoom: MAP_CONFIG.zoom,
+    attributionControl: { compact: true }
+  });
+  window._glMap = map;
+
+  function showToast(msg) {
+    const t = document.getElementById('copy-toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  }
+  window.showToast = showToast;
+
+  function buildColorExpr() {
+    const expr = ['match', ['get', 'category']];
+    Object.entries(CATEGORY_COLORS).forEach(([cat, color]) => expr.push(cat, color));
+    expr.push('#6b7280');
+    return expr;
+  }
+
+  window.activeCategories = new Set(Object.keys(CATEGORY_COLORS));
+
+  function toFC(pois) {
+    const search = (document.getElementById('search')?.value || '').trim().toLowerCase();
+    return {
+      type: 'FeatureCollection',
+      features: pois
+        .filter(f => {
+          const p = f.properties;
+          if (!window.activeCategories.has(p.category || 'Other')) return false;
+          if (search && !(p.name || '').toLowerCase().includes(search) && !(p.address || '').toLowerCase().includes(search)) return false;
+          return true;
+        })
+        .map(f => ({ type: 'Feature', geometry: f.geometry, properties: f.properties }))
+    };
+  }
+
+  function updateMarkers() {
+    if (!map.getSource('pois')) return;
+    map.getSource('pois').setData(toFC(allPOIs));
+  }
+  window.updateMarkers = updateMarkers;
+
+  function filterPOIs() { updateMarkers(); }
+  window.filterPOIs = filterPOIs;
+
+  function setupFilters(pois) {
+    const cats = [...new Set(pois.map(f => f.properties.category || 'Other'))];
+    const container = document.getElementById('filter-btns');
+    if (!container) return;
+    container.innerHTML = '';
+    cats.forEach(cat => {
+      const btn = document.createElement('button');
+      const color = CATEGORY_COLORS[cat] || '#6b7280';
+      btn.className = 'filter-btn active';
+      btn.dataset.cat = cat;
+      btn.style.cssText = `background:${color};border-color:${color};color:white;`;
+      btn.textContent = cat;
+      btn.onclick = () => {
+        if (window.activeCategories.has(cat)) {
+          window.activeCategories.delete(cat);
+          btn.style.cssText = `background:white;border-color:${color};color:${color};`;
+          btn.classList.remove('active');
+        } else {
+          window.activeCategories.add(cat);
+          btn.style.cssText = `background:${color};border-color:${color};color:white;`;
+          btn.classList.add('active');
+        }
+        filterPOIs();
+      };
+      container.appendChild(btn);
+    });
+  }
+  window.setupFilters = setupFilters;
+
+  const popup = new maplibregl.Popup({ closeButton: true, maxWidth: '280px' });
+
+  function showPopup(e) {
+    const f = e.features[0];
+    if (!f) return;
+    const p = f.properties;
+    const color = CATEGORY_COLORS[p.category] || '#6b7280';
+    popup
+      .setLngLat(f.geometry.coordinates.slice())
+      .setHTML(
+        `<strong style="font-size:0.9rem;">${p.name || ''}</strong>` +
+        `<div style="margin-top:0.3rem;"><span style="background:${color}22;color:${color};font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:10px;font-weight:600;">${p.category || ''}</span></div>` +
+        (p.address ? `<div style="font-size:0.78rem;color:#555;margin-top:0.35rem;">${p.address}</div>` : '')
+      )
+      .addTo(map);
+  }
+
+  const dataPromise = fetch(MAP_CONFIG.geojsonUrl).then(r => r.json());
+
+  map.on('load', async () => {
+    let data;
+    try { data = await dataPromise; }
+    catch (e) { console.error('[map-gl] Failed to load GeoJSON:', e); return; }
+
+    allPOIs = (data.v === 1 && window._expandCompact)
+      ? window._expandCompact(data)
+      : (data.features || []).map((f, i) => ({ ...f, _id: i }));
+    window.MAP_CONFIG.geojsonData = data;
+
+    map.addSource('pois', { type: 'geojson', data: toFC(allPOIs) });
+    map.addLayer({
+      id: 'pois-circles',
+      type: 'circle',
+      source: 'pois',
+      paint: {
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 2.5, 10, 4, 14, 7],
+        'circle-color': buildColorExpr(),
+        'circle-opacity': 0.85,
+        'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 6, 0, 10, 1],
+        'circle-stroke-color': '#fff'
+      }
+    });
+
+    map.on('mouseenter', 'pois-circles', () => { map.getCanvas().style.cursor = 'pointer'; });
+    map.on('mouseleave', 'pois-circles', () => { map.getCanvas().style.cursor = ''; });
+    map.on('click', 'pois-circles', showPopup);
+
+    setupFilters(allPOIs);
+
+    const urlFilter = new URLSearchParams(window.location.search).get('filter');
+    if (urlFilter) {
+      const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === urlFilter);
+      if (btn) btn.click();
+    }
+  });
+
+  window.loadCustomData = function (geojson, sourceName) {
+    const customPOIs = (geojson.features || [])
+      .filter(f => f.geometry?.type === 'Point')
+      .map((f, i) => ({ ...f, _id: 'custom-' + i, _custom: true }));
+    allPOIs = [...allPOIs.filter(f => !f._custom), ...customPOIs];
+    window.MAP_CONFIG.geojsonData = geojson;
+    const badge = document.getElementById('custom-layer-info');
+    if (badge) {
+      badge.style.display = 'flex';
+      const nameEl = document.getElementById('custom-layer-name');
+      if (nameEl) nameEl.textContent = sourceName || 'Custom layer loaded';
+    }
+    setupFilters(allPOIs);
+    updateMarkers();
+    if (customPOIs.length) {
+      const lngs = customPOIs.map(f => f.geometry.coordinates[0]);
+      const lats = customPOIs.map(f => f.geometry.coordinates[1]);
+      map.fitBounds(
+        [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+        { padding: 40 }
+      );
+    }
+  };
+
+  window.removeCustomLayer = function () {
+    allPOIs = allPOIs.filter(f => !f._custom);
+    const badge = document.getElementById('custom-layer-info');
+    if (badge) badge.style.display = 'none';
+    setupFilters(allPOIs);
+    updateMarkers();
+  };
+})();
+</script>
