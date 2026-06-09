@@ -299,34 +299,12 @@ renderSidebar = function() {
 const _baseFocusPOI = focusPOI;
 focusPOI = function(f) {
   _baseFocusPOI(f);
-  // Highlight all event-items for this venue; scroll first one into view
-  let first = null;
   document.querySelectorAll('.event-item').forEach(el => {
-    if (el.dataset.venueId === f._id) {
-      el.classList.add('active');
-      if (!first) first = el;
-    } else {
-      el.classList.remove('active');
-    }
+    el.classList.toggle('active', el.dataset.venueId === f._id);
   });
-  const container = document.querySelector('.overlay-card.scrollable');
-  const target = first?.closest('.poi-card') ?? first;
-  if (container && target) {
-    const offset = target.getBoundingClientRect().top - container.getBoundingClientRect().top;
-    container.scrollTo({ top: container.scrollTop + offset, behavior: 'smooth' });
-  }
 };
 
 /* No card-level fading — cards are date groups, not venues */
 fadePOIs = function() {};
-
-const _baseClearFocus = clearFocus;
-clearFocus = function() {
-  _baseClearFocus();
-  if (window.innerWidth <= 768) {
-    map.setZoom(MAP_CONFIG.zoom, { animate: true });
-    document.querySelector('.overlay-card.scrollable')?.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-};
 </script>
 {{ end }}
