@@ -50,19 +50,12 @@ body { background: #0a0a0a; }
 .event-embeds iframe { border: 0; width: 100%; border-radius: 4px; }
 .show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
 .copy-toast { background: rgba(255,255,255,0.12) !important; }
-.leaflet-popup-content-wrapper { background: #111; border: 0; color: #eee; border-radius: 0; min-width: 200px; }
-.leaflet-popup-tip { background: #111; }
-.leaflet-popup-content { margin: 0.6rem 0.8rem; }
-.leaflet-popup-content a { color: #888; }
-/* Distorama quick-nav */
-.disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.5rem; }
-.disto-nav a {
-  font-size: 0.68rem; padding: 0.15rem 0.55rem;
-  border: 1px solid #2a2a2a; color: #666; text-decoration: none;
-  transition: all 0.15s;
-}
-.disto-nav a:hover { border-color: #555; color: #ccc; }
-.disto-nav a.active { border-color: #fff; background: #fff; color: #000; }
+/* venue nav row */
+.venue-nav { display: flex; gap: 0.4rem; margin-top: 0.4rem; align-items: stretch; }
+.venue-nav > .header-btn { border-radius: 0 !important; padding: 0.55rem 0.7rem !important; font-size: 0.8rem !important; }
+.venue-nav-btn { flex: 0 0 auto; min-width: 2.6rem; font-size: 1rem !important; }
+.show-all-btn { flex: 1; }
+.tonight-btn.active { border-color: #fff !important; color: #fff !important; background: #1a1a1a !important; }
 </style>
 {{ end }}
 
@@ -75,11 +68,16 @@ body { background: #0a0a0a; }
       <p>LA CARTE DES BAS-FONDS TOULOUSAINS</p>
       <p><a href="https://distorama.neocities.org">distorama.neocities.org</a></p>
     </div>
-    <nav class="disto-nav">
-      <a href="{{ "/toulouse-distorama-this-week/" | relURL }}"{{ if eq .Params.distorama_window "this-week" }} class="active"{{ end }}>Cette semaine</a>
-      <a href="{{ "/toulouse-distorama-next-week/" | relURL }}"{{ if eq .Params.distorama_window "next-week" }} class="active"{{ end }}>Sem. prochaine</a>
-    </nav>
     <div id="filter-btns"></div>
+    <div class="venue-nav">
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(-1)" title="Lieu précédent"><i class="fas fa-chevron-left"></i></button>
+      <button class="header-btn show-all-btn" id="show-all-btn" onclick="clearFocus()">Tous les lieux</button>
+      {{- $isDay := eq (len .Params.distorama_window) 10 -}}
+      {{- if not $isDay }}
+      <button class="header-btn tonight-btn" id="tonight-btn" onclick="toggleTonight()">Ce soir</button>
+      {{- end }}
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(1)" title="Lieu suivant"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </div>
   <div class="overlay-card scrollable">
     <div id="poi-list"></div>
@@ -116,7 +114,10 @@ window.CATEGORY_ICONS = {
 {{ partial "map-poi-helpers.html" . }}
 {{ partial "map-geolocation.html" . }}
 <script>
-/* ── Distorama events: override marker, popup, sidebar ── */
+/* ── Distorama events: venue selection UX ── */
+
+let selectedVenueId = null, tonightFilter = false, navIndex = -1;
+const TODAY = new Date().toISOString().slice(0, 10);
 
 makeIcon = function(category, status) {
   const secondary = status === 'secondary';
@@ -128,8 +129,7 @@ makeIcon = function(category, status) {
     className: '',
     html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.55);opacity:${opacity};"><i class="fa-solid ${cls}" style="color:#fff;font-size:${fs}px;"></i></div>`,
     iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
-    popupAnchor: [0, -(size / 2) - 4]
+    iconAnchor: [size / 2, size / 2]
   });
 };
 
@@ -141,33 +141,31 @@ function fmtEventDate(dateStr) {
   return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
 }
 
-function makeEventContent(p, events) {
-  const cls = CATEGORY_ICONS[p.category] || 'fa-music';
-  let html = `<div style="font-weight:600;color:#eee;margin-bottom:0.3rem;"><i class="fa-solid ${cls}" style="color:#fff;font-size:0.8rem;margin-right:0.35em;"></i>${p.name}</div>`;
-  events.forEach(ev => {
-    const artist = ev.artist;
-    const bcUrl = ev.bandcamp_url || (artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null);
-    const ytUrl = ev.youtube_video_id
-      ? `https://www.youtube.com/watch?v=${ev.youtube_video_id}`
-      : (artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null);
-    const datePart = ev.date ? fmtEventDate(ev.date) : '';
-    const meta = [datePart, ev.time, ev.price].filter(Boolean).join(' · ');
-    html += `<div style="border-top:1px solid #222;margin-top:0.35rem;padding-top:0.35rem;">`;
-    if (meta) html += `<div style="font-size:0.75rem;color:#666;margin-bottom:0.15rem;">${meta}</div>`;
-    html += `<div style="font-size:0.83rem;color:#ccc;">${ev.desc}</div>`;
-    if (bcUrl) {
-      html += `<div style="margin-top:0.25rem;display:flex;gap:0.6rem;">`;
-      html += `<a href="${bcUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">Bandcamp</a>`;
-      html += `<a href="${ytUrl}" target="_blank" rel="noopener" style="font-size:0.72rem;color:#666;">YouTube</a>`;
-      html += `</div>`;
-    }
-    html += `</div>`;
+/* Returns the full navigable venue list (ignores selectedVenueId, respects search + tonight) */
+function getNavList() {
+  const q = (document.getElementById('search')?.value || '').toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
+  return allPOIs.filter(f => {
+    const p = f.properties;
+    const futureEvents = (p.events || []).filter(ev => !ev.date || ev.date >= todayStr);
+    if (!futureEvents.length) return false;
+    const matchSearch = !q || p.name.toLowerCase().includes(q)
+      || futureEvents.some(e => e.desc.toLowerCase().includes(q));
+    if (!matchSearch) return false;
+    if (tonightFilter) return futureEvents.some(ev => ev.date === TODAY);
+    return true;
   });
-  return html;
 }
 
-/* Override updateMarkers: filter past events, popup on hover (auto-close) or click (sticky) */
-let _stickyMarker = null;
+/* Marker fading: opacity on markers only, not on date-grouped cards */
+fadePOIs = function(activeId) {
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1'
+      : secondaryIds.has(String(id)) ? '0.3' : '0.5';
+  });
+};
+
 updateMarkers = function() {
   const search = (document.getElementById('search')?.value || '').toLowerCase();
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -184,45 +182,29 @@ updateMarkers = function() {
     const matchSearch = !search || p.name.toLowerCase().includes(search)
       || futureEvents.some(e => e.desc.toLowerCase().includes(search));
     if (!matchSearch) return;
+    if (tonightFilter && !futureEvents.some(ev => ev.date === TODAY)) return;
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
-    const content = makeEventContent(p, futureEvents);
-    marker.bindPopup(content, { maxWidth: 280 });
-    marker.on('mouseover', function() {
-      if (_stickyMarker !== marker) marker.openPopup();
-    });
-    marker.on('mouseout', function() {
-      if (_stickyMarker !== marker) marker.closePopup();
-    });
-    marker.on('click', function() {
-      if (_stickyMarker === marker) {
-        _stickyMarker = null;
-        marker.closePopup();
-      } else {
-        if (_stickyMarker) _stickyMarker.closePopup();
-        _stickyMarker = marker;
-        focusPOI(f);
-      }
-    });
-    map.on('popupclose', function() { _stickyMarker = null; });
+    marker.on('click', () => { if (activeCard !== f._id) focusPOI(f); });
     if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
     markers[f._id] = marker;
   });
 };
 
-/* Override renderSidebar: group by date, show venue per event-item */
 renderSidebar = function() {
   const search = (document.getElementById('search')?.value || '').toLowerCase();
   const todayStr = new Date().toISOString().slice(0, 10);
   const list = document.getElementById('poi-list');
   list.innerHTML = '';
 
-  // Flatten all future events across all venues
+  // Flatten events: apply venue filter, past-event filter, tonight filter, search
   const rows = [];
   allPOIs.forEach(f => {
     const p = f.properties;
+    if (selectedVenueId !== null && f._id !== selectedVenueId) return;
     (p.events || []).forEach(ev => {
       if (ev.date && ev.date < todayStr) return;
+      if (tonightFilter && ev.date !== TODAY) return;
       const match = !search
         || p.name.toLowerCase().includes(search)
         || (ev.desc && ev.desc.toLowerCase().includes(search));
@@ -240,14 +222,13 @@ renderSidebar = function() {
     a.date.localeCompare(b.date) || a.f.properties.name.localeCompare(b.f.properties.name)
   );
 
-  // Group by date
+  // Group by date → one card per date
   const byDate = new Map();
   rows.forEach(row => {
     if (!byDate.has(row.date)) byDate.set(row.date, []);
     byDate.get(row.date).push(row);
   });
 
-  // One card per date
   byDate.forEach((dateRows, date) => {
     const card = document.createElement('div');
     card.className = 'poi-card';
@@ -270,7 +251,8 @@ renderSidebar = function() {
         if (ev.bandcamp_embed_url) embedHtml += `<iframe src="${ev.bandcamp_embed_url}" height="120" loading="lazy" seamless></iframe>`;
         embedHtml += '</div>';
       }
-      html += `<div class="event-item" data-venue-id="${f._id}">
+      const isActive = selectedVenueId !== null && String(f._id) === String(selectedVenueId);
+      html += `<div class="event-item${isActive ? ' active' : ''}" data-venue-id="${f._id}">
         <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
         ${meta ? `<div class="event-meta">${meta}</div>` : ''}
         <div class="event-desc">${ev.desc}</div>
@@ -281,13 +263,14 @@ renderSidebar = function() {
 
     card.innerHTML = html;
 
-    // Click on venue name → focus that venue on the map
+    // Click on venue name → select that venue
     card.querySelectorAll('.event-item').forEach(item => {
-      const f = allPOIs.find(feat => feat._id === item.dataset.venueId);
-      if (!f) return;
-      item.querySelector('.event-venue').addEventListener('click', e => {
+      const venueId = item.dataset.venueId;
+      const feat = allPOIs.find(feat => String(feat._id) === String(venueId));
+      if (!feat) return;
+      item.querySelector('.event-venue')?.addEventListener('click', e => {
         e.stopPropagation();
-        focusPOI(f);
+        focusPOI(feat);
       });
     });
 
@@ -295,16 +278,53 @@ renderSidebar = function() {
   });
 };
 
-/* Override focusPOI: wrap base (map pan + popup + URL) then highlight event-items */
-const _baseFocusPOI = focusPOI;
 focusPOI = function(f) {
-  _baseFocusPOI(f);
-  document.querySelectorAll('.event-item').forEach(el => {
-    el.classList.toggle('active', el.dataset.venueId === f._id);
-  });
+  const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
+  map.flyTo([lat, lng], MAP_CONFIG.focusZoom || 15, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  activeCard = f._id;
+  selectedVenueId = f._id;
+  navIndex = getNavList().findIndex(x => x._id === f._id);
+  renderSidebar();
+  document.querySelector('.event-item.active')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const u = new URL(window.location.href);
+  u.searchParams.set('poi', slugify(f.properties.name));
+  history.replaceState({}, '', u);
+  fadePOIs(f._id);
 };
 
-/* No card-level fading — cards are date groups, not venues */
-fadePOIs = function() {};
+clearFocus = function() {
+  selectedVenueId = null;
+  navIndex = -1;
+  activeCard = null;
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = secondaryIds.has(String(id)) ? '0.55' : '1';
+  });
+  _flyingTo = true;
+  map.flyTo(MAP_CONFIG.center, MAP_CONFIG.zoom, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  const u = new URL(window.location.href);
+  u.searchParams.delete('poi');
+  history.replaceState({}, '', u);
+  renderSidebar();
+};
+
+function navigateVenue(dir) {
+  const list = getNavList();
+  if (!list.length) return;
+  navIndex = navIndex === -1
+    ? (dir > 0 ? 0 : list.length - 1)
+    : (navIndex + dir + list.length) % list.length;
+  focusPOI(list[navIndex]);
+}
+
+function toggleTonight() {
+  tonightFilter = !tonightFilter;
+  document.getElementById('tonight-btn')?.classList.toggle('active', tonightFilter);
+  if (selectedVenueId !== null) clearFocus();
+  filterPOIs();
+}
 </script>
 {{ end }}

@@ -17,8 +17,8 @@ if (MAP_CONFIG.useClustering && typeof L.markerClusterGroup === 'function') {
   map.addLayer(markerCluster);
 }
 let _flyingTo = false;
-map.on('click', clearFocus);
-map.on('popupclose', clearFocus);
+map.on('click', () => clearFocus());
+map.on('popupclose', () => clearFocus());
 map.on('dragstart', () => { if (!_flyingTo) clearFocus(); });
 map.on('zoomstart', () => { if (!_flyingTo) clearFocus(); });
 const _tiles = MAP_CONFIG.tiles || {};

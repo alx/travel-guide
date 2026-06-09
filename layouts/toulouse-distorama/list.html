@@ -28,18 +28,11 @@ body { background: #0a0a0a; }
 .cat-badge { background: #1e1e1e; color: #aaa; }
 .show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
 .copy-toast { background: rgba(255,255,255,0.12) !important; }
-.leaflet-popup-content-wrapper { background: #111; border: 1px solid #333; color: #eee; border-radius: 8px; }
-.leaflet-popup-tip { background: #111; }
-.leaflet-popup-content a { color: #aaa; }
-/* Distorama quick-nav */
-.disto-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
-.disto-nav a {
-  font-size: 0.68rem; padding: 0.15rem 0.55rem; border-radius: 20px;
-  border: 1px solid #2a2a2a; color: #777; text-decoration: none;
-  transition: all 0.15s;
-}
-.disto-nav a:hover { border-color: #555; color: #ccc; }
-.disto-nav a.active { border-color: #fff; color: #fff; background: #1a1a1a; }
+/* venue nav row */
+.venue-nav { display: flex; gap: 0.4rem; margin-top: 0.4rem; align-items: stretch; }
+.venue-nav > .header-btn { border-radius: 0 !important; padding: 0.55rem 0.7rem !important; font-size: 0.8rem !important; }
+.venue-nav-btn { flex: 0 0 auto; min-width: 2.6rem; font-size: 1rem !important; }
+.show-all-btn { flex: 1; }
 </style>
 {{ end }}
 
@@ -48,13 +41,6 @@ body { background: #0a0a0a; }
 <div class="map-overlay">
   <div class="overlay-card">
     <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
-    <nav class="disto-nav">
-      <a href="{{ "/toulouse-distorama/" | relURL }}" class="active">Lieux</a>
-      <a href="{{ "/toulouse-distorama-this-week/" | relURL }}">Cette semaine</a>
-      <a href="{{ "/toulouse-distorama-next-week/" | relURL }}">Sem. prochaine</a>
-      <a href="{{ printf "/toulouse-distorama-%s/" (now.Format "2006-01") | relURL }}">{{ now.Format "01/2006" }}</a>
-      <a href="{{ "/toulouse-distorama/agenda/" | relURL }}">Agenda →</a>
-    </nav>
     <div class="page-header">
       <h1>Distorama</h1>
       <p>Les lieux underground de Toulouse. Source : <a href="https://distorama.neocities.org/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">distorama.neocities.org</a></p>
@@ -65,6 +51,11 @@ body { background: #0a0a0a; }
     </div>
     <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher un lieu…" oninput="filterPOIs()">
     <div id="filter-btns"></div>
+    <div class="venue-nav">
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(-1)" title="Lieu précédent"><i class="fas fa-chevron-left"></i></button>
+      <button class="header-btn show-all-btn" id="show-all-btn" onclick="clearFocus()">Tous les lieux</button>
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(1)" title="Lieu suivant"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </div>
   <div class="overlay-card scrollable">
     <div id="poi-list"></div>
@@ -112,7 +103,9 @@ window.CATEGORY_ICONS = {
 {{ partial "map-poi-helpers.html" . }}
 {{ partial "map-geolocation.html" . }}
 <script>
-/* ── Distorama venues: override icon, markers, sidebar, filters ── */
+/* ── Distorama venues: venue selection UX ── */
+
+let selectedVenueId = null, navIndex = -1;
 
 makeIcon = function(category, status) {
   const secondary = status === 'secondary';
@@ -124,54 +117,11 @@ makeIcon = function(category, status) {
     className: '',
     html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.6);opacity:${opacity};"><i class="fa-solid ${cls}" style="color:#fff;font-size:${fs}px;"></i></div>`,
     iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
-    popupAnchor: [0, -(size / 2) - 4]
+    iconAnchor: [size / 2, size / 2]
   });
 };
 
-/* Override updateMarkers: popup on hover (auto-close) or click (sticky) */
-let _stickyMarker = null;
-updateMarkers = function() {
-  const search = document.getElementById('search').value.toLowerCase();
-  if (markerCluster) {
-    markerCluster.clearLayers();
-  } else {
-    Object.values(markers).forEach(m => map.removeLayer(m));
-  }
-  Object.keys(markers).forEach(k => delete markers[k]);
-  allPOIs.forEach(f => {
-    const p = f.properties;
-    const cat = p.category || 'Other';
-    const matchCat = activeFilter === 'All' || cat === activeFilter;
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address || '').toLowerCase().includes(search);
-    if (!matchCat || !matchSearch) return;
-    const [lng, lat] = f.geometry.coordinates;
-    const marker = L.marker([lat, lng], { icon: makeIcon(cat, p.status) });
-    const cls = CATEGORY_ICONS[cat] || 'fa-location-dot';
-    marker.bindPopup(`<b>${p.name}</b><br><small style="color:#aaa">${cat}</small>`, { maxWidth: 240 });
-    marker.on('mouseover', function() {
-      if (_stickyMarker !== marker) marker.openPopup();
-    });
-    marker.on('mouseout', function() {
-      if (_stickyMarker !== marker) marker.closePopup();
-    });
-    marker.on('click', function() {
-      if (_stickyMarker === marker) {
-        _stickyMarker = null;
-        marker.closePopup();
-      } else {
-        if (_stickyMarker) _stickyMarker.closePopup();
-        _stickyMarker = marker;
-        focusPOI(f);
-      }
-    });
-    map.on('popupclose', function() { _stickyMarker = null; });
-    if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
-    markers[f._id] = marker;
-  });
-};
-
-/* Override setupFilters: use FA icon HTML in filter chips */
+/* FA icon labels in filter chips */
 setupFilters = function(pois) {
   const cats = ['All', ...new Set(pois.map(f => f.properties.category || 'Other'))];
   const container = document.getElementById('filter-btns');
@@ -193,17 +143,54 @@ setupFilters = function(pois) {
   });
 };
 
-/* Override renderSidebar: FA icon in cat-badge */
-renderSidebar = function() {
-  const search = document.getElementById('search').value.toLowerCase();
-  const list = document.getElementById('poi-list');
-  list.innerHTML = '';
-  const filtered = allPOIs.filter(f => {
+/* Returns the full navigable list (ignores selectedVenueId, respects search + category) */
+function getNavList() {
+  const q = document.getElementById('search').value.toLowerCase();
+  return allPOIs.filter(f => {
     const p = f.properties;
     const matchCat = activeFilter === 'All' || p.category === activeFilter;
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || (p.address || '').toLowerCase().includes(search);
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || (p.address || '').toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
+}
+
+/* Returns list for rendering (applies selectedVenueId filter when set) */
+function getFilteredPOIs() {
+  const q = document.getElementById('search').value.toLowerCase();
+  return allPOIs.filter(f => {
+    if (selectedVenueId !== null && f._id !== selectedVenueId) return false;
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || (p.address || '').toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+}
+
+updateMarkers = function() {
+  const q = document.getElementById('search').value.toLowerCase();
+  if (markerCluster) {
+    markerCluster.clearLayers();
+  } else {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+  }
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const matchCat = activeFilter === 'All' || p.category === activeFilter;
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || (p.address || '').toLowerCase().includes(q);
+    if (!matchCat || !matchSearch) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
+    marker.on('click', () => { if (activeCard !== f._id) focusPOI(f); });
+    if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
+    markers[f._id] = marker;
+  });
+};
+
+renderSidebar = function() {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const filtered = getFilteredPOIs();
   filtered.forEach(f => {
     const p = f.properties;
     const card = document.createElement('div');
@@ -225,5 +212,49 @@ renderSidebar = function() {
     list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">Aucun lieu trouvé.</p>';
   }
 };
+
+focusPOI = function(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
+  map.flyTo([lat, lng], MAP_CONFIG.focusZoom || 15, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  selectedVenueId = f._id;
+  navIndex = getNavList().findIndex(x => x._id === f._id);
+  renderSidebar();
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const u = new URL(window.location.href);
+  u.searchParams.set('poi', slugify(f.properties.name));
+  history.replaceState({}, '', u);
+  fadePOIs(f._id);
+};
+
+clearFocus = function() {
+  selectedVenueId = null;
+  navIndex = -1;
+  activeCard = null;
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = secondaryIds.has(String(id)) ? '0.55' : '1';
+  });
+  _flyingTo = true;
+  map.flyTo(MAP_CONFIG.center, MAP_CONFIG.zoom, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  const u = new URL(window.location.href);
+  u.searchParams.delete('poi');
+  history.replaceState({}, '', u);
+  renderSidebar();
+};
+
+function navigateVenue(dir) {
+  const list = getNavList();
+  if (!list.length) return;
+  navIndex = navIndex === -1
+    ? (dir > 0 ? 0 : list.length - 1)
+    : (navIndex + dir + list.length) % list.length;
+  focusPOI(list[navIndex]);
+}
 </script>
 {{ end }}

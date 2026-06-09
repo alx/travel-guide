@@ -17,8 +17,11 @@ A named group of POIs sharing an icon, color, and filter chip. Defined per-map. 
 **FA icon layer**
 Font Awesome-based circular marker rendering (`makeIcon()`), as opposed to emoji icons stored in the GeoJSON `properties.icon` field. Defined in `layouts/partials/map-fa-icons.html` (shared partial). Maps that use FA icons include `CATEGORY_FA_ICONS` and `CATEGORY_COLORS` mappings in their layout template.
 
-**Distorama event popup**
-Click a marker on an event map to see: venue name as header, then one block per event — time + price on one line, artist name, Bandcamp search link, YouTube search link. Multiple events at the same venue stack vertically. Price omitted if absent from `details`. Artist links omitted if `desc` is not a parseable artist name (e.g. radio broadcasts).
+**Distorama venue selection**
+Persistent focus state set by hovering or clicking a marker (or a poi-card). Filters the poi-list to show only the selected venue's poi-card; fades all other markers. Cleared by clicking the map background or the "Tous les lieux" button. While a venue is selected, the `<` and `>` navigation buttons step to the prev/next venue in the active filtered list.
+
+**Tonight filter**
+Toggle button ("Ce soir") present on week and month event maps only (absent on single-day maps). When active, filters both the poi-list and map markers to venues that have at least one event where `event.date` equals the client's current date. Each event record in the GeoJSON carries a `date` field (`YYYY-MM-DD`) for this purpose.
 
 **Distorama agenda index**
 A Hugo list page at `toulouse-distorama/agenda/` listing all generated event maps grouped by month, plus direct links to `this-week` and `next-week`. Entry point for discovering specific dates.
@@ -36,7 +39,7 @@ Any `toulouse-distorama-*` slug scoped to a time window (day, week, month). Show
 Per-venue circular map marker using the venue's logo image, stored at `static/toulouse-distorama/logos/{filename}`. Downloaded from distorama.neocities.org and self-hosted. Fallback while logos are pending: white FA icon on black circle, using the existing `map-fa-icons.html` partial pattern. TODO: download logo images for all partner venues.
 
 **Artist link**
-In Distorama event tooltips, artist names (parsed from `desc`, stripping genre annotations in parentheses) link to both a Bandcamp search (`bandcamp.com/search?q={artist}`) and a YouTube search (`youtube.com/results?search_query={artist}`).
+In Distorama poi-cards, artist names (parsed from `desc`, stripping genre annotations in parentheses) link to both a Bandcamp search (`bandcamp.com/search?q={artist}`) and a YouTube search (`youtube.com/results?search_query={artist}`).
 
 **Distorama theme**
 Full monochrome visual system: CartoDB Dark Matter tiles (black base), white overlay card with dark text, white/grey marker circles. No color accents. Applied to all `toulouse-distorama*` map variants.
