@@ -323,10 +323,10 @@ def split_artists(artist: str) -> list[str]:
 
 
 def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
-    # Include artists not yet cached OR cached without Bandcamp data, newest events first
+    # Include artists not yet cached OR not yet through a Bandcamp search pass, newest events first
     pending = [
         a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
-        if a and (a not in mediacache or not mediacache[a].get("bandcamp_embed_url"))
+        if a and (a not in mediacache or not mediacache[a].get("bandcamp_searched"))
     ]
     if not pending:
         print("  All artists already cached")
@@ -368,20 +368,24 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
 
         # Bandcamp via SerpAPI
         bc_url, bc_embed = "", ""
+        bc_searched = False
         if not serp_quota_gone:
             try:
                 bc_url, bc_embed = fetch_bandcamp_via_serp(artist, serp_key)
+                bc_searched = True  # attempt completed (result may be empty)
                 if bc_url:
                     tqdm.write(f"  {artist}: Bandcamp {bc_url}")
             except _SerpAPIQuotaExceeded:
                 tqdm.write("  ⚠ SerpAPI quota exceeded — skipping Bandcamp for remaining artists", file=sys.stderr)
                 serp_quota_gone = True
-            time.sleep(1.1)
+            if not serp_quota_gone:
+                time.sleep(1.1)
 
         mediacache[artist] = {
             "youtube_video_id": yt_id,
             "bandcamp_url": bc_url,
             "bandcamp_embed_url": bc_embed,
+            "bandcamp_searched": bc_searched,
         }
         save_mediacache(mediacache)
 
