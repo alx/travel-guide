@@ -62,15 +62,15 @@ function clearFocus() {
 
 function makeIcon(category, status) {
   const color = CATEGORY_COLORS[category] || '#6b7280';
-  const icon = CATEGORY_ICONS[category] || '📍';
+  const cls = CATEGORY_ICONS[category] || 'fa-location-dot';
   const secondary = status === 'secondary';
   const size = secondary ? 22 : 32;
-  const fs   = secondary ? 11 : 16;
+  const fs   = secondary ? 10 : 14;
   const border = secondary ? '#bbb' : 'white';
   const opacity = secondary ? '0.55' : '1';
   return L.divIcon({
     className: '',
-    html: `<div style="background:${color};width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fs}px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid ${border};opacity:${opacity};">${icon}</div>`,
+    html: `<div style="background:${color};width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid ${border};opacity:${opacity};"><i class="fa-solid ${cls}" style="color:white;font-size:${fs}px;"></i></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     popupAnchor: [0, -(size / 2) - 4]
@@ -93,27 +93,27 @@ function renderSidebar() {
     const p = f.properties;
     const cat = p.category || 'Other';
     const color = CATEGORY_COLORS[cat] || '#6b7280';
-    const icon = CATEGORY_ICONS[cat] || '📍';
+    const cls = CATEGORY_ICONS[cat] || 'fa-location-dot';
     const card = document.createElement('div');
     card.className = 'poi-card';
     card.id = 'card-' + f._id;
     const [lng, lat] = f.geometry.coordinates;
     const slug = slugify(p.name);
     card.innerHTML = `
-    <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+    <span class="cat-badge" style="background:${color}22;color:${color};"><i class="fa-solid ${cls}" style="margin-right:0.3em;"></i>${cat}</span>
     <h3>${p.name}</h3>
-    ${p.address ? `<div class="poi-addr">📍 ${p.address}</div>` : ''}
+    ${p.address ? `<div class="poi-addr"><i class="fa-solid fa-location-dot" style="margin-right:0.35em;opacity:0.6;"></i>${p.address}</div>` : ''}
     ${p.notes ? `<div class="poi-addr" style="margin-top:0.25rem;font-style:italic;">${p.notes}</div>` : ''}
-    ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;">🕐 ${p.hours.split(/;\s*/).join('<br>')}</div>` : ''}
-    ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;">💰 ${p.price}</div>` : ''}
-    ${!MAP_CONFIG.hidePhone && p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;">📞 ${p.phone}</div>` : ''}
+    ${p.hours ? `<div class="poi-addr" style="margin-top:0.25rem;"><i class="fa-regular fa-clock" style="margin-right:0.35em;opacity:0.6;"></i>${p.hours.split(/;\s*/).join('<br>')}</div>` : ''}
+    ${p.price ? `<div class="poi-addr" style="margin-top:0.15rem;"><i class="fa-solid fa-tag" style="margin-right:0.35em;opacity:0.6;"></i>${p.price}</div>` : ''}
+    ${!MAP_CONFIG.hidePhone && p.phone ? `<div class="poi-addr" style="margin-top:0.15rem;"><i class="fa-solid fa-phone" style="margin-right:0.35em;opacity:0.6;"></i>${p.phone}</div>` : ''}
     <div class="poi-actions">
-        ${!MAP_CONFIG.hideOsmAnd ? `<a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler">🗺️ OsmAnd</a>` : ''}
+        ${!MAP_CONFIG.hideOsmAnd ? `<a href="geo:${lat},${lng}" title="Open in OsmAnd or any geo: handler"><i class="fa-solid fa-map" style="margin-right:0.3em;"></i>OsmAnd</a>` : ''}
         <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">${MAP_CONFIG.googleMapsLabel || 'Google Maps ↗'}</a>
-        ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '🗺️ Open Lamai Map →' : (MAP_CONFIG.urlLabel || 'Source ↗')}</a>` : ''}
-        ${p.youtube_url ? `<a href="${p.youtube_url}" target="_blank">▶️ YouTube</a>` : ''}
-        ${!MAP_CONFIG.hideRoute ? `<a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position">🧭 Route</a>` : ''}
-        ${!MAP_CONFIG.hidePermalink ? `<a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('🔗 Link copied!'));" title="Copy permalink">🔗</a>` : ''}
+        ${p.url ? `<a href="${p.url}" ${cat === 'Area Guide' ? '' : 'target="_blank"'} style="${cat === 'Area Guide' ? 'font-weight:700;color:#1a3a5c;' : ''}">${cat === 'Area Guide' ? '<i class="fa-solid fa-map" style="margin-right:0.3em;"></i>Open Lamai Map →' : (MAP_CONFIG.urlLabel || 'Source ↗')}</a>` : ''}
+        ${p.youtube_url ? `<a href="${p.youtube_url}" target="_blank"><i class="fa-brands fa-youtube" style="margin-right:0.3em;"></i>YouTube</a>` : ''}
+        ${!MAP_CONFIG.hideRoute ? `<a href="#" data-route-poi="${f._id}" onclick="event.preventDefault();event.stopPropagation();showRoute(${f._id});" title="Itinéraire depuis ma position"><i class="fa-solid fa-diamond-turn-right" style="margin-right:0.3em;"></i>Route</a>` : ''}
+        ${!MAP_CONFIG.hidePermalink ? `<a href="?poi=${slug}" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText(location.origin+location.pathname+'?poi=${slug}').then(()=>showToast('Link copied!'));" title="Copy permalink"><i class="fa-solid fa-link"></i></a>` : ''}
     </div>`;
     card.onclick = () => focusPOI(f);
     list.appendChild(card);
@@ -178,8 +178,8 @@ function updateMarkers() {
       + (ytId
           ? `<div style="margin-top:0.5rem;"><iframe width="${ytW}" height="${ytH}" src="https://www.youtube-nocookie.com/embed/${ytId}" frameborder="0" allowfullscreen style="border-radius:6px;display:block;"></iframe></div>`
           : (p.notes ? '<br><em>' + p.notes + '</em>' : '')
-            + (p.hours ? '<br>🕐 ' + p.hours.split(/;\s*/).join('<br>') : '')
-            + (p.price ? '<br>💰 ' + p.price : '')
+            + (p.hours ? '<br><i class="fa-regular fa-clock" style="margin-right:0.35em;"></i>' + p.hours.split(/;\s*/).join('<br>') : '')
+            + (p.price ? '<br><i class="fa-solid fa-tag" style="margin-right:0.35em;"></i>' + p.price : '')
       ),
       ytId ? { maxWidth: p.youtube_vertical ? 200 : 300 } : {}
     );
@@ -202,7 +202,8 @@ function setupFilters(pois) {
     const btn = document.createElement('button');
     btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
     btn.dataset.cat = cat;
-    btn.textContent = (CATEGORY_ICONS[cat] || '') + ' ' + cat;
+    const ic = CATEGORY_ICONS[cat];
+    btn.innerHTML = ic ? `<i class="fa-solid ${ic}" style="margin-right:0.3em;"></i>${cat}` : cat;
     btn.onclick = () => {
       activeFilter = cat;
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

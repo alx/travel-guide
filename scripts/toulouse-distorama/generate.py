@@ -47,13 +47,15 @@ CONTENT_DIR = REPO_ROOT / "content"
 NOMINATIM_HEADERS = {"User-Agent": "maps.girard-davila.net/toulouse-distorama"}
 
 CATEGORY_ICONS = {
-    "Concert Bar": "🎵",
-    "Record Shop": "💿",
-    "Cinema": "🎬",
-    "Radio": "📻",
-    "Studio": "🎙️",
-    "Boutique": "🛍️",
-    "Merch/Print": "🖨️",
+    "Concert Bar": "fa-music",
+    "Record Shop": "fa-record-vinyl",
+    "Cinema": "fa-film",
+    "Radio": "fa-tower-broadcast",
+    "Studio": "fa-microphone",
+    "Boutique": "fa-store",
+    "Merch/Print": "fa-print",
+    "Theater": "fa-masks-theater",
+    "Other": "fa-location-dot",
 }
 
 FRENCH_MONTHS = {
@@ -237,7 +239,7 @@ def make_event_feature(venue: dict, coords: dict, events_at_venue: list[dict]) -
         "properties": {
             "name": venue["display_name"],
             "category": venue["category"],
-            "icon": CATEGORY_ICONS.get(venue["category"], "🎵"),
+            "icon": CATEGORY_ICONS.get(venue["category"], "fa-location-dot"),
             "address": venue["address"],
             "logo": venue["logo"],
             "events": events_at_venue,
@@ -253,7 +255,7 @@ def make_venue_feature(venue: dict, coords: dict) -> dict:
         "properties": {
             "name": venue["display_name"],
             "category": venue["category"],
-            "icon": CATEGORY_ICONS.get(venue["category"], "🎵"),
+            "icon": CATEGORY_ICONS.get(venue["category"], "fa-location-dot"),
             "address": venue["address"],
             "logo": venue["logo"],
             "url": venue["url"],

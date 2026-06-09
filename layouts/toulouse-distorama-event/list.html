@@ -101,7 +101,8 @@ window.CATEGORY_COLORS = {
 };
 window.CATEGORY_ICONS = {
   'Concert Bar': 'fa-music', 'Record Shop': 'fa-record-vinyl', 'Cinema': 'fa-film',
-  'Radio': 'fa-tower-broadcast', 'Studio': 'fa-microphone', 'Boutique': 'fa-store', 'Merch/Print': 'fa-print'
+  'Radio': 'fa-tower-broadcast', 'Studio': 'fa-microphone', 'Boutique': 'fa-store', 'Merch/Print': 'fa-print',
+  'Theater': 'fa-masks-theater', 'Other': 'fa-location-dot'
 };
 </script>
 {{ partial "map-poi-helpers.html" . }}
@@ -112,7 +113,7 @@ window.CATEGORY_ICONS = {
 makeIcon = function(category, status) {
   const secondary = status === 'secondary';
   const size = secondary ? 22 : 34;
-  const cls = CATEGORY_ICONS[category] || 'fa-music';
+  const cls = CATEGORY_ICONS[category] || 'fa-location-dot';
   const fs = secondary ? 10 : 15;
   const opacity = secondary ? '0.55' : '1';
   return L.divIcon({

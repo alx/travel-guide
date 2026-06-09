@@ -137,16 +137,16 @@ const CATEGORY_COLORS = {
   'Industrie':              '#6366f1',
 };
 const CATEGORY_ICONS = {
-  'Data Center & IA':       '🖥️',
-  'Énergie & Nucléaire':    '⚡',
-  'Recyclage':              '♻️',
-  'Matériaux critiques':    '🔋',
-  'Aéronautique & Défense': '✈️',
-  'Sidérurgie':             '⚙️',
-  'Biocarburants':          '🌿',
-  'Électromobilité':        '🚗',
-  'Agroalimentaire':        '🌾',
-  'Industrie':              '🏭',
+  'Data Center & IA':       'fa-server',
+  'Énergie & Nucléaire':    'fa-bolt',
+  'Recyclage':              'fa-recycle',
+  'Matériaux critiques':    'fa-battery-full',
+  'Aéronautique & Défense': 'fa-plane',
+  'Sidérurgie':             'fa-gear',
+  'Biocarburants':          'fa-leaf',
+  'Électromobilité':        'fa-car',
+  'Agroalimentaire':        'fa-wheat-awn',
+  'Industrie':              'fa-industry',
 };
 
 let map, allPOIs = [], markers = {}, clusterGroup, activeCard = null, activeFilter = null;
@@ -192,10 +192,10 @@ map.addLayer(clusterGroup);
 
 function makeIcon(category) {
   const color = CATEGORY_COLORS[category] || '#6b7280';
-  const icon  = CATEGORY_ICONS[category]  || '🏭';
+  const cls   = CATEGORY_ICONS[category]  || 'fa-industry';
   return L.divIcon({
     className: '',
-    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">${icon}</div>`,
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;"><i class="fa-solid ${cls}" style="color:white;font-size:14px;"></i></div>`,
     iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
   });
 }
@@ -220,11 +220,11 @@ function buildFilterButtons() {
 
   Object.entries(counts).sort((a, b) => b[1] - a[1]).forEach(([cat, count]) => {
     const color = CATEGORY_COLORS[cat] || '#6b7280';
-    const icon  = CATEGORY_ICONS[cat]  || '🏭';
+    const cls   = CATEGORY_ICONS[cat]  || 'fa-industry';
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.cat = cat;
-    btn.textContent = `${icon} ${cat} (${count})`;
+    btn.innerHTML = `<i class="fa-solid ${cls}" style="margin-right:0.3em;"></i>${cat} (${count})`;
     btn.onclick = () => setFilter(cat);
     container.appendChild(btn);
   });
@@ -279,16 +279,16 @@ function renderSidebar() {
     const p     = f.properties;
     const cat   = p.category || 'Industrie';
     const color = CATEGORY_COLORS[cat] || '#6b7280';
-    const icon  = CATEGORY_ICONS[cat]  || '🏭';
+    const cls   = CATEGORY_ICONS[cat]  || 'fa-industry';
     const [lng, lat] = f.geometry.coordinates;
     const card = document.createElement('div');
     card.className = 'poi-card';
     card.id = 'card-' + f._id;
     card.style.borderLeftColor = color;
     card.innerHTML = `
-      <span class="cat-badge" style="background:${color}22;color:${color};">${icon} ${cat}</span>
+      <span class="cat-badge" style="background:${color}22;color:${color};"><i class="fa-solid ${cls}" style="margin-right:0.3em;"></i>${cat}</span>
       <h3>${p.name}</h3>
-      <div class="poi-ville">📍 ${p.ville} · ${p.departement} · ${p.region}</div>
+      <div class="poi-ville"><i class="fa-solid fa-location-dot" style="margin-right:0.35em;opacity:0.6;"></i>${p.ville} · ${p.departement} · ${p.region}</div>
       ${p.projet ? `<div class="poi-notes">${p.projet.length > 120 ? p.projet.slice(0,120) + '…' : p.projet}</div>` : ''}
       <div class="poi-actions">
         <a href="https://www.google.com/maps/search/?api=1&query=${lat},${lng}" target="_blank">Google Maps ↗</a>
