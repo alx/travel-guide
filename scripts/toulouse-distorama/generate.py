@@ -27,6 +27,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -177,15 +178,25 @@ def fetch_youtube_video_id(artist: str, api_key: str) -> str:
         "key": api_key,
     })
     url = f"https://www.googleapis.com/youtube/v3/search?{params}"
-    try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-        items = data.get("items", [])
-        if items:
-            return items[0]["id"].get("videoId", "")
-    except Exception as e:
-        print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req, timeout=10) as r:
+                data = json.loads(r.read())
+            items = data.get("items", [])
+            return items[0]["id"].get("videoId", "") if items else ""
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = 5 * (2 ** attempt)  # 5s, 10s, 20s, 40s
+                print(f"  ⚠ YouTube rate limit, waiting {wait}s…", file=sys.stderr)
+                time.sleep(wait)
+            else:
+                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+                return ""
+        except Exception as e:
+            print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+            return ""
+    print(f"  ⚠ YouTube API: gave up after retries for '{artist}'", file=sys.stderr)
     return ""
 
 
@@ -255,7 +266,9 @@ def scrape_bandcamp(artist: str) -> tuple[str, str]:
 
 
 def split_artists(artist: str) -> list[str]:
-    return [a.strip() for a in artist.split("+") if a.strip()]
+    parts = [a.strip() for a in artist.split("+") if a.strip()]
+    cleaned = [re.sub(r"\s*\([^)]*\)\s*$", "", p).strip() for p in parts]
+    return [p for p in cleaned if p]
 
 
 def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
@@ -284,7 +297,7 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             yt_id = fetch_youtube_video_id(artist, api_key)
             if yt_id:
                 print(f"    YouTube: {yt_id}")
-            time.sleep(0.1)
+            time.sleep(0.5)
 
         bc_url, bc_embed = scrape_bandcamp(artist)
         if bc_url:
