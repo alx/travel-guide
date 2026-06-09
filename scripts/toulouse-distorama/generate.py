@@ -233,59 +233,87 @@ def _http_get_html(url: str) -> str:
     return ""
 
 
-def scrape_bandcamp(artist: str) -> tuple[str, str]:
-    """Returns (bandcamp_url, bandcamp_embed_url). Either may be empty string."""
-    params = urllib.parse.urlencode({"q": artist, "item_type": "b"})
-    search_html = _http_get_html(f"https://bandcamp.com/search?{params}")
-    if not search_html:
-        return "", ""
+class _SerpAPIQuotaExceeded(Exception):
+    pass
 
-    m = re.search(
-        r'class="searchresult band".*?<div class="heading">\s*<a href="([^"]+)"',
-        search_html, re.DOTALL,
-    )
-    if not m:
-        return "", ""
 
-    artist_url = m.group(1).strip()
+def _extract_bandcamp_embed(url: str) -> tuple[str, str]:
+    """Given a known Bandcamp artist or album URL, return (url, embed_url)."""
+    html = _http_get_html(url)
+    if not html:
+        return url, ""
 
-    artist_html = _http_get_html(artist_url)
-    if not artist_html:
-        return artist_url, ""
-
-    m_album = re.search(r'href="((?:https://[^"]+)?/album/[^"]+)"', artist_html)
-    if not m_album:
-        return artist_url, ""
-
-    album_path = m_album.group(1)
-    if album_path.startswith("/"):
-        base = re.match(r"(https://[^/]+)", artist_url)
-        album_url = (base.group(1) + album_path) if base else ""
-    else:
-        album_url = album_path
-
-    if not album_url:
-        return artist_url, ""
-
-    album_html = _http_get_html(album_url)
-    if not album_html:
-        return artist_url, ""
+    if "/album/" not in url:
+        m_album = re.search(r'href="((?:https://[^"]+)?/album/[^"]+)"', html)
+        if not m_album:
+            return url, ""
+        album_path = m_album.group(1)
+        if album_path.startswith("/"):
+            base = re.match(r"(https://[^/]+)", url)
+            album_url = (base.group(1) + album_path) if base else ""
+        else:
+            album_url = album_path
+        if not album_url:
+            return url, ""
+        html = _http_get_html(album_url)
+        if not html:
+            return url, ""
 
     m_id = re.search(
         r'<meta property="twitter:player" content="https://bandcamp\.com/EmbeddedPlayer/album=(\d+)/',
-        album_html,
+        html,
     )
     if not m_id:
-        m_id = re.search(r'data-tralbumid="(\d+)"', album_html)
+        m_id = re.search(r'data-tralbumid="(\d+)"', html)
     if not m_id:
-        return artist_url, ""
+        return url, ""
 
     album_id = m_id.group(1)
     embed_url = (
         f"https://bandcamp.com/EmbeddedPlayer/album={album_id}"
         f"/size=small/bgcol=111111/linkcol=ffffff/transparent=true/"
     )
-    return artist_url, embed_url
+    return url, embed_url
+
+
+def fetch_bandcamp_via_serp(artist: str, api_key: str) -> tuple[str, str]:
+    """Search site:bandcamp.com via SerpAPI. Raises _SerpAPIQuotaExceeded on quota/auth errors."""
+    params = urllib.parse.urlencode({
+        "q": f"site:bandcamp.com {artist}",
+        "api_key": api_key,
+        "engine": "google",
+        "num": 1,
+    })
+    url = f"https://serpapi.com/search.json?{params}"
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        if e.code in (401, 429):
+            raise _SerpAPIQuotaExceeded()
+        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
+        return "", ""
+    except Exception as e:
+        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
+        return "", ""
+
+    if data.get("error"):
+        msg = str(data["error"]).lower()
+        if any(w in msg for w in ("ran out", "credit", "quota", "upgrade")):
+            raise _SerpAPIQuotaExceeded()
+        print(f"  ⚠ SerpAPI: {data['error']}", file=sys.stderr)
+        return "", ""
+
+    results = data.get("organic_results", [])
+    if not results:
+        return "", ""
+
+    artist_url = results[0].get("link", "").split("?")[0].split("#")[0]
+    if not artist_url or "bandcamp.com" not in artist_url:
+        return "", ""
+
+    return _extract_bandcamp_embed(artist_url)
 
 
 def split_artists(artist: str) -> list[str]:
@@ -295,44 +323,63 @@ def split_artists(artist: str) -> list[str]:
 
 
 def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
-    # Sort by newest event date descending so upcoming events are enriched first
-    new_artists = [
+    # Include artists not yet cached OR cached without Bandcamp data, newest events first
+    pending = [
         a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
-        if a and a not in mediacache
+        if a and (a not in mediacache or not mediacache[a].get("bandcamp_embed_url"))
     ]
-    if not new_artists:
+    if not pending:
         print("  All artists already cached")
         return mediacache
 
-    use_scrape = not api_key
-    if use_scrape:
-        print("  ⚠ YOUTUBE_API_KEY not set — using scrape for YouTube", file=sys.stderr)
+    serp_key = os.environ.get("SERPAPI_API_KEY", "")
+    use_yt_scrape = not api_key
+    serp_quota_gone = not serp_key
 
-    print(f"  Enriching {len(new_artists)} new artists…")
-    for artist in new_artists:
+    if use_yt_scrape:
+        print("  ⚠ YOUTUBE_API_KEY not set — using scrape for YouTube", file=sys.stderr)
+    if serp_quota_gone:
+        print("  ⚠ SERPAPI_API_KEY not set — Bandcamp enrichment skipped", file=sys.stderr)
+
+    print(f"  Enriching {len(pending)} artists (YouTube + Bandcamp)…")
+    for artist in pending:
+        already_cached = artist in mediacache
         if dry_run:
             print(f"  [dry-run] would enrich: {artist}")
-            mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
+            if not already_cached:
+                mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
             continue
 
         print(f"  Enriching: {artist}")
-        if use_scrape:
+
+        # YouTube — skip if already cached
+        if already_cached:
+            yt_id = mediacache[artist].get("youtube_video_id", "")
+        elif use_yt_scrape:
             yt_id = _scrape_youtube_video_id(artist)
         else:
             try:
                 yt_id = fetch_youtube_video_id(artist, api_key)
             except _YouTubeQuotaExceeded:
-                print("  ⚠ YouTube quota exceeded — switching all remaining artists to scrape", file=sys.stderr)
-                use_scrape = True
+                print("  ⚠ YouTube quota exceeded — switching to scrape", file=sys.stderr)
+                use_yt_scrape = True
                 yt_id = _scrape_youtube_video_id(artist)
         if yt_id:
             print(f"    YouTube: {yt_id}")
-        time.sleep(0.5)
+        if not already_cached:
+            time.sleep(0.5)
 
-        bc_url, bc_embed = scrape_bandcamp(artist)
-        if bc_url:
-            print(f"    Bandcamp: {bc_url}")
-        time.sleep(1.1)
+        # Bandcamp via SerpAPI
+        bc_url, bc_embed = "", ""
+        if not serp_quota_gone:
+            try:
+                bc_url, bc_embed = fetch_bandcamp_via_serp(artist, serp_key)
+                if bc_url:
+                    print(f"    Bandcamp: {bc_url}")
+            except _SerpAPIQuotaExceeded:
+                print("  ⚠ SerpAPI quota exceeded — skipping Bandcamp for remaining artists", file=sys.stderr)
+                serp_quota_gone = True
+            time.sleep(1.1)
 
         mediacache[artist] = {
             "youtube_video_id": yt_id,
