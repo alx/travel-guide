@@ -50,7 +50,7 @@ body { background: #0a0a0a; }
 .event-embeds iframe { border: 0; width: 100%; border-radius: 4px; }
 .show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
 .copy-toast { background: rgba(255,255,255,0.12) !important; }
-.leaflet-popup-content-wrapper { background: #111; border: 1px solid #2a2a2a; color: #eee; border-radius: 8px; min-width: 200px; }
+.leaflet-popup-content-wrapper { background: #111; border: 0; color: #eee; border-radius: 0; min-width: 200px; }
 .leaflet-popup-tip { background: #111; }
 .leaflet-popup-content { margin: 0.6rem 0.8rem; }
 .leaflet-popup-content a { color: #888; }
@@ -309,10 +309,24 @@ focusPOI = function(f) {
       el.classList.remove('active');
     }
   });
-  first?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  const container = document.querySelector('.overlay-card.scrollable');
+  const target = first?.closest('.poi-card') ?? first;
+  if (container && target) {
+    const offset = target.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTo({ top: container.scrollTop + offset, behavior: 'smooth' });
+  }
 };
 
 /* No card-level fading — cards are date groups, not venues */
 fadePOIs = function() {};
+
+const _baseClearFocus = clearFocus;
+clearFocus = function() {
+  _baseClearFocus();
+  if (window.innerWidth <= 768) {
+    map.setZoom(MAP_CONFIG.zoom, { animate: true });
+    document.querySelector('.overlay-card.scrollable')?.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
 </script>
 {{ end }}
