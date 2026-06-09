@@ -304,7 +304,7 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         return mediacache
 
     if not api_key:
-        print("  ⚠ YOUTUBE_API_KEY not set — YouTube enrichment skipped", file=sys.stderr)
+        print("  ⚠ YOUTUBE_API_KEY not set — using scrape fallback for YouTube", file=sys.stderr)
 
     print(f"  Enriching {len(new_artists)} new artists…")
     for artist in new_artists:
@@ -314,12 +314,13 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             continue
 
         print(f"  Enriching: {artist}")
-        yt_id = ""
         if api_key:
             yt_id = fetch_youtube_video_id(artist, api_key)
-            if yt_id:
-                print(f"    YouTube: {yt_id}")
-            time.sleep(0.5)
+        else:
+            yt_id = _scrape_youtube_video_id(artist)
+        if yt_id:
+            print(f"    YouTube: {yt_id}")
+        time.sleep(0.5)
 
         bc_url, bc_embed = scrape_bandcamp(artist)
         if bc_url:
