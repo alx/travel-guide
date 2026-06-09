@@ -18,6 +18,8 @@ Outputs:
     static/toulouse-distorama/events/next-week.geojson
     content/toulouse-distorama-*/                      — Hugo content stubs
     scripts/toulouse-distorama/unmatched-venues.txt    — for manual classification
+
+Media enrichment is handled separately by ingest.py.
 """
 
 import argparse
@@ -27,7 +29,6 @@ import os
 import re
 import sys
 import time
-import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -59,12 +60,6 @@ VENUES_CSV = SCRIPT_DIR / "venues.csv"
 GEOCACHE_PATH = SCRIPT_DIR / ".geocache.json"
 MEDIACACHE_PATH = SCRIPT_DIR / ".mediacache.json"
 UNMATCHED_PATH = SCRIPT_DIR / "unmatched-venues.txt"
-
-BANDCAMP_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
-}
 
 EVENTS_URL = "https://distorama.neocities.org/events.json"
 STATIC_DIR = REPO_ROOT / "static/toulouse-distorama"
@@ -157,7 +152,7 @@ def geocode_venues(venues: list[dict], dry_run: bool) -> dict:
     return cache
 
 
-# ── Media enrichment ──────────────────────────────────────────────────────────
+# ── Media cache (read-only — enrichment is done by ingest.py) ────────────────
 
 def load_mediacache() -> dict:
     if MEDIACACHE_PATH.exists():
@@ -165,231 +160,10 @@ def load_mediacache() -> dict:
     return {}
 
 
-def save_mediacache(cache: dict) -> None:
-    MEDIACACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
-
-
-def _scrape_youtube_video_id(artist: str) -> str:
-    """Fallback: scrape first video ID from YouTube search results page."""
-    params = urllib.parse.urlencode({"search_query": artist})
-    url = f"https://www.youtube.com/results?{params}"
-    try:
-        req = urllib.request.Request(url, headers=BANDCAMP_HEADERS)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            html = r.read().decode("utf-8", errors="replace")
-        m = re.search(r'"videoId":"([A-Za-z0-9_-]{11})"', html)
-        return m.group(1) if m else ""
-    except Exception as e:
-        print(f"  ⚠ YouTube scrape error for '{artist}': {e}", file=sys.stderr)
-    return ""
-
-
-class _YouTubeQuotaExceeded(Exception):
-    pass
-
-
-def fetch_youtube_video_id(artist: str, api_key: str) -> str:
-    """Call YouTube Data API v3. Raises _YouTubeQuotaExceeded when quota is gone."""
-    params = urllib.parse.urlencode({
-        "part": "id",
-        "type": "video",
-        "maxResults": 1,
-        "q": artist,
-        "key": api_key,
-    })
-    url = f"https://www.googleapis.com/youtube/v3/search?{params}"
-    for _ in range(4):
-        try:
-            req = urllib.request.Request(url)
-            with urllib.request.urlopen(req, timeout=10) as r:
-                data = json.loads(r.read())
-            items = data.get("items", [])
-            return items[0]["id"].get("videoId", "") if items else ""
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                raise _YouTubeQuotaExceeded()
-            elif e.code == 403:
-                body = e.read().decode("utf-8", errors="replace")
-                if "quotaExceeded" in body or "dailyLimitExceeded" in body:
-                    raise _YouTubeQuotaExceeded()
-                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-                return ""
-            else:
-                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-                return ""
-        except Exception as e:
-            print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-            return ""
-    return ""
-
-
-def _http_get_html(url: str) -> str:
-    try:
-        req = urllib.request.Request(url, headers=BANDCAMP_HEADERS)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            return r.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"  ⚠ HTTP error fetching {url}: {e}", file=sys.stderr)
-    return ""
-
-
-class _SerpAPIQuotaExceeded(Exception):
-    pass
-
-
-def _extract_bandcamp_embed(url: str) -> tuple[str, str]:
-    """Given a known Bandcamp artist or album URL, return (url, embed_url)."""
-    html = _http_get_html(url)
-    if not html:
-        return url, ""
-
-    if "/album/" not in url:
-        m_album = re.search(r'href="((?:https://[^"]+)?/album/[^"]+)"', html)
-        if not m_album:
-            return url, ""
-        album_path = m_album.group(1)
-        if album_path.startswith("/"):
-            base = re.match(r"(https://[^/]+)", url)
-            album_url = (base.group(1) + album_path) if base else ""
-        else:
-            album_url = album_path
-        if not album_url:
-            return url, ""
-        html = _http_get_html(album_url)
-        if not html:
-            return url, ""
-
-    m_id = re.search(
-        r'bandcamp\.com/EmbeddedPlayer/(?:v=2/)?album=(\d+)/',
-        html,
-    )
-    if not m_id:
-        m_id = re.search(r'data-tralbumid="(\d+)"', html)
-    if not m_id:
-        return url, ""
-
-    album_id = m_id.group(1)
-    embed_url = (
-        f"https://bandcamp.com/EmbeddedPlayer/album={album_id}"
-        f"/size=small/bgcol=111111/linkcol=ffffff/transparent=true/"
-    )
-    return url, embed_url
-
-
-def fetch_bandcamp_via_serp(artist: str, api_key: str) -> tuple[str, str]:
-    """Search site:bandcamp.com via SerpAPI. Raises _SerpAPIQuotaExceeded on quota/auth errors."""
-    params = urllib.parse.urlencode({
-        "q": f"site:bandcamp.com {artist}",
-        "api_key": api_key,
-        "engine": "google",
-        "num": 1,
-    })
-    url = f"https://serpapi.com/search.json?{params}"
-    try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        if e.code in (401, 429):
-            raise _SerpAPIQuotaExceeded()
-        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
-        return "", ""
-    except Exception as e:
-        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
-        return "", ""
-
-    if data.get("error"):
-        msg = str(data["error"]).lower()
-        if any(w in msg for w in ("ran out", "credit", "quota", "upgrade")):
-            raise _SerpAPIQuotaExceeded()
-        print(f"  ⚠ SerpAPI: {data['error']}", file=sys.stderr)
-        return "", ""
-
-    results = data.get("organic_results", [])
-    if not results:
-        return "", ""
-
-    artist_url = results[0].get("link", "").split("?")[0].split("#")[0]
-    if not artist_url or "bandcamp.com" not in artist_url:
-        return "", ""
-
-    return _extract_bandcamp_embed(artist_url)
-
-
 def split_artists(artist: str) -> list[str]:
     parts = [a.strip() for a in artist.split("+") if a.strip()]
     cleaned = [re.sub(r"\s*\([^)]*\)\s*$", "", p).strip() for p in parts]
     return [p for p in cleaned if p]
-
-
-def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
-    # Include artists not yet cached OR not yet through a Bandcamp search pass, newest events first
-    pending = [
-        a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
-        if a and (a not in mediacache or not mediacache[a].get("bandcamp_searched"))
-    ]
-    if not pending:
-        print("  All artists already cached")
-        return mediacache
-
-    serp_key = os.environ.get("SERPAPI_API_KEY", "")
-    use_yt_scrape = not api_key
-    serp_quota_gone = not serp_key
-
-    if use_yt_scrape:
-        print("  ⚠ YOUTUBE_API_KEY not set — using scrape for YouTube", file=sys.stderr)
-    if serp_quota_gone:
-        print("  ⚠ SERPAPI_API_KEY not set — Bandcamp enrichment skipped", file=sys.stderr)
-
-    for artist in tqdm(pending, desc="Enriching artists", unit="artist"):
-        already_cached = artist in mediacache
-        if dry_run:
-            tqdm.write(f"  [dry-run] would enrich: {artist}")
-            if not already_cached:
-                mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
-            continue
-
-        # YouTube — skip if already cached
-        if already_cached:
-            yt_id = mediacache[artist].get("youtube_video_id", "")
-        elif use_yt_scrape:
-            yt_id = _scrape_youtube_video_id(artist)
-        else:
-            try:
-                yt_id = fetch_youtube_video_id(artist, api_key)
-            except _YouTubeQuotaExceeded:
-                tqdm.write("  ⚠ YouTube quota exceeded — switching to scrape", file=sys.stderr)
-                use_yt_scrape = True
-                yt_id = _scrape_youtube_video_id(artist)
-        if yt_id:
-            tqdm.write(f"  {artist}: YouTube {yt_id}")
-        if not already_cached:
-            time.sleep(0.5)
-
-        # Bandcamp via SerpAPI
-        bc_url, bc_embed = "", ""
-        bc_searched = False
-        if not serp_quota_gone:
-            try:
-                bc_url, bc_embed = fetch_bandcamp_via_serp(artist, serp_key)
-                bc_searched = True  # attempt completed (result may be empty)
-                if bc_url:
-                    tqdm.write(f"  {artist}: Bandcamp {bc_url}")
-            except _SerpAPIQuotaExceeded:
-                tqdm.write("  ⚠ SerpAPI quota exceeded — skipping Bandcamp for remaining artists", file=sys.stderr)
-                serp_quota_gone = True
-            if not serp_quota_gone:
-                time.sleep(1.1)
-
-        mediacache[artist] = {
-            "youtube_video_id": yt_id,
-            "bandcamp_url": bc_url,
-            "bandcamp_embed_url": bc_embed,
-            "bandcamp_searched": bc_searched,
-        }
-        save_mediacache(mediacache)
-
-    return mediacache
 
 
 # ── Venue registry ─────────────────────────────────────────────────────────────
@@ -491,20 +265,25 @@ def slugify(text: str) -> str:
     return text.strip("-")
 
 
+def _validated_media(m: dict) -> dict:
+    """Return only media fields that have been explicitly approved by a human reviewer."""
+    return {
+        "youtube_video_id": m.get("youtube_video_id", "") if m.get("youtube_validated") else "",
+        "bandcamp_url": m.get("bandcamp_url", "") if m.get("bandcamp_validated") else "",
+        "bandcamp_embed_url": m.get("bandcamp_embed_url", "") if m.get("bandcamp_validated") else "",
+    }
+
+
 def make_event_feature(venue: dict, coords: dict, events_at_venue: list[dict], mediacache: dict) -> dict:
     enriched = []
     for ev in events_at_venue:
         media: dict = {}
         for sub in split_artists(ev.get("artist", "")):
             m = mediacache.get(sub, {})
-            if m.get("youtube_video_id") or m.get("bandcamp_url"):
-                media = m
+            v = _validated_media(m)
+            if v["youtube_video_id"] or v["bandcamp_url"]:
+                media = v
                 break
-        if not media:
-            for sub in split_artists(ev.get("artist", "")):
-                if sub in mediacache:
-                    media = mediacache[sub]
-                    break
         enriched.append({
             **ev,
             "youtube_video_id": media.get("youtube_video_id", ""),
@@ -586,7 +365,6 @@ def write_stub(path: Path, frontmatter: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="Skip Nominatim requests and file writes")
-    parser.add_argument("--no-enrich", action="store_true", help="Skip media enrichment (YouTube + Bandcamp)")
     args = parser.parse_args()
 
     # 1. Load venues
@@ -659,21 +437,8 @@ def main() -> None:
     print(f"  {resolved_events}/{total_events} events resolved to known venues")
     print(f"  {len(unmatched)} unmatched venue names")
 
-    # 5.5 Media enrichment
-    mediacache: dict = {}
-    if not args.no_enrich:
-        print("Enriching artists with YouTube + Bandcamp…")
-        artist_dates: dict[str, str] = {}
-        for date_str, venues_on_day in by_date.items():
-            for events in venues_on_day.values():
-                for ev in events:
-                    for sub in split_artists(ev.get("artist", "")):
-                        if sub not in artist_dates or date_str > artist_dates[sub]:
-                            artist_dates[sub] = date_str
-        mediacache = load_mediacache()
-        mediacache = enrich_artists(artist_dates, mediacache, os.environ.get("YOUTUBE_API_KEY", ""), args.dry_run)
-    else:
-        mediacache = load_mediacache()
+    # 5.5 Load media (enrichment is done separately by ingest.py)
+    mediacache = load_mediacache()
 
     # 6. Write unmatched
     if unmatched:

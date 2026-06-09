@@ -1,5 +1,5 @@
 ---
-title: "Distorama — Cette semaine"
+title: "DistoraMaps"
 description: "Concerts et événements underground à Toulouse cette semaine (lundi 8 juin 2026 – dimanche 14 juin 2026)."
 type: "toulouse-distorama-event"
 distorama_window: "this-week"

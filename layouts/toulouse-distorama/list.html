@@ -83,10 +83,9 @@ window.MAP_CONFIG = {
   zoom: 13,
   focusZoom: 16,
   tiles: {
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
-    maxZoom: 19,
-    subdomains: 'abcd'
+    url: 'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}',
+    attribution: '© <a href="https://stamen.com">Stamen Design</a>, © <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 20
   }
 };
 window.CATEGORY_COLORS = {
