@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.11"
-# dependencies = []
+# dependencies = ["tqdm"]
 # ///
 """
 Generate all toulouse-distorama GeoJSON files and Hugo content stubs.
@@ -33,6 +33,8 @@ import urllib.request
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
+
+from tqdm import tqdm
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent
@@ -135,20 +137,18 @@ def geocode_venues(venues: list[dict], dry_run: bool) -> dict:
     cache = load_geocache()
     updated = False
 
-    for v in venues:
+    pending_venues = [v for v in venues if v["address"] and v["address"] not in cache]
+    for v in tqdm(pending_venues, desc="Geocoding", unit="venue", disable=not pending_venues):
         addr = v["address"]
-        if not addr or addr in cache:
-            continue
         if dry_run:
-            print(f"  [dry-run] would geocode: {addr}")
+            tqdm.write(f"  [dry-run] would geocode: {addr}")
             continue
-        print(f"  Geocoding: {addr}")
         result = geocode_nominatim(addr)
         if result:
             cache[addr] = result
-            print(f"    → {result['lat']:.5f}, {result['lon']:.5f}")
+            tqdm.write(f"  → {addr}: {result['lat']:.5f}, {result['lon']:.5f}")
         else:
-            print(f"    → FAILED", file=sys.stderr)
+            tqdm.write(f"  ⚠ Geocode FAILED: {addr}", file=sys.stderr)
         updated = True
         time.sleep(1.1)  # Nominatim ToS: max 1 req/s
 
@@ -341,16 +341,13 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
     if serp_quota_gone:
         print("  ⚠ SERPAPI_API_KEY not set — Bandcamp enrichment skipped", file=sys.stderr)
 
-    print(f"  Enriching {len(pending)} artists (YouTube + Bandcamp)…")
-    for artist in pending:
+    for artist in tqdm(pending, desc="Enriching artists", unit="artist"):
         already_cached = artist in mediacache
         if dry_run:
-            print(f"  [dry-run] would enrich: {artist}")
+            tqdm.write(f"  [dry-run] would enrich: {artist}")
             if not already_cached:
                 mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
             continue
-
-        print(f"  Enriching: {artist}")
 
         # YouTube — skip if already cached
         if already_cached:
@@ -361,11 +358,11 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             try:
                 yt_id = fetch_youtube_video_id(artist, api_key)
             except _YouTubeQuotaExceeded:
-                print("  ⚠ YouTube quota exceeded — switching to scrape", file=sys.stderr)
+                tqdm.write("  ⚠ YouTube quota exceeded — switching to scrape", file=sys.stderr)
                 use_yt_scrape = True
                 yt_id = _scrape_youtube_video_id(artist)
         if yt_id:
-            print(f"    YouTube: {yt_id}")
+            tqdm.write(f"  {artist}: YouTube {yt_id}")
         if not already_cached:
             time.sleep(0.5)
 
@@ -375,9 +372,9 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             try:
                 bc_url, bc_embed = fetch_bandcamp_via_serp(artist, serp_key)
                 if bc_url:
-                    print(f"    Bandcamp: {bc_url}")
+                    tqdm.write(f"  {artist}: Bandcamp {bc_url}")
             except _SerpAPIQuotaExceeded:
-                print("  ⚠ SerpAPI quota exceeded — skipping Bandcamp for remaining artists", file=sys.stderr)
+                tqdm.write("  ⚠ SerpAPI quota exceeded — skipping Bandcamp for remaining artists", file=sys.stderr)
                 serp_quota_gone = True
             time.sleep(1.1)
 
@@ -630,7 +627,7 @@ def main() -> None:
     total_events = 0
     resolved_events = 0
 
-    for entry in event_data:
+    for entry in tqdm(event_data, desc="Processing events", unit="day"):
         date_str = entry["date"]
         for ev in entry.get("events", []):
             total_events += 1
@@ -686,7 +683,7 @@ def main() -> None:
     all_dates = sorted(by_date.keys())
     by_month: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
 
-    for date_str, venues_on_day in by_date.items():
+    for date_str, venues_on_day in tqdm(by_date.items(), desc="Writing daily GeoJSONs", unit="day"):
         month_str = date_str[:7]  # YYYY-MM
         features = []
         for venue_name, events in venues_on_day.items():
