@@ -35,7 +35,6 @@
   .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
   .header-btn:hover, .header-btn.active { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4ff; }
   #list-toggle { display: none; }
-  .overlay-handle { display: none; }
 
   /* Filter + POI cards */
   .filter-btn {
@@ -90,48 +89,12 @@
 
   @media (max-width: 768px) {
     #list-toggle { display: inline-block; }
-    /* Bottom sheet: fixed top controls visible height; overlay itself scrolls */
     .map-overlay {
       left: 0; right: 0; bottom: 0; top: 60vh; width: 100%;
       flex-direction: column; gap: 0;
-      overflow: hidden; pointer-events: all;
-      transition: top 0.3s ease;
+      overflow-y: auto; pointer-events: all;
     }
-    .map-overlay.overlay-open { top: 10vh; }
     .overlay-card { border-radius: 0; }
-    /* Scrollable card: flex-grows to fill remaining sheet height and scrolls internally */
-    .overlay-card.scrollable { flex: 1; min-height: 0; overflow-y: auto; padding: 0.85rem 1rem !important; transition: none; }
-    /* Handle spans full card width by compensating for card padding */
-    .overlay-handle {
-      display: flex; justify-content: center; align-items: center;
-      width: calc(100% + 2rem); margin: -0.85rem -1rem 0.35rem;
-      padding: 0.5rem 0; background: none; border: none;
-      cursor: pointer; touch-action: manipulation;
-    }
-    .handle-chevron { color: rgba(0,0,0,0.3); font-size: 0.85rem; line-height: 1; }
+    .overlay-card.scrollable { flex: none; min-height: auto; overflow: visible; padding: 0.85rem 1rem !important; }
   }
 </style>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var overlay = document.querySelector('.map-overlay');
-  var scrollable = document.querySelector('.overlay-card.scrollable');
-  var firstCard = overlay && overlay.querySelector('.overlay-card:not(.scrollable)');
-  if (!firstCard || !scrollable) return;
-
-  var handle = document.createElement('button');
-  handle.className = 'overlay-handle';
-  handle.setAttribute('aria-label', 'Toggle panel');
-
-  var chevron = document.createElement('span');
-  chevron.className = 'handle-chevron';
-  chevron.textContent = '▲';
-  handle.appendChild(chevron);
-
-  firstCard.insertBefore(handle, firstCard.firstChild);
-
-  handle.addEventListener('click', function () {
-    var isOpen = overlay.classList.toggle('overlay-open');
-    chevron.textContent = isOpen ? '▼' : '▲';
-  });
-});
-</script>

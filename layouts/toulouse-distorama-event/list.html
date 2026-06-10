@@ -71,7 +71,7 @@ body { background: #0a0a0a; }
     <div id="filter-btns"></div>
     <div class="venue-nav">
       <button class="header-btn venue-nav-btn" onclick="navigateVenue(-1)" title="Lieu précédent"><i class="fas fa-chevron-left"></i></button>
-      <button class="header-btn show-all-btn" id="show-all-btn" onclick="clearFocus()">Tous les lieux</button>
+      <button class="header-btn show-all-btn" id="show-all-btn" onclick="showAll()">Tous les lieux</button>
       {{- $isDay := eq (len .Params.distorama_window) 10 -}}
       {{- if not $isDay }}
       <button class="header-btn tonight-btn" id="tonight-btn" onclick="toggleTonight()">Ce soir</button>
@@ -295,6 +295,7 @@ focusPOI = function(f) {
 };
 
 clearFocus = function() {
+  if (selectedVenueId === null && activeCard === null) return;
   selectedVenueId = null;
   navIndex = -1;
   activeCard = null;
@@ -302,14 +303,18 @@ clearFocus = function() {
     const el = m.getElement();
     if (el) el.style.opacity = secondaryIds.has(String(id)) ? '0.55' : '1';
   });
-  _flyingTo = true;
-  map.flyTo(MAP_CONFIG.center, MAP_CONFIG.zoom, { duration: 0.8 });
-  map.once('moveend', () => { _flyingTo = false; });
   const u = new URL(window.location.href);
   u.searchParams.delete('poi');
   history.replaceState({}, '', u);
   renderSidebar();
 };
+
+function showAll() {
+  clearFocus();
+  _flyingTo = true;
+  map.flyTo(MAP_CONFIG.center, MAP_CONFIG.zoom, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+}
 
 function navigateVenue(dir) {
   const list = getNavList();
