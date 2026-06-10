@@ -1,0 +1,378 @@
+2026-06-03 08:15:48,906 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 08:15:48,906 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 08:15:48,914 INFO werkzeug:  * Restarting with stat
+2026-06-03 08:15:49,380 WARNING werkzeug:  * Debugger is active!
+2026-06-03 08:15:49,382 INFO werkzeug:  * Debugger PIN: 137-503-018
+2026-06-03 08:15:51,305 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:15:51] "GET / HTTP/1.1" 200 -
+2026-06-03 08:15:55,273 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:15:55] "GET / HTTP/1.1" 200 -
+2026-06-03 08:18:09,799 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:18:09] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:23:06,885 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 08:23:06,885 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 08:23:06,886 INFO werkzeug:  * Restarting with stat
+2026-06-03 08:23:07,469 WARNING werkzeug:  * Debugger is active!
+2026-06-03 08:23:07,470 INFO werkzeug:  * Debugger PIN: 601-442-544
+2026-06-03 08:23:13,407 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:13] "GET / HTTP/1.1" 200 -
+2026-06-03 08:23:13,473 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:13] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 08:23:13,473 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:13] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 08:23:13,735 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 08:23:35,809 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:35] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:23:36,861 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:36] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:37,898 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:37] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:38,932 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:38] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:39,966 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:39] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:41,002 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:41] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:42,038 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:42] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:43,073 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:43] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:44,107 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:44] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:45,142 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:45] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:46,177 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:46] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:47,213 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:47] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:48,247 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:48] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:49,281 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:49] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:50,315 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:50] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:51,349 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:51] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:52,388 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:52] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:53,424 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:53] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:54,457 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:54] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:55,493 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:55] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:56,531 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:56] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:57,566 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:57] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:58,817 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:58] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:23:59,854 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:23:59] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:00,891 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:00] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:01,924 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:01] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:02,958 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:02] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:03,992 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:03] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:05,027 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:05] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:06,061 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:06] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:07,095 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:07] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:08,130 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:08] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:09,163 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:09] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:10,197 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:10] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:11,260 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:11] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:12,294 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:12] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:13,428 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:13] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:14,461 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:14] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:15,538 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:15] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:16,705 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:16] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:17,744 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:17] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:18,840 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:18] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:19,879 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:19] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:20,917 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:20] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:22,033 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:22] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:23,082 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:23] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:24,121 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:24] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:25,160 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:25] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:24:26,212 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:24:26] "GET /tasks/5709a5c3-7b8c-4cd0-a115-9590d75d0aa4/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:08,726 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 08:25:08,726 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 08:25:08,727 INFO werkzeug:  * Restarting with stat
+2026-06-03 08:25:09,320 WARNING werkzeug:  * Debugger is active!
+2026-06-03 08:25:09,321 INFO werkzeug:  * Debugger PIN: 977-039-871
+2026-06-03 08:25:37,364 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:37] "GET / HTTP/1.1" 200 -
+2026-06-03 08:25:37,562 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:37] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 08:25:37,569 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:37] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 08:25:38,101 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 08:25:43,159 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:43] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:25:44,218 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:44] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:45,255 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:45] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:46,297 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:46] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:47,340 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:47] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:48,378 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:48] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:49,414 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:49] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:50,454 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:50] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:51,492 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:51] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:52,530 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:52] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:53,568 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:53] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:54,613 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:54] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:55,655 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:55] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:56,691 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:56] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:57,729 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:57] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:58,765 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:58] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:25:59,803 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:25:59] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:00,839 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:00] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:01,876 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:01] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:02,913 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:02] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:03,970 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:03] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:05,007 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:05] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:06,044 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:06] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:07,080 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:07] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:08,117 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:08] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:09,153 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:09] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:10,190 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:10] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:11,228 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:11] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:12,289 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:12] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:13,393 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:13] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:14,429 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:14] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:15,465 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:15] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:16,498 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:16] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:17,533 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:17] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:18,572 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:18] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:19,609 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:19] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:26:20,655 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:26:20] "GET /tasks/a013f99e-58af-408f-b107-825182d4a67a/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:29,139 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 08:37:29,139 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 08:37:29,140 INFO werkzeug:  * Restarting with stat
+2026-06-03 08:37:29,727 WARNING werkzeug:  * Debugger is active!
+2026-06-03 08:37:29,728 INFO werkzeug:  * Debugger PIN: 172-744-820
+2026-06-03 08:37:39,504 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:39] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:37:40,552 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:40] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:41,624 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:41] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:42,662 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:42] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:43,699 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:43] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:44,738 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:44] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:45,775 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:45] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:46,813 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:46] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:47,850 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:47] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:48,889 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:48] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:49,930 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:49] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:50,968 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:50] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:52,005 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:52] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:53,043 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:53] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:54,080 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:54] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:55,207 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:55] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:56,243 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:56] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:57,278 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:57] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:58,317 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:58] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:37:59,353 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:37:59] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:00,389 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:00] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:01,425 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:01] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:02,461 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:02] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:03,499 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:03] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:04,572 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:04] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:05,611 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:05] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:06,671 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:06] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:07,709 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:07] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:08,746 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:08] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:09,783 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:09] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:10,820 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:10] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:11,856 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:11] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:12,920 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:12] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:13,965 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:13] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:15,005 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:15] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:16,043 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:16] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:17,079 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:17] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:18,116 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:18] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:19,158 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:19] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:20,198 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:20] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:21,237 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:21] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:22,391 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:22] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:23,430 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:23] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:24,470 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:24] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:25,508 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:25] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:26,545 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:26] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:27,582 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:27] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:28,711 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:28] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:29,804 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:29] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:30,843 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:30] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:38:31,893 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:38:31] "GET /tasks/70c6cada-f395-40e6-ae8a-5bdb53cb3e25/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:39:47,812 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 08:39:47,813 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 08:39:47,813 INFO werkzeug:  * Restarting with stat
+2026-06-03 08:39:48,422 WARNING werkzeug:  * Debugger is active!
+2026-06-03 08:39:48,423 INFO werkzeug:  * Debugger PIN: 118-278-625
+2026-06-03 08:44:28,450 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:44:28] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:44:29,515 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:44:29] "GET /tasks/664ea7ea-2c97-44c8-a134-2f6ecef66455/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:44:30,632 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:44:30] "GET /tasks/664ea7ea-2c97-44c8-a134-2f6ecef66455/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:45:01,983 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:01] "GET / HTTP/1.1" 200 -
+2026-06-03 08:45:02,176 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:02] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 08:45:02,177 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:02] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 08:45:02,918 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 08:45:04,767 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:04] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:45:05,824 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:05] "GET /tasks/6650f94d-d69b-4228-b08d-6593246439d9/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:45:37,619 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:37] "GET / HTTP/1.1" 200 -
+2026-06-03 08:45:37,630 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:37] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 08:45:37,631 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:37] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 08:45:37,850 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:45:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 08:46:13,123 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:13] "GET / HTTP/1.1" 200 -
+2026-06-03 08:46:13,137 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:13] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-06-03 08:46:13,139 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:13] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 08:46:30,014 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:30] "GET / HTTP/1.1" 200 -
+2026-06-03 08:46:30,025 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:30] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-06-03 08:46:30,028 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:30] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 08:46:40,748 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:40] "GET / HTTP/1.1" 200 -
+2026-06-03 08:46:40,764 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:40] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-06-03 08:46:40,767 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:46:40] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 08:47:11,640 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:47:11] "GET / HTTP/1.1" 200 -
+2026-06-03 08:47:21,123 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:47:21] "GET /?nocache=1 HTTP/1.1" 200 -
+2026-06-03 08:47:21,137 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:47:21] "[36mGET /static/css/app.css HTTP/1.1[0m" 304 -
+2026-06-03 08:47:21,138 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:47:21] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 08:48:43,468 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:48:43] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:48:44,507 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:48:44] "GET /tasks/6eaf4d78-edee-41e5-80ae-59511061a1b6/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:51:45,297 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:45] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:51:46,361 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:46] "GET /tasks/ffef6e15-ab2c-421e-8ab7-813c866c8245/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:51:49,638 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:49] "GET / HTTP/1.1" 200 -
+2026-06-03 08:51:49,816 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:49] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 08:51:49,816 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:49] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 08:51:50,361 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 08:51:52,462 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:52] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 08:51:53,519 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:51:53] "GET /tasks/f7eafc21-2a44-49d5-9f19-8341bd5b971e/poll/fetch HTTP/1.1" 200 -
+2026-06-03 08:52:59,602 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 08:52:59] "POST /step2/continue HTTP/1.1" 200 -
+2026-06-03 09:03:25,807 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 09:03:25] "POST /step3/create-pr HTTP/1.1" 200 -
+2026-06-03 10:47:34,233 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/app.py', reloading
+2026-06-03 10:47:34,309 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:47:34,693 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:47:34,693 INFO werkzeug:  * Debugger PIN: 813-247-686
+2026-06-03 10:47:37,716 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/app.py', reloading
+2026-06-03 10:47:37,796 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:47:38,189 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:47:38,189 INFO werkzeug:  * Debugger PIN: 784-435-471
+2026-06-03 10:47:44,223 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/app.py', reloading
+2026-06-03 10:47:44,300 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:47:44,617 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:47:44,618 INFO werkzeug:  * Debugger PIN: 296-565-148
+2026-06-03 10:51:46,975 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:46] "GET / HTTP/1.1" 200 -
+2026-06-03 10:51:47,030 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:47] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 10:51:47,030 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:47] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 10:51:47,311 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 10:51:52,177 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:52] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 10:51:53,208 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:53] "GET /tasks/04a38051-07b3-4c8f-9eed-61de16aa3654/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:51:54,250 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:51:54] "GET /tasks/04a38051-07b3-4c8f-9eed-61de16aa3654/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:54:54,860 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 10:54:54,860 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 10:54:54,861 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:54:55,169 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:54:55,170 INFO werkzeug:  * Debugger PIN: 624-211-636
+2026-06-03 10:54:59,574 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:54:59] "GET / HTTP/1.1" 200 -
+2026-06-03 10:54:59,635 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:54:59] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 10:54:59,636 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:54:59] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 10:54:59,881 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:54:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 10:55:01,641 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:55:01] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 10:55:02,676 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:55:02] "GET /tasks/d2e5edab-083d-45db-9a5f-abf6e5a0eba0/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:55:03,714 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:55:03] "GET /tasks/d2e5edab-083d-45db-9a5f-abf6e5a0eba0/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:56:23,762 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 10:56:23,762 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 10:56:23,763 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:56:24,067 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:56:24,068 INFO werkzeug:  * Debugger PIN: 256-225-600
+2026-06-03 10:56:39,969 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:39] "GET / HTTP/1.1" 200 -
+2026-06-03 10:56:40,038 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:40] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 10:56:40,041 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:40] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 10:56:41,581 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:41] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 10:56:42,614 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:42] "GET /tasks/c7945d8b-0d19-42e1-9e07-f3bea1516f4b/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:56:43,655 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:56:43] "GET /tasks/c7945d8b-0d19-42e1-9e07-f3bea1516f4b/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:57:14,955 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 10:57:14,956 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 10:57:14,956 INFO werkzeug:  * Restarting with stat
+2026-06-03 10:57:15,310 WARNING werkzeug:  * Debugger is active!
+2026-06-03 10:57:15,311 INFO werkzeug:  * Debugger PIN: 167-523-864
+2026-06-03 10:57:31,652 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:31] "GET / HTTP/1.1" 200 -
+2026-06-03 10:57:31,710 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:31] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 10:57:31,711 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:31] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 10:57:32,724 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:32] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 10:57:33,756 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:33] "GET /tasks/6512af28-9a0e-419a-a93e-ccc99718bd0b/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:57:34,795 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:34] "GET /tasks/6512af28-9a0e-419a-a93e-ccc99718bd0b/poll/fetch HTTP/1.1" 200 -
+2026-06-03 10:57:59,092 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 10:57:59] "POST /step2/continue HTTP/1.1" 200 -
+2026-06-03 11:12:55,193 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:12:55,275 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:12:55,631 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:12:55,631 INFO werkzeug:  * Debugger PIN: 127-231-710
+2026-06-03 11:12:59,657 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_env/airbnb_nearby.py', reloading
+2026-06-03 11:12:59,725 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:13:00,205 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:13:00,205 INFO werkzeug:  * Debugger PIN: 139-585-653
+2026-06-03 11:17:30,579 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2026-06-03 11:17:30,579 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-03 11:17:30,580 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:17:30,935 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:17:30,935 INFO werkzeug:  * Debugger PIN: 959-691-487
+2026-06-03 11:18:49,155 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:49] "GET / HTTP/1.1" 200 -
+2026-06-03 11:18:49,234 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:49] "GET /static/js/htmx.min.js HTTP/1.1" 200 -
+2026-06-03 11:18:49,235 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:49] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 11:18:49,496 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-03 11:18:51,071 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:51] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 11:18:52,103 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:52] "GET /tasks/d10257c2-5bb7-406f-ab4f-e8edffe7596e/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:18:53,144 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:18:53] "GET /tasks/d10257c2-5bb7-406f-ab4f-e8edffe7596e/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:22:59,669 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/poi_engine.py', reloading
+2026-06-03 11:22:59,750 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:23:00,149 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:23:00,150 INFO werkzeug:  * Debugger PIN: 921-068-547
+2026-06-03 11:23:05,181 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:23:05,267 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:23:05,668 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:23:05,668 INFO werkzeug:  * Debugger PIN: 124-296-360
+2026-06-03 11:24:30,974 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:30] "GET / HTTP/1.1" 200 -
+2026-06-03 11:24:31,028 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:31] "GET /static/css/app.css HTTP/1.1" 200 -
+2026-06-03 11:24:31,032 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:31] "[36mGET /static/js/htmx.min.js HTTP/1.1[0m" 304 -
+2026-06-03 11:24:35,376 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:35] "POST /step1/submit HTTP/1.1" 200 -
+2026-06-03 11:24:36,409 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:36] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:37,442 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:37] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:38,475 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:38] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:39,509 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:39] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:40,541 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:40] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:41,572 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:41] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:42,604 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:42] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:43,635 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:43] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:44,667 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:44] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:45,699 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:45] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:46,729 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:46] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:47,760 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:47] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:48,790 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:48] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:49,820 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:49] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:50,850 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:50] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:51,880 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:51] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:53,023 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:53] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:54,053 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:54] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:55,083 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:55] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:56,112 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:56] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:57,142 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:57] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:58,170 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:58] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:24:59,199 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:24:59] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:00,228 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:00] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:01,259 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:01] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:02,288 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:02] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:03,375 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:03] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:04,515 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:04] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:05,545 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:05] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:06,645 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:06] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:07,676 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:07] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:08,815 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:08] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:09,846 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:09] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:10,876 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:10] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:11,906 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:11] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:12,935 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:12] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:13,965 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:13] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:15,105 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:15] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:16,134 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:16] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:17,164 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:17] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:18,305 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:18] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:19,350 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:19] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:20,409 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:20] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:25:21,450 INFO werkzeug: 127.0.0.1 - - [03/Jun/2026 11:25:21] "GET /tasks/760ec1cb-5eab-463e-a65d-7a83b9aa1f97/poll/fetch HTTP/1.1" 200 -
+2026-06-03 11:40:02,922 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_env/airbnb_nearby.py', reloading
+2026-06-03 11:40:03,019 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:03,372 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:03,372 INFO werkzeug:  * Debugger PIN: 128-230-959
+2026-06-03 11:40:10,415 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/poi_engine.py', reloading
+2026-06-03 11:40:10,485 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:10,857 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:10,858 INFO werkzeug:  * Debugger PIN: 293-754-337
+2026-06-03 11:40:18,905 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:40:18,965 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:19,276 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:19,276 INFO werkzeug:  * Debugger PIN: 125-551-997
+2026-06-03 11:40:29,326 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:40:29,384 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:29,707 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:29,708 INFO werkzeug:  * Debugger PIN: 141-855-343
+2026-06-03 11:40:39,764 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:40:39,839 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:40,211 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:40,211 INFO werkzeug:  * Debugger PIN: 552-116-426
+2026-06-03 11:40:47,255 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:40:47,326 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:47,675 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:47,675 INFO werkzeug:  * Debugger PIN: 640-367-719
+2026-06-03 11:40:54,719 INFO werkzeug:  * Detected change in '/home/alx/code/travel-guide/scripts/airbnb_web/routes/wizard.py', reloading
+2026-06-03 11:40:54,797 INFO werkzeug:  * Restarting with stat
+2026-06-03 11:40:55,155 WARNING werkzeug:  * Debugger is active!
+2026-06-03 11:40:55,156 INFO werkzeug:  * Debugger PIN: 756-268-419
