@@ -41,6 +41,7 @@ body { background: #0a0a0a; }
 .poi-card .event-item.active { background: rgba(255,255,255,0.04); border-radius: 4px; padding: 0.35rem 0.4rem; }
 .poi-card .event-venue { font-size: 0.82rem; color: #bbb; font-weight: 600; cursor: pointer; margin-bottom: 0.15rem; }
 .poi-card .event-venue:hover { color: #fff; }
+.poi-card .event-date { font-size: 0.82rem; color: #bbb; font-weight: 600; margin-bottom: 0.15rem; }
 .poi-card .event-meta { font-size: 0.75rem; color: #eee; }
 .poi-card .event-desc { font-size: 0.83rem; color: #ccc; line-height: 1.4; }
 .poi-card .event-links { margin-top: 0.2rem; display: flex; gap: 0.6rem; }
@@ -222,38 +223,82 @@ renderSidebar = function() {
     a.date.localeCompare(b.date) || a.f.properties.name.localeCompare(b.f.properties.name)
   );
 
-  // Group by date → one card per date
-  const byDate = new Map();
-  rows.forEach(row => {
-    if (!byDate.has(row.date)) byDate.set(row.date, []);
-    byDate.get(row.date).push(row);
-  });
+  function buildEventLinks(ev) {
+    const artist = ev.artist;
+    const bcUrl = ev.bandcamp_url || (artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null);
+    const ytUrl = ev.youtube_video_id
+      ? `https://www.youtube.com/watch?v=${ev.youtube_video_id}`
+      : (artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null);
+    let embedHtml = '';
+    if (ev.youtube_video_id || ev.bandcamp_embed_url) {
+      embedHtml = '<div class="event-embeds">';
+      if (ev.youtube_video_id) embedHtml += `<iframe src="https://www.youtube.com/embed/${ev.youtube_video_id}" height="180" loading="lazy" allowfullscreen></iframe>`;
+      if (ev.bandcamp_embed_url) embedHtml += `<iframe src="${ev.bandcamp_embed_url}" height="120" loading="lazy" seamless></iframe>`;
+      embedHtml += '</div>';
+    }
+    return { bcUrl, ytUrl, embedHtml };
+  }
 
-  byDate.forEach((dateRows, date) => {
+  if (selectedVenueId === null) {
+    // ── Agenda template: one card per date ──────────────────────
+    const byDate = new Map();
+    rows.forEach(row => {
+      if (!byDate.has(row.date)) byDate.set(row.date, []);
+      byDate.get(row.date).push(row);
+    });
+
+    byDate.forEach((dateRows, date) => {
+      const card = document.createElement('div');
+      card.className = 'poi-card';
+      card.id = 'card-date-' + date;
+
+      let html = `<div class="date-title">${date ? fmtEventDate(date) : 'Date inconnue'}</div>`;
+      dateRows.forEach(({ ev, f }) => {
+        const p = f.properties;
+        const cls = CATEGORY_ICONS[p.category] || 'fa-music';
+        const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
+        const { bcUrl, ytUrl, embedHtml } = buildEventLinks(ev);
+        html += `<div class="event-item" data-venue-id="${f._id}">
+          <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
+          ${meta ? `<div class="event-meta">${meta}</div>` : ''}
+          <div class="event-desc">${ev.desc}</div>
+          ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">YouTube</a></div>` : ''}
+          ${embedHtml}
+        </div>`;
+      });
+
+      card.innerHTML = html;
+
+      card.querySelectorAll('.event-item').forEach(item => {
+        const venueId = item.dataset.venueId;
+        const feat = allPOIs.find(feat => String(feat._id) === String(venueId));
+        if (!feat) return;
+        item.querySelector('.event-venue')?.addEventListener('click', e => {
+          e.stopPropagation();
+          focusPOI(feat);
+        });
+      });
+
+      list.appendChild(card);
+    });
+
+  } else {
+    // ── Venue template: one card for the selected venue ──────────
+    const feat = allPOIs.find(f => String(f._id) === String(selectedVenueId));
+    if (!feat) return;
+    const p = feat.properties;
+    const cls = CATEGORY_ICONS[p.category] || 'fa-music';
+
     const card = document.createElement('div');
     card.className = 'poi-card';
-    card.id = 'card-date-' + date;
+    card.id = 'card-venue-' + selectedVenueId;
 
-    let html = `<div class="date-title">${date ? fmtEventDate(date) : 'Date inconnue'}</div>`;
-    dateRows.forEach(({ ev, f }) => {
-      const p = f.properties;
-      const cls = CATEGORY_ICONS[p.category] || 'fa-music';
-      const artist = ev.artist;
-      const bcUrl = ev.bandcamp_url || (artist ? `https://bandcamp.com/search?q=${encodeURIComponent(artist)}` : null);
-      const ytUrl = ev.youtube_video_id
-        ? `https://www.youtube.com/watch?v=${ev.youtube_video_id}`
-        : (artist ? `https://www.youtube.com/results?search_query=${encodeURIComponent(artist)}` : null);
+    let html = `<div class="venue-name"><i class="fa-solid ${cls}" style="margin-right:0.4em;"></i>${p.name}</div>`;
+    rows.forEach(({ ev, date }) => {
       const meta = [ev.time, ev.price].filter(Boolean).join(' · ');
-      let embedHtml = '';
-      if (ev.youtube_video_id || ev.bandcamp_embed_url) {
-        embedHtml = '<div class="event-embeds">';
-        if (ev.youtube_video_id) embedHtml += `<iframe src="https://www.youtube.com/embed/${ev.youtube_video_id}" height="180" loading="lazy" allowfullscreen></iframe>`;
-        if (ev.bandcamp_embed_url) embedHtml += `<iframe src="${ev.bandcamp_embed_url}" height="120" loading="lazy" seamless></iframe>`;
-        embedHtml += '</div>';
-      }
-      const isActive = selectedVenueId !== null && String(f._id) === String(selectedVenueId);
-      html += `<div class="event-item${isActive ? ' active' : ''}" data-venue-id="${f._id}">
-        <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
+      const { bcUrl, ytUrl, embedHtml } = buildEventLinks(ev);
+      html += `<div class="event-item">
+        <div class="event-date">${date ? fmtEventDate(date) : 'Date inconnue'}</div>
         ${meta ? `<div class="event-meta">${meta}</div>` : ''}
         <div class="event-desc">${ev.desc}</div>
         ${bcUrl ? `<div class="event-links"><a href="${bcUrl}" target="_blank" rel="noopener">Bandcamp</a><a href="${ytUrl}" target="_blank" rel="noopener">YouTube</a></div>` : ''}
@@ -262,20 +307,8 @@ renderSidebar = function() {
     });
 
     card.innerHTML = html;
-
-    // Click on venue name → select that venue
-    card.querySelectorAll('.event-item').forEach(item => {
-      const venueId = item.dataset.venueId;
-      const feat = allPOIs.find(feat => String(feat._id) === String(venueId));
-      if (!feat) return;
-      item.querySelector('.event-venue')?.addEventListener('click', e => {
-        e.stopPropagation();
-        focusPOI(feat);
-      });
-    });
-
     list.appendChild(card);
-  });
+  }
 };
 
 focusPOI = function(f) {
@@ -287,7 +320,6 @@ focusPOI = function(f) {
   selectedVenueId = f._id;
   navIndex = getNavList().findIndex(x => x._id === f._id);
   renderSidebar();
-  document.querySelector('.event-item.active')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   const u = new URL(window.location.href);
   u.searchParams.set('poi', slugify(f.properties.name));
   history.replaceState({}, '', u);
