@@ -93,6 +93,7 @@ window.MAP_CONFIG = {
   center: [43.6047, 1.4442],
   zoom: 13,
   focusZoom: 16,
+  mapWindow: '{{ .Params.distorama_window | safeJS }}',
   tiles: {
     url: 'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}',
     attribution: '© <a href="https://stamen.com">Stamen Design</a>, © <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -113,6 +114,10 @@ window.CATEGORY_ICONS = {
 {{ partial "map-geolocation.html" . }}
 <script>
 /* ── Distorama events: venue selection UX ── */
+
+function trackEvent(name, params) {
+  if (typeof gtag === 'function') gtag('event', name, Object.assign({ map_window: MAP_CONFIG.mapWindow }, params));
+}
 
 let selectedVenueId = null, tonightFilter = false, navIndex = -1;
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -183,7 +188,7 @@ updateMarkers = function() {
     if (tonightFilter && !futureEvents.some(ev => ev.date === TODAY)) return;
     const [lng, lat] = f.geometry.coordinates;
     const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
-    marker.on('click', () => { if (activeCard !== f._id) focusPOI(f); });
+    marker.on('click', () => { if (activeCard !== f._id) focusPOI(f, 'marker'); });
     if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
     markers[f._id] = marker;
   });
@@ -304,11 +309,23 @@ renderSidebar = function() {
     });
 
     card.innerHTML = html;
+
+    // Click on venue name → select that venue
+    card.querySelectorAll('.event-item').forEach(item => {
+      const venueId = item.dataset.venueId;
+      const feat = allPOIs.find(feat => String(feat._id) === String(venueId));
+      if (!feat) return;
+      item.querySelector('.event-venue')?.addEventListener('click', e => {
+        e.stopPropagation();
+        focusPOI(feat, 'sidebar');
+      });
+    });
+
     list.appendChild(card);
   }
 };
 
-focusPOI = function(f) {
+focusPOI = function(f, source) {
   const [lng, lat] = f.geometry.coordinates;
   _flyingTo = true;
   map.flyTo([lat, lng], MAP_CONFIG.focusZoom || 15, { duration: 0.8 });
@@ -321,10 +338,16 @@ focusPOI = function(f) {
   u.searchParams.set('poi', slugify(f.properties.name));
   history.replaceState({}, '', u);
   fadePOIs(f._id);
+  trackEvent('venue_selected', {
+    venue_name: f.properties.name,
+    venue_category: f.properties.category,
+    source: source || 'unknown'
+  });
 };
 
 clearFocus = function() {
   if (selectedVenueId === null && activeCard === null) return;
+  if (selectedVenueId !== null) trackEvent('venue_deselected', {});
   selectedVenueId = null;
   navIndex = -1;
   activeCard = null;
@@ -351,14 +374,49 @@ function navigateVenue(dir) {
   navIndex = navIndex === -1
     ? (dir > 0 ? 0 : list.length - 1)
     : (navIndex + dir + list.length) % list.length;
-  focusPOI(list[navIndex]);
+  focusPOI(list[navIndex], 'nav_arrow');
 }
 
 function toggleTonight() {
   tonightFilter = !tonightFilter;
   document.getElementById('tonight-btn')?.classList.toggle('active', tonightFilter);
+  trackEvent('tonight_filter_toggled', { active: tonightFilter });
   if (selectedVenueId !== null) clearFocus();
   filterPOIs();
 }
+
+/* ── GA4: debounced search tracking ── */
+(function() {
+  let _searchTimer;
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchEl = document.getElementById('search');
+    if (!searchEl) return;
+    searchEl.addEventListener('input', () => {
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(() => {
+        const q = searchEl.value.trim();
+        if (q.length >= 2) trackEvent('search', { search_term: q });
+      }, 600);
+    });
+  });
+})();
+
+/* ── GA4: artist link click tracking (delegated) ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const poiList = document.getElementById('poi-list');
+  if (!poiList) return;
+  poiList.addEventListener('click', e => {
+    const link = e.target.closest('.event-links a');
+    if (!link) return;
+    const isYoutube = link.href.includes('youtube');
+    const eventItem = link.closest('.event-item');
+    const venueEl = eventItem?.querySelector('.event-venue');
+    const venueName = venueEl ? venueEl.textContent.trim() : '';
+    trackEvent('artist_link_clicked', {
+      link_type: isYoutube ? 'youtube' : 'bandcamp',
+      venue_name: venueName
+    });
+  });
+});
 </script>
 {{ end }}
