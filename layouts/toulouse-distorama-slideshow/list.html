@@ -1,0 +1,552 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cal.com/fonts/cal-sans.css" rel="stylesheet">
+<style>
+/* ── Distorama monochrome theme ── */
+body { background: #0a0a0a; }
+
+.overlay-card {
+  background: rgba(12,12,12,0.97) !important;
+  border: 0 !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7) !important;
+  border-radius: 0 !important;
+  padding: 0.85rem !important;
+}
+.overlay-card .page-header p {
+  font-family: 'Space Mono', monospace; font-size: 0.6rem;
+  color: #fff; margin: 0.2rem 0 0; letter-spacing: 0.05em;
+}
+
+/* Sidebar visibility */
+.map-overlay { transition: opacity 0.5s ease; }
+.map-overlay.ss-hidden { opacity: 0 !important; pointer-events: none !important; }
+.ss-static-card { padding: 0 !important; overflow: hidden; }
+.ss-static-card.ss-hidden { display: none !important; }
+#event-card.ss-hidden { display: none !important; }
+
+/* Event card */
+.slide-header {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem; font-weight: 700; color: #fff; letter-spacing: 0.04em;
+  text-transform: uppercase; margin-bottom: 0.45rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.slide-artist {
+  font-family: 'Space Mono', monospace; font-size: 1rem; font-weight: 600;
+  color: #fff; line-height: 1.3; margin-bottom: 0.6rem;
+}
+/* Slideshow: sidebar flush to bottom */
+.map-overlay { bottom: 0 !important; top: auto !important; }
+#yt-container { padding-bottom: env(safe-area-inset-bottom, 0px); margin-bottom: 0; }
+#yt-container iframe { border-radius: 4px; display: block; }
+
+/* ── Start gate ── */
+#start-gate {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s ease;
+}
+#start-gate.ss-hidden { opacity: 0; pointer-events: none; }
+.start-card {
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,10,10,0.97);
+  padding: 2.5rem 3rem;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.9);
+  max-width: 90vw;
+}
+.start-card h2 {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem); color: #fff; margin: 0 0 0.4rem;
+}
+.start-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem; color: #fff; margin: 0 0 1.5rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.start-btn {
+  background: #fff; color: #000; border: 0;
+  padding: 0.75rem 2.5rem; font-size: 1rem; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.04em;
+  transition: background 0.15s, transform 0.1s;
+}
+.start-btn:hover { background: #e0e0e0; transform: scale(1.02); }
+.start-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem; color: #fff; margin: 0.9rem 0 0;
+}
+
+/* ── Intro / Outro overlays ── */
+#intro-card {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.82);
+  transition: opacity 0.5s ease;
+}
+#intro-card.ss-hidden { opacity: 0; pointer-events: none; }
+.intro-overlay {
+  text-align: center; padding: 2rem 2.5rem; max-width: 88vw;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(8,8,8,0.95);
+}
+.intro-title {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: clamp(2rem, 6vw, 3rem); color: #fff; margin: 0 0 0.2rem;
+}
+.intro-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1rem, 3vw, 1.4rem); color: #fff; margin: 0 0 0.6rem;
+}
+.intro-daterange {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem; color: #fff; margin: 0 0 1rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.intro-list {
+  list-style: none; margin: 0; padding: 0;
+  text-align: left; max-height: 55vh; overflow-y: auto;
+}
+.intro-list li {
+  padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.intro-list li:last-child { border-bottom: 0; }
+.intro-venue-line {
+  display: block;
+  font-family: 'Space Mono', monospace; font-size: 0.6rem;
+  color: #fff; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+}
+.intro-artist-line {
+  display: block;
+  font-family: 'Cal Sans', sans-serif; font-size: 0.95rem; color: #fff;
+}
+
+/* ── Marker pulse ── */
+@keyframes markerPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+  70%  { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+.marker-pulse > div { animation: markerPulse 1s ease-out infinite !important; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<img src="/toulouse-distorama/distoramaps_white.png" alt="Distora.Maps" style="position:fixed;top:0;left:0;width:100%;height:auto;z-index:100;pointer-events:none;">
+<div id="map"></div>
+
+<!-- Left sidebar -->
+<div class="map-overlay ss-hidden" id="map-overlay">
+  <div class="overlay-card scrollable" id="event-card">
+    <!-- populated per slide -->
+  </div>
+  <div class="overlay-card ss-static-card ss-hidden" id="static-card">
+    <img src="/toulouse-distorama/static.gif" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+</div>
+
+<!-- Start gate -->
+<div id="start-gate">
+  <div class="start-card">
+    <p class="start-subtitle">LA CARTE DES BAS-FONDS TOULOUSAINS</p>
+    <button class="start-btn" onclick="startSlideshow()">▶&nbsp; Lancer</button>
+    <p class="start-count" id="start-count"></p>
+  </div>
+</div>
+
+<!-- Intro card -->
+<div id="intro-card" class="ss-hidden">
+  <div class="intro-overlay">
+    <img src="/toulouse-distorama/distoramaps_black.png" alt="Distora.Maps" style="max-width:220px;width:100%;height:auto;display:block;margin:0 auto 0.75rem;">
+    <h2 class="intro-subtitle">Cette semaine à Toulouse</h2>
+    <p id="intro-daterange" class="intro-daterange"></p>
+    <ul id="intro-list" class="intro-list"></ul>
+  </div>
+</div>
+
+
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ── Map setup ──────────────────────────────────────────────────────────────
+const map = L.map('map', { maxZoom: 19, zoomControl: false })
+  .setView([43.6047, 1.4442], 13);
+
+L.tileLayer(
+  'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}',
+  { attribution: '© Stamen / Stadia Maps / OpenStreetMap', maxZoom: 20 }
+).addTo(map);
+
+L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+const CATEGORY_ICONS = {
+  'Concert Bar': 'fa-music', 'Record Shop': 'fa-record-vinyl', 'Cinema': 'fa-film',
+  'Radio': 'fa-tower-broadcast', 'Studio': 'fa-microphone', 'Boutique': 'fa-store',
+  'Merch/Print': 'fa-print', 'Theater': 'fa-masks-theater', 'Other': 'fa-location-dot'
+};
+
+function makeMarkerIcon(category, pulse) {
+  const cls = CATEGORY_ICONS[category] || 'fa-location-dot';
+  return L.divIcon({
+    className: pulse ? 'marker-pulse' : '',
+    html: `<div style="background:#111;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.6);"><i class="fa-solid ${cls}" style="color:#fff;font-size:15px;"></i></div>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 17]
+  });
+}
+
+// ── State ──────────────────────────────────────────────────────────────────
+let slideItems  = [];   // [{feat, ev}] sorted by date
+let allMarkers  = {};   // feat._id → L.Marker
+let slideIndex  = -1;   // -1 = hero
+let isPaused    = false;
+let slideTimer  = null;
+let fadeTimer   = null;
+let phaseCb        = null;
+let phaseRemaining = 0;
+let phaseStartedAt = null;
+let activeFeatId   = null;
+let transitionDone = false;
+
+// ── Video Player ───────────────────────────────────────────────────────────
+let videoPlayer  = null;
+
+function _createVideoPlayer(videoId) {
+  console.log('Loading video:', videoId);
+  const container = document.getElementById('yt-container');
+  container.innerHTML = `
+    <video id="ss-video" width="100%" height="auto" playsinline preload="auto">
+      <source src="/toulouse-distorama/tmp-media/${videoId}.mp4" type="video/mp4">
+    </video>
+  `;
+  videoPlayer = document.getElementById('ss-video');
+  // Capture element reference so stale handlers from destroyed players self-invalidate.
+  const el = videoPlayer;
+  const isActive = () => videoPlayer === el;
+
+  el.onplay = () => { if (isActive()) console.log('Video playing:', videoId); };
+
+  el.onloadedmetadata = () => { if (isActive()) el.currentTime = 30; };
+  el.oncanplay = () => {
+    if (!isActive() || el.currentTime < 29) return;
+    if (transitionDone) {
+      el.volume = 1;
+      el.play().catch(e => console.warn('Autoplay prevented:', e));
+    }
+  };
+
+  let errorCount = 0;
+  el.onerror = () => {
+    if (!isActive()) return;
+    console.error('Video error for ' + videoId + ':', el.error);
+    errorCount++;
+    if (errorCount < 3) {
+      console.log('Retrying video load (' + errorCount + ')…');
+      setTimeout(() => {
+        if (isActive()) { el.load(); }
+      }, 500);
+    } else {
+      console.warn('Max retries reached, advancing slide');
+      advanceSlide();
+    }
+  };
+}
+
+function loadVideo(videoId) {
+  _createVideoPlayer(videoId);
+}
+
+function destroyPlayer() {
+  if (videoPlayer) {
+    videoPlayer.pause();
+    videoPlayer.src = "";
+    videoPlayer.load();
+    videoPlayer = null;
+  }
+  const c = document.getElementById('yt-container');
+  if (c) c.innerHTML = '';
+}
+
+function fadeOutAndAdvance() {
+  if (videoPlayer) { videoPlayer.pause(); videoPlayer.volume = 0; }
+  advanceSlide();
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function fmtDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  const days   = ['Dim.','Lun.','Mar.','Mer.','Jeu.','Ven.','Sam.'];
+  const months = ['jan.','fév.','mar.','avr.','mai','juin','juil.','août','sep.','oct.','nov.','déc.'];
+  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
+}
+
+function fmtDateRange(dates) {
+  if (!dates.length) return '';
+  const sorted = [...dates].sort();
+  const a = new Date(sorted[0] + 'T00:00:00');
+  const b = new Date(sorted[sorted.length - 1] + 'T00:00:00');
+  const months = ['jan.','fév.','mar.','avr.','mai','juin','juil.','août','sep.','oct.','nov.','déc.'];
+  if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) {
+    return `${a.getDate()} – ${b.getDate()} ${months[a.getMonth()]} ${a.getFullYear()}`;
+  }
+  return `${a.getDate()} ${months[a.getMonth()]} – ${b.getDate()} ${months[b.getMonth()]} ${b.getFullYear()}`;
+}
+
+// ── Phase timer (pause-aware) ──────────────────────────────────────────────
+function startPhase(durationMs, cb) {
+  clearPhase();
+  phaseCb        = cb;
+  phaseRemaining = durationMs;
+  phaseStartedAt = Date.now();
+  _schedulePhase();
+}
+
+function _schedulePhase() {
+  slideTimer = setTimeout(() => {
+    slideTimer = null;
+    if (!isPaused && phaseCb) phaseCb();
+  }, phaseRemaining);
+}
+
+
+function clearPhase() {
+  if (slideTimer) { clearTimeout(slideTimer); slideTimer = null; }
+  if (fadeTimer)  { clearInterval(fadeTimer); fadeTimer  = null; }
+}
+
+function pausePhase() {
+  if (phaseStartedAt !== null) {
+    phaseRemaining = Math.max(0, phaseRemaining - (Date.now() - phaseStartedAt));
+    phaseStartedAt = null;
+  }
+  clearPhase();
+}
+
+function resumePhase() {
+  phaseStartedAt = Date.now();
+  _schedulePhase();
+}
+
+// ── Overlay helpers ────────────────────────────────────────────────────────
+function setSidebarVisible(visible) {
+  document.getElementById('map-overlay').classList.toggle('ss-hidden', !visible);
+}
+
+function setPulse(featId) {
+  // Remove pulse from previous active marker
+  if (activeFeatId !== null && allMarkers[activeFeatId]) {
+    const prev = slideItems.find(s => String(s.feat._id) === String(activeFeatId));
+    if (prev) allMarkers[activeFeatId].setIcon(makeMarkerIcon(prev.feat.properties.category, false));
+  }
+  activeFeatId = featId;
+  if (featId !== null && allMarkers[featId]) {
+    const cur = slideItems.find(s => String(s.feat._id) === String(featId));
+    if (cur) allMarkers[featId].setIcon(makeMarkerIcon(cur.feat.properties.category, true));
+  }
+}
+
+function dimAllMarkers(exceptId) {
+  Object.entries(allMarkers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = (exceptId !== null && String(id) === String(exceptId)) ? '1' : '0.3';
+  });
+}
+
+
+// ── State machine ──────────────────────────────────────────────────────────
+function startSlideshow() {
+  document.getElementById('start-gate').classList.add('ss-hidden');
+  document.getElementById('intro-card').classList.remove('ss-hidden');
+  window._ss.phase = 'intro';
+  window._ss.startTime = Date.now();
+  setTimeout(() => {
+    document.getElementById('intro-card').classList.add('ss-hidden');
+    playSlide(0);
+  }, 5000);
+}
+
+function playSlide(idx) {
+  window._ss.phase = 'slide';
+  clearPhase();
+  // Stop audio immediately
+  if (videoPlayer) { videoPlayer.pause(); videoPlayer.volume = 0; }
+  destroyPlayer();
+  transitionDone = false;
+  slideIndex = idx;
+  const { feat, ev } = slideItems[idx];
+  const [lng, lat] = feat.geometry.coordinates;
+
+  // Show sidebar with static card covering event card
+  setSidebarVisible(true);
+  document.getElementById('event-card').classList.add('ss-hidden');
+  document.getElementById('static-card').classList.remove('ss-hidden');
+
+  // Compute flyTo center so marker sits at 33% of viewport height
+  const targetZoom = 16;
+  const targetPx = map.project([lat, lng], targetZoom);
+  const offsetPx = window.innerHeight * (0.5 - 0.333);
+  const centerPx = L.point(targetPx.x, targetPx.y + offsetPx);
+  const centerLatLng = map.unproject(centerPx, targetZoom);
+
+  map.flyTo(centerLatLng, targetZoom, { duration: 0.8 });
+  dimAllMarkers(feat._id);
+  setPulse(feat._id);
+
+  // Pre-populate event card (hidden) and preload video muted
+  const _timeStr = (ev.time && typeof ev.time === 'string' && ev.time.trim()) ? ` · ${ev.time.trim()}` : '';
+  document.getElementById('event-card').innerHTML = `
+    <div class="slide-header">${feat.properties.name} · ${fmtDate(ev.date)}${_timeStr}</div>
+    <div class="slide-artist">${ev.desc || ''}</div>
+    <div id="yt-container"></div>
+  `;
+  loadVideo(ev.youtube_video_id);
+
+  // After flyTo: swap static card → event card, start audio
+  map.once('moveend', () => {
+    transitionDone = true;
+    window._ss.slideLog.push({ t: Date.now(), slide: idx, ev: slideItems[idx].ev, feat: slideItems[idx].feat });
+    document.getElementById('static-card').classList.add('ss-hidden');
+    document.getElementById('event-card').classList.remove('ss-hidden');
+    if (videoPlayer && !videoPlayer.paused) return; // already playing
+    if (videoPlayer) {
+      videoPlayer.volume = 1;
+      videoPlayer.play().catch(e => console.warn('Autoplay prevented:', e));
+    }
+    startPhase(15000, () => fadeOutAndAdvance());
+  });
+}
+
+function advanceSlide() {
+  const nextIdx = (slideIndex + 1) % slideItems.length;
+  if (nextIdx === 0) {
+    window._ss.phase = 'outro';
+    window._ss.outroStartMs = Date.now();
+    destroyPlayer();
+    setSidebarVisible(false);
+    setPulse(null);
+    Object.values(allMarkers).forEach(m => { const el = m.getElement(); if (el) el.style.opacity = '1'; });
+    if (Object.keys(allMarkers).length > 0) {
+      map.fitBounds(L.featureGroup(Object.values(allMarkers)).getBounds().pad(0.2));
+    }
+    document.getElementById('intro-card').classList.remove('ss-hidden');
+    setTimeout(() => {
+      document.getElementById('intro-card').classList.add('ss-hidden');
+      window._ss.phase = 'done';
+    }, 5000);
+    return;
+  }
+  playSlide(nextIdx);
+}
+
+// ── Controls ───────────────────────────────────────────────────────────────
+function togglePause() {
+  isPaused = !isPaused;
+  document.getElementById('pause-btn').textContent = isPaused ? '▶' : '⏸';
+  if (isPaused) {
+    pausePhase();
+    try { videoPlayer?.pause(); } catch(e) {}
+  } else {
+    try { videoPlayer?.play(); } catch(e) {}
+    resumePhase();
+  }
+}
+
+function slidePrev() {
+  clearPhase();
+  if (isPaused) { isPaused = false; document.getElementById('pause-btn').textContent = '⏸'; }
+  playSlide(slideIndex <= 0 ? 0 : slideIndex - 1);
+}
+
+function slideNext() {
+  clearPhase();
+  if (isPaused) { isPaused = false; document.getElementById('pause-btn').textContent = '⏸'; }
+  playSlide((slideIndex + 1) % slideItems.length);
+}
+
+// ── Data loading ───────────────────────────────────────────────────────────
+window._ss = {
+  slideLog: [], phase: 'idle', startTime: null,
+  get slideCount() { return 0; },
+  pause()      {},
+  playSlide(i) {},
+  get currentSlide() { return -1; },
+  get currentEvent() { return null; }
+};
+window._ssReady = false;
+
+const _geoJsonUrl = new URLSearchParams(window.location.search).get('geojson')
+  || '{{ .Params.geojson_url | safeJS }}';
+fetch(_geoJsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    const features = data.features.map((f, i) => ({ ...f, _id: i }));
+
+    // Flatten to (feat, ev) pairs with youtube_video_id only, sorted by date then venue
+    const rows = [];
+    features.forEach(feat => {
+      (feat.properties.events || []).forEach(ev => {
+        if (ev.youtube_video_id) rows.push({ feat, ev });
+      });
+    });
+    rows.sort((a, b) =>
+      (a.ev.date || '').localeCompare(b.ev.date || '') ||
+      a.feat.properties.name.localeCompare(b.feat.properties.name)
+    );
+    slideItems = rows;
+
+    const venueCount = new Set(rows.map(r => r.feat.properties.name)).size;
+    document.getElementById('start-count').textContent =
+      `${rows.length} événement${rows.length !== 1 ? 's' : ''} · ${venueCount} lieu${venueCount !== 1 ? 'x' : ''}`;
+
+    // Place markers for venues that have YouTube events (dimmed until slideshow starts)
+    const seenIds = new Set();
+    rows.forEach(({ feat }) => {
+      if (seenIds.has(feat._id)) return;
+      seenIds.add(feat._id);
+      const [lng, lat] = feat.geometry.coordinates;
+      const marker = L.marker([lat, lng], { icon: makeMarkerIcon(feat.properties.category, false) });
+      marker.addTo(map);
+      const el = marker.getElement();
+      if (el) el.style.opacity = '0.3';
+      allMarkers[feat._id] = marker;
+    });
+
+    // Fit map to markers
+    if (Object.keys(allMarkers).length > 0) {
+      map.fitBounds(
+        L.featureGroup(Object.values(allMarkers)).getBounds().pad(0.2)
+      );
+    }
+
+    // Populate intro card
+    const _introDateEl = document.getElementById('intro-daterange');
+    const _introListEl = document.getElementById('intro-list');
+    const _dates = rows.map(r => r.ev.date).filter(Boolean);
+    _introDateEl.textContent = (_dates.length ? fmtDateRange(_dates) + ' · ' : '')
+      + rows.length + ' concert' + (rows.length !== 1 ? 's' : '');
+    rows.forEach(({ feat, ev }) => {
+      const li = document.createElement('li');
+      const venueLine = [feat.properties.name, ev.date ? fmtDate(ev.date) : '', ev.time || ''].filter(Boolean).join(' · ');
+      li.innerHTML = `<span class="intro-venue-line">${venueLine}</span><span class="intro-artist-line">${ev.artist || ev.desc || ''}</span>`;
+      _introListEl.appendChild(li);
+    });
+
+    // Programmatic control surface (used by capture scripts)
+    window._ss = {
+      slideLog: [], phase: 'idle', startTime: null,
+      get slideCount() { return slideItems.length; },
+      pause()      { isPaused = true; clearPhase(); try { videoPlayer?.pause(); } catch(e){} },
+      playSlide(i) { isPaused = true; playSlide(i); },
+      get currentSlide() { return slideIndex; },
+      get currentEvent() { return slideIndex >= 0 ? slideItems[slideIndex] : null; }
+    };
+    window._ssReady = true;
+  });
+</script>
+{{ end }}

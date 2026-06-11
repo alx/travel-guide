@@ -447,14 +447,12 @@ def main() -> None:
             UNMATCHED_PATH.write_text("\n".join(sorted_unmatched) + "\n")
         print(f"  → {UNMATCHED_PATH.name}: {', '.join(sorted_unmatched[:5])}{'…' if len(sorted_unmatched) > 5 else ''}")
 
-    # 7. Build per-day and per-month event GeoJSONs
+    # 7. Build per-month event GeoJSONs
     print("Writing event GeoJSONs…")
-    all_dates = sorted(by_date.keys())
     by_month: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
 
-    for date_str, venues_on_day in tqdm(by_date.items(), desc="Writing daily GeoJSONs", unit="day"):
+    for date_str, venues_on_day in by_date.items():
         month_str = date_str[:7]  # YYYY-MM
-        features = []
         for venue_name, events in venues_on_day.items():
             venue = venue_lookup.get(normalize_venue_name(venue_name))
             if not venue:
@@ -462,12 +460,7 @@ def main() -> None:
             coords = geocache.get(venue["address"])
             if not coords:
                 continue
-            features.append(make_event_feature(venue, coords, events, mediacache))
-            # Accumulate for monthly rollup
             by_month[month_str][venue_name].extend(events)
-
-        if not args.dry_run:
-            write_geojson(EVENTS_DIR / f"{date_str}.geojson", features)
 
     # 8. Per-month GeoJSONs
     for month_str, venues_in_month in by_month.items():
@@ -569,20 +562,6 @@ def main() -> None:
                 "type": "toulouse-distorama-event",
                 "distorama_window": month_str,
                 "geojson_url": f"/toulouse-distorama/events/{month_str}.geojson",
-            })
-        stubs_written += 1
-
-    # Per-day stubs
-    for date_str in all_dates:
-        d = date.fromisoformat(date_str)
-        stub_path = CONTENT_DIR / f"toulouse-distorama-{date_str}/_index.md"
-        if not args.dry_run:
-            write_stub(stub_path, {
-                "title": f"Distorama — {fr_date(d).capitalize()}",
-                "description": f"Concerts et événements underground à Toulouse le {fr_date(d)}.",
-                "type": "toulouse-distorama-event",
-                "distorama_window": date_str,
-                "geojson_url": f"/toulouse-distorama/events/{date_str}.geojson",
             })
         stubs_written += 1
 

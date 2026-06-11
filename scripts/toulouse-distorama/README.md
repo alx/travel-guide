@@ -117,3 +117,59 @@ uv run scripts/toulouse-distorama/generate.py
 # If generate.py reported new unmatched venues, classify them
 uv run scripts/toulouse-distorama/classify.py
 ```
+
+---
+
+## Slideshow (YouTube Shorts)
+
+`capture-slideshow.js` produces a 1080×1920 MP4 suitable for YouTube Shorts. It drives a headless Playwright browser through the `/toulouse-distorama-slideshow/` Hugo page, records the video track, then builds and mixes the audio track with ffmpeg using audio pulled from the venue YouTube clips.
+
+**Prerequisites:** `node`, `playwright` (`npm i playwright`), `yt-dlp`, `ffmpeg`, Hugo available on `$PATH`.
+
+The script reads `static/toulouse-distorama/events/this-week.geojson` — run `generate.py` first.
+
+### Fresh capture
+
+```sh
+node scripts/toulouse-distorama/capture-slideshow.js
+```
+
+Outputs three files in `static/toulouse-distorama/slideshows/`:
+
+| File | Description |
+|---|---|
+| `distorama-week-{N}_{hash}.mp4` | Final encoded video |
+| `distorama-week-{N}_{hash}.csv` | Timestamp log: `timestamp,artist,venue,video_id` |
+| `distorama-week-{N}_{hash}.state.json` | Full capture state for remix |
+| `distorama-week-latest.mp4` | Symlink → latest MP4 |
+| `distorama-week-latest.csv` | Symlink → latest CSV |
+
+### Remix (redo audio without re-capturing)
+
+```sh
+node scripts/toulouse-distorama/capture-slideshow.js \
+  --remix static/toulouse-distorama/slideshows/distorama-week-{N}_{hash}.state.json \
+  [options]
+```
+
+| Option | Default | Description |
+|---|---|---|
+| `--clip-offset <s>` | `30` | Seconds into each source clip to start audio |
+| `--fade-out <s>` | `2` | Audio fade-out duration per venue slide |
+| `--intro-dur <s>` | `3` | Intro silence duration (unused when `--youtube-url` set) |
+| `--outro-dur <s>` | `5` | Outro silence duration |
+| `--output <path>` | state value | Write remix to this path |
+| `--youtube-url <url>` | — | YouTube URL whose audio fills the intro (fade-in) and outro (fade-out) |
+| `--timestamp-offsets <csv>` | — | Batch mode: generate one file per offset value, e.g. `-1.5,-1,-0.5,0,0.5,1,1.5` |
+
+### Tuning audio alignment
+
+If the audio feels early or late relative to the video, use `--timestamp-offsets` to sweep values and compare:
+
+```sh
+node scripts/toulouse-distorama/capture-slideshow.js \
+  --remix path/to.state.json \
+  --timestamp-offsets -2,-1.5,-1,-0.5,0,0.5,1
+```
+
+Each value shifts the start of the first audio segment by that many seconds (positive = later, negative = earlier). The default baked-in correction is `-1.5s`.

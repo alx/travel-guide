@@ -5,3 +5,6 @@ node_modules/
 .playwright-mcp/
 data/france_project_newsletter/
 static/toulouse-distorama/tmp-media/
+content/toulouse-distorama-????-??-??/
+static/toulouse-distorama/slideshows/
+*.mp4
