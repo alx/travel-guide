@@ -2,6 +2,11 @@ baseURL = "https://maps.girard-davila.net/"
 languageCode = "en-us"
 title = "Curated Travel Maps"
 canonifyURLs = false
+ignoreFiles = [
+  "static/toulouse-distorama/tmp-media/.*",
+  "static/toulouse-distorama/slideshows/.*",
+  "\\.part$"
+]
 
 [params]
   description = "Custom travel maps built from real family experience — GPS-precise spots, honest notes, no tourist lists. From €29."

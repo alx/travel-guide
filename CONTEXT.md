@@ -41,6 +41,12 @@ Per-venue circular map marker using the venue's logo image, stored at `static/to
 **Artist link**
 In Distorama poi-cards, artist names (parsed from `desc`, stripping genre annotations in parentheses) link to both a Bandcamp search (`bandcamp.com/search?q={artist}`) and a YouTube search (`youtube.com/results?search_query={artist}`).
 
+**Slideshow capture**
+The process of recording a 9:16 video of the `toulouse-distorama-slideshow` for social media. Orchestrated by `scripts/capture-slideshow.js` using Playwright. It downloads 360p MP4s of event videos to `static/toulouse-distorama/tmp-media/`, renders them via native `<video>` tags in a headless browser, and merges the browser's video output with a live capture of the system audio. Outputs are saved to `static/toulouse-distorama/slideshows/` with a week-based unique filename.
+
+**Slideshow CSV Record**
+A companion CSV file generated alongside each slideshow video. Logs the precise starting `timestamp` for every event in the video, along with metadata (`artist`, `venue`, `video_id`). Used for downstream processing, such as adding chapter markers or precise subtitle overlays.
+
 **Distorama theme**
 Full monochrome visual system: CartoDB Dark Matter tiles (black base), white overlay card with dark text, white/grey marker circles. No color accents. Applied to all `toulouse-distorama*` map variants.
 
