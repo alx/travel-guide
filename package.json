@@ -4,9 +4,23 @@
   "private": true,
   "description": "Hugo travel guide site — Girard-Davila Travels",
   "scripts": {
-    "generate-previews": "node scripts/generate-map-previews.js"
+    "generate-previews": "node scripts/generate-map-previews.js",
+    "distorama:render": "node scripts/toulouse-distorama/render-slideshow.js",
+    "distorama:studio": "npx remotion studio scripts/toulouse-distorama/remotion/src/index.tsx"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "maplibre-gl": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remotion": "^4.0.0"
   },
   "devDependencies": {
-    "playwright": "^1.44.0"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "playwright": "^1.44.0",
+    "typescript": "^5.0.0"
   }
 }
