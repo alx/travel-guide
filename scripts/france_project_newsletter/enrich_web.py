@@ -4,7 +4,7 @@
 # dependencies = ["requests"]
 # ///
 """
-Web-search enrichment for GPS companies via local SearXNG (DDG engine).
+Web-search enrichment for GPS companies via local SearXNG (uses all configured engines).
 
 Two modes:
 
@@ -53,7 +53,12 @@ QUERY_DELAY = 2.5  # seconds between DDG queries
 SKIP_DOMAINS = {
     "linkedin.com", "wikipedia.org", "pagesjaunes.fr",
     "societe.com", "verif.com", "infogreffe.fr", "pappers.fr",
-    "bfmtv.com", "lefigaro.fr", "lemonde.fr",
+    "bfmtv.com", "lefigaro.fr", "lemonde.fr", "lesechos.fr",
+    "challenges.fr", "usinenouvelle.com", "latribune.fr",
+    "capital.fr", "francetvinfo.fr", "leparisien.fr",
+    "lowyat.net", "forum.", "reddit.com", "facebook.com",
+    "twitter.com", "x.com", "youtube.com", "instagram.com",
+    "microsoft.com", "apple.com", "google.com",
 }
 
 
@@ -71,11 +76,11 @@ def searxng_url() -> str:
     return os.environ.get("SEARXNG_URL", DEFAULT_SEARXNG_URL)
 
 
-def search(query: str, session: requests.Session, engines: str = "duckduckgo") -> list[dict]:
+def search(query: str, session: requests.Session) -> list[dict]:
     try:
         r = session.get(
             f"{searxng_url()}/search",
-            params={"q": query, "format": "json", "engines": engines},
+            params={"q": query, "format": "json"},
             timeout=15,
         )
         r.raise_for_status()
@@ -87,20 +92,24 @@ def search(query: str, session: requests.Session, engines: str = "duckduckgo") -
 
 def extract_linkedin(results: list[dict]) -> tuple[str | None, int | None]:
     """Return (canonical_linkedin_url, follower_count_or_None)."""
-    pattern = re.compile(r"^https://www\.linkedin\.com/company/[^/]+$")
+    # Match any regional subdomain: www./fr./de. etc., no subpages after slug
+    pattern = re.compile(r"^https://[a-z]{2,3}\.linkedin\.com/company/[^/]+$|^https://www\.linkedin\.com/company/[^/]+$")
     for r in results:
         url = r.get("url", "")
-        if pattern.match(url):
-            count = None
-            content = r.get("content", "")
-            m = re.search(r"([\d\s,]+)\s+followers? on LinkedIn", content, re.IGNORECASE)
-            if m:
-                count_str = m.group(1).replace(",", "").replace("\xa0", "").replace(" ", "")
-                try:
-                    count = int(count_str)
-                except ValueError:
-                    pass
-            return url, count
+        if not pattern.match(url):
+            continue
+        # Normalise to www.linkedin.com
+        url = re.sub(r"^https://[^/]*linkedin\.com", "https://www.linkedin.com", url)
+        count = None
+        content = r.get("content", "")
+        m = re.search(r"([\d\s, \xa0]+)\s+followers? on LinkedIn", content, re.IGNORECASE)
+        if m:
+            count_str = re.sub(r"[\s, \xa0]", "", m.group(1))
+            try:
+                count = int(count_str)
+            except ValueError:
+                pass
+        return url, count
     return None, None
 
 
@@ -112,6 +121,14 @@ def extract_website(results: list[dict], existing_url: str | None) -> str | None
         if m:
             existing_domain = m.group(1)
 
+    # Pass 1: prefer results on the already-known domain → return existing_url as canonical
+    if existing_domain:
+        for r in results:
+            url = r.get("url", "")
+            if existing_domain in url:
+                return existing_url
+
+    # Pass 2: first result not on a skip domain
     for r in results:
         url = r.get("url", "")
         m = re.search(r"https?://(?:www\.)?([^/]+)", url)
@@ -120,10 +137,8 @@ def extract_website(results: list[dict], existing_url: str | None) -> str | None
         domain = m.group(1)
         if any(skip in domain for skip in SKIP_DOMAINS):
             continue
-        # Prefer the domain already in GeoJSON if it appears in results
-        if existing_domain and existing_domain in domain:
-            return url
         return url
+
     return existing_url
 
 
@@ -186,18 +201,21 @@ def run_profile(features: list[dict], con: sqlite3.Connection, session: requests
         props = feat["properties"]
         name = props.get("name", "")
         existing_url = props.get("feeds", {}).get("company_url")
+        keywords = props.get("feeds", {}).get("keywords", [])
+        disambig_kw = keywords[1] if len(keywords) > 1 else (keywords[0] if keywords else "")
 
         print(f"\n[PROFILE] {name}")
 
         # --- LinkedIn ---
         time.sleep(QUERY_DELAY)
-        linkedin_results = search(f'site:linkedin.com/company "{name}"', session)
+        linkedin_results = search(f'"{name}" linkedin company', session)
         linkedin_url, employee_count = extract_linkedin(linkedin_results)
         print(f"  linkedin: {linkedin_url}  employees~: {employee_count}")
 
         # --- Website + description ---
         time.sleep(QUERY_DELAY)
-        web_results = search(f'"{name}" site officiel france', session)
+        web_query = f'"{name}" {disambig_kw} site officiel'.strip() if disambig_kw else f'"{name}" entreprise site officiel'
+        web_results = search(web_query, session)
         website_url = extract_website(web_results, existing_url)
         description_fr = extract_description(web_results)
         print(f"  website:  {website_url}")
