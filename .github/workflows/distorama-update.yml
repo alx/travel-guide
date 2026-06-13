@@ -39,6 +39,7 @@ jobs:
           git add scripts/toulouse-distorama/.geocache.json
           git add scripts/toulouse-distorama/unmatched-venues.txt
           find content -maxdepth 1 -name 'toulouse-distorama*' -type d \
+            ! -name 'toulouse-distorama-????-??-??' \
             -exec git add {} +
 
           if git diff --staged --quiet; then

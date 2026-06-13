@@ -12,7 +12,6 @@ Usage:
 
 Outputs:
     static/toulouse-distorama/locations.geojson        — venues map
-    static/toulouse-distorama/events/YYYY-MM-DD.geojson
     static/toulouse-distorama/events/YYYY-MM.geojson
     static/toulouse-distorama/events/this-week.geojson
     static/toulouse-distorama/events/next-week.geojson
