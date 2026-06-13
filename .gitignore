@@ -8,5 +8,6 @@ data/france_project_newsletter/preview.html
 static/toulouse-distorama/tmp-media/
 content/toulouse-distorama-????-??-??/
 static/toulouse-distorama/events/????-??-??.geojson
+static/toulouse-distorama/events/????-??.geojson
 static/toulouse-distorama/slideshows/
 *.mp4

@@ -12,7 +12,6 @@ Usage:
 
 Outputs:
     static/toulouse-distorama/locations.geojson        — venues map
-    static/toulouse-distorama/events/YYYY-MM.geojson
     static/toulouse-distorama/events/this-week.geojson
     static/toulouse-distorama/events/next-week.geojson
     content/toulouse-distorama-*/                      — Hugo content stubs
@@ -343,10 +342,6 @@ def fr_date(d: date) -> str:
     return f"{FRENCH_DAYS[d.weekday()]} {d.day} {FRENCH_MONTHS[d.month]} {d.year}"
 
 
-def fr_month(year: int, month: int) -> str:
-    return f"{FRENCH_MONTHS[month]} {year}"
-
-
 def write_stub(path: Path, frontmatter: dict) -> None:
     """Write a Hugo _index.md stub if it doesn't already exist."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -446,37 +441,8 @@ def main() -> None:
             UNMATCHED_PATH.write_text("\n".join(sorted_unmatched) + "\n")
         print(f"  → {UNMATCHED_PATH.name}: {', '.join(sorted_unmatched[:5])}{'…' if len(sorted_unmatched) > 5 else ''}")
 
-    # 7. Build per-month event GeoJSONs
+    # 7. This-week and next-week GeoJSONs
     print("Writing event GeoJSONs…")
-    by_month: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
-
-    for date_str, venues_on_day in by_date.items():
-        month_str = date_str[:7]  # YYYY-MM
-        for venue_name, events in venues_on_day.items():
-            venue = venue_lookup.get(normalize_venue_name(venue_name))
-            if not venue:
-                continue
-            coords = geocache.get(venue["address"])
-            if not coords:
-                continue
-            by_month[month_str][venue_name].extend(events)
-
-    # 8. Per-month GeoJSONs
-    for month_str, venues_in_month in by_month.items():
-        features = []
-        # De-duplicate events per venue (same desc+time may repeat across days)
-        for venue_name, events in venues_in_month.items():
-            venue = venue_lookup.get(normalize_venue_name(venue_name))
-            if not venue:
-                continue
-            coords = geocache.get(venue["address"])
-            if not coords:
-                continue
-            features.append(make_event_feature(venue, coords, events, mediacache))
-        if not args.dry_run:
-            write_geojson(EVENTS_DIR / f"{month_str}.geojson", features)
-
-    # 9. This-week and next-week GeoJSONs
     today = date.today()
     this_mon, this_sun = week_bounds(today)
     next_mon, next_sun = week_bounds(today + timedelta(weeks=1))
@@ -548,20 +514,6 @@ def main() -> None:
                 "",
             ]
             stub_path.write_text("\n".join(lines))
-        stubs_written += 1
-
-    # Per-month stubs
-    for month_str in by_month:
-        year, month = int(month_str[:4]), int(month_str[5:7])
-        stub_path = CONTENT_DIR / f"toulouse-distorama-{month_str}/_index.md"
-        if not args.dry_run:
-            write_stub(stub_path, {
-                "title": f"Distorama — {fr_month(year, month).capitalize()}",
-                "description": f"Concerts et événements underground à Toulouse en {fr_month(year, month)}.",
-                "type": "toulouse-distorama-event",
-                "distorama_window": month_str,
-                "geojson_url": f"/toulouse-distorama/events/{month_str}.geojson",
-            })
         stubs_written += 1
 
     print(f"  ✓ {stubs_written} stubs")
