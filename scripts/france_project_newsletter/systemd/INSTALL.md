@@ -9,6 +9,8 @@ sudo cp gps-llama-server.service  /etc/systemd/system/gps-llama-server@alx.servi
 sudo cp gps-newsletter.service    /etc/systemd/system/gps-newsletter@alx.service
 sudo cp gps-newsletter.timer      /etc/systemd/system/gps-newsletter@alx.timer
 sudo cp gps-telegram-bot.service  /etc/systemd/system/gps-telegram-bot@alx.service
+sudo cp gps-web-profile.service   /etc/systemd/system/gps-web-profile@alx.service
+sudo cp gps-web-profile.timer     /etc/systemd/system/gps-web-profile@alx.timer
 sudo systemctl daemon-reload
 ```
 
@@ -48,7 +50,22 @@ sudo systemctl enable --now gps-newsletter@alx.timer
 sudo systemctl list-timers gps-newsletter@alx.timer
 ```
 
-## 5. Run once manually to verify
+## 5. Enable the weekly web profile enrichment timer
+
+Requires the `lequartier-searxng` Docker container to be running on `127.0.0.1:8888`.
+
+```bash
+sudo systemctl enable --now gps-web-profile@alx.timer
+sudo systemctl list-timers gps-web-profile@alx.timer
+```
+
+Run once manually to populate LinkedIn + website + description for all 69 companies:
+
+```bash
+uv run scripts/france_project_newsletter/enrich_web.py --mode profile
+```
+
+## 6. Run once manually to verify
 
 ```bash
 sudo systemctl start gps-newsletter@alx.service
@@ -64,6 +81,7 @@ CHANGEDETECTION_API_KEY=...
 CHANGEDETECTION_BASE_URL=http://lamai270:5008
 LLAMA_CPP_URL=http://127.0.0.1:8181
 PAPPERS_API_KEY=...          # optional, for Pappers enrichment
+SEARXNG_URL=http://127.0.0.1:8888  # optional, default value shown
 ```
 
 ## Run classify/extract manually against local server

@@ -1,0 +1,12 @@
+[Unit]
+Description=GPS Newsletter — weekly web profile enrichment timer
+Requires=gps-web-profile@alx.service
+
+[Timer]
+# Run every Sunday at 06:00 UTC (before the daily pipeline at 07:00)
+OnCalendar=Sun *-*-* 06:00:00 UTC
+Persistent=true
+Unit=gps-web-profile@alx.service
+
+[Install]
+WantedBy=timers.target

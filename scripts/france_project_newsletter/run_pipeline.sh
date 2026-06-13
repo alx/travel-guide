@@ -21,6 +21,9 @@ uv run "$SCRIPT_DIR/init_db.py"
 # 2. Fetch new items from RSS + changedetection.io
 uv run "$SCRIPT_DIR/fetch_digest.py" --period daily
 
+# 2b. Web search news fallback for companies without company_rss (daily)
+uv run "$SCRIPT_DIR/enrich_web.py" --mode news
+
 # 3. AI classification (skips gracefully if llama.cpp server is down)
 uv run "$SCRIPT_DIR/classify.py"
 

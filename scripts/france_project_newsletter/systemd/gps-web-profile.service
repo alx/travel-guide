@@ -1,0 +1,12 @@
+[Unit]
+Description=GPS Newsletter — weekly web profile enrichment (LinkedIn, website, description)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=%i
+WorkingDirectory=/home/%i/code/travel-guide
+ExecStart=/home/%i/.local/bin/uv run scripts/france_project_newsletter/enrich_web.py --mode profile
+StandardOutput=journal
+StandardError=journal
