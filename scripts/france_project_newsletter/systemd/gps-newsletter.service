@@ -8,6 +8,7 @@ Type=oneshot
 User=%i
 WorkingDirectory=/home/%i/code/travel-guide
 Environment=PATH=/home/%i/.local/bin:/usr/local/bin:/usr/bin:/bin
+# run_pipeline.sh calls uv internally — PATH above makes it resolvable
 ExecStart=/home/%i/code/travel-guide/scripts/france_project_newsletter/run_pipeline.sh
 StandardOutput=journal
 StandardError=journal
