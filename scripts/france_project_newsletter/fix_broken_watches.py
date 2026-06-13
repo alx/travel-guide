@@ -28,8 +28,10 @@ from urllib.parse import urlparse
 
 import requests
 
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gps_config
+
 GEOJSON_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/locations.geojson"
-DEFAULT_BASE_URL = "http://lamai270:5008"
 FRANCE_TAG = "6ff77fdb-38cb-40bf-adc4-ca25076e6ea6"
 
 PRESS_PATHS = [
@@ -168,7 +170,7 @@ def main() -> None:
     serpapi_key = os.environ.get("SERPAPI_API_KEY")
     if not serpapi_key:
         sys.exit("Error: SERPAPI_API_KEY not set")
-    base_url = os.environ.get("CHANGEDETECTION_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+    base_url = gps_config.changedetection_url().rstrip("/")
 
     cd_session = requests.Session()
     cd_session.headers.update({"x-api-key": api_key})

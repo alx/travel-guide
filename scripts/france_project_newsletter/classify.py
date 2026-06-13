@@ -22,12 +22,15 @@ import json
 import pathlib
 import re
 import sqlite3
+import sys
 from datetime import datetime, timezone
 
 import requests
 
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gps_config
+
 DB_PATH = pathlib.Path(__file__).parents[2] / "data/france_project_newsletter/state.db"
-DEFAULT_LLM_URL = "http://lamai270:8181"
 
 SIGNAL_TYPES = [
     "funding_round", "groundbreaking", "production_start",
@@ -120,7 +123,7 @@ def main() -> None:
     parser.add_argument("--llm-url", default=None)
     args = parser.parse_args()
 
-    llm_url = (args.llm_url or __import__("os").environ.get("LLAMA_CPP_URL", DEFAULT_LLM_URL)).rstrip("/")
+    llm_url = (args.llm_url or gps_config.llm_url()).rstrip("/")
 
     print(f"Checking llama.cpp server at {llm_url}...")
     if not check_server(llm_url):

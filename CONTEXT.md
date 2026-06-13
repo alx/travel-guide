@@ -127,7 +127,10 @@ A SQLite database at `data/france_project_newsletter/state.db`. Holds the financ
 Two-layer approach: (1) Seen-item dedup — all processed item hashes stored in SQLite `seen_items` table; items with known hashes are skipped at fetch time, persisting across daily runs. (2) Finance extraction dedup — AI-extracted financial signals (capex, stage transitions, subsidies, job counts) go into a `pending_review` table; a human approves them before they update the ledger. Automated fingerprint dedup (option B) is deferred until the classifier's accuracy is validated.
 
 **Run topology**
-Hybrid: lamai270 (home server) owns the stateful daily pipeline — fetch, AI classification, SQLite update, Telegram push. GitHub Actions owns the Hugo build and site deployment, triggered by a lightweight `git push` of the updated digest JSON from lamai270. changedetection.io also runs on lamai270.
+Hybrid: lamai270 (home server) owns the stateful daily pipeline — fetch, AI classification, SQLite update, Telegram push. GitHub Actions owns the Hugo build and site deployment, triggered by a lightweight `git push` of the updated digest JSON from lamai270. changedetection.io also runs on lamai270. The llama.cpp server runs on fami (workstation with RTX 4060), called remotely by the lamai270 pipeline over the local network.
+
+**Pipeline config**
+A TOML file at `scripts/france_project_newsletter/config.toml` committed to git. Owns all non-secret topology: llama.cpp server URL, changedetection.io URL, and pipeline host. Secrets (API keys, tokens) remain in `.env`. All pipeline scripts read topology from this file via `gps_config.py`, with no hardcoded hostnames.
 
 **Local AI server**
 A llama.cpp server running on lamai270's RTX 4060 (8GB VRAM). Primary model: Qwen2.5 7B Instruct Q4_K_M (~5.4GB VRAM total including KV cache). Used for all AI pipeline calls: relevance filter and signal classifier. The daily pipeline checks server availability before running AI steps; behavior when unavailable is governed by the degraded-mode policy. Structured JSON output enforced via llama.cpp grammar constraints.

@@ -26,10 +26,13 @@ from datetime import datetime, timedelta, timezone
 
 import feedparser
 import requests
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gps_config
 
 GEOJSON_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/locations.geojson"
 DB_PATH = pathlib.Path(__file__).parents[2] / "data/france_project_newsletter/state.db"
-DEFAULT_BASE_URL = "http://lamai270:5008"
 
 HIGH_PRIORITY_KEYWORDS = [
     "inauguration", "milliards", "gigafactory", "groundbreaking",
@@ -228,7 +231,7 @@ def main() -> None:
 
     load_env()
     api_key = os.environ.get("CHANGEDETECTION_API_KEY")
-    base_url = os.environ.get("CHANGEDETECTION_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+    base_url = gps_config.changedetection_url().rstrip("/")
 
     hours = 24 if args.period == "daily" else 7 * 24
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Start llama-server for the GPS Newsletter pipeline.
+# Run this on fami (workstation, RTX 4060 8GB). lamai270 calls it remotely.
 # Picks the best available model from MODELS_DIR in priority order.
-# Runs on port 8181 with full GPU offload (RTX 4060 8GB).
 set -euo pipefail
 
 LLAMA_SERVER="${LLAMA_SERVER:-/home/alx/bin/llama-server}"

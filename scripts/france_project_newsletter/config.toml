@@ -1,0 +1,13 @@
+[llm]
+# llama.cpp server (OpenAI-compatible API). Runs on fami (RTX 4060).
+# Pipeline calls this remotely from lamai270 over the local network.
+# If unreachable, AI steps are skipped and items remain pending (degraded mode).
+url = "http://fami:8181"
+
+[changedetection]
+# changedetection.io instance. Runs on lamai270.
+url = "http://lamai270:5008"
+
+[pipeline]
+# Host that runs the daily cron pipeline.
+run_host = "lamai270"

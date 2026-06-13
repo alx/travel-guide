@@ -20,8 +20,10 @@ import sys
 
 import requests
 
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import gps_config
+
 GEOJSON_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/locations.geojson"
-DEFAULT_BASE_URL = "http://lamai270:5008"
 
 
 def load_env() -> None:
@@ -55,7 +57,7 @@ def main() -> None:
     if not api_key:
         sys.exit("Error: CHANGEDETECTION_API_KEY not set")
 
-    base_url = os.environ.get("CHANGEDETECTION_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+    base_url = gps_config.changedetection_url().rstrip("/")
 
     session = requests.Session()
     session.headers.update({"x-api-key": api_key})
