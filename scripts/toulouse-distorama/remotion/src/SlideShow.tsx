@@ -1,12 +1,11 @@
 import {AbsoluteFill, Audio, interpolate, Sequence, useVideoConfig} from 'remotion';
 import {Intro} from './Intro';
-import {MapView} from './MapView';
+import {MAP_HEIGHT, MapView} from './MapView';
 import {Outro} from './Outro';
 import {SlideScene} from './SlideScene';
 import {SlideShowProps} from './types';
 
-const MAP_HEIGHT = 960;   // top half of 1920
-const BOTTOM_HEIGHT = 960; // bottom half
+const BOTTOM_HEIGHT = 960;
 
 export const SlideShow: React.FC<SlideShowProps> = (props) => {
   const {slides, introDur, outroDur, slideDur, clipOffset, fadeOutDur, youtubeFillerPath, maptilerKey} = props;
@@ -33,9 +32,11 @@ export const SlideShow: React.FC<SlideShowProps> = (props) => {
       {/* ── Bottom half: intro / slides / outro ── */}
       <div style={{position: 'absolute', top: MAP_HEIGHT, left: 0, right: 0, height: BOTTOM_HEIGHT}}>
 
-        <Sequence from={0} durationInFrames={introFrames}>
-          <Intro slides={slides} />
-        </Sequence>
+        {introFrames > 0 && (
+          <Sequence from={0} durationInFrames={introFrames}>
+            <Intro slides={slides} />
+          </Sequence>
+        )}
 
         {slides.map((slide, i) => (
           <Sequence key={`${slide.videoId}-${i}`} from={introFrames + i * slideDurFrames} durationInFrames={slideDurFrames}>
@@ -48,13 +49,15 @@ export const SlideShow: React.FC<SlideShowProps> = (props) => {
           </Sequence>
         ))}
 
-        <Sequence from={outroFrom} durationInFrames={outroFrames}>
-          <Outro />
-        </Sequence>
+        {outroFrames > 0 && (
+          <Sequence from={outroFrom} durationInFrames={outroFrames}>
+            <Outro />
+          </Sequence>
+        )}
       </div>
 
       {/* ── Filler audio: intro ── */}
-      {youtubeFillerPath && (
+      {youtubeFillerPath && introFrames > 0 && (
         <Sequence from={0} durationInFrames={introFrames}>
           <Audio
             src={youtubeFillerPath}
@@ -67,7 +70,7 @@ export const SlideShow: React.FC<SlideShowProps> = (props) => {
       )}
 
       {/* ── Filler audio: outro (picks up where intro left off) ── */}
-      {youtubeFillerPath && (
+      {youtubeFillerPath && outroFrames > 0 && (
         <Sequence from={outroFrom} durationInFrames={outroFrames}>
           <Audio
             src={youtubeFillerPath}
