@@ -7,6 +7,7 @@ Wants=network-online.target
 Type=oneshot
 User=%i
 WorkingDirectory=/home/%i/code/travel-guide
+Environment=PATH=/home/%i/.local/bin:/usr/local/bin:/usr/bin:/bin
 ExecStart=/home/%i/code/travel-guide/scripts/france_project_newsletter/run_pipeline.sh
 StandardOutput=journal
 StandardError=journal

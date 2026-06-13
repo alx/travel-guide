@@ -7,6 +7,7 @@ Wants=network-online.target
 Type=simple
 User=%i
 WorkingDirectory=/home/%i/code/travel-guide
+Environment=PATH=/home/%i/.local/bin:/usr/local/bin:/usr/bin:/bin
 ExecStart=uv run /home/%i/code/travel-guide/scripts/france_project_newsletter/telegram_bot.py serve
 Restart=on-failure
 RestartSec=10
