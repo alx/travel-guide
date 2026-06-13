@@ -1,0 +1,12 @@
+[Unit]
+Description=GPS Newsletter daily pipeline timer
+Requires=gps-newsletter.service
+
+[Timer]
+# Run at 07:00 UTC every day
+OnCalendar=*-*-* 07:00:00 UTC
+Persistent=true
+Unit=gps-newsletter.service
+
+[Install]
+WantedBy=timers.target

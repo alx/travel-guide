@@ -75,3 +75,68 @@ Resolving a street address to lat/lon coordinates. Primary: OSM Nominatim (free,
 
 **Geocache**
 A local JSON file at `scripts/{slug}/.geocache.json` storing previously resolved address→coordinates mappings. Prevents redundant API calls on re-runs. Keyed by the raw address string.
+
+## Grands Projets Stratégiques newsletter product
+
+**GPS Newsletter**
+The news monitoring and distribution product built on the `france-grands-projets-strategiques` company corpus. Watches 69+ strategic industrial projects in France across 10 sectors, aggregates news signals, and delivers curated intelligence.
+
+**Go-to-market phase**
+The staged commercialization path: (1) Internal — run as a private intelligence tool; (2) Freebie — distribute gratis to select recipients to build testimonials and audience; (3) B2B — sell access to institutional buyers (investment analysts, economic development agencies, regional governments). Each phase is documented before moving to the next.
+
+**Strategic project**
+One of the 69+ industrial investment projects tracked in `static/france-grands-projets-strategiques/locations.geojson`. Each project has a company, a sector, a region, feed configuration (RSS URLs, changedetection.io target, keywords), and optionally financial metadata. "Project" and "company" are used interchangeably in this corpus since each GeoJSON feature maps to a single company investment.
+
+**News item**
+A single piece of content surfaced by the pipeline — either a parsed RSS entry (company or sector feed) or a changedetection.io change event. Has a hash, company reference, date, title, summary, source type, and a `high_priority` flag. Stored in daily digest JSON files under `data/france_project_newsletter/`.
+
+**Digest**
+A dated JSON file (`data/france_project_newsletter/digest_YYYYMMDD.json`) aggregating all news items collected in a given period (daily or weekly). The canonical intermediate representation between fetch and distribution.
+
+**Daily alert**
+A Mailchimp campaign sent only when `high_priority_count > 0`, containing the top 5 high-priority items. Template: `daily_alert.html.j2`.
+
+**Weekly digest**
+A Mailchimp campaign sent every week regardless of high-priority count, grouping all items by sector. Template: `weekly_digest.html.j2`.
+
+**AI pipeline phase 1 (internal)**
+Relevance filter (A) + signal classification (C). Every news item is scored for genuine company relevance, then tagged with a structured signal type before being written to the digest.
+
+**AI pipeline phase 2 (freebie)**
+Adds summarization + translation (B) and weekly narrative synthesis (D) on top of phase 1. Phase 2 targets readable, polished output for external recipients.
+
+**Relevance filter**
+An LLM call per candidate news item that scores whether the item is genuinely about the matched company (not just a keyword co-occurrence in a sector feed). Items below threshold are dropped before digest assembly.
+
+**Signal type**
+A structured tag applied by the AI classifier to each news item. Canonical values: `funding_round`, `groundbreaking`, `production_start`, `delay`, `regulatory`, `partnership`, `M&A`, `other`. Drives filtering, priority scoring, and the finance model.
+
+**Finance model**
+Four-axis tracking layer applied per strategic project, updated incrementally from news items and structured sources: (A) investment ledger — cumulative announced capex; (B) project stage — state machine from `announced` → `permitted` → `under_construction` → `operational`, with `delayed` and `cancelled` exit states; (C) public subsidy tracker — France 2030 grants, BPI loans, EU funds; (D) employment impact — jobs announced vs jobs created. Stored as a JSON sidecar per company alongside the digest.
+
+**Company data enrichment**
+Structured data pulled from external registries to enhance each GeoJSON feature beyond what news monitoring provides. Phase 1 (internal): Pappers/SIRENE (SIREN, legal form, headcount band, registered address), France 2030 official laureate registry (awarded amounts, project descriptions), Pappers bilans (filed P&L and balance sheet). Phase 2 gap-filler: web search as fallback news source for companies with no company RSS. LinkedIn (employee count, hiring signals) deferred to B2B phase.
+
+**Output format roadmap**
+Ordered delivery plan: (1) Telegram bot/channel — push high-priority alerts instantly, internal phase; (2) Web dashboard — Hugo page with map + company cards, stage badges, finance summaries, recent items; (3) Curated RSS feed — static XML on the Hugo site, freebie phase; (4) PDF weekly report + JSON API — B2B phase artifacts.
+
+**State store**
+A SQLite database at `data/france_project_newsletter/state.db`. Holds the finance model (investment ledger, project stages, subsidies, employment), processed news item hashes (cross-day deduplication), and company enrichment data. Committed to the git repo by the daily CI job. Source of truth for dashboard and API queries.
+
+**Deduplication strategy**
+Two-layer approach: (1) Seen-item dedup — all processed item hashes stored in SQLite `seen_items` table; items with known hashes are skipped at fetch time, persisting across daily runs. (2) Finance extraction dedup — AI-extracted financial signals (capex, stage transitions, subsidies, job counts) go into a `pending_review` table; a human approves them before they update the ledger. Automated fingerprint dedup (option B) is deferred until the classifier's accuracy is validated.
+
+**Run topology**
+Hybrid: lamai270 (home server) owns the stateful daily pipeline — fetch, AI classification, SQLite update, Telegram push. GitHub Actions owns the Hugo build and site deployment, triggered by a lightweight `git push` of the updated digest JSON from lamai270. changedetection.io also runs on lamai270.
+
+**Local AI server**
+A llama.cpp server running on lamai270's RTX 4060 (8GB VRAM). Primary model: Qwen2.5 7B Instruct Q4_K_M (~5.4GB VRAM total including KV cache). Used for all AI pipeline calls: relevance filter and signal classifier. The daily pipeline checks server availability before running AI steps; behavior when unavailable is governed by the degraded-mode policy. Structured JSON output enforced via llama.cpp grammar constraints.
+
+**Degraded mode**
+When the local AI server is unreachable: fetch, dedup, and SQLite write still run; new items are saved with a `pending_classification = true` flag. Telegram push is skipped. A catch-up script reclassifies all pending items the next time the server is available. No data is lost; classification gaps are filled retroactively.
+
+**Telegram delivery**
+Private bot (BotFather token + personal chat ID) for the internal phase; promoted to a subscribable channel for the freebie phase with one config change. Two push triggers: (1) immediate push per high-priority signal (`funding_round`, `groundbreaking`, `production_start`, `M&A`) at classification time; (2) daily end-of-run summary message listing all non-priority new items if any exist.
+
+**Finance review interface**
+Telegram inline keyboard: each pending finance extraction is sent to the owner as a bot message with Approve / Reject buttons. Approval writes the extraction to the ledger; rejection discards it with an optional reason. The bot runs as a persistent service on lamai270 to handle button callbacks.

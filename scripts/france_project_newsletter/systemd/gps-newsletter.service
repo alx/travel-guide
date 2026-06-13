@@ -1,0 +1,16 @@
+[Unit]
+Description=GPS Newsletter daily pipeline
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=%i
+WorkingDirectory=/home/%i/code/travel-guide
+ExecStart=/home/%i/code/travel-guide/scripts/france_project_newsletter/run_pipeline.sh
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gps-newsletter
+
+[Install]
+WantedBy=multi-user.target

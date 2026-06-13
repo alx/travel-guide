@@ -1,0 +1,5 @@
+# Hybrid run topology: lamai270 for pipeline, GitHub Actions for Hugo build
+
+The GPS Newsletter pipeline is split across two execution environments. lamai270 (home server) runs the stateful daily pipeline: RSS fetch, changedetection.io polling, AI classification, SQLite writes, Telegram pushes, and the persistent Telegram bot service. GitHub Actions runs only the Hugo build and site deployment, triggered by a lightweight `git push` of the updated digest JSON from lamai270.
+
+Pure GitHub Actions was the alternative. It was rejected for two reasons: (1) the AI classification step requires the local llama.cpp server on the RTX 4060, which cannot run in GitHub Actions; (2) writing back the SQLite state file via a bot commit after every run is fragile — a failed push loses the day's accumulated state. lamai270 already hosts changedetection.io and is the natural home for any process that requires persistent local state or GPU access. GitHub Actions is kept for what it does well: reproducible Hugo builds triggered by git events.

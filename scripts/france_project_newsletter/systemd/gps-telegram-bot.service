@@ -1,0 +1,19 @@
+[Unit]
+Description=GPS Newsletter Telegram bot (persistent callback handler)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i/code/travel-guide
+ExecStart=uv run /home/%i/code/travel-guide/scripts/france_project_newsletter/telegram_bot.py serve
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gps-telegram-bot
+EnvironmentFile=/home/%i/code/travel-guide/.env
+
+[Install]
+WantedBy=multi-user.target

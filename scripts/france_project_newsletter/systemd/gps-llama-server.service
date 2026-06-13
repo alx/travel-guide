@@ -1,0 +1,20 @@
+[Unit]
+Description=GPS Newsletter llama.cpp server
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/home/%i/code/travel-guide/scripts/france_project_newsletter/start_llama_server.sh
+Environment=LLAMA_SERVER=/home/%i/bin/llama-server
+Environment=MODELS_DIR=/home/%i/Documents/models/llm
+Environment=LLAMA_HOST=127.0.0.1
+Environment=LLAMA_PORT=8181
+Restart=on-failure
+RestartSec=15
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gps-llama-server
+
+[Install]
+WantedBy=multi-user.target
