@@ -64,8 +64,8 @@ out.write_text(json.dumps(digest, ensure_ascii=False, indent=2))
 print(f"Digest JSON written: {out}")
 EOF
 
-# 8. Commit digest JSON + SQLite state and push to trigger Hugo build
-git -C "$REPO" add data/france_project_newsletter/
+# 8. Commit digest JSON and push to trigger Hugo build (state.db is gitignored)
+git -C "$REPO" add data/france_project_newsletter/digest_*.json
 if ! git -C "$REPO" diff --cached --quiet; then
     git -C "$REPO" commit -m "chore(gps-newsletter): daily digest $(date +%Y-%m-%d) [pipeline]"
     git -C "$REPO" push

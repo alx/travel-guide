@@ -3,7 +3,8 @@ public/
 .hugo_build.lock
 node_modules/
 .playwright-mcp/
-data/france_project_newsletter/
+data/france_project_newsletter/state.db
+data/france_project_newsletter/preview.html
 static/toulouse-distorama/tmp-media/
 content/toulouse-distorama-????-??-??/
 static/toulouse-distorama/slideshows/
