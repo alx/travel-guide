@@ -156,6 +156,7 @@ jobs:
             echo "No preview changes to commit."
           else
             git commit -m "ci: generate map previews for ${{ steps.slugs.outputs.slugs }} [preview]"
+            git pull --rebase origin main
             git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
