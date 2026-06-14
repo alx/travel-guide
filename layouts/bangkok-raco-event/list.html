@@ -1,0 +1,397 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── Bangkok-raco monochrome theme ── */
+body { background: #0a0a0a; }
+.overlay-card {
+  background: rgba(12,12,12,0.97) !important;
+  border: 0px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7) !important;
+  border-radius: 0px !important;
+  padding: 0.85rem 0.85rem !important;
+}
+.overlay-card .page-header p {
+  font-family: 'Space Mono', monospace; font-size: 0.6rem;
+  color: #fff; margin: 0.2rem 0 0; letter-spacing: 0.05em;
+}
+.overlay-card .page-header a {
+  font-family: 'Space Mono', monospace; font-size: 0.6rem;
+  color: #fff; margin: 0.2rem 0 0; letter-spacing: 0.05em;
+}
+#filter-btns { display: none; }
+.poi-card {
+  background: #111 !important;
+  border-color: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 1.8rem !important;
+}
+.poi-card .venue-name { color: #fff; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.8rem; }
+.poi-card .date-title { color: #fff; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.85rem; padding-top: 0.3rem; letter-spacing: 0.02em; border-top: 5px solid #CCC; }
+.poi-card .event-item { border-top: 1px solid #333; padding: 0.35rem 0; }
+.poi-card .event-item.active { background: rgba(255,255,255,0.04); border-radius: 4px; padding: 0.35rem 0.4rem; }
+.poi-card .event-venue { font-size: 0.82rem; color: #bbb; font-weight: 600; cursor: pointer; margin-bottom: 0.15rem; }
+.poi-card .event-venue:hover { color: #fff; }
+.poi-card .event-date { font-size: 0.82rem; color: #bbb; font-weight: 600; margin-bottom: 0.15rem; }
+.poi-card .event-meta { font-size: 0.75rem; color: #eee; }
+.poi-card .event-title { font-size: 0.83rem; color: #ccc; line-height: 1.4; }
+.poi-card .event-artists { font-size: 0.78rem; color: #999; margin-top: 0.1rem; }
+.poi-card .event-links { margin-top: 0.25rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.poi-card .event-links a { font-size: 0.72rem; color: #666; text-decoration: none; }
+.poi-card .event-links a:hover { color: #bbb; }
+.event-embeds { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.event-embeds iframe { border: 0; width: 100%; border-radius: 4px; }
+.show-more-pill { background: rgba(15,15,15,0.95) !important; color: #555 !important; border-color: rgba(255,255,255,0.08) !important; }
+.copy-toast { background: rgba(255,255,255,0.12) !important; }
+/* venue nav row */
+.venue-nav { display: flex; gap: 0.4rem; margin-top: 0.4rem; align-items: stretch; }
+.venue-nav > .header-btn { border-radius: 0 !important; padding: 0.55rem 0.7rem !important; font-size: 0.8rem !important; }
+.venue-nav-btn { flex: 0 0 auto; min-width: 2.6rem; font-size: 1rem !important; }
+.show-all-btn { flex: 1; }
+.tonight-btn.active { border-color: #fff !important; color: #fff !important; background: #1a1a1a !important; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <div class="page-header">
+      <p style="font-size:1rem;font-weight:700;color:#fff;margin:0 0 0.15rem;">BANGKOK RA.CO</p>
+      <p>ELECTRONIC MUSIC EVENTS</p>
+      <p><a href="https://ra.co/events/th/bangkok" target="_blank" rel="noopener">ra.co/events/th/bangkok</a></p>
+    </div>
+    <div id="filter-btns"></div>
+    <div class="venue-nav">
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(-1)" title="Previous venue"><i class="fas fa-chevron-left"></i></button>
+      <button class="header-btn show-all-btn" id="show-all-btn" onclick="showAll()">Show all events</button>
+      {{- $isDay := eq (len .Params.raco_window) 10 -}}
+      {{- if not $isDay }}
+      <button class="header-btn tonight-btn" id="tonight-btn" onclick="toggleTonight()">Tonight</button>
+      {{- end }}
+      <button class="header-btn venue-nav-btn" onclick="navigateVenue(1)" title="Next venue"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="poi-list"></div>
+  </div>
+</div>
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: '{{ .Title | safeJS }}',
+  geojsonUrl: '{{ .Params.geojson_url | safeJS }}',
+  center: [13.7563, 100.5018],
+  zoom: 13,
+  focusZoom: 16,
+  mapWindow: '{{ .Params.raco_window | safeJS }}',
+  tiles: {
+    url: 'https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}',
+    attribution: '© <a href="https://stamen.com">Stamen Design</a>, © <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 20
+  }
+};
+window.CATEGORY_COLORS = {
+  'Club': '#ffffff', 'Bar': '#ffffff', 'Outdoor': '#ffffff',
+  'Rooftop': '#ffffff', 'Other': '#ffffff'
+};
+window.CATEGORY_ICONS = {
+  'Club': 'fa-house-music', 'Bar': 'fa-martini-glass', 'Outdoor': 'fa-tree',
+  'Rooftop': 'fa-building', 'Other': 'fa-location-dot'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+<script>
+/* ── Bangkok-raco: venue selection UX ── */
+
+function trackEvent(name, params) {
+  if (typeof gtag === 'function') gtag('event', name, Object.assign({ map_window: MAP_CONFIG.mapWindow }, params));
+}
+
+let selectedVenueId = null, tonightFilter = false, navIndex = -1;
+const TODAY = new Date().toISOString().slice(0, 10);
+
+makeIcon = function(category, status) {
+  const secondary = status === 'secondary';
+  const size = secondary ? 22 : 34;
+  const cls = CATEGORY_ICONS[category] || 'fa-location-dot';
+  const fs = secondary ? 10 : 15;
+  const opacity = secondary ? '0.55' : '1';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:#111;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.8);border:2px solid rgba(255,255,255,0.55);opacity:${opacity};"><i class="fa-solid ${cls}" style="color:#fff;font-size:${fs}px;"></i></div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2]
+  });
+};
+
+function fmtEventDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  const days = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]}`;
+}
+
+function getNavList() {
+  const q = (document.getElementById('search')?.value || '').toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
+  return allPOIs.filter(f => {
+    const p = f.properties;
+    const futureEvents = (p.events || []).filter(ev => !ev.date || ev.date >= todayStr);
+    if (!futureEvents.length) return false;
+    const matchSearch = !q || p.name.toLowerCase().includes(q)
+      || futureEvents.some(e => (e.title || '').toLowerCase().includes(q)
+        || (e.artists || []).some(a => a.toLowerCase().includes(q)));
+    if (!matchSearch) return false;
+    if (tonightFilter) return futureEvents.some(ev => ev.date === TODAY);
+    return true;
+  });
+}
+
+fadePOIs = function(activeId) {
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = (String(id) === String(activeId)) ? '1'
+      : secondaryIds.has(String(id)) ? '0.3' : '0.5';
+  });
+};
+
+updateMarkers = function() {
+  const search = (document.getElementById('search')?.value || '').toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
+  if (markerCluster) {
+    markerCluster.clearLayers();
+  } else {
+    Object.values(markers).forEach(m => map.removeLayer(m));
+  }
+  Object.keys(markers).forEach(k => delete markers[k]);
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const futureEvents = (p.events || []).filter(ev => !ev.date || ev.date >= todayStr);
+    if (!futureEvents.length) return;
+    const matchSearch = !search || p.name.toLowerCase().includes(search)
+      || futureEvents.some(e => (e.title || '').toLowerCase().includes(search)
+        || (e.artists || []).some(a => a.toLowerCase().includes(search)));
+    if (!matchSearch) return;
+    if (tonightFilter && !futureEvents.some(ev => ev.date === TODAY)) return;
+    const [lng, lat] = f.geometry.coordinates;
+    const marker = L.marker([lat, lng], { icon: makeIcon(p.category, p.status) });
+    marker.on('click', () => { if (activeCard !== f._id) focusPOI(f, 'marker'); });
+    if (markerCluster) { markerCluster.addLayer(marker); } else { marker.addTo(map); }
+    markers[f._id] = marker;
+  });
+};
+
+renderSidebar = function() {
+  const search = (document.getElementById('search')?.value || '').toLowerCase();
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+
+  const rows = [];
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    if (selectedVenueId !== null && f._id !== selectedVenueId) return;
+    (p.events || []).forEach(ev => {
+      if (ev.date && ev.date < todayStr) return;
+      if (tonightFilter && ev.date !== TODAY) return;
+      const artistStr = (ev.artists || []).join(', ');
+      const match = !search
+        || p.name.toLowerCase().includes(search)
+        || (ev.title && ev.title.toLowerCase().includes(search))
+        || artistStr.toLowerCase().includes(search);
+      if (match) rows.push({ date: ev.date || '', ev, f });
+    });
+  });
+
+  if (rows.length === 0) {
+    list.innerHTML = '<p style="color:#555;font-size:0.85rem;padding:0.5rem;">No events found.</p>';
+    return;
+  }
+
+  rows.sort((a, b) =>
+    a.date.localeCompare(b.date) || a.f.properties.name.localeCompare(b.f.properties.name)
+  );
+
+  function buildEventMedia(ev) {
+    const artists = ev.artists || [];
+    const raUrl = ev.ra_url || '';
+    const scUrl = ev.soundcloud_url
+      || (artists.length ? `https://soundcloud.com/search?q=${encodeURIComponent(artists[0])}` : '');
+
+    const posterHtml = ev.poster
+      ? `<img src="${ev.poster}" alt="event poster" style="width:100%;display:block;margin-bottom:0.4rem;border-radius:2px;" loading="lazy">`
+      : '';
+
+    let embedHtml = '';
+    if (posterHtml || ev.soundcloud_track_id) {
+      embedHtml = `<div class="event-embeds">${posterHtml}`;
+      if (ev.soundcloud_track_id)
+        embedHtml += `<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${ev.soundcloud_track_id}&color=%23ff5500&auto_play=false&show_comments=false&show_user=true&show_reposts=false&visual=false" height="80" loading="lazy" scrolling="no" allow="autoplay"></iframe>`;
+      embedHtml += '</div>';
+    }
+    return { raUrl, scUrl, embedHtml };
+  }
+
+  if (selectedVenueId === null) {
+    // ── Agenda view: grouped by date ──
+    const byDate = new Map();
+    rows.forEach(row => {
+      if (!byDate.has(row.date)) byDate.set(row.date, []);
+      byDate.get(row.date).push(row);
+    });
+
+    byDate.forEach((dateRows, dateKey) => {
+      const card = document.createElement('div');
+      card.className = 'poi-card';
+      card.id = 'card-date-' + dateKey;
+
+      let html = `<div class="date-title">${dateKey ? fmtEventDate(dateKey) : 'Unknown date'}</div>`;
+      dateRows.forEach(({ ev, f }) => {
+        const p = f.properties;
+        const cls = CATEGORY_ICONS[p.category] || 'fa-location-dot';
+        const artists = ev.artists || [];
+        const { raUrl, scUrl, embedHtml } = buildEventMedia(ev);
+        html += `<div class="event-item" data-venue-id="${f._id}">
+          <div class="event-venue"><i class="fa-solid ${cls}" style="margin-right:0.35em;"></i>${p.name}</div>
+          ${ev.time ? `<div class="event-meta">${ev.time}</div>` : ''}
+          <div class="event-title">${ev.title || ''}</div>
+          ${artists.length ? `<div class="event-artists">${artists.join(' · ')}</div>` : ''}
+          <div class="event-links">
+            ${raUrl ? `<a href="${raUrl}" target="_blank" rel="noopener">RA</a>` : ''}
+            ${scUrl ? `<a href="${scUrl}" target="_blank" rel="noopener">SoundCloud</a>` : ''}
+          </div>
+          ${embedHtml}
+        </div>`;
+      });
+
+      card.innerHTML = html;
+      card.querySelectorAll('.event-item').forEach(item => {
+        const feat = allPOIs.find(f => String(f._id) === String(item.dataset.venueId));
+        if (!feat) return;
+        item.querySelector('.event-venue')?.addEventListener('click', e => {
+          e.stopPropagation();
+          focusPOI(feat, 'sidebar');
+        });
+      });
+      list.appendChild(card);
+    });
+
+  } else {
+    // ── Venue view: single selected venue ──
+    const feat = allPOIs.find(f => String(f._id) === String(selectedVenueId));
+    if (!feat) return;
+    const p = feat.properties;
+    const cls = CATEGORY_ICONS[p.category] || 'fa-location-dot';
+
+    const card = document.createElement('div');
+    card.className = 'poi-card';
+
+    let html = `<div class="venue-name"><i class="fa-solid ${cls}" style="margin-right:0.4em;"></i>${p.name}</div>`;
+    rows.forEach(({ ev, date: dateKey }) => {
+      const artists = ev.artists || [];
+      const { raUrl, scUrl, embedHtml } = buildEventMedia(ev);
+      html += `<div class="event-item">
+        <div class="event-date">${dateKey ? fmtEventDate(dateKey) : 'Unknown date'}</div>
+        ${ev.time ? `<div class="event-meta">${ev.time}</div>` : ''}
+        <div class="event-title">${ev.title || ''}</div>
+        ${artists.length ? `<div class="event-artists">${artists.join(' · ')}</div>` : ''}
+        <div class="event-links">
+          ${raUrl ? `<a href="${raUrl}" target="_blank" rel="noopener">RA</a>` : ''}
+          ${scUrl ? `<a href="${scUrl}" target="_blank" rel="noopener">SoundCloud</a>` : ''}
+        </div>
+        ${embedHtml}
+      </div>`;
+    });
+
+    card.innerHTML = html;
+    list.appendChild(card);
+  }
+};
+
+focusPOI = function(f, source) {
+  const [lng, lat] = f.geometry.coordinates;
+  _flyingTo = true;
+  map.flyTo([lat, lng], MAP_CONFIG.focusZoom || 15, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+  activeCard = f._id;
+  selectedVenueId = f._id;
+  navIndex = getNavList().findIndex(x => x._id === f._id);
+  renderSidebar();
+  const u = new URL(window.location.href);
+  u.searchParams.set('poi', f.properties.name.toLowerCase().replace(/\s+/g, '-'));
+  history.replaceState({}, '', u);
+  fadePOIs(f._id);
+  trackEvent('venue_selected', {
+    venue_name: f.properties.name,
+    venue_category: f.properties.category,
+    source: source || 'unknown'
+  });
+};
+
+clearFocus = function() {
+  if (selectedVenueId === null && activeCard === null) return;
+  if (selectedVenueId !== null) trackEvent('venue_deselected', {});
+  selectedVenueId = null;
+  navIndex = -1;
+  activeCard = null;
+  Object.entries(markers).forEach(([id, m]) => {
+    const el = m.getElement();
+    if (el) el.style.opacity = secondaryIds.has(String(id)) ? '0.55' : '1';
+  });
+  const u = new URL(window.location.href);
+  u.searchParams.delete('poi');
+  history.replaceState({}, '', u);
+  renderSidebar();
+};
+
+function showAll() {
+  clearFocus();
+  _flyingTo = true;
+  map.flyTo(MAP_CONFIG.center, MAP_CONFIG.zoom, { duration: 0.8 });
+  map.once('moveend', () => { _flyingTo = false; });
+}
+
+function navigateVenue(dir) {
+  const navList = getNavList();
+  if (!navList.length) return;
+  navIndex = navIndex === -1
+    ? (dir > 0 ? 0 : navList.length - 1)
+    : (navIndex + dir + navList.length) % navList.length;
+  focusPOI(navList[navIndex], 'nav_arrow');
+}
+
+function toggleTonight() {
+  tonightFilter = !tonightFilter;
+  document.getElementById('tonight-btn')?.classList.toggle('active', tonightFilter);
+  trackEvent('tonight_filter_toggled', { active: tonightFilter });
+  if (selectedVenueId !== null) clearFocus();
+  filterPOIs();
+}
+
+(function() {
+  let _searchTimer;
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchEl = document.getElementById('search');
+    if (!searchEl) return;
+    searchEl.addEventListener('input', () => {
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(() => {
+        const q = searchEl.value.trim();
+        if (q.length >= 2) trackEvent('search', { search_term: q });
+      }, 600);
+    });
+  });
+})();
+</script>
+{{ end }}

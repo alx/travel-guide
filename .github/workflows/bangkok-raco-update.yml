@@ -1,0 +1,65 @@
+name: Bangkok RA.co Update
+
+# Regenerate Bangkok RA.co GeoJSONs from ra.co GraphQL API,
+# commit any changes to main, then dispatch deploy.yml.
+
+on:
+  schedule:
+    - cron: '0 1,9 * * *'   # 08:00 and 16:00 Bangkok time (UTC+7)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit + push generated files
+  actions: write    # dispatch deploy.yml
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Regenerate Bangkok RA.co GeoJSONs
+        run: uv run scripts/bangkok-raco/generate.py
+
+      - name: Commit changes
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add static/bangkok-raco/
+          git add scripts/bangkok-raco/.geocache.json || true
+          git add scripts/bangkok-raco/venues.csv
+          git add scripts/bangkok-raco/unmatched-venues.txt || true
+          find content -maxdepth 1 -name 'bangkok-raco*' -type d \
+            -exec git add {} +
+
+          if git diff --staged --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes — skipping commit and deploy."
+          else
+            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "chore(bangkok-raco): regenerate GeoJSONs — ${TIMESTAMP}"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dispatch deploy
+        if: steps.commit.outputs.committed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            });
+            console.log('deploy.yml dispatched.');

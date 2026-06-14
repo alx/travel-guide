@@ -5,7 +5,10 @@ canonifyURLs = false
 ignoreFiles = [
   "static/toulouse-distorama/tmp-media/.*",
   "static/toulouse-distorama/slideshows/.*",
-  "\\.part$"
+  "\\.part$",
+  "\\.db$",
+  "\\.db-shm$",
+  "\\.db-wal$"
 ]
 
 [params]
