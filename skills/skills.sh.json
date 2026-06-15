@@ -1,0 +1,10 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Travel Guide Maps",
+      "description": "Skills for creating and publishing static POI maps in the alx/travel-guide Hugo site.",
+      "skills": ["create-map", "publish-map"]
+    }
+  ]
+}

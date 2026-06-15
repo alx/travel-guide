@@ -45,6 +45,21 @@ Paste the copied JSON into `static/koh-samui/locations.geojson` inside the `"fea
 2. Click the location — the URL will contain `@lat,lng,zoom`
 3. Or paste the Google Maps URL into the "Add a location" modal — it extracts coordinates automatically
 
+## Creating Maps with Claude Code
+
+Install the travel-guide skills once:
+
+```bash
+npx skills@latest add alx/travel-guide
+```
+
+Then in any Claude Code session inside this repo:
+
+```
+/create-map      — scaffold a new static POI map (slug, title, location, categories)
+/publish-map     — enrich coordinates, commit, and deploy to GitHub Pages
+```
+
 ## Development
 
 ```bash
