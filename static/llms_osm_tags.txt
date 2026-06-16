@@ -1,0 +1,204 @@
+# Maps — OSM Tags & Overpass QL Reference
+# Sub-file of https://maps.girard-davila.net/llms.txt
+# Topic: Common OSM tags for POI maps + Overpass QL query templates
+# Full tag reference: https://wiki.openstreetmap.org/wiki/Map_features
+
+## When to use this file
+
+Use when translating a free-text search query (e.g. "yoga studio", "beach bar")
+into structured OSM tags for an Overpass QL query. Pick the best-matching
+key=value pair(s) from the tables below, then build the query using the
+templates at the bottom.
+
+---
+
+## Common OSM Tags for POI Maps
+
+### Food & Drink
+
+| Tag | Meaning |
+|-----|---------|
+| amenity=restaurant | Restaurant (any cuisine) |
+| amenity=cafe | Café / coffee shop |
+| amenity=bar | Bar |
+| amenity=pub | Pub |
+| amenity=fast_food | Fast food outlet |
+| amenity=food_court | Food court |
+| amenity=ice_cream | Ice cream parlour |
+| amenity=juice_bar | Juice / smoothie bar |
+| shop=bakery | Bakery |
+| shop=butcher | Butcher |
+| shop=deli | Delicatessen |
+
+### Health & Wellness
+
+| Tag | Meaning |
+|-----|---------|
+| amenity=spa | Spa / day spa |
+| amenity=massage | Massage shop |
+| amenity=pharmacy | Pharmacy |
+| amenity=hospital | Hospital |
+| amenity=clinic | Medical clinic |
+| amenity=dentist | Dentist |
+| leisure=fitness_centre | Gym / fitness centre |
+| leisure=sports_centre | Multi-sport centre |
+| leisure=swimming_pool | Swimming pool |
+| leisure=sauna | Sauna |
+| sport=yoga | Yoga studio (tag on leisure=fitness_centre or amenity=studio) |
+| sport=pilates | Pilates studio |
+| sport=martial_arts | Martial arts / Muay Thai gym |
+| sport=climbing | Climbing gym |
+| sport=surfing | Surf school / surf spot |
+
+### Tourism & Accommodation
+
+| Tag | Meaning |
+|-----|---------|
+| tourism=hotel | Hotel |
+| tourism=hostel | Hostel |
+| tourism=guest_house | Guest house / B&B |
+| tourism=attraction | Tourist attraction |
+| tourism=museum | Museum |
+| tourism=gallery | Art gallery |
+| tourism=viewpoint | Viewpoint / lookout |
+| tourism=information | Tourist information point |
+| tourism=camp_site | Campsite |
+| tourism=chalet | Holiday chalet / villa |
+| historic=monument | Monument |
+| historic=ruins | Ruins |
+
+### Nature & Outdoors
+
+| Tag | Meaning |
+|-----|---------|
+| natural=beach | Beach |
+| natural=water | Lake / pond / water body |
+| natural=peak | Mountain peak / summit |
+| natural=waterfall | Waterfall |
+| natural=cave_entrance | Cave entrance |
+| leisure=park | Park / garden |
+| leisure=nature_reserve | Nature reserve |
+| leisure=marina | Marina / harbour |
+| leisure=playground | Playground |
+| leisure=garden | Botanical or public garden |
+
+### Shopping
+
+| Tag | Meaning |
+|-----|---------|
+| shop=supermarket | Supermarket |
+| shop=convenience | Convenience store (e.g. 7-Eleven) |
+| shop=clothes | Clothing store |
+| shop=massage | Massage / spa shop (alternative to amenity=massage) |
+| shop=beauty | Beauty salon |
+| shop=hairdresser | Hair salon |
+| shop=jewelry | Jeweller |
+| shop=gift | Gift / souvenir shop |
+| shop=market | Market / bazaar |
+| amenity=marketplace | Outdoor market |
+
+### Nightlife & Entertainment
+
+| Tag | Meaning |
+|-----|---------|
+| amenity=nightclub | Nightclub / club |
+| amenity=cinema | Cinema |
+| amenity=theatre | Theatre |
+| amenity=arts_centre | Arts centre |
+| amenity=events_venue | Events venue / concert hall |
+| amenity=casino | Casino |
+| amenity=music_venue | Live music venue |
+
+### Transport
+
+| Tag | Meaning |
+|-----|---------|
+| amenity=fuel | Petrol / gas station |
+| amenity=parking | Car park |
+| amenity=ferry_terminal | Ferry terminal |
+| amenity=bus_station | Bus station |
+| amenity=taxi | Taxi rank |
+| amenity=bicycle_rental | Bicycle rental |
+| amenity=car_rental | Car / scooter rental |
+
+---
+
+## Overpass QL Templates
+
+Endpoint: https://overpass-api.de/api/interpreter
+Visual builder: https://overpass-turbo.eu
+
+### Radius search — single tag (recommended)
+
+```
+[out:json][timeout:25];
+(
+  node["{TAG_KEY}"="{TAG_VALUE}"](around:{RADIUS_M},{LAT},{LON});
+  way["{TAG_KEY}"="{TAG_VALUE}"](around:{RADIUS_M},{LAT},{LON});
+  relation["{TAG_KEY}"="{TAG_VALUE}"](around:{RADIUS_M},{LAT},{LON});
+);
+out center;
+```
+
+### Radius search — multiple tags (OR union)
+
+```
+[out:json][timeout:25];
+(
+  node["amenity"="restaurant"](around:3000,{LAT},{LON});
+  node["amenity"="cafe"](around:3000,{LAT},{LON});
+  way["amenity"="restaurant"](around:3000,{LAT},{LON});
+  way["amenity"="cafe"](around:3000,{LAT},{LON});
+);
+out center;
+```
+
+### Name keyword search (fallback — use when no standard tag fits)
+
+```
+[out:json][timeout:25];
+(
+  node["name"~"{KEYWORD}",i](around:{RADIUS_M},{LAT},{LON});
+  way["name"~"{KEYWORD}",i](around:{RADIUS_M},{LAT},{LON});
+);
+out center;
+```
+
+### Bounding box search
+
+```
+[out:json][timeout:25];
+(
+  node["{TAG_KEY}"="{TAG_VALUE}"]({S},{W},{N},{E});
+  way["{TAG_KEY}"="{TAG_VALUE}"]({S},{W},{N},{E});
+);
+out center;
+```
+
+---
+
+## Translation Examples
+
+| Search query | OSM tags to use |
+|---|---|
+| yoga studio | leisure=fitness_centre + sport=yoga |
+| crossfit gym | leisure=fitness_centre + sport=crossfit |
+| muay thai gym | leisure=fitness_centre + sport=martial_arts |
+| surf school | leisure=sports_centre + sport=surfing |
+| beach bar | amenity=bar (near natural=beach, or use name keyword) |
+| rooftop bar | amenity=bar (name~"rooftop\|sky\|top") |
+| underground music venue | amenity=nightclub OR amenity=music_venue |
+| thai massage | amenity=massage OR shop=massage |
+| co-working space | amenity=coworking_space |
+| street food | amenity=fast_food OR amenity=food_court |
+| night market | amenity=marketplace OR shop=market (name~"night") |
+| luxury hotel | tourism=hotel (no OSM luxury filter — use name keyword) |
+| climbing gym | leisure=fitness_centre + sport=climbing |
+| day spa | amenity=spa OR leisure=sauna |
+| vegan restaurant | amenity=restaurant + diet:vegan=yes |
+| convenience store | shop=convenience |
+| 7-Eleven | shop=convenience + name~"7-Eleven" |
+
+---
+
+Full OSM tag reference: https://wiki.openstreetmap.org/wiki/Map_features

@@ -16,6 +16,7 @@ Load only what you need — each file is self-contained:
 - [GeoJSON Schema & Categories](https://maps.girard-davila.net/llms_schema.txt) — feature schema, coord_source enum, category/colour tables per map
 - [Contributing New Places](https://maps.girard-davila.net/llms_contributing.txt) — in-browser PR flow, CLI git workflow, new destination setup, reddit_to_map.py usage
 - [Geocoding APIs](https://maps.girard-davila.net/llms_geocoding.txt) — Nominatim, LocationIQ, Photon: code examples, rate limits, coord_source mapping, dedup
+- [OSM Tags & Overpass QL](https://maps.girard-davila.net/llms_osm_tags.txt) — common key=value tags by category, Overpass QL templates, translation examples
 - [Toolbar, Embed & GitHub](https://maps.girard-davila.net/llms_toolbar.txt) — toolbar actions, embed mode (?embed=1), load custom data, GitHub Device Flow, OsmAnd/GPX
 - [Technical Stack & Files](https://maps.girard-davila.net/llms_technical.txt) — Hugo layout structure, TopoJSON format, key file paths, window.MAP_CONFIG, env vars
 

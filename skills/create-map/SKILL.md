@@ -5,7 +5,8 @@ description: Scaffold a new static POI map in the alx/travel-guide Hugo site. Cr
 
 # create-map
 
-Scaffold a new static POI map. Gather inputs, resolve the center, write all files.
+Scaffold a new static POI map. Gather inputs, resolve the center, run an
+interactive query loop to pre-populate locations, then write all files.
 
 ## Step 1 — Gather inputs
 
@@ -17,6 +18,8 @@ Ask the user in one message:
 4. **Categories** — name + FA icon class + hex color per category.
    Example: `Studio: fa-spa #7b5ea7, Teacher: fa-person #3b82f6`
    Default if omitted: `Place: fa-location-dot #3b82f6`
+5. **Search query** — free text describing what to search for, e.g. `yoga studio`.
+   Used to pre-populate `locations.geojson` from available APIs.
 
 ## Step 2 — Resolve map center
 
@@ -35,37 +38,146 @@ Pick zoom from the result's `type`:
 
 On failure: use `[0, 0]` zoom 2 and warn the user to fix it in the layout.
 
-## Step 3 — Write files
+## Step 3 — Interactive query refinement loop
+
+Run this loop before writing any files. The goal is to confirm a search query
+that returns useful results, which will be pre-populated into `locations.geojson`
+and hardcoded into `generate.py`.
+
+### 3a — Detect available API
+
+Read `.env` (if it exists at repo root) and check the environment:
+```bash
+grep GOOGLE_PLACES_API_KEY .env 2>/dev/null || echo ""
+```
+
+- If `GOOGLE_PLACES_API_KEY` is set → use **Google Places API**
+- Otherwise → use **Overpass** (free, no key required)
+
+### 3b — Prepare the query
+
+**If Google Places:**
+Use the user's search query directly as `textQuery`. No translation needed.
+
+**If Overpass:**
+Fetch the OSM tag reference to translate the search query:
+```
+GET https://maps.girard-davila.net/llms_osm_tags.txt
+```
+Using the translation examples and tag tables in that file, map the user's
+search query to the appropriate Overpass QL body. Use radius search centred on
+the map center resolved in Step 2. Default radius: 5000m.
+
+### 3c — Run the query and show results
+
+**Google Places call:**
+```
+POST https://places.googleapis.com/v1/places:searchText
+Headers:
+  Content-Type: application/json
+  X-Goog-Api-Key: {GOOGLE_PLACES_API_KEY}
+  X-Goog-FieldMask: places.id,places.displayName,places.location,places.primaryType,places.formattedAddress,nextPageToken
+Body:
+{
+  "textQuery": "{search_query}",
+  "locationBias": {
+    "circle": {
+      "center": {"latitude": {lat}, "longitude": {lon}},
+      "radius": 5000
+    }
+  },
+  "maxResultCount": 20
+}
+```
+Paginate using `nextPageToken` until exhausted. Collect all results.
+
+**Overpass call:**
+```
+POST https://overpass-api.de/api/interpreter
+Body: data={overpass_ql_query}
+```
+Collect all elements with a non-empty `tags.name`.
+
+**Show results:**
+From all collected results, pick 10 at random (use `random.sample` or equivalent).
+Display as a compact numbered list:
+
+```
+Found {total} places matching "{query}" (showing 10 random):
+ 1. {name}  —  {address}  —  {source_id}
+ 2. ...
+```
+
+Then ask: **"Confirm this query, or enter a new search query to try again?"**
+
+### 3d — Loop or confirm
+
+- If the user edits the query: go back to 3b with the new query.
+- If the user confirms: save `confirmed_query` and `all_features` (the full result set from the confirmed run), and proceed to Step 4.
+- If the user skips (types "skip" or similar): proceed with an empty `locations.geojson` and no hardcoded query in `generate.py`.
+
+## Step 4 — Write files
 
 Write all four files. Never prompt before writing.
 
 ### `static/{slug}/locations.geojson`
 
+If the user confirmed results in Step 3, write all fetched features:
+
 ```json
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [{lon}, {lat}]},
+      "properties": {
+        "name": "{name}",
+        "category": "{first_category_name}",
+        "icon": "{first_category_icon}",
+        "address": "{address}",
+        "source_id": "{source_id}"
+      }
+    }
+  ]
 }
 ```
 
-This is the source of truth. The user adds POIs here directly. Each feature should have:
-- `geometry.coordinates: [lon, lat]` — or `null` if only an address is known (generate.py will fill it)
+`source_id` format:
+- Google Places: `google:{place_id}` (e.g. `google:ChIJabc123`)
+- Overpass node: `osm:node/{id}`
+- Overpass way: `osm:way/{id}`
+- Overpass relation: `osm:relation/{id}`
+
+If the user skipped Step 3, write the empty stub:
+```json
+{"type": "FeatureCollection", "features": []}
+```
+
+Each feature should have:
+- `geometry.coordinates: [lon, lat]` — or `null` if only an address is known
 - `properties.name`
 - `properties.category` — must match one of the scaffold categories
 - `properties.icon` — FA icon class for the category
 - `properties.address` — optional, used by generate.py to geocode missing coordinates
+- `properties.source_id` — API origin key; absent on manually-added entries
 
 ### `scripts/{slug}/generate.py`
 
-A uv inline-script that enriches the GeoJSON: reads `static/{slug}/locations.geojson`, geocodes any feature whose coordinates are `null` but has a non-empty `properties.address`, writes the updated GeoJSON back in place.
+A uv inline-script that:
+1. Fetches fresh POI data from the confirmed API using `SEARCH_QUERY`
+2. Merges results into `locations.geojson` by `source_id` (manually-added entries without a `source_id` are always preserved)
+3. Geocodes manual entries that have an address but no coordinates
+
+If the user skipped Step 3, omit the fetch functions and keep the geocode-only version from the original template.
 
 ```python
 #!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.11"
-# dependencies = []
+# dependencies = ["python-dotenv"]
 # ///
-"""Enrich {slug} GeoJSON: geocode features with a known address but missing coordinates.
+"""Enrich {slug} GeoJSON: fetch POIs from API and geocode missing coordinates.
 
 Usage:
     uv run scripts/{slug}/generate.py
@@ -76,11 +188,18 @@ Reads and writes:
 """
 import argparse
 import json
+import os
 import sys
 import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent
@@ -88,6 +207,148 @@ GEOJSON_PATH = REPO_ROOT / "static/{slug}/locations.geojson"
 GEOCACHE_PATH = SCRIPT_DIR / ".geocache.json"
 NOMINATIM_HEADERS = {"User-Agent": "maps.girard-davila.net/{slug}"}
 
+# ── Search configuration ───────────────────────────────────────────────────────
+SEARCH_QUERY = "{confirmed_query}"
+MAP_CENTER = ({lat}, {lon})   # (lat, lon)
+SEARCH_RADIUS = 5000          # metres — adjust to taste
+
+# Overpass QL — used when GOOGLE_PLACES_API_KEY is not set
+OVERPASS_QUERY = """
+[out:json][timeout:25];
+(
+  {overpass_ql_body}
+);
+out center;
+"""
+
+
+# ── Google Places ──────────────────────────────────────────────────────────────
+
+def fetch_google_places(api_key: str) -> list[dict]:
+    endpoint = "https://places.googleapis.com/v1/places:searchText"
+    field_mask = "places.id,places.displayName,places.location,places.formattedAddress,nextPageToken"
+    lat, lon = MAP_CENTER
+    features = []
+    page_token = None
+
+    while True:
+        body: dict = {
+            "textQuery": SEARCH_QUERY,
+            "locationBias": {
+                "circle": {
+                    "center": {"latitude": lat, "longitude": lon},
+                    "radius": float(SEARCH_RADIUS),
+                }
+            },
+            "maxResultCount": 20,
+        }
+        if page_token:
+            body["pageToken"] = page_token
+
+        req = urllib.request.Request(
+            endpoint,
+            data=json.dumps(body).encode(),
+            method="POST",
+            headers={
+                "Content-Type": "application/json",
+                "X-Goog-Api-Key": api_key,
+                "X-Goog-FieldMask": field_mask,
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                resp = json.loads(r.read())
+        except Exception as e:
+            print(f"  ⚠ Google Places error: {e}", file=sys.stderr)
+            break
+
+        for place in resp.get("places", []):
+            loc = place.get("location", {})
+            lon_p = loc.get("longitude")
+            lat_p = loc.get("latitude")
+            if lon_p is None or lat_p is None:
+                continue
+            name = place.get("displayName", {}).get("text", "")
+            source_id = f"google:{place['id']}"
+            features.append(_make_feature(name, lon_p, lat_p, source_id, place.get("formattedAddress", "")))
+
+        page_token = resp.get("nextPageToken")
+        if not page_token:
+            break
+        time.sleep(2)
+
+    return features
+
+
+# ── Overpass ───────────────────────────────────────────────────────────────────
+
+def fetch_overpass() -> list[dict]:
+    url = "https://overpass-api.de/api/interpreter"
+    data = urllib.parse.urlencode({"data": OVERPASS_QUERY}).encode()
+    req = urllib.request.Request(url, data=data, headers={"User-Agent": "maps.girard-davila.net/{slug}"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            resp = json.loads(r.read())
+    except Exception as e:
+        print(f"  ⚠ Overpass error: {e}", file=sys.stderr)
+        return []
+
+    features = []
+    for el in resp.get("elements", []):
+        if el["type"] == "node":
+            lon_e, lat_e = el["lon"], el["lat"]
+        elif "center" in el:
+            lon_e, lat_e = el["center"]["lon"], el["center"]["lat"]
+        else:
+            continue
+        tags = el.get("tags", {})
+        name = tags.get("name") or tags.get("name:en") or ""
+        if not name:
+            continue
+        source_id = f"osm:{el['type']}/{el['id']}"
+        address = ", ".join(filter(None, [
+            tags.get("addr:housenumber", ""),
+            tags.get("addr:street", ""),
+            tags.get("addr:city", ""),
+        ]))
+        features.append(_make_feature(name, lon_e, lat_e, source_id, address))
+
+    return features
+
+
+def _make_feature(name: str, lon: float, lat: float, source_id: str, address: str = "") -> dict:
+    return {
+        "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [lon, lat]},
+        "properties": {
+            "name": name,
+            "category": "{first_category_name}",
+            "icon": "{first_category_icon}",
+            "address": address,
+            "source_id": source_id,
+        },
+    }
+
+
+# ── Merge ──────────────────────────────────────────────────────────────────────
+
+def merge_features(existing: list[dict], fetched: list[dict]) -> list[dict]:
+    manual = [f for f in existing if not (f.get("properties") or {}).get("source_id")]
+    by_id = {
+        f["properties"]["source_id"]: f
+        for f in existing
+        if (f.get("properties") or {}).get("source_id")
+    }
+    for f in fetched:
+        sid = f["properties"]["source_id"]
+        if sid in by_id:
+            by_id[sid]["geometry"] = f["geometry"]
+        else:
+            by_id[sid] = f
+    return manual + list(by_id.values())
+
+
+# ── Geocode fallback (manual entries only) ─────────────────────────────────────
 
 def load_geocache() -> dict:
     if GEOCACHE_PATH.exists():
@@ -113,22 +374,41 @@ def geocode(address: str) -> tuple[float, float] | None:
     return None
 
 
+# ── Main ──────────────────────────────────────────────────────────────────────
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
     fc = json.loads(GEOJSON_PATH.read_text())
+    existing = fc.get("features", [])
+
+    # 1. Fetch from API
+    api_key = os.environ.get("GOOGLE_PLACES_API_KEY", "")
+    if api_key:
+        print(f"Fetching via Google Places: {SEARCH_QUERY!r}…")
+        fetched = fetch_google_places(api_key)
+    else:
+        print("No GOOGLE_PLACES_API_KEY — fetching via Overpass…")
+        fetched = fetch_overpass()
+    print(f"  {len(fetched)} places fetched")
+
+    # 2. Merge (manual entries are always preserved)
+    merged = merge_features(existing, fetched)
+    manual_count = len([f for f in existing if not (f.get("properties") or {}).get("source_id")])
+    added = len(merged) - len(existing)
+    print(f"  {added} new, {len(fetched) - added} updated, {manual_count} manual (preserved)")
+
+    # 3. Geocode manual entries missing coordinates
     cache = load_geocache()
     updated_cache = False
-    enriched = 0
-
-    for feature in fc["features"]:
+    for feature in merged:
         coords = (feature.get("geometry") or {}).get("coordinates")
         address = (feature.get("properties") or {}).get("address", "")
-        if coords or not address:
+        source_id = (feature.get("properties") or {}).get("source_id")
+        if coords or not address or source_id:
             continue
-
         if address not in cache:
             if args.dry_run:
                 print(f"  [dry-run] would geocode: {address}")
@@ -141,27 +421,34 @@ def main() -> None:
             else:
                 print(f"  ⚠ Geocode FAILED: {address}", file=sys.stderr)
                 continue
-
-        lon, lat = cache[address]
-        feature["geometry"] = {"type": "Point", "coordinates": [lon, lat]}
-        print(f"  → {address}: {lat:.5f}, {lon:.5f}")
-        enriched += 1
+        lon_g, lat_g = cache[address]
+        feature["geometry"] = {"type": "Point", "coordinates": [lon_g, lat_g]}
 
     if updated_cache:
         save_geocache(cache)
 
-    if not args.dry_run and enriched:
+    # 4. Write
+    if not args.dry_run:
+        fc["features"] = merged
         GEOJSON_PATH.write_text(json.dumps(fc, ensure_ascii=False, separators=(",", ":")))
-        print(f"Enriched {enriched} feature(s) — wrote {GEOJSON_PATH}")
-    elif not enriched:
-        print("Nothing to enrich.")
+        print(f"Wrote {len(merged)} features → {GEOJSON_PATH}")
+    else:
+        print(f"[dry-run] would write {len(merged)} features")
 
 
 if __name__ == "__main__":
     main()
 ```
 
-Replace `{slug}` with the actual slug throughout.
+Replace all `{slug}`, `{lat}`, `{lon}`, `{confirmed_query}`, `{first_category_name}`, `{first_category_icon}` with actual values.
+
+For `{overpass_ql_body}`, paste the Overpass body lines constructed in Step 3b (without the outer `[out:json]` wrapper).
+
+If the user skipped Step 3, replace the entire fetch section with a no-op:
+```python
+fetched = []
+```
+and remove the `SEARCH_QUERY`, `MAP_CENTER`, `SEARCH_RADIUS`, `OVERPASS_QUERY` constants.
 
 ### `content/{slug}/_index.md`
 
@@ -253,15 +540,21 @@ Fill in:
 - `{category_colors_js}` — e.g. `'Studio': '#7b5ea7', 'Teacher': '#3b82f6'`
 - `{category_icons_js}` — e.g. `'Studio': 'fa-spa', 'Teacher': 'fa-person'`
 
-## Step 4 — Print summary
+## Step 5 — Print summary
 
 ```
-✓ static/{slug}/locations.geojson   — add POIs here (name, category, address or coordinates)
-✓ scripts/{slug}/generate.py        — run to geocode features with address but no coordinates
+✓ static/{slug}/locations.geojson   — {n} POIs pre-populated (source: {api_used})
+✓ scripts/{slug}/generate.py        — re-run to refresh from {api_used}, merges by source_id
 ✓ content/{slug}/_index.md
 ✓ layouts/{slug}/list.html
 
 Next:
-1. Edit static/{slug}/locations.geojson and add your POIs
+1. Edit static/{slug}/locations.geojson to adjust categories or add manual POIs
 2. Run /publish-map {slug} when ready
+```
+
+If the user skipped the query step, replace the first two lines with:
+```
+✓ static/{slug}/locations.geojson   — empty stub, add POIs manually
+✓ scripts/{slug}/generate.py        — geocodes manual entries with an address
 ```
