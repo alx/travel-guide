@@ -1,9 +1,9 @@
 ---
-name: publish-map
-description: Run and publish a static POI map scaffolded by create-map. Enriches the GeoJSON via generate.py, then commits and pushes to GitHub Pages (or starts hugo server locally). Use when the user says "publish map", "deploy map", or "run publish-map {slug}".
+name: maps-publish
+description: Run and publish a static POI map scaffolded by maps-create. Enriches the GeoJSON via generate.py, then commits and pushes to GitHub Pages (or starts hugo server locally). Use when the user says "publish map", "deploy map", or "run maps-publish {slug}".
 ---
 
-# publish-map
+# maps-publish
 
 Publish a static POI map once its GeoJSON has at least one feature. Enriches coordinates, commits, and deploys.
 
@@ -18,7 +18,7 @@ Read `static/{slug}/locations.geojson`. Count the features array length.
 If zero: stop and tell the user:
 ```
 static/{slug}/locations.geojson has no features yet.
-Add at least one POI, then run /publish-map {slug} again.
+Add at least one POI, then run /maps-publish {slug} again.
 ```
 
 ## Step 3 — Enrich coordinates
@@ -34,18 +34,31 @@ If `scripts/{slug}/generate.py` does not exist, skip this step silently.
 
 ## Step 4 — Detect GitHub remote
 
+Detect track:
+```bash
+test -f hugo.toml && echo "hugo" || echo "static"
+```
+
 ```bash
 git remote get-url origin 2>/dev/null
 ```
 
 ### If a remote exists → commit and push
 
-Stage the GeoJSON, geocache, and content stub:
+Stage files based on track:
 
+**Hugo track:**
 ```bash
 git add static/{slug}/locations.geojson
 git add scripts/{slug}/.geocache.json 2>/dev/null || true
 git add content/{slug}/
+```
+
+**Static track:**
+```bash
+git add static/{slug}/locations.geojson
+git add static/{slug}/index.html
+git add scripts/{slug}/.geocache.json 2>/dev/null || true
 ```
 
 Commit:
@@ -68,12 +81,22 @@ Derive the GitHub Pages URL from `git remote get-url origin`: convert `git@githu
 
 ### If no remote → serve locally
 
+**Hugo track:**
 ```bash
 hugo server --disableFastRender
 ```
-
 Tell the user:
 ```
 No GitHub remote found. Serving locally.
 Map is at: http://localhost:1313/{slug}/
+```
+
+**Static track:**
+```bash
+python -m http.server 8000 --directory static/{slug}
+```
+Tell the user:
+```
+No GitHub remote found. Serving locally.
+Map is at: http://localhost:8000
 ```

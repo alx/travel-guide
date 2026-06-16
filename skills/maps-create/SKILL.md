@@ -1,12 +1,26 @@
 ---
-name: create-map
-description: Scaffold a new static POI map in the alx/travel-guide Hugo site. Creates the GeoJSON stub, generate.py enrichment script, Hugo content stub, and custom layout. Use when the user says "create a new map", "add a map", or "scaffold a map".
+name: maps-create
+description: Scaffold a new static POI map. Creates the GeoJSON stub, generate.py enrichment script, and either a Hugo layout (when hugo.toml is present) or a standalone index.html (no Hugo needed). Use when the user says "create a new map", "add a map", or "scaffold a map".
 ---
 
-# create-map
+# maps-create
 
-Scaffold a new static POI map. Gather inputs, resolve the center, run an
-interactive query loop to pre-populate locations, then write all files.
+Scaffold a new static POI map. Detect the track, gather inputs, resolve the
+center, run an interactive query loop to pre-populate locations, then write
+all files.
+
+## Step 0 — Detect track
+
+Check for `hugo.toml` at the repo root:
+
+```bash
+test -f hugo.toml && echo "hugo" || echo "static"
+```
+
+- **Hugo track** (`hugo.toml` exists): generate `content/{slug}/_index.md` + `layouts/{slug}/list.html` (full Hugo integration).
+- **Static track** (no `hugo.toml`): generate `static/{slug}/index.html` (standalone, no Hugo required — preview with Python http.server).
+
+Carry the detected track through all subsequent steps.
 
 ## Step 1 — Gather inputs
 
@@ -118,7 +132,9 @@ Then ask: **"Confirm this query, or enter a new search query to try again?"**
 
 ## Step 4 — Write files
 
-Write all four files. Never prompt before writing.
+Never prompt before writing. Files written depend on the track detected in Step 0.
+
+### Both tracks write these two files first
 
 ### `static/{slug}/locations.geojson`
 
@@ -450,7 +466,7 @@ fetched = []
 ```
 and remove the `SEARCH_QUERY`, `MAP_CENTER`, `SEARCH_RADIUS`, `OVERPASS_QUERY` constants.
 
-### `content/{slug}/_index.md`
+### Hugo track only — `content/{slug}/_index.md`
 
 ```markdown
 ---
@@ -463,7 +479,7 @@ accent_color: "{first_category_hex}"
 
 Use the hex color of the first category as `accent_color`.
 
-### `layouts/{slug}/list.html`
+### Hugo track only — `layouts/{slug}/list.html`
 
 Model after `layouts/yoga-france/list.html` (the canonical minimal static POI layout). Produce:
 
@@ -540,7 +556,95 @@ Fill in:
 - `{category_colors_js}` — e.g. `'Studio': '#7b5ea7', 'Teacher': '#3b82f6'`
 - `{category_icons_js}` — e.g. `'Studio': 'fa-spa', 'Teacher': 'fa-person'`
 
+### Static track only — `static/{slug}/index.html`
+
+A fully self-contained HTML file. Read each partial from `layouts/partials/`
+and inline its content verbatim at the marked positions below.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ── inline layouts/partials/map-poi-styles.html ── */
+    :root { --map-accent: {first_category_hex}; }
+    .filter-btn.active { background: var(--map-accent); border-color: var(--map-accent); }
+    .poi-card:hover, .poi-card.active { border-color: var(--map-accent); }
+    .search-box:focus { border-color: var(--map-accent); }
+    .header-btn:hover, .header-btn.active { border-color: var(--map-accent); color: var(--map-accent); background: #f8f4ff; }
+    .poi-card .poi-actions a { color: var(--map-accent); }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <div class="page-header">
+      <h1>{title}</h1>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'📍 Lieux ▾':'📍 Lieux'">📍 Lieux</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position">📍 Position</button>
+    </div>
+    <!-- ── inline layouts/partials/map-toolbar.html ── -->
+    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
+      📂 <span id="custom-layer-name">Custom layer loaded</span>
+      <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
+    </div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+<!-- ── inline layouts/partials/contact-form.html ── -->
+<div class="copy-toast" id="copy-toast"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: {title_json},
+  geojsonUrl: './locations.geojson',
+  embedPath: './',
+  center: [{lat}, {lon}],
+  zoom: {zoom},
+  useClustering: true
+};
+window.CATEGORY_COLORS = { {category_colors_js} };
+window.CATEGORY_ICONS  = { {category_icons_js} };
+</script>
+<!-- ── inline layouts/partials/map-poi-helpers.html ── -->
+<!-- ── inline layouts/partials/map-geolocation.html ── -->
+</body>
+</html>
+```
+
+Fill in:
+- `{title}` — human-readable map title
+- `{title_json}` — JSON-encoded title literal, e.g. `"Yoga Studios in Toulouse"`
+- `{first_category_hex}` — hex color of the first category
+- `{lat}`, `{lon}`, `{zoom}` — from Step 2
+- `{category_colors_js}` — e.g. `'Studio': '#7b5ea7', 'Teacher': '#3b82f6'`
+- `{category_icons_js}` — e.g. `'Studio': 'fa-spa', 'Teacher': 'fa-person'`
+
+At each `<!-- ── inline … ── -->` marker, read the corresponding file and paste
+its full contents verbatim (stripping only the outermost `<style>` tags from
+`map-poi-styles.html` since they are already inside a `<style>` block above).
+
 ## Step 5 — Print summary
+
+**Hugo track:**
 
 ```
 ✓ static/{slug}/locations.geojson   — {n} POIs pre-populated (source: {api_used})
@@ -550,10 +654,28 @@ Fill in:
 
 Next:
 1. Edit static/{slug}/locations.geojson to adjust categories or add manual POIs
-2. Run /publish-map {slug} when ready
+2. Preview locally: hugo server --disableFastRender
+   Then open http://localhost:1313/{slug}/
+3. Run /maps-publish {slug} when ready
 ```
 
-If the user skipped the query step, replace the first two lines with:
+**Static track:**
+
+```
+✓ static/{slug}/locations.geojson   — {n} POIs pre-populated (source: {api_used})
+✓ scripts/{slug}/generate.py        — re-run to refresh from {api_used}, merges by source_id
+✓ static/{slug}/index.html          — standalone map, no Hugo required
+
+Next:
+1. Edit static/{slug}/locations.geojson to adjust categories or add manual POIs
+2. Preview locally:
+   python -m http.server 8000 --directory static/{slug}
+   open http://localhost:8000
+3. Run /maps-publish {slug} when ready
+```
+
+If the user skipped the query step, replace the first two lines in either
+summary with:
 ```
 ✓ static/{slug}/locations.geojson   — empty stub, add POIs manually
 ✓ scripts/{slug}/generate.py        — geocodes manual entries with an address
