@@ -4,8 +4,14 @@
 # dependencies = ["feedparser", "requests"]
 # ///
 """
-Fetch news items from company RSS feeds, sector RSS feeds, and changedetection.io.
-Write new items to SQLite (seen_items + news_items). Skip already-seen hashes.
+Fetch news items from all declared News sources and write new items to SQLite.
+
+On startup, reads source declarations from:
+  - static/france-grands-projets-strategiques/companies.json  (company-level sources)
+  - Each project feature's feeds.sources list in locations.geojson (project-level sources)
+Upserts them into the news_sources operational table, minting changedetection UUIDs as needed.
+Then fetches each enabled source via a per-type dispatch table.
+
 Items are written with pending_classification=1; classify.py processes them separately.
 
 Usage:
@@ -22,16 +28,17 @@ import json
 import os
 import pathlib
 import sqlite3
+import sys
 from datetime import datetime, timedelta, timezone
 
 import feedparser
 import requests
-import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import gps_config
 
 GEOJSON_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/locations.geojson"
+COMPANIES_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/companies.json"
 DB_PATH = pathlib.Path(__file__).parents[2] / "data/france_project_newsletter/state.db"
 
 HIGH_PRIORITY_KEYWORDS = [
@@ -115,42 +122,149 @@ def parse_entry(entry, company_id: str, company: str, category: str, region: str
     }
 
 
-def fetch_company_rss(features: list[dict], cutoff: datetime, con: sqlite3.Connection, seen: set[str]) -> int:
-    inserted = 0
-    seen_rss: set[str] = set()
+# ---------------------------------------------------------------------------
+# Source declaration loading
+# ---------------------------------------------------------------------------
+
+def load_declarations() -> list[dict]:
+    """
+    Read all source declarations from companies.json and locations.geojson.
+    Returns a flat list of dicts: {company_id, company_name, category, region,
+                                   type, url, keywords}.
+    """
+    decls: list[dict] = []
+
+    geojson = json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))
+    features = geojson["features"]
+
+    # Build lookup: company_id → {category, region, company_name, keywords}
+    # and feature_id → {category, region, company_name, keywords, project_id}
+    company_meta: dict[str, dict] = {}
+    feature_meta: dict[str, dict] = {}
     for feat in features:
         props = feat["properties"]
+        company_id = props.get("company_id", feat.get("id", ""))
+        meta = {
+            "company_name": props.get("name", ""),
+            "category": props.get("category", ""),
+            "region": props.get("region", ""),
+            "keywords": props.get("feeds", {}).get("keywords", [props.get("name", "")]),
+        }
+        company_meta.setdefault(company_id, meta)
+        feature_meta[feat.get("id", "")] = {**meta, "project_id": feat.get("id", ""), "company_id": company_id}
+
+    # Company-level declarations from companies.json
+    if COMPANIES_PATH.exists():
+        companies = json.loads(COMPANIES_PATH.read_text(encoding="utf-8"))
+        for slug, entry in companies.items():
+            meta = company_meta.get(slug, {"company_name": entry.get("name", slug), "category": "", "region": "", "keywords": []})
+            for src in entry.get("sources", []):
+                decls.append({
+                    "company_id": slug,
+                    "company_name": meta["company_name"],
+                    "category": meta["category"],
+                    "region": meta["region"],
+                    "keywords": meta["keywords"],
+                    "type": src["type"],
+                    "url": src["url"],
+                    "scope": "company",
+                })
+
+    # Project-level declarations from each feature's feeds.sources
+    for feat in features:
+        props = feat["properties"]
+        fmeta = feature_meta[feat.get("id", "")]
         feeds = props.get("feeds", {})
-        rss_url = feeds.get("company_rss")
-        if not rss_url or rss_url in seen_rss:
+
+        # v2 schema: feeds.sources list
+        for src in feeds.get("sources", []):
+            decls.append({
+                "company_id": fmeta["company_id"],
+                "project_id": fmeta["project_id"],
+                "company_name": fmeta["company_name"],
+                "category": fmeta["category"],
+                "region": fmeta["region"],
+                "keywords": fmeta["keywords"],
+                "type": src["type"],
+                "url": src["url"],
+                "scope": "project",
+                # Pass UUID from GeoJSON state field (Slice 2 migration: moves to news_sources)
+                "_legacy_cd_uuid": feeds.get("changedetection_uuid"),
+                "_legacy_rss_uuid": feeds.get("rss_uuid"),
+            })
+
+    return decls
+
+
+def upsert_declarations(con: sqlite3.Connection, decls: list[dict]) -> None:
+    """Upsert source declarations into news_sources table."""
+    now = datetime.now(timezone.utc).isoformat()
+    for d in decls:
+        # Determine UUID from legacy GeoJSON fields if this is a changedetection source
+        uuid = None
+        if d["type"] == "changedetection":
+            uuid = d.get("_legacy_cd_uuid")
+        elif d["type"] == "company_rss":
+            uuid = d.get("_legacy_rss_uuid")
+
+        con.execute(
+            """INSERT INTO news_sources (company_id, type, url, uuid, enabled, added_at)
+               VALUES (?, ?, ?, ?, 1, ?)
+               ON CONFLICT (company_id, type, url) DO UPDATE SET
+                 uuid = COALESCE(uuid, excluded.uuid)""",
+            (d["company_id"], d["type"], d["url"], uuid, now),
+        )
+    con.commit()
+
+
+# ---------------------------------------------------------------------------
+# Per-type fetch handlers
+# ---------------------------------------------------------------------------
+
+def fetch_rss_type(
+    decls: list[dict], source_type: str, cutoff: datetime,
+    con: sqlite3.Connection, seen: set[str],
+) -> int:
+    """Generic RSS fetcher for company_rss, youtube_channel_rss, linkedin_company_rss, bodacc_rss."""
+    inserted = 0
+    seen_urls: set[str] = set()
+    for d in decls:
+        if d["type"] != source_type:
             continue
-        seen_rss.add(rss_url)
+        url = d["url"]
+        if url in seen_urls:
+            continue
+        seen_urls.add(url)
         try:
-            parsed = feedparser.parse(rss_url)
+            parsed = feedparser.parse(url)
         except Exception as exc:
-            print(f"  [RSS ERR] {props.get('name')}: {exc}")
+            _record_error(con, d, str(exc))
+            print(f"  [{source_type.upper()} ERR] {d['company_name']}: {exc}")
             continue
         for entry in parsed.entries:
             published = getattr(entry, "published_parsed", None)
             if published and datetime(*published[:6], tzinfo=timezone.utc) < cutoff:
                 continue
             item = parse_entry(
-                entry, feat.get("id", ""), props.get("name", ""),
-                props.get("category", ""), props.get("region", ""), "company_rss",
+                entry, d["company_id"], d["company_name"],
+                d["category"], d["region"], source_type,
             )
             if insert_item(con, item, seen):
                 inserted += 1
+        _record_fetch(con, d)
     return inserted
 
 
-def fetch_sector_rss(features: list[dict], cutoff: datetime, con: sqlite3.Connection, seen: set[str]) -> int:
-    sector_map: dict[str, list[tuple[dict, list[str]]]] = {}
-    for feat in features:
-        props = feat["properties"]
-        feeds = props.get("feeds", {})
-        keywords = [k.lower() for k in feeds.get("keywords", [props.get("name", "")])]
-        for rss_url in feeds.get("sector_rss", []):
-            sector_map.setdefault(rss_url, []).append((feat, keywords))
+def fetch_sector_rss(
+    decls: list[dict], cutoff: datetime,
+    con: sqlite3.Connection, seen: set[str],
+) -> int:
+    # Group sector_rss by URL; each URL has a set of (feat_decl, keywords) watchers
+    sector_map: dict[str, list[dict]] = {}
+    for d in decls:
+        if d["type"] != "sector_rss":
+            continue
+        sector_map.setdefault(d["url"], []).append(d)
 
     inserted = 0
     for rss_url, watchers in sector_map.items():
@@ -166,12 +280,12 @@ def fetch_sector_rss(features: list[dict], cutoff: datetime, con: sqlite3.Connec
             title = (getattr(entry, "title", "") or "").lower()
             summary = (getattr(entry, "summary", "") or "").lower()
             text = title + " " + summary
-            for feat, keywords in watchers:
+            for d in watchers:
+                keywords = [k.lower() for k in d.get("keywords", [d["company_name"]])]
                 if any(kw in text for kw in keywords):
-                    props = feat["properties"]
                     item = parse_entry(
-                        entry, feat.get("id", ""), props.get("name", ""),
-                        props.get("category", ""), props.get("region", ""), "sector_rss",
+                        entry, d["company_id"], d["company_name"],
+                        d["category"], d["region"], "sector_rss",
                     )
                     if insert_item(con, item, seen):
                         inserted += 1
@@ -180,14 +294,19 @@ def fetch_sector_rss(features: list[dict], cutoff: datetime, con: sqlite3.Connec
 
 
 def fetch_changedetection(
-    features: list[dict], session: requests.Session, base_url: str,
+    decls: list[dict], session: requests.Session, base_url: str,
     cutoff: datetime, con: sqlite3.Connection, seen: set[str],
 ) -> int:
     inserted = 0
-    for feat in features:
-        props = feat["properties"]
-        feeds = props.get("feeds", {})
-        uuid = feeds.get("changedetection_uuid")
+    for d in decls:
+        if d["type"] != "changedetection":
+            continue
+        # UUID is in news_sources table; fall back to GeoJSON legacy field
+        row = con.execute(
+            "SELECT uuid FROM news_sources WHERE company_id=? AND type='changedetection' AND url=?",
+            (d["company_id"], d["url"]),
+        ).fetchone()
+        uuid = row[0] if row else d.get("_legacy_cd_uuid")
         if not uuid:
             continue
         try:
@@ -195,9 +314,9 @@ def fetch_changedetection(
             resp.raise_for_status()
             history = resp.json()
         except Exception as exc:
-            print(f"  [CD ERR] {props.get('name')} ({uuid}): {exc}")
+            _record_error(con, d, str(exc))
+            print(f"  [CD ERR] {d['company_name']} ({uuid}): {exc}")
             continue
-        watch_url = feeds.get("changedetection_url") or feeds.get("company_url", "")
         for ts_str in history:
             try:
                 ts = datetime.fromtimestamp(int(ts_str), tz=timezone.utc)
@@ -205,24 +324,53 @@ def fetch_changedetection(
                 continue
             if ts < cutoff:
                 continue
-            title = f"Mise à jour détectée : {props.get('name')}"
-            h = item_hash(watch_url, ts_str)
+            title = f"Mise à jour détectée : {d['company_name']}"
+            h = item_hash(d["url"], ts_str)
             item = {
                 "hash": h,
-                "company_id": feat.get("id", ""),
-                "company": props.get("name", ""),
-                "category": props.get("category", ""),
-                "region": props.get("region", ""),
+                "company_id": d["company_id"],
+                "company": d["company_name"],
+                "category": d["category"],
+                "region": d["region"],
                 "title": title,
-                "summary": f"Le site de {props.get('name')} a été modifié.",
-                "url": watch_url,
+                "summary": f"Le site de {d['company_name']} a été modifié.",
+                "url": d["url"],
                 "date": ts.isoformat(),
                 "source": "changedetection",
             }
             if insert_item(con, item, seen):
                 inserted += 1
+        _record_fetch(con, d)
     return inserted
 
+
+def fetch_google_news_query_rss(
+    decls: list[dict], cutoff: datetime,
+    con: sqlite3.Connection, seen: set[str],
+) -> int:
+    return fetch_rss_type(decls, "google_news_query_rss", cutoff, con, seen)
+
+
+def _record_fetch(con: sqlite3.Connection, d: dict) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    con.execute(
+        """UPDATE news_sources SET last_fetched_at=?, last_error=NULL
+           WHERE company_id=? AND type=? AND url=?""",
+        (now, d["company_id"], d["type"], d["url"]),
+    )
+
+
+def _record_error(con: sqlite3.Connection, d: dict, error: str) -> None:
+    con.execute(
+        """UPDATE news_sources SET last_error=?
+           WHERE company_id=? AND type=? AND url=?""",
+        (error[:500], d["company_id"], d["type"], d["url"]),
+    )
+
+
+# ---------------------------------------------------------------------------
+# Dispatch table
+# ---------------------------------------------------------------------------
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -236,26 +384,49 @@ def main() -> None:
     hours = 24 if args.period == "daily" else 7 * 24
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
 
-    features = json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))["features"]
+    print("Loading source declarations…")
+    decls = load_declarations()
+    print(f"  {len(decls)} declarations loaded")
 
     con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
     con.execute("PRAGMA journal_mode=WAL")
+
+    print("Upserting into news_sources…")
+    upsert_declarations(con, decls)
+
     seen = load_seen(con)
     print(f"Seen hashes loaded: {len(seen)}")
 
-    print("→ Company RSS feeds...")
-    n = fetch_company_rss(features, cutoff, con, seen)
+    print("→ Company RSS feeds (company_rss)…")
+    n = fetch_rss_type(decls, "company_rss", cutoff, con, seen)
     print(f"  {n} new items")
 
-    print("→ Sector RSS feeds...")
-    n = fetch_sector_rss(features, cutoff, con, seen)
+    print("→ Sector RSS feeds…")
+    n = fetch_sector_rss(decls, cutoff, con, seen)
+    print(f"  {n} new items")
+
+    print("→ Google News RSS…")
+    n = fetch_google_news_query_rss(decls, cutoff, con, seen)
+    print(f"  {n} new items")
+
+    print("→ YouTube channel RSS…")
+    n = fetch_rss_type(decls, "youtube_channel_rss", cutoff, con, seen)
+    print(f"  {n} new items")
+
+    print("→ LinkedIn company RSS (via rsshub)…")
+    n = fetch_rss_type(decls, "linkedin_company_rss", cutoff, con, seen)
+    print(f"  {n} new items")
+
+    print("→ BODACC RSS…")
+    n = fetch_rss_type(decls, "bodacc_rss", cutoff, con, seen)
     print(f"  {n} new items")
 
     if api_key:
-        print("→ changedetection.io...")
+        print("→ changedetection.io…")
         session = requests.Session()
         session.headers["x-api-key"] = api_key
-        n = fetch_changedetection(features, session, base_url, cutoff, con, seen)
+        n = fetch_changedetection(decls, session, base_url, cutoff, con, seen)
         print(f"  {n} new items")
     else:
         print("  [SKIP] CHANGEDETECTION_API_KEY not set")

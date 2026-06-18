@@ -23,6 +23,7 @@ Env vars:
 
 import argparse
 import asyncio
+import json
 import os
 import pathlib
 import sqlite3
@@ -30,6 +31,12 @@ import sys
 from datetime import datetime, timezone
 
 DB_PATH = pathlib.Path(__file__).parents[2] / "data/france_project_newsletter/state.db"
+GEOJSON_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/locations.geojson"
+COMPANIES_PATH = pathlib.Path(__file__).parents[2] / "static/france-grands-projets-strategiques/companies.json"
+
+# Source types that belong in companies.json (company-level); all others go on the feature.
+COMPANY_LEVEL_TYPES = {"company_rss", "linkedin_company_rss", "youtube_channel_rss",
+                       "bodacc_rss", "wikipedia_atom"}
 
 HIGH_PRIORITY_SIGNALS = {"funding_round", "groundbreaking", "production_start", "M&A"}
 
@@ -86,6 +93,87 @@ def format_alert(item: dict) -> str:
         f"{item['summary']}\n\n"
         f"📅 {date} · <a href='{item['url']}'>Lire l'article</a>"
     )
+
+
+def format_source_review(row: dict) -> str:
+    payload = json.loads(row["candidate_payload"]) if row.get("candidate_payload") else {}
+    snippet = payload.get("snippet", "")[:120]
+    source_url = payload.get("source_url", "")
+    scope = "🏢 Entreprise" if row["type"] in COMPANY_LEVEL_TYPES else "📍 Projet"
+    return (
+        f"🔗 <b>Source à valider</b> — {scope}\n\n"
+        f"<b>{row['company_id']}</b>\n"
+        f"Type : <code>{row['type']}</code>\n"
+        f"URL : <a href='{row['url']}'>{row['url'][:80]}</a>\n\n"
+        f"{snippet}\n\n"
+        f"Trouvé via : {row['discovered_by']}"
+        + (f"\n<a href='{source_url}'>Source de découverte</a>" if source_url else "")
+        + f"\nID : {row['id']}"
+    )
+
+
+def write_approved_source(row: dict, con: sqlite3.Connection) -> None:
+    """Write an approved source declaration into the appropriate store."""
+    src_type = row["type"]
+    url = row["url"]
+    company_id = row["company_id"]
+    payload = json.loads(row["candidate_payload"]) if row.get("candidate_payload") else {}
+    now = datetime.now(timezone.utc).isoformat()
+
+    # Profile fields: write to company_enrichment
+    if src_type == "profile_linkedin":
+        con.execute(
+            """INSERT INTO company_enrichment (company_id, linkedin_url, enriched_at)
+               VALUES (?, ?, ?)
+               ON CONFLICT(company_id) DO UPDATE SET linkedin_url=excluded.linkedin_url,
+                 enriched_at=excluded.enriched_at""",
+            (company_id, url, now),
+        )
+        con.commit()
+        return
+
+    if src_type == "profile_website":
+        desc = payload.get("description_fr")
+        emp = payload.get("employee_count_est")
+        con.execute(
+            """INSERT INTO company_enrichment
+               (company_id, website_url, description_fr, employee_count_est,
+                website_checked_at, enriched_at)
+               VALUES (?, ?, ?, ?, ?, ?)
+               ON CONFLICT(company_id) DO UPDATE SET
+                 website_url=excluded.website_url,
+                 description_fr=COALESCE(excluded.description_fr, description_fr),
+                 employee_count_est=COALESCE(excluded.employee_count_est, employee_count_est),
+                 website_checked_at=excluded.website_checked_at,
+                 enriched_at=excluded.enriched_at""",
+            (company_id, url, desc, emp, now, now),
+        )
+        con.commit()
+        return
+
+    # Feed source declarations: write to companies.json or feeds.sources
+    src = {"type": src_type, "url": url}
+
+    if src_type in COMPANY_LEVEL_TYPES:
+        companies = json.loads(COMPANIES_PATH.read_text(encoding="utf-8"))
+        entry = companies.setdefault(company_id, {"name": company_id, "company_url": "", "sources": []})
+        existing_urls = {s["url"] for s in entry.get("sources", [])}
+        if url not in existing_urls:
+            entry.setdefault("sources", []).append(src)
+            COMPANIES_PATH.write_text(json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8")
+    else:
+        # Project-level: write to the specific feature's feeds.sources
+        data = json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))
+        target_id = row.get("project_id") or company_id
+        for feat in data["features"]:
+            if feat.get("id") == target_id:
+                feeds = feat["properties"].setdefault("feeds", {})
+                sources = feeds.setdefault("sources", [])
+                existing_urls = {s["url"] for s in sources}
+                if url not in existing_urls:
+                    sources.append(src)
+                    GEOJSON_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+                break
 
 
 def format_review(row: dict) -> tuple[str, list]:
@@ -169,6 +257,32 @@ async def cmd_push(token: str, chat_id: str, item_hash: str | None) -> None:
         con.commit()
         print(f"  Finance review sent: id={r['id']} ({r['company']})")
 
+    # Send pending source reviews (capped at 10 per push to avoid flooding)
+    pending_src = con.execute(
+        "SELECT * FROM pending_sources WHERE decision='pending' AND telegram_msg_id IS NULL LIMIT 10"
+    ).fetchall()
+    print(f"  Source reviews pending: {len(pending_src)}")
+    for row in pending_src:
+        r = dict(row)
+        text = format_source_review(r)
+        keyboard = InlineKeyboardMarkup([[
+            InlineKeyboardButton("✅ Approuver", callback_data=f"approve_src:{r['id']}"),
+            InlineKeyboardButton("❌ Rejeter",   callback_data=f"reject_src:{r['id']}"),
+        ]])
+        msg = await bot.send_message(
+            chat_id=chat_id,
+            text=text,
+            parse_mode="HTML",
+            reply_markup=keyboard,
+            disable_web_page_preview=True,
+        )
+        con.execute(
+            "UPDATE pending_sources SET telegram_msg_id=? WHERE id=?",
+            (msg.message_id, r["id"]),
+        )
+        con.commit()
+        print(f"  Source review sent: id={r['id']} ({r['company_id']} / {r['type']})")
+
     con.close()
 
 
@@ -216,6 +330,40 @@ def cmd_serve(token: str, chat_id: str) -> None:
         data = query.data or ""
         if ":" not in data:
             return
+
+        # Route by prefix: approve_src / reject_src → source review; approve / reject → finance
+        if data.startswith("approve_src:") or data.startswith("reject_src:"):
+            action, src_id_str = data.split(":", 1)
+            src_id = int(src_id_str)
+            con = get_con()
+            row = con.execute("SELECT * FROM pending_sources WHERE id=?", (src_id,)).fetchone()
+            if not row:
+                await query.edit_message_text("❓ Source introuvable.")
+                con.close()
+                return
+            r = dict(row)
+            now = datetime.now(timezone.utc).isoformat()
+            if action == "approve_src":
+                write_approved_source(r, con)
+                con.execute(
+                    "UPDATE pending_sources SET decision='approved', decided_at=? WHERE id=?",
+                    (now, src_id),
+                )
+                con.commit()
+                await query.edit_message_text(
+                    f"✅ Source approuvée — {r['company_id']} · {r['type']}\n{r['url'][:80]}",
+                    parse_mode="HTML",
+                )
+            elif action == "reject_src":
+                con.execute(
+                    "UPDATE pending_sources SET decision='rejected', decided_at=? WHERE id=?",
+                    (now, src_id),
+                )
+                con.commit()
+                await query.edit_message_text(f"❌ Source rejetée — {r['company_id']} · {r['type']}")
+            con.close()
+            return
+
         action, review_id_str = data.split(":", 1)
         review_id = int(review_id_str)
 

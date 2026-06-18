@@ -85,10 +85,24 @@ The news monitoring and distribution product built on the `france-grands-projets
 The staged commercialization path: (1) Internal — run as a private intelligence tool; (2) Freebie — distribute gratis to select recipients to build testimonials and audience; (3) B2B — sell access to institutional buyers (investment analysts, economic development agencies, regional governments). Each phase is documented before moving to the next.
 
 **Strategic project**
-One of the 69+ industrial investment projects tracked in `static/france-grands-projets-strategiques/locations.geojson`. Each project has a company, a sector, a region, feed configuration (RSS URLs, changedetection.io target, keywords), and optionally financial metadata. "Project" and "company" are used interchangeably in this corpus since each GeoJSON feature maps to a single company investment.
+One investment site in the corpus. Stored as one feature in `static/france-grands-projets-strategiques/locations.geojson`, keyed by feature `id` (`france-projet-NNN-{slug}`). Has coordinates, a sector, a region, a département, a `ville`, a free-text `projet` description, project-level feed configuration (`changedetection`, `regional_press_rss`, `boamp_rss` keyed by SIRET, `regulatory_filing` for that site), and optionally project-level financial metadata (capex for *this* site, France 2030 award for *this* project, jobs announced for *this* site). Each project references a parent **Company** via `properties.company_id`.
+
+**Company**
+The legal entity executing one or more **Strategic projects**. Stored as one entry in `static/france-grands-projets-strategiques/companies.json`, keyed by canonical **Company slug** (e.g. `eclairion`, `verso-energy`, `derichebourg`). Holds company-level feed declarations (`company_rss`, `linkedin_company_rss`, `youtube_channel_rss`, `wikipedia_atom`, `bodacc_rss` keyed by SIREN, `inpi_patent_query` by applicant name), the company website, and identifying metadata (SIREN once Pappers populates it). The same `company_id` is the foreign key into the SQLite `company_enrichment` table, so structured data in SQLite and feed declarations in `companies.json` share one identity. A Company may have 1..N projects: Eclairion has 3, Verso Energy 4, Derichebourg 2, Naval Group 2. The bulk of the corpus is 1:1 — the multi-project companies are the exception.
+
+**Company slug**
+The canonical identifier for a **Company**. Lowercase, ASCII, hyphen-separated, derived from the company's display name. Used as the primary key of `companies.json`, as `properties.company_id` on each project feature, and as `company_id` in the SQLite tables. Stable across renames (the slug stays even if the display `name` changes).
 
 **News item**
-A single piece of content surfaced by the pipeline — either a parsed RSS entry (company or sector feed) or a changedetection.io change event. Has a hash, company reference, date, title, summary, source type, and a `high_priority` flag. Stored in daily digest JSON files under `data/france_project_newsletter/`.
+A single piece of content surfaced by the pipeline. Has a hash, company reference, date, title, summary, the source type it came from (open enum — see **News source**), and a `high_priority` flag. Stored in daily digest JSON files under `data/france_project_newsletter/` and in the `news_items` SQLite table.
+
+**News source**
+A typed monitoring endpoint attached to a strategic project. Has two halves, deliberately split between stores:
+
+- **News source declaration** — the static "what we monitor" half. Stored as one entry in the project's `feeds.sources` list in the GeoJSON, of shape `{type, url}` plus type-specific config (e.g. `query` for `google_news_query_rss`). `type` is an open enum drawn from the source catalog (`company_rss`, `sector_rss`, `changedetection`, `linkedin_company_rss`, `youtube_channel_rss`, `google_news_query_rss`, `boamp_rss`, `bodacc_rss`, `regional_press_rss`, `inpi_patent_query`, `regulatory_filing`, `wikipedia_atom`, …). Git-tracked, PR-reviewable, blameable. Adding a source is a GeoJSON edit; adding a new source type is a one-line addition to the fetch dispatch table.
+- **News source state** — the runtime "how this monitor is doing" half. Stored in a SQLite `news_sources` table of shape `(company_id, type, url, uuid, enabled, added_at, last_fetched_at, last_error)`. Holds operational state that must not pollute git: changedetection.io UUIDs (currently in GeoJSON as `changedetection_uuid` / `rss_uuid` — moving here as part of the migration), fetch timestamps, error counters, runtime enable/disable flags.
+
+The fetch pipeline reads declarations from GeoJSON on startup, upserts them into `news_sources` (creating a UUID for changedetection-typed sources on first sight), then iterates the SQLite table to fetch. Dispatches per `type`. Each source produces zero or more **News items**, deduped by the same `sha1(url|title)[:12]` hash regardless of source type.
 
 **Digest**
 A dated JSON file (`data/france_project_newsletter/digest_YYYYMMDD.json`) aggregating all news items collected in a given period (daily or weekly). The canonical intermediate representation between fetch and distribution.
@@ -118,7 +132,13 @@ Four-axis tracking layer applied per strategic project, updated incrementally fr
 Structured data pulled from external registries to enhance each GeoJSON feature beyond what news monitoring provides. Phase 1 (internal): Pappers/SIRENE (SIREN, legal form, headcount band, registered address), France 2030 official laureate registry (awarded amounts, project descriptions), Pappers bilans (filed P&L and balance sheet). Phase 2 gap-filler: web search enrichment via SearXNG/DDG (`enrich_web.py`) — two modes: (1) weekly `--mode profile` fills `linkedin_url`, `website_url`, `description_fr`, `employee_count_est` for all 69 companies; (2) daily `--mode news` runs DDG news queries for the 61 companies with no `company_rss`, inserting results as `web_search` source items into `news_items` (same AI relevance filter + classify pipeline as RSS items). LinkedIn follower count is the proxy for employee headcount until B2B phase.
 
 **Web search enrichment**
-`enrich_web.py` script querying a local SearXNG container (default `http://127.0.0.1:8888`, `SEARXNG_URL` env override) using the DDG engine. Profile mode: 2 queries/company (LinkedIn, website+description). News mode: 1 query/company for RSS-less companies. Rate-limited to 2.5 s between queries. Deduplication via `seen_items` table using `sha1(url|title)[:12]` hash — same strategy as `fetch_digest.py`. News items enter the pipeline with `pending_classification=1` and flow through `classify.py` unchanged.
+`enrich_web.py` script querying a local SearXNG container (default `http://127.0.0.1:8888`, `SEARXNG_URL` env override) using the DDG engine. Profile mode: 2 queries/company (LinkedIn, website+description). News mode: 1 query/company for RSS-less companies. Rate-limited to 2.5 s between queries. Deduplication via `seen_items` table using `sha1(url|title)[:12]` hash — same strategy as `fetch_digest.py`. News items enter the pipeline with `pending_classification=1` and flow through `classify.py` unchanged. Profile-mode fields and discovered source URLs are written to the **Source review queue**, never directly to `company_enrichment` or `companies.json`.
+
+**Source review queue**
+SQLite `pending_sources` table holding auto-discovered **News source declaration** candidates and auto-discovered profile fields (LinkedIn URL, website URL, description) awaiting human approval. Rows: `(company_id, type, url, candidate_payload_json, discovered_by, discovered_at, decision, decided_at, decided_by)` where `decision ∈ {pending, approved, rejected}`. Approval writes the declaration into `companies.json` (for company-level sources) or into a project feature's `feeds.sources` (for project-level sources) — never into a live table directly. Same pattern as the **Finance review interface**: a Telegram bot service on lamai270 presents each pending row with title/favicon/snippet preview and Approve / Reject inline buttons.
+
+**Trust-by-construction store**
+Invariant: anything inside `companies.json` or `feeds.sources` is treated as verified and is fetched on the next pipeline run with no further gate. The gate is at write time (Telegram review or PR review), not at read time. This is the property the `company_enrichment` table lost in the first enrichment pass — which produced the precision backlog in `company_profiles_to_review.md`. Backlog gets imported as `pending_sources` rows and worked through the review queue.
 
 **Output format roadmap**
 Ordered delivery plan: (1) Telegram bot/channel — push high-priority alerts instantly, internal phase; (2) Web dashboard — Hugo page with map + company cards, stage badges, finance summaries, recent items; (3) Curated RSS feed — static XML on the Hugo site, freebie phase; (4) PDF weekly report + JSON API — B2B phase artifacts.
@@ -134,6 +154,23 @@ Hybrid: lamai270 (home server) owns the stateful daily pipeline — fetch, AI cl
 
 **Pipeline config**
 A TOML file at `scripts/france_project_newsletter/config.toml` committed to git. Owns all non-secret topology: llama.cpp server URL, changedetection.io URL, and pipeline host. Secrets (API keys, tokens) remain in `.env`. All pipeline scripts read topology from this file via `gps_config.py`, with no hardcoded hostnames.
+
+**News source catalog**
+The closed-but-extensible set of `type` values that **News source declarations** can take. Each type has a fetcher in the `fetch_digest.py` dispatch table, a candidate generator, and a granularity (company-level or project-level). Current types:
+
+- `company_rss` — direct corporate press releases (company-level)
+- `sector_rss` — trade press by sector (sector-level, mapped from `properties.category`)
+- `changedetection` — changedetection.io watch on a specific page (project-level)
+- `linkedin_company_rss` — LinkedIn posts via the local rsshub bridge (company-level, v1)
+- `youtube_channel_rss` — native YouTube channel RSS at `feeds.videos.xml?channel_id={id}` (company-level, v1)
+- `google_news_query_rss` — `news.google.com/rss/search?q={query}&hl=fr&gl=FR` with per-project query string (project-level, v1)
+- `bodacc_rss` — official legal gazette by SIREN, signals capital changes / leadership / M&A (company-level, v1)
+
+v1.5 candidates (deferred until v1 review cadence is proven): `regional_press_rss`, `boamp_rss` (SIRET-keyed procurement), `wikipedia_atom`.
+v2 candidates (deferred until finance model lands): `inpi_patent_query`, `regulatory_filing` (ASN / DREAL ICPE / AMF).
+
+**RSSHub bridge**
+Self-hosted RSS proxy running as a Docker container on lamai270, sitting next to changedetection.io. Used by `linkedin_company_rss` declarations: the declaration `url` field stores a local-network URL like `http://rsshub.lamai270.local/linkedin/company/{linkedin_slug}` which the fetcher hits like any other RSS endpoint. Self-hosted rather than rss.app paid because the corpus is small (~69 companies) and the B2B revenue threshold for paying for a managed bridge has not been reached. Fragile to LinkedIn HTML changes — when a feed type breaks, the news pipeline's `last_error` on that `news_sources` row surfaces the problem.
 
 **Local AI server**
 A llama.cpp server running on lamai270's RTX 4060 (8GB VRAM). Primary model: Qwen2.5 7B Instruct Q4_K_M (~5.4GB VRAM total including KV cache). Used for all AI pipeline calls: relevance filter and signal classifier. The daily pipeline checks server availability before running AI steps; behavior when unavailable is governed by the degraded-mode policy. Structured JSON output enforced via llama.cpp grammar constraints.

@@ -1,0 +1,30 @@
+# RSSHub Docker Compose service for lamai270.
+# Deploy alongside changedetection.io on the same host.
+#
+# Usage (on lamai270):
+#   docker compose -f rsshub.yml up -d
+#
+# Verify:
+#   curl "http://localhost:1200/linkedin/company/imerys"
+#   # Should return Atom/RSS (may be empty if LinkedIn blocks the slug — that's OK)
+#
+# The GPS pipeline reads the base_url from config.toml [rsshub] base_url.
+
+services:
+  rsshub:
+    image: diygod/rsshub:latest
+    restart: unless-stopped
+    ports:
+      - "1200:1200"
+    environment:
+      # Optional: set a cache TTL to avoid hammering LinkedIn
+      CACHE_TYPE: memory
+      CACHE_EXPIRE: 3600        # 1 hour
+      # Optional: disableFallback for routes that return empty feeds
+      # DISALLOW_ROBOT: "1"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:1200/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s

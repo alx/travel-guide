@@ -8,6 +8,12 @@ url = "http://fami:8181"
 # changedetection.io instance. Runs on lamai270.
 url = "http://lamai270:5008"
 
+[rsshub]
+# Self-hosted RSSHub bridge for linkedin_company_rss sources.
+# Runs on lamai270 as a Docker Compose service alongside changedetection.io.
+# Deploy: see scripts/france_project_newsletter/docker/rsshub.yml
+base_url = "http://lamai270:1200"
+
 [pipeline]
 # Host that runs the daily cron pipeline.
 run_host = "lamai270"

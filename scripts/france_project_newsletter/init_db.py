@@ -110,6 +110,46 @@ def init(db_path: pathlib.Path = DB_PATH) -> None:
             notes           TEXT
         );
 
+        -- News source operational state (declaration half lives in GeoJSON / companies.json).
+        -- Populated on fetch_digest.py startup by upserting from the declarative sources.
+        -- changedetection.io UUIDs and runtime state live here, not in the GeoJSON.
+        CREATE TABLE IF NOT EXISTS news_sources (
+            company_id      TEXT    NOT NULL,
+            type            TEXT    NOT NULL,   -- open enum: company_rss | sector_rss | changedetection |
+                                               --   linkedin_company_rss | youtube_channel_rss |
+                                               --   google_news_query_rss | bodacc_rss | …
+            url             TEXT    NOT NULL,
+            uuid            TEXT,              -- changedetection.io watch UUID (type=changedetection only)
+            enabled         INTEGER NOT NULL DEFAULT 1,
+            added_at        TEXT    NOT NULL,   -- ISO-8601 UTC, when declaration was first seen
+            last_fetched_at TEXT,              -- ISO-8601 UTC
+            last_error      TEXT,              -- last fetch error message, if any
+            PRIMARY KEY (company_id, type, url)
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_sources_company ON news_sources (company_id);
+        CREATE INDEX IF NOT EXISTS idx_sources_type    ON news_sources (type);
+
+        -- Pending source candidates awaiting human approval via Telegram.
+        -- Auto-discovery scripts write here; approved rows become declarations.
+        CREATE TABLE IF NOT EXISTS pending_sources (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            company_id          TEXT    NOT NULL,
+            project_id          TEXT,              -- GeoJSON feature id (project-level sources only)
+            type                TEXT    NOT NULL,
+            url                 TEXT    NOT NULL,
+            candidate_payload   TEXT,              -- JSON: {title, snippet, favicon_url}
+            discovered_by       TEXT    NOT NULL,  -- e.g. "discover_sources.py", "enrich_web.py"
+            discovered_at       TEXT    NOT NULL,  -- ISO-8601 UTC
+            decision            TEXT    NOT NULL DEFAULT 'pending',  -- pending | approved | rejected
+            decided_at          TEXT,
+            telegram_msg_id     INTEGER
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_pending_decision ON pending_sources (decision)
+            WHERE decision = 'pending';
+        CREATE INDEX IF NOT EXISTS idx_pending_company  ON pending_sources (company_id);
+
         -- Company enrichment from external registries (Pappers, France 2030, etc.)
         CREATE TABLE IF NOT EXISTS company_enrichment (
             company_id          TEXT    PRIMARY KEY,

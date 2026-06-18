@@ -336,23 +336,36 @@ def run_profile(
         print(f"  website:  {website_url}")
         print(f"  desc:     {(description_fr or '')[:80]}...")
 
-        con.execute(
-            """INSERT INTO company_enrichment
-               (company_id, linkedin_url, website_url, description_fr,
-                employee_count_est, website_checked_at, enriched_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?)
-               ON CONFLICT(company_id) DO UPDATE SET
-                 linkedin_url        = excluded.linkedin_url,
-                 website_url         = excluded.website_url,
-                 description_fr      = excluded.description_fr,
-                 employee_count_est  = excluded.employee_count_est,
-                 website_checked_at  = excluded.website_checked_at,
-                 enriched_at         = excluded.enriched_at""",
-            (company_id, linkedin_url, website_url, description_fr, employee_count, now, now),
-        )
+        # Gate M: write to pending_sources, not directly to company_enrichment.
+        # The Telegram review handler promotes approved rows to company_enrichment.
+        company_slug = props.get("company_id") or company_id
+        payload = json.dumps({
+            "description_fr": (description_fr or "")[:300],
+            "employee_count_est": employee_count,
+        }, ensure_ascii=False)
+
+        for src_type, url_val in [
+            ("profile_linkedin", linkedin_url),
+            ("profile_website", website_url),
+        ]:
+            if not url_val:
+                continue
+            # Skip if already approved or 3+ pending for this company+type
+            existing = con.execute(
+                "SELECT COUNT(*) FROM pending_sources WHERE company_id=? AND type=? AND decision != 'rejected'",
+                (company_slug, src_type),
+            ).fetchone()[0]
+            if existing >= 3:
+                continue
+            con.execute(
+                """INSERT INTO pending_sources
+                   (company_id, type, url, candidate_payload, discovered_by, discovered_at)
+                   VALUES (?, ?, ?, ?, 'enrich_web.py', ?)""",
+                (company_slug, src_type, url_val, payload, now),
+            )
         con.commit()
 
-    print("\n[PROFILE] Done.")
+    print("\n[PROFILE] Done. Results written to pending_sources (Gate M).")
 
 
 # ---------------------------------------------------------------------------

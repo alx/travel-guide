@@ -34,21 +34,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://www.imerys.com/rss",
-          "company_url": "https://www.imerys.com",
-          "changedetection_url": "https://www.imerys.com/media-room",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.imerys.com/media-room"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "430ff035-6cd6-4fa6-aa03-20f4098e4687",
           "keywords": [
             "Imerys",
             "lithium",
             "Échassières",
             "hydroxyde de lithium"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "430ff035-6cd6-4fa6-aa03-20f4098e4687"
-        }
+          ]
+        },
+        "company_id": "imerys"
       }
     },
     {
@@ -72,21 +76,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "medium",
         "feeds": {
-          "company_rss": "https://www.safran-group.com/rss/pressroom",
-          "company_url": "https://www.safran-group.com",
-          "changedetection_url": "https://www.safran-group.com/pressroom",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.safran-group.com/pressroom"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "3e676572-d5f4-4af8-80f6-a6045669f989",
           "keywords": [
             "Safran",
             "freins carbone",
             "aéronautique",
             "Saint-Vulbas"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "3e676572-d5f4-4af8-80f6-a6045669f989"
-        }
+          ]
+        },
+        "company_id": "safran"
       }
     },
     {
@@ -110,21 +118,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://blog.se.com/feed",
-          "company_url": "https://www.se.com/fr/fr/",
-          "changedetection_url": "https://www.se.com/fr/fr/about-us/newsroom/",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.se.com/fr/fr/about-us/newsroom/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "4bccaec2-5b42-4210-a8c3-9d95cf5e756c",
           "keywords": [
             "Schneider Electric",
             "datacenter",
             "nucléaire",
             "Privas"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "4bccaec2-5b42-4210-a8c3-9d95cf5e756c"
-        }
+          ]
+        },
+        "company_id": "schneider-electric"
       }
     },
     {
@@ -148,20 +160,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.sesterce.io",
-          "changedetection_url": "https://www.sesterce.io/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.sesterce.io/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "afa46a55-ee39-4444-88ef-7e9baa89066d",
           "keywords": [
             "Sesterce",
             "data center",
             "Rochefort-en-Valdaine",
             "Drôme"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "afa46a55-ee39-4444-88ef-7e9baa89066d"
-        }
+          ]
+        },
+        "company_id": "sesterce"
       }
     },
     {
@@ -185,20 +202,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.magreesource.com",
-          "changedetection_url": "https://www.magreesource.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.magreesource.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b6ba5ab5-adbc-46fa-80b2-5d64d447d786",
           "keywords": [
             "MagREEsource",
             "aimants permanents",
             "Noyarey",
             "terres rares"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b6ba5ab5-adbc-46fa-80b2-5d64d447d786"
-        }
+          ]
+        },
+        "company_id": "magreesource"
       }
     },
     {
@@ -222,21 +244,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.dataone.fr",
-          "changedetection_url": "https://www.dataone.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.dataone.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "61deebe7-dfdb-4358-b955-d39a3268799e",
           "keywords": [
             "DataOne",
             "Oreus",
             "Core 42",
             "data center",
             "Grenoble"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "61deebe7-dfdb-4358-b955-d39a3268799e"
-        }
+          ]
+        },
+        "company_id": "dataone-oreus-core-42"
       }
     },
     {
@@ -260,20 +287,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.urgo.fr",
-          "changedetection_url": "https://www.urgo.fr/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.urgo.fr/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "f51a4ee5-8214-4b30-9a85-a7b562fa4bfe",
           "keywords": [
             "Urgo",
             "textile médical",
             "compression médicale",
             "Veauche"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "f51a4ee5-8214-4b30-9a85-a7b562fa4bfe"
-        }
+          ]
+        },
+        "company_id": "urgo"
       }
     },
     {
@@ -297,20 +329,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.derichebourg.com",
-          "changedetection_url": "https://www.derichebourg.com/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.derichebourg.com/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "14c3bb53-e632-468f-8c2d-129635470f53",
           "keywords": [
             "Derichebourg",
             "recyclage",
             "Saint-Symphorien-d'Ozon",
             "ballons d'eau chaude"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "14c3bb53-e632-468f-8c2d-129635470f53"
-        }
+          ]
+        },
+        "company_id": "derichebourg"
       }
     },
     {
@@ -334,20 +371,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.scierie-bordet.fr",
-          "changedetection_url": "https://www.icp.fr/a-propos-de-licp/agenda/mercredis-de-la-com-i-rencontre-avec-capucine-bordet-journaliste-a-cvm-presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.icp.fr/a-propos-de-licp/agenda/mercredis-de-la-com-i-rencontre-avec-capucine-bordet-journaliste-a-cvm-presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "0f7a81c3-6aab-44f1-a3f2-327859bd11cf",
           "keywords": [
             "Bordet",
             "charbon végétal",
             "Cercy-la-Tour",
             "Nièvre"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "0f7a81c3-6aab-44f1-a3f2-327859bd11cf"
-        }
+          ]
+        },
+        "company_id": "bordet"
       }
     },
     {
@@ -371,20 +413,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.jimmy.energy",
-          "changedetection_url": "https://www.jimmy-energy.eu/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.jimmy-energy.eu/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "cfee3e9d-d103-4784-ad04-244332a7e94a",
           "keywords": [
             "Jimmy Energy",
             "réacteur nucléaire",
             "chaleur industrielle",
             "Le Creusot"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "cfee3e9d-d103-4784-ad04-244332a7e94a"
-        }
+          ]
+        },
+        "company_id": "jimmy-energy"
       }
     },
     {
@@ -408,20 +455,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.fptindustrial.com",
-          "changedetection_url": "https://www.fptindustrial.com/media",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.fptindustrial.com/media"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b8648368-9f29-4717-9215-13f2d95c39be",
           "keywords": [
             "Fiat Powertrain",
             "FPT Industrial",
             "Bourbon-Lancy",
             "moteurs camions"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b8648368-9f29-4717-9215-13f2d95c39be"
-        }
+          ]
+        },
+        "company_id": "fiat-powrtrain"
       }
     },
     {
@@ -445,9 +497,17 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.prysmiangroup.com",
-          "changedetection_url": "https://www.prysmiangroup.com/en/media/press-releases",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.prysmiangroup.com/en/media/press-releases"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "0cfcd346-5167-4069-9657-045d9ee86f7b",
           "keywords": [
             "Prysmian",
             "câbles électriques",
@@ -455,12 +515,9 @@
             "Paron",
             "Gron",
             "Yonne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "0cfcd346-5167-4069-9657-045d9ee86f7b"
-        }
+          ]
+        },
+        "company_id": "prysmian"
       }
     },
     {
@@ -484,20 +541,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.cailabs.com",
-          "changedetection_url": "https://www.cailabs.com/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.cailabs.com/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "9f7a2da7-5ef2-4f60-be98-d294839210a7",
           "keywords": [
             "Cailabs",
             "laser",
             "communication laser",
             "Rennes"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "9f7a2da7-5ef2-4f60-be98-d294839210a7"
-        }
+          ]
+        },
+        "company_id": "cailabs"
       }
     },
     {
@@ -521,20 +583,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "medium",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.cooperl.com",
-          "changedetection_url": "https://www.cooperl.com/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.cooperl.com/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "da2af874-1a43-4755-847d-1f7a8a500f32",
           "keywords": [
             "Cooperl",
             "biocarburants",
             "Lamballe",
             "Côte d'Armor"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "da2af874-1a43-4755-847d-1f7a8a500f32"
-        }
+          ]
+        },
+        "company_id": "cooperl"
       }
     },
     {
@@ -558,21 +625,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.ldc.fr",
-          "changedetection_url": "https://www.ldc.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.ldc.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "53a7939f-5f56-475c-9dc3-dde39b924a58",
           "keywords": [
             "LDC",
             "volaille",
             "abattage",
             "Châteaulin",
             "Finistère"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "53a7939f-5f56-475c-9dc3-dde39b924a58"
-        }
+          ]
+        },
+        "company_id": "ldc"
       }
     },
     {
@@ -596,20 +668,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.sigmaphi.fr",
-          "changedetection_url": "https://www.sigmaphi.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.sigmaphi.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "f5f06ada-98fb-4875-a032-cd8846a6d666",
           "keywords": [
             "Sigmaphi",
             "aimants",
             "Vannes",
             "Morbihan"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "f5f06ada-98fb-4875-a032-cd8846a6d666"
-        }
+          ]
+        },
+        "company_id": "sigmaphi"
       }
     },
     {
@@ -633,20 +710,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.mbda-systems.com",
-          "changedetection_url": "https://www.mbda-systems.com/newsroom/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.mbda-systems.com/newsroom/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "bb70bd9e-17cf-48f2-a424-9980b031b752",
           "keywords": [
             "MBDA",
             "missiles",
             "défense",
             "Bourges"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "bb70bd9e-17cf-48f2-a424-9980b031b752"
-        }
+          ]
+        },
+        "company_id": "mbda"
       }
     },
     {
@@ -670,20 +752,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.knds.com",
-          "changedetection_url": "https://www.knds.com/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.knds.com/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "40ea0b93-dd7f-49f2-882f-af98fac7c63a",
           "keywords": [
             "KNDS",
             "défense",
             "armement",
             "Bourges"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "40ea0b93-dd7f-49f2-882f-af98fac7c63a"
-        }
+          ]
+        },
+        "company_id": "knds"
       }
     },
     {
@@ -707,21 +794,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://blog.google/intl/fr-fr/",
-          "changedetection_url": "https://blog.google/intl/fr-fr/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://blog.google/intl/fr-fr/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "72534fe0-f6c5-4e04-a905-6d032fa3d17a",
           "keywords": [
             "Google",
             "data center",
             "Déols",
             "Châteauroux",
             "cloud"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "72534fe0-f6c5-4e04-a905-6d032fa3d17a"
-        }
+          ]
+        },
+        "company_id": "google"
       }
     },
     {
@@ -745,20 +837,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.intact-food.com",
-          "changedetection_url": "https://www.horizons-journal.fr/intact-ouvre-un-debouche-industriel-aux-legumineuses",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.horizons-journal.fr/intact-ouvre-un-debouche-industriel-aux-legumineuses"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "d5692861-f2f6-40a3-a1dc-10c1119fbc6c",
           "keywords": [
             "Intact",
             "protéines végétales",
             "Baudreville",
             "Loiret"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "d5692861-f2f6-40a3-a1dc-10c1119fbc6c"
-        }
+          ]
+        },
+        "company_id": "intact"
       }
     },
     {
@@ -782,21 +879,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://www.thalesgroup.com/en/feeds/press-room/rss.xml",
-          "company_url": "https://www.thalesgroup.com",
-          "changedetection_url": "https://www.thalesgroup.com/en/newsroom",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.thalesgroup.com/en/newsroom"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "339afd38-63bf-432a-a99e-61d6eb512886",
           "keywords": [
             "Thales",
             "Fleury-les-Aubrais",
             "Loiret",
             "capacité de production"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "339afd38-63bf-432a-a99e-61d6eb512886"
-        }
+          ]
+        },
+        "company_id": "thales"
       }
     },
     {
@@ -820,20 +921,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.barbas-plailly.com",
-          "changedetection_url": "https://fonderie-piwi.fr/barbas-plailly-une-fonderie-d-aluminium-dans-le-top-5-de-la-qualite/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://fonderie-piwi.fr/barbas-plailly-une-fonderie-d-aluminium-dans-le-top-5-de-la-qualite/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "e712bbf5-48c7-4c03-8b69-47f4defbaf92",
           "keywords": [
             "Barbas",
             "Plailly",
             "Romorantin-Lanthenay",
             "Loir-et-Cher"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "e712bbf5-48c7-4c03-8b69-47f4defbaf92"
-        }
+          ]
+        },
+        "company_id": "barbas-plailly"
       }
     },
     {
@@ -857,20 +963,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.aresia.fr",
-          "changedetection_url": "https://aresia.com/charte-de-confidentialite/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://aresia.com/charte-de-confidentialite/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b4a8a3a2-608d-4d5e-99a2-b13ebe908fe9",
           "keywords": [
             "Aresia",
             "Saint-Laurent-des-Bois",
             "Loir-et-Cher",
             "aéronautique"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b4a8a3a2-608d-4d5e-99a2-b13ebe908fe9"
-        }
+          ]
+        },
+        "company_id": "aresia"
       }
     },
     {
@@ -894,20 +1005,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.bertin-technologies.com",
-          "changedetection_url": "https://www.bertin-technologies.com/fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.bertin-technologies.com/fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "ad995ade-7351-4d72-8fe7-d311d59a6caa",
           "keywords": [
             "Bertin Technologies",
             "Thiron-Gardais",
             "défense",
             "nucléaire"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "ad995ade-7351-4d72-8fe7-d311d59a6caa"
-        }
+          ]
+        },
+        "company_id": "bertin-technologies"
       }
     },
     {
@@ -931,21 +1047,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.arverne.com",
-          "changedetection_url": "https://arverne.earth/cat/actualite/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://arverne.earth/cat/actualite/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "5c6644fc-c42c-4857-80a2-51ab33aab9c6",
           "keywords": [
             "Arverne",
             "lithium",
             "extraction directe",
             "Rittershoffen",
             "Bas-Rhin"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "5c6644fc-c42c-4857-80a2-51ab33aab9c6"
-        }
+          ]
+        },
+        "company_id": "arverne"
       }
     },
     {
@@ -969,22 +1090,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://www.edf.fr/en/edf/rss-feeds-listing",
-          "company_url": "https://www.edf.fr",
-          "changedetection_url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "3e7ad042-a78d-48f5-b4b6-774b70b32fd1",
           "keywords": [
             "EDF",
             "Fessenheim",
             "nucléaire",
             "recyclage métaux",
             "technocentre"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "3e7ad042-a78d-48f5-b4b6-774b70b32fd1"
-        }
+          ]
+        },
+        "company_id": "edf"
       }
     },
     {
@@ -1008,21 +1133,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.carbios.com",
-          "changedetection_url": "https://www.carbios.com/newsroom/fr/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.carbios.com/newsroom/fr/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "1b24d8a7-624a-4d3f-b229-0f8de05cba54",
           "keywords": [
             "Carbios",
             "biorecyclage",
             "PET",
             "Longlaville",
             "Meurthe-et-Moselle"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "1b24d8a7-624a-4d3f-b229-0f8de05cba54"
-        }
+          ]
+        },
+        "company_id": "carbios"
       }
     },
     {
@@ -1046,26 +1176,31 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.holosolis.com",
-          "changedetection_url": "https://www.holosolis.com/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.holosolis.com/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "6d7bc229-09df-4eda-bd70-1e3486698a6b",
           "keywords": [
             "Holosolis",
             "photovoltaïque",
             "panneaux solaires",
             "Hambach",
             "Moselle"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "6d7bc229-09df-4eda-bd70-1e3486698a6b"
-        }
+          ]
+        },
+        "company_id": "holosolis"
       }
     },
     {
       "type": "Feature",
-      "id": "france-projet-029-eclairion",
+      "id": "france-projet-028-eclairion",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -1084,21 +1219,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.eclairion.com",
-          "changedetection_url": "https://www.eclairion.com/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.eclairion.com/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "79368bfb-fca8-4033-94b4-401d02e2b47e",
           "keywords": [
             "Eclairion",
             "datacenter",
             "supercalculateur",
             "La Maxe",
             "Richemont"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "79368bfb-fca8-4033-94b4-401d02e2b47e"
-        }
+          ]
+        },
+        "company_id": "eclairion"
       }
     },
     {
@@ -1122,20 +1262,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.circularfashion.com",
-          "changedetection_url": "https://www.circularfashion.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.circularfashion.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "0be551e7-14ed-4886-8106-6bfeda325583",
           "keywords": [
             "CIRC",
             "recyclage textile",
             "Saint-Avold",
             "Moselle"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "0be551e7-14ed-4886-8106-6bfeda325583"
-        }
+          ]
+        },
+        "company_id": "circ"
       }
     },
     {
@@ -1159,20 +1304,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.verso.energy",
-          "changedetection_url": "https://www.verso.energy/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.verso.energy/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "53ad0eee-aac1-472f-bce3-b542d6e89f8a",
           "keywords": [
             "Verso Energy",
             "biocarburants",
             "Tergnier",
             "Aisne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "53ad0eee-aac1-472f-bce3-b542d6e89f8a"
-        }
+          ]
+        },
+        "company_id": "verso-energy"
       }
     },
     {
@@ -1196,20 +1346,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.axens.net",
-          "changedetection_url": "https://www.axens.net/resources-events/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.axens.net/resources-events/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a1986512-88b8-4596-a71a-8d2c513723ac",
           "keywords": [
             "Axens",
             "matériaux cathodiques",
             "batteries",
             "Dunkerque"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a1986512-88b8-4596-a71a-8d2c513723ac"
-        }
+          ]
+        },
+        "company_id": "axens"
       }
     },
     {
@@ -1233,21 +1388,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.crystalrod.fr",
-          "changedetection_url": "https://fonderie-piwi.fr/les-contours-du-projet-de-fonderie-de-crystalrod/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://fonderie-piwi.fr/les-contours-du-projet-de-fonderie-de-crystalrod/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b95c43ba-6e32-421b-967e-c180bac3eb20",
           "keywords": [
             "Crystalrod",
             "aluminium",
             "recyclage",
             "câbles",
             "Dunkerque"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b95c43ba-6e32-421b-967e-c180bac3eb20"
-        }
+          ]
+        },
+        "company_id": "crystalrod"
       }
     },
     {
@@ -1271,20 +1431,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://corporate.arcelormittal.com",
-          "changedetection_url": "https://corporate.arcelormittal.com/media/press-releases",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://corporate.arcelormittal.com/media/press-releases"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "fb3d3932-0397-4ad7-b36b-2e4512eb8fbb",
           "keywords": [
             "ArcelorMittal",
             "four électrique",
             "acier",
             "Dunkerque"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "fb3d3932-0397-4ad7-b36b-2e4512eb8fbb"
-        }
+          ]
+        },
+        "company_id": "arcelor-mittal"
       }
     },
     {
@@ -1308,20 +1473,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.windrose-technology.com",
-          "changedetection_url": "https://www.hautsdefrance.fr/electromobilite-windrose-choisit-les-hauts-de-france-pour-sa-base-industrielle-europeenne/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.hautsdefrance.fr/electromobilite-windrose-choisit-les-hauts-de-france-pour-sa-base-industrielle-europeenne/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "494b6b32-4e45-41f3-a4ee-d7ddef29fd46",
           "keywords": [
             "Windrose Technology",
             "camions électriques",
             "Dunkerque",
             "électromobilité"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "494b6b32-4e45-41f3-a4ee-d7ddef29fd46"
-        }
+          ]
+        },
+        "company_id": "windrose-technology"
       }
     },
     {
@@ -1345,22 +1515,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://www.nexans.com/en/rss/",
-          "company_url": "https://www.nexans.com",
-          "changedetection_url": "https://www.nexans.com/news-media-room/press-releases/",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.nexans.com/news-media-room/press-releases/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "57c05ead-cbdc-4af4-939d-94a83af76c96",
           "keywords": [
             "Nexans",
             "Nexagreen",
             "cuivre recyclé",
             "câbles",
             "Lens"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "57c05ead-cbdc-4af4-939d-94a83af76c96"
-        }
+          ]
+        },
+        "company_id": "nexans"
       }
     },
     {
@@ -1384,21 +1558,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.fertighy.com",
-          "changedetection_url": "https://www.fertighy.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.fertighy.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "9baadc81-7812-47d0-8d64-dfebe293bddc",
           "keywords": [
             "Fertighy",
             "engrais",
             "bas carbone",
             "Nesle",
             "Somme"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "9baadc81-7812-47d0-8d64-dfebe293bddc"
-        }
+          ]
+        },
+        "company_id": "fertighy"
       }
     },
     {
@@ -1422,21 +1601,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.eclairion.com",
-          "changedetection_url": "https://www.eclairion.com/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.eclairion.com/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b30bf9c9-29a2-4c2c-b370-b2dafd867794",
           "keywords": [
             "Eclairion",
             "datacenter",
             "calcul intensif",
             "Bruyères-le-Châtel",
             "Essonne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b30bf9c9-29a2-4c2c-b370-b2dafd867794"
-        }
+          ]
+        },
+        "company_id": "eclairion"
       }
     },
     {
@@ -1460,21 +1644,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.harmattan.ai",
-          "changedetection_url": "https://www.harmattan.ai/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.harmattan.ai/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "3b6515f1-7866-455d-9e9d-2ba18efd0a06",
           "keywords": [
             "Harmattan AI",
             "drones",
             "Saclay",
             "Palaiseau",
             "Essonne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "3b6515f1-7866-455d-9e9d-2ba18efd0a06"
-        }
+          ]
+        },
+        "company_id": "harmattan-ai"
       }
     },
     {
@@ -1498,20 +1687,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.mersen.com",
-          "changedetection_url": "https://www.mersen.com/fr/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.mersen.com/fr/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "5a9b11f5-9332-4570-9582-9949aa04bff0",
           "keywords": [
             "Mersen",
             "Gennevilliers",
             "Hauts-de-Seine",
             "matériaux"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "5a9b11f5-9332-4570-9582-9949aa04bff0"
-        }
+          ]
+        },
+        "company_id": "mersen-france"
       }
     },
     {
@@ -1535,21 +1729,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.wandercraft.eu",
-          "changedetection_url": "https://www.wandercraft.eu/press",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.wandercraft.eu/press"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "84e3790a-42b7-4dfe-9f69-b904f487342d",
           "keywords": [
             "Wandercraft",
             "robots",
             "santé",
             "Paris",
             "exosquelette"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "84e3790a-42b7-4dfe-9f69-b904f487342d"
-        }
+          ]
+        },
+        "company_id": "wandercraft"
       }
     },
     {
@@ -1573,20 +1772,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.mgx.com",
-          "changedetection_url": "https://www.mgx.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.mgx.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b2be0636-9ccd-425f-bcbd-25a5a557227f",
           "keywords": [
             "MGX",
             "data center",
             "Bussy-Saint-Georges",
             "Seine-et-Marne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b2be0636-9ccd-425f-bcbd-25a5a557227f"
-        }
+          ]
+        },
+        "company_id": "mgx"
       }
     },
     {
@@ -1610,20 +1814,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.iliad.fr",
-          "changedetection_url": "https://www.iliad.fr/presse/communiques-de-presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.iliad.fr/presse/communiques-de-presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "458585b3-ed30-4a34-b003-b96992d2cf43",
           "keywords": [
             "Opcore",
             "Iliad",
             "data center",
             "Bussy-Saint-Georges"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "458585b3-ed30-4a34-b003-b96992d2cf43"
-        }
+          ]
+        },
+        "company_id": "opcore"
       }
     },
     {
@@ -1647,20 +1856,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.derichebourg.com",
-          "changedetection_url": "https://www.derichebourg.com/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.derichebourg.com/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "7f7666fb-bcd7-4420-9808-f909edd1aad9",
           "keywords": [
             "Derichebourg",
             "batteries",
             "véhicules électriques",
             "Saint-Ouen-l'Aumône"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "7f7666fb-bcd7-4420-9808-f909edd1aad9"
-        }
+          ]
+        },
+        "company_id": "derichebourg"
       }
     },
     {
@@ -1684,21 +1898,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.semmaris.fr",
-          "changedetection_url": "https://www.semmaris.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.semmaris.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b17b1c7f-219e-4a51-9292-4a42be1d601c",
           "keywords": [
             "Semmaris",
             "Rungis",
             "agroalimentaire",
             "Gonesse",
             "Val d'Oise"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b17b1c7f-219e-4a51-9292-4a42be1d601c"
-        }
+          ]
+        },
+        "company_id": "semmaris"
       }
     },
     {
@@ -1722,20 +1941,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.solmax.com",
-          "changedetection_url": "https://www.solmax.com/fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.solmax.com/fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "7f850371-b157-4ea6-8201-5c13f5117ddd",
           "keywords": [
             "Solmax",
             "géosynthétiques",
             "Mantes-la-Jolie",
             "décarbonation"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "7f850371-b157-4ea6-8201-5c13f5117ddd"
-        }
+          ]
+        },
+        "company_id": "solmax"
       }
     },
     {
@@ -1759,20 +1983,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.soredab.com",
-          "changedetection_url": "https://www.vegepolys-valley.eu/le-pole/les-adherents-annuaire-et-carte/l-annuaire-des-adherents/14266-sa-soredab.html",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.vegepolys-valley.eu/le-pole/les-adherents-annuaire-et-carte/l-annuaire-des-adherents/14266-sa-soredab.html"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a53c50c3-960d-4b01-b907-b4e187b485ec",
           "keywords": [
             "Soredab",
             "R&D",
             "La Verrière",
             "Yvelines"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a53c50c3-960d-4b01-b907-b4e187b485ec"
-        }
+          ]
+        },
+        "company_id": "soredab"
       }
     },
     {
@@ -1796,20 +2025,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.tertu.fr",
-          "changedetection_url": "https://www.tertu.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.tertu.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "0172d84e-1ac2-4386-81b6-fef68c856b26",
           "keywords": [
             "Tertu",
             "biocarburants",
             "Villedieu-les-Poêles",
             "Calvados"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "0172d84e-1ac2-4386-81b6-fef68c856b26"
-        }
+          ]
+        },
+        "company_id": "tertu"
       }
     },
     {
@@ -1833,21 +2067,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.maiaspace.com",
-          "changedetection_url": "https://www.ariane.group/transport-spatial/maia/",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.ariane.group/transport-spatial/maia/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a175185c-d168-41ed-b413-dfa0051a4e9a",
           "keywords": [
             "MaiaSpace",
             "lanceurs spatiaux",
             "réutilisable",
             "Vernon",
             "Eure"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a175185c-d168-41ed-b413-dfa0051a4e9a"
-        }
+          ]
+        },
+        "company_id": "maiaspace"
       }
     },
     {
@@ -1871,20 +2110,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.eastman.com/fr",
-          "changedetection_url": "https://www.eastman.com/fr/news-and-events",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.eastman.com/fr/news-and-events"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b4d7da7c-0090-428d-add4-0c57baf6fe64",
           "keywords": [
             "Eastman",
             "recyclage plastiques",
             "Port-Jérôme-sur-Seine",
             "Seine-Maritime"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b4d7da7c-0090-428d-add4-0c57baf6fe64"
-        }
+          ]
+        },
+        "company_id": "eastman"
       }
     },
     {
@@ -1908,20 +2152,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.verso.energy",
-          "changedetection_url": "https://www.verso.energy/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.verso.energy/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "bc9d4749-d9fe-4ef6-a339-fe1e1d68b544",
           "keywords": [
             "Verso Energy",
             "biocarburants",
             "Port-Jérôme-sur-Seine",
             "Seine-Maritime"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "bc9d4749-d9fe-4ef6-a339-fe1e1d68b544"
-        }
+          ]
+        },
+        "company_id": "verso-energy"
       }
     },
     {
@@ -1945,21 +2194,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://en.newsroom.engie.com/rss/",
-          "company_url": "https://www.engie.com",
-          "changedetection_url": "https://newsroom.engie.com/actualites/",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://newsroom.engie.com/actualites/"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "5cc9c394-e223-4eb7-85e4-4094aeae805a",
           "keywords": [
             "ENGIE",
             "biocarburants",
             "Le Havre",
             "Seine-Maritime"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "5cc9c394-e223-4eb7-85e4-4094aeae805a"
-        }
+          ]
+        },
+        "company_id": "engie"
       }
     },
     {
@@ -1983,20 +2236,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.lhyfe.com",
-          "changedetection_url": "https://www.lhyfe.com/newsroom",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.lhyfe.com/newsroom"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "b6583826-d3c7-465f-86ff-c00e965c9463",
           "keywords": [
             "Lhyfe",
             "hydrogène",
             "H2 bas carbone",
             "Le Havre"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "b6583826-d3c7-465f-86ff-c00e965c9463"
-        }
+          ]
+        },
+        "company_id": "lhyfe"
       }
     },
     {
@@ -2020,20 +2278,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.cabot-corp.com",
-          "changedetection_url": "https://www.cabot-corp.com/news-center/press-releases",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.cabot-corp.com/news-center/press-releases"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "8ed0ec9f-8c9b-4349-99e3-34989e586628",
           "keywords": [
             "Cabot",
             "energy center",
             "Lillebonne",
             "Seine-Maritime"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "8ed0ec9f-8c9b-4349-99e3-34989e586628"
-        }
+          ]
+        },
+        "company_id": "cabot-carbone"
       }
     },
     {
@@ -2057,20 +2320,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.kl1ag.com",
-          "changedetection_url": "https://www.adi-na.fr/sites/default/files/2024-06/20240513-CP-ChooseFrance_ProjetsNouvelleAquitaine.pdf",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.adi-na.fr/sites/default/files/2024-06/20240513-CP-ChooseFrance_ProjetsNouvelleAquitaine.pdf"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "c1f769be-84f1-491e-b6a5-28852a838d4f",
           "keywords": [
             "KL 1 AG",
             "KL1AG",
             "Blanquefort",
             "métaux critiques"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "c1f769be-84f1-491e-b6a5-28852a838d4f"
-        }
+          ]
+        },
+        "company_id": "kl-1-ag"
       }
     },
     {
@@ -2094,20 +2362,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.verso.energy",
-          "changedetection_url": "https://www.verso.energy/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.verso.energy/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "6e3c99b5-6c2d-4c05-9c6f-6e3a878dfbff",
           "keywords": [
             "Verso Energy",
             "biocarburants",
             "Tartas",
             "Landes"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "6e3c99b5-6c2d-4c05-9c6f-6e3a878dfbff"
-        }
+          ]
+        },
+        "company_id": "verso-energy"
       }
     },
     {
@@ -2131,9 +2404,17 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.carester.fr",
-          "changedetection_url": "https://www.carester.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.carester.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "f74e507f-47a5-4b12-bb33-d1e68403a2b5",
           "keywords": [
             "Carester",
             "Caremag",
@@ -2141,12 +2422,9 @@
             "aimants",
             "Lacq",
             "Pyrénées-Atlantiques"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "f74e507f-47a5-4b12-bb33-d1e68403a2b5"
-        }
+          ]
+        },
+        "company_id": "carester-caremag"
       }
     },
     {
@@ -2170,20 +2448,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.elyse.energy",
-          "changedetection_url": "https://www.elyse.energy/presse",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.elyse.energy/presse"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "784eacd1-4fa1-40f9-a5a0-ef4ba586e99c",
           "keywords": [
             "Elyse Energy",
             "biocarburants",
             "Lacq",
             "Pyrénées-Atlantiques"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "784eacd1-4fa1-40f9-a5a0-ef4ba586e99c"
-        }
+          ]
+        },
+        "company_id": "elyse-energy"
       }
     },
     {
@@ -2207,21 +2490,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.aura.aero",
-          "changedetection_url": "https://www.aura.aero/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.aura.aero/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "d44cd7e8-5c37-401d-a42b-4baeedfc4071",
           "keywords": [
             "Aura Aéro",
             "avions hybrides",
             "électrique",
             "Toulouse",
             "Francazal"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "d44cd7e8-5c37-401d-a42b-4baeedfc4071"
-        }
+          ]
+        },
+        "company_id": "aura-aero"
       }
     },
     {
@@ -2245,21 +2533,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.siat.fr",
-          "changedetection_url": "https://www.siat.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.siat.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a193eccb-2b75-40cc-b72d-8e78888a1495",
           "keywords": [
             "Siat",
             "scierie",
             "Brassac",
             "Tarn",
             "bois"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a193eccb-2b75-40cc-b72d-8e78888a1495"
-        }
+          ]
+        },
+        "company_id": "siat"
       }
     },
     {
@@ -2283,21 +2576,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.naval-group.com",
-          "changedetection_url": "https://www.naval-group.com/fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.naval-group.com/fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "787b2c19-3494-4c4b-b6d6-3d36f290e14e",
           "keywords": [
             "Naval Group",
             "défense navale",
             "Indret",
             "Nantes",
             "sous-marins"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "787b2c19-3494-4c4b-b6d6-3d36f290e14e"
-        }
+          ]
+        },
+        "company_id": "naval-group"
       }
     },
     {
@@ -2321,21 +2619,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.groupebriand.fr",
-          "changedetection_url": "https://www.groupebriand.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.groupebriand.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "5b39b3ec-e44e-4b10-b05c-95b39515255b",
           "keywords": [
             "Briand",
             "acier décarboné",
             "four électrique",
             "Angers",
             "Cholet"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "5b39b3ec-e44e-4b10-b05c-95b39515255b"
-        }
+          ]
+        },
+        "company_id": "briand"
       }
     },
     {
@@ -2359,21 +2662,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.goco2.fr",
-          "changedetection_url": "https://www.goco2.fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.goco2.fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a2e5587a-5058-41fa-905c-83d95300a6f4",
           "keywords": [
             "GOCO2",
             "capture CO2",
             "stockage",
             "Louverné",
             "Mayenne"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a2e5587a-5058-41fa-905c-83d95300a6f4"
-        }
+          ]
+        },
+        "company_id": "goco2"
       }
     },
     {
@@ -2397,20 +2705,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.eclairion.com",
-          "changedetection_url": "https://www.eclairion.com/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.eclairion.com/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "54a68230-536c-44d9-ba6b-d07ac9dd2d19",
           "keywords": [
             "Eclairion",
             "datacenter",
             "Le Mans",
             "Sarthe"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "54a68230-536c-44d9-ba6b-d07ac9dd2d19"
-        }
+          ]
+        },
+        "company_id": "eclairion"
       }
     },
     {
@@ -2434,21 +2747,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": "https://www.airbus.com/en/rss-feeds",
-          "company_url": "https://www.airbus.com/en/products-services/helicopters",
-          "changedetection_url": "https://www.airbus.com/en/newsroom/press-releases",
-          "changedetection_uuid": null,
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.airbus.com/en/newsroom/press-releases"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "rss_uuid": "c9fdf134-c973-41a4-afd8-1efbf309736e",
           "keywords": [
             "Airbus Helicopters",
             "Marignane",
             "Bouches-du-Rhône",
             "modernisation"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "rss_uuid": "c9fdf134-c973-41a4-afd8-1efbf309736e"
-        }
+          ]
+        },
+        "company_id": "airbus-helicopters"
       }
     },
     {
@@ -2472,20 +2789,25 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.marcegaglia.com",
-          "changedetection_url": "https://www.marcegaglia.com/en/press/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.marcegaglia.com/en/press/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "8f7b13aa-bc14-487d-a3d0-b8020b40f2bf",
           "keywords": [
             "Marcegaglia",
             "acier bas carbone",
             "Fos-sur-Mer",
             "Bouches-du-Rhône"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "8f7b13aa-bc14-487d-a3d0-b8020b40f2bf"
-        }
+          ]
+        },
+        "company_id": "marcegaglia"
       }
     },
     {
@@ -2509,21 +2831,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.gravithy.com",
-          "changedetection_url": "https://www.gravithy.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.gravithy.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "a275a728-a483-46b7-a29c-64ff48cac750",
           "keywords": [
             "Gravithy",
             "fer",
             "haut-fourneau",
             "Fos-sur-Mer",
             "décarbonation acier"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "a275a728-a483-46b7-a29c-64ff48cac750"
-        }
+          ]
+        },
+        "company_id": "gravithy"
       }
     },
     {
@@ -2547,21 +2874,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.alteo-alumina.com",
-          "changedetection_url": "https://www.alteo-alumina.com/news",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.alteo-alumina.com/news"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "8f4ec85a-f8b0-40f1-9a76-c71aae9d6f22",
           "keywords": [
             "Alteo",
             "batteries",
             "alumine",
             "Gardanne",
             "Bouches-du-Rhône"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "8f4ec85a-f8b0-40f1-9a76-c71aae9d6f22"
-        }
+          ]
+        },
+        "company_id": "alteo"
       }
     },
     {
@@ -2585,21 +2917,26 @@
         "coord_source": "nominatim",
         "coord_accuracy": "high",
         "feeds": {
-          "company_rss": null,
-          "company_url": "https://www.naval-group.com",
-          "changedetection_url": "https://www.naval-group.com/fr/actualites",
+          "sources": [
+            {
+              "type": "changedetection",
+              "url": "https://www.naval-group.com/fr/actualites"
+            },
+            {
+              "type": "sector_rss",
+              "url": "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
+            }
+          ],
+          "changedetection_uuid": "7a61af3f-9139-467e-90ba-3ea4608e2977",
           "keywords": [
             "Naval Group",
             "Ollioules",
             "Toulon",
             "Var",
             "marine nationale"
-          ],
-          "sector_rss": [
-            "https://www.usinenouvelle.com/arc/outboundfeeds/rss/"
-          ],
-          "changedetection_uuid": "7a61af3f-9139-467e-90ba-3ea4608e2977"
-        }
+          ]
+        },
+        "company_id": "naval-group"
       }
     }
   ]

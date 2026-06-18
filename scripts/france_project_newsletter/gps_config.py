@@ -32,6 +32,12 @@ def changedetection_url() -> str:
     return os.environ.get("CHANGEDETECTION_BASE_URL") or load()["changedetection"]["url"]
 
 
+def rsshub_url() -> str:
+    """RSSHub bridge base URL. Env var RSSHUB_URL overrides config.toml."""
+    _load_dotenv()
+    return os.environ.get("RSSHUB_URL") or load()["rsshub"]["base_url"]
+
+
 def _load_dotenv() -> None:
     env_file = _REPO_ROOT / ".env"
     if env_file.exists():

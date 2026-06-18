@@ -1,0 +1,357 @@
+{
+  "imerys": {
+    "name": "Imerys",
+    "company_url": "https://www.imerys.com",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.imerys.com/rss"
+      }
+    ]
+  },
+  "safran": {
+    "name": "Safran",
+    "company_url": "https://www.safran-group.com",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.safran-group.com/rss/pressroom"
+      }
+    ]
+  },
+  "schneider-electric": {
+    "name": "Schneider Electric",
+    "company_url": "https://www.se.com/fr/fr/",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://blog.se.com/feed"
+      }
+    ]
+  },
+  "sesterce": {
+    "name": "Sesterce",
+    "company_url": "https://www.sesterce.io",
+    "sources": []
+  },
+  "magreesource": {
+    "name": "MagREEsource",
+    "company_url": "https://www.magreesource.com",
+    "sources": []
+  },
+  "dataone-oreus-core-42": {
+    "name": "DataOne - Oreus - Core 42",
+    "company_url": "https://www.dataone.fr",
+    "sources": []
+  },
+  "urgo": {
+    "name": "Urgo",
+    "company_url": "https://www.urgo.fr",
+    "sources": []
+  },
+  "derichebourg": {
+    "name": "Derichebourg",
+    "company_url": "https://www.derichebourg.com",
+    "sources": []
+  },
+  "bordet": {
+    "name": "Bordet",
+    "company_url": "https://www.scierie-bordet.fr",
+    "sources": []
+  },
+  "jimmy-energy": {
+    "name": "Jimmy Energy",
+    "company_url": "https://www.jimmy.energy",
+    "sources": []
+  },
+  "fiat-powrtrain": {
+    "name": "Fiat Powrtrain",
+    "company_url": "https://www.fptindustrial.com",
+    "sources": []
+  },
+  "prysmian": {
+    "name": "Prysmian",
+    "company_url": "https://www.prysmiangroup.com",
+    "sources": []
+  },
+  "cailabs": {
+    "name": "Cailabs",
+    "company_url": "https://www.cailabs.com",
+    "sources": []
+  },
+  "cooperl": {
+    "name": "Cooperl",
+    "company_url": "https://www.cooperl.com",
+    "sources": []
+  },
+  "ldc": {
+    "name": "LDC",
+    "company_url": "https://www.ldc.fr",
+    "sources": []
+  },
+  "sigmaphi": {
+    "name": "Sigmaphi",
+    "company_url": "https://www.sigmaphi.fr",
+    "sources": []
+  },
+  "mbda": {
+    "name": "MBDA",
+    "company_url": "https://www.mbda-systems.com",
+    "sources": []
+  },
+  "knds": {
+    "name": "KNDS",
+    "company_url": "https://www.knds.com",
+    "sources": []
+  },
+  "google": {
+    "name": "Google",
+    "company_url": "https://blog.google/intl/fr-fr/",
+    "sources": []
+  },
+  "intact": {
+    "name": "Intact",
+    "company_url": "https://www.intact-food.com",
+    "sources": []
+  },
+  "thales": {
+    "name": "Thales",
+    "company_url": "https://www.thalesgroup.com",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.thalesgroup.com/en/feeds/press-room/rss.xml"
+      }
+    ]
+  },
+  "barbas-plailly": {
+    "name": "Barbas & Plailly",
+    "company_url": "https://www.barbas-plailly.com",
+    "sources": []
+  },
+  "aresia": {
+    "name": "Aresia",
+    "company_url": "https://www.aresia.fr",
+    "sources": []
+  },
+  "bertin-technologies": {
+    "name": "Bertin technologies",
+    "company_url": "https://www.bertin-technologies.com",
+    "sources": []
+  },
+  "arverne": {
+    "name": "Arverne",
+    "company_url": "https://www.arverne.com",
+    "sources": []
+  },
+  "edf": {
+    "name": "EDF",
+    "company_url": "https://www.edf.fr",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.edf.fr/en/edf/rss-feeds-listing"
+      }
+    ]
+  },
+  "carbios": {
+    "name": "Carbios",
+    "company_url": "https://www.carbios.com",
+    "sources": []
+  },
+  "holosolis": {
+    "name": "Holosolis",
+    "company_url": "https://www.holosolis.com",
+    "sources": []
+  },
+  "eclairion": {
+    "name": "Eclairion",
+    "company_url": "https://www.eclairion.com",
+    "sources": []
+  },
+  "circ": {
+    "name": "CIRC",
+    "company_url": "https://www.circularfashion.com",
+    "sources": []
+  },
+  "verso-energy": {
+    "name": "Verso Energy",
+    "company_url": "https://www.verso.energy",
+    "sources": []
+  },
+  "axens": {
+    "name": "Axens",
+    "company_url": "https://www.axens.net",
+    "sources": []
+  },
+  "crystalrod": {
+    "name": "Crystalrod",
+    "company_url": "https://www.crystalrod.fr",
+    "sources": []
+  },
+  "arcelor-mittal": {
+    "name": "Arcelor Mittal",
+    "company_url": "https://corporate.arcelormittal.com",
+    "sources": []
+  },
+  "windrose-technology": {
+    "name": "Windrose Technology",
+    "company_url": "https://www.windrose-technology.com",
+    "sources": []
+  },
+  "nexans": {
+    "name": "Nexans",
+    "company_url": "https://www.nexans.com",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.nexans.com/en/rss/"
+      }
+    ]
+  },
+  "fertighy": {
+    "name": "Fertighy",
+    "company_url": "https://www.fertighy.com",
+    "sources": []
+  },
+  "harmattan-ai": {
+    "name": "Harmattan AI",
+    "company_url": "https://www.harmattan.ai",
+    "sources": []
+  },
+  "mersen-france": {
+    "name": "Mersen France",
+    "company_url": "https://www.mersen.com",
+    "sources": []
+  },
+  "wandercraft": {
+    "name": "Wandercraft",
+    "company_url": "https://www.wandercraft.eu",
+    "sources": []
+  },
+  "mgx": {
+    "name": "MGX",
+    "company_url": "https://www.mgx.com",
+    "sources": []
+  },
+  "opcore": {
+    "name": "Opcore",
+    "company_url": "https://www.iliad.fr",
+    "sources": []
+  },
+  "semmaris": {
+    "name": "Semmaris",
+    "company_url": "https://www.semmaris.fr",
+    "sources": []
+  },
+  "solmax": {
+    "name": "Solmax",
+    "company_url": "https://www.solmax.com",
+    "sources": []
+  },
+  "soredab": {
+    "name": "Soredab",
+    "company_url": "https://www.soredab.com",
+    "sources": []
+  },
+  "tertu": {
+    "name": "Tertu",
+    "company_url": "https://www.tertu.fr",
+    "sources": []
+  },
+  "maiaspace": {
+    "name": "MaiaSpace",
+    "company_url": "https://www.maiaspace.com",
+    "sources": []
+  },
+  "eastman": {
+    "name": "Eastman",
+    "company_url": "https://www.eastman.com/fr",
+    "sources": []
+  },
+  "engie": {
+    "name": "Engie",
+    "company_url": "https://www.engie.com",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://en.newsroom.engie.com/rss/"
+      }
+    ]
+  },
+  "lhyfe": {
+    "name": "Lhyfe",
+    "company_url": "https://www.lhyfe.com",
+    "sources": []
+  },
+  "cabot-carbone": {
+    "name": "Cabot Carbone",
+    "company_url": "https://www.cabot-corp.com",
+    "sources": []
+  },
+  "kl-1-ag": {
+    "name": "KL 1 AG",
+    "company_url": "https://www.kl1ag.com",
+    "sources": []
+  },
+  "carester-caremag": {
+    "name": "Carester Caremag",
+    "company_url": "https://www.carester.fr",
+    "sources": []
+  },
+  "elyse-energy": {
+    "name": "Elyse Energy",
+    "company_url": "https://www.elyse.energy",
+    "sources": []
+  },
+  "aura-aero": {
+    "name": "Aura Aéro",
+    "company_url": "https://www.aura.aero",
+    "sources": []
+  },
+  "siat": {
+    "name": "Siat",
+    "company_url": "https://www.siat.fr",
+    "sources": []
+  },
+  "naval-group": {
+    "name": "Naval Group",
+    "company_url": "https://www.naval-group.com",
+    "sources": []
+  },
+  "briand": {
+    "name": "Briand",
+    "company_url": "https://www.groupebriand.fr",
+    "sources": []
+  },
+  "goco2": {
+    "name": "GOCO²",
+    "company_url": "https://www.goco2.fr",
+    "sources": []
+  },
+  "airbus-helicopters": {
+    "name": "Airbus Helicopters",
+    "company_url": "https://www.airbus.com/en/products-services/helicopters",
+    "sources": [
+      {
+        "type": "company_rss",
+        "url": "https://www.airbus.com/en/rss-feeds"
+      }
+    ]
+  },
+  "marcegaglia": {
+    "name": "Marcegaglia",
+    "company_url": "https://www.marcegaglia.com",
+    "sources": []
+  },
+  "gravithy": {
+    "name": "Gravithy",
+    "company_url": "https://www.gravithy.com",
+    "sources": []
+  },
+  "alteo": {
+    "name": "Alteo",
+    "company_url": "https://www.alteo-alumina.com",
+    "sources": []
+  }
+}
