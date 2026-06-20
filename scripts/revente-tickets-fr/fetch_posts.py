@@ -1,6 +1,7 @@
 #!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.11"
+# dependencies = ["praw"]
 # ///
 """
 Fetch new VENTE posts from r/ReventeTicketsFR and send Telegram notifications.
@@ -10,27 +11,21 @@ Cron on lamai270:
   0 8 * * * cd /path/to/travel-guide && uv run scripts/revente-tickets-fr/fetch_posts.py >> logs/revente-fetch.log 2>&1
 
 Requires in .env:
-  REVENTE_BOT_TOKEN  — Telegram bot token
-  REVENTE_CHAT_ID    — personal chat ID
-  REDDIT_CLIENT_ID   — Reddit OAuth app
-  REDDIT_CLIENT_SECRET
+  REVENTE_BOT_TOKEN    — Telegram bot token
+  REVENTE_CHAT_ID      — personal chat ID
+  REDDIT_CLIENT_ID     — Reddit OAuth app client ID
+  REDDIT_CLIENT_SECRET — Reddit OAuth app client secret
+  REDDIT_USER_AGENT    — e.g. "revente-tickets-fr/1.0 by /u/yourname"
 """
 import json
 import os
 import sys
 import time
-import urllib.parse
 import urllib.request
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent.parent
 DB_PATH = REPO_ROOT / "data" / "revente-tickets-fr" / "state.db"
-
-SEARCH_URL = (
-    "https://www.reddit.com/r/ReventeTicketsFR/search.json"
-    "?sort=new&q=flair%3A%F0%9F%8E%9F%EF%B8%8F%2BVENTE&restrict_sr=on&t=day&limit=100"
-)
-_HEADERS = {"User-Agent": "revente-tickets-fr-bot/1.0 (contact: girard.davila@gmail.com)"}
 
 
 # ── Env ───────────────────────────────────────────────────────────────────────
@@ -67,39 +62,46 @@ def tg_send(token: str, chat_id: str, text: str) -> int:
     return data["result"]["message_id"]
 
 
-# ── Reddit ────────────────────────────────────────────────────────────────────
+# ── Reddit (PRAW) ─────────────────────────────────────────────────────────────
 
-def fetch_vente_posts() -> list[dict]:
-    req = urllib.request.Request(SEARCH_URL, headers=_HEADERS)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        data = json.loads(r.read())
+def init_reddit():
+    import praw
+    return praw.Reddit(
+        client_id=os.environ["REDDIT_CLIENT_ID"],
+        client_secret=os.environ["REDDIT_CLIENT_SECRET"],
+        user_agent=os.environ.get("REDDIT_USER_AGENT", "revente-tickets-fr/1.0"),
+    )
+
+
+def fetch_vente_posts(reddit) -> list[dict]:
+    sub = reddit.subreddit("ReventeTicketsFR")
+    results = sub.search(
+        'flair:"🎟️ VENTE"',
+        sort="new",
+        time_filter="day",
+        limit=100,
+    )
     posts = []
-    for child in data.get("data", {}).get("children", []):
-        p = child["data"]
+    for p in results:
         posts.append({
-            "id": p["id"],
-            "title": p["title"],
-            "selftext": (p.get("selftext") or "").strip(),
-            "url": f"https://www.reddit.com{p['permalink']}",
-            "created_utc": int(p["created_utc"]),
+            "id": p.id,
+            "title": p.title,
+            "selftext": (p.selftext or "").strip(),
+            "url": f"https://www.reddit.com{p.permalink}",
+            "created_utc": int(p.created_utc),
         })
     return posts
 
 
-def check_sold_signals(post_id: str) -> list[str]:
-    """Return list of sold signals for a post: title_vendu, post_removed, vouch_comment."""
+def check_sold_signals(reddit, post_id: str) -> list[str]:
+    """Return list of sold signals: title_vendu, post_removed, vouch_comment."""
     signals = []
-    url = f"https://www.reddit.com/r/ReventeTicketsFR/comments/{post_id}.json"
     try:
-        req = urllib.request.Request(url, headers=_HEADERS)
-        with urllib.request.urlopen(req, timeout=15) as r:
-            data = json.loads(r.read())
-
-        post_data = data[0]["data"]["children"][0]["data"]
-        title = post_data.get("title", "").lower()
-        selftext = (post_data.get("selftext") or "").lower()
+        submission = reddit.submission(id=post_id)
+        title = submission.title.lower()
+        selftext = (submission.selftext or "").lower()
         removed = (
-            bool(post_data.get("removed_by_category"))
+            bool(submission.removed_by_category)
             or selftext in ("[removed]", "[deleted]")
         )
 
@@ -109,10 +111,10 @@ def check_sold_signals(post_id: str) -> list[str]:
         if removed:
             signals.append("post_removed")
 
-        comments = data[1]["data"]["children"]
+        submission.comments.replace_more(limit=0)
         vouch_kw = ("vouch", "transaction réussie", "transaction ok", "vendu", "+1")
-        for c in comments[:30]:
-            body = (c.get("data", {}).get("body") or "").lower()
+        for comment in list(submission.comments)[:20]:
+            body = (comment.body or "").lower()
             if any(kw in body for kw in vouch_kw):
                 signals.append("vouch_comment")
                 break
@@ -131,6 +133,11 @@ def main() -> None:
     if not token or not chat_id:
         sys.exit("ERROR: REVENTE_BOT_TOKEN and REVENTE_CHAT_ID required in .env")
 
+    if not os.environ.get("REDDIT_CLIENT_ID"):
+        sys.exit("ERROR: REDDIT_CLIENT_ID not set in .env")
+
+    reddit = init_reddit()
+
     sys.path.insert(0, str(Path(__file__).parent))
     from init_db import init
     con = init(DB_PATH)
@@ -138,7 +145,7 @@ def main() -> None:
     # ── 1. New posts ──────────────────────────────────────────────────────
     print("Fetching new VENTE posts…")
     try:
-        posts = fetch_vente_posts()
+        posts = fetch_vente_posts(reddit)
     except Exception as e:
         sys.exit(f"ERROR: could not fetch Reddit posts: {e}")
 
@@ -190,7 +197,7 @@ def main() -> None:
     ).fetchall()
 
     for row in available:
-        signals = check_sold_signals(row["id"])
+        signals = check_sold_signals(reddit, row["id"])
         if not signals:
             time.sleep(0.5)
             continue
