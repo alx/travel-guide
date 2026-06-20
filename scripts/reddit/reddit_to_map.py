@@ -685,11 +685,19 @@ def write_layout(layout_dir: Path, slug: str, name: str, emoji: str,
     )
 
     layout_dir.mkdir(parents=True, exist_ok=True)
+    base_real = os.path.realpath(layout_dir.parent)
+    target_real = os.path.realpath(layout_dir / "list.html")
+    if os.path.commonpath([base_real, target_real]) != base_real:
+        raise RuntimeError("Invalid file path")
     (layout_dir / "list.html").write_text(content)
 
 
 def write_content(content_dir: Path, name: str, description: str) -> None:
     content_dir.mkdir(parents=True, exist_ok=True)
+    base_real = os.path.realpath(content_dir.parent)
+    target_real = os.path.realpath(content_dir / "_index.md")
+    if os.path.commonpath([base_real, target_real]) != base_real:
+        raise RuntimeError("Invalid file path")
     (content_dir / "_index.md").write_text(
         f'---\ntitle: "{name}"\ndescription: "{description}"\n---\n'
     )

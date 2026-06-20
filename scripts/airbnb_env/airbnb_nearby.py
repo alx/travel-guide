@@ -911,8 +911,15 @@ def reverse_geocode(lat: float, lon: float) -> dict:
 def cache_save(slug: str, lat: float, lon: float, categories: list[str], n_pois: int) -> None:
     """B08 — save GeoJSON fetch metadata for staleness checks."""
     cache_dir = REPO_ROOT / "static" / slug
+    base_real = os.path.realpath(REPO_ROOT / "static")
+    cache_dir_real = os.path.realpath(cache_dir)
+    if os.path.commonpath([base_real, cache_dir_real]) != base_real:
+        raise ValueError("Invalid file path")
     cache_dir.mkdir(parents=True, exist_ok=True)
-    (cache_dir / ".cache.json").write_text(json.dumps({
+    cache_file_real = os.path.realpath(cache_dir / ".cache.json")
+    if os.path.commonpath([base_real, cache_file_real]) != base_real:
+        raise ValueError("Invalid file path")
+    Path(cache_file_real).write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "lat": lat, "lon": lon,
         "categories": sorted(categories),
@@ -1180,8 +1187,19 @@ def write_local_hugo_files(
     }
     print("\nWriting Hugo map files...", file=sys.stderr)
     for path, content in files.items():
+        # Determine base directory based on path
+        if "static" in path.parts:
+            base_dir = REPO_ROOT / "static"
+        elif "content" in path.parts:
+            base_dir = REPO_ROOT / "content"
+        else:
+            raise ValueError("Invalid file path")
+        base_real = os.path.realpath(base_dir)
+        path_real = os.path.realpath(path)
+        if os.path.commonpath([base_real, path_real]) != base_real:
+            raise ValueError("Invalid file path")
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(content, encoding="utf-8")
+        Path(path_real).write_text(content, encoding="utf-8")
         print(f"  ✓ {path.relative_to(REPO_ROOT)}", file=sys.stderr)
     if "/" in slug:
         n_pois = len(geojson.get("features", []))
