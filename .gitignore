@@ -12,3 +12,5 @@ static/toulouse-distorama/events/????-??-??.geojson
 static/toulouse-distorama/events/????-??.geojson
 static/toulouse-distorama/slideshows/
 *.mp4
+__pycache__/
+*.pyc
