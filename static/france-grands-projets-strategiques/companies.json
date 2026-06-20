@@ -6,6 +6,14 @@
       {
         "type": "company_rss",
         "url": "https://www.imerys.com/rss"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvg34NrN-fpHqu8Lfyo86fg"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_9DS3fyw1qN2tGoGCATt-w"
       }
     ]
   },
@@ -16,6 +24,18 @@
       {
         "type": "company_rss",
         "url": "https://www.safran-group.com/rss/pressroom"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_hl7Tmr0g2kMeSjVBWZreA"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCuKKogCqWzqFLQFooz3GDcg"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCoN-DS5JZpeleTnuVdznlxg"
       }
     ]
   },
@@ -26,38 +46,88 @@
       {
         "type": "company_rss",
         "url": "https://blog.se.com/feed"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVPf33n1Mr9gQL9clrxj2fQ"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJrsojB-eUnZOZKIFCIJYFw"
       }
     ]
   },
   "sesterce": {
     "name": "Sesterce",
     "company_url": "https://www.sesterce.io",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzlSsmtj2EJ--Dg_UrKbhnw"
+      }
+    ]
   },
   "magreesource": {
     "name": "MagREEsource",
     "company_url": "https://www.magreesource.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXxGGQzmHPtqLszTj5kEHXA"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvCqPi_0se0PN5uIUAuhfUw"
+      }
+    ]
   },
   "dataone-oreus-core-42": {
     "name": "DataOne - Oreus - Core 42",
     "company_url": "https://www.dataone.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCoprxUwwR4ROCcyEdC3CmLA"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1Hjztje034cujFfCGTMVRQ"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpDD6RfiA4WL1CmvQftvVTg"
+      }
+    ]
   },
   "urgo": {
     "name": "Urgo",
     "company_url": "https://www.urgo.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXsGV11x8ly3evPpGh71N5A"
+      }
+    ]
   },
   "derichebourg": {
     "name": "Derichebourg",
     "company_url": "https://www.derichebourg.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKNjhcm1UiwcFGjbXhF0-fQ"
+      }
+    ]
   },
   "bordet": {
     "name": "Bordet",
     "company_url": "https://www.scierie-bordet.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_6mM-TMk5qW5Ueg0JdcIzQ"
+      }
+    ]
   },
   "jimmy-energy": {
     "name": "Jimmy Energy",
@@ -72,12 +142,22 @@
   "prysmian": {
     "name": "Prysmian",
     "company_url": "https://www.prysmiangroup.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC4pBM7jdm_Gf5g3e_YFaHjg"
+      }
+    ]
   },
   "cailabs": {
     "name": "Cailabs",
     "company_url": "https://www.cailabs.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC7QfFdQk50Hrn-JIZrVLX9Q"
+      }
+    ]
   },
   "cooperl": {
     "name": "Cooperl",
@@ -92,17 +172,40 @@
   "sigmaphi": {
     "name": "Sigmaphi",
     "company_url": "https://www.sigmaphi.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCN4wIGyAWdr2ELUmtvvjsKg"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC8ZdgQskkThqMQTGV9f38wg"
+      }
+    ]
   },
   "mbda": {
     "name": "MBDA",
     "company_url": "https://www.mbda-systems.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCQLqTBXP3XqQ0tv_tGo8Kmw"
+      }
+    ]
   },
   "knds": {
     "name": "KNDS",
     "company_url": "https://www.knds.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsQIxsMZZIR2SfqQ-16dSVQ"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCi5KW8jorofPf7XaIjXGi6Q"
+      }
+    ]
   },
   "google": {
     "name": "Google",
@@ -121,6 +224,10 @@
       {
         "type": "company_rss",
         "url": "https://www.thalesgroup.com/en/feeds/press-room/rss.xml"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCm3ZgG5_yXU_NCgokS5y8jg"
       }
     ]
   },
@@ -137,12 +244,22 @@
   "bertin-technologies": {
     "name": "Bertin technologies",
     "company_url": "https://www.bertin-technologies.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC65432J7QsGVoSZvFeTruxQ"
+      }
+    ]
   },
   "arverne": {
     "name": "Arverne",
     "company_url": "https://www.arverne.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCuvU6v0otxduJMTB3TkXacQ"
+      }
+    ]
   },
   "edf": {
     "name": "EDF",
@@ -151,13 +268,22 @@
       {
         "type": "company_rss",
         "url": "https://www.edf.fr/en/edf/rss-feeds-listing"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCgyxQ7zSDHzJdzQJpFx93Wg"
       }
     ]
   },
   "carbios": {
     "name": "Carbios",
     "company_url": "https://www.carbios.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCEF2-9heorq_lfju5yBQa-g"
+      }
+    ]
   },
   "holosolis": {
     "name": "Holosolis",
@@ -167,7 +293,12 @@
   "eclairion": {
     "name": "Eclairion",
     "company_url": "https://www.eclairion.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCG1xEwANOwbcx0V2hR0Wt7w"
+      }
+    ]
   },
   "circ": {
     "name": "CIRC",
@@ -177,7 +308,12 @@
   "verso-energy": {
     "name": "Verso Energy",
     "company_url": "https://www.verso.energy",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzV3p5D5_c-Eq_bgTNvjskw"
+      }
+    ]
   },
   "axens": {
     "name": "Axens",
@@ -197,7 +333,12 @@
   "windrose-technology": {
     "name": "Windrose Technology",
     "company_url": "https://www.windrose-technology.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHi84FyFnIU6yf4u9ixTdjA"
+      }
+    ]
   },
   "nexans": {
     "name": "Nexans",
@@ -206,6 +347,10 @@
       {
         "type": "company_rss",
         "url": "https://www.nexans.com/en/rss/"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHvxXmABSyRP7qZoexOcFng"
       }
     ]
   },
@@ -222,12 +367,22 @@
   "mersen-france": {
     "name": "Mersen France",
     "company_url": "https://www.mersen.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0tM_NjuwGpoFnTY0AsfapQ"
+      }
+    ]
   },
   "wandercraft": {
     "name": "Wandercraft",
     "company_url": "https://www.wandercraft.eu",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCWmhQuUMF87d-vSrRe1-_9A"
+      }
+    ]
   },
   "mgx": {
     "name": "MGX",
@@ -237,7 +392,16 @@
   "opcore": {
     "name": "Opcore",
     "company_url": "https://www.iliad.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXpfOpIjGm0ocVfPclEfOag"
+      },
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCnBRwPaPYdzd0GX_yDtXuWQ"
+      }
+    ]
   },
   "semmaris": {
     "name": "Semmaris",
@@ -247,7 +411,12 @@
   "solmax": {
     "name": "Solmax",
     "company_url": "https://www.solmax.com",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCGwykBYBp_sGhO9QCzAsswA"
+      }
+    ]
   },
   "soredab": {
     "name": "Soredab",
@@ -257,7 +426,12 @@
   "tertu": {
     "name": "Tertu",
     "company_url": "https://www.tertu.fr",
-    "sources": []
+    "sources": [
+      {
+        "type": "youtube_channel_rss",
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCBHwNwy1gnRnU6Ck0NIapvQ"
+      }
+    ]
   },
   "maiaspace": {
     "name": "MaiaSpace",
