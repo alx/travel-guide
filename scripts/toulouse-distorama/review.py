@@ -629,4 +629,4 @@ document.addEventListener('keydown', e => {
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5020, use_reloader=False)
+    app.run(port=5020, use_reloader=False)
