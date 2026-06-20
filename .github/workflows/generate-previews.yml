@@ -46,12 +46,14 @@ jobs:
       # ── 1. Determine which slugs to screenshot ───────────────────────────
       - name: Determine slugs
         id: slugs
+        env:
+          INPUT_SLUGS: ${{ inputs.slugs }}
         run: |
           set -euo pipefail
 
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.slugs }}" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "$INPUT_SLUGS" ]; then
             # ── Manual with explicit slugs ──────────────────────────────────
-            SLUGS=$(echo "${{ inputs.slugs }}" | tr ' ' '\n' | grep -v '^$' | tr '\n' ' ' | xargs)
+            SLUGS=$(echo "$INPUT_SLUGS" | tr ' ' '\n' | grep -v '^$' | tr '\n' ' ' | xargs)
 
           elif [ "${{ github.event_name }}" = "push" ]; then
             # ── Push to main: changed GeoJSON/TopoJSON files ────────────────

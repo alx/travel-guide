@@ -53,15 +53,15 @@ jobs:
           CHANGEDETECTION_BASE_URL: ${{ secrets.CHANGEDETECTION_BASE_URL }}
 
       - name: Send newsletter
-        run: |
-          DRY="${{ github.event.inputs.dry_run }}"
-          FLAGS="--mode $PERIOD"
-          [ "$DRY" = "true" ] && FLAGS="$FLAGS --dry-run"
-          uv run scripts/france_project_newsletter/send_mailchimp.py $FLAGS
         env:
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
           MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
           MAILCHIMP_LIST_ID: ${{ secrets.MAILCHIMP_LIST_ID }}
           MAILCHIMP_SERVER_PREFIX: ${{ secrets.MAILCHIMP_SERVER_PREFIX }}
+        run: |
+          FLAGS="--mode $PERIOD"
+          [ "$DRY_RUN" = "true" ] && FLAGS="$FLAGS --dry-run"
+          uv run scripts/france_project_newsletter/send_mailchimp.py $FLAGS
 
       - name: Upload HTML preview
         if: always()
