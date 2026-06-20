@@ -183,3 +183,20 @@ Private bot (BotFather token + personal chat ID) for the internal phase; promote
 
 **Finance review interface**
 Telegram inline keyboard: each pending finance extraction is sent to the owner as a bot message with Approve / Reject buttons. Approval writes the extraction to the ledger; rejection discards it with an optional reason. The bot runs as a persistent service on lamai270 to handle button callbacks.
+
+## ReventeTicketsFR pipeline
+
+**ReventeTicketsFR pipeline**
+Daily monitoring pipeline for `r/ReventeTicketsFR` VENTE-flair posts. Runs as a lamai270 cron. Flow: fetch new posts → Telegram notification → human structured reply → confirmation echo → venue geocode → YouTube enrichment → SQLite write → GeoJSON regenerate → git push → Hugo deploy.
+
+**Ticket listing**
+A structured record derived from a `r/ReventeTicketsFR` VENTE-flair post. Fields: `venue`, `artist`, `date`, `tickets` (count), `price_each`, `category` (place type e.g. Fosse/Assis), `reddit_url`, `status` (`available` / `sold`). Stored in SQLite at `data/revente-tickets-fr/state.db`. Each listing becomes one GeoJSON feature on the `revente-tickets-fr` map, pinned at the venue's coordinates.
+
+**Vouch**
+A comment left by a buyer on a seller's r/ReventeTicketsFR post after a successful transaction, per community rules. Presence of vouch comments is one signal in **sold detection**.
+
+**Sold detection**
+Three-signal cascade run by the daily cron to detect sold ticket listings: (1) post title contains VENDU/SOLD; (2) post removed or deleted; (3) post has vouch comments. Any signal triggers a Telegram confirmation before flipping listing `status` to `sold`. Manual mark by the user is also supported.
+
+**ReventeTicketsFR bot**
+Standalone Python script at `scripts/revente-tickets-fr/telegram_bot.py` running as a persistent service on lamai270. Separate from the GPS newsletter Telegram bot. Handles: new-post notification → key-value reply parsing → confirmation echo → save on `oui`.

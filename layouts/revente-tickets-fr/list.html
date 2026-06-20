@@ -1,0 +1,258 @@
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+
+  .overlay-card {
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+  .page-header h1 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .page-header p { font-size: 0.78rem; color: #666; margin: 0; }
+
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; }
+  .header-btn:hover, .header-btn.active { border-color: #c0392b; color: #c0392b; background: #fdf0ee; }
+
+  #filter-btns { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+  .filter-btn { padding: 0.3rem 0.8rem; border-radius: 20px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.78rem; font-weight: 500; }
+  .filter-btn.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+  .filter-btn.filter-available.active { background: #27ae60; border-color: #27ae60; }
+  .filter-btn.filter-sold.active { background: #95a5a6; border-color: #95a5a6; }
+
+  .search-box { width: 100%; padding: 0.45rem 0.7rem; border: 1.5px solid #ddd; border-radius: 8px; font-size: 0.84rem; box-sizing: border-box; }
+  .search-box:focus { outline: none; border-color: #1a3a5c; }
+
+  .poi-card {
+    background: white; border-radius: 10px; padding: 0.75rem 0.85rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); cursor: pointer;
+    border: 2px solid transparent; transition: border-color 0.15s; flex-shrink: 0;
+  }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card.status-sold { opacity: 0.55; }
+  .poi-card.status-sold:hover { opacity: 0.8; border-color: #95a5a6; }
+
+  .poi-artist { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.1rem; }
+  .poi-venue  { font-size: 0.78rem; color: #555; margin-bottom: 0.25rem; }
+  .poi-meta   { font-size: 0.75rem; color: #777; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem; }
+  .poi-meta span { background: #f5f5f5; padding: 0.1rem 0.4rem; border-radius: 4px; }
+
+  .status-badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    padding: 0.1rem 0.45rem; border-radius: 20px; margin-bottom: 0.3rem;
+  }
+  .status-available { background: #d4efdf; color: #1e8449; }
+  .status-sold      { background: #e8e8e8; color: #666; }
+
+  .poi-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.35rem; }
+  .poi-actions a { font-size: 0.73rem; color: #1a3a5c; text-decoration: none; font-weight: 500; padding: 0.15rem 0; }
+  .poi-actions a:hover { text-decoration: underline; }
+  .poi-actions .btn-buy { color: #c0392b; font-weight: 700; }
+
+  .yt-thumb { margin-top: 0.45rem; border-radius: 6px; overflow: hidden; line-height: 0; }
+  .yt-thumb img { width: 100%; height: auto; border-radius: 6px; }
+
+  .empty-state { padding: 1.5rem 0; text-align: center; color: #aaa; font-size: 0.85rem; }
+
+  @media (max-width: 768px) {
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 50vh; overflow-y: auto; padding: 0.75rem 0.85rem !important; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🎟️ Revente Tickets</h1>
+      <p>Billets de concert à vendre · <a href="https://www.reddit.com/r/ReventeTicketsFR/" target="_blank">r/ReventeTicketsFR</a></p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">📍 Annonces</button>
+    </div>
+  </div>
+
+  <div class="overlay-card scrollable">
+    <input class="search-box" type="text" id="search" placeholder="🔍 Artiste, salle…" oninput="filterAndRender()">
+    <div id="filter-btns">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter(this,'all')">Tous</button>
+      <button class="filter-btn filter-available" data-filter="Disponible" onclick="setFilter(this,'Disponible')">🟢 Disponible</button>
+      <button class="filter-btn filter-sold" data-filter="Vendu" onclick="setFilter(this,'Vendu')">⚫ Vendu</button>
+    </div>
+    <div id="poi-list"><div class="empty-state">Chargement…</div></div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const GEOJSON_URL = '{{ "/revente-tickets-fr/locations.geojson" | relURL }}';
+const AVAILABLE_COLOR = '#27ae60';
+const SOLD_COLOR      = '#95a5a6';
+
+let map, allPOIs = [], markers = {}, activeFilter = 'all', activeCard = null;
+
+map = L.map('map').setView([46.8, 2.35], 6);
+window._leafletMap = map;
+map.on('click', clearFocus);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(status) {
+  const color = status === 'available' ? AVAILABLE_COLOR : SOLD_COLOR;
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">🎟️</div>`,
+    iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-20]
+  });
+}
+
+function focusPOI(f) {
+  const [lng, lat] = f.geometry.coordinates;
+  map.flyTo([lat, lng], 13, {duration: 0.7});
+  if (markers[f._id]) markers[f._id].openPopup();
+  if (activeCard !== null) document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = f._id;
+  document.getElementById('card-' + f._id)?.classList.add('active');
+  document.getElementById('card-' + f._id)?.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+}
+
+function buildPopup(p) {
+  const priceStr  = p.price_each   ? `${p.price_each}€/place` : '';
+  const ticketStr = p.tickets      ? `${p.tickets}×` : '';
+  const catStr    = p.seat_category ? ` · ${p.seat_category}` : '';
+  const dateStr   = p.event_date   ? `📅 ${p.event_date}<br>` : '';
+  const info      = [ticketStr, priceStr].filter(Boolean).join(' · ') + catStr;
+  return `<b>${p.artist || p.venue}</b><br><small>${p.venue}</small><br>${dateStr}${info ? `<small>${info}</small><br>` : ''}<a href="${p.reddit_url}" target="_blank">Voir le post →</a>`;
+}
+
+function renderSidebar() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const list   = document.getElementById('poi-list');
+  const visible = allPOIs.filter(f => {
+    const p = f.properties;
+    const matchFilter = activeFilter === 'all' || p.category === activeFilter;
+    const matchSearch = !search || (p.artist + p.venue).toLowerCase().includes(search);
+    return matchFilter && matchSearch;
+  });
+
+  if (visible.length === 0) {
+    list.innerHTML = '<div class="empty-state">Aucune annonce pour ce filtre.</div>';
+    return;
+  }
+
+  list.innerHTML = '';
+  visible.forEach(f => {
+    const p    = f.properties;
+    const sold = p.status === 'sold';
+    const card = document.createElement('div');
+    card.className = `poi-card status-${p.status}`;
+    card.id = 'card-' + f._id;
+
+    const priceStr  = p.price_each   ? `💶 ${p.price_each}€/place` : '';
+    const ticketStr = p.tickets      ? `🎟️ ${p.tickets}×` : '';
+    const catStr    = p.seat_category ? `💺 ${p.seat_category}` : '';
+    const dateStr   = p.event_date   ? `📅 ${p.event_date}` : '';
+    const metas     = [dateStr, ticketStr, priceStr, catStr].filter(Boolean);
+
+    const ytThumb = p.youtube_video_id
+      ? `<div class="yt-thumb"><a href="https://www.youtube.com/watch?v=${p.youtube_video_id}" target="_blank"><img src="https://img.youtube.com/vi/${p.youtube_video_id}/mqdefault.jpg" alt="YouTube" loading="lazy"></a></div>`
+      : '';
+
+    card.innerHTML = `
+      <span class="status-badge status-${p.status}">${sold ? 'Vendu' : 'Disponible'}</span>
+      <div class="poi-artist">${p.artist || '—'}</div>
+      <div class="poi-venue">📍 ${p.venue || '—'}</div>
+      ${metas.length ? `<div class="poi-meta">${metas.map(m=>`<span>${m}</span>`).join('')}</div>` : ''}
+      <div class="poi-actions">
+        ${!sold ? `<a class="btn-buy" href="${p.reddit_url}" target="_blank">🛒 Acheter sur Reddit</a>` : `<a href="${p.reddit_url}" target="_blank">Voir le post</a>`}
+        ${p.youtube_url ? `<a href="${p.youtube_url}" target="_blank">▶ YouTube</a>` : ''}
+      </div>
+      ${ytThumb}`;
+    card.onclick = (e) => {
+      if (e.target.tagName === 'A') return;
+      focusPOI(f);
+    };
+    list.appendChild(card);
+  });
+}
+
+function updateMarkers() {
+  const search = document.getElementById('search').value.toLowerCase();
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  Object.keys(markers).forEach(k => delete markers[k]);
+
+  allPOIs.forEach(f => {
+    const p = f.properties;
+    const matchFilter = activeFilter === 'all' || p.category === activeFilter;
+    const matchSearch = !search || (p.artist + p.venue).toLowerCase().includes(search);
+    if (!matchFilter || !matchSearch) return;
+
+    const [lng, lat] = f.geometry.coordinates;
+    const m = L.marker([lat, lng], {icon: makeIcon(p.status)})
+      .addTo(map)
+      .bindPopup(buildPopup(p));
+    m.on('click', () => focusPOI(f));
+    markers[f._id] = m;
+  });
+}
+
+function filterAndRender() {
+  renderSidebar();
+  updateMarkers();
+}
+
+function setFilter(btn, filter) {
+  activeFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterAndRender();
+}
+
+fetch(GEOJSON_URL)
+  .then(r => r.json())
+  .then(data => {
+    allPOIs = data.features.map((f, i) => ({...f, _id: i}));
+    renderSidebar();
+    updateMarkers();
+    if (Object.keys(markers).length > 0) {
+      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.15));
+    }
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML =
+      '<div class="empty-state">Impossible de charger les annonces.</div>';
+  });
+</script>
+{{ end }}

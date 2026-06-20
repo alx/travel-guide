@@ -4,6 +4,7 @@ public/
 node_modules/
 .playwright-mcp/
 data/france_project_newsletter/state.db
+data/revente-tickets-fr/state.db
 data/france_project_newsletter/preview.html
 static/toulouse-distorama/tmp-media/
 content/toulouse-distorama-????-??-??/
