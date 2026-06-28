@@ -1,0 +1,145 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<style>
+body { background: #1a1a2e; }
+.overlay-card {
+  background: rgba(10,10,20,0.96) !important;
+  border: 1px solid rgba(255,107,53,0.3) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.8) !important;
+  color: #eee;
+}
+.overlay-card h1, .overlay-card h2 { color: #fff; }
+.overlay-card p { color: #999; }
+.site-brand { color: #888 !important; }
+.walk-badge {
+  display: inline-block;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #FF6B35; color: #fff;
+  font-size: 12px; font-weight: 700;
+  text-align: center; line-height: 24px;
+  margin-right: 0.4rem; flex-shrink: 0;
+}
+.poi-card {
+  background: #111 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  cursor: pointer;
+}
+.poi-card:hover, .poi-card.active { border-color: #FF6B35 !important; }
+.poi-card h3 { color: #eee; font-size: 0.9rem; margin: 0; }
+.poi-meta { font-size: 0.75rem; color: #666; margin-top: 0.25rem; }
+.poi-photo { width: 100%; height: 140px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem; }
+.route-legend {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: #777; margin-top: 0.5rem;
+}
+.route-line-sample {
+  width: 32px; height: 3px; background: #FF6B35;
+  border-radius: 2px; flex-shrink: 0;
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1 style="font-size:1.2rem;font-weight:700;margin:0 0 0.25rem;">Bangkok City Walk</h1>
+      <p style="font-size:0.8rem;margin:0;">10km · 10 landmarks · Grand Palace → ICONSIAM</p>
+    </div>
+    <div class="route-legend">
+      <div class="route-line-sample"></div>
+      <span>Walking route</span>
+    </div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="poi-list"></div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  const GEOJSON_URL = '{{ "/bangkok-citywalk/walk.geojson" | relURL }}';
+  const ROUTE_COLOR = '#FF6B35';
+  const TILE_URL = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}';
+
+  const map = L.map('map', { maxZoom: 18 }).setView([13.736717, 100.523186], 13);
+  L.tileLayer(TILE_URL, {
+    attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
+  }).addTo(map);
+
+  fetch(GEOJSON_URL)
+    .then(r => r.json())
+    .then(data => {
+      const pois = data.features
+        .filter(f => f.geometry.type === 'Point')
+        .sort((a, b) => a.properties.order - b.properties.order);
+      const routeFeature = data.features.find(f => f.geometry.type === 'LineString');
+
+      // Draw route polyline (GeoJSON [lng,lat] → Leaflet [lat,lng])
+      if (routeFeature) {
+        const latLngs = routeFeature.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+        L.polyline(latLngs, {
+          color: ROUTE_COLOR,
+          weight: 3,
+          opacity: 0.85,
+          dashArray: '8 4',
+        }).addTo(map);
+        map.fitBounds(L.polyline(latLngs).getBounds(), { padding: [40, 40] });
+      }
+
+      // Draw numbered markers
+      pois.forEach(f => {
+        const [lng, lat] = f.geometry.coordinates;
+        const p = f.properties;
+        const icon = L.divIcon({
+          className: '',
+          html: `<div style="width:28px;height:28px;border-radius:50%;background:#FF6B35;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.6);border:2px solid #fff;">${p.order}</div>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+        });
+        const marker = L.marker([lat, lng], { icon });
+        marker.addTo(map);
+        marker.on('click', () => focusPOI(f));
+      });
+
+      // Render sidebar list
+      const list = document.getElementById('poi-list');
+      pois.forEach(f => {
+        const p = f.properties;
+        const card = document.createElement('div');
+        card.className = 'poi-card';
+        card.id = `card-${p.order}`;
+        card.style.cssText = 'border-radius:8px;padding:0.75rem;margin-bottom:0.4rem;';
+        card.innerHTML = `
+          ${p.photo ? `<img class="poi-photo" src="${p.photo}" alt="${p.name}" loading="lazy">` : ''}
+          <div style="display:flex;align-items:center;">
+            <span class="walk-badge">${p.order}</span>
+            <h3>${p.name}</h3>
+          </div>
+          ${p.attribution ? `<div class="poi-meta">${p.attribution}</div>` : ''}
+        `;
+        card.addEventListener('click', () => focusPOI(f));
+        list.appendChild(card);
+      });
+
+      function focusPOI(f) {
+        const [lng, lat] = f.geometry.coordinates;
+        map.flyTo([lat, lng], 16, { duration: 1 });
+        document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('active'));
+        const card = document.getElementById(`card-${f.properties.order}`);
+        if (card) {
+          card.classList.add('active');
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    })
+    .catch(err => console.error('Failed to load walk.geojson:', err));
+})();
+</script>
+{{ end }}
