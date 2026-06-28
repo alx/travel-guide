@@ -14,3 +14,4 @@ static/toulouse-distorama/slideshows/
 *.mp4
 __pycache__/
 *.pyc
+.superpowers/
