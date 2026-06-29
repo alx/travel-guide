@@ -42,19 +42,6 @@ const SLIDE_DUR = parseFloat(CLI_SLIDE_DUR ?? 10);
 const HASH       = crypto.randomBytes(4).toString('hex');
 const OUTPUT_MP4 = CLI_OUTPUT || path.join(OUTPUT_DIR, `bangkok-citywalk-${HASH}.mp4`);
 
-// ── Env ───────────────────────────────────────────────────────────────────────
-function loadEnv() {
-  const env = {...process.env};
-  const envFile = path.join(ROOT, '.env');
-  if (fs.existsSync(envFile)) {
-    fs.readFileSync(envFile, 'utf8').split('\n').forEach(line => {
-      const m = line.match(/^([^#=\s][^=]*)=(.*)$/);
-      if (m) env[m[1].trim()] = m[2].trim().replace(/^["']|["']$/g, '');
-    });
-  }
-  return env;
-}
-
 // ── Photo HTTP server ─────────────────────────────────────────────────────────
 function startPhotoServer(dir) {
   return new Promise((resolve, reject) => {
@@ -81,7 +68,6 @@ function parseGeoJSON(photoBaseUrl) {
 
   const slides = poiFeatures.map(f => {
     const p = f.properties;
-    const slug = p.slug;
     // Map GeoJSON /bangkok-citywalk/photos/<slug>-N.jpg paths to HTTP URLs
     const photos = (p.photos || [])
       .map(photoPath => {
