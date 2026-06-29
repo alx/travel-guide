@@ -82,16 +82,20 @@ function parseGeoJSON(photoBaseUrl) {
   const slides = poiFeatures.map(f => {
     const p = f.properties;
     const slug = p.slug;
-    const photoPath = path.join(PHOTOS_DIR, `${slug}.jpg`);
-    const photoUrl = fs.existsSync(photoPath)
-      ? `${photoBaseUrl}/${slug}.jpg`
-      : '';
+    // Map GeoJSON /bangkok-citywalk/photos/<slug>-N.jpg paths to HTTP URLs
+    const photos = (p.photos || [])
+      .map(photoPath => {
+        // Extract filename from path like /bangkok-citywalk/photos/slug-1.jpg
+        const filename = photoPath.split('/').pop();
+        const filePath = path.join(PHOTOS_DIR, filename);
+        return fs.existsSync(filePath) ? `${photoBaseUrl}/${filename}` : null;
+      })
+      .filter(Boolean);
     return {
       name: p.name,
       order: p.order,
-      photoUrl,
-      attribution: p.attribution || '',
-      coordinates: f.geometry.coordinates, // [lng, lat]
+      photos,
+      coordinates: f.geometry.coordinates,
     };
   });
 
@@ -99,7 +103,6 @@ function parseGeoJSON(photoBaseUrl) {
   if (routeFeature) {
     const allCoords = routeFeature.geometry.coordinates;
     const breaks = routeFeature.properties.segment_breaks;
-    // Build one RouteSegment per consecutive POI pair
     for (let i = 0; i < breaks.length - 1; i++) {
       const start = breaks[i];
       const end = (i + 1 < breaks.length) ? breaks[i + 1] : allCoords.length - 1;
@@ -119,9 +122,6 @@ async function main() {
     process.exit(1);
   }
 
-  const env = loadEnv();
-  const maptilerKey = env.MAPTILER_API_KEY || '';
-  if (!maptilerKey) console.warn('⚠ MAPTILER_API_KEY not set — map tiles may fail');
 
   // Serve photos over HTTP so Remotion's Chromium can load them
   const {server: photoServer, port: photoPort} = await startPhotoServer(PHOTOS_DIR);
@@ -136,7 +136,6 @@ async function main() {
     introDur: INTRO_DUR,
     outroDur: OUTRO_DUR,
     slideDur: SLIDE_DUR,
-    maptilerKey,
   };
 
   const totalSec = INTRO_DUR + slides.length * SLIDE_DUR + OUTRO_DUR;
