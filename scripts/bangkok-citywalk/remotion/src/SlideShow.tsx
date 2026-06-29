@@ -1,4 +1,5 @@
 import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
+import {IntroOverlay} from './IntroOverlay';
 import {MAP_HEIGHT, MapView} from './MapView';
 import {Outro} from './Outro';
 import {SlideScene} from './SlideScene';
@@ -94,6 +95,13 @@ export const SlideShow: React.FC<WalkShowProps> = ({slides, route, introDur, out
           </Sequence>
         )}
       </div>
+
+      {/* Intro title overlay — full canvas, above everything */}
+      {introFrames > 0 && (
+        <Sequence from={0} durationInFrames={introFrames}>
+          <IntroOverlay introDur={introDur} />
+        </Sequence>
+      )}
     </AbsoluteFill>
   );
 };
