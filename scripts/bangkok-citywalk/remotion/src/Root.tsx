@@ -8,7 +8,6 @@ const DEFAULT_PROPS: WalkShowProps = {
   introDur: 3,
   outroDur: 5,
   slideDur: 10,
-  maptilerKey: '',
 };
 
 export const RemotionRoot: React.FC = () => {
