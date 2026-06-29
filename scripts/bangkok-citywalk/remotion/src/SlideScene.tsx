@@ -30,9 +30,9 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
     <AbsoluteFill style={{opacity}}>
       {/* Photo */}
       <div style={{position: 'absolute', top: 0, left: 0, right: 0, height: PHOTO_HEIGHT, background: '#111', overflow: 'hidden'}}>
-        {slide.photoUrl ? (
+        {slide.photos[0] ? (
           <Img
-            src={slide.photoUrl}
+            src={slide.photos[0]}
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
           />
         ) : (
@@ -83,11 +83,6 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
         >
           {slide.name}
         </div>
-        {slide.attribution && (
-          <div style={{...MONO, fontSize: 13, color: '#444', lineHeight: 1.4}}>
-            {slide.attribution}
-          </div>
-        )}
       </div>
     </AbsoluteFill>
   );

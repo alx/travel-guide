@@ -13,19 +13,22 @@ import {RouteSegment, WalkSlide} from './types';
 export const MAP_HEIGHT = 960;
 const VENUE_ZOOM = 15;
 const OVERVIEW_ZOOM = 12;
-const TRANSITION_ZOOM = 13;
 const PADDING_BOTTOM = 480;
 const MAP_PADDING = {top: 0, right: 0, bottom: PADDING_BOTTOM, left: 0};
 
-// Bangkok city centre fallback
 const BANGKOK_CENTER: [number, number] = [100.5018, 13.7563];
+
+const RING_CONFIGS = [
+  {radiusM: 400, label: '5 min'},
+  {radiusM: 800, label: '10 min'},
+  {radiusM: 1200, label: '15 min'},
+];
 
 interface Props {
   slides: WalkSlide[];
   route: RouteSegment[];
   introDur: number;
   slideDur: number;
-  maptilerKey: string;
 }
 
 function centroid(coords: [number, number][]): [number, number] {
@@ -43,14 +46,12 @@ function buildMarkerGeojson(
     features: slides.map((s, i) => ({
       type: 'Feature',
       geometry: {type: 'Point', coordinates: s.coordinates},
-      properties: {index: i, active: i === activeIdx, order: s.order},
+      properties: {index: i, active: i === activeIdx, order: s.order, name: s.name},
     })),
   };
 }
 
 function buildRouteGeojson(segments: RouteSegment[], upTo: number): GeoJSON.FeatureCollection {
-  // Stitch legs 0..upTo-1 into one walked MultiLineString
-  // Remaining legs as another (upcoming)
   const walked = segments.slice(0, Math.max(0, upTo)).map(s => s.coords);
   const upcoming = segments.slice(Math.max(0, upTo)).map(s => s.coords);
   return {
@@ -70,7 +71,51 @@ function buildRouteGeojson(segments: RouteSegment[], upTo: number): GeoJSON.Feat
   };
 }
 
-export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, maptilerKey}) => {
+// Returns a 64-point GeoJSON Polygon approximating a circle of radiusM metres.
+function makeCirclePolygon(
+  center: [number, number],
+  radiusM: number,
+  steps = 64,
+): GeoJSON.Feature<GeoJSON.Polygon> {
+  const [lng, lat] = center;
+  const coords: [number, number][] = [];
+  for (let i = 0; i <= steps; i++) {
+    const angle = (i / steps) * 2 * Math.PI;
+    const dLat = (radiusM * Math.cos(angle)) / 111320;
+    const dLng = (radiusM * Math.sin(angle)) / (111320 * Math.cos((lat * Math.PI) / 180));
+    coords.push([lng + dLng, lat + dLat]);
+  }
+  return {
+    type: 'Feature',
+    geometry: {type: 'Polygon', coordinates: [coords]},
+    properties: {},
+  };
+}
+
+function buildRingsGeojson(center: [number, number] | null): GeoJSON.FeatureCollection {
+  if (!center) return {type: 'FeatureCollection', features: []};
+  return {
+    type: 'FeatureCollection',
+    features: RING_CONFIGS.map(({radiusM}) => makeCirclePolygon(center, radiusM)),
+  };
+}
+
+function buildRingLabelsGeojson(center: [number, number] | null): GeoJSON.FeatureCollection {
+  if (!center) return {type: 'FeatureCollection', features: []};
+  return {
+    type: 'FeatureCollection',
+    features: RING_CONFIGS.map(({radiusM, label}) => ({
+      type: 'Feature' as const,
+      geometry: {
+        type: 'Point' as const,
+        coordinates: [center[0], center[1] + radiusM / 111320],
+      },
+      properties: {label},
+    })),
+  };
+}
+
+export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -89,7 +134,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
 
     const mapInstance = new maplibregl.Map({
       container: containerRef.current,
-      style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${maptilerKey}`,
+      style: 'https://tiles.openfreemap.org/styles/positron',
       center: overviewCenter,
       zoom: OVERVIEW_ZOOM,
       interactive: false,
@@ -99,7 +144,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
     } as maplibregl.MapOptions);
 
     mapInstance.once('idle', () => {
-      // Route source (walked + upcoming MultiLineStrings)
+      // Route
       mapInstance.addSource('route', {
         type: 'geojson',
         data: buildRouteGeojson(route, 0),
@@ -119,26 +164,62 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
         paint: {'line-color': '#FF6B35', 'line-width': 3},
       });
 
-      // POI markers source
+      // Walking-distance rings
+      mapInstance.addSource('rings', {
+        type: 'geojson',
+        data: buildRingsGeojson(null),
+      });
+      mapInstance.addLayer({
+        id: 'rings-line',
+        type: 'line',
+        source: 'rings',
+        paint: {
+          'line-color': '#1a6b3c',
+          'line-width': 1.5,
+          'line-dasharray': [3, 2],
+          'line-opacity': 0.7,
+        },
+      });
+      mapInstance.addSource('ring-labels', {
+        type: 'geojson',
+        data: buildRingLabelsGeojson(null),
+      });
+      mapInstance.addLayer({
+        id: 'rings-label',
+        type: 'symbol',
+        source: 'ring-labels',
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-size': 11,
+          'text-anchor': 'bottom',
+          'text-allow-overlap': true,
+          'text-font': ['Noto Sans Bold'],
+        },
+        paint: {
+          'text-color': '#1a6b3c',
+          'text-halo-color': '#fff',
+          'text-halo-width': 2,
+        },
+      });
+
+      // POI markers
       mapInstance.addSource('markers', {
         type: 'geojson',
         data: buildMarkerGeojson(slides, -1),
       });
-      // Inactive markers: small circle
       mapInstance.addLayer({
         id: 'markers-base',
         type: 'circle',
         source: 'markers',
         filter: ['!=', ['get', 'active'], true],
         paint: {
-          'circle-radius': 6,
+          'circle-radius': 10,
           'circle-color': '#FF6B35',
           'circle-stroke-width': 2,
           'circle-stroke-color': '#fff',
           'circle-opacity': 0.7,
         },
       });
-      // Active marker: large circle
       mapInstance.addLayer({
         id: 'markers-active',
         type: 'circle',
@@ -151,9 +232,9 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
           'circle-stroke-color': '#fff',
         },
       });
-      // Order number on active marker
+      // Number badge on active marker
       mapInstance.addLayer({
-        id: 'markers-label',
+        id: 'markers-order',
         type: 'symbol',
         source: 'markers',
         filter: ['==', ['get', 'active'], true],
@@ -165,6 +246,49 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
           'text-font': ['Noto Sans Bold'],
         },
         paint: {'text-color': '#fff'},
+      });
+      // Name label below inactive markers (0.6 opacity)
+      mapInstance.addLayer({
+        id: 'markers-name-inactive',
+        type: 'symbol',
+        source: 'markers',
+        filter: ['!=', ['get', 'active'], true],
+        layout: {
+          'text-field': ['get', 'name'],
+          'text-size': 11,
+          'text-anchor': 'top',
+          'text-offset': [0, 1.2],
+          'text-allow-overlap': false,
+          'text-font': ['Noto Sans Regular'],
+          'text-max-width': 8,
+        },
+        paint: {
+          'text-color': '#1a1a1a',
+          'text-halo-color': '#fff',
+          'text-halo-width': 2,
+          'text-opacity': 0.6,
+        },
+      });
+      // Name label below active marker (full opacity)
+      mapInstance.addLayer({
+        id: 'markers-name-active',
+        type: 'symbol',
+        source: 'markers',
+        filter: ['==', ['get', 'active'], true],
+        layout: {
+          'text-field': ['get', 'name'],
+          'text-size': 11,
+          'text-anchor': 'top',
+          'text-offset': [0, 1.8],
+          'text-allow-overlap': true,
+          'text-font': ['Noto Sans Bold'],
+          'text-max-width': 8,
+        },
+        paint: {
+          'text-color': '#1a1a1a',
+          'text-halo-color': '#fff',
+          'text-halo-width': 2,
+        },
       });
 
       mapInstance.setPadding(MAP_PADDING);
@@ -198,7 +322,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
     } else {
       const idx = Math.min(Math.floor((frame - introFrames) / slideDurFrames), N - 1);
       activeIdx = idx;
-      routeUpTo = idx; // legs 0..idx-1 are "walked"
+      routeUpTo = idx;
       const localFrame = frame - introFrames - idx * slideDurFrames;
       const rawT = Math.min(localFrame / TRANSITION_FRAMES, 1);
       const easedT = Easing.inOut(Easing.cubic)(rawT);
@@ -211,7 +335,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
         const prev = idx - 1;
         lng = coords[prev][0] + (coords[idx][0] - coords[prev][0]) * easedT;
         lat = coords[prev][1] + (coords[idx][1] - coords[prev][1]) * easedT;
-        zoom = VENUE_ZOOM - Math.sin(rawT * Math.PI) * (VENUE_ZOOM - TRANSITION_ZOOM);
+        zoom = VENUE_ZOOM; // pan only — no zoom dip
       }
     }
 
@@ -222,6 +346,16 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur, map
 
     const routeSource = map.getSource('route') as maplibregl.GeoJSONSource;
     routeSource.setData(buildRouteGeojson(route, routeUpTo));
+
+    // Walking-distance rings centred on active POI
+    const activeCenter: [number, number] | null =
+      activeIdx >= 0 ? coords[activeIdx] : null;
+    (map.getSource('rings') as maplibregl.GeoJSONSource).setData(
+      buildRingsGeojson(activeCenter),
+    );
+    (map.getSource('ring-labels') as maplibregl.GeoJSONSource).setData(
+      buildRingLabelsGeojson(activeCenter),
+    );
 
     const onIdle = () => continueRender(handle);
     map.once('idle', onIdle);
