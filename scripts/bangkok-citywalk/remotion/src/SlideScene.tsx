@@ -4,7 +4,7 @@ import {WalkSlide} from './types';
 export const PHOTO_HEIGHT = 600;
 export const CARD_HEIGHT = 360;
 
-const MONO: React.CSSProperties = {fontFamily: "'Courier New', Courier, monospace"};
+const CROSSFADE_FRAMES = 9; // 0.3 s at 30 fps
 
 interface Props {
   slide: WalkSlide;
@@ -19,28 +19,65 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
   const fadeInFrames = Math.round(0.4 * fps);
   const fadeOutFrames = Math.round(1.5 * fps);
 
-  const opacity = interpolate(
+  const sceneOpacity = interpolate(
     frame,
     [0, fadeInFrames, slideDurFrames - fadeOutFrames, slideDurFrames],
     [0, 1, 1, 0],
     {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
   );
 
+  const photos = slide.photos;
+  const n = photos.length;
+
+  // Determine which two photos are visible and the cross-fade amount
+  let currentIdx = 0;
+  let nextIdx = 0;
+  let crossfadeT = 0;
+
+  if (n > 1) {
+    const sliceFrames = slideDurFrames / n;
+    currentIdx = Math.min(Math.floor(frame / sliceFrames), n - 1);
+    const localFrame = frame - currentIdx * sliceFrames;
+    nextIdx = Math.min(currentIdx + 1, n - 1);
+    if (nextIdx !== currentIdx && localFrame >= sliceFrames - CROSSFADE_FRAMES) {
+      crossfadeT = (localFrame - (sliceFrames - CROSSFADE_FRAMES)) / CROSSFADE_FRAMES;
+    }
+  }
+
+  const currentPhoto = n > 0 ? photos[currentIdx] : null;
+  const nextPhoto = crossfadeT > 0 && nextIdx !== currentIdx ? photos[nextIdx] : null;
+
   return (
-    <AbsoluteFill style={{opacity}}>
-      {/* Photo */}
+    <AbsoluteFill style={{opacity: sceneOpacity}}>
+      {/* Photo area */}
       <div style={{position: 'absolute', top: 0, left: 0, right: 0, height: PHOTO_HEIGHT, background: '#111', overflow: 'hidden'}}>
-        {slide.photos[0] ? (
+        {/* Current photo */}
+        {currentPhoto ? (
           <Img
-            src={slide.photos[0]}
-            style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            src={currentPhoto}
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%', objectFit: 'cover',
+              opacity: 1 - crossfadeT,
+            }}
           />
         ) : (
-          <div style={{width: '100%', height: '100%', background: '#1a1a2e', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <span style={{...MONO, color: '#333', fontSize: 48}}>🗺</span>
-          </div>
+          <div style={{width: '100%', height: '100%', background: '#1a1a2e'}} />
         )}
-        {/* Order badge overlay */}
+
+        {/* Next photo (cross-fade in) */}
+        {nextPhoto && (
+          <Img
+            src={nextPhoto}
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%', objectFit: 'cover',
+              opacity: crossfadeT,
+            }}
+          />
+        )}
+
+        {/* Order badge */}
         <div
           style={{
             position: 'absolute', top: 20, left: 20,
@@ -73,12 +110,11 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
         <div style={{width: 32, height: 3, background: '#FF6B35', borderRadius: 2, marginBottom: 20}} />
         <div
           style={{
-            ...MONO,
-            fontSize: 32,
-            fontWeight: 700,
+            fontFamily: "'Courier New', Courier, monospace",
+            fontSize: 64,
+            fontWeight: 900,
             color: '#fff',
-            lineHeight: 1.2,
-            marginBottom: 16,
+            lineHeight: 1.1,
           }}
         >
           {slide.name}
