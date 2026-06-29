@@ -212,47 +212,47 @@ def build_route(venues: list[dict], dry_run: bool) -> tuple[list[list[float]], l
 
 # ── Phase 3: Wikimedia photos ─────────────────────────────────────────────────
 
-def fetch_wikimedia_photo(name: str) -> tuple[str, str] | None:
+def fetch_wikimedia_photos(name: str, max_results: int = 5) -> list[tuple[str, str]]:
     """
-    Returns (thumb_url, attribution) for the best Wikimedia Commons result,
-    or None if nothing found. Attribution format: '© Artist / License'.
+    Returns up to max_results (thumb_url, attribution) pairs from Wikimedia Commons.
     """
     params = urllib.parse.urlencode({
         "action": "query",
         "generator": "search",
         "gsrnamespace": 6,
         "gsrsearch": f"{name} Bangkok",
-        "gsrlimit": 5,
+        "gsrlimit": max_results * 3,  # fetch extra to filter duds
         "prop": "imageinfo",
         "iiprop": "url|extmetadata",
         "iiurlwidth": 1080,
         "format": "json",
     })
     url = f"https://commons.wikimedia.org/w/api.php?{params}"
+    results: list[tuple[str, str]] = []
     try:
         req = urllib.request.Request(url, headers=WIKIMEDIA_HEADERS)
         with urllib.request.urlopen(req, timeout=15) as r:
             data = json.loads(r.read())
         pages = data.get("query", {}).get("pages", {})
         for page in pages.values():
+            if len(results) >= max_results:
+                break
             ii = page.get("imageinfo", [{}])[0]
             thumb = ii.get("thumburl", "")
             if not thumb:
                 continue
             meta = ii.get("extmetadata", {})
-            artist = meta.get("Artist", {}).get("value", "")
-            # Strip HTML tags from artist field
-            artist = re.sub(r"<[^>]+>", "", artist).strip()
+            artist = re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip()
             license_name = meta.get("LicenseShortName", {}).get("value", "")
             attribution = f"© {artist} / {license_name}" if artist else license_name
-            return thumb, attribution
+            results.append((thumb, attribution))
     except Exception as e:
         print(f"  ⚠ Wikimedia error for '{name}': {e}", file=sys.stderr)
-    return None
+    return results
 
 
 def fetch_photos(venues: list[dict], dry_run: bool) -> None:
-    """Download one Wikimedia photo per venue into PHOTOS_DIR. Updates .mediacache.json."""
+    """Download up to 5 Wikimedia photos per venue. Saves as <slug>-1.jpg, <slug>-2.jpg, ..."""
     PHOTOS_DIR.mkdir(parents=True, exist_ok=True)
     cache = load_json(MEDIACACHE_PATH)
     updated = False
@@ -260,33 +260,46 @@ def fetch_photos(venues: list[dict], dry_run: bool) -> None:
     for v in tqdm(venues, desc="Wikimedia photos", unit="venue"):
         name = v["name"]
         slug = slugify(name)
-        dest = PHOTOS_DIR / f"{slug}.jpg"
 
-        if name in cache and dest.exists():
-            continue
+        # Detect old-format cache entry (has "thumb_url" key instead of "photos" list)
+        cached = cache.get(name, {})
+        is_new_format = isinstance(cached.get("photos"), list)
+
+        # Check if all cached photos are already downloaded
+        if is_new_format and cached["photos"]:
+            all_present = all(
+                (PHOTOS_DIR / f"{slug}-{i+1}.jpg").exists()
+                for i in range(len(cached["photos"]))
+            )
+            if all_present:
+                continue
 
         if dry_run:
-            tqdm.write(f"  [dry-run] would fetch photo: {name}")
+            tqdm.write(f"  [dry-run] would fetch photos: {name}")
             continue
 
-        result = fetch_wikimedia_photo(name)
-        if result is None:
-            print(f"  ⚠ No photo found for: {name}", file=sys.stderr)
-            cache[name] = {"thumb_url": "", "attribution": ""}
+        results = fetch_wikimedia_photos(name, max_results=5)
+        if not results:
+            print(f"  ⚠ No photos found for: {name}", file=sys.stderr)
+            cache[name] = {"photos": []}
             updated = True
             continue
 
-        thumb_url, attribution = result
-        try:
-            req = urllib.request.Request(thumb_url, headers=WIKIMEDIA_HEADERS)
-            with urllib.request.urlopen(req, timeout=30) as r:
-                dest.write_bytes(r.read())
-            cache[name] = {"thumb_url": thumb_url, "attribution": attribution}
-            updated = True
-            tqdm.write(f"  → {name}: {dest.name} ({attribution[:60]})")
-        except Exception as e:
-            print(f"  ⚠ Download failed for '{name}': {e}", file=sys.stderr)
+        photo_entries = []
+        for i, (thumb_url, attribution) in enumerate(results):
+            dest = PHOTOS_DIR / f"{slug}-{i+1}.jpg"
+            try:
+                req = urllib.request.Request(thumb_url, headers=WIKIMEDIA_HEADERS)
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    dest.write_bytes(r.read())
+                photo_entries.append({"url": thumb_url, "attribution": attribution})
+                tqdm.write(f"  → {name} [{i+1}]: {dest.name}")
+            except Exception as e:
+                print(f"  ⚠ Download failed for '{name}' photo {i+1}: {e}", file=sys.stderr)
+            time.sleep(0.3)
 
+        cache[name] = {"photos": photo_entries}
+        updated = True
         time.sleep(0.5)
 
     if updated:
@@ -303,7 +316,12 @@ def write_geojson(venues: list[dict], route_coords: list[list[float]], segment_b
         if not (v["lat"] and v["lng"]):
             continue
         slug = slugify(v["name"])
-        attribution = mediacache.get(v["name"], {}).get("attribution", "")
+        cached = mediacache.get(v["name"], {})
+        n_photos = len(cached.get("photos", []))
+        photos = [
+            f"/bangkok-citywalk/photos/{slug}-{j+1}.jpg"
+            for j in range(n_photos)
+        ]
         features.append({
             "type": "Feature",
             "geometry": {"type": "Point", "coordinates": [float(v["lng"]), float(v["lat"])]},
@@ -311,8 +329,7 @@ def write_geojson(venues: list[dict], route_coords: list[list[float]], segment_b
                 "name": v["name"],
                 "order": i + 1,
                 "slug": slug,
-                "photo": f"/bangkok-citywalk/photos/{slug}.jpg",
-                "attribution": attribution,
+                "photos": photos,
             },
         })
 
