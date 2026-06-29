@@ -1,8 +1,19 @@
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {MAP_HEIGHT} from './MapView';
 
 interface Props {
   introDur: number;
 }
+
+const HIGHLIGHT: React.CSSProperties = {
+  display: 'inline-block',
+  background: '#FF6B35',
+  color: '#fff',
+  fontSize: 72,
+  fontWeight: 900,
+  letterSpacing: '0.06em',
+  padding: '6px 28px',
+};
 
 export const IntroOverlay: React.FC<Props> = ({introDur}) => {
   const frame = useCurrentFrame();
@@ -25,27 +36,17 @@ export const IntroOverlay: React.FC<Props> = ({introDur}) => {
     <AbsoluteFill
       style={{
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: MAP_HEIGHT,
         opacity,
         pointerEvents: 'none',
+        gap: 10,
       }}
     >
-      <div
-        style={{
-          fontSize: 72,
-          fontWeight: 900,
-          color: 'rgba(0,0,0,0.75)',
-          WebkitTextStroke: '3px #fff',
-          textAlign: 'center',
-          letterSpacing: '0.04em',
-          lineHeight: 1.1,
-          padding: '0 48px',
-          textShadow: '0 2px 16px rgba(0,0,0,0.4)',
-        }}
-      >
-        BANGKOK{'\n'}CITY WALK
-      </div>
+      <div style={HIGHLIGHT}>BANGKOK</div>
+      <div style={HIGHLIGHT}>CITY WALK</div>
     </AbsoluteFill>
   );
 };

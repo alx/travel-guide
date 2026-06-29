@@ -190,7 +190,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur}) =>
         source: 'ring-labels',
         layout: {
           'text-field': ['get', 'label'],
-          'text-size': 11,
+          'text-size': 14,
           'text-anchor': 'bottom',
           'text-allow-overlap': true,
           'text-font': ['Noto Sans Bold'],
@@ -255,7 +255,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur}) =>
         filter: ['!=', ['get', 'active'], true],
         layout: {
           'text-field': ['get', 'name'],
-          'text-size': 11,
+          'text-size': 14,
           'text-anchor': 'top',
           'text-offset': [0, 1.2],
           'text-allow-overlap': false,
@@ -277,7 +277,7 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur}) =>
         filter: ['==', ['get', 'active'], true],
         layout: {
           'text-field': ['get', 'name'],
-          'text-size': 11,
+          'text-size': 14,
           'text-anchor': 'top',
           'text-offset': [0, 1.8],
           'text-allow-overlap': true,
@@ -327,15 +327,24 @@ export const MapView: React.FC<Props> = ({slides, route, introDur, slideDur}) =>
       const rawT = Math.min(localFrame / TRANSITION_FRAMES, 1);
       const easedT = Easing.inOut(Easing.cubic)(rawT);
 
+      // Progressive zoom-in after transition settles (VENUE_ZOOM → VENUE_ZOOM+2)
+      const settledT = localFrame > TRANSITION_FRAMES
+        ? Easing.out(Easing.quad)(
+            Math.min((localFrame - TRANSITION_FRAMES) / (slideDurFrames - TRANSITION_FRAMES), 1),
+          )
+        : 0;
+
       if (idx === 0) {
         lng = overviewCenter[0] + (coords[0][0] - overviewCenter[0]) * easedT;
         lat = overviewCenter[1] + (coords[0][1] - overviewCenter[1]) * easedT;
-        zoom = OVERVIEW_ZOOM + (VENUE_ZOOM - OVERVIEW_ZOOM) * easedT;
+        zoom = rawT < 1
+          ? OVERVIEW_ZOOM + (VENUE_ZOOM - OVERVIEW_ZOOM) * easedT
+          : VENUE_ZOOM + settledT * 2;
       } else {
         const prev = idx - 1;
         lng = coords[prev][0] + (coords[idx][0] - coords[prev][0]) * easedT;
         lat = coords[prev][1] + (coords[idx][1] - coords[prev][1]) * easedT;
-        zoom = VENUE_ZOOM; // pan only — no zoom dip
+        zoom = VENUE_ZOOM + settledT * 2;
       }
     }
 

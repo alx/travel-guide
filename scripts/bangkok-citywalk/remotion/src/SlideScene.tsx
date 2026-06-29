@@ -1,8 +1,8 @@
 import {AbsoluteFill, Img, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {WalkSlide} from './types';
 
-export const PHOTO_HEIGHT = 600;
-export const CARD_HEIGHT = 360;
+export const PHOTO_HEIGHT = 760;
+export const CARD_HEIGHT = 200;
 
 const CROSSFADE_FRAMES = 9; // 0.3 s at 30 fps
 
@@ -57,7 +57,7 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
             src={currentPhoto}
             style={{
               position: 'absolute', inset: 0,
-              width: '100%', height: '100%', objectFit: 'cover',
+              width: '100%', height: '100%', objectFit: 'contain',
               opacity: 1 - crossfadeT,
             }}
           />
@@ -71,7 +71,7 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
             src={nextPhoto}
             style={{
               position: 'absolute', inset: 0,
-              width: '100%', height: '100%', objectFit: 'cover',
+              width: '100%', height: '100%', objectFit: 'contain',
               opacity: crossfadeT,
             }}
           />
@@ -111,10 +111,10 @@ export const SlideScene: React.FC<Props> = ({slide, slideDur}) => {
         <div
           style={{
             fontFamily: "'Courier New', Courier, monospace",
-            fontSize: 64,
+            fontSize: 44,
             fontWeight: 900,
             color: '#fff',
-            lineHeight: 1.1,
+            lineHeight: 1.15,
           }}
         >
           {slide.name}
