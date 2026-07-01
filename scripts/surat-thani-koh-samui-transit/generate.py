@@ -16,6 +16,7 @@ STOPS = [
         "icon": "🛵",
         "leg": 1,
         "notes": "Taxi pickup — contact Arm, +66 86 952 3076, 600 THB fixed price to Nathon Pier.",
+        "maps_url": "https://maps.app.goo.gl/AszEQ2SbBwrTs2JZ7",
     },
     {
         "name": "Nathon Pier",
@@ -24,6 +25,7 @@ STOPS = [
         "icon": "⛴️",
         "leg": 2,
         "notes": "Seatran Ferry — every hour. Preferred: 6pm boat (sunset ~6:30–7pm on the water).",
+        "maps_url": None,
     },
     {
         "name": "Donsak Pier",
@@ -32,6 +34,7 @@ STOPS = [
         "icon": "⛴️",
         "leg": 3,
         "notes": "Seatran arrival on mainland. Bus departs 8:15pm toward Surat Thani.",
+        "maps_url": "https://maps.app.goo.gl/LEmgcFwwkdgZgF3u8",
     },
     {
         "name": "Surat Thani Bus Station",
@@ -40,6 +43,7 @@ STOPS = [
         "icon": "🚌",
         "leg": 4,
         "notes": "Combined Seatran boat+bus ticket 380 THB. Journey ~70 min from Donsak.",
+        "maps_url": "https://maps.app.goo.gl/REK9PTFKWhYPmaw66",
     },
     {
         "name": "Phunphin Train Station",
@@ -48,6 +52,7 @@ STOPS = [
         "icon": "🚂",
         "leg": 4,
         "notes": "Grab from bus station ~160 THB, ~20 min. Hotel: พุนพินสเตชั่น Phunphin Station.",
+        "maps_url": "https://maps.app.goo.gl/7SthmuDgo2jXxaVN9",
     },
     {
         "name": "Uplift Station Dispensary",
@@ -56,6 +61,7 @@ STOPS = [
         "icon": "🌿",
         "leg": 4,
         "notes": "Next to the train station.",
+        "maps_url": "https://maps.app.goo.gl/8q7h7jggwGkBnvAq9",
     },
 ]
 
@@ -139,6 +145,7 @@ for i, stop in enumerate(STOPS):
             "icon": stop["icon"],
             "leg": stop["leg"],
             "notes": stop["notes"],
+            "maps_url": stop["maps_url"],
         },
     })
 
