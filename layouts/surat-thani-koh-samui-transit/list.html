@@ -195,7 +195,7 @@ function setupLegTabs() {
     const btn = document.createElement('button');
     btn.className = 'leg-tab';
     btn.textContent = `${p.icon} Leg ${p.leg}`;
-    btn.onclick = () => filterLeg(p.leg);
+    btn.onclick = () => filterLeg(Number(p.leg));
     container.appendChild(btn);
   });
   updateTabStyles();
@@ -215,7 +215,7 @@ fetch('{{ "/surat-thani-koh-samui-transit/locations.geojson" | relURL }}')
     legs.forEach(f => {
       const p = f.properties;
       const coords = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
-      const poly = L.polyline(coords, { color: p.color, weight: 4, opacity: 0.8 })
+      const poly = L.polyline(coords, { color: LEG_COLORS[p.leg], weight: 4, opacity: 0.8 })
         .addTo(map)
         .bindPopup(`<b>${p.icon} ${p.mode}</b><br>${p.duration}${p.cost_thb ? ' · ' + p.cost_thb + ' THB' : ' (included)'}<br><em style="font-size:0.8rem;">${p.notes}</em>`);
       polylines[p.leg] = poly;
