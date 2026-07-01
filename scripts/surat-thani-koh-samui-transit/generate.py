@@ -26,6 +26,7 @@ STOPS = [
         "leg": 2,
         "notes": "Seatran Ferry — every hour. Preferred: 6pm boat (sunset ~6:30–7pm on the water).",
         "maps_url": None,
+        "website": "https://www.seatranferry.com/",
     },
     {
         "name": "Donsak Pier",
@@ -35,6 +36,7 @@ STOPS = [
         "leg": 3,
         "notes": "Seatran arrival on mainland. Bus time depends on ferry — 8:15pm for the 6pm ferry.",
         "maps_url": "https://maps.app.goo.gl/LEmgcFwwkdgZgF3u8",
+        "website": "https://www.seatranferry.com/",
     },
     {
         "name": "Surat Thani Bus Station",
@@ -147,6 +149,7 @@ for i, stop in enumerate(STOPS):
             "leg": stop["leg"],
             "notes": stop["notes"],
             "maps_url": stop["maps_url"],
+            "website": stop.get("website"),
         },
     })
 

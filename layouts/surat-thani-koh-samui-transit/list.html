@@ -142,6 +142,7 @@ function renderSidebar() {
       ${p.notes ? `<div class="poi-notes">${p.notes}</div>` : ''}
       <div class="poi-actions">
         <a href="${p.maps_url || `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}" target="_blank" rel="noopener">Google Maps ↗</a>
+        ${p.website ? `<a href="${p.website}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
       </div>`;
     card.onclick = () => focusStop(i);
     list.appendChild(card);
