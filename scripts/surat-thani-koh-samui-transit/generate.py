@@ -10,12 +10,12 @@ from pathlib import Path
 
 STOPS = [
     {
-        "name": "Lamai Beach",
-        "coords": [100.0608, 9.4737],
-        "category": "Beach",
-        "icon": "🏖️",
+        "name": "Marwin Car & Motorbike Rental",
+        "coords": [100.0498894, 9.4712162],
+        "category": "Rental",
+        "icon": "🛵",
         "leg": 1,
-        "notes": "Taxi pickup — Arm Taxi, +66 62 978 3966, 600 THB fixed price.",
+        "notes": "Taxi pickup — contact Arm, +66 86 952 3076, 600 THB fixed price to Nathon Pier.",
     },
     {
         "name": "Nathon Pier",
@@ -48,6 +48,14 @@ STOPS = [
         "icon": "🚂",
         "leg": 4,
         "notes": "Grab from bus station ~160 THB, ~20 min. Hotel: พุนพินสเตชั่น Phunphin Station.",
+    },
+    {
+        "name": "Uplift Station Dispensary",
+        "coords": [99.2307289, 9.1050365],
+        "category": "Dispensary",
+        "icon": "🌿",
+        "leg": 4,
+        "notes": "Next to the train station.",
     },
 ]
 
