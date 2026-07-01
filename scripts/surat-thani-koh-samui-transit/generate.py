@@ -1,6 +1,13 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
+
 import json
 import os
 import urllib.request
+from pathlib import Path
 
 STOPS = [
     {
@@ -153,8 +160,9 @@ for leg in LEGS:
     })
 
 geojson = {"type": "FeatureCollection", "features": features}
-out_path = "static/surat-thani-koh-samui-transit/locations.geojson"
-os.makedirs(os.path.dirname(out_path), exist_ok=True)
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+out_path = REPO_ROOT / "static" / "surat-thani-koh-samui-transit" / "locations.geojson"
+out_path.parent.mkdir(parents=True, exist_ok=True)
 with open(out_path, "w", encoding="utf-8") as f:
     json.dump(geojson, f, ensure_ascii=False, indent=2)
 

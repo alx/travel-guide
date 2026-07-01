@@ -239,6 +239,9 @@ fetch('{{ "/surat-thani-koh-samui-transit/locations.geojson" | relURL }}')
     // Fit to all stop markers
     const group = L.featureGroup(Object.values(markers));
     if (group.getLayers().length > 0) map.fitBounds(group.getBounds().pad(0.12));
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded.</p>';
   });
 </script>
 {{ end }}
