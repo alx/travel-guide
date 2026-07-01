@@ -21,7 +21,7 @@ STOPS = [
     },
     {
         "name": "Donsak Pier",
-        "coords": [99.9573, 9.1903],
+        "coords": [99.73559450995812, 9.32026505379197],
         "category": "Pier",
         "icon": "⛴️",
         "leg": 3,
