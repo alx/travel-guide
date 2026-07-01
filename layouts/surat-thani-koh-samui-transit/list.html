@@ -216,7 +216,7 @@ fetch('{{ "/surat-thani-koh-samui-transit/locations.geojson" | relURL }}')
       const coords = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
       const poly = L.polyline(coords, { color: LEG_COLORS[p.leg], weight: 4, opacity: 0.8 })
         .addTo(map)
-        .bindPopup(`<b>${p.icon} ${p.mode}</b><br>${p.duration}${p.cost_thb ? ' · ' + p.cost_thb + ' THB' : ' (included)'}<br><em style="font-size:0.8rem;">${p.notes}</em>`);
+        .bindPopup(`<b>${p.icon} ${p.mode}</b><br>${p.duration}${p.cost_thb ? ' · ' + p.cost_thb + ' THB' : ' (included)'}<br><em style="font-size:0.8rem;">${p.notes}</em>${p.website ? `<br><a href="${p.website}" target="_blank" rel="noopener" style="font-size:0.8rem;">🌐 ${p.website}</a>` : ''}`);
       polylines[p.leg] = poly;
     });
 

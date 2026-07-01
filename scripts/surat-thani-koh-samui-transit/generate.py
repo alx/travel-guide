@@ -86,6 +86,7 @@ LEGS = [
         "cost_thb": 380,
         "duration": "~90 min",
         "notes": "Seatran Ferry — combined boat+bus ticket 380 THB. Every hour. Preferred: 6pm boat.",
+        "website": "https://www.seatranferry.com/",
         "routing": "straight",
         "from_idx": 1,
         "to_idx": 2,
@@ -170,6 +171,7 @@ for leg in LEGS:
             "cost_thb": leg["cost_thb"],
             "duration": leg["duration"],
             "notes": leg["notes"],
+            "website": leg.get("website"),
         },
     })
 
