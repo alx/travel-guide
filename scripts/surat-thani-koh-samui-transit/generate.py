@@ -35,7 +35,7 @@ STOPS = [
     },
     {
         "name": "Surat Thani Bus Station",
-        "coords": [99.3298, 9.1416],
+        "coords": [99.3238638, 9.1397503],
         "category": "Bus",
         "icon": "🚌",
         "leg": 4,
@@ -43,7 +43,7 @@ STOPS = [
     },
     {
         "name": "Phunphin Train Station",
-        "coords": [99.1935, 9.1106],
+        "coords": [99.23048, 9.104137],
         "category": "Train",
         "icon": "🚂",
         "leg": 4,
