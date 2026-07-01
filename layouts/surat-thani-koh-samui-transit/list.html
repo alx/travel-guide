@@ -137,7 +137,7 @@ function renderSidebar() {
     card.className = 'poi-card'; card.id = 'stop-card-' + i;
     card.innerHTML = `
       <span class="cat-badge" style="background:${color}22;color:${color};">${p.icon} ${p.category}</span>
-      <span class="leg-badge" style="background:${color};">Leg ${p.leg}</span>
+      <span class="leg-badge" style="background:${color};">Step ${p.leg}</span>
       <h3>${p.name}</h3>
       ${p.notes ? `<div class="poi-notes">${p.notes}</div>` : ''}
       <div class="poi-actions">
@@ -193,7 +193,7 @@ function setupLegTabs() {
     const p = f.properties;
     const btn = document.createElement('button');
     btn.className = 'leg-tab';
-    btn.textContent = `${p.icon} Leg ${p.leg}`;
+    btn.textContent = `${p.icon} Step ${p.leg}`;
     btn.onclick = () => filterLeg(Number(p.leg));
     container.appendChild(btn);
   });
