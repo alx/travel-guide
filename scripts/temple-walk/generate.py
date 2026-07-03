@@ -115,13 +115,36 @@ def parse_overpass_elements(elements: list[dict]) -> list[dict]:
     return list(temples.values())
 
 
-def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fetch_leg) -> dict:
-    """
-    Greedy nearest-neighbour chain from start through temples.
+DEGENERATE_LEG_KM = 0.05  # below this, treat points as already-adjacent — skip
+                          # OSRM (its road-snap can produce large, nonsensical
+                          # detours for near-collocated points, e.g. two
+                          # Overpass way/relation centers inside the same
+                          # walled complex with no nearby route)
 
-    Haversine picks each candidate; the real routed distance from fetch_leg
-    gates acceptance. Stops when the next leg would push the total past
-    max_km (a farther candidate implies an even longer leg, so no retries).
+
+def resolve_leg(lat1: float, lng1: float, lat2: float, lng2: float, fetch_leg) -> tuple[list, float]:
+    """
+    Real route between two points, or a direct 2-point line when they're
+    already effectively the same spot (straight-line distance below
+    DEGENERATE_LEG_KM).
+    """
+    straight = haversine_km(lat1, lng1, lat2, lng2)
+    if straight < DEGENERATE_LEG_KM:
+        return [[lng1, lat1], [lng2, lat2]], straight
+    return fetch_leg(lat1, lng1, lat2, lng2)
+
+
+def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fetch_leg,
+              k_candidates: int = 3) -> dict:
+    """
+    Route-aware nearest-neighbour chain from start through temples.
+
+    Each step ranks unvisited temples by straight-line distance, routes the
+    k_candidates nearest via resolve_leg, and picks the one with the
+    shortest REAL walking distance — a haversine-nearest temple can require
+    a long detour around a wall or canal, while a slightly farther one has
+    a direct path. Stops when even the best candidate's leg would push the
+    total past max_km (no lookahead beyond this round's candidates).
 
     fetch_leg(lat1, lng1, lat2, lng2) -> ([[lng, lat], ...], distance_km)
     """
@@ -133,8 +156,15 @@ def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fe
     remaining = list(temples)
 
     while remaining:
-        candidate = min(remaining, key=lambda t: haversine_km(current[0], current[1], t["lat"], t["lng"]))
-        coords, dist = fetch_leg(current[0], current[1], candidate["lat"], candidate["lng"])
+        by_haversine = sorted(
+            remaining,
+            key=lambda t: haversine_km(current[0], current[1], t["lat"], t["lng"]),
+        )
+        routed = [
+            (t, *resolve_leg(current[0], current[1], t["lat"], t["lng"], fetch_leg))
+            for t in by_haversine[:k_candidates]
+        ]
+        candidate, coords, dist = min(routed, key=lambda r: r[2])
         if total + dist > max_km:
             break
         segment_breaks.append(len(all_coords))

@@ -165,6 +165,69 @@ def test_plan_walk_exact_budget_leg_is_accepted():
     assert len(walk["stops"]) == 1
 
 
+# ── resolve_leg ───────────────────────────────────────────────────────────────
+
+def test_resolve_leg_direct_line_when_degenerate():
+    def fail_leg(*a):
+        raise AssertionError("fetch_leg should not be called for a degenerate leg")
+
+    # ~5.5m apart — well under the 50m degenerate threshold
+    coords, km = generate.resolve_leg(0.0, 0.0, 0.00005, 0.0, fail_leg)
+    assert coords == [[0.0, 0.0], [0.0, 0.00005]]
+    assert km < 0.05
+
+
+def test_resolve_leg_delegates_when_not_degenerate():
+    coords, km = generate.resolve_leg(0.0, 0.0, 0.0, 0.02, fake_leg)
+    assert km > 0.05
+    assert coords == [[0.0, 0.0], [0.02, 0.0]]
+
+
+# ── plan_walk: route-aware selection ────────────────────────────────────────
+
+def test_plan_walk_prefers_shortest_routed_over_nearest_haversine():
+    # B is nearer by straight line than A, but A's real route is far shorter
+    # (e.g. B is haversine-close but blocked by a wall/canal in reality).
+    temples = [temple("A", 0.0, 0.02), temple("B", 0.0, 0.01)]
+
+    def stub_leg(lat1, lng1, lat2, lng2):
+        km = {0.01: 5.0, 0.02: 0.5}[round(lng2, 2)]
+        return [[lng1, lat1], [lng2, lat2]], km
+
+    walk = generate.plan_walk((0.0, 0.0), temples, 10.0, stub_leg)
+    assert walk["stops"][0]["name"] == "A"
+    assert walk["stops"][0]["distance_km"] == 0.5
+
+
+def test_plan_walk_only_evaluates_k_nearest_candidates_per_round():
+    temples = [temple("A", 0.0, 0.01), temple("B", 0.0, 0.02),
+               temple("C", 0.0, 0.03), temple("D", 0.0, 0.04)]
+    evaluated = []
+
+    def spy_leg(lat1, lng1, lat2, lng2):
+        evaluated.append(round(lng2, 2))
+        return fake_leg(lat1, lng1, lat2, lng2)
+
+    generate.plan_walk((0.0, 0.0), temples, 100.0, spy_leg, k_candidates=3)
+    # first round only routes the 3 nearest remaining temples, not D
+    assert evaluated[:3] == [0.01, 0.02, 0.03]
+
+
+def test_plan_walk_degenerate_leg_skips_fetch_leg():
+    calls = []
+
+    def spy_leg(lat1, lng1, lat2, lng2):
+        calls.append((lat1, lng1, lat2, lng2))
+        return [[lng1, lat1], [lng2, lat2]], 999.0  # would blow the budget if used
+
+    # ~5.5m away — below the degenerate threshold
+    temples = [temple("Same Spot", 0.00005, 0.0)]
+    walk = generate.plan_walk((0.0, 0.0), temples, 1.0, spy_leg)
+    assert calls == []
+    assert len(walk["stops"]) == 1
+    assert walk["stops"][0]["distance_km"] < 0.05
+
+
 def test_stop_slug_latin_name():
     assert generate.stop_slug(temple("Wat Pho", 0.0, 0.0)) == "wat-pho"
 
