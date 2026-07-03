@@ -159,3 +159,58 @@ def test_plan_walk_exact_budget_leg_is_accepted():
     dist = generate.haversine_km(0.0, 0.0, 0.0, 0.01)
     walk = generate.plan_walk((0.0, 0.0), temples, dist, fake_leg)
     assert len(walk["stops"]) == 1
+
+
+# ── build_geojson / build_content_page ────────────────────────────────────────
+
+def make_walk():
+    temples = [temple("Wat A", 0.0, 0.01), temple("Wat B", 0.0, 0.03)]
+    return generate.plan_walk((0.0, 0.0), temples, 10.0, fake_leg)
+
+
+def test_build_geojson_start_point_order_zero():
+    fc = generate.build_geojson((0.0, 0.0), make_walk(), "testwalk", {})
+    start = fc["features"][0]
+    assert start["geometry"] == {"type": "Point", "coordinates": [0.0, 0.0]}
+    assert start["properties"]["order"] == 0
+    assert start["properties"]["name"] == "Start"
+
+
+def test_build_geojson_stop_properties():
+    photos = {"Wat A": [{"url": "http://x/1.jpg", "attribution": "© Alice / CC"}]}
+    fc = generate.build_geojson((0.0, 0.0), make_walk(), "testwalk", photos)
+    stop = fc["features"][1]
+    p = stop["properties"]
+    assert p["name"] == "Wat A"
+    assert p["order"] == 1
+    assert p["slug"] == "wat-a"
+    assert p["osm_id"] == "node/Wat A"
+    assert p["photos"] == ["/temple-walks/testwalk/photos/wat-a-1.jpg"]
+    assert p["attribution"] == "© Alice / CC"
+    assert p["distance_km"] > 0
+
+
+def test_build_geojson_stop_without_photos():
+    fc = generate.build_geojson((0.0, 0.0), make_walk(), "testwalk", {})
+    p = fc["features"][1]["properties"]
+    assert p["photos"] == []
+    assert p["attribution"] == ""
+
+
+def test_build_geojson_route_linestring():
+    walk = make_walk()
+    fc = generate.build_geojson((0.0, 0.0), walk, "testwalk", {})
+    route = fc["features"][-1]
+    assert route["geometry"]["type"] == "LineString"
+    assert route["geometry"]["coordinates"] == walk["route_coords"]
+    assert route["properties"]["type"] == "route"
+    assert route["properties"]["segment_breaks"] == walk["segment_breaks"]
+    assert route["properties"]["total_km"] == walk["total_km"]
+
+
+def test_build_content_page():
+    md = generate.build_content_page("rattanakosin", "13.7516,100.4927", 7, 9.4)
+    assert 'title: "Temple Walk — Rattanakosin"' in md
+    assert 'description: "7 temples, 9.4 km walking from 13.7516,100.4927"' in md
+    assert 'type: "temple-walk"' in md
+    assert 'geojson: "/temple-walks/rattanakosin/walk.geojson"' in md

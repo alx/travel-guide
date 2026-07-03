@@ -155,5 +155,57 @@ def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fe
     }
 
 
+def build_geojson(start: tuple[float, float], walk: dict, slug: str,
+                  photos_by_name: dict[str, list[dict]]) -> dict:
+    """Assemble the FeatureCollection: start point, temple stops, route line."""
+    features = [{
+        "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [start[1], start[0]]},
+        "properties": {"name": "Start", "order": 0, "slug": "start", "photos": []},
+    }]
+
+    for stop in walk["stops"]:
+        tslug = slugify(stop["name"])
+        entries = photos_by_name.get(stop["name"], [])
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [stop["lng"], stop["lat"]]},
+            "properties": {
+                "name": stop["name"],
+                "order": stop["order"],
+                "slug": tslug,
+                "osm_id": stop["osm_id"],
+                "distance_km": stop["distance_km"],
+                "photos": [f"/temple-walks/{slug}/photos/{tslug}-{j+1}.jpg" for j in range(len(entries))],
+                "attribution": entries[0]["attribution"] if entries else "",
+            },
+        })
+
+    if walk["route_coords"]:
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": walk["route_coords"]},
+            "properties": {
+                "type": "route",
+                "segment_breaks": walk["segment_breaks"],
+                "total_km": walk["total_km"],
+            },
+        })
+
+    return {"type": "FeatureCollection", "features": features}
+
+
+def build_content_page(slug: str, start_label: str, n_stops: int, total_km: float) -> str:
+    title = f"Temple Walk — {slug.replace('-', ' ').title()}"
+    return (
+        "---\n"
+        f'title: "{title}"\n'
+        f'description: "{n_stops} temples, {total_km} km walking from {start_label}"\n'
+        'type: "temple-walk"\n'
+        f'geojson: "/temple-walks/{slug}/walk.geojson"\n'
+        "---\n"
+    )
+
+
 if __name__ == "__main__":
     pass  # main() arrives in Task 5
