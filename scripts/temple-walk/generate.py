@@ -110,5 +110,50 @@ def parse_overpass_elements(elements: list[dict]) -> list[dict]:
     return list(temples.values())
 
 
+def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fetch_leg) -> dict:
+    """
+    Greedy nearest-neighbour chain from start through temples.
+
+    Haversine picks each candidate; the real routed distance from fetch_leg
+    gates acceptance. Stops when the next leg would push the total past
+    max_km (a farther candidate implies an even longer leg, so no retries).
+
+    fetch_leg(lat1, lng1, lat2, lng2) -> ([[lng, lat], ...], distance_km)
+    """
+    current = start
+    total = 0.0
+    stops: list[dict] = []
+    all_coords: list[list[float]] = []
+    segment_breaks: list[int] = []
+    remaining = list(temples)
+
+    while remaining:
+        candidate = min(remaining, key=lambda t: haversine_km(current[0], current[1], t["lat"], t["lng"]))
+        coords, dist = fetch_leg(current[0], current[1], candidate["lat"], candidate["lng"])
+        if total + dist > max_km:
+            break
+        segment_breaks.append(len(all_coords))
+        # Avoid duplicating the junction point between legs
+        if all_coords and coords:
+            coords = coords[1:]
+        all_coords.extend(coords)
+        total += dist
+        stops.append({**candidate, "order": len(stops) + 1, "distance_km": round(total, 2)})
+        current = (candidate["lat"], candidate["lng"])
+        remaining.remove(candidate)
+
+    # Final segment_break terminator (same convention as bangkok-citywalk)
+    segment_breaks.append(len(all_coords) - 1 if all_coords else 0)
+    if not stops:
+        segment_breaks = []
+        all_coords = []
+    return {
+        "stops": stops,
+        "route_coords": all_coords,
+        "segment_breaks": segment_breaks,
+        "total_km": round(total, 2),
+    }
+
+
 if __name__ == "__main__":
     pass  # main() arrives in Task 5

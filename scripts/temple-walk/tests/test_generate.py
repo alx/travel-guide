@@ -99,3 +99,63 @@ def test_parse_overpass_node_never_replaces_way():
     temples = generate.parse_overpass_elements(elements)
     assert len(temples) == 1
     assert temples[0]["osm_id"] == "way/8"
+
+
+# ── plan_walk ─────────────────────────────────────────────────────────────────
+
+def fake_leg(lat1, lng1, lat2, lng2):
+    """Straight-line 2-point leg with haversine distance."""
+    return [[lng1, lat1], [lng2, lat2]], generate.haversine_km(lat1, lng1, lat2, lng2)
+
+
+def temple(name, lat, lng):
+    return {"name": name, "lat": lat, "lng": lng, "osm_type": "node", "osm_id": f"node/{name}"}
+
+
+def test_plan_walk_chains_nearest_first():
+    # On the equator: 0.01° lng ≈ 1.112 km
+    temples = [temple("B", 0.0, 0.03), temple("A", 0.0, 0.01), temple("C", 0.0, 0.10)]
+    walk = generate.plan_walk((0.0, 0.0), temples, 5.0, fake_leg)
+    # start→A (1.11) + A→B (2.22) = 3.34; B→C (7.78) would exceed 5 → stop
+    assert [s["name"] for s in walk["stops"]] == ["A", "B"]
+    assert walk["stops"][0]["order"] == 1
+    assert walk["stops"][1]["order"] == 2
+    assert abs(walk["total_km"] - 3.34) < 0.02
+
+
+def test_plan_walk_cumulative_distance_on_stops():
+    temples = [temple("A", 0.0, 0.01), temple("B", 0.0, 0.03)]
+    walk = generate.plan_walk((0.0, 0.0), temples, 10.0, fake_leg)
+    assert abs(walk["stops"][0]["distance_km"] - 1.11) < 0.02
+    assert abs(walk["stops"][1]["distance_km"] - 3.34) < 0.02
+
+
+def test_plan_walk_first_temple_beyond_budget():
+    temples = [temple("Far", 0.0, 0.5)]  # ≈ 55.6 km away
+    walk = generate.plan_walk((0.0, 0.0), temples, 10.0, fake_leg)
+    assert walk["stops"] == []
+    assert walk["route_coords"] == []
+    assert walk["total_km"] == 0.0
+
+
+def test_plan_walk_never_revisits():
+    temples = [temple("A", 0.0, 0.01)]
+    walk = generate.plan_walk((0.0, 0.0), temples, 100.0, fake_leg)
+    assert len(walk["stops"]) == 1
+
+
+def test_plan_walk_route_junction_dedup_and_segment_breaks():
+    temples = [temple("A", 0.0, 0.01), temple("B", 0.0, 0.03)]
+    walk = generate.plan_walk((0.0, 0.0), temples, 10.0, fake_leg)
+    # leg1 contributes 2 points, leg2 contributes 1 (junction trimmed)
+    assert walk["route_coords"] == [[0.0, 0.0], [0.01, 0.0], [0.03, 0.0]]
+    # one break per leg start + final terminator (bangkok-citywalk convention)
+    assert walk["segment_breaks"] == [0, 2, 2]
+
+
+def test_plan_walk_exact_budget_leg_is_accepted():
+    # A is ≈ 1.112 km away; budget exactly that distance (not strictly greater)
+    temples = [temple("A", 0.0, 0.01)]
+    dist = generate.haversine_km(0.0, 0.0, 0.0, 0.01)
+    walk = generate.plan_walk((0.0, 0.0), temples, dist, fake_leg)
+    assert len(walk["stops"]) == 1
