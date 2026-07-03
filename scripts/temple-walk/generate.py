@@ -49,6 +49,11 @@ def slugify(text: str) -> str:
     return text.strip("-")
 
 
+def stop_slug(stop: dict) -> str:
+    """Filesystem-safe identifier for a stop; falls back to the OSM id when the name has no Latin characters."""
+    return slugify(stop["name"]) or stop["osm_id"].replace("/", "-")
+
+
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text()) if path.exists() else {}
 
@@ -165,7 +170,7 @@ def build_geojson(start: tuple[float, float], walk: dict, slug: str,
     }]
 
     for stop in walk["stops"]:
-        tslug = slugify(stop["name"])
+        tslug = stop_slug(stop)
         entries = photos_by_name.get(stop["name"], [])
         features.append({
             "type": "Feature",
@@ -311,7 +316,7 @@ def fetch_photos(stops: list[dict], photos_dir: Path, cache_path: Path, dry_run:
 
     for stop in tqdm(stops, desc="Wikimedia photos", unit="temple"):
         name = stop["name"]
-        tslug = slugify(name)
+        tslug = stop_slug(stop)
 
         cached = cache.get(name)
         if cached is not None:

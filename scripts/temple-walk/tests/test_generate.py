@@ -52,6 +52,10 @@ def test_slugify_temple_name():
     assert generate.slugify("Wat Phra Chetuphon (Wat Pho)") == "wat-phra-chetuphon-wat-pho"
 
 
+def test_slugify_thai_name_returns_empty():
+    assert generate.slugify("วัดโพธิ์") == ""
+
+
 # ── parse_overpass_elements ───────────────────────────────────────────────────
 
 def test_parse_overpass_node():
@@ -161,6 +165,15 @@ def test_plan_walk_exact_budget_leg_is_accepted():
     assert len(walk["stops"]) == 1
 
 
+def test_stop_slug_latin_name():
+    assert generate.stop_slug(temple("Wat Pho", 0.0, 0.0)) == "wat-pho"
+
+
+def test_stop_slug_thai_name_falls_back_to_osm_id():
+    t = {"name": "วัดโพธิ์", "lat": 0.0, "lng": 0.0, "osm_type": "way", "osm_id": "way/123"}
+    assert generate.stop_slug(t) == "way-123"
+
+
 # ── build_geojson / build_content_page ────────────────────────────────────────
 
 def make_walk():
@@ -206,6 +219,16 @@ def test_build_geojson_route_linestring():
     assert route["properties"]["type"] == "route"
     assert route["properties"]["segment_breaks"] == walk["segment_breaks"]
     assert route["properties"]["total_km"] == walk["total_km"]
+
+
+def test_build_geojson_thai_name_photo_paths_use_osm_id():
+    thai = {"name": "วัดโพธิ์", "lat": 0.0, "lng": 0.01, "osm_type": "way", "osm_id": "way/123"}
+    walk = generate.plan_walk((0.0, 0.0), [thai], 10.0, fake_leg)
+    photos = {"วัดโพธิ์": [{"url": "http://x/1.jpg", "attribution": "© A / CC"}]}
+    fc = generate.build_geojson((0.0, 0.0), walk, "testwalk", photos)
+    p = fc["features"][1]["properties"]
+    assert p["slug"] == "way-123"
+    assert p["photos"] == ["/temple-walks/testwalk/photos/way-123-1.jpg"]
 
 
 def test_build_content_page():
