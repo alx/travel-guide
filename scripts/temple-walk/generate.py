@@ -81,5 +81,34 @@ def parse_start(value: str) -> tuple[float, float] | None:
     return lat, lng
 
 
+def parse_overpass_elements(elements: list[dict]) -> list[dict]:
+    """
+    Extract named temples with coordinates from Overpass `out center` elements.
+    Dedupes by name, preferring ways/relations over nodes (richer geometry).
+    """
+    temples: dict[str, dict] = {}
+    for el in elements:
+        name = el.get("tags", {}).get("name")
+        if not name:
+            continue
+        if el["type"] == "node":
+            lat, lng = el.get("lat"), el.get("lon")
+        else:
+            center = el.get("center") or {}
+            lat, lng = center.get("lat"), center.get("lon")
+        if lat is None or lng is None:
+            continue
+        existing = temples.get(name)
+        if existing is None or (existing["osm_type"] == "node" and el["type"] != "node"):
+            temples[name] = {
+                "name": name,
+                "lat": lat,
+                "lng": lng,
+                "osm_type": el["type"],
+                "osm_id": f"{el['type']}/{el['id']}",
+            }
+    return list(temples.values())
+
+
 if __name__ == "__main__":
     pass  # main() arrives in Task 5
