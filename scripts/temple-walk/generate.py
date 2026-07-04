@@ -26,12 +26,9 @@ REPO_ROOT = SCRIPT_DIR.parent.parent
 CACHE_DIR = SCRIPT_DIR / "cache"
 
 from lib import (  # noqa: E402
-    slugify, stop_slug, load_json, save_json,
-    haversine_km, parse_start, parse_overpass_elements,
-    DEGENERATE_LEG_KM, resolve_leg, plan_walk,
-    build_geojson, build_content_page,
-    http_json_retry, geocode_start, fetch_temples,
-    make_leg_fetcher, fetch_wikimedia_photos, fetch_photos,
+    slugify, parse_start, geocode_start,
+    fetch_temples, make_leg_fetcher, plan_walk,
+    build_geojson, build_content_page, fetch_photos,
 )
 
 
