@@ -3,7 +3,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-import generate  # noqa: E402
 import lib  # noqa: E402
 
 
@@ -169,7 +168,7 @@ def test_plan_walk_exact_budget_leg_is_accepted():
 # ── resolve_leg ───────────────────────────────────────────────────────────────
 
 def test_resolve_leg_direct_line_when_degenerate():
-    def fail_leg(*a):
+    def fail_leg(*_):
         raise AssertionError("fetch_leg should not be called for a degenerate leg")
 
     # ~5.5m apart — well under the 50m degenerate threshold
