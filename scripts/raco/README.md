@@ -5,19 +5,18 @@ Raw RA.co (Resident Advisor) data collection. No visual output — feeds
 
 ## Scripts
 
-- `fetch_ra_events.js` — GraphQL area scanner: scans a range of RA area IDs,
-  fetches all events for active areas, saves per-area JSON under `data/`.
-  Confirmed event fields come from `.field-probe-state.json` (regenerate with
-  `--probe`).
+- `fetch_ra_events.js` — hardcoded GraphQL fetch of RA.co's `GET_EVENT_LISTINGS`
+  query for a single area (area ID `453`, Koh Samui), filtered to listings
+  from `2026-06-14` onward. Fetches page 1 and page 2 (20 results per page)
+  and prints each event's date, title, and venue to the console.
 - `event_listener.js` — Playwright network sniffer (non-headless) that watches
   ra.co traffic for a target string; used to discover API fields.
 
 ## Run
 
 ```bash
-node scripts/raco/fetch_ra_events.js           # scan areas, save JSON
-node scripts/raco/fetch_ra_events.js --probe   # regenerate field probe state
+node scripts/raco/fetch_ra_events.js           # fetch Koh Samui events, print to console
 node scripts/raco/event_listener.js            # interactive API exploration
 ```
 
-**Output:** `scripts/raco/data/*.json`, `scripts/raco/schema-summary.json`
+**Output:** none — `fetch_ra_events.js` prints results to stdout.
