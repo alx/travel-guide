@@ -37,10 +37,14 @@ body { background: #1a1a2e; }
   width: 32px; height: 3px; background: #FF6B35;
   border-radius: 2px; flex-shrink: 0;
 }
-.poi-swiper { width: 100%; margin-bottom: 0.5rem; border-radius: 6px; overflow: hidden; }
+.poi-swiper-wrap { margin-bottom: 0.5rem; }
+.poi-swiper { width: 100%; border-radius: 6px; overflow: hidden; }
+.poi-swiper .swiper-slide { height: 140px; }
+.poi-swiper .poi-photo { height: 100%; margin-bottom: 0; border-radius: 0; }
 .poi-swiper .swiper-button-next,
 .poi-swiper .swiper-button-prev { color: #FF6B35; }
-.poi-swiper .swiper-pagination-bullet-active { background: #FF6B35; }
+.poi-swiper-wrap .swiper-pagination { text-align: center; padding: 0.2rem 0; }
+.poi-swiper-wrap .swiper-pagination-bullet-active { background: #FF6B35; }
 .poi-photo-caption {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: rgba(0,0,0,0.55);
@@ -100,11 +104,13 @@ body { background: #1a1a2e; }
         ${attributions[i] ? `<div class="poi-photo-caption">${attributions[i]}</div>` : ''}
       </div>`).join('');
     return `
-      <div class="swiper poi-swiper">
-        <div class="swiper-wrapper">${slides}</div>
+      <div class="poi-swiper-wrap">
+        <div class="swiper poi-swiper">
+          <div class="swiper-wrapper">${slides}</div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>`;
   }
 
@@ -129,6 +135,7 @@ body { background: #1a1a2e; }
       }
 
       // Draw markers: green "S" for the start (order 0), numbered orange for temples
+      const markersByOrder = {};
       points.forEach(f => {
         const [lng, lat] = f.geometry.coordinates;
         const p = f.properties;
@@ -141,9 +148,11 @@ body { background: #1a1a2e; }
           iconSize: [28, 28],
           iconAnchor: [14, 14],
         });
-        const marker = L.marker([lat, lng], { icon });
-        marker.addTo(map);
-        if (!isStart) marker.on('click', () => focusPOI(f));
+        const marker = L.marker([lat, lng], { icon }).addTo(map);
+        if (!isStart) {
+          marker.on('click', () => focusPOI(f));
+          markersByOrder[p.order] = marker;
+        }
       });
 
       // Render sidebar list (temples only, not the start point)
@@ -151,6 +160,7 @@ body { background: #1a1a2e; }
       points.filter(f => f.properties.order > 0).forEach(f => {
         const p = f.properties;
         const attributions = p.attributions || [];
+        const displayName = p.name_en || p.name;
         const card = document.createElement('div');
         card.className = 'poi-card';
         card.id = `card-${p.order}`;
@@ -159,7 +169,7 @@ body { background: #1a1a2e; }
           ${photoHtml(p)}
           <div style="display:flex;align-items:center;">
             <span class="walk-badge">${p.order}</span>
-            <h3>${p.name}</h3>
+            <h3>${displayName}</h3>
           </div>
           <div class="poi-meta">${p.distance_km} km from start${attributions[0] ? ` · ${attributions[0]}` : ''}</div>
         `;
@@ -168,15 +178,21 @@ body { background: #1a1a2e; }
       });
 
       // Init Swiper on each multi-photo card (scoped selectors prevent cross-card conflicts)
-      document.querySelectorAll('.poi-swiper').forEach(el => {
-        new Swiper(el, {
+      document.querySelectorAll('.poi-swiper-wrap').forEach(wrap => {
+        new Swiper(wrap.querySelector('.poi-swiper'), {
           navigation: {
-            nextEl: el.querySelector('.swiper-button-next'),
-            prevEl: el.querySelector('.swiper-button-prev'),
+            nextEl: wrap.querySelector('.swiper-button-next'),
+            prevEl: wrap.querySelector('.swiper-button-prev'),
           },
-          pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+          pagination: { el: wrap.querySelector('.swiper-pagination'), clickable: true },
           loop: false,
         });
+      });
+
+      // Restore all marker opacity when clicking map background
+      map.on('click', () => {
+        document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('active'));
+        Object.values(markersByOrder).forEach(m => m.setOpacity(1));
       });
 
       function focusPOI(f) {
@@ -188,6 +204,9 @@ body { background: #1a1a2e; }
           card.classList.add('active');
           card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
+        Object.entries(markersByOrder).forEach(([order, m]) => {
+          m.setOpacity(Number(order) === f.properties.order ? 1 : 0.3);
+        });
       }
     })
     .catch(err => console.error('Failed to load walk.geojson:', err));

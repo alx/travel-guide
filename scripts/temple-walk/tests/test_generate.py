@@ -62,8 +62,16 @@ def test_parse_overpass_node():
     elements = [{"type": "node", "id": 1, "lat": 13.75, "lon": 100.49,
                  "tags": {"name": "Wat Pho"}}]
     temples = lib.parse_overpass_elements(elements)
-    assert temples == [{"name": "Wat Pho", "lat": 13.75, "lng": 100.49,
+    assert temples == [{"name": "Wat Pho", "name_en": "Wat Pho", "lat": 13.75, "lng": 100.49,
                         "osm_type": "node", "osm_id": "node/1"}]
+
+
+def test_parse_overpass_node_prefers_name_en():
+    elements = [{"type": "node", "id": 1, "lat": 13.75, "lon": 100.49,
+                 "tags": {"name": "วัดโพธิ์", "name:en": "Wat Pho"}}]
+    temples = lib.parse_overpass_elements(elements)
+    assert temples[0]["name"] == "วัดโพธิ์"
+    assert temples[0]["name_en"] == "Wat Pho"
 
 
 def test_parse_overpass_way_uses_center():
@@ -258,6 +266,7 @@ def test_build_geojson_stop_properties():
     stop = fc["features"][1]
     p = stop["properties"]
     assert p["name"] == "Wat A"
+    assert p["name_en"] == "Wat A"
     assert p["order"] == 1
     assert p["slug"] == "wat-a"
     assert p["osm_id"] == "node/Wat A"
@@ -311,6 +320,6 @@ def test_build_geojson_thai_name_photo_paths_use_osm_id():
 def test_build_content_page():
     md = lib.build_content_page("rattanakosin", "13.7516,100.4927", 7, 9.4)
     assert 'title: "Temple Walk — Rattanakosin"' in md
-    assert 'description: "7 temples, 9.4 km walking from 13.7516,100.4927"' in md
+    assert 'description: "7 temples, 9.4 km"' in md
     assert 'type: "temple-walk"' in md
     assert 'geojson: "/temple-walks/rattanakosin/walk.geojson"' in md

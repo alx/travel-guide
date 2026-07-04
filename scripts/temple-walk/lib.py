@@ -64,7 +64,8 @@ def parse_start(value: str) -> tuple[float, float] | None:
 def parse_overpass_elements(elements: list[dict]) -> list[dict]:
     temples: dict[str, dict] = {}
     for el in elements:
-        name = el.get("tags", {}).get("name")
+        tags = el.get("tags", {})
+        name = tags.get("name")
         if not name:
             continue
         if el["type"] == "node":
@@ -78,6 +79,7 @@ def parse_overpass_elements(elements: list[dict]) -> list[dict]:
         if existing is None or (existing["osm_type"] == "node" and el["type"] != "node"):
             temples[name] = {
                 "name": name,
+                "name_en": tags.get("name:en") or name,
                 "lat": lat,
                 "lng": lng,
                 "osm_type": el["type"],
@@ -193,6 +195,7 @@ def build_geojson(start: tuple[float, float], walk: dict, slug: str,
             "geometry": {"type": "Point", "coordinates": [stop["lng"], stop["lat"]]},
             "properties": {
                 "name": stop["name"],
+                "name_en": stop.get("name_en", stop["name"]),
                 "order": stop["order"],
                 "slug": tslug,
                 "osm_id": stop["osm_id"],
@@ -219,7 +222,7 @@ def build_content_page(slug: str, start_label: str, n_stops: int, total_km: floa
     return (
         "---\n"
         f'title: "{title}"\n'
-        f'description: "{n_stops} temples, {total_km} km walking from {start_label}"\n'
+        f'description: "{n_stops} temples, {total_km} km"\n'
         'type: "temple-walk"\n'
         f'geojson: "/temple-walks/{slug}/walk.geojson"\n'
         "---\n"
