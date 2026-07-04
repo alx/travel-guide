@@ -15,3 +15,4 @@ static/toulouse-distorama/slideshows/
 __pycache__/
 *.pyc
 .superpowers/
+docs/social/
