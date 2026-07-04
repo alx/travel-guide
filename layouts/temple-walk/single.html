@@ -1,5 +1,6 @@
 {{ define "head" }}
 {{ partial "map-poi-styles.html" . }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
 body { background: #1a1a2e; }
 .overlay-card {
@@ -36,6 +37,17 @@ body { background: #1a1a2e; }
   width: 32px; height: 3px; background: #FF6B35;
   border-radius: 2px; flex-shrink: 0;
 }
+.poi-swiper { width: 100%; margin-bottom: 0.5rem; border-radius: 6px; overflow: hidden; }
+.poi-swiper .swiper-button-next,
+.poi-swiper .swiper-button-prev { color: #FF6B35; }
+.poi-swiper .swiper-pagination-bullet-active { background: #FF6B35; }
+.poi-photo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.55);
+  color: #aaa; font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0 0 6px 6px;
+}
 </style>
 {{ end }}
 
@@ -60,6 +72,7 @@ body { background: #1a1a2e; }
 {{ end }}
 
 {{ define "scripts" }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function () {
@@ -73,6 +86,27 @@ body { background: #1a1a2e; }
     attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18,
   }).addTo(map);
+
+  function photoHtml(p) {
+    const photos = p.photos || [];
+    const attributions = p.attributions || [];
+    if (photos.length === 0) return '';
+    if (photos.length === 1) {
+      return `<img class="poi-photo" src="${photos[0]}" alt="${p.name}" loading="lazy">`;
+    }
+    const slides = photos.map((src, i) => `
+      <div class="swiper-slide" style="position:relative;">
+        <img class="poi-photo" src="${src}" alt="${p.name}" loading="lazy">
+        ${attributions[i] ? `<div class="poi-photo-caption">${attributions[i]}</div>` : ''}
+      </div>`).join('');
+    return `
+      <div class="swiper poi-swiper">
+        <div class="swiper-wrapper">${slides}</div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>`;
+  }
 
   fetch(GEOJSON_URL)
     .then(r => r.json())
@@ -116,21 +150,33 @@ body { background: #1a1a2e; }
       const list = document.getElementById('poi-list');
       points.filter(f => f.properties.order > 0).forEach(f => {
         const p = f.properties;
-        const photo = (p.photos && p.photos.length) ? p.photos[0] : null;
+        const attributions = p.attributions || [];
         const card = document.createElement('div');
         card.className = 'poi-card';
         card.id = `card-${p.order}`;
         card.style.cssText = 'border-radius:8px;padding:0.75rem;margin-bottom:0.4rem;';
         card.innerHTML = `
-          ${photo ? `<img class="poi-photo" src="${photo}" alt="${p.name}" loading="lazy">` : ''}
+          ${photoHtml(p)}
           <div style="display:flex;align-items:center;">
             <span class="walk-badge">${p.order}</span>
             <h3>${p.name}</h3>
           </div>
-          <div class="poi-meta">${p.distance_km} km from start${p.attribution ? ` · ${p.attribution}` : ''}</div>
+          <div class="poi-meta">${p.distance_km} km from start${attributions[0] ? ` · ${attributions[0]}` : ''}</div>
         `;
         card.addEventListener('click', () => focusPOI(f));
         list.appendChild(card);
+      });
+
+      // Init Swiper on each multi-photo card (scoped selectors prevent cross-card conflicts)
+      document.querySelectorAll('.poi-swiper').forEach(el => {
+        new Swiper(el, {
+          navigation: {
+            nextEl: el.querySelector('.swiper-button-next'),
+            prevEl: el.querySelector('.swiper-button-prev'),
+          },
+          pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+          loop: false,
+        });
       });
 
       function focusPOI(f) {
