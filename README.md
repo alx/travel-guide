@@ -60,6 +60,42 @@ Then in any Claude Code session inside this repo:
 /publish-map     — enrich coordinates, commit, and deploy to GitHub Pages
 ```
 
+## Sub-projects
+
+Data pipelines and tools under [`scripts/`](scripts/). Each links to its own README.
+
+| Preview | Project | Description |
+|---|---|---|
+| <img src="docs/screenshots/711_samui.png" width="200"> | [711_samui](scripts/711_samui/README.md) | 7-Eleven stores on Koh Samui via Google Places API → GeoJSON |
+| <img src="docs/screenshots/airbnb_env.png" width="200"> | [airbnb_env](scripts/airbnb_env/README.md) | CLI: family-friendly POIs near an Airbnb listing |
+| <img src="docs/screenshots/airbnb_web.png" width="200"> | [airbnb_web](scripts/airbnb_web/README.md) | Flask wizard that turns an Airbnb listing into a neighbourhood map |
+| <img src="docs/screenshots/bangkok-citywalk.png" width="200"> | [bangkok-citywalk](scripts/bangkok-citywalk/README.md) | Bangkok city-walk map with Wikimedia photos + Remotion video |
+| <img src="docs/screenshots/bangkok-raco.png" width="200"> | [bangkok-raco](scripts/bangkok-raco/README.md) | Weekly Bangkok RA.co event maps with artist media curation |
+| | [ci](scripts/ci/README.md) | GeoJSON validation + map preview screenshots for CI |
+| <img src="docs/screenshots/france_project_newsletter.png" width="200"> | [france_project_newsletter](scripts/france_project_newsletter/README.md) | Newsletter pipeline monitoring France's strategic industrial projects |
+| | [google_places_api](scripts/google_places_api/README.md) | Food & drink venue ingester → HTML map, GeoJSON, optional PR |
+| | [hooks](scripts/hooks/README.md) | Git pre-push hook ensuring og:image previews exist |
+| | [raco](scripts/raco/README.md) | RA.co GraphQL area scanner (raw event data) |
+| | [reddit](scripts/reddit/README.md) | Reddit thread → GeoJSON map via NER geocoding |
+| <img src="docs/screenshots/revente-tickets-fr.png" width="200"> | [revente-tickets-fr](scripts/revente-tickets-fr/README.md) | r/ReventeTicketsFR ticket-resale tracker: Reddit → Telegram → map |
+| <img src="docs/screenshots/surat-thani-koh-samui-transit.png" width="200"> | [surat-thani-koh-samui-transit](scripts/surat-thani-koh-samui-transit/README.md) | Surat Thani ↔ Koh Samui transit itinerary map |
+| <img src="docs/screenshots/temple-walk.png" width="200"> | [temple-walk](scripts/temple-walk/README.md) | Self-guided temple walking tours (Overpass + OSRM + Wikimedia) |
+| <img src="docs/screenshots/toulouse-distorama.png" width="200"> | [toulouse-distorama](scripts/toulouse-distorama/README.md) | Toulouse underground events pipeline with rendered videos |
+| <img src="docs/screenshots/videoprotection_toulouse.png" width="200"> | [videoprotection_toulouse](scripts/videoprotection_toulouse/README.md) | Toulouse CCTV & radar map from OpenStreetMap |
+| <img src="docs/screenshots/videosurveillance_france.png" width="200"> | [videosurveillance_france](scripts/videosurveillance_france/README.md) | France-wide CCTV & radar map from OpenStreetMap |
+| <img src="docs/screenshots/yoga_france.png" width="200"> | [yoga_france](scripts/yoga_france/README.md) | Yoga places in France from OpenStreetMap |
+
+### Utility scripts
+
+| Preview | Script | Description |
+|---|---|---|
+| | [compact-geojson.py](scripts/compact-geojson.py) | Converts `locations.geojson` to compact columnar `locations.min.json` |
+| | [fetch_all.sh](scripts/fetch_all.sh) | Refreshes all OSM-sourced datasets, then rebuilds the map index |
+| | [generate_map_index.py](scripts/generate_map_index.py) | Scans content + GeoJSON stats into `data/maps.json` for the homepage |
+| | [geocode_france_projets.py](scripts/geocode_france_projets.py) | Geocodes France strategic industrial projects CSV → GeoJSON |
+| <img src="docs/screenshots/toulouse_burgers_lookup.png" width="200"> | [toulouse_burgers_lookup.py](scripts/toulouse_burgers_lookup.py) | Google Places lookup → [toulouse-burgers](https://maps.girard-davila.net/toulouse-burgers/) map |
+| <img src="docs/screenshots/toulouse_mange_bien_lookup.png" width="200"> | [toulouse_mange_bien_lookup.py](scripts/toulouse_mange_bien_lookup.py) | Google Places lookup → [toulouse-mange-bien](https://maps.girard-davila.net/toulouse-mange-bien/) map |
+
 ## Development
 
 ```bash
