@@ -11,7 +11,7 @@ screenshot, and the root README indexes them all.
 
 ## Current state
 
-- `scripts/` contains 19 sub-directories plus 6 loose utility scripts.
+- `scripts/` contains 18 sub-directories plus 6 loose utility scripts.
 - Only 7 sub-directories have a README: `711_samui`, `airbnb_env`, `ci`,
   `google_places_api`, `reddit`, `temple-walk`, `toulouse-distorama`.
 - CI already generates 1200×630 map screenshots (`scripts/ci/generate-map-previews.js`)
@@ -20,7 +20,7 @@ screenshot, and the root README indexes them all.
 
 ## Decisions
 
-1. **Create READMEs for all 12 missing sub-directories** so every index entry has a
+1. **Create READMEs for all 11 missing sub-directories** so every index entry has a
    working README link.
 2. **Reuse CI previews as screenshots** — no new screenshot pipeline. Capture fresh
    ones (via the existing Playwright script against a local Hugo build) only for
@@ -72,7 +72,7 @@ Inserted after "Creating Maps with Claude Code":
 
 ### 3. Sub-project READMEs
 
-Twelve new READMEs, short and uniform:
+Eleven new READMEs, short and uniform:
 
 1. Screenshot at top (`../../docs/screenshots/<slug>.png`) if one exists.
 2. What it does (one or two sentences, derived from the script docstrings).
