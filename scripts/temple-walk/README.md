@@ -1,5 +1,7 @@
 # scripts/temple-walk
 
+<img src="../../docs/screenshots/temple-walk.png" width="600" alt="Temple walk map preview">
+
 Generates self-guided Buddhist temple walking tours: finds named temples via the
 OSM Overpass API, chains them into a walking route with OSRM foot-routing, pulls
 photos from Wikimedia Commons, and writes a GeoJSON + Hugo content page that

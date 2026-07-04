@@ -1,5 +1,7 @@
 # toulouse-distorama scripts
 
+<img src="../../docs/screenshots/toulouse-distorama.png" width="600" alt="Toulouse Distorama map preview">
+
 Data pipeline for the Distorama underground map of Toulouse.
 Source: [distorama.neocities.org](https://distorama.neocities.org)
 

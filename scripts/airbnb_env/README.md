@@ -1,5 +1,7 @@
 # scripts/airbnb_env
 
+<img src="../../docs/screenshots/airbnb_env.png" width="600" alt="Airbnb nearby POIs map preview">
+
 Find family-friendly POIs near an Airbnb listing: supermarkets, parks, playgrounds, transit stops, and kid activities.
 
 ## `airbnb_nearby.py`

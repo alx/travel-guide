@@ -1,5 +1,7 @@
 # scripts/711_samui
 
+<img src="../../docs/screenshots/711_samui.png" width="600" alt="7-Eleven Koh Samui map preview">
+
 Fetches all 7-Eleven stores on Koh Samui from the Google Places API (New) and outputs GeoJSON.
 
 ## `fetch_711_samui.py`
