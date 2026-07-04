@@ -1,0 +1,247 @@
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  body { overflow: hidden; }
+  .site-header, footer { display: none !important; }
+  main { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  #map { position: fixed; inset: 0; z-index: 0; }
+
+  .map-overlay {
+    position: fixed; left: 1rem; top: 1rem; bottom: 1rem;
+    width: 340px; z-index: 100;
+    display: flex; flex-direction: column; gap: 0.5rem; pointer-events: none;
+  }
+  .map-overlay > * { pointer-events: all; }
+  .overlay-card {
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px; padding: 0.85rem 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13); border: 1px solid rgba(255,255,255,0.6);
+  }
+  .overlay-card.scrollable {
+    flex: 1; min-height: 0; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .page-header h1 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .page-header p  { font-size: 0.8rem; color: #666; }
+  .site-brand { font-size: 0.7rem; font-weight: 600; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 0.35rem; opacity: 0.65; }
+  .site-brand:hover { opacity: 1; }
+
+  .header-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .header-btn { padding: 0.2rem 0.6rem; border-radius: 16px; border: 1.5px solid #ddd; background: white; cursor: pointer; font-size: 0.72rem; color: #555; transition: all 0.15s; }
+  .header-btn:hover { border-color: #1a3a5c; color: #1a3a5c; }
+  #list-toggle { display: none; }
+
+  .leg-tabs { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.25rem; }
+  .leg-tab {
+    padding: 0.25rem 0.65rem; border-radius: 20px; border: 1.5px solid #ddd;
+    background: white; cursor: pointer; font-size: 0.74rem; font-weight: 500; transition: all 0.15s;
+  }
+
+  .poi-card { background: white; border-radius: 10px; padding: 0.75rem 0.85rem; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; }
+  .poi-card:hover, .poi-card.active { border-color: #1a3a5c; }
+  .poi-card h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .poi-card .poi-notes { font-size: 0.78rem; color: #555; line-height: 1.4; margin-top: 0.25rem; }
+  .poi-card .poi-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.35rem; }
+  .poi-card .poi-actions a { font-size: 0.72rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .cat-badge { display: inline-block; font-size: 0.68rem; padding: 0.12rem 0.45rem; border-radius: 20px; font-weight: 600; margin-bottom: 0.2rem; }
+  .leg-badge { display: inline-block; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 20px; font-weight: 700; margin-left: 0.3rem; color: white; vertical-align: middle; }
+
+  @media (max-width: 768px) {
+    #list-toggle { display: inline-block; }
+    .map-overlay { left: 0; right: 0; bottom: 0; top: auto; width: 100%; flex-direction: column-reverse; gap: 0; }
+    .overlay-card { border-radius: 0; }
+    .overlay-card.scrollable { max-height: 0; overflow: hidden; padding: 0 !important; transition: max-height 0.3s ease, padding 0.15s ease; }
+    .overlay-card.scrollable.mobile-open { max-height: 45vh; overflow-y: auto; padding: 0.85rem 1rem !important; margin-bottom: 0.5rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>⛴️ Koh Samui ↔ Surat Thani</h1>
+      <p>4 legs · ~4-5h · ~1 140 THB</p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="list-toggle"
+        onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open')">
+        📍 Stops
+      </button>
+    </div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div class="leg-tabs" id="leg-tabs"></div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// Leg number → hex color
+const LEG_COLORS = { 1: '#f59e0b', 2: '#0ea5e9', 3: '#22c55e', 4: '#8b5cf6' };
+// Leg number → [startStopIdx, endStopIdx] (0-based index into stops array, ordered by GeoJSON)
+const LEG_STOPS = { 1: [0, 1], 2: [1, 2], 3: [2, 3], 4: [3, 4] };
+
+let map, stops = [], legs = [], markers = {}, polylines = {}, activeCard = null, activeLeg = 'all';
+
+map = L.map('map').setView([9.35, 100.0], 9);
+window._leafletMap = map;
+map.on('click', clearFocus);
+map.on('dragstart', clearFocus);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+function makeIcon(p) {
+  const color = LEG_COLORS[p.leg] || '#1a3a5c';
+  return L.divIcon({
+    className: '',
+    html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.3);border:2px solid white;">${p.icon}</div>`,
+    iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -18]
+  });
+}
+
+function focusStop(i) {
+  const [lng, lat] = stops[i].geometry.coordinates;
+  map.flyTo([lat, lng], 13, { duration: 0.7 });
+  if (markers[i]) markers[i].openPopup();
+  if (activeCard !== null) document.getElementById('stop-card-' + activeCard)?.classList.remove('active');
+  activeCard = i;
+  document.getElementById('stop-card-' + i)?.classList.add('active');
+  document.getElementById('stop-card-' + i)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function clearFocus() {
+  if (activeCard === null) return;
+  document.getElementById('stop-card-' + activeCard)?.classList.remove('active');
+  activeCard = null;
+}
+
+function renderSidebar() {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const indices = activeLeg === 'all'
+    ? stops.map((_, i) => i)
+    : (LEG_STOPS[activeLeg] || []);
+  indices.forEach(i => {
+    const p = stops[i].properties;
+    const [lng, lat] = stops[i].geometry.coordinates;
+    const color = LEG_COLORS[p.leg] || '#1a3a5c';
+    const card = document.createElement('div');
+    card.className = 'poi-card'; card.id = 'stop-card-' + i;
+    card.innerHTML = `
+      <span class="cat-badge" style="background:${color}22;color:${color};">${p.icon} ${p.category}</span>
+      <span class="leg-badge" style="background:${color};">Step ${p.leg}</span>
+      <h3>${p.name}</h3>
+      ${p.notes ? `<div class="poi-notes">${p.notes}</div>` : ''}
+      <div class="poi-actions">
+        <a href="${p.maps_url || `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}" target="_blank" rel="noopener">Google Maps ↗</a>
+        ${p.website ? `<a href="${p.website}" target="_blank" rel="noopener">🌐 Website</a>` : ''}
+      </div>`;
+    card.onclick = () => focusStop(i);
+    list.appendChild(card);
+  });
+}
+
+function filterLeg(leg) {
+  activeLeg = leg;
+  legs.forEach(f => {
+    const poly = polylines[f.properties.leg];
+    if (!poly) return;
+    const show = activeLeg === 'all' || f.properties.leg === activeLeg;
+    show ? (map.hasLayer(poly) || poly.addTo(map)) : map.removeLayer(poly);
+  });
+  stops.forEach((_, i) => {
+    const m = markers[i];
+    if (!m) return;
+    const show = activeLeg === 'all' ||
+      (LEG_STOPS[activeLeg] && LEG_STOPS[activeLeg].includes(i));
+    show ? (map.hasLayer(m) || m.addTo(map)) : map.removeLayer(m);
+  });
+  renderSidebar();
+  updateTabStyles();
+}
+
+function updateTabStyles() {
+  const tabs = [...document.querySelectorAll('.leg-tab')];
+  tabs.forEach(btn => { btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = '#ddd'; });
+  if (activeLeg === 'all') {
+    tabs[0].style.background = '#1a3a5c'; tabs[0].style.color = 'white'; tabs[0].style.borderColor = '#1a3a5c';
+  } else {
+    const idx = Number(activeLeg); // tabs[0]=All, tabs[1]=Leg1, tabs[2]=Leg2, etc.
+    if (tabs[idx]) {
+      tabs[idx].style.background = LEG_COLORS[activeLeg];
+      tabs[idx].style.color = 'white';
+      tabs[idx].style.borderColor = LEG_COLORS[activeLeg];
+    }
+  }
+}
+
+function setupLegTabs() {
+  const container = document.getElementById('leg-tabs');
+  const allBtn = document.createElement('button');
+  allBtn.className = 'leg-tab';
+  allBtn.textContent = 'All';
+  allBtn.onclick = () => filterLeg('all');
+  container.appendChild(allBtn);
+  legs.forEach(f => {
+    const p = f.properties;
+    const btn = document.createElement('button');
+    btn.className = 'leg-tab';
+    btn.textContent = `${p.icon} Step ${p.leg}`;
+    btn.onclick = () => filterLeg(Number(p.leg));
+    container.appendChild(btn);
+  });
+  updateTabStyles();
+}
+
+fetch('{{ "/surat-thani-koh-samui-transit-family/locations.geojson" | relURL }}')
+  .then(r => r.json())
+  .then(data => {
+    stops = data.features
+      .filter(f => f.geometry.type === 'Point')
+      .sort((a, b) => a.properties.leg - b.properties.leg || 0);
+    legs = data.features
+      .filter(f => f.geometry.type === 'LineString')
+      .sort((a, b) => a.properties.leg - b.properties.leg);
+
+    // Render polylines
+    legs.forEach(f => {
+      const p = f.properties;
+      const coords = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+      const poly = L.polyline(coords, { color: LEG_COLORS[p.leg], weight: 4, opacity: 0.8 })
+        .addTo(map)
+        .bindPopup(`<b>${p.icon} ${p.mode}</b><br>${p.duration}${p.cost_thb ? ' · ' + p.cost_thb + ' THB' : ' (included)'}<br><em style="font-size:0.8rem;">${p.notes}</em>${p.website ? `<br><a href="${p.website}" target="_blank" rel="noopener" style="font-size:0.8rem;">🌐 ${p.website}</a>` : ''}`);
+      polylines[p.leg] = poly;
+    });
+
+    // Render stop markers
+    stops.forEach((f, i) => {
+      const p = f.properties;
+      const [lng, lat] = f.geometry.coordinates;
+      const color = LEG_COLORS[p.leg] || '#1a3a5c';
+      const m = L.marker([lat, lng], { icon: makeIcon(p) })
+        .addTo(map)
+        .bindPopup(`<b>${p.name}</b><br><small style="color:${color};font-weight:600;">${p.icon} ${p.category}</small>${p.notes ? '<br><em style="font-size:0.8rem;">' + p.notes + '</em>' : ''}`);
+      m.on('click', () => focusStop(i));
+      markers[i] = m;
+    });
+
+    setupLegTabs();
+    renderSidebar();
+
+    // Fit to all stop markers
+    const group = L.featureGroup(Object.values(markers));
+    if (group.getLayers().length > 0) map.fitBounds(group.getBounds().pad(0.12));
+  })
+  .catch(() => {
+    document.getElementById('poi-list').innerHTML = '<p style="color:#888;font-size:0.85rem;padding:1rem;">No locations loaded.</p>';
+  });
+</script>
+{{ end }}
