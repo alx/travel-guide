@@ -198,7 +198,7 @@ def build_geojson(start: tuple[float, float], walk: dict, slug: str,
                 "osm_id": stop["osm_id"],
                 "distance_km": stop["distance_km"],
                 "photos": [f"/temple-walks/{slug}/photos/{tslug}-{j+1}.jpg" for j in range(len(entries))],
-                "attribution": entries[0]["attribution"] if entries else "",
+                "attributions": [e["attribution"] for e in entries],
             },
         })
     if walk["route_coords"]:

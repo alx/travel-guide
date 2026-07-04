@@ -262,7 +262,7 @@ def test_build_geojson_stop_properties():
     assert p["slug"] == "wat-a"
     assert p["osm_id"] == "node/Wat A"
     assert p["photos"] == ["/temple-walks/testwalk/photos/wat-a-1.jpg"]
-    assert p["attribution"] == "© Alice / CC"
+    assert p["attributions"] == ["© Alice / CC"]
     assert p["distance_km"] > 0
 
 
@@ -270,7 +270,21 @@ def test_build_geojson_stop_without_photos():
     fc = lib.build_geojson((0.0, 0.0), make_walk(), "testwalk", {})
     p = fc["features"][1]["properties"]
     assert p["photos"] == []
-    assert p["attribution"] == ""
+    assert p["attributions"] == []
+
+
+def test_build_geojson_multi_photo_attributions():
+    photos = {"Wat A": [
+        {"url": "http://x/1.jpg", "attribution": "© Alice / CC"},
+        {"url": "http://x/2.jpg", "attribution": "© Bob / CC-BY"},
+    ]}
+    fc = lib.build_geojson((0.0, 0.0), make_walk(), "testwalk", photos)
+    p = fc["features"][1]["properties"]
+    assert p["photos"] == [
+        "/temple-walks/testwalk/photos/wat-a-1.jpg",
+        "/temple-walks/testwalk/photos/wat-a-2.jpg",
+    ]
+    assert p["attributions"] == ["© Alice / CC", "© Bob / CC-BY"]
 
 
 def test_build_geojson_route_linestring():
