@@ -1,0 +1,105 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+<style>
+body { background: #1a1a2e; }
+.overlay-card {
+  background: rgba(10,10,20,0.96) !important;
+  border: 1px solid rgba(255,107,53,0.3) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.8) !important;
+  color: #eee;
+}
+.overlay-card h1 { color: #fff; }
+.overlay-card p { color: #999; }
+.site-brand { color: #888 !important; }
+.route-legend {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: #777; margin-top: 0.5rem;
+}
+.route-line-sample {
+  width: 32px; height: 3px; background: #FF6B35;
+  border-radius: 2px; flex-shrink: 0;
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1 style="font-size:1.2rem;font-weight:700;margin:0 0 0.25rem;">{{ .Title }}</h1>
+      <p style="font-size:0.8rem;margin:0;">{{ .Description }}</p>
+    </div>
+    <div class="route-legend">
+      <div class="route-line-sample"></div>
+      <span>Overlapping routes — brighter = more walks pass through</span>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  const GEOJSON_URL = '{{ .Params.geojson | relURL }}';
+  const ROUTE_COLOR = '#FF6B35';
+  const START_COLOR = '#2ecc71';
+  const TILE_URL = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}';
+
+  const map = L.map('map', { maxZoom: 18 }).setView([13.736717, 100.523186], 13);
+  L.tileLayer(TILE_URL, {
+    attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
+  }).addTo(map);
+
+  fetch(GEOJSON_URL)
+    .then(r => r.json())
+    .then(data => {
+      const allLatLngs = [];
+
+      // Routes drawn first (below dots)
+      data.features
+        .filter(f => f.properties.type === 'route')
+        .forEach(f => {
+          const latLngs = f.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+          L.polyline(latLngs, { color: ROUTE_COLOR, weight: 3, opacity: 0.15 }).addTo(map);
+          allLatLngs.push(...latLngs);
+        });
+
+      // Stop dots with tooltip
+      data.features
+        .filter(f => f.properties.type === 'stop')
+        .forEach(f => {
+          const [lng, lat] = f.geometry.coordinates;
+          L.circleMarker([lat, lng], {
+            radius: 4,
+            color: ROUTE_COLOR,
+            fillColor: ROUTE_COLOR,
+            fillOpacity: 0.9,
+            weight: 1,
+          }).bindTooltip(f.properties.name).addTo(map);
+        });
+
+      // Start marker
+      const startFeature = data.features.find(f => f.properties.type === 'start');
+      if (startFeature) {
+        const [lng, lat] = startFeature.geometry.coordinates;
+        const icon = L.divIcon({
+          className: '',
+          html: `<div style="width:28px;height:28px;border-radius:50%;background:${START_COLOR};color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.6);border:2px solid #fff;">S</div>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+        });
+        L.marker([lat, lng], { icon }).addTo(map);
+      }
+
+      if (allLatLngs.length) {
+        map.fitBounds(L.latLngBounds(allLatLngs), { padding: [40, 40] });
+      }
+    })
+    .catch(err => console.error('Failed to load multi-walk.geojson:', err));
+})();
+</script>
+{{ end }}
