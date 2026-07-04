@@ -28,7 +28,7 @@ body { background: #1a1a2e; }
 .poi-card:hover, .poi-card.active { border-color: #FF6B35 !important; }
 .poi-card h3 { color: #eee; font-size: 0.9rem; margin: 0; }
 .poi-meta { font-size: 0.75rem; color: #666; margin-top: 0.25rem; }
-.poi-photo { width: 100%; height: 140px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem; }
+.poi-photo { display: block; margin: 0 auto 0.5rem; height: 140px; object-fit: cover; border-radius: 6px; }
 .route-legend {
   display: flex; align-items: center; gap: 0.5rem;
   font-size: 0.75rem; color: #777; margin-top: 0.5rem;
@@ -40,11 +40,10 @@ body { background: #1a1a2e; }
 .poi-swiper-wrap { margin-bottom: 0.5rem; }
 .poi-swiper { width: 100%; border-radius: 6px; overflow: hidden; }
 .poi-swiper .swiper-slide { height: 140px; }
-.poi-swiper .poi-photo { height: 100%; margin-bottom: 0; border-radius: 0; }
+.poi-swiper .poi-photo { width: 100%; height: 100%; object-fit: contain; background: #000; margin-bottom: 0; border-radius: 0; }
 .poi-swiper .swiper-button-next,
 .poi-swiper .swiper-button-prev { color: #FF6B35; }
-.poi-swiper-wrap .swiper-pagination { text-align: center; padding: 0.2rem 0; }
-.poi-swiper-wrap .swiper-pagination-bullet-active { background: #FF6B35; }
+.poi-swiper-wrap .swiper-pagination { display: none; }
 .poi-photo-caption {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: rgba(0,0,0,0.55);
@@ -86,6 +85,8 @@ body { background: #1a1a2e; }
   const TILE_URL = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key={{ os.Getenv "HUGO_STADIA_API_KEY" }}';
 
   const map = L.map('map', { maxZoom: 18 }).setView([13.736717, 100.523186], 13);
+  L.DomEvent.disableClickPropagation(document.querySelector('.map-overlay'));
+  L.DomEvent.disableScrollPropagation(document.querySelector('.map-overlay'));
   L.tileLayer(TILE_URL, {
     attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18,
@@ -171,7 +172,7 @@ body { background: #1a1a2e; }
             <span class="walk-badge">${p.order}</span>
             <h3>${displayName}</h3>
           </div>
-          <div class="poi-meta">${p.distance_km} km from start${attributions[0] ? ` · ${attributions[0]}` : ''}</div>
+          <div class="poi-meta">${p.distance_km} km from start</div>
         `;
         card.addEventListener('click', () => focusPOI(f));
         list.appendChild(card);
