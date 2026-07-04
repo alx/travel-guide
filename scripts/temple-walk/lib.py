@@ -135,6 +135,49 @@ def plan_walk(start: tuple[float, float], temples: list[dict], max_km: float, fe
     }
 
 
+def plan_walk_random(start: tuple[float, float], temples: list[dict], max_km: float, fetch_leg,
+                     rng, k_candidates: int = 3) -> dict:
+    """Like plan_walk, but picks uniformly at random from the k routed candidates each step."""
+    current = start
+    total = 0.0
+    stops: list[dict] = []
+    all_coords: list[list[float]] = []
+    segment_breaks: list[int] = []
+    remaining = list(temples)
+
+    while remaining:
+        by_haversine = sorted(
+            remaining,
+            key=lambda t: haversine_km(current[0], current[1], t["lat"], t["lng"]),
+        )
+        routed = [
+            (t, *resolve_leg(current[0], current[1], t["lat"], t["lng"], fetch_leg))
+            for t in by_haversine[:k_candidates]
+        ]
+        candidate, coords, dist = rng.choice(routed)
+        if total + dist > max_km:
+            break
+        segment_breaks.append(len(all_coords))
+        if all_coords and coords:
+            coords = coords[1:]
+        all_coords.extend(coords)
+        total += dist
+        stops.append({**candidate, "order": len(stops) + 1, "distance_km": round(total, 2)})
+        current = (candidate["lat"], candidate["lng"])
+        remaining.remove(candidate)
+
+    segment_breaks.append(len(all_coords) - 1 if all_coords else 0)
+    if not stops:
+        segment_breaks = []
+        all_coords = []
+    return {
+        "stops": stops,
+        "route_coords": all_coords,
+        "segment_breaks": segment_breaks,
+        "total_km": round(total, 2),
+    }
+
+
 def build_geojson(start: tuple[float, float], walk: dict, slug: str,
                   photos_by_name: dict[str, list[dict]]) -> dict:
     features = [{
