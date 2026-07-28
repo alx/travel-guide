@@ -1,0 +1,63 @@
+{{ define "head" }}
+{{ partial "map-poi-styles.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🍽️ Koh Samui Restaurant Recommendations</h1>
+      <p>Restaurant recommendations for Koh Samui. Source: <a href="https://old.reddit.com/r/kohsamui/comments/1v7w2nn/restaurant_recommendations/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">r/kohsamui</a></p>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="tb-toggle" onclick="this.classList.toggle('active');document.getElementById('map-toolbar').classList.toggle('tb-visible')">🛠️ Tools</button>
+      <button class="header-btn" id="list-toggle" onclick="this.classList.toggle('active');document.querySelector('.overlay-card.scrollable').classList.toggle('mobile-open');this.textContent=document.querySelector('.overlay-card.scrollable').classList.contains('mobile-open')?'🍽️ Spots ▾':'🍽️ Spots'">🍽️ Spots</button>
+      <button class="header-btn" id="locate-btn" onclick="toggleLocation()" title="Afficher ma position sur la carte">📍 Position</button>
+    </div>
+    {{ partial "map-toolbar.html" . }}
+    <input class="search-box" type="text" id="search" placeholder="🔍 Search..." oninput="filterPOIs()">
+    <div id="filter-btns"></div>
+  </div>
+  <div class="overlay-card scrollable">
+    <div id="custom-layer-info" style="display:none;" class="custom-layer-badge">
+      📂 <span id="custom-layer-name">Custom layer loaded</span>
+      <button onclick="removeCustomLayer()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:1rem;line-height:1;">✕</button>
+    </div>
+    <div id="poi-list"></div>
+  </div>
+</div>
+{{ partial "contact-form.html" . }}
+<div class="copy-toast" id="copy-toast"></div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+window.MAP_CONFIG = {
+  title: 'Koh Samui Restaurant Recommendations — Maps',
+  geojsonUrl: '{{ "/restaurant-recommendations-koh-samui/locations.geojson" | relURL }}',
+  embedPath: '/restaurant-recommendations-koh-samui/',
+  center: [9.545, 100.045],
+  zoom: 12,
+  focusZoom: 16
+};
+window.CATEGORY_COLORS = {
+  'Restaurant': '#f97316',
+  'Bar':        '#8b5cf6',
+  'Café':       '#92400e',
+  'Activity':   '#22c55e'
+};
+window.CATEGORY_ICONS = {
+  'Restaurant': 'fa-utensils',
+  'Bar':        'fa-beer-mug-empty',
+  'Café':       'fa-mug-hot',
+  'Activity':   'fa-mountain'
+};
+</script>
+{{ partial "map-poi-helpers.html" . }}
+{{ partial "map-geolocation.html" . }}
+{{ end }}

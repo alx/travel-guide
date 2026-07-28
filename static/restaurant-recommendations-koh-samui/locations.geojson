@@ -1,0 +1,594 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-001",
+      "geometry": { "type": "Point", "coordinates": [100.0622116, 9.5659226] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-001",
+        "name": "Nahm",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "16/9, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "OP's best family dinner of the trip, mentioned in the original post as the benchmark. Waterfront setting with a sunset view; minimum spend applies for the table right on the water.",
+        "hours": "Mon, Wed–Sun 13:00–21:00 (closed Tue)",
+        "phone": "+66 63 198 8778",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-002",
+      "geometry": { "type": "Point", "coordinates": [100.0611534, 9.5268837] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-002",
+        "name": "The Page",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "Chaweng, Ko Samui District, Surat Thani 84320",
+        "notes": "OP's actual pick after this thread — the beef cheek massaman curry with roti recommendation was confirmed as awesome. Beachside restaurant inside a minimalist design hotel on Chaweng beach.",
+        "hours": "Daily 07:00–00:00",
+        "phone": "+66 77 422 767",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-003",
+      "geometry": { "type": "Point", "coordinates": [100.0445897, 9.4652551] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-003",
+        "name": "Bondi Aussie Bar & Grill (Lamai)",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "124/88 Thanon Had Lamai, Tambon Maret, Ko Samui District, Surat Thani 84310",
+        "notes": "Recommended for really good ribs and steak. Also has a Chaweng branch (169/1, 3 Chaweng Beach Rd) if that's more convenient.",
+        "hours": "Daily 10:00–01:00",
+        "phone": "+66 98 218 8278",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-004",
+      "geometry": { "type": "Point", "coordinates": [100.0575546, 9.5214319] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-004",
+        "name": "Malee Kitchen (Chaweng)",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "17/58 Moo 3, Chaweng Beach, Ko Samui District, Surat Thani 84320",
+        "notes": "Great Thai dishes — commenter specified the Chaweng branch. There's also a well-reviewed Malee Kitchen Fishermans branch in Bophut.",
+        "hours": "Daily 12:00–22:00",
+        "phone": "+66 99 232 9236",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-005",
+      "geometry": { "type": "Point", "coordinates": [100.0490811, 9.4706233] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-005",
+        "name": "Nana Tam",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "83/25 Thanon Had Lamai, Tambon Maret, Ko Samui District, Surat Thani 84310",
+        "notes": "Described as 'always a queue' — garden setting with a koi pond, tucked just off the Lamai strip.",
+        "hours": "Daily 12:00–23:00",
+        "phone": "+66 98 383 6900",
+        "price": "$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-006",
+      "geometry": { "type": "Point", "coordinates": [99.994461, 9.5696001] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-006",
+        "name": "Bao Bao Asian Eatery",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "203, 4, Tambon Mae Nam, Ko Samui District, Surat Thani 84330",
+        "notes": "One-word rec with a fire emoji. Pan-Asian fusion (bao, gyoza, kimchi) rather than straight Thai food, in Mae Nam.",
+        "hours": "Tue–Sun 12:30–22:00 (closed Mon)",
+        "phone": "+66 98 831 7657",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-007",
+      "geometry": { "type": "Point", "coordinates": [100.0292674, 9.5601765] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-007",
+        "name": "The Shack",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "88/3 Moo 1 Fisherman's Village, Ko Samui District, Surat Thani 84320",
+        "notes": "Flagged as 'not so hidden' but recommended anyway, and separately confirmed for good steaks — a steakhouse in Fisherman's Village.",
+        "hours": "Daily 18:00–22:00",
+        "phone": "+66 81 425 5710",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-008",
+      "geometry": { "type": "Point", "coordinates": [100.0367317, 9.5119799] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-008",
+        "name": "Highland Paradise",
+        "category": "Activity",
+        "icon": "🎯",
+        "address": "55/60, Ko Samui District, Surat Thani 84320",
+        "notes": "Hilltop viewpoint restaurant recommended alongside dining spots — panoramic island views, a giant swing, and free-roaming chickens and parrots. Steep road up; drive carefully.",
+        "hours": "Daily 10:00–22:00",
+        "phone": "+66 61 502 0498",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-009",
+      "geometry": { "type": "Point", "coordinates": [99.9561672, 9.5796667] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-009",
+        "name": "Jun Hom Seafood",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "7 3, Tambon Mae Nam, Ko Samui District, Surat Thani 84330",
+        "notes": "Holds a Michelin Bib Gourmand distinction. A commenter singled out the Penang curry; reviews also flag the crab curry as intensely spicy — order with that in mind.",
+        "hours": "Daily 12:00–20:00",
+        "phone": "+66 77 602 008",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-010",
+      "geometry": { "type": "Point", "coordinates": [100.0725867, 9.5520835] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-010",
+        "name": "The Cocoon — Samui Viewpoint",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "33, 67, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Called a bit of an influencer spot but a fun, not-traditional night out — hilltop 180° views over the island and ocean. Book ahead for a good table.",
+        "hours": "Daily ~09:00–23:00 (varies by day)",
+        "phone": "+66 93 586 1777",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-011",
+      "geometry": { "type": "Point", "coordinates": [100.0828459, 9.5689398] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-011",
+        "name": "Siam Kitchen — Authentic Thai Soul Food",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "85, 8 Choeng Mon, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Recommended in the same breath as The Cocoon — a small, elevated menu of authentic Thai specialities in Choeng Mon, more traditional in style.",
+        "hours": "Tue–Sun 13:00–22:00 (closed Mon)",
+        "phone": "+66 61 127 9800",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-012",
+      "geometry": { "type": "Point", "coordinates": [100.0309135, 9.5562972] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-012",
+        "name": "Ran Khang Non",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "2, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Recommended specifically for the Khao Soi by a commenter flaired as a Chaweng local. Note: the restaurant's actual name is 'Ran Khang Non' — Non is the owner, not a 'no-beef' modifier as the original comment implied. No printed menu; dishes are shown in photos on the wall.",
+        "hours": "Tue–Sun 11:00–20:30 (closed Mon)",
+        "phone": "+66 93 603 4590",
+        "price": "$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-013",
+      "geometry": { "type": "Point", "coordinates": [100.0377598, 9.5605842] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-013",
+        "name": "2 Fishes",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "109, 15, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Part of a local's shortlist of favourites. Waterfront seafood-and-Italian menu near Fisherman's Village; book ahead as tables often have a time limit.",
+        "hours": "Tue–Sun 17:00–22:30 (closed Mon)",
+        "phone": "+66 99 281 9973",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-014",
+      "geometry": { "type": "Point", "coordinates": [100.0146494, 9.5650381] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-014",
+        "name": "Pepenero",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "4, 5, Tambon Mae Nam, Ko Samui District, Surat Thani 84330",
+        "notes": "Listed among a local's go-to favourites — an authentic, fine-dining-leaning Italian spot near Mae Nam/Bophut.",
+        "hours": "Mon–Sat 18:00–23:00 (closed Sun)",
+        "phone": "+66 91 175 0707",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-015",
+      "geometry": { "type": "Point", "coordinates": [100.0558643, 9.5582458] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-015",
+        "name": "Sabienglae, Bang Rak Beach",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "55, 4, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Local favourite in Bang Rak — fresh seafood picked live from tanks, beachfront setting, good value.",
+        "hours": "Daily 10:00–22:00",
+        "phone": "+66 61 239 4195",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-016",
+      "geometry": { "type": "Point", "coordinates": [100.0301284, 9.5600519] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-016",
+        "name": "Gusto Italiano",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "73/3 Moo 1 Fisherman Village, Ko Samui District, Surat Thani 84320",
+        "notes": "Good Italian food in Fisherman's Village, per two separate commenters — beachfront tables, homemade pasta and wood-fired pizza. Reviews are mixed on value for the price point.",
+        "hours": "Mon, Wed–Sun 13:30–22:30 (closed Tue)",
+        "phone": "+66 77 332 514",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-017",
+      "geometry": { "type": "Point", "coordinates": [100.0855041, 9.5720908] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-017",
+        "name": "Pi Samui Beach Club and Restaurant",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "24, 84, Ko Samui District, Surat Thani 84320",
+        "notes": "Listed among a local's favourites — beach club on a quiet bay near Choeng Mon, live music some nights, good for families.",
+        "hours": "Daily 11:00–22:00",
+        "phone": "+66 93 438 4995",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-018",
+      "geometry": { "type": "Point", "coordinates": [100.06296, 9.564022] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-018",
+        "name": "Supattra Thai Dining",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "32/6 Moo 4 Sanam Bin Road, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "One-word recommendation from a later commenter. Small, thoughtfully curated fine-dining Thai menu near the airport road; the owners walk guests through every dish.",
+        "hours": "Tue, Fri–Sat 18:00–22:00 (closed other days)",
+        "phone": "+66 93 282 8777",
+        "price": "$$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-019",
+      "geometry": { "type": "Point", "coordinates": [100.0533446, 9.5209124] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-019",
+        "name": "Tai Kik",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "84, Chumchon Chaweng Yai, Soi 13, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Short, well-upvoted rec — cash-only local spot near the Chaweng boxing stadium, popular with locals and expats alike.",
+        "hours": "Daily 10:00–22:00",
+        "phone": "+66 87 893 1437",
+        "price": "$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-020",
+      "geometry": { "type": "Point", "coordinates": [100.0606398, 9.5615709] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-020",
+        "name": "Khao Hom",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "H366+J7C, Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Called 'unbeatable for local Thai food' by a commenter who says they've never had better. Old-school kitchen, affordable, no tourist frills.",
+        "hours": "Daily 10:30–22:00",
+        "phone": "+66 77 953 160",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-021",
+      "geometry": { "type": "Point", "coordinates": [100.031599, 9.5590032] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-021",
+        "name": "Le Steak Frites",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "32 Thanon Bo Put, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Compared to the famous L'Entrecôte in France — steak, fries, and salad, small focused menu, near Fisherman's Village.",
+        "hours": "Daily 18:00–22:30",
+        "phone": "+66 91 862 6926",
+        "price": "$$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-022",
+      "geometry": { "type": "Point", "coordinates": [100.0654616, 9.5324611] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-022",
+        "name": "Duomo",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "60/33 Soi Montien House, Chaweng Beach, Ko Samui District, Surat Thani 84320",
+        "notes": "Good Italian food in Chaweng — thin-crust pizza and pasta, upper-level prices but consistently well reviewed.",
+        "hours": "Daily 12:30–23:00",
+        "phone": "+66 77 300 504",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-023",
+      "geometry": { "type": "Point", "coordinates": [100.0444356, 9.5434258] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-023",
+        "name": "Federico's",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "258, Bandon Hospital Rd, Ko Samui District, Surat Thani 84320",
+        "notes": "Called out as the commenter's favourite Italian restaurant — small, owner-run, known for genuine Neapolitan-style pizza.",
+        "hours": "Mon–Sat 11:30–21:00 (closed Sun)",
+        "phone": "+66 89 291 0530",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-024",
+      "geometry": { "type": "Point", "coordinates": [100.0303074, 9.5599744] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-024",
+        "name": "El Gaucho (Fisherman's Village)",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "51/7 Fisherman's Village, Ko Samui District, Surat Thani 84320",
+        "notes": "Good steaks, per the same comment thread as Gusto Italiano and Sabienglae. Waterfront branch with sunset views; there's also a Central Chaweng mall location.",
+        "hours": "Daily 11:30–23:00",
+        "phone": "+66 98 889 5968",
+        "price": "$$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-025",
+      "geometry": { "type": "Point", "coordinates": [100.0530575, 9.5546963] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-025",
+        "name": "La Côte de Bœuf",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "30/26, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "French restaurant with good steaks — entrecôte with bone marrow and homemade fries gets singled out. Tucked just off the main road in Bo Put.",
+        "hours": "Mon, Tue, Thu–Sun 18:30–22:30 (closed Wed)",
+        "phone": "+66 98 990 0217",
+        "price": "$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-026",
+      "geometry": { "type": "Point", "coordinates": [100.021423, 9.5614427] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-026",
+        "name": "Pizzeria Sorte",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "105, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "One of a commenter's two favourites on the island. Neapolitan-style pizza with imported dough and mozzarella, wood-fired oven visible from the dining room.",
+        "hours": "Tue–Sun 13:00–23:00 (closed Mon)",
+        "phone": "+66 97 939 9972",
+        "url": "https://fcracer.com/gaggan-trip-bangkok-and-koh-samui-thailand/",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-027",
+      "geometry": { "type": "Point", "coordinates": [100.0276704, 9.5610677] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-027",
+        "name": "Coco Tam's",
+        "category": "Bar",
+        "icon": "🍺",
+        "address": "62, Ko Samui District, Surat Thani 84320",
+        "notes": "The other of that commenter's two favourites, best at sunset. Beanbags on the sand in Fisherman's Village with a nightly fire show — arrive 1–1.5 hours early without a reservation.",
+        "hours": "Daily 12:00–00:00",
+        "phone": "+66 91 915 5664",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-028",
+      "geometry": { "type": "Point", "coordinates": [100.0211369, 9.5614575] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-028",
+        "name": "Izzy's Specialty Coffee",
+        "category": "Café",
+        "icon": "☕",
+        "address": "Fisherman's Village, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Coffee spot right next to Pizzeria Sorte, loved by the same commenter — homemade drinks, resident dog named Izzy.",
+        "hours": "Mon, Wed–Sun 09:00–16:30 (closed Tue)",
+        "phone": "+66 63 269 1525",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-029",
+      "geometry": { "type": "Point", "coordinates": [100.0872802, 9.5733946] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-029",
+        "name": "Cape Fahn (Hue Restaurant)",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "address": "Cape Fahn Hotel, 24, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "For something super special — food was very good, but the setting and overall experience at this resort restaurant were rated A+++.",
+        "hours": "Daily 09:00–22:30",
+        "phone": "+66 77 602 301",
+        "price": "$$$$",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "restaurant-recs-koh-samui-030",
+      "geometry": { "type": "Point", "coordinates": [100.0659392, 9.5697199] },
+      "properties": {
+        "id": "restaurant-recs-koh-samui-030",
+        "name": "Mom's Kitchen",
+        "category": "Restaurant",
+        "icon": "🍽️",
+        "display_name": "Mom's Kitchen (เจ๊อิ๋วอาหารตามสั่ง)",
+        "address": "H398+V9P, Bo Put, Ko Samui District, Surat Thani 84320",
+        "notes": "Recommended specifically for the best fried rice. No-frills local favourite right opposite Wat Plai Laem.",
+        "coord_source": "google_places",
+        "coord_accuracy": "high",
+        "osm_id": null,
+        "osm_type": null
+      }
+    }
+  ]
+}
