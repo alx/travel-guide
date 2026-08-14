@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[]}
+{"type":"FeatureCollection","features":[{"type":"Feature","id":"toulouse-distorama-la-mecanique-des-fluides","geometry":{"type":"Point","coordinates":[1.4537647,43.6072494]},"properties":{"name":"La Mécanique des Fluides","category":"Concert Bar","icon":"fa-music","address":"1 rue Riquet 31000 Toulouse","logo":"","events":[{"date":"2026-08-22","time":"20h","price":"6€","desc":"ZETA (post rk / Venezuela) + guest","artist":"ZETA (post rk / Venezuela) + guest","youtube_video_id":"","bandcamp_url":"","bandcamp_embed_url":""}]}}]}
