@@ -10,6 +10,7 @@ Beaux-Arts
 Berlin sur Arize (31310 Latour)
 Betty Pop’s
 Brasserie L'Ours Blanc (St Jory)
+Breughel L'Ancien
 CALM (Ramonville)
 Capuche Beret (09- La Mas d'AZil)
 Centre Culturel Alban Minville
@@ -40,7 +41,6 @@ La Passerelle Negreneys
 La Rencontre
 La Salle Bête (Minimes)
 Le Bièreographe
-Le Bièrograph
 Le Biérographe
 Le Calm (73, chemin du Mange-pomme, Ramonville)
 Le Gai Pêcheur
@@ -80,3 +80,4 @@ Topic
 Voir Disto Infos
 Wam Park de Sesquières (Oraya)
 l'Eclectik à Gratentour
+tbd
