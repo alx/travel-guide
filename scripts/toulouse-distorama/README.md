@@ -37,8 +37,18 @@ Results are written incrementally to `.mediacache.json` as each artist is proces
 
 | Variable | Required | Description |
 |---|---|---|
-| `YOUTUBE_API_KEY` | No | YouTube Data API v3. Falls back to page scraping if absent. |
+| `YOUTUBE_API_KEY` | No | YouTube Data API v3. Falls back to page scraping if absent (scrape results are never auto-validated). |
 | `SERPAPI_API_KEY` | No | SerpAPI for Bandcamp search. Bandcamp enrichment is skipped if absent. |
+
+**YouTube curation (scored, conservative):** with `YOUTUBE_API_KEY` set, each artist's top ~8 YouTube results are fetched (search + statistics) and scored on title signals (live/performance keywords, artist-name match, view count). The best candidate is stored as `youtube_video_id` along with the full ranked list in `youtube_candidates`.
+
+Auto-validation happens **only** when all of the following hold (otherwise the artist stays unvalidated for `review.py`):
+
+- top candidate scores ≥ 4.5,
+- it beats the runner-up by ≥ 1.5 points (clear margin),
+- it carries a live/performance signal (title term like `live`/`concert`/`session`, or an official-channel match).
+
+Artists whose YouTube id was rejected in `review.py` are re-searched automatically (their rejected ids are excluded from future candidates).
 
 ---
 
@@ -60,6 +70,8 @@ Browser UI for validating the YouTube and Bandcamp results found by `ingest.py`.
 | `4` | Approve Bandcamp |
 | `5` | Reject Bandcamp |
 | `← →` or `Space` | Navigate |
+
+Artists with scored candidates show a ranked candidate list under the player (score, channel, views). Clicking a candidate loads it in the iframe and moves it to the top — then approve/reject it as usual. An `auto` badge marks videos approved automatically by `ingest.py`.
 
 **Filter buttons** (top of page):
 
@@ -98,11 +110,11 @@ Fetches `events.json`, resolves venues, and writes all GeoJSON files and Hugo co
 
 | File | Description |
 |---|---|
-| `venues.csv` | Registry of known venues: name, address, category, logo, URL |
+| `venues.csv` | Registry of known venues: name, address, category, logo, URL, plus an optional `aliases` column (pipe-separated display-name variants that map to the same venue) |
 | `venues_nomatch.csv` | Venue names confirmed as non-matches (excluded from maps) |
 | `unmatched-venues.txt` | Raw venue names from latest `events.json` not yet classified |
 | `.geocache.json` | Address → coordinates cache (Nominatim) |
-| `.mediacache.json` | Artist → YouTube/Bandcamp cache, including validation state |
+| `.mediacache.json` | Artist → YouTube/Bandcamp cache, including validation state and ranked `youtube_candidates` |
 
 ## Typical update cycle
 
@@ -145,6 +157,13 @@ Outputs three files in `static/toulouse-distorama/slideshows/`:
 | `distorama-week-{N}_{hash}.state.json` | Full capture state for remix |
 | `distorama-week-latest.mp4` | Symlink → latest MP4 |
 | `distorama-week-latest.csv` | Symlink → latest CSV |
+
+**Disk usage:** `slideshows/` accumulates ~40–65 MB per render (plus `--timestamp-offsets` sweeps). It is gitignored. Clean up manually when needed — keep the 2 newest final renders:
+
+```sh
+cd static/toulouse-distorama/slideshows
+ls -t distorama-week-*_*.mp4 | grep -v _ts | tail -n +3 | xargs rm -f
+```
 
 ### Remix (redo audio without re-capturing)
 
