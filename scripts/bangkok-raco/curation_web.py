@@ -607,4 +607,4 @@ def alternatives(artist: str):
 
 if __name__ == "__main__":
     print("Bangkok RA.co SoundCloud curation → http://localhost:5020/")
-    app.run(debug=True, host="127.0.0.1", port=5020, threaded=True)
+    app.run(host="127.0.0.1", port=5020, threaded=True)
