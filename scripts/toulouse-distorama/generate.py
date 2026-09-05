@@ -14,10 +14,14 @@ Outputs:
     static/toulouse-distorama/locations.geojson        — venues map
     static/toulouse-distorama/events/this-week.geojson
     static/toulouse-distorama/events/next-week.geojson
+    static/toulouse-distorama/events/YYYY-MM.geojson   — one per month on the feed
     content/toulouse-distorama-*/                      — Hugo content stubs
     scripts/toulouse-distorama/unmatched-venues.txt    — for manual classification
 
 Media enrichment is handled separately by ingest.py.
+
+Staleness: month GeoJSONs and their content dirs for months that no longer
+appear on the feed are pruned on every run (deterministic cleanup).
 """
 
 import argparse
@@ -25,6 +29,7 @@ import csv
 import json
 import os
 import re
+import shutil
 import sys
 import time
 import urllib.parse
@@ -167,7 +172,11 @@ def split_artists(artist: str) -> list[str]:
 # ── Venue registry ─────────────────────────────────────────────────────────────
 
 def load_venues() -> tuple[list[dict], dict[str, dict]]:
-    """Returns (venues_list, lookup_by_normalized_name)."""
+    """Returns (venues_list, lookup_by_normalized_name).
+
+    The lookup indexes both the canonical `name` and every entry in the
+    optional `aliases` column (pipe-separated in venues.csv).
+    """
     venues = []
     with VENUES_CSV.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -175,24 +184,29 @@ def load_venues() -> tuple[list[dict], dict[str, dict]]:
 
     lookup = {}
     for v in venues:
-        key = normalize_venue_name(v["name"])
-        lookup[key] = v
+        keys = [v.get("name", "")] + [a.strip() for a in (v.get("aliases") or "").split("|") if a.strip()]
+        for raw in keys:
+            lookup.setdefault(normalize_venue_name(raw), v)
     return venues, lookup
 
 
 def normalize_venue_name(name: str) -> str:
     import unicodedata
-    name = name.lower().strip()
+    name = unicodedata.normalize("NFKC", name).lower().strip()
     # Normalize curly/smart apostrophes and quotes to straight apostrophe
-    name = name.replace("’", "’").replace("‘", "’").replace("ʼ", "’")
+    name = name.replace("\u2019", "'").replace("\u2018", "'").replace("\u02bc", "'")
+    # Bracket variants ("La Halle [Rabastens]") normalize to parentheses.
+    name = name.replace("[", "(").replace("]", ")")
     # Strip accents so "Cafe Populaire" matches "Café Populaire" etc.
     name = "".join(c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c))
+    # Collapse internal whitespace
+    name = re.sub(r"\s+", " ", name).strip()
     # Strip leading articles for fuzzy matching
-    for prefix in ("le ", "la ", "l’", "les ", "au ", "aux ", "the "):
+    for prefix in ("le ", "la ", "l'", "les ", "au ", "aux ", "the "):
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
-    return name
+    return name.strip()
 
 
 def resolve_venue(raw_name: str, lookup: dict[str, dict]) -> dict | None:
@@ -470,6 +484,45 @@ def main() -> None:
             write_geojson(EVENTS_DIR / f"{label}.geojson", features)
         print(f"  {label}: {len(features)} venues ({start} → {end})")
 
+    # 7.5. Per-month GeoJSONs — rolling window over all upcoming dates on the feed
+    today_iso = today.isoformat()
+    month_venues: dict[str, dict[str, list]] = {}
+    for date_str, venues_on_day in by_date.items():
+        if date_str < today_iso:
+            continue  # only upcoming dates; past months are pruned below
+        month = date_str[:7]
+        for venue_name, events in venues_on_day.items():
+            month_venues.setdefault(month, {}).setdefault(venue_name, []).extend(events)
+    active_months = sorted(month_venues)
+
+    if not args.dry_run:
+        # Prune stale month outputs for months that no longer appear on the feed
+        MONTH_GEO_RE = re.compile(r"^\d{4}-\d{2}\.geojson$")
+        for f in EVENTS_DIR.iterdir() if EVENTS_DIR.exists() else []:
+            if MONTH_GEO_RE.match(f.name) and f.name[:7] not in active_months:
+                f.unlink()
+                print(f"  ✂ Pruned stale {f.name}")
+        for d in CONTENT_DIR.iterdir() if CONTENT_DIR.exists() else []:
+            if d.is_dir() and re.match(r"^toulouse-distorama-\d{4}-\d{2}$", d.name):
+                month = d.name.removeprefix("toulouse-distorama-")
+                if month not in active_months:
+                    shutil.rmtree(d)
+                    print(f"  ✂ Pruned stale month dir {d.name}")
+
+    for month in active_months:
+        features = []
+        for venue_name, events in month_venues[month].items():
+            venue = venue_lookup.get(normalize_venue_name(venue_name))
+            if not venue:
+                continue
+            coords = geocache.get(venue["address"])
+            if not coords:
+                continue
+            features.append(make_event_feature(venue, coords, events, mediacache))
+        if not args.dry_run:
+            write_geojson(EVENTS_DIR / f"{month}.geojson", features)
+        print(f"  month {month}: {len(features)} venues")
+
     # 10. Hugo content stubs
     print("Writing Hugo content stubs…")
     stubs_written = 0
@@ -514,6 +567,27 @@ def main() -> None:
                 "",
             ]
             stub_path.write_text("\n".join(lines))
+        stubs_written += 1
+
+    # Month pages (one per upcoming month on the feed) — overwritten each run so
+    # the French month name and event counts stay fresh
+    for month in active_months:
+        m = int(month[5:7])
+        y = int(month[:4])
+        month_path = CONTENT_DIR / f"toulouse-distorama-{month}/_index.md"
+        n_events = sum(len(evts) for evts in month_venues[month].values())
+        if not args.dry_run:
+            month_path.parent.mkdir(parents=True, exist_ok=True)
+            month_path.write_text("\n".join([
+                "---",
+                'title: "DistoraMaps"',
+                f'description: "Concerts et événements underground à Toulouse {FRENCH_MONTHS[m]} {y} — {n_events} événement(s)."',
+                'type: "toulouse-distorama-event"',
+                f'distorama_window: "{month}"',
+                f'geojson_url: "/toulouse-distorama/events/{month}.geojson"',
+                "---",
+                "",
+            ]))
         stubs_written += 1
 
     print(f"  ✓ {stubs_written} stubs")
