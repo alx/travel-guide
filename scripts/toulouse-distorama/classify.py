@@ -32,29 +32,40 @@ VALID_CATEGORIES = [
     "Other",
 ]
 
-VENUES_FIELDNAMES = ["name", "display_name", "address", "category", "logo", "url"]
+VENUES_FIELDNAMES = ["name", "display_name", "address", "category", "logo", "url", "aliases"]
 
 
-# Verbatim copy of generate.py:149-161 — must stay in sync
+# Verbatim copy of generate.py's normalize_venue_name — must stay in sync
 def normalize_venue_name(name: str) -> str:
     import unicodedata
-    name = name.lower().strip()
-    name = name.replace("‘", "'").replace("’", "'").replace("ʼ", "'")
-    name = "".join(
-        c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c)
-    )
+    name = unicodedata.normalize("NFKC", name).lower().strip()
+    name = name.replace("\u2019", "'").replace("\u2018", "'").replace("\u02bc", "'")
+    name = name.replace("[", "(").replace("]", ")")
+    name = "".join(c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c))
+    name = re.sub(r"\s+", " ", name).strip()
     for prefix in ("le ", "la ", "l'", "les ", "au ", "aux ", "the "):
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
-    return name
+    return name.strip()
+
+
+def _all_names(row: dict) -> list[str]:
+    """Canonical name plus every pipe-separated alias on a venue row."""
+    names = [row.get("name", "")]
+    names += [a.strip() for a in (row.get("aliases") or "").split("|") if a.strip()]
+    return names
 
 
 def load_known_names() -> set[str]:
     if not VENUES_CSV.exists():
         return set()
     with VENUES_CSV.open(encoding="utf-8") as f:
-        return {normalize_venue_name(row["name"]) for row in csv.DictReader(f)}
+        return {
+            normalize_venue_name(n)
+            for row in csv.DictReader(f)
+            for n in _all_names(row)
+        }
 
 
 def load_all_venues() -> list[dict]:
@@ -92,7 +103,7 @@ def expand_gmaps_url(url: str) -> tuple[str, str | None]:
 
 def append_venue(display_name: str, address: str, category: str, url: str) -> None:
     name = normalize_venue_name(display_name)
-    row = {"name": name, "display_name": display_name, "address": address, "category": category, "logo": "", "url": url}
+    row = {"name": name, "display_name": display_name, "address": address, "category": category, "logo": "", "url": url, "aliases": ""}
     write_header = not VENUES_CSV.exists()
     with VENUES_CSV.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=VENUES_FIELDNAMES)
@@ -155,6 +166,7 @@ def handle_merge(raw_name: str, console: Console) -> None:
 
     new_row = dict(selected)
     new_row["name"] = normalize_venue_name(raw_name)
+    new_row.setdefault("aliases", "")
     with VENUES_CSV.open("a", newline="", encoding="utf-8") as f:
         csv.DictWriter(f, fieldnames=VENUES_FIELDNAMES).writerow(new_row)
 
