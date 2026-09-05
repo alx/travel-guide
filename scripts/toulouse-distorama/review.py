@@ -93,9 +93,25 @@ _BC_HEADERS = {
 
 def _extract_bandcamp_embed(url: str) -> tuple[str, str]:
     """Given a Bandcamp artist or album URL, return (url, embed_url)."""
+    def _validate_url(u: str) -> str:
+        try:
+            if "/../" in u or re.search(r"/%2e%2e/", u, re.IGNORECASE):
+                raise ValueError("Invalid path")
+            parsed = urllib.parse.urlparse(u)
+            if parsed.scheme not in ("http", "https"):
+                raise ValueError("Invalid protocol")
+            if not parsed.hostname:
+                raise ValueError("Invalid host")
+            if not parsed.hostname.lower().endswith(".bandcamp.com") and parsed.hostname.lower() != "bandcamp.com":
+                raise ValueError("Invalid host")
+            return urllib.parse.urlunparse(parsed)
+        except Exception:
+            raise ValueError("Invalid URL")
+    
     def _get(u: str) -> str:
         try:
-            req = urllib.request.Request(u, headers=_BC_HEADERS)
+            validated_url = _validate_url(u)
+            req = urllib.request.Request(validated_url, headers=_BC_HEADERS)
             with urllib.request.urlopen(req, timeout=10) as r:
                 return r.read().decode("utf-8", errors="replace")
         except Exception:

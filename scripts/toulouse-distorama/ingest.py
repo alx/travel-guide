@@ -257,9 +257,27 @@ class _SerpAPIQuotaExceeded(Exception):
     pass
 
 
+def _validate_url(url: str) -> str:
+    try:
+        if "/../" in url or re.search(r"/%2e%2e/", url, re.IGNORECASE):
+            raise ValueError("Invalid path")
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            raise ValueError("Invalid protocol")
+        if not parsed.hostname:
+            raise ValueError("Invalid host")
+        allowed_domains = ["bandcamp.com"]
+        if parsed.hostname.lower() not in allowed_domains:
+            raise ValueError("Invalid host")
+        return urllib.parse.urlunparse(parsed)
+    except Exception:
+        raise ValueError("Invalid URL")
+
+
 def _http_get_html(url: str) -> str:
     try:
-        req = urllib.request.Request(url, headers=_HEADERS)
+        validated_url = _validate_url(url)
+        req = urllib.request.Request(validated_url, headers=_HEADERS)
         with urllib.request.urlopen(req, timeout=10) as r:
             return r.read().decode("utf-8", errors="replace")
     except Exception as e:
