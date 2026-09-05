@@ -20,6 +20,7 @@ Requires (in .env or environment):
 """
 
 import json
+import math
 import os
 import re
 import sys
@@ -115,39 +116,139 @@ def _scrape_youtube_video_id(artist: str) -> str:
     return ""
 
 
-def _fetch_youtube_video_id(artist: str, api_key: str) -> str:
-    """Call YouTube Data API v3. Raises _YouTubeQuotaExceeded when quota is gone."""
+def _fetch_youtube_candidates(artist: str, api_key: str, n: int = 8) -> tuple[list[dict], str]:
+    """Fetch top-N YouTube candidates via Data API v3, each with view count.
+
+    Returns (candidates, official_channel). Candidates are ranked by search
+    relevance then annotated with a curation score (see _score_candidate).
+    Raises _YouTubeQuotaExceeded on 429 / quota 403.
+    """
     params = urllib.parse.urlencode({
-        "part": "id",
+        "part": "snippet",
         "type": "video",
-        "maxResults": 1,
+        "maxResults": n,
         "q": artist,
         "key": api_key,
     })
     url = f"https://www.googleapis.com/youtube/v3/search?{params}"
-    for _ in range(4):
-        try:
-            req = urllib.request.Request(url)
-            with urllib.request.urlopen(req, timeout=10) as r:
-                data = json.loads(r.read())
-            items = data.get("items", [])
-            return items[0]["id"].get("videoId", "") if items else ""
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                raise _YouTubeQuotaExceeded()
-            elif e.code == 403:
-                body = e.read().decode("utf-8", errors="replace")
-                if "quotaExceeded" in body or "dailyLimitExceeded" in body:
-                    raise _YouTubeQuotaExceeded()
-                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-                return ""
-            else:
-                print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-                return ""
-        except Exception as e:
-            print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
-            return ""
-    return ""
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 429 or (e.code == 403 and "quota" in e.read().decode("utf-8", "replace").lower()):
+            raise _YouTubeQuotaExceeded()
+        print(f"  ⚠ YouTube API error for '{artist}': {e}", file=sys.stderr)
+        return [], ""
+
+    items = data.get("items", [])
+    ids = [it["id"].get("videoId") for it in items if it.get("id", {}).get("videoId")]
+    if not ids:
+        return [], ""
+
+    stats: dict[str, dict] = {}
+    sp = urllib.parse.urlencode({
+        "part": "statistics,snippet",
+        "id": ",".join(ids),
+        "key": api_key,
+    })
+    try:
+        req = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?{sp}")
+        with urllib.request.urlopen(req, timeout=10) as r:
+            sdata = json.loads(r.read())
+        for it in sdata.get("items", []):
+            stats[it["id"]] = it
+    except Exception as e:
+        print(f"  ⚠ YouTube stats lookup failed for '{artist}': {e}", file=sys.stderr)
+
+    # Pass 1: discover the official channel (channel title == artist name)
+    official = ""
+    for it in items:
+        vid = it["id"].get("videoId", "")
+        ch = stats.get(vid, {}).get("snippet", {}).get("channelTitle", "")
+        if ch and ch.lower() == artist.lower():
+            official = ch
+            break
+
+    # Pass 2: score candidates with the official channel in hand
+    candidates = []
+    for it in items:
+        vid = it["id"].get("videoId", "")
+        st = stats.get(vid, {})
+        title = it.get("snippet", {}).get("title", "")
+        channel = st.get("snippet", {}).get("channelTitle", "")
+        views = int(st.get("statistics", {}).get("viewCount", 0) or 0)
+        live = _live_signal(title, channel, artist, st)
+        score = _score_candidate(title, channel, views, artist, official)
+        candidates.append({
+            "id": vid,
+            "title": title,
+            "channel": channel,
+            "views": views,
+            "score": score,
+            "live": live,
+            "url": f"https://www.youtube.com/watch?v={vid}",
+        })
+    return candidates, official
+
+
+# ── Candidate scoring (conservative curation) ─────────────────────────────────
+
+_LIVE_TERMS = re.compile(
+    r"\b(live|concert|set|session|show|showcase|scène|scene|unplugged|"
+    r"acoustic|à toulouse|toulouse)\b"
+)
+
+
+def _live_signal(title: str, channel: str, artist: str, st: dict) -> int:
+    """1 if the candidate looks like a live/performance video, else 0."""
+    t = title.lower()
+    art = artist.lower()
+    if _LIVE_TERMS.search(t):
+        return 1
+    # Own channel (title names the artist) — performance-ish
+    if channel.lower() == art and art in t:
+        return 1
+    return 0
+
+
+def _channel_signal(channel: str, artist: str, official: str) -> float:
+    ch = channel.lower()
+    art = artist.lower()
+    if ch == art or (official and ch == official.lower()):
+        return 1.0
+    if ch and (art in ch or ch in art):
+        return 0.5
+    return 0.0
+
+
+def _score_candidate(title: str, channel: str, views: int, artist: str, official: str) -> float:
+    """Deterministic curation score (≈0–7).
+
+    3.0 × live signal + 2.0 × channel signal + log10(views+1)/8 popularity.
+    """
+    live = _live_signal(title, channel, artist, {})
+    ch_sig = _channel_signal(channel, artist, official)
+    pop = math.log10(views + 1) / 8.0 if views > 0 else 0.0
+    return round(3.0 * live + 2.0 * ch_sig + pop, 2)
+
+
+def _pick_best(candidates: list[dict], rejected: list[str]) -> tuple[dict | None, bool]:
+    """Conservative auto-validation. Returns (best_candidate, auto_validated).
+
+    Auto-validate ONLY when the top candidate is clearly a live/performance
+    video, beats the runner-up by a wide margin, and hasn't been rejected.
+    """
+    ranked = [c for c in candidates if c["id"] not in rejected]
+    ranked.sort(key=lambda c: c["score"], reverse=True)
+    if not ranked:
+        return None, False
+    top = ranked[0]
+    if top["live"] and top["score"] >= 4.5:
+        runner = ranked[1]["score"] if len(ranked) > 1 else 0.0
+        if top["score"] >= 1.5 * runner:
+            return top, True
+    return top, False
 
 
 # ── Bandcamp ──────────────────────────────────────────────────────────────────
@@ -243,12 +344,21 @@ def _fetch_bandcamp_via_serp(artist: str, api_key: str) -> tuple[str, str]:
 
 # ── Enrichment loop ───────────────────────────────────────────────────────────
 
+def _yt_needs_search(m: dict) -> bool:
+    """Unvalidated artist needing (re-)search: no candidate, or legacy
+    scrape-only entry without a scored candidate list."""
+    return not m.get("youtube_validated") and (
+        not m.get("youtube_video_id", "") or not m.get("youtube_candidates")
+    )
+
+
 def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
     """Enrich artists with YouTube video IDs and Bandcamp embed URLs."""
     pending = [
         a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
         if a and (
             a not in mediacache
+            or _yt_needs_search(mediacache[a])
             or (
                 not mediacache[a].get("bandcamp_searched")
                 and not mediacache[a].get("bandcamp_validated")
@@ -262,6 +372,9 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
     serp_key = os.environ.get("SERPAPI_API_KEY", "")
     use_yt_scrape = not api_key
     serp_quota_gone = not serp_key
+    yt_quota_gone = False
+    auto_validated_run = 0
+    review_queued_run = 0
 
     if use_yt_scrape:
         print("  ⚠ YOUTUBE_API_KEY not set — using scrape for YouTube", file=sys.stderr)
@@ -276,31 +389,51 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
                 mediacache[artist] = {"youtube_video_id": "", "bandcamp_url": "", "bandcamp_embed_url": ""}
             continue
 
-        # YouTube — skip if already cached or human-validated
-        yt_rejected = mediacache.get(artist, {}).get("youtube_rejected_ids", [])
-        if already_cached or mediacache.get(artist, {}).get("youtube_validated"):
-            yt_id = mediacache[artist].get("youtube_video_id", "")
-        elif use_yt_scrape:
-            yt_id = _scrape_youtube_video_id(artist)
-        else:
-            try:
-                yt_id = _fetch_youtube_video_id(artist, api_key)
-            except _YouTubeQuotaExceeded:
-                tqdm.write("  ⚠ YouTube quota exceeded — switching to scrape", file=sys.stderr)
-                use_yt_scrape = True
+        # Work on a copy so new fields (candidates, auto-validation) persist.
+        m = dict(mediacache.get(artist, {}))
+        yt_rejected = m.get("youtube_rejected_ids", [])
+        yt_id = m.get("youtube_video_id", "")
+        candidates = m.get("youtube_candidates", [])
+
+        # (Re-)search when unvalidated AND (no current candidate OR never
+        # scored via API — legacy scrape-only entries get upgraded too).
+        if not m.get("youtube_validated") and (not yt_id or not candidates):
+            found = []
+            if not (use_yt_scrape or yt_quota_gone):
+                try:
+                    found, _official = _fetch_youtube_candidates(artist, api_key)
+                except _YouTubeQuotaExceeded:
+                    tqdm.write("  ⚠ YouTube quota exceeded — falling back to scrape", file=sys.stderr)
+                    yt_quota_gone = True
+            if found:
+                best, auto_ok = _pick_best(found, yt_rejected)
+                yt_id = best["id"] if best else ""
+                m["youtube_candidates"] = found
+                m["youtube_score"] = best["score"] if best else 0
+                if auto_ok:
+                    m["youtube_validated"] = True
+                    m["youtube_auto_validated"] = True
+                    auto_validated_run += 1
+                else:
+                    m["youtube_auto_validated"] = False
+                    review_queued_run += 1
+                tqdm.write(f"  {artist}: {len(found)} candidates, top={yt_id or '—'}"
+                           f" score={best['score'] if best else '—'}"
+                           f"{', auto-validated' if auto_ok else ' → review'}")
+            else:
+                # No API available (no key / quota gone) → scrape fallback
                 yt_id = _scrape_youtube_video_id(artist)
-        if yt_id in yt_rejected:
-            yt_id = ""
-        if yt_id:
-            tqdm.write(f"  {artist}: YouTube {yt_id}")
-        if not already_cached:
+                if yt_id:
+                    tqdm.write(f"  {artist}: YouTube {yt_id} (scrape)")
             time.sleep(0.5)
+            if yt_id in yt_rejected:
+                yt_id = ""
 
         # Bandcamp via SerpAPI — skip if human already validated
         bc_url, bc_embed = "", ""
         bc_searched = False
-        bc_rejected = mediacache.get(artist, {}).get("bandcamp_rejected_urls", [])
-        if not serp_quota_gone and not mediacache.get(artist, {}).get("bandcamp_validated"):
+        bc_rejected = m.get("bandcamp_rejected_urls", [])
+        if not serp_quota_gone and not m.get("bandcamp_validated"):
             try:
                 bc_url, bc_embed = _fetch_bandcamp_via_serp(artist, serp_key)
                 bc_searched = True
@@ -314,20 +447,16 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
             if not serp_quota_gone:
                 time.sleep(1.1)
 
-        existing = mediacache.get(artist, {})
-        mediacache[artist] = {
-            "youtube_video_id": yt_id,
-            "bandcamp_url": bc_url,
-            "bandcamp_embed_url": bc_embed,
-            "bandcamp_searched": bc_searched,
-            # preserve human-review fields
-            "youtube_validated": existing.get("youtube_validated", False),
-            "youtube_rejected_ids": existing.get("youtube_rejected_ids", []),
-            "bandcamp_validated": existing.get("bandcamp_validated", False),
-            "bandcamp_rejected_urls": existing.get("bandcamp_rejected_urls", []),
-        }
+        m["youtube_video_id"] = yt_id
+        m["bandcamp_url"] = bc_url
+        m["bandcamp_embed_url"] = bc_embed
+        m["bandcamp_searched"] = bc_searched
+        mediacache[artist] = m
         save_mediacache(mediacache)
 
+    if auto_validated_run or review_queued_run:
+        print(f"  YouTube curation: {auto_validated_run} auto-validated, "
+              f"{review_queued_run} queued for review")
     return mediacache
 
 

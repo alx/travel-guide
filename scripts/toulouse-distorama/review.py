@@ -289,6 +289,32 @@ body {
 .badge { padding: 2px 7px; font-size: 10px; }
 .badge-ok { background: #0b240b; color: #4cd64c; border: 1px solid #174a17; }
 .badge-no { background: #240b0b; color: #d64c4c; border: 1px solid #4a1717; }
+.badge-auto { background: #241f0b; color: #d6c24c; border: 1px solid #4a4217; }
+
+/* ── Candidate list (YouTube) ── */
+.cand-list { max-height: 118px; overflow-y: auto; flex-shrink: 0; }
+.cand-head {
+  padding: 3px 12px 2px; font-size: 10px; color: #555;
+  text-transform: uppercase; letter-spacing: 1px;
+  position: sticky; top: 0; background: #0d0d0d;
+}
+.cand-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 3px 12px; border-top: 1px solid #141414;
+}
+.cand-row.current { background: #141410; }
+.cand-title {
+  flex: 1; color: #8a8; text-decoration: none; font-size: 11px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0;
+}
+.cand-title:hover { color: #cfc; text-decoration: underline; }
+.cand-meta { color: #666; font-size: 10px; white-space: nowrap; }
+.cand-meta b { color: #d6c24c; }
+.cand-use {
+  padding: 1px 8px; border: 1px solid #3a3a1e; background: transparent;
+  color: #d6c24c; cursor: pointer; font-family: inherit; font-size: 10px; white-space: nowrap;
+}
+.cand-use:hover { background: #241f0b; }
 
 .embed-wrap { flex: 1; padding: 8px; overflow: hidden; }
 .embed-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
@@ -385,7 +411,9 @@ body {
   <div class="panel" id="panel-yt">
     <div class="panel-head">
       <span class="panel-label">YouTube</span>
-      {% if entry.get('youtube_validated') %}
+      {% if entry.get('youtube_auto_validated') %}
+        <span class="badge badge-auto">auto</span>
+      {% elif entry.get('youtube_validated') %}
         {% if entry.get('youtube_video_id') %}
           <span class="badge badge-ok" id="badge-yt">approved</span>
         {% else %}
@@ -402,6 +430,23 @@ body {
         <div class="no-media">No YouTube result</div>
       {% endif %}
     </div>
+    {% set cands = entry.get('youtube_candidates') or [] %}
+    {% if cands and not entry.get('youtube_validated') %}
+    <div class="cand-list">
+      <div class="cand-head">Candidates (score)</div>
+      {% for c in cands[:3] %}
+      <div class="cand-row{% if c.id == entry.get('youtube_video_id') %} current{% endif %}"
+           data-id="{{ c.id }}">
+        <a class="cand-title" href="https://www.youtube.com/watch?v={{ c.id }}" target="_blank" rel="noopener"
+           title="{{ c.title }} — {{ c.channel }}">
+          {{ c.title }} <span class="cand-meta">· {{ c.channel }} · {{ '{:,}'.format(c.views|default(0)) }} views</span>
+        </a>
+        <span class="cand-meta"><b>{{ '%.1f'|format(c.score) }}</b></span>
+        <button class="cand-use" onclick="useCandidate('{{ c.id }}', this)">use</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
     <div class="panel-actions">
       {% if entry.get('youtube_video_id') %}
         <button id="btn-yt-ok"
@@ -602,6 +647,29 @@ function toggleEdit(type) {
   if (row.classList.contains('open')) {
     document.getElementById(`edit-${type}-input`).focus();
   }
+}
+
+async function useCandidate(videoId, btn) {
+  const res = await fetch('/api/action', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ artist: ARTIST, action: 'modify_yt', value: videoId }),
+  });
+  const data = await res.json();
+  if (!data.ok) return;
+  ytValidated = true;
+  const iframe = document.getElementById('yt-iframe');
+  if (iframe) iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
+  const list = document.querySelector('#panel-yt .cand-list');
+  if (list) list.style.display = 'none';
+  setBadge('yt', 'approved');
+  document.getElementById('btn-yt-ok')?.classList.add('lit');
+  document.querySelectorAll('.cand-row.current').forEach(r => r.classList.remove('current'));
+  document.querySelectorAll('.cand-row').forEach(r => {
+    if (r.dataset.id === videoId) r.classList.add('current');
+  });
+  btn.disabled = true;
+  advanceIfDone();
 }
 
 document.addEventListener('keydown', e => {
