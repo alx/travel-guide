@@ -71,7 +71,8 @@ body { background: #0a0a0a; }
       <button class="header-btn venue-nav-btn" onclick="navigateVenue(-1)" title="Lieu précédent"><i class="fas fa-chevron-left"></i></button>
       <button class="header-btn show-all-btn" id="show-all-btn" onclick="showAll()">Tous les lieux</button>
       {{- $isDay := eq (len .Params.distorama_window) 10 -}}
-      {{- if not $isDay }}
+      {{- $isRolling := eq .Params.distorama_window "next-7-days" -}}
+      {{- if and (not $isDay) (not $isRolling) }}
       <button class="header-btn tonight-btn" id="tonight-btn" onclick="toggleTonight()">Ce soir</button>
       {{- end }}
       <button class="header-btn venue-nav-btn" onclick="navigateVenue(1)" title="Lieu suivant"><i class="fas fa-chevron-right"></i></button>

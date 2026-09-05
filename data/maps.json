@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-06-08T14:48:05.981770+00:00",
-    "map_count": 20,
+    "generated_at": "2026-09-05T21:26:05.451735+00:00",
+    "map_count": 28,
     "generator": "scripts/generate_map_index.py"
   },
   "maps": [
@@ -109,6 +109,52 @@
       "has_geojson": true
     },
     {
+      "slug": "bangkok-citywalk",
+      "url": "/bangkok-citywalk/",
+      "title": "Bangkok City Walk",
+      "description": "A 10km walking route through Bangkok's iconic landmarks: Grand Palace, Wat Pho, Chinatown, and more.",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": false
+    },
+    {
+      "slug": "bangkok-raco-next-week",
+      "url": "/bangkok-raco-next-week/",
+      "title": "Bangkok RA.co",
+      "description": "Electronic music events in Bangkok next week (2026-09-07 – 2026-09-13).",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 8,
+      "categories": [
+        "Other"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "bangkok-raco-this-week",
+      "url": "/bangkok-raco-this-week/",
+      "title": "Bangkok RA.co",
+      "description": "Electronic music events in Bangkok this week (2026-08-31 – 2026-09-06).",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 12,
+      "categories": [
+        "Other"
+      ],
+      "has_geojson": true
+    },
+    {
       "slug": "malaysia-mai-2026",
       "url": "/malaysia-mai-2026/",
       "title": "Malaisie — Mai 2026",
@@ -133,18 +179,47 @@
       "has_geojson": true
     },
     {
-      "slug": "toulouse-distorama-next-week",
-      "url": "/toulouse-distorama-next-week/",
-      "title": "Distorama — Semaine prochaine",
-      "description": "Concerts et événements underground à Toulouse la semaine prochaine (lundi 15 juin 2026 – dimanche 21 juin 2026).",
+      "slug": "revente-tickets-fr",
+      "url": "/revente-tickets-fr/",
+      "title": "Revente Tickets France",
+      "description": "Billets de concert à revendre — r/ReventeTicketsFR",
       "emoji": "🗺️",
       "section": "curated",
       "weight": 50,
       "accent_color": "#1a3a5c",
       "tags": [],
-      "poi_count": 11,
+      "poi_count": 0,
+      "categories": [],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-distorama-next-week",
+      "url": "/toulouse-distorama-next-week/",
+      "title": "DistoraMaps",
+      "description": "Concerts et événements underground à Toulouse la semaine prochaine (lundi 7 septembre 2026 – dimanche 13 septembre 2026).",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 10,
       "categories": [
-        "Cinema",
+        "Concert Bar"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "toulouse-distorama-slideshow",
+      "url": "/toulouse-distorama-slideshow/",
+      "title": "DistoraMaps · This Week Slideshow",
+      "description": "Slideshow des concerts underground à Toulouse cette semaine.",
+      "emoji": "🗺️",
+      "section": "curated",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [],
+      "poi_count": 8,
+      "categories": [
         "Concert Bar"
       ],
       "has_geojson": true
@@ -152,16 +227,15 @@
     {
       "slug": "toulouse-distorama-this-week",
       "url": "/toulouse-distorama-this-week/",
-      "title": "Distorama — Cette semaine",
-      "description": "Concerts et événements underground à Toulouse cette semaine (lundi 8 juin 2026 – dimanche 14 juin 2026).",
+      "title": "DistoraMaps",
+      "description": "Concerts et événements underground à Toulouse cette semaine (lundi 31 août 2026 – dimanche 6 septembre 2026).",
       "emoji": "🗺️",
       "section": "curated",
       "weight": 50,
       "accent_color": "#1a3a5c",
       "tags": [],
-      "poi_count": 13,
+      "poi_count": 8,
       "categories": [
-        "Boutique",
         "Concert Bar"
       ],
       "has_geojson": true
@@ -312,6 +386,30 @@
       "has_geojson": true
     },
     {
+      "slug": "restaurant-recommendations-koh-samui",
+      "url": "/restaurant-recommendations-koh-samui/",
+      "title": "Koh Samui Restaurant Recommendations",
+      "description": "30 restaurant, bar, and café recommendations from a r/kohsamui thread: steaks, Italian, French, Thai fine dining, and cheap local eats across Chaweng, Lamai, Bophut, Bang Rak and Choeng Mon. GPS-verified via Google Places.",
+      "emoji": "🍽️",
+      "section": "community",
+      "weight": 30,
+      "accent_color": "#f97316",
+      "tags": [
+        "🍽️ Restaurant",
+        "🍺 Bar",
+        "☕ Café",
+        "🎯 Activity"
+      ],
+      "poi_count": 30,
+      "categories": [
+        "Activity",
+        "Bar",
+        "Café",
+        "Restaurant"
+      ],
+      "has_geojson": true
+    },
+    {
       "slug": "toulouse-burgers",
       "url": "/toulouse-burgers/",
       "title": "Toulouse Burgers — Le Guide",
@@ -356,21 +454,16 @@
     {
       "slug": "toulouse-distorama",
       "url": "/toulouse-distorama/",
-      "title": "Distorama — Toulouse underground",
-      "description": "La carte des lieux underground toulousains : bars concerts, disquaires, cinémas, radios, studios.",
+      "title": "DistoraMaps",
+      "description": "Concerts et événements underground à Toulouse — 7 prochains jours (samedi 5 septembre 2026 – vendredi 11 septembre 2026).",
       "emoji": "🗺️",
       "section": "community",
       "weight": 50,
       "accent_color": "#ffffff",
       "tags": [],
-      "poi_count": 100,
+      "poi_count": 11,
       "categories": [
-        "Boutique",
-        "Cinema",
-        "Concert Bar",
-        "Radio",
-        "Record Shop",
-        "Studio"
+        "Concert Bar"
       ],
       "has_geojson": true
     },
@@ -468,6 +561,53 @@
       "poi_count": 0,
       "categories": [],
       "has_geojson": false
+    },
+    {
+      "slug": "surat-thani-koh-samui-transit",
+      "url": "/surat-thani-koh-samui-transit/",
+      "title": "Koh Samui ↔ Surat Thani — Transit Route",
+      "description": "4-leg transit map: Lamai → Nathon Pier → Donsak → Surat Thani bus station → Phunphin train station. ~1 140 THB · ~4-5h.",
+      "emoji": "⛴️",
+      "section": "travel",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🗺️ Route",
+        "🇹🇭 Thailand",
+        "⛴️ Ferry"
+      ],
+      "poi_count": 10,
+      "categories": [
+        "Bus",
+        "Dispensary",
+        "Pier",
+        "Rental",
+        "Train"
+      ],
+      "has_geojson": true
+    },
+    {
+      "slug": "surat-thani-koh-samui-transit-family",
+      "url": "/surat-thani-koh-samui-transit-family/",
+      "title": "Koh Samui ↔ Surat Thani — Transit Route",
+      "description": "4-leg transit map: Lamai → Nathon Pier → Donsak → Surat Thani bus station → Phunphin train station. ~1 140 THB · ~4-5h.",
+      "emoji": "⛴️",
+      "section": "travel",
+      "weight": 50,
+      "accent_color": "#1a3a5c",
+      "tags": [
+        "🗺️ Route",
+        "🇹🇭 Thailand",
+        "⛴️ Ferry"
+      ],
+      "poi_count": 9,
+      "categories": [
+        "Bus",
+        "Pier",
+        "Rental",
+        "Train"
+      ],
+      "has_geojson": true
     }
   ]
 }

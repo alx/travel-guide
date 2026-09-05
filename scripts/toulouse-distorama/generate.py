@@ -14,6 +14,8 @@ Outputs:
     static/toulouse-distorama/locations.geojson        — venues map
     static/toulouse-distorama/events/this-week.geojson
     static/toulouse-distorama/events/next-week.geojson
+    static/toulouse-distorama/events/next-7-days.geojson — rolling window (today → +6d),
+        feeds the base /toulouse-distorama/ map (event layout)
     static/toulouse-distorama/events/YYYY-MM.geojson   — one per month on the feed
     content/toulouse-distorama-*/                      — Hugo content stubs
     scripts/toulouse-distorama/unmatched-venues.txt    — for manual classification
@@ -464,6 +466,7 @@ def main() -> None:
     for label, start, end in [
         ("this-week", this_mon, this_sun),
         ("next-week", next_mon, next_sun),
+        ("next-7-days", today, today + timedelta(days=6)),
     ]:
         week_venues: dict[str, list] = defaultdict(list)
         for date_str, venues_on_day in by_date.items():
@@ -527,17 +530,33 @@ def main() -> None:
     print("Writing Hugo content stubs…")
     stubs_written = 0
 
-    # Venues map
+    # Base map — repurposed as the rolling 7-day events map (event layout).
+    # write_stub() never overwrites, so force-update the frontmatter fields
+    # the rolling window needs (type, distorama_window, geojson_url).
     venues_stub = CONTENT_DIR / "toulouse-distorama/_index.md"
     if not args.dry_run:
         write_stub(venues_stub, {
-            "title": "Distorama — Toulouse underground",
-            "description": "La carte des lieux underground toulousains : bars concerts, disquaires, cinémas, radios, studios.",
-            "type": "toulouse-distorama",
+            "title": "DistoraMaps",
+            "description": "Concerts et événements underground à Toulouse, 7 prochains jours.",
+            "type": "toulouse-distorama-event",
             "accent_color": "#ffffff",
             "section": "community",
             "hide_footer_cta": "true",
         })
+        n7_start, n7_end = today, today + timedelta(days=6)
+        venues_stub.write_text("\n".join([
+            "---",
+            'title: "DistoraMaps"',
+            f'description: "Concerts et événements underground à Toulouse — 7 prochains jours ({fr_date(n7_start)} – {fr_date(n7_end)})."',
+            'type: "toulouse-distorama-event"',
+            'accent_color: "#ffffff"',
+            'section: "community"',
+            'hide_footer_cta: "true"',
+            'distorama_window: "next-7-days"',
+            'geojson_url: "/toulouse-distorama/events/next-7-days.geojson"',
+            "---",
+            "",
+        ]))
 
     # Agenda index
     agenda_stub = CONTENT_DIR / "toulouse-distorama/agenda/_index.md"

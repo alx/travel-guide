@@ -143,11 +143,16 @@ def main():
         accent_color = fm.get("accent_color", "#1a3a5c")
         tags = fm.get("tags", [])
 
-        # GeoJSON stats — prefer locations.geojson, fall back to geojson_url frontmatter
-        geojson_path = static_dir / slug / "locations.geojson"
-        if not geojson_path.exists() and fm.get("geojson_url"):
+        # GeoJSON stats — prefer the explicit geojson_url frontmatter (what the
+        # page actually loads), fall back to <slug>/locations.geojson.
+        geojson_path = None
+        if fm.get("geojson_url"):
             # geojson_url is a site-root path like /foo/events/this-week.geojson
-            geojson_path = static_dir / fm["geojson_url"].lstrip("/")
+            candidate = static_dir / fm["geojson_url"].lstrip("/")
+            if candidate.exists():
+                geojson_path = candidate
+        if geojson_path is None:
+            geojson_path = static_dir / slug / "locations.geojson"
         geo = geojson_stats(geojson_path) if geojson_path.exists() else {"poi_count": 0, "categories": []}
 
         entry = {
