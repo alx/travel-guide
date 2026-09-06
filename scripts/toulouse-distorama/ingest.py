@@ -28,6 +28,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 from tqdm import tqdm
@@ -311,17 +312,25 @@ def _fetch_bandcamp_via_serp(artist: str, api_key: str) -> tuple[str, str]:
         "num": 1,
     })
     url = f"https://serpapi.com/search.json?{params}"
-    try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-    except urllib.error.HTTPError as e:
-        if e.code in (401, 429):
-            raise _SerpAPIQuotaExceeded()
-        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
-        return "", ""
-    except Exception as e:
-        print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
+    data = None
+    last_err = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req, timeout=25) as r:
+                data = json.loads(r.read())
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (401, 429):
+                raise _SerpAPIQuotaExceeded()
+            print(f"  ⚠ SerpAPI error for '{artist}': {e}", file=sys.stderr)
+            return "", ""
+        except Exception as e:
+            last_err = e
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+    if data is None:
+        print(f"  ⚠ SerpAPI error for '{artist}' (after retries): {last_err}", file=sys.stderr)
         return "", ""
 
     if data.get("error"):
@@ -354,17 +363,29 @@ def _yt_needs_search(m: dict) -> bool:
 
 def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str, dry_run: bool) -> dict:
     """Enrich artists with YouTube video IDs and Bandcamp embed URLs."""
-    pending = [
-        a for a in sorted(artist_dates, key=lambda a: artist_dates[a], reverse=True)
-        if a and (
-            a not in mediacache
-            or _yt_needs_search(mediacache[a])
-            or (
-                not mediacache[a].get("bandcamp_searched")
-                and not mediacache[a].get("bandcamp_validated")
-            )
-        )
-    ]
+    today_iso = date.today().isoformat()
+
+    def _needs_work(name: str) -> bool:
+        m = mediacache.get(name)
+        if m is None:
+            return True
+        if _yt_needs_search(m):
+            return True
+        if not m.get("bandcamp_searched") and not m.get("bandcamp_validated"):
+            return True
+        return False
+
+    # Review future shows first, then the backlog. Within each group, soonest
+    # date first, then name — so the next upcoming artist is always enriched
+    # (and thus reviewable) before past-dated ones.
+    future = [a for a in artist_dates
+              if artist_dates[a] >= today_iso and _needs_work(a)]
+    backlog = [a for a in artist_dates
+               if artist_dates[a] < today_iso and _needs_work(a)]
+    future.sort(key=lambda a: (artist_dates[a], a))
+    backlog.sort(key=lambda a: (artist_dates[a], a))
+    pending = future + backlog
+
     if not pending:
         print("  All artists already cached")
         return mediacache
@@ -451,6 +472,7 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         m["bandcamp_url"] = bc_url
         m["bandcamp_embed_url"] = bc_embed
         m["bandcamp_searched"] = bc_searched
+        m["event_date"] = artist_dates.get(artist, "")
         mediacache[artist] = m
         save_mediacache(mediacache)
 

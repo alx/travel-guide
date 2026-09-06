@@ -21,6 +21,7 @@ import json
 import re
 import urllib.parse
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 from flask import Flask, jsonify, redirect, render_template_string, request, url_for
@@ -53,19 +54,31 @@ FILTERS = [
 
 
 def get_filtered_artists(cache: dict, filter_name: str) -> list[str]:
+    today = date.today().isoformat()
+
+    def _event_date(v: dict) -> str:
+        return v.get("event_date") or ""
+
     if filter_name == "all":
-        return sorted(cache.keys())
-    if filter_name == "has_media":
-        return sorted(
-            k for k, v in cache.items()
-            if v.get("youtube_video_id") or v.get("bandcamp_url")
-        )
-    # "pending" (default): has at least one unvalidated media result
-    def _is_pending(v: dict) -> bool:
-        yt_pending = bool(v.get("youtube_video_id")) and not v.get("youtube_validated")
-        bc_pending = bool(v.get("bandcamp_url")) and not v.get("bandcamp_validated")
-        return yt_pending or bc_pending
-    return sorted(k for k, v in cache.items() if _is_pending(v))
+        selected = list(cache.keys())
+    elif filter_name == "has_media":
+        selected = [k for k, v in cache.items()
+                    if v.get("youtube_video_id") or v.get("bandcamp_url")]
+    else:  # "pending" (default): has at least one unvalidated media result
+        def _is_pending(v: dict) -> bool:
+            yt_pending = bool(v.get("youtube_video_id")) and not v.get("youtube_validated")
+            bc_pending = bool(v.get("bandcamp_url")) and not v.get("bandcamp_validated")
+            return yt_pending or bc_pending
+        selected = [k for k, v in cache.items() if _is_pending(v)]
+
+    # Review upcoming shows first, then the past-dated backlog. Within each
+    # group, soonest event first (backlog: most recent first). Artists without
+    # a recorded event_date fall into the backlog.
+    future = [a for a in selected if _event_date(cache.get(a, {})) >= today]
+    backlog = [a for a in selected if _event_date(cache.get(a, {})) < today]
+    future.sort(key=lambda a: (_event_date(cache.get(a, {})), a))
+    backlog.sort(key=lambda a: (_event_date(cache.get(a, {})), a), reverse=True)
+    return future + backlog
 
 
 # ── Media helpers ─────────────────────────────────────────────────────────────
