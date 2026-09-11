@@ -92,7 +92,10 @@ function loadSlides() {
 
 // ── 2. Download YouTube Media (360p MP4) ──────────────────────────────────
 function downloadMedia(videoId) {
-  const dest = path.join(TMP_MEDIA_DIR, `${videoId}.mp4`);
+  const base = path.resolve(TMP_MEDIA_DIR);
+  const dest = path.resolve(base, `${videoId}.mp4`);
+  const rel = path.relative(base, dest);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) { console.warn(`  ⚠ invalid videoId`); return null; }
   if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) return dest;
   console.log(`  ↓ downloading ${videoId}…`);
   const r = spawnSync('yt-dlp', [
@@ -183,7 +186,13 @@ function buildAudio({ timestampLog, totalDur, outroTimestamp, mediaMap, videoPat
 
   // ── Venue slides ──
   timestampLog.forEach((log, i) => {
-    const src = mediaMap[log.video_id] || path.join(TMP_MEDIA_DIR, `${log.video_id}.mp4`);
+    const resolvedBase = path.resolve(TMP_MEDIA_DIR);
+    const resolvedTarget = path.resolve(resolvedBase, `${log.video_id}.mp4`);
+    const relativePath = path.relative(resolvedBase, resolvedTarget);
+    if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+      throw new Error('Invalid file path');
+    }
+    const src = mediaMap[log.video_id] || resolvedTarget;
     const nextTs = timestampLog[i + 1]
       ? timestampLog[i + 1].timestamp
       : (outroTimestamp ?? (totalDur - OUTRO_DUR));
@@ -306,7 +315,7 @@ async function remix() {
 // ── Main (fresh capture) ───────────────────────────────────────────────────
 async function main() {
   [TMP_MEDIA_DIR, VIDEO_DIR, OUTPUT_DIR].forEach(d => fs.mkdirSync(d, { recursive: true }));
-  fs.readdirSync(VIDEO_DIR).filter(f => f.endsWith('.webm')).forEach(f => fs.unlinkSync(path.join(VIDEO_DIR, f)));
+  const resolvedVideoDir = path.resolve(VIDEO_DIR); fs.readdirSync(resolvedVideoDir).filter(f => { const resolvedTarget = path.resolve(resolvedVideoDir, f); const rel = path.relative(resolvedVideoDir, resolvedTarget); if (rel.startsWith('..') || path.isAbsolute(rel)) return false; return f.endsWith('.webm'); }).forEach(f => { const resolvedTarget = path.resolve(resolvedVideoDir, f); const rel = path.relative(resolvedVideoDir, resolvedTarget); if (!rel.startsWith('..') && !path.isAbsolute(rel)) fs.unlinkSync(resolvedTarget); });
 
   const allSlides = loadSlides();
   console.log(`${allSlides.length} slides:`, allSlides.map(s => s.ev.youtube_video_id).join(' '));
