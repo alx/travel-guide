@@ -88,9 +88,27 @@ def load_unmatched() -> list[str]:
     return [line for line in UNMATCHED_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
+def validate_gmaps_url(url: str) -> str:
+    try:
+        if "/../" in url or re.search(r"/%2e%2e/", url, re.IGNORECASE):
+            raise ValueError("Invalid URL")
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            raise ValueError("Invalid URL")
+        if not parsed.hostname:
+            raise ValueError("Invalid URL")
+        allowed_domains = ["google.com", "maps.google.com", "goo.gl"]
+        if parsed.hostname.lower() not in allowed_domains and not parsed.hostname.lower().endswith(".google.com"):
+            raise ValueError("Invalid URL")
+        return urllib.parse.urlunparse(parsed)
+    except Exception:
+        raise ValueError("Invalid URL")
+
+
 def expand_gmaps_url(url: str) -> tuple[str, str | None]:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}, method="GET")
+        validated_url = validate_gmaps_url(url)
+        req = urllib.request.Request(validated_url, headers={"User-Agent": "Mozilla/5.0"}, method="GET")
         with urllib.request.urlopen(req, timeout=10) as resp:
             final_url = resp.url
     except Exception:
