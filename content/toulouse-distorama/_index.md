@@ -1,6 +1,6 @@
 ---
 title: "DistoraMaps"
-description: "Concerts et événements underground à Toulouse — 7 prochains jours (vendredi 25 septembre 2026 – jeudi 1 octobre 2026)."
+description: "Concerts et événements underground à Toulouse — 7 prochains jours (samedi 26 septembre 2026 – vendredi 2 octobre 2026)."
 type: "toulouse-distorama-event"
 accent_color: "#ffffff"
 section: "community"
