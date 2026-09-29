@@ -16769,7 +16769,11 @@
     "bandcamp_url": "https://bandcamp.com/EmbeddedPlayer/album=550432153/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=550432153/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-08"
+    "event_date": "2026-10-08",
+    "youtube_rejected_ids": [
+      "bEpTgowZ1dI"
+    ],
+    "youtube_validated": false
   },
   "ORGANES EN SOLDE": {
     "youtube_candidates": [
