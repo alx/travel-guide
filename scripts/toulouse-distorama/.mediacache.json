@@ -17203,7 +17203,11 @@
       }
     ],
     "youtube_score": 0.5,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "76IRYVx6t5Q"
+    ],
+    "youtube_validated": false
   },
   "JOSY BASAR": {
     "youtube_video_id": "WWwMieWXLck",
