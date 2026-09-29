@@ -15270,7 +15270,10 @@
     "bandcamp_url": "https://retinalburn.bandcamp.com/album/nova-digital-edition",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=580761727/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-03"
+    "event_date": "2026-10-03",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "RÉGINE": {
     "youtube_candidates": [
