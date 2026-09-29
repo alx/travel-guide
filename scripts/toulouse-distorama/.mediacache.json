@@ -6641,7 +6641,11 @@
     ],
     "youtube_score": 1.07,
     "youtube_auto_validated": false,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_rejected_ids": [
+      "FC3y9llDXuM"
+    ],
+    "youtube_validated": false
   },
   "STRATES": {
     "youtube_video_id": "",
