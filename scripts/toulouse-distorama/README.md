@@ -79,7 +79,7 @@ Artists with scored candidates show a ranked candidate list under the player (sc
 - **Has media** — all artists with a YouTube ID or Bandcamp URL
 - **All** — every entry in `.mediacache.json`
 
-Rejected IDs/URLs are stored in `youtube_rejected_ids` / `bandcamp_rejected_urls` so `ingest.py` never re-proposes them.
+Rejected IDs/URLs are stored in `youtube_rejected_ids` / `bandcamp_rejected_urls` so `ingest.py` never re-proposes them. Once an artist accumulates 3 rejected YouTube proposals (`MAX_VIDEO_REJECTIONS` in `review-alert.py`), the Discord bot stops proposing video URLs for that artist entirely (status `rejected-limit`) — only a manual review/approval re-links the artist.
 
 ---
 
@@ -156,7 +156,9 @@ the local review UI open:
      with a fresh candidate.
 4. Artists with **no candidate yet** (not indexed / search found nothing) are
    summarized in one line instead of a message — they need a re-ingest or a
-   manual YouTube search.
+   manual YouTube search. Artists who have rejected 3 proposed videos get a
+   separate `⛔` line: no more video proposals are sent for them (status
+   `rejected-limit`).
 
 ### Running it (lamai270)
 

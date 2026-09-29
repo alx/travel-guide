@@ -263,7 +263,11 @@ async def send_alerts(client: discord.Client) -> None:
 
     candidates = [r for r in pending if r["status"] == "has-candidate"]
     fresh = [r for r in candidates if f"{r['date']}|{r['artist']}" not in alerted]
-    non_reactable = [r for r in pending if r["status"] != "has-candidate"]
+    non_reactable = [
+        r for r in pending
+        if r["status"] in ("no-candidate", "not-indexed")
+    ]
+    rejected_limit = [r for r in pending if r["status"] == "rejected-limit"]
 
     channel = client.get_channel(CHANNEL_ID)
     if channel is None:
@@ -294,13 +298,20 @@ async def send_alerts(client: discord.Client) -> None:
         print(f"[cycle] sent {sent} per-artist message(s)")
         save_state(state)
 
-    if non_reactable or len(fresh) > MAX_PER_RUN:
+    if non_reactable or rejected_limit or len(fresh) > MAX_PER_RUN:
         extras = len(fresh) - min(len(fresh), MAX_PER_RUN)
         parts = []
         if non_reactable:
             names = ", ".join(r["artist"] for r in non_reactable[:8])
             more = f" +{len(non_reactable) - 8}" if len(non_reactable) > 8 else ""
             parts.append(f"⚠ {len(non_reactable)} pending artist(s) have no candidate yet: {names}{more}")
+        if rejected_limit:
+            names = ", ".join(r["artist"] for r in rejected_limit[:8])
+            more = f" +{len(rejected_limit) - 8}" if len(rejected_limit) > 8 else ""
+            parts.append(
+                f"⛔ {len(rejected_limit)} artist(s) hit the 3-rejection limit — "
+                f"no more video proposals: {names}{more}"
+            )
         if extras > 0:
             parts.append(f"… {extras} more pending artist(s) will be alerted in later runs")
         if parts:

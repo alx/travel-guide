@@ -45,6 +45,10 @@ STATE_PATH = (
 DISCORD_TARGET = "discord:1510444096949325945"  # VIENS tkt — 🤖-nano-closet
 USER_AGENT = "maps.girard-davila.net/toulouse-distorama-review-alert"
 
+# After this many rejected YouTube proposals we stop proposing video URLs
+# for the artist entirely (Discord bot stops re-alerting with candidates).
+MAX_VIDEO_REJECTIONS = 3
+
 # ── Event parsing (mirrors generate.py / ingest.py) ─────────────────────────
 
 _NON_ARTIST = re.compile(
@@ -86,7 +90,11 @@ def parse_details(details: str) -> str | None:
 def artist_status(artist: str, mediacache: dict) -> tuple[str, str, str]:
     """Return (status, url, video_id) for one artist.
 
-    status ∈ {"validated", "has-candidate", "no-candidate", "not-indexed"}
+    status ∈ {"validated", "has-candidate", "no-candidate", "not-indexed",
+              "rejected-limit"}
+
+    "rejected-limit": MAX_VIDEO_REJECTIONS proposals have been rejected —
+    no video URL is proposed for this artist anymore.
     """
     m = mediacache.get(artist)
     if m is None:
@@ -94,6 +102,8 @@ def artist_status(artist: str, mediacache: dict) -> tuple[str, str, str]:
     if m.get("youtube_validated"):
         return "validated", "", ""
     rejected = set(m.get("youtube_rejected_ids", []))
+    if len(rejected) >= MAX_VIDEO_REJECTIONS:
+        return "rejected-limit", "", ""
     cands = [c for c in m.get("youtube_candidates", [])
              if c.get("url") and c.get("id") not in rejected]
     top = max(cands, key=lambda c: c.get("score", 0), default=None)
@@ -211,6 +221,8 @@ def main() -> None:
                 lines.append(f"- {row['artist']} · {row['venue']} — {row['url']}")
             elif row["status"] == "no-candidate":
                 lines.append(f"- {row['artist']} · {row['venue']} — *no YouTube candidate yet*")
+            elif row["status"] == "rejected-limit":
+                lines.append(f"- {row['artist']} · {row['venue']} — *{MAX_VIDEO_REJECTIONS} videos rejected — no more proposals*")
             else:
                 lines.append(f"- {row['artist']} · {row['venue']} — *not indexed (run ingest.py)*")
         lines.append("")
