@@ -195,15 +195,11 @@
     "bandcamp_embed_url": ""
   },
   "ARTISANS BANGER": {
-    "youtube_video_id": "",
+    "youtube_video_id": "T0HI6NujnF8",
     "bandcamp_url": "https://necnymbl.bandcamp.com/album/eat-you-heart-out-feast-your-eyes",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2407103510/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10",
-    "youtube_rejected_ids": [
-      "T0HI6NujnF8"
-    ],
-    "youtube_validated": false
+    "event_date": "2026-10-10"
   },
   "ASTAFFORT MODS + SENSITIVE SKIN": {
     "youtube_video_id": "",
@@ -17339,7 +17335,11 @@
     "bandcamp_url": "https://discosfinu.bandcamp.com/album/hyena",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3408081805/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_validated": true,
+    "youtube_auto_validated": false,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "BLACDROSERA": {
     "youtube_video_id": "-5CUJH3lE6Q",
