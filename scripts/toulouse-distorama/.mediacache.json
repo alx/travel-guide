@@ -16170,7 +16170,11 @@
     "bandcamp_url": "https://catsabear.bandcamp.com/album/basil-by-the-bay",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1411009557/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-07"
+    "event_date": "2026-10-07",
+    "youtube_rejected_ids": [
+      "RHZe5sEmtSo"
+    ],
+    "youtube_validated": false
   },
   "BLEEDING NOODLES": {
     "youtube_candidates": [
