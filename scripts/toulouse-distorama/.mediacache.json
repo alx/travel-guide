@@ -15432,7 +15432,11 @@
     "bandcamp_url": "https://bandcamp.com/EmbeddedPlayer/v=2/album=595884934/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=595884934/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-03"
+    "event_date": "2026-10-03",
+    "youtube_rejected_ids": [
+      "RWALKrWu3-I"
+    ],
+    "youtube_validated": false
   },
   "PFFF...": {
     "youtube_candidates": [
