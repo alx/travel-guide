@@ -6526,11 +6526,15 @@
     "bandcamp_searched": false
   },
   "TRIBUTE RATM": {
-    "youtube_video_id": "ZY4ywyFXdik",
+    "youtube_video_id": "",
     "bandcamp_url": "https://infernalsymphonyuk.bandcamp.com/album/sttg-2",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1301344912/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-09"
+    "event_date": "2026-10-09",
+    "youtube_rejected_ids": [
+      "ZY4ywyFXdik"
+    ],
+    "youtube_validated": false
   },
   "MURCIELO Y PARAGNAS": {
     "youtube_video_id": "i2vRYTrwwbk",
@@ -17335,11 +17339,7 @@
     "bandcamp_url": "https://discosfinu.bandcamp.com/album/hyena",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3408081805/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10",
-    "youtube_validated": true,
-    "youtube_auto_validated": false,
-    "youtube_validated_via": "discord-reaction",
-    "youtube_validated_at": "2026-09-29"
+    "event_date": "2026-10-10"
   },
   "BLACDROSERA": {
     "youtube_video_id": "-5CUJH3lE6Q",
