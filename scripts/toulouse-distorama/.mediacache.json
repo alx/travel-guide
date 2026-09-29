@@ -15104,7 +15104,11 @@
     "bandcamp_url": "https://bandcamp.com/EmbeddedPlayer/v=2/album=3030557983/size=large/tracklist=false/artwork=small//bgcol=1f1d22/linkcol=d4bfff",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3030557983/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_rejected_ids": [
+      "TPZ4po5vrHs"
+    ],
+    "youtube_validated": false
   },
   "ASHMOTHEUS": {
     "youtube_candidates": [
