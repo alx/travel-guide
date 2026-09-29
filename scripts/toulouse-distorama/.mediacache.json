@@ -14941,7 +14941,10 @@
     "bandcamp_url": "https://aljoshakonstanty.bandcamp.com/track/ask-for-help",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2238798060/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "MAD": {
     "youtube_candidates": [
