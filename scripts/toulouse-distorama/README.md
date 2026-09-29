@@ -134,6 +134,69 @@ uv run scripts/toulouse-distorama/classify.py
 
 ---
 
+## Discord review bot (automated YouTube link review)
+
+A long-running Discord service (hosted on **lamai270** as the systemd user
+service `distorama-review-bot.service`) that automates step 3 without keeping
+the local review UI open:
+
+1. **Daily cycle** (default 09:00 local, plus once at startup): runs
+   `ingest.py`, then scans the upcoming window (default 14 days) for events
+   where **no** artist has a validated YouTube video.
+2. Posts **one message per pending artist** (throttled to 20 per cycle,
+   soonest dates first) in the alert channel (🤖-nano-closet), with the top
+   YouTube candidate URL auto-embedded.
+3. **Emoji reactions decide the link** (only reactions from
+   `DISCORD_ALLOWED_USERS` on the bot's own messages are honored):
+   - 👍 / ✅ → `youtube_validated: true` in `.mediacache.json`, then the bot
+     commits **and pushes** the file, so the GitHub `distorama-update` workflow
+     embeds the video in the next regeneration.
+   - 👎 / ❌ → candidate added to `youtube_rejected_ids`; the artist is
+     re-searched on the next ingest (rejected ids are excluded) and re-alerted
+     with a fresh candidate.
+4. Artists with **no candidate yet** (not indexed / search found nothing) are
+   summarized in one line instead of a message — they need a re-ingest or a
+   manual YouTube search.
+
+### Running it (lamai270)
+
+```bash
+# one-time install
+install -m 644 scripts/toulouse-distorama/distorama-review-bot.service \
+    ~/.config/systemd/user/distorama-review-bot.service
+systemctl --user daemon-reload
+systemctl --user enable --now distorama-review-bot.service
+
+# watch it
+journalctl --user -u distorama-review-bot.service -f
+```
+
+Credentials are read from `travel-guide/.env` (plus process env):
+
+| Variable | Meaning |
+|---|---|
+| `DISCORD_BOT_TOKEN` | bot token (hermes / "Satoshi Endpoint" bot) |
+| `DISCORD_ALERT_CHANNEL_ID` | alert channel (default: nano-closet) |
+| `DISCORD_ALLOWED_USERS` | comma-separated user IDs allowed to react |
+| `REVIEW_ALERT_WINDOW` | days ahead to scan (default 14) |
+| `REVIEW_ALERT_MAX_PER_RUN` | max per-artist messages per cycle (default 20) |
+| `REVIEW_ALERT_HOUR` | local hour for the daily cycle (default 9) |
+| `YOUTUBE_API_KEY`, `SERPAPI_API_KEY` | needed by the ingest step |
+
+State: `~/.local/state/travel-guide/distorama-review-bot.json`
+(message-id → artist mapping; alerted artists are not re-sent while still
+pending). Set `DISTORAMA_BOT_PUSH=0` to commit without pushing.
+
+### Manual / one-shot alternative (no service)
+
+```bash
+# aggregated alert through hermes send (deduped), dry-run safe:
+uv run scripts/toulouse-distorama/review-alert.py --dry-run
+bash scripts/toulouse-distorama/review-alert.sh   # ingest + send
+```
+
+---
+
 ## Slideshow (YouTube Shorts)
 
 `capture-slideshow.js` produces a 1080×1920 MP4 suitable for YouTube Shorts. It drives a headless Playwright browser through the `/toulouse-distorama-slideshow/` Hugo page, records the video track, then builds and mixes the audio track with ffmpeg using audio pulled from the venue YouTube clips.
