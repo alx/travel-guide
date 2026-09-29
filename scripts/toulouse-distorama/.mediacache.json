@@ -14858,7 +14858,11 @@
     "bandcamp_url": "https://bandcamp.com/EmbeddedPlayer/v=2/album=173858556/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=173858556/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_rejected_ids": [
+      "ydcT8gQn5A0"
+    ],
+    "youtube_validated": false
   },
   "GOM PILOTE": {
     "youtube_candidates": [
