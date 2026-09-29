@@ -16343,7 +16343,10 @@
     "bandcamp_url": "https://splitsystem.bandcamp.com/video",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2601672083/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-07"
+    "event_date": "2026-10-07",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "3A3H3N3D3I": {
     "youtube_candidates": [
