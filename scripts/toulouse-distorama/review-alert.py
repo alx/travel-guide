@@ -93,12 +93,14 @@ def artist_status(artist: str, mediacache: dict) -> tuple[str, str, str]:
         return "not-indexed", "", ""
     if m.get("youtube_validated"):
         return "validated", "", ""
-    cands = [c for c in m.get("youtube_candidates", []) if c.get("url")]
+    rejected = set(m.get("youtube_rejected_ids", []))
+    cands = [c for c in m.get("youtube_candidates", [])
+             if c.get("url") and c.get("id") not in rejected]
     top = max(cands, key=lambda c: c.get("score", 0), default=None)
     if top is not None:
         return "has-candidate", top["url"], top.get("id", "")
     vid = m.get("youtube_video_id", "")
-    if vid:
+    if vid and vid not in rejected:
         return "has-candidate", f"https://www.youtube.com/watch?v={vid}", vid
     return "no-candidate", "", ""
 
