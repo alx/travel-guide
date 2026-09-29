@@ -15598,7 +15598,11 @@
     "bandcamp_url": "https://sloks.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3614899079/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-04"
+    "event_date": "2026-10-04",
+    "youtube_rejected_ids": [
+      "nIfSY0gWSJk"
+    ],
+    "youtube_validated": false
   },
   "HUBRIS.": {
     "youtube_candidates": [
