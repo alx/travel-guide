@@ -61,6 +61,11 @@ def _load_dotenv(path: Path) -> None:
 _load_dotenv(REPO_ROOT / ".env")
 
 
+def _log(msg: str) -> None:
+    """Timestamped, flushed progress line (visible live in the systemd journal)."""
+    print(f"[ingest {time.strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
 # ── Cache I/O ─────────────────────────────────────────────────────────────────
 
 def load_mediacache() -> dict:
@@ -402,7 +407,11 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
     if serp_quota_gone:
         print("  ⚠ SERPAPI_API_KEY not set — Bandcamp enrichment skipped", file=sys.stderr)
 
-    for artist in tqdm(pending, desc="Enriching artists", unit="artist"):
+    _log(f"pending: {len(future)} future + {len(backlog)} backlog artist(s)")
+    run_start = time.monotonic()
+
+    for n, artist in enumerate(tqdm(pending, desc="Enriching artists", unit="artist"), 1):
+        t_artist = time.monotonic()
         already_cached = artist in mediacache
         if dry_run:
             tqdm.write(f"  [dry-run] would enrich: {artist}")
@@ -420,12 +429,14 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         # scored via API — legacy scrape-only entries get upgraded too).
         if not m.get("youtube_validated") and (not yt_id or not candidates):
             found = []
+            t_yt = time.monotonic()
             if not (use_yt_scrape or yt_quota_gone):
                 try:
                     found, _official = _fetch_youtube_candidates(artist, api_key)
                 except _YouTubeQuotaExceeded:
                     tqdm.write("  ⚠ YouTube quota exceeded — falling back to scrape", file=sys.stderr)
                     yt_quota_gone = True
+            _log(f"  {artist}: YouTube {time.monotonic() - t_yt:.1f}s ({len(found)} candidates)")
             if found:
                 best, auto_ok = _pick_best(found, yt_rejected)
                 yt_id = best["id"] if best else ""
@@ -455,6 +466,7 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         bc_searched = False
         bc_rejected = m.get("bandcamp_rejected_urls", [])
         if not serp_quota_gone and not m.get("bandcamp_validated"):
+            t_bc = time.monotonic()
             try:
                 bc_url, bc_embed = _fetch_bandcamp_via_serp(artist, serp_key)
                 bc_searched = True
@@ -467,6 +479,7 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
                 serp_quota_gone = True
             if not serp_quota_gone:
                 time.sleep(1.1)
+            _log(f"  {artist}: Bandcamp {time.monotonic() - t_bc:.1f}s")
 
         m["youtube_video_id"] = yt_id
         m["bandcamp_url"] = bc_url
@@ -475,10 +488,12 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
         m["event_date"] = artist_dates.get(artist, "")
         mediacache[artist] = m
         save_mediacache(mediacache)
+        _log(f"  ({n}/{len(pending)}) {artist}: {time.monotonic() - t_artist:.1f}s total")
 
     if auto_validated_run or review_queued_run:
         print(f"  YouTube curation: {auto_validated_run} auto-validated, "
               f"{review_queued_run} queued for review")
+    _log(f"enrich done: {len(pending)} artist(s) in {time.monotonic() - run_start:.0f}s")
     return mediacache
 
 

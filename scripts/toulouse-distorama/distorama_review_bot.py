@@ -149,19 +149,20 @@ def run_ingest() -> None:
     if not uv:
         print("⚠ uv not found on PATH — skipping ingest (using existing cache)")
         return
-    print("Running ingest.py …")
+    print("Running ingest.py …", flush=True)
+    t0 = time.monotonic()
     try:
+        # No capture: let ingest's own [ingest HH:MM:SS] progress lines
+        # stream straight into the journal.
         r = subprocess.run(
             [uv, "run", str(SCRIPT_DIR / "ingest.py")],
-            cwd=REPO_ROOT, capture_output=True, text=True, timeout=1800,
+            cwd=REPO_ROOT, timeout=3600,
         )
-        tail = "\n".join(r.stdout.strip().splitlines()[-5:])
-        if r.returncode != 0:
-            print(f"⚠ ingest.py exited {r.returncode}: {tail}")
-        else:
-            print("ingest.py ok")
+        print(f"ingest.py exited {r.returncode} after {time.monotonic() - t0:.0f}s", flush=True)
+    except subprocess.TimeoutExpired:
+        print("⚠ ingest.py timed out (1h) — using cache as-is", flush=True)
     except Exception as e:
-        print(f"⚠ ingest.py failed: {e}")
+        print(f"⚠ ingest.py failed: {e}", flush=True)
 
 
 client = discord.Client(intents=discord.Intents.default())
