@@ -17338,11 +17338,15 @@
     "event_date": "2026-10-10"
   },
   "BLACDROSERA": {
-    "youtube_video_id": "-5CUJH3lE6Q",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_rejected_ids": [
+      "-5CUJH3lE6Q"
+    ],
+    "youtube_validated": false
   },
   "DARC": {
     "youtube_video_id": "NwFZtSpRPGw",
@@ -17356,11 +17360,7 @@
     "bandcamp_url": "https://elicere.bandcamp.com/music",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1968987049/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10",
-    "youtube_validated": true,
-    "youtube_auto_validated": false,
-    "youtube_validated_via": "discord-reaction",
-    "youtube_validated_at": "2026-09-29"
+    "event_date": "2026-10-10"
   },
   "EMILE ZONA": {
     "youtube_video_id": "-hzo11-e-Y4",
