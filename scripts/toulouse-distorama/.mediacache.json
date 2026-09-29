@@ -15910,7 +15910,10 @@
     "bandcamp_url": "https://bandcamp.com/EmbeddedPlayer/v=2/track=1815300942/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-06"
+    "event_date": "2026-10-06",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "CONSTANT SILK": {
     "youtube_candidates": [
