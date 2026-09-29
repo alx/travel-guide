@@ -17680,7 +17680,11 @@
     "bandcamp_url": "https://japaneseartsoundarchive.bandcamp.com/",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-27"
+    "event_date": "2026-10-06",
+    "youtube_validated": true,
+    "youtube_auto_validated": false,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "LES AGAMEMNONZ": {
     "youtube_video_id": "EnUICHJuOFQ",
