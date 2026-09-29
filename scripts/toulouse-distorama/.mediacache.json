@@ -12045,7 +12045,11 @@
     "youtube_video_id": "hmflDZ30ipc",
     "bandcamp_url": "https://crashworld1.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3371797917/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true
+    "bandcamp_searched": true,
+    "youtube_rejected_ids": [
+      "hmflDZ30ipc"
+    ],
+    "youtube_validated": false
   },
   "Erratum -> la date annoncée à la Mécanique des Fluides sur la version papier est en fait le 9 octobre !!": {
     "youtube_video_id": "",
