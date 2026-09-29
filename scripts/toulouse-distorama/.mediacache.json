@@ -14616,7 +14616,10 @@
     "bandcamp_url": "https://daily.bandcamp.com/features/born-bad-records-profile",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=758734474/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-01"
+    "event_date": "2026-10-01",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "TERRAIN VAGUE": {
     "youtube_candidates": [
