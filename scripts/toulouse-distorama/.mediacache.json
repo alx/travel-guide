@@ -17205,7 +17205,8 @@
     "youtube_score": 0.5,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "76IRYVx6t5Q"
+      "76IRYVx6t5Q",
+      "zTkwr0nNDP0"
     ],
     "youtube_validated": false
   },
@@ -17303,15 +17304,11 @@
     "event_date": "2026-10-09"
   },
   "MYP": {
-    "youtube_video_id": "",
+    "youtube_video_id": "8d95ve_F810",
     "bandcamp_url": "https://isbmusic.bandcamp.com/track/zvono-i-beat-vuk",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4164303945/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-09",
-    "youtube_rejected_ids": [
-      "8d95ve_F810"
-    ],
-    "youtube_validated": false
+    "event_date": "2026-10-09"
   },
   "PESTICIDE": {
     "youtube_video_id": "Bz8fvq-l3_A",
