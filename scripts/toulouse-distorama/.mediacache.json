@@ -2037,7 +2037,8 @@
     "youtube_auto_validated": false,
     "event_date": "2026-10-03",
     "youtube_rejected_ids": [
-      "rl9FFZZnWWo"
+      "rl9FFZZnWWo",
+      "6yZQ8VOlhFo"
     ],
     "youtube_validated": false
   },
@@ -14056,8 +14057,8 @@
   },
   "LILO": {
     "youtube_video_id": "QYgJuKurD_Q",
-    "bandcamp_url": "https://lilo5.bandcamp.com/",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2633921412/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_url": "https://moonvillainrecords.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2068702840/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
     "event_date": "2026-07-28"
   },
@@ -15569,8 +15570,7 @@
     "bandcamp_searched": true,
     "event_date": "2026-10-04",
     "youtube_rejected_ids": [
-      "HBJBxuIs6g0",
-      "Kkw-pjVlTWI"
+      "HBJBxuIs6g0"
     ],
     "youtube_validated": false
   },
