@@ -17356,18 +17356,18 @@
     "bandcamp_url": "https://elicere.bandcamp.com/music",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1968987049/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_validated": true,
+    "youtube_auto_validated": false,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "EMILE ZONA": {
-    "youtube_video_id": "",
+    "youtube_video_id": "-hzo11-e-Y4",
     "bandcamp_url": "https://remezclatuciudad.bandcamp.com/album/remezcla-tu-ciudad-montevideo-uruguay",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3571279875/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10",
-    "youtube_rejected_ids": [
-      "-hzo11-e-Y4"
-    ],
-    "youtube_validated": false
+    "event_date": "2026-10-10"
   },
   "FREAKY KABARET 16": {
     "youtube_video_id": "iHwD3QYd84c",
