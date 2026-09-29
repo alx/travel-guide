@@ -17117,7 +17117,10 @@
     "bandcamp_url": "https://sundowners.bandcamp.com/album/the-larger-half-of-wisdom-lp",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3820027749/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-09"
+    "event_date": "2026-10-09",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "INEFFABLE ASSO": {
     "youtube_video_id": "76IRYVx6t5Q",
