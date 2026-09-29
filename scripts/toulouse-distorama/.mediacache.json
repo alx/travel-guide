@@ -2459,7 +2459,10 @@
     ],
     "youtube_score": 5.4,
     "youtube_auto_validated": false,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "DESERT DEW": {
     "youtube_video_id": "kWYdTOxMipQ",
