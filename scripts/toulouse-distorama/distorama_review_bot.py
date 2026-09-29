@@ -379,8 +379,9 @@ async def handle_reaction(payload) -> None:  # discord.ReactionEvent (no public 
     except discord.HTTPException:
         pass
     try:
-        await m.remove_reaction(payload.emoji, payload.user_id)
-    except discord.HTTPException:
+        user = discord.Object(id=payload.user_id, discriminator=0)
+        await m.remove_reaction(payload.emoji, user)
+    except (discord.HTTPException, discord.DiscordException):
         pass
 
 
