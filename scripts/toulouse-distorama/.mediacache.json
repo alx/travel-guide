@@ -14090,7 +14090,7 @@
     "event_date": "2026-07-23"
   },
   "HUEVO": {
-    "youtube_video_id": "OSKiT8_dT6w",
+    "youtube_video_id": "h5Ik_i2MWLw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -16771,7 +16771,8 @@
     "bandcamp_searched": true,
     "event_date": "2026-10-08",
     "youtube_rejected_ids": [
-      "bEpTgowZ1dI"
+      "bEpTgowZ1dI",
+      "UrGoD4sAXgk"
     ],
     "youtube_validated": false
   },
@@ -17032,8 +17033,7 @@
     "bandcamp_searched": true,
     "event_date": "2026-10-09",
     "youtube_rejected_ids": [
-      "Ztxp9iEnWyY",
-      "KiPFWAYljNU"
+      "Ztxp9iEnWyY"
     ],
     "youtube_validated": false
   },
