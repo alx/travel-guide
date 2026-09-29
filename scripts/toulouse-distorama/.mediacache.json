@@ -16595,7 +16595,11 @@
     "bandcamp_url": "https://gnartapes.bandcamp.com/album/of-christmas",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4007065910/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-08"
+    "event_date": "2026-10-08",
+    "youtube_rejected_ids": [
+      "vGoU-N-6ozg"
+    ],
+    "youtube_validated": false
   },
   "LE GLAUDE": {
     "youtube_candidates": [
