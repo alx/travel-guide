@@ -17030,7 +17030,11 @@
     "bandcamp_url": "https://djtechtrix.bandcamp.com/track/poison-for-dj-prodigy",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3740669484/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-09"
+    "event_date": "2026-10-09",
+    "youtube_rejected_ids": [
+      "Ztxp9iEnWyY"
+    ],
+    "youtube_validated": false
   },
   "DRINK ELAPSED": {
     "youtube_candidates": [
