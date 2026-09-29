@@ -15515,7 +15515,11 @@
     "bandcamp_url": "https://thesouthernoceanseaband.bandcamp.com/album/blood-bones-fins-glory",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4290587963/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-04"
+    "event_date": "2026-10-04",
+    "youtube_rejected_ids": [
+      "HBJBxuIs6g0"
+    ],
+    "youtube_validated": false
   },
   "SLOKS": {
     "youtube_candidates": [
