@@ -16682,7 +16682,11 @@
     "bandcamp_url": "https://bandcamp.com/artist_index",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-08"
+    "event_date": "2026-10-08",
+    "youtube_rejected_ids": [
+      "2JqpACZiZVw"
+    ],
+    "youtube_validated": false
   },
   "NOT YOUR MOTHER": {
     "youtube_candidates": [
