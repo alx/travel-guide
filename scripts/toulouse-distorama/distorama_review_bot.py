@@ -143,26 +143,65 @@ def commit_mediacache(reason: str) -> None:
 
 # ── Daily cycle ──────────────────────────────────────────────────────────────
 
-def run_ingest() -> None:
+UPCOMING_MARKER = "upcoming artists done"
+INGEST_TIMEOUT = 3600  # seconds
+
+
+def _find_uv() -> str | None:
     import shutil as _shutil
-    uv = next((p for p in filter(None, (os.environ.get("UV_BIN"), "uv")) if _shutil.which(p)), None)
+    return next((p for p in filter(None, (os.environ.get("UV_BIN"), "uv")) if _shutil.which(p)), None)
+
+
+async def run_ingest_stream(client: discord.Client) -> None:
+    """Run ingest.py with output streamed straight into the journal.
+
+    Publishes the alerts as soon as all upcoming (future-dated) artists are
+    enriched — ingest emits a marker at the future→backlog boundary; the
+    backlog keeps processing in the background afterwards.
+    """
+    uv = _find_uv()
     if not uv:
-        print("⚠ uv not found on PATH — skipping ingest (using existing cache)")
+        print("⚠ uv not found on PATH — skipping ingest (using existing cache)", flush=True)
+        await send_alerts(client)
         return
+
     print("Running ingest.py …", flush=True)
     t0 = time.monotonic()
-    try:
-        # No capture: let ingest's own [ingest HH:MM:SS] progress lines
-        # stream straight into the journal.
-        r = subprocess.run(
-            [uv, "run", str(SCRIPT_DIR / "ingest.py")],
-            cwd=REPO_ROOT, timeout=3600,
-        )
-        print(f"ingest.py exited {r.returncode} after {time.monotonic() - t0:.0f}s", flush=True)
-    except subprocess.TimeoutExpired:
-        print("⚠ ingest.py timed out (1h) — using cache as-is", flush=True)
-    except Exception as e:
-        print(f"⚠ ingest.py failed: {e}", flush=True)
+    proc = await asyncio.create_subprocess_exec(
+        uv, "run", str(SCRIPT_DIR / "ingest.py"),
+        cwd=str(REPO_ROOT),
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.STDOUT,
+    )
+    trigger = asyncio.Event()
+
+    async def stream() -> None:
+        assert proc.stdout is not None
+        async for raw in proc.stdout:
+            line = raw.rstrip()
+            print(line, flush=True)
+            if not trigger.is_set() and UPCOMING_MARKER in line:
+                print("→ upcoming artists enriched — publishing alerts now", flush=True)
+                trigger.set()
+
+    stream_task = asyncio.create_task(stream())
+    trigger_task = asyncio.create_task(trigger.wait())
+    exit_task = asyncio.create_task(proc.wait())
+    await asyncio.wait({trigger_task, exit_task}, return_when=asyncio.FIRST_COMPLETED)
+    trigger_task.cancel()
+
+    await send_alerts(client)
+
+    if not exit_task.done():
+        budget = max(INGEST_TIMEOUT - (time.monotonic() - t0), 0)
+        try:
+            await asyncio.wait_for(asyncio.gather(stream_task, exit_task), timeout=budget)
+        except (asyncio.TimeoutError, TimeoutError):
+            proc.kill()
+            await exit_task
+            print("⚠ ingest.py timed out — killed", flush=True)
+    rc = exit_task.result() if exit_task.done() else -9
+    print(f"ingest.py exited {rc} after {time.monotonic() - t0:.0f}s", flush=True)
 
 
 client = discord.Client(intents=discord.Intents.default())
@@ -190,7 +229,11 @@ async def cycle_loop() -> None:
 
 async def run_cycle(client: discord.Client) -> None:
     print(f"[cycle] start ({datetime.now().isoformat(timespec='seconds')})")
-    await asyncio.to_thread(run_ingest)
+    await run_ingest_stream(client)
+
+
+async def send_alerts(client: discord.Client) -> None:
+    """Compute pending review artists and post per-artist alert messages."""
     try:
         event_data = await asyncio.to_thread(fetch_events)
     except Exception as e:

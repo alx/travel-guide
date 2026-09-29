@@ -75,7 +75,10 @@ def load_mediacache() -> dict:
 
 
 def save_mediacache(cache: dict) -> None:
-    MEDIACACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+    """Atomic write — readers (the Discord bot) never see a partial file."""
+    tmp = MEDIACACHE_PATH.with_suffix(".tmp")
+    tmp.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+    os.replace(tmp, MEDIACACHE_PATH)
 
 
 # ── Artist extraction (minimal — mirrors generate.py) ────────────────────────
@@ -409,9 +412,15 @@ def enrich_artists(artist_dates: dict[str, str], mediacache: dict, api_key: str,
 
     _log(f"pending: {len(future)} future + {len(backlog)} backlog artist(s)")
     run_start = time.monotonic()
+    marker_sent = not future
+    if marker_sent and backlog:
+        _log("upcoming artists done — continuing with backlog")
 
     for n, artist in enumerate(tqdm(pending, desc="Enriching artists", unit="artist"), 1):
         t_artist = time.monotonic()
+        if not marker_sent and n >= len(future) and backlog:
+            _log("upcoming artists done — continuing with backlog")
+            marker_sent = True
         already_cached = artist in mediacache
         if dry_run:
             tqdm.write(f"  [dry-run] would enrich: {artist}")

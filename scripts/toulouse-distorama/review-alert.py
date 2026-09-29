@@ -28,6 +28,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
@@ -135,7 +136,12 @@ def compute_pending(event_data: list, mediacache: dict, today: date, window_days
 
 def load_mediacache() -> dict:
     if MEDIACACHE_PATH.exists():
-        return json.loads(MEDIACACHE_PATH.read_text())
+        for _ in range(3):
+            try:
+                return json.loads(MEDIACACHE_PATH.read_text())
+            except json.JSONDecodeError:
+                time.sleep(0.5)  # writer mid-flush — retry
+        return {}
     return {}
 
 
