@@ -16684,7 +16684,8 @@
     "bandcamp_searched": true,
     "event_date": "2026-10-08",
     "youtube_rejected_ids": [
-      "2JqpACZiZVw"
+      "2JqpACZiZVw",
+      "Ln1PbS8QBdU"
     ],
     "youtube_validated": false
   },
@@ -16771,8 +16772,7 @@
     "bandcamp_searched": true,
     "event_date": "2026-10-08",
     "youtube_rejected_ids": [
-      "bEpTgowZ1dI",
-      "UrGoD4sAXgk"
+      "bEpTgowZ1dI"
     ],
     "youtube_validated": false
   },
