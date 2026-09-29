@@ -138,7 +138,15 @@ def commit_mediacache(reason: str) -> None:
         return
     r = git("push")
     if r.returncode != 0:
-        print(f"⚠ git push failed (will retry next change): {r.stderr.strip()}")
+        # Non-fast-forward (CI committed GeoJSON while we were busy): rebase
+        # our one commit on top of origin/main and push again.
+        p = git("pull", "--rebase", "--autostash")
+        if p.returncode != 0:
+            print(f"⚠ git pull --rebase failed: {p.stderr.strip()}")
+            return
+        r = git("push")
+        if r.returncode != 0:
+            print(f"⚠ git push failed (will retry next change): {r.stderr.strip()}")
 
 
 # ── Daily cycle ──────────────────────────────────────────────────────────────
@@ -364,6 +372,8 @@ async def handle_reaction(payload) -> None:  # discord.ReactionEvent (no public 
         if vid and vid not in rejected:
             rejected.append(vid)
             entry["youtube_rejected_ids"] = rejected
+        if entry.get("youtube_video_id") == vid:
+            entry["youtube_video_id"] = ""  # don't leave a rejected id as the current one
         entry["youtube_validated"] = False
         cache[artist] = entry
         save_mediacache(cache)
@@ -379,7 +389,8 @@ async def handle_reaction(payload) -> None:  # discord.ReactionEvent (no public 
     except discord.HTTPException:
         pass
     try:
-        user = discord.Object(id=payload.user_id, discriminator=0)
+        # Message.remove_reaction only reads member.id (Snowflake abc).
+        user = discord.Object(id=payload.user_id)
         await m.remove_reaction(payload.emoji, user)
     except (discord.HTTPException, discord.DiscordException):
         pass
