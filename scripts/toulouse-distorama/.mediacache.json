@@ -17290,7 +17290,10 @@
       }
     ],
     "youtube_score": 5.36,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "LE RÉPARATEUR": {
     "youtube_video_id": "pjQ1lceYXg8",
