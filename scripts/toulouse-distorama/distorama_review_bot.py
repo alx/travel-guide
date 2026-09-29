@@ -177,8 +177,11 @@ async def run_ingest_stream(client: discord.Client) -> None:
 
     async def stream() -> None:
         assert proc.stdout is not None
-        async for raw in proc.stdout:
-            line = raw.rstrip()
+        while True:
+            raw = await proc.stdout.readline()
+            if not raw:
+                break
+            line = raw.decode("utf-8", "replace").rstrip()
             print(line, flush=True)
             if not trigger.is_set() and UPCOMING_MARKER in line:
                 print("→ upcoming artists enriched — publishing alerts now", flush=True)
