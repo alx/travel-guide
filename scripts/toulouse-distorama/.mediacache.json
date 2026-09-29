@@ -2035,7 +2035,11 @@
     ],
     "youtube_score": 0.96,
     "youtube_auto_validated": false,
-    "event_date": "2026-10-03"
+    "event_date": "2026-10-03",
+    "youtube_rejected_ids": [
+      "rl9FFZZnWWo"
+    ],
+    "youtube_validated": false
   },
   "MARTY WENT BACK": {
     "youtube_video_id": "yPK8QtVjMF0",
