@@ -15047,7 +15047,11 @@
     "bandcamp_url": "https://perdurabo.bandcamp.com/album/mad",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=605142491/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_rejected_ids": [
+      "sAYuOc7_TKg"
+    ],
+    "youtube_validated": false
   },
   "RAYMOND D.BARRE": {
     "youtube_candidates": [
