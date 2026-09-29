@@ -14699,7 +14699,10 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-01"
+    "event_date": "2026-10-01",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-29"
   },
   "COWBOYS FROM OUTERSPACE": {
     "youtube_candidates": [
