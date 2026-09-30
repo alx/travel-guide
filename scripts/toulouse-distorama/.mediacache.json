@@ -271,7 +271,7 @@
     "bandcamp_embed_url": ""
   },
   "ARTISANS BANGER": {
-    "youtube_video_id": "cCyV4ypH3wk",
+    "youtube_video_id": "",
     "bandcamp_url": "https://necnymbl.bandcamp.com/album/eat-you-heart-out-feast-your-eyes",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2407103510/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -351,7 +351,11 @@
       }
     ],
     "youtube_score": 3.16,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "cCyV4ypH3wk"
+    ],
+    "youtube_validated": false
   },
   "ASTAFFORT MODS + SENSITIVE SKIN": {
     "youtube_video_id": "",
