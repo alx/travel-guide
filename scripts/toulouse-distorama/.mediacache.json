@@ -20198,7 +20198,10 @@
       }
     ],
     "youtube_score": 3.56,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-30"
   },
   "MORTAL PINARD": {
     "youtube_video_id": "yMy-fRVK9Ec",
