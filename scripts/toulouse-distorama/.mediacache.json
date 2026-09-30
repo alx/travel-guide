@@ -20456,7 +20456,10 @@
       }
     ],
     "youtube_score": 5.45,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-09-30"
   },
   "WESLEY AND THE BOYS": {
     "youtube_video_id": "7RxUkX5lZjI",
