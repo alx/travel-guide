@@ -19684,11 +19684,15 @@
     "youtube_auto_validated": false
   },
   "BLACDROSERA": {
-    "youtube_video_id": "-5CUJH3lE6Q",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_rejected_ids": [
+      "-5CUJH3lE6Q"
+    ],
+    "youtube_validated": false
   },
   "DARC": {
     "youtube_video_id": "NbrlClzMMmM",
