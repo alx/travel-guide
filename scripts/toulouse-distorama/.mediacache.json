@@ -19861,7 +19861,7 @@
     "youtube_auto_validated": false
   },
   "EMILE ZONA": {
-    "youtube_video_id": "RhTFI4-WgP0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -19941,7 +19941,11 @@
       }
     ],
     "youtube_score": 0.97,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "RhTFI4-WgP0"
+    ],
+    "youtube_validated": false
   },
   "FREAKY KABARET 16": {
     "youtube_video_id": "eL794J6P2uA",
