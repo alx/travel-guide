@@ -19258,7 +19258,7 @@
     "youtube_auto_validated": false
   },
   "MYP": {
-    "youtube_video_id": "aAhePeOulWU",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -19338,7 +19338,11 @@
       }
     ],
     "youtube_score": 1.42,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "aAhePeOulWU"
+    ],
+    "youtube_validated": false
   },
   "PESTICIDE": {
     "youtube_video_id": "XWT9ea9v74c",
