@@ -29294,11 +29294,15 @@
     ],
     "youtube_score": 3.44,
     "youtube_auto_validated": false,
-    "youtube_video_id": "yiEMtc2Y2sE",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-02"
+    "event_date": "2026-10-02",
+    "youtube_rejected_ids": [
+      "yiEMtc2Y2sE"
+    ],
+    "youtube_validated": false
   },
   "130E0A": {
     "youtube_candidates": [
