@@ -6839,7 +6839,7 @@
     "bandcamp_searched": false
   },
   "DAMN HIT": {
-    "youtube_video_id": "-ro8eaplsV8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -6919,7 +6919,11 @@
       }
     ],
     "youtube_score": 0.98,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "-ro8eaplsV8"
+    ],
+    "youtube_validated": false
   },
   "DJs Set BOUDOIR MODERNE : DAME ELISE": {
     "youtube_video_id": "",
