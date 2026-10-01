@@ -24118,7 +24118,7 @@
     "youtube_auto_validated": false
   },
   "KILL CHRONOS": {
-    "youtube_video_id": "wMGVrCpdHk4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -24200,7 +24200,8 @@
     "youtube_score": 0.71,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "YnIZpT-FX-o"
+      "YnIZpT-FX-o",
+      "wMGVrCpdHk4"
     ],
     "youtube_validated": false
   },
