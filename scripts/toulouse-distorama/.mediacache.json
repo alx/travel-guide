@@ -5508,7 +5508,7 @@
     "bandcamp_searched": false
   },
   "OK.KENNY": {
-    "youtube_video_id": "7hx4gdlfamo",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -5588,7 +5588,11 @@
       }
     ],
     "youtube_score": 1.07,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "7hx4gdlfamo"
+    ],
+    "youtube_validated": false
   },
   "Dj set ULTRAVIOLLETTE": {
     "youtube_video_id": "P5HhfqnqkFY",
