@@ -24625,7 +24625,10 @@
       }
     ],
     "youtube_score": 3.3,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-01"
   },
   "L'ÉCUYER": {
     "youtube_video_id": "ONL_QQ1Wago",
