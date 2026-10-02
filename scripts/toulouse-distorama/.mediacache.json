@@ -25228,7 +25228,7 @@
     "youtube_auto_validated": false
   },
   "Poésie sonore": {
-    "youtube_video_id": "iQNZqbBTTLc",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25308,7 +25308,11 @@
       }
     ],
     "youtube_score": 0.53,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "iQNZqbBTTLc"
+    ],
+    "youtube_validated": false
   },
   "SÉTHI ONE": {
     "youtube_video_id": "76oVWSAPHF4",
