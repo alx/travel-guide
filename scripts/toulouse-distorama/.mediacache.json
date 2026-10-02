@@ -24896,7 +24896,7 @@
     "youtube_auto_validated": false
   },
   "ELLEN & THE BOYS": {
-    "youtube_video_id": "VjdSzajrg0k",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -24976,7 +24976,11 @@
       }
     ],
     "youtube_score": 1.01,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "VjdSzajrg0k"
+    ],
+    "youtube_validated": false
   },
   "HILLDALE": {
     "youtube_video_id": "",
