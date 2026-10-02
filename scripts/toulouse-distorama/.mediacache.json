@@ -10196,10 +10196,14 @@
     ],
     "youtube_score": 1.0,
     "youtube_auto_validated": false,
-    "youtube_video_id": "9Oh3knWDBnA",
+    "youtube_video_id": "",
     "bandcamp_url": "https://tbdtapes.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3974443202/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true
+    "bandcamp_searched": true,
+    "youtube_rejected_ids": [
+      "9Oh3knWDBnA"
+    ],
+    "youtube_validated": false
   },
   "LEROY SE MEURT": {
     "youtube_candidates": [
