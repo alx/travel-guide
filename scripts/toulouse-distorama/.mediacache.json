@@ -24893,7 +24893,10 @@
       }
     ],
     "youtube_score": 1.76,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-02"
   },
   "ELLEN & THE BOYS": {
     "youtube_video_id": "",
