@@ -24979,7 +24979,7 @@
     "youtube_auto_validated": false
   },
   "HILLDALE": {
-    "youtube_video_id": "Lof5J0Ff-Wk",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25059,7 +25059,11 @@
       }
     ],
     "youtube_score": 0.75,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "Lof5J0Ff-Wk"
+    ],
+    "youtube_validated": false
   },
   "JULIA BONDAR": {
     "youtube_video_id": "3y0VMyAM5kU",
