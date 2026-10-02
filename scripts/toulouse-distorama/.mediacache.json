@@ -25145,7 +25145,7 @@
     "youtube_auto_validated": false
   },
   "NORTHERN LIGHTS": {
-    "youtube_video_id": "fVsONlc3OUY",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25225,7 +25225,11 @@
       }
     ],
     "youtube_score": 0.9,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "fVsONlc3OUY"
+    ],
+    "youtube_validated": false
   },
   "Poésie sonore": {
     "youtube_video_id": "",
