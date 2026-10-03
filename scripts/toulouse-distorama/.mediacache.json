@@ -25093,7 +25093,9 @@
     "youtube_rejected_ids": [
       "Lof5J0Ff-Wk"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-03"
   },
   "JULIA BONDAR": {
     "youtube_video_id": "3y0VMyAM5kU",
