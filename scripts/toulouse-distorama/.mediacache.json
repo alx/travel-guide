@@ -25357,7 +25357,9 @@
     "youtube_rejected_ids": [
       "iQNZqbBTTLc"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-03"
   },
   "SÉTHI ONE": {
     "youtube_video_id": "76oVWSAPHF4",
