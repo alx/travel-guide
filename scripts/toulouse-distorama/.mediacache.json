@@ -271,7 +271,7 @@
     "bandcamp_embed_url": ""
   },
   "ARTISANS BANGER": {
-    "youtube_video_id": "Xtedfamp3TY",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -355,7 +355,8 @@
     "youtube_rejected_ids": [
       "cCyV4ypH3wk",
       "WXqZngVZerw",
-      "q6NtTOhVMI8"
+      "q6NtTOhVMI8",
+      "Xtedfamp3TY"
     ],
     "youtube_validated": false
   },
