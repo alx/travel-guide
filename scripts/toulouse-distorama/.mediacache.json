@@ -25526,7 +25526,10 @@
       }
     ],
     "youtube_score": 3.34,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-03"
   },
   "DIGITAL ANGST": {
     "youtube_video_id": "ZVFIgskrQaM",
