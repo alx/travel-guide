@@ -1770,7 +1770,7 @@
     "bandcamp_validated": true
   },
   "IRON LUNGS": {
-    "youtube_video_id": "WPiCSsW-2as",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -1850,7 +1850,11 @@
       }
     ],
     "youtube_score": 0.91,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "WPiCSsW-2as"
+    ],
+    "youtube_validated": false
   },
   "SECOND MAJOR": {
     "youtube_video_id": "mAlwzAuNpW8",
