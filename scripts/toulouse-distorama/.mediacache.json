@@ -25184,7 +25184,7 @@
     "youtube_validated_at": "2026-10-02"
   },
   "NORTHERN LIGHTS": {
-    "youtube_video_id": "Xnym6AvEWwY",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25266,7 +25266,8 @@
     "youtube_score": 3.8,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "fVsONlc3OUY"
+      "fVsONlc3OUY",
+      "Xnym6AvEWwY"
     ],
     "youtube_validated": false
   },
