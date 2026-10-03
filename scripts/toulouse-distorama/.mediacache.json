@@ -25698,11 +25698,15 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "YQbESMdRwhA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-16"
+    "event_date": "2026-10-16",
+    "youtube_rejected_ids": [
+      "YQbESMdRwhA"
+    ],
+    "youtube_validated": false
   },
   "MIJUKU": {
     "youtube_video_id": "WtdMTu0JZXA",
