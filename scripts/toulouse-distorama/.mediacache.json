@@ -26417,7 +26417,10 @@
       }
     ],
     "youtube_score": 5.5,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
     "youtube_video_id": "",
