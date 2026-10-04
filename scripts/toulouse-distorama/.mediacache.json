@@ -271,7 +271,7 @@
     "bandcamp_embed_url": ""
   },
   "ARTISANS BANGER": {
-    "youtube_video_id": "",
+    "youtube_video_id": "ZjlGGEzGifA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -287,31 +287,13 @@
         "url": "https://www.youtube.com/watch?v=cCyV4ypH3wk"
       },
       {
-        "id": "q6NtTOhVMI8",
-        "title": "Club Banger Trap Beat 2016 &quot;Blacked Doubt&quot;",
-        "channel": "The ARTISANS Beats",
-        "views": 20284,
-        "score": 0.54,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=q6NtTOhVMI8"
-      },
-      {
         "id": "w-RGysv_7Dk",
         "title": "Artisan Key-83 encore un banger de la part de Artisan",
         "channel": "elastiXx | Peripheral",
-        "views": 1738,
+        "views": 1739,
         "score": 0.41,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=w-RGysv_7Dk"
-      },
-      {
-        "id": "WXqZngVZerw",
-        "title": "HIMRA - BANGER (Clip Officiel)",
-        "channel": "Himra officiel",
-        "views": 34488106,
-        "score": 0.94,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=WXqZngVZerw"
       },
       {
         "id": "rqv9f0BUD70",
@@ -323,13 +305,40 @@
         "url": "https://www.youtube.com/watch?v=rqv9f0BUD70"
       },
       {
-        "id": "xdoWXp7zOKk",
-        "title": "Heavy Banger Rap Beat 2016 &quot;The Unholy Terror&quot;",
-        "channel": "The ARTISANS Beats",
-        "views": 3039,
-        "score": 0.44,
+        "id": "ZjlGGEzGifA",
+        "title": "Banger after banger (Artisan &amp; CJRB Heat)",
+        "channel": "Everyday City Carry",
+        "views": 3994,
+        "score": 0.45,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=xdoWXp7zOKk"
+        "url": "https://www.youtube.com/watch?v=ZjlGGEzGifA"
+      },
+      {
+        "id": "q6NtTOhVMI8",
+        "title": "Club Banger Trap Beat 2016 &quot;Blacked Doubt&quot;",
+        "channel": "The ARTISANS Beats",
+        "views": 20285,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=q6NtTOhVMI8"
+      },
+      {
+        "id": "Xtedfamp3TY",
+        "title": "Key-83, un nouveau Banger chez ARTISAN.",
+        "channel": "Euphrao's stuff",
+        "views": 7947,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Xtedfamp3TY"
+      },
+      {
+        "id": "WXqZngVZerw",
+        "title": "HIMRA - BANGER (Clip Officiel)",
+        "channel": "Himra officiel",
+        "views": 34513653,
+        "score": 0.94,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=WXqZngVZerw"
       },
       {
         "id": "WH2BiuCFbKU",
@@ -339,18 +348,9 @@
         "score": 0.29,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=WH2BiuCFbKU"
-      },
-      {
-        "id": "Xtedfamp3TY",
-        "title": "Key-83, un nouveau Banger chez ARTISAN.",
-        "channel": "Euphrao's stuff",
-        "views": 7945,
-        "score": 0.49,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Xtedfamp3TY"
       }
     ],
-    "youtube_score": 0.49,
+    "youtube_score": 0.45,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "cCyV4ypH3wk",
@@ -1770,7 +1770,7 @@
     "bandcamp_validated": true
   },
   "IRON LUNGS": {
-    "youtube_video_id": "",
+    "youtube_video_id": "x8E8Ryx49so",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -1780,7 +1780,7 @@
         "id": "i4sh-Dw4bzg",
         "title": "IRON LUNG | Official Trailer (2026)",
         "channel": "AMC Theatres",
-        "views": 5034988,
+        "views": 5045256,
         "score": 0.84,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=i4sh-Dw4bzg"
@@ -1789,7 +1789,7 @@
         "id": "x8E8Ryx49so",
         "title": "Iron Lung | Official Trailer",
         "channel": "Markiplier",
-        "views": 12591345,
+        "views": 12595021,
         "score": 0.89,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=x8E8Ryx49so"
@@ -1798,58 +1798,58 @@
         "id": "EccSxieeF4c",
         "title": "iron lungs #2",
         "channel": "kryptkeeper1420",
-        "views": 2508821,
+        "views": 2508977,
         "score": 0.8,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=EccSxieeF4c"
       },
       {
-        "id": "YEJQLCS6DFE",
-        "title": "The Lore of Iron Lung is Devastating",
-        "channel": "NeddyTheNoodle",
-        "views": 1708054,
-        "score": 0.78,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=YEJQLCS6DFE"
-      },
-      {
         "id": "WPiCSsW-2as",
         "title": "IRON LUNG",
         "channel": "Markiplier",
-        "views": 17607676,
+        "views": 17624803,
         "score": 0.91,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=WPiCSsW-2as"
       },
       {
-        "id": "8TeZMNsXz2I",
-        "title": "Iron Lung Now Available**",
-        "channel": "Markiplier",
-        "views": 1877043,
-        "score": 0.78,
+        "id": "4nCCJEtMaDA",
+        "title": "IRON LUNG Official Trailer (2026) Mark Fischbach, Troy Baker",
+        "channel": "KinoCheck.com",
+        "views": 657680,
+        "score": 0.73,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=8TeZMNsXz2I"
+        "url": "https://www.youtube.com/watch?v=4nCCJEtMaDA"
       },
       {
         "id": "CTwW_VJRwME",
         "title": "L&#39;Horreur Abyssale de Iron lung",
         "channel": "Isond 2.0",
-        "views": 187064,
+        "views": 187382,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=CTwW_VJRwME"
       },
       {
-        "id": "XRNxmursfmc",
-        "title": "How Iron lung works.",
-        "channel": "Snowva",
-        "views": 2530073,
-        "score": 0.8,
+        "id": "YEJQLCS6DFE",
+        "title": "The Lore of Iron Lung is Devastating",
+        "channel": "NeddyTheNoodle",
+        "views": 1734166,
+        "score": 0.78,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=XRNxmursfmc"
+        "url": "https://www.youtube.com/watch?v=YEJQLCS6DFE"
+      },
+      {
+        "id": "8TeZMNsXz2I",
+        "title": "Iron Lung Now Available**",
+        "channel": "Markiplier",
+        "views": 1879753,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8TeZMNsXz2I"
       }
     ],
-    "youtube_score": 0.91,
+    "youtube_score": 0.89,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "WPiCSsW-2as"
@@ -9775,7 +9775,7 @@
     "youtube_validated": true
   },
   "RÔTI BONDAGE": {
-    "youtube_video_id": "",
+    "youtube_video_id": "QiiYGNbqqAk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -10140,78 +10140,78 @@
         "id": "00zr4UUe2K4",
         "title": "Taşacak Bu Deniz 32. Bölüm @trt1",
         "channel": "Taşacak Bu Deniz",
-        "views": 1385919,
-        "score": 0.77,
+        "views": 10196551,
+        "score": 0.88,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=00zr4UUe2K4"
-      },
-      {
-        "id": "UJBrzAf4c88",
-        "title": "Taşacak Bu Deniz 33. Bölüm Fragmanı @trt1",
-        "channel": "Taşacak Bu Deniz",
-        "views": 1720078,
-        "score": 0.78,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=UJBrzAf4c88"
-      },
-      {
-        "id": "fa_3yBDcAIU",
-        "title": "İso&#39;nun dönüşü muhteşem oldu! - Taşacak Bu Deniz 32. Bölüm @tasacakbudeniztrt",
-        "channel": "TRT 1",
-        "views": 453296,
-        "score": 0.71,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=fa_3yBDcAIU"
-      },
-      {
-        "id": "9Oh3knWDBnA",
-        "title": "OBOY - TDB (Clip Officiel)",
-        "channel": "OBOY",
-        "views": 105925496,
-        "score": 1.0,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=9Oh3knWDBnA"
-      },
-      {
-        "id": "6U9SeY12Udo",
-        "title": "Hiç sevmedik yaa şimdiden😡#taşacakbudeniz #tbd #ulaştunaastepe #denizbaysal#zeynepatılgan#erdemşanlı",
-        "channel": "KapakGündem",
-        "views": 5877,
-        "score": 0.47,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=6U9SeY12Udo"
-      },
-      {
-        "id": "TPCCxX7CF4A",
-        "title": "tbdyi ozlemeyelim diye shdh #tbd #isfad #esdil #orel #taşacakbudeniz #altıüstüistanbul #öykügürman",
-        "channel": "rüm𓇼",
-        "views": 22216,
-        "score": 0.54,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=TPCCxX7CF4A"
       },
       {
         "id": "eF6RlfsVfT8",
         "title": "Taşacak Bu Deniz 2. Sezon 2. Fragman ‪@tasacakbudeniztrt",
         "channel": "TRT 1",
-        "views": 884335,
+        "views": 904850,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=eF6RlfsVfT8"
       },
       {
-        "id": "jlTyA51I55M",
-        "title": "Yine başladılar Ayrıldılar diye 🫣#taşacakbudeniz #tbd #cuma #trt1 #zeynepatılgan #aliöner#erdemşanlı",
-        "channel": "KapakGündem",
-        "views": 22942,
-        "score": 0.55,
+        "id": "9Oh3knWDBnA",
+        "title": "OBOY - TDB (Clip Officiel)",
+        "channel": "OBOY",
+        "views": 105949579,
+        "score": 1.0,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=jlTyA51I55M"
+        "url": "https://www.youtube.com/watch?v=9Oh3knWDBnA"
+      },
+      {
+        "id": "twL3Rdod2Pg",
+        "title": "Taşacak Bu Deniz 2. Sezon Tanıtımı @trt1",
+        "channel": "Taşacak Bu Deniz",
+        "views": 8521358,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=twL3Rdod2Pg"
+      },
+      {
+        "id": "6U9SeY12Udo",
+        "title": "Hiç sevmedik yaa şimdiden😡#taşacakbudeniz #tbd #ulaştunaastepe #denizbaysal#zeynepatılgan#erdemşanlı",
+        "channel": "KapakGündem",
+        "views": 70701,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6U9SeY12Udo"
+      },
+      {
+        "id": "Nv6xgz8CizM",
+        "title": "Disguising as a NOOB &amp; Dominating in Timebomb Duels.. 😈",
+        "channel": "azure",
+        "views": 612639,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Nv6xgz8CizM"
+      },
+      {
+        "id": "H3sh7CmpxX8",
+        "title": "I Disguised as a NOOB and took EVERYONES ankles! | Timebomb Duels",
+        "channel": "Zephy",
+        "views": 717310,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=H3sh7CmpxX8"
+      },
+      {
+        "id": "-wUx34c946E",
+        "title": "Nasil oldu 🌊 #taşacakbudeniz  #erdemşanlı #zeynepatılgan #shorts #keşfet #tbd #ask #viral #trending",
+        "channel": "İSFAD FAN CLUB  🫠",
+        "views": 4367,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-wUx34c946E"
       }
     ],
-    "youtube_score": 0.78,
+    "youtube_score": 0.88,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "00zr4UUe2K4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -11772,7 +11772,7 @@
     "bandcamp_searched": true
   },
   "Dernier after Fifigro DJ set NICOLAS DROLC": {
-    "youtube_video_id": "c7G51eP5LHQ",
+    "youtube_video_id": "frAAdz8ack4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13225,7 +13225,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "-1Fjvrk4xuY",
+    "youtube_video_id": "4VQqlm1I8e8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -18779,7 +18779,7 @@
     "youtube_auto_validated": false
   },
   "DJ Kan Jinstroff": {
-    "youtube_video_id": "Ahg0fdRyh0Y",
+    "youtube_video_id": "5oU4120MA9Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -21557,7 +21557,8 @@
       "Kkw-pjVlTWI",
       "uf7Bb8q_KEY",
       "zivsuhK1UQQ",
-      "NW3c5gP09t4"
+      "NW3c5gP09t4",
+      "nBY1o5IZVK8"
     ],
     "youtube_validated": false
   },
@@ -23810,7 +23811,7 @@
     "youtube_auto_validated": false
   },
   "BLACDROSERA": {
-    "youtube_video_id": "nZmykQMWhAQ",
+    "youtube_video_id": "bJSOeGYp8b0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -24157,7 +24158,7 @@
     "youtube_auto_validated": false
   },
   "KILL CHRONOS": {
-    "youtube_video_id": "",
+    "youtube_video_id": "Vn6BAi66cUQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -24167,7 +24168,7 @@
         "id": "9DyidMmiHA4",
         "title": "Hades 2: How To Beat Chronos EVERY TIME",
         "channel": "Player Ay",
-        "views": 70833,
+        "views": 71050,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9DyidMmiHA4"
@@ -24176,7 +24177,7 @@
         "id": "YnIZpT-FX-o",
         "title": "God of War 3 Remastered (PS5) - Kratos Vs. Cronos Boss Fight (4K 60FPS)",
         "channel": "Shirrako",
-        "views": 10396488,
+        "views": 10398900,
         "score": 0.88,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=YnIZpT-FX-o"
@@ -24185,7 +24186,7 @@
         "id": "FFu3L8HOe9U",
         "title": "how to kill chronos for good in hades 2",
         "channel": "cosmos",
-        "views": 69242,
+        "views": 69355,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=FFu3L8HOe9U"
@@ -24194,25 +24195,16 @@
         "id": "KzUEsY7NRBs",
         "title": "How to EASILY beat: CHRONOS - Hades 2",
         "channel": "Azulazu",
-        "views": 47932,
+        "views": 47958,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=KzUEsY7NRBs"
       },
       {
-        "id": "XNYqfPY8-Vk",
-        "title": "God Of War 3 Kratos Vs Cronos Boss Fight",
-        "channel": "CR5G",
-        "views": 4709411,
-        "score": 0.83,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=XNYqfPY8-Vk"
-      },
-      {
         "id": "NUi1dN4CaR4",
         "title": "Complete Guide to the Chronos Battle! | Hades 2",
         "channel": "Haelian",
-        "views": 208243,
+        "views": 208412,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=NUi1dN4CaR4"
@@ -24221,7 +24213,7 @@
         "id": "WNLWvOc7eIg",
         "title": "How to Beat CHRONOS in Hades 2! Full Boss Guide",
         "channel": "Mobalytics",
-        "views": 43882,
+        "views": 43938,
         "score": 0.58,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=WNLWvOc7eIg"
@@ -24230,13 +24222,22 @@
         "id": "Vn6BAi66cUQ",
         "title": "Hades 2 WHAT HAPPEN IF YOU PAUSE ON CHRONOS",
         "channel": "Video Game News",
-        "views": 409501,
+        "views": 409651,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Vn6BAi66cUQ"
+      },
+      {
+        "id": "wGdVIKNenw8",
+        "title": "What happens if you defeat Chronos on your first run?",
+        "channel": "Game Stuff",
+        "views": 112986,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wGdVIKNenw8"
       }
     ],
-    "youtube_score": 0.83,
+    "youtube_score": 0.7,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "YnIZpT-FX-o",
@@ -24932,7 +24933,7 @@
     "youtube_validated_at": "2026-10-02"
   },
   "ELLEN & THE BOYS": {
-    "youtube_video_id": "",
+    "youtube_video_id": "g2I6zdvZsZ0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -24942,7 +24943,7 @@
         "id": "9V100RNkYbI",
         "title": "Ellen and the Boyz - SORRY NOT SORRY (Official Music Video)",
         "channel": "Ellen and the Boyz",
-        "views": 1641,
+        "views": 1668,
         "score": 0.4,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9V100RNkYbI"
@@ -24951,7 +24952,7 @@
         "id": "yloqnnHfw-E",
         "title": "Ellen &amp; The Boyz - Les Beaumonts - Tours - 20-06-25",
         "channel": "Chacauxx",
-        "views": 350,
+        "views": 352,
         "score": 0.32,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=yloqnnHfw-E"
@@ -24960,7 +24961,7 @@
         "id": "W8ViyDezLQE",
         "title": "Emily Blunt Gets a Backstreet Boys Surprise for an Unexpected Duet",
         "channel": "TheEllenShow",
-        "views": 9657934,
+        "views": 9660583,
         "score": 0.87,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=W8ViyDezLQE"
@@ -24969,16 +24970,25 @@
         "id": "bi2NgISjcgI",
         "title": "Ellen&#39;s Favorite Moments with Noah Ritter",
         "channel": "TheEllenShow",
-        "views": 26375901,
+        "views": 26376304,
         "score": 0.93,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bi2NgISjcgI"
       },
       {
+        "id": "g2I6zdvZsZ0",
+        "title": "Bobb’e J Thompson from ‘The Tracy Morgan Show’",
+        "channel": "TheEllenShow",
+        "views": 167784,
+        "score": 3.65,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=g2I6zdvZsZ0"
+      },
+      {
         "id": "VjdSzajrg0k",
         "title": "Then and now: Sophia Grace and Rosie performing Super Bass #ellen #shorts",
         "channel": "TheEllenShow",
-        "views": 128699477,
+        "views": 128703804,
         "score": 1.01,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=VjdSzajrg0k"
@@ -24987,31 +24997,22 @@
         "id": "l2yt8bO_pEQ",
         "title": "Demi Lovato &amp; Fall Out Boy Perform &#39;Irresistible&#39;",
         "channel": "TheEllenShow",
-        "views": 3769018,
+        "views": 3769137,
         "score": 0.82,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=l2yt8bO_pEQ"
       },
       {
-        "id": "0ebSo2sFXJI",
-        "title": "Backstreet Boys Light Up the Stage with &#39;Don&#39;t Go Breaking My Heart&#39;",
-        "channel": "TheEllenShow",
-        "views": 1111106,
-        "score": 0.76,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=0ebSo2sFXJI"
-      },
-      {
         "id": "f9p_jdaGypI",
         "title": "Howard Stern Gives Ellen an Unforgettable Kiss",
         "channel": "TheEllenShow",
-        "views": 5144114,
+        "views": 5144121,
         "score": 0.84,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=f9p_jdaGypI"
       }
     ],
-    "youtube_score": 0.93,
+    "youtube_score": 3.65,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "VjdSzajrg0k",
@@ -25195,7 +25196,7 @@
     "youtube_validated_at": "2026-10-02"
   },
   "NORTHERN LIGHTS": {
-    "youtube_video_id": "",
+    "youtube_video_id": "T75IKSXVXlc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25205,76 +25206,76 @@
         "id": "9XMkD4Ol71I",
         "title": "Beautiful Northern Lights seen in Iceland",
         "channel": "Vincent Ledvina - The Aurora Guy (Clips)",
-        "views": 1905431,
-        "score": 0.78,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=9XMkD4Ol71I"
-      },
-      {
-        "id": "fVsONlc3OUY",
-        "title": "Night of the Northern Lights",
-        "channel": "Maciej Winiarczyk",
-        "views": 15341520,
-        "score": 0.9,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=fVsONlc3OUY"
-      },
-      {
-        "id": "T75IKSXVXlc",
-        "title": "Aurora Borealis in 4K UHD: &quot;Northern Lights Relaxation&quot; Alaska Real-Time Video 2 HOURS",
-        "channel": "Nature Relaxation Films",
-        "views": 8922044,
-        "score": 0.87,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=T75IKSXVXlc"
-      },
-      {
-        "id": "tnATQJJIsK4",
-        "title": "There’s Something Weird Going On With the Northern Lights",
-        "channel": "PBS Terra",
-        "views": 1439120,
-        "score": 0.77,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=tnATQJJIsK4"
-      },
-      {
-        "id": "2kOM0LlioJ4",
-        "title": "Northern Lights",
-        "channel": "Teddy Swims - Topic",
-        "views": 2166825,
+        "views": 1910732,
         "score": 0.79,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=2kOM0LlioJ4"
-      },
-      {
-        "id": "1edKRUcgNmM",
-        "title": "emma - Northern Lights (Official Lyric Video)",
-        "channel": "theofficialEMMAVEVO",
-        "views": 192426,
-        "score": 0.66,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=1edKRUcgNmM"
-      },
-      {
-        "id": "CQOjNg7O17Y",
-        "title": "Northern Lights",
-        "channel": "Jòðis - Topic",
-        "views": 219253,
-        "score": 0.67,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=CQOjNg7O17Y"
+        "url": "https://www.youtube.com/watch?v=9XMkD4Ol71I"
       },
       {
         "id": "Xnym6AvEWwY",
         "title": "Northern Lights | A Magical Aurora Show in Norway #northernlights #aurora #norway",
         "channel": "Yelyzaveta Dmitriieva",
-        "views": 2743233,
+        "views": 2746092,
         "score": 3.8,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=Xnym6AvEWwY"
+      },
+      {
+        "id": "fVsONlc3OUY",
+        "title": "Night of the Northern Lights",
+        "channel": "Maciej Winiarczyk",
+        "views": 15341970,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fVsONlc3OUY"
+      },
+      {
+        "id": "tnATQJJIsK4",
+        "title": "There’s Something Weird Going On With the Northern Lights",
+        "channel": "PBS Terra",
+        "views": 1439176,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tnATQJJIsK4"
+      },
+      {
+        "id": "T75IKSXVXlc",
+        "title": "Aurora Borealis in 4K UHD: &quot;Northern Lights Relaxation&quot; Alaska Real-Time Video 2 HOURS",
+        "channel": "Nature Relaxation Films",
+        "views": 8925736,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=T75IKSXVXlc"
+      },
+      {
+        "id": "Yxa6dS4CJr4",
+        "title": "The strongest northern light of my life 😱😱😱",
+        "channel": "Paul Buyck",
+        "views": 653418,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Yxa6dS4CJr4"
+      },
+      {
+        "id": "u0EevOnZoso",
+        "title": "SEEING THE NORTHERN LIGHTS 😭",
+        "channel": "findingfiona",
+        "views": 2847944,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=u0EevOnZoso"
+      },
+      {
+        "id": "1edKRUcgNmM",
+        "title": "emma - Northern Lights (Official Lyric Video)",
+        "channel": "theofficialEMMAVEVO",
+        "views": 192672,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1edKRUcgNmM"
       }
     ],
-    "youtube_score": 3.8,
+    "youtube_score": 0.87,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "fVsONlc3OUY",
@@ -25710,7 +25711,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "",
+    "youtube_video_id": "5I-JFMhWVME",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28973,7 +28974,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "DXamaUNQvg0",
+    "youtube_video_id": "bt7eI0AwnpU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
