@@ -25735,7 +25735,7 @@
     "youtube_validated": false
   },
   "MIJUKU": {
-    "youtube_video_id": "WtdMTu0JZXA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25815,7 +25815,11 @@
       }
     ],
     "youtube_score": 5.41,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "WtdMTu0JZXA"
+    ],
+    "youtube_validated": false
   },
   "NAMID'A": {
     "youtube_video_id": "bT5qdzaHsdc",
