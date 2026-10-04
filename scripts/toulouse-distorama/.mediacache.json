@@ -21639,7 +21639,7 @@
     ],
     "youtube_score": 0.88,
     "youtube_auto_validated": false,
-    "youtube_video_id": "nIfSY0gWSJk",
+    "youtube_video_id": "qJfaeQXDBB4",
     "bandcamp_url": "https://sloks.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3614899079/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -21651,7 +21651,9 @@
       "MvssVxb1Vl4",
       "wsziCXwkzy8"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-04"
   },
   "HUBRIS.": {
     "youtube_candidates": [
