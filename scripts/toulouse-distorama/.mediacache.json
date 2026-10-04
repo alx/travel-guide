@@ -26259,7 +26259,7 @@
     "event_date": "2026-10-17"
   },
   "TÉLÉCASTRÉ": {
-    "youtube_video_id": "wXes0y6G5sE",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26330,7 +26330,11 @@
       }
     ],
     "youtube_score": 0.81,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "wXes0y6G5sE"
+    ],
+    "youtube_validated": false
   },
   "VERNOSOLEM": {
     "youtube_video_id": "Z7xaS43ChPk",
