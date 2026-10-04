@@ -19648,7 +19648,10 @@
       }
     ],
     "youtube_score": 3.26,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-04"
   },
   "LAVA BOW": {
     "youtube_video_id": "zaT8_IubHCI",
