@@ -25905,7 +25905,7 @@
     "youtube_auto_validated": false
   },
   "Release party : ZAPOÏ": {
-    "youtube_video_id": "3BVZ1GJEsz0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25985,7 +25985,11 @@
       }
     ],
     "youtube_score": 3.74,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "3BVZ1GJEsz0"
+    ],
+    "youtube_validated": false
   },
   "SOUTH SIDE FURY": {
     "youtube_video_id": "yYHcO8Jykj8",
