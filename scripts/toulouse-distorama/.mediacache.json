@@ -30042,11 +30042,15 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "E9Cku97WSO8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-17"
+    "event_date": "2026-10-17",
+    "youtube_rejected_ids": [
+      "E9Cku97WSO8"
+    ],
+    "youtube_validated": false
   },
   "ZALOUESTH": {
     "youtube_candidates": [
