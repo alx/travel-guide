@@ -25834,7 +25834,7 @@
     "youtube_validated": false
   },
   "MIJUKU": {
-    "youtube_video_id": "Km1u6bq__rA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25916,7 +25916,8 @@
     "youtube_score": 3.8,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "WtdMTu0JZXA"
+      "WtdMTu0JZXA",
+      "Km1u6bq__rA"
     ],
     "youtube_validated": false
   },
