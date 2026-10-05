@@ -936,7 +936,7 @@
     "bandcamp_validated": true
   },
   "MONDO CANE": {
-    "youtube_video_id": "iDOl5q7UXfg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -1016,7 +1016,11 @@
     ],
     "youtube_score": 3.79,
     "youtube_auto_validated": false,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_rejected_ids": [
+      "iDOl5q7UXfg"
+    ],
+    "youtube_validated": false
   },
   "ZING (pk)": {
     "youtube_video_id": "fEqm2BE-rmE",
