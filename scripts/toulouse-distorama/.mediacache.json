@@ -30023,7 +30023,10 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-10"
+    "event_date": "2026-10-10",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
     "youtube_video_id": "E9Cku97WSO8",
