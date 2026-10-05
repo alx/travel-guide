@@ -25039,7 +25039,7 @@
     "youtube_validated_at": "2026-10-02"
   },
   "ELLEN & THE BOYS": {
-    "youtube_video_id": "d8kCTPPwfpM",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -25123,7 +25123,8 @@
     "youtube_rejected_ids": [
       "VjdSzajrg0k",
       "bi2NgISjcgI",
-      "g2I6zdvZsZ0"
+      "g2I6zdvZsZ0",
+      "d8kCTPPwfpM"
     ],
     "youtube_validated": false
   },
