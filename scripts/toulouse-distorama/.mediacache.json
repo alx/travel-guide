@@ -10299,14 +10299,15 @@
     ],
     "youtube_score": 0.87,
     "youtube_auto_validated": false,
-    "youtube_video_id": "twL3Rdod2Pg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "youtube_rejected_ids": [
       "9Oh3knWDBnA",
       "UJBrzAf4c88",
-      "00zr4UUe2K4"
+      "00zr4UUe2K4",
+      "twL3Rdod2Pg"
     ],
     "youtube_validated": false,
     "event_date": "2026-10-15"
