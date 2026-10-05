@@ -99,7 +99,7 @@
     "bandcamp_searched": false
   },
   "ALBACORE": {
-    "youtube_video_id": "v_nzYbug3G0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -181,7 +181,8 @@
     "youtube_score": 0.65,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "IhUBf8nV8xI"
+      "IhUBf8nV8xI",
+      "v_nzYbug3G0"
     ],
     "youtube_validated": false
   },
