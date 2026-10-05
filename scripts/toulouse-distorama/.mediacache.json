@@ -26005,7 +26005,7 @@
     "youtube_auto_validated": false
   },
   "Release party : ZAPOÏ": {
-    "youtube_video_id": "xKMB7G1f5WM",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26087,7 +26087,8 @@
     "youtube_score": 0.85,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "3BVZ1GJEsz0"
+      "3BVZ1GJEsz0",
+      "xKMB7G1f5WM"
     ],
     "youtube_validated": false
   },
