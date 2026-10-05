@@ -1857,7 +1857,7 @@
     "bandcamp_validated": true
   },
   "IRON LUNGS": {
-    "youtube_video_id": "i4sh-Dw4bzg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -1940,7 +1940,8 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "WPiCSsW-2as",
-      "x8E8Ryx49so"
+      "x8E8Ryx49so",
+      "i4sh-Dw4bzg"
     ],
     "youtube_validated": false
   },
