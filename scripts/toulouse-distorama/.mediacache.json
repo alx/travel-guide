@@ -25821,14 +25821,15 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "ONoCI-nYGY8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-10-16",
     "youtube_rejected_ids": [
       "YQbESMdRwhA",
-      "5I-JFMhWVME"
+      "5I-JFMhWVME",
+      "ONoCI-nYGY8"
     ],
     "youtube_validated": false
   },
