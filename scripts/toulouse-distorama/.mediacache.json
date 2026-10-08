@@ -26630,7 +26630,7 @@
     "youtube_validated_at": "2026-10-08"
   },
   "CHEVAL": {
-    "youtube_video_id": "0ZBvpnvtBjg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26692,7 +26692,11 @@
       }
     ],
     "youtube_score": 1.55,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "0ZBvpnvtBjg"
+    ],
+    "youtube_validated": false
   },
   "CH'TITE DIASPORA": {
     "youtube_video_id": "GHbGpP2xxCY",
