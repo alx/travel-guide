@@ -26354,7 +26354,7 @@
     "event_date": "2026-10-17"
   },
   "TÉLÉCASTRÉ": {
-    "youtube_video_id": "NWsKtzhVoS0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26428,7 +26428,8 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "wXes0y6G5sE",
-      "IbBP2yN8U8c"
+      "IbBP2yN8U8c",
+      "NWsKtzhVoS0"
     ],
     "youtube_validated": false
   },
