@@ -27494,7 +27494,10 @@
       }
     ],
     "youtube_score": 5.39,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-11"
   },
   "PASTEQ": {
     "youtube_video_id": "",
