@@ -27959,7 +27959,7 @@
     "youtube_auto_validated": false
   },
   "GHOST TWIST": {
-    "youtube_video_id": "NmxFxBiCrL4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28039,7 +28039,11 @@
       }
     ],
     "youtube_score": 4.01,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "NmxFxBiCrL4"
+    ],
+    "youtube_validated": false
   },
   "The Whip : DJ WALLIE": {
     "youtube_video_id": "",
