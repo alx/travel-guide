@@ -26920,7 +26920,7 @@
     "youtube_auto_validated": false
   },
   "Fred et Marie célèbrent l'amour": {
-    "youtube_video_id": "pox1p5DrNgg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27000,7 +27000,11 @@
       }
     ],
     "youtube_score": 3.78,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "pox1p5DrNgg"
+    ],
+    "youtube_validated": false
   },
   "LÉONARD KOTIK": {
     "youtube_video_id": "1G9BaTb4OJY",
