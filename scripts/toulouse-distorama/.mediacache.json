@@ -27706,7 +27706,7 @@
     "youtube_validated": false
   },
   "DJ Set surprise": {
-    "youtube_video_id": "h7wcu7J-XA4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27786,7 +27786,11 @@
       }
     ],
     "youtube_score": 3.88,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "h7wcu7J-XA4"
+    ],
+    "youtube_validated": false
   },
   "FOGGY TAPES": {
     "youtube_video_id": "4W8nvdw361g",
