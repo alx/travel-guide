@@ -27335,7 +27335,7 @@
     "youtube_auto_validated": false
   },
   "DJ set AKRAV": {
-    "youtube_video_id": "fgfbPwdfNNQ",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27415,7 +27415,11 @@
       }
     ],
     "youtube_score": 0.67,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "fgfbPwdfNNQ"
+    ],
+    "youtube_validated": false
   },
   "OOZING PALMS": {
     "youtube_video_id": "JXKkoTZayH8",
