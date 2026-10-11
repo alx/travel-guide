@@ -28042,7 +28042,7 @@
     "youtube_auto_validated": false
   },
   "The Whip : DJ WALLIE": {
-    "youtube_video_id": "M020Ajhkojg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28122,7 +28122,11 @@
       }
     ],
     "youtube_score": 0.97,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "M020Ajhkojg"
+    ],
+    "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
     "youtube_video_id": "",
