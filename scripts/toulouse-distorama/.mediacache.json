@@ -27956,7 +27956,10 @@
       }
     ],
     "youtube_score": 0.42,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-11"
   },
   "GHOST TWIST": {
     "youtube_video_id": "",
