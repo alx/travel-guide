@@ -27252,7 +27252,7 @@
     "youtube_auto_validated": false
   },
   "BOURDY AND CO": {
-    "youtube_video_id": "N2aeJpnABOM",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27332,7 +27332,11 @@
       }
     ],
     "youtube_score": 0.61,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "N2aeJpnABOM"
+    ],
+    "youtube_validated": false
   },
   "DJ set AKRAV": {
     "youtube_video_id": "",
