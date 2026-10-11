@@ -4408,7 +4408,7 @@
     "bandcamp_searched": false
   },
   "Guest": {
-    "youtube_video_id": "Xxz0bqtPLeY",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -4487,7 +4487,11 @@
       }
     ],
     "youtube_score": 1.66,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "Xxz0bqtPLeY"
+    ],
+    "youtube_validated": false
   },
   "Quizz culture générale et after work": {
     "youtube_video_id": "",
