@@ -27083,7 +27083,10 @@
       }
     ],
     "youtube_score": 0.35,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-11"
   },
   "THE FORMER SELF by DANIEL MARK WILLIAMs": {
     "youtube_video_id": "zksN_LKtbAU",
