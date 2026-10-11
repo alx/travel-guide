@@ -27619,7 +27619,7 @@
     "youtube_validated": false
   },
   "DALLAS": {
-    "youtube_video_id": "0-p3Z1oqFzA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27699,7 +27699,11 @@
       }
     ],
     "youtube_score": 1.89,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "0-p3Z1oqFzA"
+    ],
+    "youtube_validated": false
   },
   "DJ Set surprise": {
     "youtube_video_id": "h7wcu7J-XA4",
