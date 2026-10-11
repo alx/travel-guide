@@ -28140,7 +28140,7 @@
     "youtube_validated": false
   },
   "guests": {
-    "youtube_video_id": "N7WTEY8pXZw",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28220,7 +28220,11 @@
       }
     ],
     "youtube_score": 3.76,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "N7WTEY8pXZw"
+    ],
+    "youtube_validated": false
   },
   "FAUSTINE SEILMAN": {
     "youtube_video_id": "LWAX4YAD3C0",
