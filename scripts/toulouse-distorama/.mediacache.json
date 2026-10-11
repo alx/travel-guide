@@ -27356,7 +27356,7 @@
     "youtube_validated": false
   },
   "DJ set AKRAV": {
-    "youtube_video_id": "6_oCozKPV-w",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27438,7 +27438,8 @@
     "youtube_score": 0.62,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "fgfbPwdfNNQ"
+      "fgfbPwdfNNQ",
+      "6_oCozKPV-w"
     ],
     "youtube_validated": false
   },
