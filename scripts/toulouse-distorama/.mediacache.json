@@ -28125,11 +28125,15 @@
     "youtube_auto_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "Xn_rP9Swa-M",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-24"
+    "event_date": "2026-10-24",
+    "youtube_rejected_ids": [
+      "Xn_rP9Swa-M"
+    ],
+    "youtube_validated": false
   },
   "guests": {
     "youtube_video_id": "N7WTEY8pXZw",
