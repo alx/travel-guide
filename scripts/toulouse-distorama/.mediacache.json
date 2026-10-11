@@ -4408,7 +4408,7 @@
     "bandcamp_searched": false
   },
   "Guest": {
-    "youtube_video_id": "7-5Upq2hcOA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -4489,7 +4489,8 @@
     "youtube_score": 0.9,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "Xxz0bqtPLeY"
+      "Xxz0bqtPLeY",
+      "7-5Upq2hcOA"
     ],
     "youtube_validated": false,
     "event_date": "2026-10-23"
