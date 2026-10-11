@@ -27268,7 +27268,7 @@
     "youtube_validated": false
   },
   "BOURDY AND CO": {
-    "youtube_video_id": "evWUm357kx8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27350,7 +27350,8 @@
     "youtube_score": 0.36,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "N2aeJpnABOM"
+      "N2aeJpnABOM",
+      "evWUm357kx8"
     ],
     "youtube_validated": false
   },
