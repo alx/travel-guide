@@ -27535,7 +27535,7 @@
     "youtube_validated_at": "2026-10-11"
   },
   "PASTEQ": {
-    "youtube_video_id": "Du-8SWEfLX0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27618,7 +27618,8 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "B6LnENDiIVs",
-      "uC56ScRsWa0"
+      "uC56ScRsWa0",
+      "Du-8SWEfLX0"
     ],
     "youtube_validated": false
   },
