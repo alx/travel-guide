@@ -28053,7 +28053,9 @@
     "youtube_rejected_ids": [
       "NmxFxBiCrL4"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-12"
   },
   "The Whip : DJ WALLIE": {
     "youtube_video_id": "vjW8wmF5VWc",
