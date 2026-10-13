@@ -28062,7 +28062,7 @@
     "youtube_validated_at": "2026-10-12"
   },
   "The Whip : DJ WALLIE": {
-    "youtube_video_id": "vjW8wmF5VWc",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28145,7 +28145,8 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "M020Ajhkojg",
-      "aDV894H9YHI"
+      "aDV894H9YHI",
+      "vjW8wmF5VWc"
     ],
     "youtube_validated": false
   },
