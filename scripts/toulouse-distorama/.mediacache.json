@@ -4812,7 +4812,8 @@
     "youtube_rejected_ids": [
       "7vPzWR0HBd8"
     ],
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-10-22"
   },
   "VIVE LA POP": {
     "youtube_video_id": "8O9qSgUjb1U",
@@ -8543,7 +8544,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-10-22"
   },
   "ZAZA": {
     "youtube_video_id": "",
@@ -12722,7 +12724,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "g-ETt9VhlDw",
+    "youtube_video_id": "jiJa-dLRbAk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13328,7 +13330,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "0RxbxQZEcco",
+    "youtube_video_id": "nopp287zNp4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27360,7 +27362,7 @@
     "youtube_validated": false
   },
   "DJ set AKRAV": {
-    "youtube_video_id": "",
+    "youtube_video_id": "xogJgUteDAs",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27370,19 +27372,10 @@
         "id": "YacKm58y8vQ",
         "title": "AKRAV / 125 BPM - KARMA CLUB 014 - RAR",
         "channel": "RAR BASS",
-        "views": 3779,
+        "views": 3782,
         "score": 0.45,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=YacKm58y8vQ"
-      },
-      {
-        "id": "ptg0m2br9cI",
-        "title": "Akrav | Indie Dance, Dark Disco, Techno | Tilt Shift Revs @ Rev&#39;s 21st Jan 2026",
-        "channel": "Tilt Shift Melbourne",
-        "views": 158,
-        "score": 0.28,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ptg0m2br9cI"
       },
       {
         "id": "QupsIaxrcQw",
@@ -27394,13 +27387,13 @@
         "url": "https://www.youtube.com/watch?v=QupsIaxrcQw"
       },
       {
-        "id": "1o1FHiCZAjY",
+        "id": "ptg0m2br9cI",
         "title": "Akrav | Indie Dance, Dark Disco, Techno | Tilt Shift Revs @ Rev&#39;s 21st Jan 2026",
         "channel": "Tilt Shift Melbourne",
-        "views": 74,
-        "score": 0.23,
+        "views": 158,
+        "score": 0.28,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=1o1FHiCZAjY"
+        "url": "https://www.youtube.com/watch?v=ptg0m2br9cI"
       },
       {
         "id": "hUw_5ZPL9Uo",
@@ -27412,22 +27405,31 @@
         "url": "https://www.youtube.com/watch?v=hUw_5ZPL9Uo"
       },
       {
-        "id": "90hvSIu_v_Y",
-        "title": "Bomb Clock",
-        "channel": "Akrav - Topic",
-        "views": 126,
-        "score": 0.26,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=90hvSIu_v_Y"
+        "id": "xogJgUteDAs",
+        "title": "Nina Kraviz Boiler Room Berlin DJ Set",
+        "channel": "Boiler Room",
+        "views": 6846087,
+        "score": 3.85,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=xogJgUteDAs"
       },
       {
-        "id": "6_oCozKPV-w",
-        "title": "Nina Kraviz @ Voodoo Village 2026",
-        "channel": "Nina Kraviz",
-        "views": 92248,
-        "score": 0.62,
+        "id": "fgfbPwdfNNQ",
+        "title": "Nina Kraviz | Awakenings Festival 2025",
+        "channel": "Awakenings",
+        "views": 240356,
+        "score": 0.67,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=6_oCozKPV-w"
+        "url": "https://www.youtube.com/watch?v=fgfbPwdfNNQ"
+      },
+      {
+        "id": "1o1FHiCZAjY",
+        "title": "Akrav | Indie Dance, Dark Disco, Techno | Tilt Shift Revs @ Rev&#39;s 21st Jan 2026",
+        "channel": "Tilt Shift Melbourne",
+        "views": 74,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1o1FHiCZAjY"
       },
       {
         "id": "_o8h2e6Wx3Y",
@@ -27439,7 +27441,7 @@
         "url": "https://www.youtube.com/watch?v=_o8h2e6Wx3Y"
       }
     ],
-    "youtube_score": 0.45,
+    "youtube_score": 3.85,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "fgfbPwdfNNQ",
@@ -27535,35 +27537,35 @@
     "youtube_validated_at": "2026-10-11"
   },
   "PASTEQ": {
-    "youtube_video_id": "",
+    "youtube_video_id": "X1HkxvRnqEI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-10-23",
     "youtube_candidates": [
       {
-        "id": "0hS_AmdsIs8",
-        "title": "Couper une pastèque efficacement 🍉 ☝️#tutorial",
-        "channel": "ChinaKitchenEva",
-        "views": 211408,
-        "score": 0.67,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=0hS_AmdsIs8"
-      },
-      {
         "id": "wChycHOibBU",
         "title": "La culture de pastèque 🍉 🍉 simple et efficace pour avoir du rendement #video #farming #fruit",
         "channel": "Pratique Agricole TV",
-        "views": 70790,
+        "views": 70871,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=wChycHOibBU"
       },
       {
+        "id": "0hS_AmdsIs8",
+        "title": "Couper une pastèque efficacement 🍉 ☝️#tutorial",
+        "channel": "ChinaKitchenEva",
+        "views": 211541,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=0hS_AmdsIs8"
+      },
+      {
         "id": "Du-8SWEfLX0",
         "title": "HACK PASTÈQUE FACILE !!! #recette #patisserie #cuisine #pasteque #watermelon #dessert #shavedice",
         "channel": "Soso cuisine moi",
-        "views": 2993994,
+        "views": 2994197,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Du-8SWEfLX0"
@@ -27572,7 +27574,7 @@
         "id": "YYXK9hyqY5c",
         "title": "COMMENT CULTIVER DES PASTÈQUES ? 🍉 #pastèque #potager #permaculture",
         "channel": "Goran le Permaculteur",
-        "views": 217932,
+        "views": 218018,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=YYXK9hyqY5c"
@@ -27581,7 +27583,7 @@
         "id": "zx3w-cpYbSw",
         "title": "Singe vs Pastèque !",
         "channel": "Le Zap Animalier ",
-        "views": 225964,
+        "views": 226153,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=zx3w-cpYbSw"
@@ -27590,7 +27592,7 @@
         "id": "twfJtv0isCc",
         "title": "Guide Complet de la Culture de la pastèque 🍉: Variétés et dates de Semis, Plantation et Récolte",
         "channel": "Le Maraîcher Du Coin",
-        "views": 55345,
+        "views": 55403,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=twfJtv0isCc"
@@ -27599,7 +27601,7 @@
         "id": "uC56ScRsWa0",
         "title": "Je mange la pastèque 🍉 pour avoir 500k abonnés 🤪😂",
         "channel": "Flojo",
-        "views": 12007628,
+        "views": 12008074,
         "score": 0.88,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=uC56ScRsWa0"
@@ -27608,13 +27610,13 @@
         "id": "X1HkxvRnqEI",
         "title": "KATURI | Faites rouler la pastèque ! Dessin animé HD",
         "channel": "Katuri FR",
-        "views": 308618,
+        "views": 308742,
         "score": 0.69,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=X1HkxvRnqEI"
       }
     ],
-    "youtube_score": 0.81,
+    "youtube_score": 0.69,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "B6LnENDiIVs",
@@ -27624,7 +27626,7 @@
     "youtube_validated": false
   },
   "DALLAS": {
-    "youtube_video_id": "lvbJman4VzA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27707,12 +27709,13 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "0-p3Z1oqFzA",
-      "39nd0wbBvz0"
+      "39nd0wbBvz0",
+      "lvbJman4VzA"
     ],
     "youtube_validated": false
   },
   "DJ Set surprise": {
-    "youtube_video_id": "",
+    "youtube_video_id": "Xso1TN3mS0U",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27722,7 +27725,7 @@
         "id": "xZP4-WX-V6M",
         "title": "Bob Sinclar mixe par surprise sur un balcon parisien | Deezer Session",
         "channel": "Bob Sinclar",
-        "views": 7768964,
+        "views": 7770022,
         "score": 3.86,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=xZP4-WX-V6M"
@@ -27731,67 +27734,67 @@
         "id": "I6MyMRHJ1zM",
         "title": "SOFI TUKKER - Surprise DJ SET @ Night We Met Nashville, TN - Full Set",
         "channel": "SOFI TUKKER",
-        "views": 376139,
+        "views": 376362,
         "score": 3.7,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=I6MyMRHJ1zM"
       },
       {
-        "id": "ZtOTp_OT274",
-        "title": "A STRANGER touches DJ&#39;s decks and this happens...🔥#shorts #restricted #edm #remix #dj #techno",
-        "channel": "MusicBlast",
-        "views": 12243121,
-        "score": 0.89,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ZtOTp_OT274"
-      },
-      {
-        "id": "hgp-XOrXsXw",
-        "title": "TOP 5 MOST UNEXPECTED DJ TRANSITIONS",
-        "channel": "TOP5highlights ",
-        "views": 1408322,
-        "score": 0.77,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=hgp-XOrXsXw"
-      },
-      {
-        "id": "R__H6sY_0Rg",
-        "title": "Gordo dropping &quot;Satisfaction&quot; #satisfaction #bennybenassi #mix #mixing #dj #music #Miami",
-        "channel": "Miami Sound Pro",
-        "views": 11994076,
-        "score": 0.88,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=R__H6sY_0Rg"
-      },
-      {
-        "id": "NPZrvlJO82Q",
-        "title": "DJ Skillz (France) - Winning performance from The 2019 DMC World DJ Final - 2 x DMC World Champion",
-        "channel": "DMC World",
-        "views": 2279235,
-        "score": 0.79,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=NPZrvlJO82Q"
-      },
-      {
         "id": "V09DqkMGGO0",
         "title": "SURPRISE GUEST Diplo @ Knowhere Festival 2025",
         "channel": "Knowhere Festival",
-        "views": 234243,
+        "views": 234306,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=V09DqkMGGO0"
       },
       {
-        "id": "XHiUB5y8vxQ",
-        "title": "He just saved the party and the equipment 👏",
-        "channel": "Best DJ Transitions",
-        "views": 25032350,
-        "score": 0.92,
+        "id": "SrJghw1daxU",
+        "title": "Thomas Bangalter &amp; DJ Mehdi @ Cinespace 2009",
+        "channel": "GotWub",
+        "views": 82955,
+        "score": 0.61,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=XHiUB5y8vxQ"
+        "url": "https://www.youtube.com/watch?v=SrJghw1daxU"
+      },
+      {
+        "id": "hgp-XOrXsXw",
+        "title": "TOP 5 MOST UNEXPECTED DJ TRANSITIONS",
+        "channel": "TOP5highlights ",
+        "views": 1409230,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hgp-XOrXsXw"
+      },
+      {
+        "id": "h7wcu7J-XA4",
+        "title": "La Finale di TOP DJ | Il dj set pazzesco di GEO FROM HELL",
+        "channel": "TOP DJ",
+        "views": 10762525,
+        "score": 3.88,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=h7wcu7J-XA4"
+      },
+      {
+        "id": "Xso1TN3mS0U",
+        "title": "Chaotic DJ Set on a Kayak in Amsterdam",
+        "channel": "SUAT",
+        "views": 2145182,
+        "score": 3.79,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Xso1TN3mS0U"
+      },
+      {
+        "id": "R__H6sY_0Rg",
+        "title": "Gordo dropping &quot;Satisfaction&quot; #satisfaction #bennybenassi #mix #mixing #dj #music #Miami",
+        "channel": "Miami Sound Pro",
+        "views": 11995293,
+        "score": 0.88,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=R__H6sY_0Rg"
       }
     ],
-    "youtube_score": 3.86,
+    "youtube_score": 3.79,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "h7wcu7J-XA4",
@@ -30278,7 +30281,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "tHagSJhUcKY",
+    "youtube_video_id": "wY5xVGzsQ5Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30373,5 +30376,88 @@
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
     "youtube_validated_at": "2026-10-05"
+  },
+  "Soiree puni d'ordi : KONTROLL TEK": {
+    "youtube_candidates": [
+      {
+        "id": "44aDOuYiN9o",
+        "title": "【Multi sub】Her Husband Cheated While She Was Pregnant—Then She Left Him Forever!",
+        "channel": "Romance Theater",
+        "views": 3143,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=44aDOuYiN9o"
+      },
+      {
+        "id": "xO9JiJN0d8M",
+        "title": "Jets privés : la face cachée des trafics | Documentaire Aviation - GPN",
+        "channel": "AIR TV - 100% aviation",
+        "views": 68843,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xO9JiJN0d8M"
+      },
+      {
+        "id": "RaHSVPHuciw",
+        "title": "豪門令嬢は昔の護衛と結婚させられ、新婚夜に逃げるつもりだった！だが女嫌いの司令官は昔から彼女を愛し、今や絶大な権力を握り、妻に迎えて誰にも渡さず一生そばで独占して溺愛すると決めていたのだった！",
+        "channel": "夢幻シアター",
+        "views": 14646,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RaHSVPHuciw"
+      },
+      {
+        "id": "BhOzngx68dc",
+        "title": "窮小伙腳滑意外強吻了路邊的美女警官，下秒竟覺醒聽懂獸語超能力！憑藉外掛救下被下藥的美女警官被獻身報恩，一招破解懸案挽救千萬損失，美女警官主動下嫁要為他生八個娃！",
+        "channel": "舒禾短剧_shortTV",
+        "views": 30225,
+        "score": 0.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BhOzngx68dc"
+      },
+      {
+        "id": "Y4gAy8zRLMM",
+        "title": "Learn Japanese While You Sleep | How to learn Japanese effectively: Autumn Festival (N5–N4)",
+        "channel": "Tiếng Nhật Dễ Nhớ",
+        "views": 481,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Y4gAy8zRLMM"
+      },
+      {
+        "id": "xwtkPyxYXP0",
+        "title": "Pinrotektahan ng Anak ng CEO ang Isang Batang Babae—Hindi Niya Akalaing Kapatid Pala Niya Ito!",
+        "channel": "Teatro ng Umaagos na Liwanag",
+        "views": 454,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xwtkPyxYXP0"
+      },
+      {
+        "id": "8qG_PWir99E",
+        "title": "Police de caractères - COMPILATION - Clémentine CÉLARIÉ &amp; Joffrey PLATEL - Série Française - BSF",
+        "channel": "Stream TV ",
+        "views": 80853,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8qG_PWir99E"
+      },
+      {
+        "id": "l4rFWRR1zaw",
+        "title": "🔥[Multi SUB]寧布&amp;張語涵💖首富千金偽裝成店員測試未婚夫全家，卻被未來婆婆當眾潑茶水罵窮酸，嘲笑她配不上自家兒子——她摘下工牌亮出真實身份，那家人全部癱倒在地！#爱情",
+        "channel": "蜜桃心動劇社",
+        "views": 20387,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=l4rFWRR1zaw"
+      }
+    ],
+    "youtube_score": 0.61,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "8qG_PWir99E",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-22"
   }
 }
