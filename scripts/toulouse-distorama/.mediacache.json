@@ -27715,7 +27715,7 @@
     "youtube_validated": false
   },
   "DJ Set surprise": {
-    "youtube_video_id": "Xso1TN3mS0U",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27798,7 +27798,8 @@
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "h7wcu7J-XA4",
-      "xZP4-WX-V6M"
+      "xZP4-WX-V6M",
+      "Xso1TN3mS0U"
     ],
     "youtube_validated": false
   },
