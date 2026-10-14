@@ -25121,7 +25121,7 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-15",
+    "event_date": "2026-10-16",
     "youtube_candidates": [
       {
         "id": "xqqpbOp-e5c",
@@ -27626,35 +27626,17 @@
     "youtube_validated": false
   },
   "DALLAS": {
-    "youtube_video_id": "",
+    "youtube_video_id": "M-qdkvULgz4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-10-24",
     "youtube_candidates": [
       {
-        "id": "8sKX3tWaOew",
-        "title": "Dallas Opening and Closing Theme 1978 - 1991 (HD Surround)",
-        "channel": "TeeVees Greatest",
-        "views": 8266511,
-        "score": 0.86,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=8sKX3tWaOew"
-      },
-      {
-        "id": "rtrGrMAy0bc",
-        "title": "Houston Rockets vs Dallas Mavericks Full Game Highlights - October 11, 2026 | NBA Preseason",
-        "channel": "GAMETIME HIGHLIGHTS",
-        "views": 332195,
-        "score": 0.69,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=rtrGrMAy0bc"
-      },
-      {
         "id": "lvbJman4VzA",
         "title": "Bello&amp;Dallas - Belvedere (Clip Officiel)",
         "channel": "Bello&Dallas ",
-        "views": 1213752,
+        "views": 1252675,
         "score": 1.76,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=lvbJman4VzA"
@@ -27663,49 +27645,67 @@
         "id": "rlfHcCLn4pk",
         "title": "Dallas Générique / Dallas Opening (FR)",
         "channel": "Elcano",
-        "views": 2794793,
+        "views": 2795341,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=rlfHcCLn4pk"
       },
       {
-        "id": "DJU21tCWYD8",
-        "title": "Dallas Mavericks vs Houston Rockets - FULL GAME HIGHLIGHTS | October 11, 2026 NBA Preseason",
-        "channel": "Ximo Pierto",
-        "views": 99511,
-        "score": 0.62,
+        "id": "8sKX3tWaOew",
+        "title": "Dallas Opening and Closing Theme 1978 - 1991 (HD Surround)",
+        "channel": "TeeVees Greatest",
+        "views": 8270913,
+        "score": 0.86,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=DJU21tCWYD8"
+        "url": "https://www.youtube.com/watch?v=8sKX3tWaOew"
       },
       {
-        "id": "YyksQp4NpqE",
-        "title": "This is what Dallas Texas looks like now...",
-        "channel": "Fleccas Talks",
-        "views": 2231139,
-        "score": 0.79,
+        "id": "M-qdkvULgz4",
+        "title": "Bello&amp;Dallas - Météo (Clip officiel)",
+        "channel": "Bello&Dallas ",
+        "views": 4049373,
+        "score": 1.83,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=YyksQp4NpqE"
+        "url": "https://www.youtube.com/watch?v=M-qdkvULgz4"
       },
       {
-        "id": "L5jvwPUP6Hg",
-        "title": "A NEW CHAPTER | Dallas Diaries, NEW HOUSE, Date Night, State Fair, Visiting My In-Laws and MORE",
-        "channel": "De'arra Taylor",
-        "views": 77479,
-        "score": 0.61,
+        "id": "0-p3Z1oqFzA",
+        "title": "Bello&amp;Dallas - Le P’tit (Clip officiel)",
+        "channel": "Bello&Dallas ",
+        "views": 13523823,
+        "score": 1.89,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=L5jvwPUP6Hg"
+        "url": "https://www.youtube.com/watch?v=0-p3Z1oqFzA"
       },
       {
-        "id": "HHPoNYbpTAY",
-        "title": "A Beautiful Dallas Home That Feels Like a French Chateau | House Tour",
-        "channel": "Homeworthy",
-        "views": 22424,
-        "score": 0.54,
+        "id": "dcF3sREebiE",
+        "title": "BIG NEWS about Dallas&#39; Scoliosis..Here&#39;s What We learned",
+        "channel": "Discover with Dallas",
+        "views": 30703,
+        "score": 1.56,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=HHPoNYbpTAY"
+        "url": "https://www.youtube.com/watch?v=dcF3sREebiE"
+      },
+      {
+        "id": "dP-_RwiiSRQ",
+        "title": "Dallas",
+        "channel": "Les Texans - Topic",
+        "views": 1128292,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dP-_RwiiSRQ"
+      },
+      {
+        "id": "p8-Zb4wJQow",
+        "title": "DALLAS &quot;L&#39;envers du décor du feuilleton DALLAS&quot;. Partie 1.",
+        "channel": "Series Cultes",
+        "views": 234396,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=p8-Zb4wJQow"
       }
     ],
-    "youtube_score": 1.76,
+    "youtube_score": 1.83,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "0-p3Z1oqFzA",
@@ -27715,7 +27715,7 @@
     "youtube_validated": false
   },
   "DJ Set surprise": {
-    "youtube_video_id": "",
+    "youtube_video_id": "I6MyMRHJ1zM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27725,16 +27725,25 @@
         "id": "xZP4-WX-V6M",
         "title": "Bob Sinclar mixe par surprise sur un balcon parisien | Deezer Session",
         "channel": "Bob Sinclar",
-        "views": 7770022,
+        "views": 7771179,
         "score": 3.86,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=xZP4-WX-V6M"
       },
       {
+        "id": "hgp-XOrXsXw",
+        "title": "TOP 5 MOST UNEXPECTED DJ TRANSITIONS",
+        "channel": "TOP5highlights ",
+        "views": 1410247,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hgp-XOrXsXw"
+      },
+      {
         "id": "I6MyMRHJ1zM",
         "title": "SOFI TUKKER - Surprise DJ SET @ Night We Met Nashville, TN - Full Set",
         "channel": "SOFI TUKKER",
-        "views": 376362,
+        "views": 376578,
         "score": 3.7,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=I6MyMRHJ1zM"
@@ -27743,58 +27752,49 @@
         "id": "V09DqkMGGO0",
         "title": "SURPRISE GUEST Diplo @ Knowhere Festival 2025",
         "channel": "Knowhere Festival",
-        "views": 234306,
+        "views": 234369,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=V09DqkMGGO0"
       },
       {
-        "id": "SrJghw1daxU",
-        "title": "Thomas Bangalter &amp; DJ Mehdi @ Cinespace 2009",
-        "channel": "GotWub",
-        "views": 82955,
-        "score": 0.61,
+        "id": "ZtOTp_OT274",
+        "title": "A STRANGER touches DJ&#39;s decks and this happens...🔥#shorts #restricted #edm #remix #dj #techno",
+        "channel": "MusicBlast",
+        "views": 12243951,
+        "score": 0.89,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=SrJghw1daxU"
-      },
-      {
-        "id": "hgp-XOrXsXw",
-        "title": "TOP 5 MOST UNEXPECTED DJ TRANSITIONS",
-        "channel": "TOP5highlights ",
-        "views": 1409230,
-        "score": 0.77,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=hgp-XOrXsXw"
-      },
-      {
-        "id": "h7wcu7J-XA4",
-        "title": "La Finale di TOP DJ | Il dj set pazzesco di GEO FROM HELL",
-        "channel": "TOP DJ",
-        "views": 10762525,
-        "score": 3.88,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=h7wcu7J-XA4"
-      },
-      {
-        "id": "Xso1TN3mS0U",
-        "title": "Chaotic DJ Set on a Kayak in Amsterdam",
-        "channel": "SUAT",
-        "views": 2145182,
-        "score": 3.79,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=Xso1TN3mS0U"
+        "url": "https://www.youtube.com/watch?v=ZtOTp_OT274"
       },
       {
         "id": "R__H6sY_0Rg",
         "title": "Gordo dropping &quot;Satisfaction&quot; #satisfaction #bennybenassi #mix #mixing #dj #music #Miami",
         "channel": "Miami Sound Pro",
-        "views": 11995293,
+        "views": 11996812,
         "score": 0.88,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=R__H6sY_0Rg"
+      },
+      {
+        "id": "Xso1TN3mS0U",
+        "title": "Chaotic DJ Set on a Kayak in Amsterdam",
+        "channel": "SUAT",
+        "views": 2145252,
+        "score": 3.79,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Xso1TN3mS0U"
+      },
+      {
+        "id": "EsdIfbqMrDQ",
+        "title": "Ranking Top 5 Best DJ Transitions #rankings #top10 #top5 #djtransition #transitions #dj",
+        "channel": "𝙼𝚒𝚜𝚝𝚎𝚛𝙱𝚠𝚎𝚜𝚝",
+        "views": 29902186,
+        "score": 0.93,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EsdIfbqMrDQ"
       }
     ],
-    "youtube_score": 3.79,
+    "youtube_score": 3.7,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "h7wcu7J-XA4",
@@ -28062,7 +28062,7 @@
     "youtube_validated_at": "2026-10-12"
   },
   "The Whip : DJ WALLIE": {
-    "youtube_video_id": "",
+    "youtube_video_id": "-e5bQyPaSRc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28072,7 +28072,7 @@
         "id": "6np--OkP7Nc",
         "title": "Can Black Flash &amp; The Darkest Knight Beat Wally West? ⚡| Montagem Vortice Extinta Super Slowed",
         "channel": "Ninja.Killer",
-        "views": 2972302,
+        "views": 2974530,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=6np--OkP7Nc"
@@ -28081,28 +28081,55 @@
         "id": "vjW8wmF5VWc",
         "title": "Silentó - Watch Me (Whip/Nae Nae) (Official)",
         "channel": "SilentoVEVO",
-        "views": 2017717733,
+        "views": 2017870468,
         "score": 1.16,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=vjW8wmF5VWc"
       },
       {
+        "id": "4_6CT0MeK58",
+        "title": "#whipdance - they killed it - watch me whip n nae nae",
+        "channel": "Whip Dance",
+        "views": 855933,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4_6CT0MeK58"
+      },
+      {
         "id": "OFWq-Eal9GE",
         "title": "Wally Or Black Flash ? #roblox #flashpoint #wallywest #blackflash",
         "channel": "KB",
-        "views": 5623704,
+        "views": 5628509,
         "score": 0.84,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=OFWq-Eal9GE"
       },
       {
-        "id": "4_6CT0MeK58",
-        "title": "#whipdance - they killed it - watch me whip n nae nae",
-        "channel": "Whip Dance",
-        "views": 852624,
-        "score": 0.74,
+        "id": "M020Ajhkojg",
+        "title": "Chris Brown - High End (Official Video) ft. Future, Young Thug",
+        "channel": "ChrisBrownVEVO",
+        "views": 60135357,
+        "score": 0.97,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=4_6CT0MeK58"
+        "url": "https://www.youtube.com/watch?v=M020Ajhkojg"
+      },
+      {
+        "id": "Oc8TjDG8NjE",
+        "title": "ZaZa - What I Do? [Official Video]",
+        "channel": "ZaZa",
+        "views": 48601492,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Oc8TjDG8NjE"
+      },
+      {
+        "id": "-e5bQyPaSRc",
+        "title": "Thing shook that thang! 🖐️ #wednesdayaddams #enid #results #dance",
+        "channel": "Happy Kelli",
+        "views": 78297050,
+        "score": 0.99,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-e5bQyPaSRc"
       },
       {
         "id": "WPQNEoB0wto",
@@ -28112,36 +28139,9 @@
         "score": 0.35,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=WPQNEoB0wto"
-      },
-      {
-        "id": "nHE6VBPzfTE",
-        "title": "In Tha Whip Spittin Vol.1",
-        "channel": "calliko",
-        "views": 405,
-        "score": 0.33,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=nHE6VBPzfTE"
-      },
-      {
-        "id": "Y5Y0_eREx1M",
-        "title": "Roblox Dark Bacon Black Flash X Wally West Edit #robloxmemes#phonk#funk#shorts#short#wallywest#edits",
-        "channel": "Dark System Player Lukas",
-        "views": 2692292,
-        "score": 0.8,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Y5Y0_eREx1M"
-      },
-      {
-        "id": "M020Ajhkojg",
-        "title": "Chris Brown - High End (Official Video) ft. Future, Young Thug",
-        "channel": "ChrisBrownVEVO",
-        "views": 60130010,
-        "score": 0.97,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=M020Ajhkojg"
       }
     ],
-    "youtube_score": 1.16,
+    "youtube_score": 0.99,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "M020Ajhkojg",
@@ -28249,7 +28249,7 @@
     "youtube_validated": false
   },
   "FAUSTINE SEILMAN": {
-    "youtube_video_id": "LWAX4YAD3C0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28329,7 +28329,11 @@
       }
     ],
     "youtube_score": 5.45,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "LWAX4YAD3C0"
+    ],
+    "youtube_validated": false
   },
   "KOSAÏ": {
     "youtube_video_id": "F8qaUERvjcw",
@@ -30283,7 +30287,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "wY5xVGzsQ5Y",
+    "youtube_video_id": "AYGSjFj_cyA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
