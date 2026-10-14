@@ -28427,7 +28427,10 @@
       }
     ],
     "youtube_score": 3.4,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-14"
   },
   "Le Fucking Jam par NOKTASIMIO": {
     "youtube_video_id": "",
