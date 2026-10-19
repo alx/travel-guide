@@ -1,0 +1,7 @@
+---
+title: "DistoraMaps"
+description: "Concerts et événements underground à Toulouse novembre 2026 — 23 événement(s)."
+type: "toulouse-distorama-event"
+distorama_window: "2026-11"
+geojson_url: "/toulouse-distorama/events/2026-11.geojson"
+---

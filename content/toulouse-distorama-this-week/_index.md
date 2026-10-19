@@ -1,6 +1,6 @@
 ---
 title: "DistoraMaps"
-description: "Concerts et événements underground à Toulouse cette semaine (lundi 12 octobre 2026 – dimanche 18 octobre 2026)."
+description: "Concerts et événements underground à Toulouse cette semaine (lundi 19 octobre 2026 – dimanche 25 octobre 2026)."
 type: "toulouse-distorama-event"
 distorama_window: "this-week"
 geojson_url: "/toulouse-distorama/events/this-week.geojson"
