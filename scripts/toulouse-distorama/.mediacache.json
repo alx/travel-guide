@@ -12724,7 +12724,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "jiJa-dLRbAk",
+    "youtube_video_id": "886lII9metI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13330,7 +13330,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "nopp287zNp4",
+    "youtube_video_id": "5biLcOyt0ww",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26685,7 +26685,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "upHxIs247RI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28249,7 +28249,7 @@
     "youtube_validated": false
   },
   "FAUSTINE SEILMAN": {
-    "youtube_video_id": "",
+    "youtube_video_id": "UxDI4nN1_LM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28259,7 +28259,7 @@
         "id": "vsnXoXt_A8I",
         "title": "Faustine Seilman - The man who said no",
         "channel": "Murailles Music",
-        "views": 13028,
+        "views": 13044,
         "score": 0.51,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=vsnXoXt_A8I"
@@ -28268,8 +28268,8 @@
         "id": "UxDI4nN1_LM",
         "title": "Faustine Seilman  / Ode to the owl",
         "channel": "Faustine Seilman",
-        "views": 145,
-        "score": 5.27,
+        "views": 168,
+        "score": 5.28,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=UxDI4nN1_LM"
       },
@@ -28283,33 +28283,6 @@
         "url": "https://www.youtube.com/watch?v=vbMdSGm6dPc"
       },
       {
-        "id": "zwrA3IQqdIg",
-        "title": "Faustine Seilman @ Lyon",
-        "channel": "Ubik Lain",
-        "views": 6,
-        "score": 0.11,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=zwrA3IQqdIg"
-      },
-      {
-        "id": "nhogPj9Z2v8",
-        "title": "Laissez-nous là",
-        "channel": "Faustine Seilman - Topic",
-        "views": 56,
-        "score": 1.22,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=nhogPj9Z2v8"
-      },
-      {
-        "id": "LWAX4YAD3C0",
-        "title": "Keys are bound to be found - Faustine Seilman",
-        "channel": "Faustine Seilman",
-        "views": 4024,
-        "score": 5.45,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=LWAX4YAD3C0"
-      },
-      {
         "id": "kVmBUrZJMiQ",
         "title": "The Shepherd",
         "channel": "Faustine Seilman - Topic",
@@ -28319,21 +28292,48 @@
         "url": "https://www.youtube.com/watch?v=kVmBUrZJMiQ"
       },
       {
-        "id": "yHqUEWg1KMM",
-        "title": "Carry On",
+        "id": "HlN2B0rWfxo",
+        "title": "Soap Opera",
         "channel": "Faustine Seilman - Topic",
-        "views": 114,
-        "score": 1.26,
+        "views": 33,
+        "score": 1.19,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=yHqUEWg1KMM"
+        "url": "https://www.youtube.com/watch?v=HlN2B0rWfxo"
+      },
+      {
+        "id": "LWAX4YAD3C0",
+        "title": "Keys are bound to be found - Faustine Seilman",
+        "channel": "Faustine Seilman",
+        "views": 4025,
+        "score": 5.45,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=LWAX4YAD3C0"
+      },
+      {
+        "id": "zwrA3IQqdIg",
+        "title": "Faustine Seilman @ Lyon",
+        "channel": "Ubik Lain",
+        "views": 8,
+        "score": 0.12,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zwrA3IQqdIg"
+      },
+      {
+        "id": "nhogPj9Z2v8",
+        "title": "Laissez-nous là",
+        "channel": "Faustine Seilman - Topic",
+        "views": 57,
+        "score": 1.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=nhogPj9Z2v8"
       }
     ],
-    "youtube_score": 5.45,
-    "youtube_auto_validated": false,
+    "youtube_score": 5.28,
+    "youtube_auto_validated": true,
     "youtube_rejected_ids": [
       "LWAX4YAD3C0"
     ],
-    "youtube_validated": false
+    "youtube_validated": true
   },
   "KOSAÏ": {
     "youtube_video_id": "F8qaUERvjcw",
@@ -28940,7 +28940,7 @@
     "youtube_auto_validated": false
   },
   "After DJ Set TAZ UNIS & guest": {
-    "youtube_video_id": "44Irwuzv4O0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -29020,7 +29020,11 @@
       }
     ],
     "youtube_score": 3.4,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "44Irwuzv4O0"
+    ],
+    "youtube_validated": false
   },
   "LANES": {
     "youtube_video_id": "bqdM8Ymgw2I",
@@ -30290,7 +30294,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "AYGSjFj_cyA",
+    "youtube_video_id": "d3flxzPEwmQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
