@@ -6420,7 +6420,10 @@
       }
     ],
     "youtube_score": 3.33,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-19"
   },
   "DJ set LIQUEUR": {
     "youtube_video_id": "Zy_JR9_Y8dE",
