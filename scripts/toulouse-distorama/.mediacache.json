@@ -29110,7 +29110,10 @@
       }
     ],
     "youtube_score": 5.34,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-19"
   },
   "TRANXHAINE": {
     "youtube_video_id": "pw9DsW04uTM",
