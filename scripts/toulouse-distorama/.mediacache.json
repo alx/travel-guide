@@ -216,7 +216,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-19"
   },
   "AMORPHIA (old school thrash metal/Inde) + RECTIFIER": {
     "youtube_video_id": "",
@@ -266,10 +267,87 @@
     "bandcamp_searched": false
   },
   "ARNAVALL": {
-    "youtube_video_id": "",
+    "youtube_video_id": "29ZBDh9Jjm8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "",
+        "title": "Arnavall",
+        "channel": "",
+        "views": 0,
+        "score": 0.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v="
+      },
+      {
+        "id": "lKlph4J-SE8",
+        "title": "Arnavall, Léna - Crépuscule",
+        "channel": "Arnavall",
+        "views": 1409,
+        "score": 5.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=lKlph4J-SE8"
+      },
+      {
+        "id": "iY5w3OXu6c4",
+        "title": "Arnavall - Corail",
+        "channel": "Arnavall",
+        "views": 285,
+        "score": 5.31,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=iY5w3OXu6c4"
+      },
+      {
+        "id": "29ZBDh9Jjm8",
+        "title": "Arnavall - Opale",
+        "channel": "Arnavall",
+        "views": 4043,
+        "score": 5.45,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=29ZBDh9Jjm8"
+      },
+      {
+        "id": "NHHOGRwoLz4",
+        "title": "mon dernier son est sorti",
+        "channel": "Arnavall",
+        "views": 18,
+        "score": 2.16,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NHHOGRwoLz4"
+      },
+      {
+        "id": "EYuyBuNOvtg",
+        "title": "Arnavall - Oxyde",
+        "channel": "Arnavall",
+        "views": 2190,
+        "score": 5.42,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=EYuyBuNOvtg"
+      },
+      {
+        "id": "uGhp_W3tB30",
+        "title": "J&#39;utilise Suno pour composer ?",
+        "channel": "Arnavall",
+        "views": 642,
+        "score": 2.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=uGhp_W3tB30"
+      },
+      {
+        "id": "lsnFdQzD0Lk",
+        "title": "comment je mixe de la techno sans platine",
+        "channel": "Arnavall",
+        "views": 901,
+        "score": 2.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=lsnFdQzD0Lk"
+      }
+    ],
+    "youtube_score": 5.45,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-14"
   },
   "ARRROGANT (pk noisy) + ROTI BONDAGE": {
     "youtube_video_id": "",
@@ -3226,10 +3304,87 @@
     "youtube_validated": true
   },
   "LAMPEROUGE": {
-    "youtube_video_id": "5ZYtHupa9io",
+    "youtube_video_id": "KMPklMyNi7c",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "5ZYtHupa9io",
+        "title": "Lamperouge - Mars [Clip Officiel]",
+        "channel": "Lamperouge",
+        "views": 3469,
+        "score": 5.44,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=5ZYtHupa9io"
+      },
+      {
+        "id": "KMPklMyNi7c",
+        "title": "Lamperouge - Seize Your Mind [Live Session]",
+        "channel": "Lamperouge",
+        "views": 4889,
+        "score": 5.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=KMPklMyNi7c"
+      },
+      {
+        "id": "75p-cFEMBUs",
+        "title": "Lamperouge - Running Wild [Live]",
+        "channel": "Lamperouge",
+        "views": 1993,
+        "score": 5.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=75p-cFEMBUs"
+      },
+      {
+        "id": "PbN6aUnGy10",
+        "title": "Seize Your Mind (Live Session)",
+        "channel": "Lamperouge - Topic",
+        "views": 2013,
+        "score": 4.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=PbN6aUnGy10"
+      },
+      {
+        "id": "kJEOBXIEC34",
+        "title": "Lelouch Edit- &quot;Greater Evil&quot; #edits",
+        "channel": "tokki",
+        "views": 1210710,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kJEOBXIEC34"
+      },
+      {
+        "id": "yeHZjtI0H0A",
+        "title": "Greater evil 💀🔥 - Code Geass (Lelouch Lamperouge) Edit | MONTAGEM PEGADORA (Slowed &amp; Reverb)",
+        "channel": "XUCHIHA",
+        "views": 210749,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yeHZjtI0H0A"
+      },
+      {
+        "id": "2D2OS-9swFk",
+        "title": "Lelouch Sacrificed himself for the world&#39;s sake 😭 #anime #shorts",
+        "channel": "Shadow Kageneu ",
+        "views": 5604523,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2D2OS-9swFk"
+      },
+      {
+        "id": "NxpdQhAe04o",
+        "title": "All Hail Lelouch! - Lelouch Vi Britania &quot;Code Geass&quot; edit Montagem Batchi slowed",
+        "channel": "Spectre Reborn",
+        "views": 1187091,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NxpdQhAe04o"
+      }
+    ],
+    "youtube_score": 5.46,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-12"
   },
   "1° partie": {
     "youtube_video_id": "",
@@ -5808,7 +5963,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-06"
   },
   "Dj set EKYOZ": {
     "youtube_video_id": "SJZoEN1yfB0",
@@ -9414,10 +9570,87 @@
     "bandcamp_searched": false
   },
   "NO DRAMA": {
-    "youtube_video_id": "sAAXGAkjxiE",
+    "youtube_video_id": "em328ua_Lo8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "sAAXGAkjxiE",
+        "title": "KreyolLa - No Drama",
+        "channel": "Kreyol La Official",
+        "views": 15225552,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sAAXGAkjxiE"
+      },
+      {
+        "id": "vAh7jTAkCKc",
+        "title": "Tinashe - No Drama (Official Video) ft. Offset",
+        "channel": "TinasheOfficialVEVO",
+        "views": 39503322,
+        "score": 0.95,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vAh7jTAkCKc"
+      },
+      {
+        "id": "zDHcQGG3GPQ",
+        "title": "James Hype - No Drama (feat. Craig David) [Official Video]",
+        "channel": "James Hype",
+        "views": 7754859,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zDHcQGG3GPQ"
+      },
+      {
+        "id": "qZjfDbu6hnE",
+        "title": "Becky G, Ozuna - No Drama (Official Video)",
+        "channel": "BeckyGVEVO",
+        "views": 47258251,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=qZjfDbu6hnE"
+      },
+      {
+        "id": "em328ua_Lo8",
+        "title": "Mary J. Blige - No More Drama (Official Music Video)",
+        "channel": "MaryJBligeVEVO",
+        "views": 59290022,
+        "score": 0.97,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=em328ua_Lo8"
+      },
+      {
+        "id": "QCI_Mt_jqqU",
+        "title": "Iyanya - No Drama (Official Video)",
+        "channel": "IyanyaVEVO",
+        "views": 883735,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QCI_Mt_jqqU"
+      },
+      {
+        "id": "HyqPTnbedZQ",
+        "title": "PASKA Feat NJERAE - NO MORE DRAMA [Official Music Video]",
+        "channel": "Paska",
+        "views": 35077,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HyqPTnbedZQ"
+      },
+      {
+        "id": "5-RzuRkzcIU",
+        "title": "No Drama",
+        "channel": "B Young - Topic",
+        "views": 494174,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5-RzuRkzcIU"
+      }
+    ],
+    "youtube_score": 0.97,
+    "youtube_auto_validated": false,
+    "event_date": "2026-10-20"
   },
   "SINKS": {
     "youtube_video_id": "",
@@ -12727,7 +12960,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "886lII9metI",
+    "youtube_video_id": "edszN5QQFOg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13333,7 +13566,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "5biLcOyt0ww",
+    "youtube_video_id": "AJncpGaRxCE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28943,7 +29176,7 @@
     "youtube_auto_validated": false
   },
   "After DJ Set TAZ UNIS & guest": {
-    "youtube_video_id": "",
+    "youtube_video_id": "I_Q-d6Z1HPg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28962,19 +29195,19 @@
         "id": "whBdEtER6h0",
         "title": "How To Disable Spectating Companion In PUBG Mobile",
         "channel": "Ardent",
-        "views": 3329818,
+        "views": 3362195,
         "score": 0.82,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=whBdEtER6h0"
       },
       {
-        "id": "H-lf-jIAldY",
-        "title": "Elite class of pakistan weddings | indian culture (3)",
-        "channel": "Eli's Photography",
-        "views": 11937013,
-        "score": 0.88,
+        "id": "bon5wovrTx4",
+        "title": "THAT DRUMMER THAT DJ | GLASGOW GARAGE 2014",
+        "channel": "Ryan Hassan",
+        "views": 207,
+        "score": 0.29,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=H-lf-jIAldY"
+        "url": "https://www.youtube.com/watch?v=bon5wovrTx4"
       },
       {
         "id": "Wb19vjd-bHg",
@@ -28986,24 +29219,6 @@
         "url": "https://www.youtube.com/watch?v=Wb19vjd-bHg"
       },
       {
-        "id": "bon5wovrTx4",
-        "title": "THAT DRUMMER THAT DJ | GLASGOW GARAGE 2014",
-        "channel": "Ryan Hassan",
-        "views": 206,
-        "score": 0.29,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=bon5wovrTx4"
-      },
-      {
-        "id": "EQkIN5PeVcM",
-        "title": "Halloween  Haunted House IN HAITI",
-        "channel": "DJ Joune",
-        "views": 54,
-        "score": 0.22,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=EQkIN5PeVcM"
-      },
-      {
         "id": "rvnPsB8Q9lU",
         "title": "Sydney Blu at Ultra Music Festival 2012 - Giving It Up",
         "channel": "Alexander Justesen",
@@ -29013,16 +29228,34 @@
         "url": "https://www.youtube.com/watch?v=rvnPsB8Q9lU"
       },
       {
-        "id": "64jhyTTtxHM",
-        "title": "The funniest judge moment 🤣",
-        "channel": "America's Got Talent",
-        "views": 43321514,
-        "score": 0.95,
+        "id": "EQkIN5PeVcM",
+        "title": "Halloween  Haunted House IN HAITI",
+        "channel": "DJ Joune",
+        "views": 55,
+        "score": 0.22,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=64jhyTTtxHM"
+        "url": "https://www.youtube.com/watch?v=EQkIN5PeVcM"
+      },
+      {
+        "id": "I_Q-d6Z1HPg",
+        "title": "After leaving the show w/ Lil Flip",
+        "channel": "C.H. The Great",
+        "views": 100,
+        "score": 3.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=I_Q-d6Z1HPg"
+      },
+      {
+        "id": "70ulf6Rqw8g",
+        "title": "Krucial Kidz Ft. Boyxxfresh - Spiff&#39;D Up (2011) Prod. by Boyxxfresh",
+        "channel": "Krucial Kidz",
+        "views": 11234,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=70ulf6Rqw8g"
       }
     ],
-    "youtube_score": 3.4,
+    "youtube_score": 3.25,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "44Irwuzv4O0"
@@ -29368,7 +29601,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "bt7eI0AwnpU",
+    "youtube_video_id": "pYNwoTiKCnI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30303,7 +30536,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "d3flxzPEwmQ",
+    "youtube_video_id": "q7UI3wwxbSk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30481,5 +30714,2259 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-10-22"
+  },
+  "MEZKLAA": {
+    "youtube_candidates": [
+      {
+        "id": "R_qazDt3nHo",
+        "title": "Mezklaa - Bortian (Clip Officiel)",
+        "channel": "MEZKLAA",
+        "views": 1791,
+        "score": 5.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=R_qazDt3nHo"
+      },
+      {
+        "id": "wloj1heMdsI",
+        "title": "MEZKLAA - SOBIRANA",
+        "channel": "MEZKLAA",
+        "views": 197,
+        "score": 5.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=wloj1heMdsI"
+      },
+      {
+        "id": "dMDlqZsYnAs",
+        "title": "SOBIRANA",
+        "channel": "MEZKLAA - Topic",
+        "views": 454,
+        "score": 1.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dMDlqZsYnAs"
+      },
+      {
+        "id": "Zv1IEo31F3A",
+        "title": "Sandunga",
+        "channel": "MEZKLAA - Topic",
+        "views": 751,
+        "score": 1.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zv1IEo31F3A"
+      },
+      {
+        "id": "6duu1OghKo0",
+        "title": "Plateau de l&#39;Aubrac avec la musique du groupe MEZKLAA titre : SOBIRANA",
+        "channel": "Dronemax studio",
+        "views": 5086,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6duu1OghKo0"
+      },
+      {
+        "id": "oLb0BXYY0PM",
+        "title": "MEZKLAA - BORTIAN AHÜZKI",
+        "channel": "MEZKLAA",
+        "views": 913,
+        "score": 5.37,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=oLb0BXYY0PM"
+      },
+      {
+        "id": "D3QNGNNc3yM",
+        "title": "BORTIAN",
+        "channel": "MEZKLAA - Topic",
+        "views": 353,
+        "score": 1.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=D3QNGNNc3yM"
+      },
+      {
+        "id": "aZAn912oFsA",
+        "title": "Irreversible",
+        "channel": "La Mezzkla - Topic",
+        "views": 751,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aZAn912oFsA"
+      }
+    ],
+    "youtube_score": 5.41,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "R_qazDt3nHo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-20"
+  },
+  "THE FLYING BONES": {
+    "youtube_candidates": [
+      {
+        "id": "724j6Vo84EY",
+        "title": "THE FLYING BONES | COLTRANE (OFFICIAL VIDEO)",
+        "channel": "The Flying Bones",
+        "views": 725,
+        "score": 5.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=724j6Vo84EY"
+      },
+      {
+        "id": "iJXVR5FnKwo",
+        "title": "The Flying Bones - Exclusivité l Live Session Les Embellies.",
+        "channel": "The Flying Bones",
+        "views": 1277,
+        "score": 5.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=iJXVR5FnKwo"
+      },
+      {
+        "id": "tP-cb02f-Ek",
+        "title": "THE FLYING BONES - MUSCLES (Official video)",
+        "channel": "The Flying Bones",
+        "views": 2548,
+        "score": 5.43,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=tP-cb02f-Ek"
+      },
+      {
+        "id": "D3Eeme1RJ8M",
+        "title": "The Flying Bones - DESTRUCTION (live @ Jardin Moderne)",
+        "channel": "The Flying Bones",
+        "views": 1949,
+        "score": 5.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=D3Eeme1RJ8M"
+      },
+      {
+        "id": "EyjVHDkL12k",
+        "title": "The Flying Bones - Déception (Live-session Voyons Voir)",
+        "channel": "The Flying Bones",
+        "views": 3408,
+        "score": 5.44,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=EyjVHDkL12k"
+      },
+      {
+        "id": "5MykN3eSqiE",
+        "title": "THE FLYING BONES - INTRO MURAS (OFFICIAL VIDEO)",
+        "channel": "The Flying Bones",
+        "views": 3208,
+        "score": 5.44,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=5MykN3eSqiE"
+      },
+      {
+        "id": "iCnsUEe46v8",
+        "title": "The Flying Bones - Be A Table I Live Voyons VOIR.",
+        "channel": "Voyons VOIR.",
+        "views": 4521,
+        "score": 3.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=iCnsUEe46v8"
+      },
+      {
+        "id": "4v4mVQC-sYw",
+        "title": "Insel-Boogie der Fallschirmspringer:innen der Flying Bones",
+        "channel": "LangeoogNews",
+        "views": 687,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4v4mVQC-sYw"
+      }
+    ],
+    "youtube_score": 5.44,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "EyjVHDkL12k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-20"
+  },
+  "BOUCAN": {
+    "youtube_candidates": [
+      {
+        "id": "WQQ4pBn1gHs",
+        "title": "Keblack Ft. Franglish - Boucan (Clip Officiel)",
+        "channel": "Keblack",
+        "views": 87975062,
+        "score": 0.99,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=WQQ4pBn1gHs"
+      },
+      {
+        "id": "NMBFBj24kks",
+        "title": "GIMS - Boucan (pilule violette) (Audio officiel) ft. Jul, DJ Last One",
+        "channel": "MaitreGimsVEVO",
+        "views": 65403559,
+        "score": 0.98,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NMBFBj24kks"
+      },
+      {
+        "id": "SZfLO2vrDEQ",
+        "title": "Keblack ft. Franglish - BOUCAN (Paroles/Lyrics)",
+        "channel": "TV RAP INTERNATIONAL",
+        "views": 1423945,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SZfLO2vrDEQ"
+      },
+      {
+        "id": "pLfnC6NXuwk",
+        "title": "Keblack - Boucan Ft. Franglish (Paroles)",
+        "channel": "Ryzk  ",
+        "views": 784268,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pLfnC6NXuwk"
+      },
+      {
+        "id": "D4bDNll6L0g",
+        "title": "Molare - &quot;Le boucan&quot;",
+        "channel": "Odilon Sagbo",
+        "views": 5869123,
+        "score": 0.85,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=D4bDNll6L0g"
+      },
+      {
+        "id": "Zo7rHUo7mmc",
+        "title": "Keblack feat. Franglish - Boucan #PlanèteRap",
+        "channel": "SkyrockFM",
+        "views": 165311,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zo7rHUo7mmc"
+      },
+      {
+        "id": "8szt07xG1e4",
+        "title": "AÏE 😅😂🙈 #chute",
+        "channel": "FamilyBoulanger",
+        "views": 3504965,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8szt07xG1e4"
+      },
+      {
+        "id": "kYcNC79D7OI",
+        "title": "D.ACE - Du boucan (clip officiel)",
+        "channel": "D. Ace Officiel",
+        "views": 1431641,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kYcNC79D7OI"
+      }
+    ],
+    "youtube_score": 0.99,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "WQQ4pBn1gHs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-22"
+  },
+  "MAX LAMPIN": {
+    "youtube_candidates": [
+      {
+        "id": "I7iS0WoTv7I",
+        "title": "Max Lampin - Song 1 [Live@Le Cirque Electrique - Paris 08/04/2026]",
+        "channel": "ZeMrTurtle - SteelCarapace",
+        "views": 81,
+        "score": 3.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=I7iS0WoTv7I"
+      },
+      {
+        "id": "VMV8liyJFJA",
+        "title": "Max Lampin - Song 2 + Leptospirose [Live@Le Cirque Electrique - Paris 08/04/2026]",
+        "channel": "ZeMrTurtle - SteelCarapace",
+        "views": 19,
+        "score": 3.16,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=VMV8liyJFJA"
+      },
+      {
+        "id": "vZgxcV5JTVY",
+        "title": "Max Lampin EP-I (2016)",
+        "channel": "Max Lampin",
+        "views": 464,
+        "score": 5.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=vZgxcV5JTVY"
+      },
+      {
+        "id": "0xWrxChbJb8",
+        "title": "Max Lampin - Brûle-macro-n [Live@Le Cirque Electrique - Paris 08/04/2026]",
+        "channel": "ZeMrTurtle - SteelCarapace",
+        "views": 35,
+        "score": 3.19,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=0xWrxChbJb8"
+      },
+      {
+        "id": "fsHsSdKvmTw",
+        "title": "Faux contact - Max Lampin @ Grrrnd Zero, 13 mai 2022",
+        "channel": "Max Lampin",
+        "views": 196,
+        "score": 5.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=fsHsSdKvmTw"
+      },
+      {
+        "id": "nc8GK0r3oLc",
+        "title": "Max Lampin EP-II (2018)",
+        "channel": "Max Lampin",
+        "views": 87,
+        "score": 5.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=nc8GK0r3oLc"
+      },
+      {
+        "id": "bxVZuOJWZ-I",
+        "title": "MAX LAMPIN live at Micro Festival Hors Norme in Dole [11022017]",
+        "channel": "subversix",
+        "views": 137,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=bxVZuOJWZ-I"
+      },
+      {
+        "id": "d8uPimeaBHo",
+        "title": "MAX LAMPIN - Mollo Bobby Fest - Pouligny Saint-Pierre - 2017",
+        "channel": "Bertrand M.",
+        "views": 181,
+        "score": 0.28,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=d8uPimeaBHo"
+      }
+    ],
+    "youtube_score": 5.33,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "vZgxcV5JTVY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-22"
+  },
+  "DOCKS": {
+    "youtube_candidates": [
+      {
+        "id": "GA26fJtSWPg",
+        "title": "EA FC 27 | Career Mode | #25 | NEW SEASON, EIGHT NEW SIGNINGS!",
+        "channel": "docks",
+        "views": 17024,
+        "score": 2.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GA26fJtSWPg"
+      },
+      {
+        "id": "fRAAOLHJFG8",
+        "title": "EA FC 27 | Career Mode | #1 | Coventry City",
+        "channel": "docks",
+        "views": 185559,
+        "score": 2.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fRAAOLHJFG8"
+      },
+      {
+        "id": "BdKz9-4vkXQ",
+        "title": "Solo Raiding Docks in BRM5 is an absolute blast",
+        "channel": "TacoFettJr",
+        "views": 4405,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BdKz9-4vkXQ"
+      },
+      {
+        "id": "b6wUgTFOl64",
+        "title": "Docks - Chacun ses raisons",
+        "channel": "KalashCriminelVEVO",
+        "views": 792478,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b6wUgTFOl64"
+      },
+      {
+        "id": "tb4637nHXtI",
+        "title": "Docks - Crâne Ouvert",
+        "channel": "Docks Officiel",
+        "views": 443567,
+        "score": 1.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tb4637nHXtI"
+      },
+      {
+        "id": "vBTcDtKEoqU",
+        "title": "Building your own dock",
+        "channel": "Dock.Shop",
+        "views": 192076,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vBTcDtKEoqU"
+      },
+      {
+        "id": "BdvU2ljbKa0",
+        "title": "Docks X Kalash Criminel - Fuck les Vices",
+        "channel": "Docks Officiel",
+        "views": 1835022,
+        "score": 1.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BdvU2ljbKa0"
+      },
+      {
+        "id": "ZZXmFlPzQGA",
+        "title": "Pintu Keluar Masuk Air Laut Kapal Pesiar",
+        "channel": "Aqoy YTB",
+        "views": 47475,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZZXmFlPzQGA"
+      }
+    ],
+    "youtube_score": 2.66,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "fRAAOLHJFG8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-31"
+  },
+  "HAPPY VALLEY BOYS & d'autres": {
+    "youtube_candidates": [
+      {
+        "id": "CF-hTqTd2rY",
+        "title": "Happy Valley Bande Annonce HD VOSTFR",
+        "channel": "RaphMania",
+        "views": 2680,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CF-hTqTd2rY"
+      },
+      {
+        "id": "eVRyk-igXpE",
+        "title": "Elle revoit le PDG aimé à un rencard, mariage contractuel, ils tombent progressivement amoureux",
+        "channel": "Télé Romance Éclatante",
+        "views": 5012,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=eVRyk-igXpE"
+      },
+      {
+        "id": "XOxfe26KNUw",
+        "title": "Él es alérgico a las mujeres, pero la ata a él: «Eres la única que deseo.»",
+        "channel": "Corazón Herido",
+        "views": 1075,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XOxfe26KNUw"
+      },
+      {
+        "id": "yCy3gJ5kjyY",
+        "title": "Unsolved Horror in Happy Valley | The 1967 Stabbing of Keith Lyon",
+        "channel": "Crimes That Haunt Us ",
+        "views": 15569,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yCy3gJ5kjyY"
+      },
+      {
+        "id": "_QXxPh2QyFk",
+        "title": "Leurs familles se détestent, leur amour est plus fort que tout | Film de Noël Complet en Français",
+        "channel": "Boxoffice Films de Noël",
+        "views": 40034,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_QXxPh2QyFk"
+      },
+      {
+        "id": "kEd6fpiIpoA",
+        "title": "Thriller à suspense | Elle rencontre un inconnu du web et DISPARAÎT | 16 and Missing | Film complet",
+        "channel": "TitanumX - Thrillers & Suspense en français",
+        "views": 13257,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kEd6fpiIpoA"
+      },
+      {
+        "id": "ELCPr45flNU",
+        "title": "माफिया बॉस सभी महिलाओं को ठुकराता है,वह उस शिक्षिका पर आसक्त हो जाता है जो उसके टैटू पार्लर में आई।！",
+        "channel": "कॉटन कैंडी थिएटर",
+        "views": 188799,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ELCPr45flNU"
+      },
+      {
+        "id": "E-0jUJdCANU",
+        "title": "शादी की मुलाकात में वह छुपे प्यार के सीईओ से मिली, अनुबंध विवाह, साथ रहकर प्यार में पड़े！",
+        "channel": "रोमांस खिलता टीवी",
+        "views": 17614,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=E-0jUJdCANU"
+      }
+    ],
+    "youtube_score": 0.66,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-31",
+    "youtube_rejected_ids": [
+      "ELCPr45flNU"
+    ],
+    "youtube_validated": false
+  },
+  "CURTAIN": {
+    "youtube_candidates": [
+      {
+        "id": "-UFjc45pCJY",
+        "title": "5 Rules For Hanging Curtains &amp; Common Mistakes to Avoid!",
+        "channel": "Reynard Lowell",
+        "views": 819986,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-UFjc45pCJY"
+      },
+      {
+        "id": "1FVPq2c5M-k",
+        "title": "Easy way to hang window curtain with these no drill curtain brackets! 🪟",
+        "channel": "Jeff & Lauren Show",
+        "views": 193745,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1FVPq2c5M-k"
+      },
+      {
+        "id": "F1QfjX6M5Qk",
+        "title": "Who&#39;s Behind the Curtain Challenge! | IQ Test for Saja Boys | Kpop Demon Hunters",
+        "channel": "Dogiaemon",
+        "views": 358928,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=F1QfjX6M5Qk"
+      },
+      {
+        "id": "T9nKVV4-wTQ",
+        "title": "10 Curtain Mistakes That Make Your Home Look Cheap (How to Fix Them!)",
+        "channel": "Cozy DIY Home",
+        "views": 1279864,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=T9nKVV4-wTQ"
+      },
+      {
+        "id": "zljYAP1t2zI",
+        "title": "Installing IKEA VIDGA floor to ceiling curtain track 👷🏻‍♀️✨",
+        "channel": "michaela witter",
+        "views": 440645,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zljYAP1t2zI"
+      },
+      {
+        "id": "y2ta0R85wBU",
+        "title": "Curtain Bangs at Home 🫶🏻 How to cut curtain bangs yourself #haircutting #shorts",
+        "channel": "Beauty's (Glow up) ☁️",
+        "views": 38501,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=y2ta0R85wBU"
+      },
+      {
+        "id": "tKXOy9UzlAw",
+        "title": "Easy Ripple Fold Curtain Installation (One Person Setup) #hugmoom #homedecor #home #interiordesign",
+        "channel": "Hugmoom curtains",
+        "views": 1001742,
+        "score": 1.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tKXOy9UzlAw"
+      },
+      {
+        "id": "BDt8mdnrRqA",
+        "title": "How to install luxury curtain at home #tips #tricks #homedecor #curtains",
+        "channel": "Curtips",
+        "views": 671476,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BDt8mdnrRqA"
+      }
+    ],
+    "youtube_score": 1.75,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "tKXOy9UzlAw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-03"
+  },
+  "JONI & HÖLLING-SAUZEN": {
+    "youtube_candidates": [
+      {
+        "id": "O554ZTfRt10",
+        "title": "Scots",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 47,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=O554ZTfRt10"
+      },
+      {
+        "id": "JFJVrRmYYas",
+        "title": "Not an artist",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 6,
+        "score": 0.11,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JFJVrRmYYas"
+      },
+      {
+        "id": "C3pY_qhKMqg",
+        "title": "Joni Hölling-Sauzen - Look -",
+        "channel": "Joni Hölling Sauzen",
+        "views": 73,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=C3pY_qhKMqg"
+      },
+      {
+        "id": "1cTZ-4kvJZI",
+        "title": "Today",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 22,
+        "score": 0.17,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1cTZ-4kvJZI"
+      },
+      {
+        "id": "KXBcWDWcDKQ",
+        "title": "NO memory (aka Aloïs)",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 16,
+        "score": 0.15,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KXBcWDWcDKQ"
+      },
+      {
+        "id": "pFmAiK9xv0I",
+        "title": "Old",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 5,
+        "score": 0.1,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pFmAiK9xv0I"
+      },
+      {
+        "id": "blCBgDjLJMA",
+        "title": "Whatever",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 60,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=blCBgDjLJMA"
+      },
+      {
+        "id": "2fYipMMv6lE",
+        "title": "Swipe",
+        "channel": "Joni & Hölling Sauzen - Topic",
+        "views": 30,
+        "score": 0.19,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2fYipMMv6lE"
+      }
+    ],
+    "youtube_score": 0.23,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "C3pY_qhKMqg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-03"
+  },
+  "LOL TOLHURST": {
+    "youtube_candidates": [
+      {
+        "id": "OxfsYzV8vDY",
+        "title": "Lol Tolhurst Discusses His Memoir, &quot;Cured: The Tale Of Two Imaginary Boys&quot; | BUILD Series",
+        "channel": "BUILD Series",
+        "views": 80663,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OxfsYzV8vDY"
+      },
+      {
+        "id": "SaYf671rJkI",
+        "title": "Lol Tolhurst x Budgie - A Forest (Live on KEXP)",
+        "channel": "KEXP",
+        "views": 177356,
+        "score": 3.66,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=SaYf671rJkI"
+      },
+      {
+        "id": "8Tq0MDbj04A",
+        "title": "The Story Behind The Cure&#39;s &quot;Boys Don&#39;t Cry&quot; with Lol Tolhurst",
+        "channel": "Consequence",
+        "views": 43896,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8Tq0MDbj04A"
+      },
+      {
+        "id": "BZ_vaefmCIY",
+        "title": "LOL TOLHURST &amp; GRAY - Live in France 2025",
+        "channel": "FD Films - FD sessions",
+        "views": 8370,
+        "score": 3.49,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=BZ_vaefmCIY"
+      },
+      {
+        "id": "VOATmo7gMmw",
+        "title": "LoL Tolhurst (...The CuRE...) @ Lille / l&#39;AéroNef - 30.04.2025 (...4k full ShoW...)",
+        "channel": "Linkeyes",
+        "views": 7224,
+        "score": 3.48,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=VOATmo7gMmw"
+      },
+      {
+        "id": "I-UeiC22l4I",
+        "title": "The Cure Fired Lol Tolhurst &amp; It&#39;s No Secret Why #TheCure #Band #Tragic",
+        "channel": "Grunge",
+        "views": 35329,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=I-UeiC22l4I"
+      },
+      {
+        "id": "Nkt-YmB5r1k",
+        "title": "Have You Heard What REALLY Happened to Lol Tolhurst?",
+        "channel": "Rock Discovery",
+        "views": 1098,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Nkt-YmB5r1k"
+      },
+      {
+        "id": "V-NCevbSRQw",
+        "title": "Lol Tolhurst discussing his memoir - Cured",
+        "channel": "Quercus Books",
+        "views": 20045,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=V-NCevbSRQw"
+      }
+    ],
+    "youtube_score": 3.66,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "SaYf671rJkI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-03"
+  },
+  "THE LET’S GO’S": {
+    "youtube_candidates": [
+      {
+        "id": "Eox5ZMIBzxY",
+        "title": "The Let&#39;s Go&#39;s (Japan) @ New Cross Inn 24/09/25",
+        "channel": "kram srednuas",
+        "views": 1930,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Eox5ZMIBzxY"
+      },
+      {
+        "id": "o7boTXBbGpQ",
+        "title": "【MV】THE LET&#39;S GO’ｓ/怪獣レッツゴーズ　Music Video",
+        "channel": "TheLetsGosShow",
+        "views": 50037,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=o7boTXBbGpQ"
+      },
+      {
+        "id": "tk2ZsUvca0Y",
+        "title": "【MV】はじまりのいろ/THE LET&#39;S GO&#39;s",
+        "channel": "TheLetsGosShow",
+        "views": 4015,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tk2ZsUvca0Y"
+      },
+      {
+        "id": "2xAZlirrma4",
+        "title": "THE LET&#39;S GO&#39;s 革のブーツ　Music Video",
+        "channel": "TheLetsGosShow",
+        "views": 19995,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2xAZlirrma4"
+      },
+      {
+        "id": "F4D2QE46TiE",
+        "title": "Girls Rock | THE LET&#39;S GO&#39;S at 2022 SXSW Music Festival",
+        "channel": "SXSW",
+        "views": 7154,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=F4D2QE46TiE"
+      },
+      {
+        "id": "ntepr3wWgcM",
+        "title": "【MV】リフレイン/THE LET&#39;S GO&#39;s",
+        "channel": "TheLetsGosShow",
+        "views": 4503,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ntepr3wWgcM"
+      },
+      {
+        "id": "8E_pwBKayrg",
+        "title": "Ring Ring Ring",
+        "channel": "THE LET'S GO's - Topic",
+        "views": 10123,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8E_pwBKayrg"
+      },
+      {
+        "id": "Z9eLK2eJeo8",
+        "title": "The Let&#39;s Gos #2  - Halloween Ball 2024 - Shinjuku Loft, Tokyo, Japan",
+        "channel": "smartabrett",
+        "views": 157,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Z9eLK2eJeo8"
+      }
+    ],
+    "youtube_score": 0.59,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "o7boTXBbGpQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-03"
+  },
+  "Pédales & Vandales #2 « Queervember » : RUM3UR": {
+    "youtube_video_id": "ctuDu_atfPw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-04"
+  },
+  "LES TARDIGRADES": {
+    "youtube_candidates": [
+      {
+        "id": "oH2zEZeBFQQ",
+        "title": "Ils étudient le Tardigrade, le plus étonnant des animaux | ARTE",
+        "channel": "ARTE",
+        "views": 41708,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oH2zEZeBFQQ"
+      },
+      {
+        "id": "ruL_7UT2Wsc",
+        "title": "LES TARDIGRADES - Mon Poisson Rouge est Noir (titre provisoire) - Vidéo Lyrics",
+        "channel": "Les Tardigrades",
+        "views": 2957,
+        "score": 5.43,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ruL_7UT2Wsc"
+      },
+      {
+        "id": "yerrtSj1fF4",
+        "title": "Le tardigrade est l&#39;animal le plus indestructible au monde",
+        "channel": "Brut",
+        "views": 1612228,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yerrtSj1fF4"
+      },
+      {
+        "id": "x1hBvNQlMcg",
+        "title": "Les super-pouvoirs du tardigrade pourraient changer nos vies !",
+        "channel": "Brut",
+        "views": 84640,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=x1hBvNQlMcg"
+      },
+      {
+        "id": "7YjdZRfZTZM",
+        "title": "Comment les tardigrades défient la mort | Actu de science",
+        "channel": "Le Blob",
+        "views": 16044,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7YjdZRfZTZM"
+      },
+      {
+        "id": "v5ZFJdHXUtg",
+        "title": "Une Créature Unique Qui ne Peut Pas être Tuée",
+        "channel": "SYMPA",
+        "views": 185639,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=v5ZFJdHXUtg"
+      },
+      {
+        "id": "9DviEyvcshE",
+        "title": "HENGE - Tardigrades",
+        "channel": "HENGE",
+        "views": 363070,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9DviEyvcshE"
+      },
+      {
+        "id": "Hv7XFq2zcRo",
+        "title": "Tardigrade at 0x, 40x, 100x and 400x magnification!",
+        "channel": "Walt (oneminmicro)",
+        "views": 5608231,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Hv7XFq2zcRo"
+      }
+    ],
+    "youtube_score": 5.43,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "ruL_7UT2Wsc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-06"
+  },
+  "AFTER BARCELONA": {
+    "youtube_candidates": [
+      {
+        "id": "Nx1Ob3KoMKg",
+        "title": "🎧  Barcelona After Work | Deep House Relax Mix",
+        "channel": "Barcelona Sessions",
+        "views": 254261,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Nx1Ob3KoMKg"
+      },
+      {
+        "id": "U7yeLDVS4EE",
+        "title": "Barcelona After Hours — Luxury Coastal Deep House Radio",
+        "channel": "After Hours Radio",
+        "views": 6581,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=U7yeLDVS4EE"
+      },
+      {
+        "id": "ImZ6r2oMFxU",
+        "title": "HANSI FLICK&#39;S GENIUS PLAN After Barcelona&#39;s Defensive Crisis 😳",
+        "channel": "OFFSIDE STORIES",
+        "views": 41390,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ImZ6r2oMFxU"
+      },
+      {
+        "id": "8kyjpRe5FKY",
+        "title": "Barcelona After Hours 🌙 | Mediterranean Retro Mix · 1986",
+        "channel": "Fros Radio",
+        "views": 257,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8kyjpRe5FKY"
+      },
+      {
+        "id": "t4Q_wanZVbw",
+        "title": "BARCELONA Before Hansi Flick vs After Hansi Flick || CREDIT: Hamid Sahari",
+        "channel": "Elivision ",
+        "views": 7395,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=t4Q_wanZVbw"
+      },
+      {
+        "id": "6hNiiwzbKoo",
+        "title": "😱 béticos tras el robo del Barcelona #vikingoblanco",
+        "channel": "Vikingo Blanco Shorts",
+        "views": 27313,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6hNiiwzbKoo"
+      },
+      {
+        "id": "9SROWY5jGDA",
+        "title": "PSG-Barcelone : &quot;Je ne vois AUCUNE FAIBLESSE au BARÇA !&quot;",
+        "channel": "AFTER FOOT",
+        "views": 40666,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9SROWY5jGDA"
+      },
+      {
+        "id": "EllEKpSpHbs",
+        "title": "Lamine Yamal Got HEADBUTTED After Barcelona Robbed Betis?! 😳💀",
+        "channel": "Bullet Ball",
+        "views": 5237,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EllEKpSpHbs"
+      }
+    ],
+    "youtube_score": 0.68,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Nx1Ob3KoMKg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
+  },
+  "THE DREAM MACHINE UK": {
+    "youtube_candidates": [
+      {
+        "id": "l1Fkx6AOuG8",
+        "title": "SML Movie: The Dream Machine!",
+        "channel": "SML",
+        "views": 29909914,
+        "score": 0.93,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=l1Fkx6AOuG8"
+      },
+      {
+        "id": "EbJXy8szcBE",
+        "title": "THE DREAM MACHINE | Award-winning Short Film | Mystery/Thriller/Sci-fi",
+        "channel": "Embring Sterner Entertainment",
+        "views": 9751,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EbJXy8szcBE"
+      },
+      {
+        "id": "3lOQ4Tv7iDs",
+        "title": "The Dream Machine - Fort Perch Rock (Official Video)",
+        "channel": "The Dream Machine",
+        "views": 9564,
+        "score": 1.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3lOQ4Tv7iDs"
+      },
+      {
+        "id": "wI2yAzBH0sc",
+        "title": "Dream Machines - Azaad 4L (Visuals) | Desi Trap Music | Latest Punjabi Songs 2026",
+        "channel": "AZAAD 4L",
+        "views": 125064,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wI2yAzBH0sc"
+      },
+      {
+        "id": "aHGXVW0fYp4",
+        "title": "Tokio Hotel - Dream Machine - Dream Machine - Album [AUDIO]",
+        "channel": "Tokio Hotel",
+        "views": 534606,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aHGXVW0fYp4"
+      },
+      {
+        "id": "e8TmBe4J6kA",
+        "title": "The Dream Machine - Flowers On The Razorwire (Official Video)",
+        "channel": "The Dream Machine",
+        "views": 2857,
+        "score": 1.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=e8TmBe4J6kA"
+      },
+      {
+        "id": "CpCuj0aAwOg",
+        "title": "The Dream Machine - Angel Heart (Official)",
+        "channel": "dreammachineVEVO",
+        "views": 1592,
+        "score": 0.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CpCuj0aAwOg"
+      },
+      {
+        "id": "Ifk8P5f07Sk",
+        "title": "Snug Live Sessions - Dream Machine",
+        "channel": "Snug Live Sessions",
+        "views": 597,
+        "score": 3.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Ifk8P5f07Sk"
+      }
+    ],
+    "youtube_score": 3.35,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Ifk8P5f07Sk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
+  },
+  "COMPLOTS": {
+    "youtube_candidates": [
+      {
+        "id": "Pe_KJJ6IwBA",
+        "title": "PATRICE LE COMPLOTISTE, 73 ANS : IL CROIT À TOUTES LES THÉORIES DU COMPLOT ET NOUS EXPLIQUE POURQUOI",
+        "channel": "LEGEND",
+        "views": 3979186,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Pe_KJJ6IwBA"
+      },
+      {
+        "id": "WUfnVYhyQf8",
+        "title": "L’Iceberg des PIRES Théories du Complot !",
+        "channel": "Conte Fécond",
+        "views": 3042642,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=WUfnVYhyQf8"
+      },
+      {
+        "id": "l1o3szKk8Bw",
+        "title": "Ces théories du complot presque parfaites",
+        "channel": "Trash",
+        "views": 582333,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=l1o3szKk8Bw"
+      },
+      {
+        "id": "rK_etT-KR1k",
+        "title": "Le mystère du Col Dyatlov - Le Bureau des Complots",
+        "channel": "RTBF",
+        "views": 4575,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rK_etT-KR1k"
+      },
+      {
+        "id": "Fd08B0mBQq0",
+        "title": "L&#39;ICEBERG des PIRES THÉORIES du COMPLOT ! (100% expliqué)",
+        "channel": "Kratos & Jo",
+        "views": 330114,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Fd08B0mBQq0"
+      },
+      {
+        "id": "kmBm6gDaNxY",
+        "title": "Mario et les jeux Nintendo - Le Complot",
+        "channel": "Le Before du Grand Journal - CANAL+",
+        "views": 3217653,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kmBm6gDaNxY"
+      },
+      {
+        "id": "dFW9YO40aOY",
+        "title": "DOCUMENTAIRE - COMPLOTS LE GRAND VIRAGE",
+        "channel": "LE GRAND VIRAGE",
+        "views": 80664,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dFW9YO40aOY"
+      },
+      {
+        "id": "GS2hn1D3YoA",
+        "title": "J&#39;ai Enquêté sur 10 Théories du Complot. Elles étaient VRAIES.",
+        "channel": "Twaylo",
+        "views": 347926,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GS2hn1D3YoA"
+      }
+    ],
+    "youtube_score": 0.82,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Pe_KJJ6IwBA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-10"
+  },
+  "Tournoi de Scopa!": {
+    "youtube_candidates": [
+      {
+        "id": "PnFi0dNeVV4",
+        "title": "RUBAMAZZO - Steal Your Way to Victory with this Classic Italian Scopa-style Card Game!",
+        "channel": "Play-In Games",
+        "views": 6670,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=PnFi0dNeVV4"
+      },
+      {
+        "id": "bTpadSnRPgI",
+        "title": "Growing Up Italian Scopa Tournament | LOST IN THE SAUCE",
+        "channel": "Growing Up Italian",
+        "views": 6337,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bTpadSnRPgI"
+      },
+      {
+        "id": "VmYFB6gcHAU",
+        "title": "Scopa Tournament 2019",
+        "channel": "Growing Up Italian",
+        "views": 1933,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VmYFB6gcHAU"
+      },
+      {
+        "id": "5j_0BnaZ7Cg",
+        "title": "La Scopa - NaCLIPS",
+        "channel": "NaCLIPS - Napoli Cultura e Lingua Italiana Per Stranieri",
+        "views": 134,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5j_0BnaZ7Cg"
+      },
+      {
+        "id": "rbmGmOIM9io",
+        "title": "Scopa fratelli Aiello",
+        "channel": "Charlie Aiello",
+        "views": 359,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rbmGmOIM9io"
+      },
+      {
+        "id": "9n6wGdCz-SU",
+        "title": "The king of scopa",
+        "channel": "Growing Up Italian",
+        "views": 6623,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9n6wGdCz-SU"
+      },
+      {
+        "id": "c6XDmlsrBGg",
+        "title": "2nd Annual Growing Up Italian Scopa Tournament",
+        "channel": "Growing Up Italian",
+        "views": 1454,
+        "score": 0.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=c6XDmlsrBGg"
+      },
+      {
+        "id": "KUr6bHafBtw",
+        "title": "FC Barcelona Beisbol Jonathan Garcia Final SCopa Juvenil 07",
+        "channel": "Club Beisbol Softbol Barcelona",
+        "views": 762,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KUr6bHafBtw"
+      }
+    ],
+    "youtube_score": 0.48,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "PnFi0dNeVV4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-11"
+  },
+  ".MADCHAMB": {
+    "youtube_candidates": [
+      {
+        "id": "1qfZ2-iWh5w",
+        "title": "The Door - .madchamb [Official Music Video]",
+        "channel": "madchamb",
+        "views": 732,
+        "score": 1.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1qfZ2-iWh5w"
+      },
+      {
+        "id": "fDrGXzPZ2yA",
+        "title": "Annonce du projet solo &quot;madchamb&quot; (26.03.2025)",
+        "channel": "madchamb",
+        "views": 127,
+        "score": 1.26,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fDrGXzPZ2yA"
+      },
+      {
+        "id": "a3Z4FN8AKIs",
+        "title": "Lost Bet",
+        "channel": "madchamb - Topic",
+        "views": 312,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=a3Z4FN8AKIs"
+      },
+      {
+        "id": "jMtcPHYf-XQ",
+        "title": ".madchamb - Despicable [official lyrics video]",
+        "channel": "madchamb",
+        "views": 1871,
+        "score": 1.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jMtcPHYf-XQ"
+      },
+      {
+        "id": "B5qyw4hwmvU",
+        "title": "The Door",
+        "channel": "madchamb - Topic",
+        "views": 342,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=B5qyw4hwmvU"
+      },
+      {
+        "id": "mcCKbB4Jr-A",
+        "title": "Despicable",
+        "channel": "madchamb - Topic",
+        "views": 396,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mcCKbB4Jr-A"
+      },
+      {
+        "id": "zUTZ5CDwdUo",
+        "title": ".madchamb - annoying bug",
+        "channel": "mathieu chambert",
+        "views": 331,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zUTZ5CDwdUo"
+      },
+      {
+        "id": "8hJg-6eJEtU",
+        "title": "The Deceiver",
+        "channel": "madchamb - Topic",
+        "views": 157,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8hJg-6eJEtU"
+      }
+    ],
+    "youtube_score": 1.41,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "jMtcPHYf-XQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-12"
+  },
+  "DOUCE ANGOISSE": {
+    "youtube_candidates": [
+      {
+        "id": "aSaeI7QcuDg",
+        "title": "Egoista music video &quot;Xanax and coffee&quot;.    ",
+        "channel": "Douce Angoisse",
+        "views": 696,
+        "score": 2.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aSaeI7QcuDg"
+      },
+      {
+        "id": "iLieeGSjBjE",
+        "title": "DOUCE ANGOISSE - Miscommunication",
+        "channel": "Douce Angoisse",
+        "views": 2174,
+        "score": 5.42,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=iLieeGSjBjE"
+      },
+      {
+        "id": "Hv51kCu1Ksg",
+        "title": "Douce Angoisse - Lolita fais-moi mal",
+        "channel": "Douce Angoisse",
+        "views": 10164,
+        "score": 5.5,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Hv51kCu1Ksg"
+      },
+      {
+        "id": "jvZp4FkRTOE",
+        "title": "Douce Angoisse - 9h11",
+        "channel": "Stanze Fredde Records",
+        "views": 429,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jvZp4FkRTOE"
+      },
+      {
+        "id": "7Kif8iGNJhQ",
+        "title": "“Pourquoi” Douce Angoisse FT Juno Martian",
+        "channel": "Douce Angoisse",
+        "views": 600,
+        "score": 5.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=7Kif8iGNJhQ"
+      },
+      {
+        "id": "UsgG45oXfgU",
+        "title": "Douce Angoisse * Tonight",
+        "channel": "Angel in the Dark",
+        "views": 587,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=UsgG45oXfgU"
+      },
+      {
+        "id": "RP0qkVyVfIo",
+        "title": "Feliz funeral",
+        "channel": "Douce Angoisse",
+        "views": 636,
+        "score": 2.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RP0qkVyVfIo"
+      },
+      {
+        "id": "jRVP72Ck7MA",
+        "title": "DOUCE ANGOISSE - Moi Gitan, toi Jane.",
+        "channel": "Douce Angoisse",
+        "views": 6973,
+        "score": 5.48,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=jRVP72Ck7MA"
+      }
+    ],
+    "youtube_score": 5.5,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Hv51kCu1Ksg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "FREAKENCY": {
+    "youtube_candidates": [
+      {
+        "id": "8d5zksy3vd8",
+        "title": "High Tone - Freakency",
+        "channel": "High Tone",
+        "views": 7311,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8d5zksy3vd8"
+      },
+      {
+        "id": "WXI2afzX7Es",
+        "title": "FREAKENCY - SET TECHNO ACID 1",
+        "channel": "FREAKENCY",
+        "views": 38,
+        "score": 5.2,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=WXI2afzX7Es"
+      },
+      {
+        "id": "i8BplUuKm8g",
+        "title": "Healing Frequency Music: Breathing Frequency, Lung Healing Frequency",
+        "channel": "Good Vibes - Binaural Beats",
+        "views": 153998,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=i8BplUuKm8g"
+      },
+      {
+        "id": "XlBvo9gX0z4",
+        "title": "(FREAKENCY VST TEST) AAEIC &amp;quot;FREAKENCY 002&amp;quot;",
+        "channel": "Mediabritishkiddopia Extras",
+        "views": 59,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XlBvo9gX0z4"
+      },
+      {
+        "id": "5rjtp2QLphE",
+        "title": "Let go of Sadness &amp; Depression | Positive Energy 417Hz Healing Love Frequency Meditation Music",
+        "channel": "Inner Lotus Music",
+        "views": 461614,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5rjtp2QLphE"
+      },
+      {
+        "id": "MK9PMr71ty4",
+        "title": "The DEEPEST Healing Frequency 》174 Hz 》Pain Relieving Sound Bath",
+        "channel": "Meditative Mind",
+        "views": 2907943,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=MK9PMr71ty4"
+      },
+      {
+        "id": "5H7E6bNWwgY",
+        "title": "AAEIC FREAKENCY 012-017",
+        "channel": "Mediabritishkiddopia Extras",
+        "views": 30,
+        "score": 0.19,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5H7E6bNWwgY"
+      },
+      {
+        "id": "SGIb-rOdXcA",
+        "title": "Music for Cats in Pain: 174 Hz Pain Relief Frequency for Sick Cats | Reiki Healing Sounds",
+        "channel": "Oh My Cat",
+        "views": 23205,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SGIb-rOdXcA"
+      }
+    ],
+    "youtube_score": 5.2,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "WXI2afzX7Es",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "MYLLA ISSUES": {
+    "youtube_candidates": [
+      {
+        "id": "kiQiMW-XHIw",
+        "title": "MYLLA ISSUES - Creature of June (Official Video)",
+        "channel": "MYLLA ISSUES",
+        "views": 4998,
+        "score": 5.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=kiQiMW-XHIw"
+      },
+      {
+        "id": "s7vuSx6rNvE",
+        "title": "MYLLA ISSUES - Modern Vampires (Official Music Video)",
+        "channel": "waverecordsmusic",
+        "views": 3067,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=s7vuSx6rNvE"
+      },
+      {
+        "id": "sgad2ObOBn8",
+        "title": "MYLLA ISSUES - Cold Hearted Snake",
+        "channel": "MYLLA ISSUES",
+        "views": 1396,
+        "score": 5.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=sgad2ObOBn8"
+      },
+      {
+        "id": "a2OkKfgeUvQ",
+        "title": "MYLLA ISSUES &quot;Hollow Way&quot; Official Music Video",
+        "channel": "waverecordsmusic",
+        "views": 19245,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=a2OkKfgeUvQ"
+      },
+      {
+        "id": "aOeHMRQJ7t8",
+        "title": "Mylla Issues - &quot;Cold Hearted Snake&quot; Official Music Video",
+        "channel": "waverecordsmusic",
+        "views": 707,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aOeHMRQJ7t8"
+      },
+      {
+        "id": "V7E0dDoxVLQ",
+        "title": "MYLLA ISSUES &quot;R!OT WITCH&quot; Official Music Video",
+        "channel": "waverecordsmusic",
+        "views": 1116,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=V7E0dDoxVLQ"
+      },
+      {
+        "id": "8PlT5bsKY2c",
+        "title": "MYLLA ISSUES - MODERN VAMPIRES (FANS VIDEO) + Lyrics 🦇",
+        "channel": "MYLLA ISSUES",
+        "views": 575,
+        "score": 5.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=8PlT5bsKY2c"
+      },
+      {
+        "id": "JsnNQ5XqDbA",
+        "title": "Mylla Issues - Haunter (Official Video)",
+        "channel": "Yami Spechie",
+        "views": 2551,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JsnNQ5XqDbA"
+      }
+    ],
+    "youtube_score": 5.46,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "kiQiMW-XHIw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "BLACK DIAMOND": {
+    "youtube_candidates": [
+      {
+        "id": "Tn58-Nl9NYw",
+        "title": "Stratovarius - Black Diamond",
+        "channel": "ggonza43",
+        "views": 42294238,
+        "score": 0.95,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Tn58-Nl9NYw"
+      },
+      {
+        "id": "v1QZsWZ2VAI",
+        "title": "Black Diamond Presents: Hard Sends with Seb Bouin—Le Chant des Muses (9b/5.15b)",
+        "channel": "Black Diamond Equipment",
+        "views": 104705,
+        "score": 1.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=v1QZsWZ2VAI"
+      },
+      {
+        "id": "tk6raObLMq8",
+        "title": "Black Diamond Presents: The Pirates Code",
+        "channel": "Black Diamond Equipment",
+        "views": 96500,
+        "score": 1.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tk6raObLMq8"
+      },
+      {
+        "id": "msEgf9r8NIA",
+        "title": "Black Diamond (Remastered 1997)",
+        "channel": "Kiss - Topic",
+        "views": 3372920,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=msEgf9r8NIA"
+      },
+      {
+        "id": "yy4opYZW1cQ",
+        "title": "Black Diamond - Kiss | The Midnight Special",
+        "channel": "The Midnight Special",
+        "views": 1866747,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yy4opYZW1cQ"
+      },
+      {
+        "id": "ntBfadNLck0",
+        "title": "Stratovarius - Black Diamond (Live At Loud Park Festival 2013)",
+        "channel": "Fernando Power 7",
+        "views": 232703,
+        "score": 3.67,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ntBfadNLck0"
+      },
+      {
+        "id": "EKIIW2XnqQA",
+        "title": "Stratovarius - Black Diamond (&#39;&#39;Tuska Open Air&#39;&#39;, Helsinki 11.07.2003)",
+        "channel": "Stratovarius Official",
+        "views": 245874,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EKIIW2XnqQA"
+      },
+      {
+        "id": "CU--j8KvYXY",
+        "title": "Blaq Diamond - Woza My Love (Official Music Video)",
+        "channel": "Ambitiouz Entertainment",
+        "views": 22811770,
+        "score": 0.92,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CU--j8KvYXY"
+      }
+    ],
+    "youtube_score": 3.67,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "ntBfadNLck0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-19"
+  },
+  "KENTÜS": {
+    "youtube_candidates": [
+      {
+        "id": "GLpGIp-kdao",
+        "title": "🎧 KENTÜS – DJ Set Drum &amp; Bass | Day Session @ Pech-David 🌄 | Monkat Lab",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 136,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=GLpGIp-kdao"
+      },
+      {
+        "id": "TpRRoLVKjXE",
+        "title": "Jardin Vibrant #6 | Kentüs &amp; Barjak – DJ Set Groovy &amp; Techno @ Monkat Lab",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 60,
+        "score": 3.22,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=TpRRoLVKjXE"
+      },
+      {
+        "id": "uRv9JIQTZgo",
+        "title": "Kentüs #01 | Live Ghetto funk et Bass music 🔊 | Chine &amp; Chill – Pyroliz – Jardin Monplaisir (Live)",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 90,
+        "score": 3.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=uRv9JIQTZgo"
+      },
+      {
+        "id": "2RVm6mJ7HjM",
+        "title": "Monkat lab #JardinVibrant | Kentüs &amp; Sonokaïne – DJ Set Disco Groovy Techno",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 79,
+        "score": 3.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=2RVm6mJ7HjM"
+      },
+      {
+        "id": "SlDB1JdoW-Y",
+        "title": "Kentüs qui retourne Pech David en mode DnB…Tu l’as déjà vu ? Maintenant oui 😎Énergie pure, vibes UK",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 47,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SlDB1JdoW-Y"
+      },
+      {
+        "id": "77V0HAVYGQE",
+        "title": "⚡Kentüs lâche un set plein d’énergie et de précision 💣#DrumAndBass #ElectronicScene #MonkatLab",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 88,
+        "score": 3.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=77V0HAVYGQE"
+      },
+      {
+        "id": "Sgz7dyYszFs",
+        "title": "Monkat Live #12 | Kentüs #01 | Live Drum &amp; Bass",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 93,
+        "score": 3.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Sgz7dyYszFs"
+      },
+      {
+        "id": "BGuvBnyF6is",
+        "title": "😎Kentüs fait trembler le Jardin Monplaisir 💥#Kentus #DnB #JungleMusic #MonkatLab",
+        "channel": "Monkat Lab / Monkey Leo",
+        "views": 76,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BGuvBnyF6is"
+      }
+    ],
+    "youtube_score": 3.27,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "GLpGIp-kdao",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-20"
+  },
+  "WEIRD LIZARD": {
+    "youtube_candidates": [
+      {
+        "id": "BATacQounZ0",
+        "title": "The Top 10 Weirdest Lizards on Earth",
+        "channel": "Crazy Creatures",
+        "views": 31491,
+        "score": 0.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BATacQounZ0"
+      },
+      {
+        "id": "o34PXlg1cCI",
+        "title": "This was a close call 🍌🦖🥴 #funny #pet #reptile #petlover #iguana",
+        "channel": "Rocket The Iguana",
+        "views": 3263865,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=o34PXlg1cCI"
+      },
+      {
+        "id": "45EYYvwTUWQ",
+        "title": "Best Lizard Moments",
+        "channel": "Fursure",
+        "views": 70750,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=45EYYvwTUWQ"
+      },
+      {
+        "id": "Bs6kS_R1bP8",
+        "title": "A gluttonous house lizard - house gecko #animals #Lizard #Gecko",
+        "channel": "Animal King",
+        "views": 19043102,
+        "score": 0.91,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Bs6kS_R1bP8"
+      },
+      {
+        "id": "1LGKNrq75_o",
+        "title": "EAT LIZARD | MAN VS WILD | MAN VS WILD IN HINDI #survival #shorts #ytshorts #outdoors",
+        "channel": "born survivor ",
+        "views": 623460,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1LGKNrq75_o"
+      },
+      {
+        "id": "w772gEg3tXs",
+        "title": "Weird lizard caught in California",
+        "channel": "WildlifeGannon",
+        "views": 1467,
+        "score": 0.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=w772gEg3tXs"
+      },
+      {
+        "id": "1rkkKyYCxio",
+        "title": "This Lizard Escapes the Heat in an Unusual Way | BBC Studios",
+        "channel": "BBC Studios",
+        "views": 212441,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1rkkKyYCxio"
+      },
+      {
+        "id": "0atBngB0K4o",
+        "title": "Who said lizards couldn&#39;t be entertaining?! Cute &amp; Funny Lizard Compilation",
+        "channel": "Newsflare",
+        "views": 204228,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=0atBngB0K4o"
+      }
+    ],
+    "youtube_score": 0.91,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Bs6kS_R1bP8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-20"
+  },
+  "BARAKA FRIT' SOUND SYSTEM": {
+    "youtube_candidates": [
+      {
+        "id": "BpS798mwSq4",
+        "title": "Dj P2N feat Dj H Baraka - Kiapakatshi (Clip Video Official) by IsubaDrums",
+        "channel": "Dj p2n Isuba Drums",
+        "views": 1622785,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BpS798mwSq4"
+      },
+      {
+        "id": "pLV4BgNI1_M",
+        "title": "Baraka Power Ltd. Corporate Film",
+        "channel": "Strangers Production",
+        "views": 5810,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pLV4BgNI1_M"
+      },
+      {
+        "id": "KOBimz3kXJY",
+        "title": "Melody cinta :: Cek sound :: Rojek mc :: New Ronita",
+        "channel": "New Ronita",
+        "views": 136,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KOBimz3kXJY"
+      },
+      {
+        "id": "b9xwbg4Q0bU",
+        "title": "Juice Wayne,Mrzux Figlan,EasyTiger Lens,King Sushie &amp; Zinceba_ Malume Bandibethile(MUSIC VIDEO)",
+        "channel": "First Klass Terrorists",
+        "views": 1022536,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b9xwbg4Q0bU"
+      },
+      {
+        "id": "jQE900te6TQ",
+        "title": "Baraka (Original Mix)",
+        "channel": "Release - Topic",
+        "views": 233,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jQE900te6TQ"
+      },
+      {
+        "id": "wquqEmL_aJg",
+        "title": "Al Baraka - Morocco - 1994",
+        "channel": "ADLORD",
+        "views": 682,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wquqEmL_aJg"
+      },
+      {
+        "id": "N0GEt_67C1o",
+        "title": "Live at BARAKA -épisode 2-.mov",
+        "channel": "Noémie Estival",
+        "views": 389,
+        "score": 3.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=N0GEt_67C1o"
+      },
+      {
+        "id": "03r7Oxe9AoQ",
+        "title": "The Bootlegger, a Soap with Moonshine &amp; Spicy Essential Oils",
+        "channel": "Ariane Arsenault",
+        "views": 17295,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=03r7Oxe9AoQ"
+      }
+    ],
+    "youtube_score": 3.32,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "N0GEt_67C1o",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-21"
+  },
+  "Scène ouverte de poésie": {
+    "youtube_candidates": [
+      {
+        "id": "jbb4rV7Nc0c",
+        "title": "Scène ouverte de Slam Poésie de mars 2024",
+        "channel": "Les Amis du Verbe",
+        "views": 358,
+        "score": 3.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=jbb4rV7Nc0c"
+      },
+      {
+        "id": "7s2LQuGHDC0",
+        "title": "Interview de Jérôme PINEL sur la scène ouverte de Slam Poésie et l’atelier Slam pour tous.",
+        "channel": "Les Amis du Verbe",
+        "views": 66,
+        "score": 3.23,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=7s2LQuGHDC0"
+      },
+      {
+        "id": "lI0FTfyEjJs",
+        "title": "TIM &quot;Le chasseur de chat &quot; POÉSIE voix vives 2026 SeamensClub Merci Sam pour la scène ouverte. ",
+        "channel": "Eric VAUBAN",
+        "views": 2,
+        "score": 3.06,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=lI0FTfyEjJs"
+      },
+      {
+        "id": "H8sbi_y9IJA",
+        "title": "- Namur, Maison de la Poésie, février 2023 : soirée slam, scène ouverte, bravo aux participants",
+        "channel": "Hugues Draye",
+        "views": 49,
+        "score": 3.21,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=H8sbi_y9IJA"
+      },
+      {
+        "id": "PDNegAlZDo8",
+        "title": "Scène Ouverte Slam Poésie de novembre",
+        "channel": "Les Amis du Verbe",
+        "views": 94,
+        "score": 3.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=PDNegAlZDo8"
+      },
+      {
+        "id": "rr8EDRWjkLo",
+        "title": "Scène ouverte   Valbonne en poésie",
+        "channel": "L'Oreille Qui Gratte ",
+        "views": 0,
+        "score": 3.0,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=rr8EDRWjkLo"
+      },
+      {
+        "id": "JlQMIfdWn6I",
+        "title": "Scène ouverte Slam Poésie d&#39;octobre 2024 à l&#39;Epicentre",
+        "channel": "Les Amis du Verbe",
+        "views": 139,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=JlQMIfdWn6I"
+      },
+      {
+        "id": "D4ZiMzUrPKI",
+        "title": "La Nuit du Slam de Lyon 2021",
+        "channel": "La Tribut du Verbe Officiel",
+        "views": 355,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=D4ZiMzUrPKI"
+      }
+    ],
+    "youtube_score": 3.32,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "jbb4rV7Nc0c",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-24"
+  },
+  "ASSO MONKAT LAB": {
+    "youtube_candidates": [
+      {
+        "id": "wBCZkFUsHrM",
+        "title": "Exploring Cobra Labs Association  Day 1   Unveiling the Creation Process of Amped Monkeys",
+        "channel": "prognossi AI",
+        "views": 2,
+        "score": 0.06,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wBCZkFUsHrM"
+      },
+      {
+        "id": "G_hfYPyarKM",
+        "title": "Exploring Cobra Labs Association: Day 1 - Unveiling the Creation Process of Amped Monkeys",
+        "channel": "AMPED MONKEY YACHT CLUB NFTs ",
+        "views": 86,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=G_hfYPyarKM"
+      },
+      {
+        "id": "hbkVqpU_PlM",
+        "title": "As you can see My son is trying to join a gang !",
+        "channel": "Monzz Ent",
+        "views": 8432619,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hbkVqpU_PlM"
+      },
+      {
+        "id": "Zc9b1Go70FE",
+        "title": "Monkey funny video",
+        "channel": "Shah All-Rounder 50k",
+        "views": 168,
+        "score": 0.28,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zc9b1Go70FE"
+      },
+      {
+        "id": "zZ9Oa4qvnJI",
+        "title": "Monkey funny video",
+        "channel": "Shah All-Rounder 50k",
+        "views": 347,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zZ9Oa4qvnJI"
+      },
+      {
+        "id": "CAkat1bAvqk",
+        "title": "Monkey funny video",
+        "channel": "Shah All-Rounder 50k",
+        "views": 578,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CAkat1bAvqk"
+      },
+      {
+        "id": "CXrrYaG-5XI",
+        "title": "Monkey fight video",
+        "channel": "Shah All-Rounder 50k",
+        "views": 390,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CXrrYaG-5XI"
+      },
+      {
+        "id": "_BRpLLDEkbk",
+        "title": "This Robot Climbs Trees Like a Monkey – Is this the Future of Canopy Research?",
+        "channel": "ETH Zürich",
+        "views": 6155,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_BRpLLDEkbk"
+      }
+    ],
+    "youtube_score": 0.87,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "hbkVqpU_PlM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-27"
+  },
+  "EXPARTY": {
+    "youtube_candidates": [
+      {
+        "id": "4M8uCxbYgXg",
+        "title": "Summer Walker &amp; Ciara - Ex Party (A JAYBeatz Mashup)",
+        "channel": "JAYBeatz",
+        "views": 19838914,
+        "score": 0.91,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4M8uCxbYgXg"
+      },
+      {
+        "id": "bR9zY-hONOM",
+        "title": "Ex Party",
+        "channel": "DanielsEcstacy - Topic",
+        "views": 420969,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bR9zY-hONOM"
+      },
+      {
+        "id": "ITHX5MmXHuk",
+        "title": "ex party // slowed + reverb — 02 summer walker, ft. ciara",
+        "channel": "azcii",
+        "views": 50140,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ITHX5MmXHuk"
+      },
+      {
+        "id": "I3LmNUKFYAo",
+        "title": "Party Favors  - Exparty à la Ferronnerie",
+        "channel": "ExPartyBand",
+        "views": 157,
+        "score": 1.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=I3LmNUKFYAo"
+      },
+      {
+        "id": "l3KYESXX3V8",
+        "title": "Parasite",
+        "channel": "Exparty - Topic",
+        "views": 492,
+        "score": 1.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=l3KYESXX3V8"
+      },
+      {
+        "id": "Bi1503MZLkg",
+        "title": "Summer walker - ex for a reason x body party ft.Ciara ꒰ sped up ꒱",
+        "channel": "kitsunejy",
+        "views": 9201177,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Bi1503MZLkg"
+      },
+      {
+        "id": "5hR4ElVoV5I",
+        "title": "12 Summer Walker, Ciara, Nicki Minaj &amp; Kendrick Lamar - Ex Party (A JAYBeatz Mashup) #HVLM",
+        "channel": "JAYBeatz",
+        "views": 597233,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5hR4ElVoV5I"
+      },
+      {
+        "id": "13jFjhEt-Do",
+        "title": "ex party&#39; [edit audio] | summer walker &amp; ciara",
+        "channel": "Offrly",
+        "views": 184385,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=13jFjhEt-Do"
+      }
+    ],
+    "youtube_score": 1.34,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "l3KYESXX3V8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-27"
+  },
+  "ONLY WHEN I ASK": {
+    "youtube_candidates": [
+      {
+        "id": "aIfagv5VY_M",
+        "title": "ONLY WHEN I ASK - Out of my Head [LYRIC VISUALIZER]",
+        "channel": "ONLY WHEN I ASK",
+        "views": 81,
+        "score": 5.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=aIfagv5VY_M"
+      },
+      {
+        "id": "T9hDKZfSeqw",
+        "title": "All I Ask - Adele (Lyrics) 🎵",
+        "channel": "Pillow",
+        "views": 10832791,
+        "score": 0.88,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=T9hDKZfSeqw"
+      },
+      {
+        "id": "rRQqIvaUEBw",
+        "title": "ONLY WHEN I ASK - Sunburn (VIZUALISER)",
+        "channel": "ONLY WHEN I ASK",
+        "views": 10,
+        "score": 5.13,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=rRQqIvaUEBw"
+      },
+      {
+        "id": "bxhvflhwzAk",
+        "title": "Only Fools and Horses trigger why ask.avi",
+        "channel": "Abdul Karam",
+        "views": 1971592,
+        "score": 0.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bxhvflhwzAk"
+      },
+      {
+        "id": "jb5g4UFHmfQ",
+        "title": "All I Ask",
+        "channel": "Adele Adkins - Topic",
+        "views": 128358740,
+        "score": 1.01,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jb5g4UFHmfQ"
+      },
+      {
+        "id": "kMqRCZK161w",
+        "title": "Outlandish - I Only Ask Of God",
+        "channel": "OutlandishVEVO",
+        "views": 3877060,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kMqRCZK161w"
+      },
+      {
+        "id": "0_WIgpfBPa0",
+        "title": "Billionaire Returns to Find His Wife Humiliated at a Rainy Stall—$100B Pulled! Revenge Begins!",
+        "channel": "Sweet Maple Drama",
+        "views": 8049,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=0_WIgpfBPa0"
+      },
+      {
+        "id": "oaKnuMeKyy8",
+        "title": "The D&amp;D questions you guys would ONLY ask anonymously",
+        "channel": "Ginny Di",
+        "views": 637613,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oaKnuMeKyy8"
+      }
+    ],
+    "youtube_score": 5.24,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "aIfagv5VY_M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-27"
   }
 }
