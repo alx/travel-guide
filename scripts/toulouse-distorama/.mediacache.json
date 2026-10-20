@@ -9650,7 +9650,11 @@
     ],
     "youtube_score": 0.97,
     "youtube_auto_validated": false,
-    "event_date": "2026-10-20"
+    "event_date": "2026-10-20",
+    "youtube_rejected_ids": [
+      "sAAXGAkjxiE"
+    ],
+    "youtube_validated": false
   },
   "SINKS": {
     "youtube_video_id": "",
