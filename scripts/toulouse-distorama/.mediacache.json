@@ -10730,10 +10730,14 @@
     ],
     "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "M9qzr3crc_s",
+    "youtube_video_id": "",
     "bandcamp_url": "https://tanzprocesz.bandcamp.com/track/gamma-gt",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3118840442/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true
+    "bandcamp_searched": true,
+    "youtube_rejected_ids": [
+      "M9qzr3crc_s"
+    ],
+    "youtube_validated": false
   },
   "THE ROOMMATES et DJ set": {
     "youtube_candidates": [
