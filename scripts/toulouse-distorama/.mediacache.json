@@ -31124,11 +31124,15 @@
     ],
     "youtube_score": 2.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "fRAAOLHJFG8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-31"
+    "event_date": "2026-10-31",
+    "youtube_rejected_ids": [
+      "fRAAOLHJFG8"
+    ],
+    "youtube_validated": false
   },
   "HAPPY VALLEY BOYS & d'autres": {
     "youtube_candidates": [
