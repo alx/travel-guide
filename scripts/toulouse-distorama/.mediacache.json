@@ -10663,7 +10663,7 @@
         "id": "hUfAFzJCNDk",
         "title": "Que signifient des gamma GT élevés ?",
         "channel": "NotreFamille.com Santé",
-        "views": 156584,
+        "views": 157671,
         "score": 0.65,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=hUfAFzJCNDk"
@@ -10672,44 +10672,35 @@
         "id": "HWjYPLfZUHo",
         "title": "J&#39;ai des Gamma-GT sans boire d&#39;alcool ! #santé #docteur #alcool #foie #cirrhose",
         "channel": "Pauline Hepato",
-        "views": 16851,
+        "views": 17846,
         "score": 0.53,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=HWjYPLfZUHo"
       },
       {
+        "id": "7piMoREw5TQ",
+        "title": "What is Gamma GT (Gamma glutamyl Transpeptidase) in Liver Function Test? | #liverfunctiontest",
+        "channel": "PACE Hospitals",
+        "views": 24127,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7piMoREw5TQ"
+      },
+      {
         "id": "M9qzr3crc_s",
         "title": "Gamma-GT, glaires dans la gorge, hyperlaxité : le répondeur santé de Gérald Kierzek",
         "channel": "Europe 1",
-        "views": 201306,
+        "views": 201531,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=M9qzr3crc_s"
       },
       {
-        "id": "7piMoREw5TQ",
-        "title": "What is Gamma GT (Gamma glutamyl Transpeptidase) in Liver Function Test? | #liverfunctiontest",
-        "channel": "PACE Hospitals",
-        "views": 21715,
-        "score": 0.54,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=7piMoREw5TQ"
-      },
-      {
-        "id": "oY6cj1BrxWE",
-        "title": "Gamma GT alte, colesterolo Alto, Trigliceridi alti, Steatosi, Vit D bassa. Cosa fare.",
-        "channel": "Dott De Mari",
-        "views": 14450,
-        "score": 0.52,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=oY6cj1BrxWE"
-      },
-      {
         "id": "XceMf_uKTiw",
         "title": "Gamma GT élevés - Comment les faire baisser ? Le foie souffre: alimentation, médicaments, microbiote",
         "channel": "Dr. Raphaël PEREZ",
-        "views": 56812,
-        "score": 0.59,
+        "views": 59218,
+        "score": 0.6,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=XceMf_uKTiw"
       },
@@ -10717,31 +10708,41 @@
         "id": "S8mutPHm4H8",
         "title": "Gamma GT Alta: NON È Sempre Colpa dell’Alcol",
         "channel": "DMN",
-        "views": 430,
-        "score": 0.33,
+        "views": 917,
+        "score": 0.37,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=S8mutPHm4H8"
       },
       {
-        "id": "aDMJjRKHGaQ",
-        "title": "Que sont les Gamma GT ? Quelles sont les normes ?",
-        "channel": "NotreFamille.com Santé",
-        "views": 36252,
-        "score": 0.57,
+        "id": "oY6cj1BrxWE",
+        "title": "Gamma GT alte, colesterolo Alto, Trigliceridi alti, Steatosi, Vit D bassa. Cosa fare.",
+        "channel": "Dott De Mari",
+        "views": 14815,
+        "score": 0.52,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=aDMJjRKHGaQ"
+        "url": "https://www.youtube.com/watch?v=oY6cj1BrxWE"
+      },
+      {
+        "id": "2hbJsUwjyAs",
+        "title": "Wichtige Leberwerte erhöht: GOT, GPT, Gamma GT verbessern &amp; senken ⏩ Bedeutung &amp; Ursachen verstehen",
+        "channel": "DoktorWeigl",
+        "views": 184113,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2hbJsUwjyAs"
       }
     ],
     "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://tanzprocesz.bandcamp.com/track/gamma-gt",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3118840442/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "2hbJsUwjyAs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "youtube_rejected_ids": [
       "M9qzr3crc_s"
     ],
-    "youtube_validated": false
+    "youtube_validated": false,
+    "event_date": "2026-11-10"
   },
   "THE ROOMMATES et DJ set": {
     "youtube_candidates": [
@@ -12968,7 +12969,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "edszN5QQFOg",
+    "youtube_video_id": "gRteZGEJyyY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13574,7 +13575,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "AJncpGaRxCE",
+    "youtube_video_id": "x57oTTcHtOk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26929,7 +26930,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "",
+    "youtube_video_id": "upHxIs247RI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -29609,7 +29610,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "pYNwoTiKCnI",
+    "youtube_video_id": "bt7eI0AwnpU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30544,7 +30545,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "q7UI3wwxbSk",
+    "youtube_video_id": "7vLCX0c_7hw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30901,7 +30902,7 @@
         "id": "WQQ4pBn1gHs",
         "title": "Keblack Ft. Franglish - Boucan (Clip Officiel)",
         "channel": "Keblack",
-        "views": 87975062,
+        "views": 88003425,
         "score": 0.99,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=WQQ4pBn1gHs"
@@ -30910,7 +30911,7 @@
         "id": "NMBFBj24kks",
         "title": "GIMS - Boucan (pilule violette) (Audio officiel) ft. Jul, DJ Last One",
         "channel": "MaitreGimsVEVO",
-        "views": 65403559,
+        "views": 65405439,
         "score": 0.98,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=NMBFBj24kks"
@@ -30919,25 +30920,16 @@
         "id": "SZfLO2vrDEQ",
         "title": "Keblack ft. Franglish - BOUCAN (Paroles/Lyrics)",
         "channel": "TV RAP INTERNATIONAL",
-        "views": 1423945,
+        "views": 1424249,
         "score": 0.77,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=SZfLO2vrDEQ"
       },
       {
-        "id": "pLfnC6NXuwk",
-        "title": "Keblack - Boucan Ft. Franglish (Paroles)",
-        "channel": "Ryzk  ",
-        "views": 784268,
-        "score": 0.74,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=pLfnC6NXuwk"
-      },
-      {
         "id": "D4bDNll6L0g",
         "title": "Molare - &quot;Le boucan&quot;",
         "channel": "Odilon Sagbo",
-        "views": 5869123,
+        "views": 5870386,
         "score": 0.85,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=D4bDNll6L0g"
@@ -30946,16 +30938,25 @@
         "id": "Zo7rHUo7mmc",
         "title": "Keblack feat. Franglish - Boucan #PlanèteRap",
         "channel": "SkyrockFM",
-        "views": 165311,
+        "views": 165407,
         "score": 0.65,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Zo7rHUo7mmc"
       },
       {
+        "id": "pLfnC6NXuwk",
+        "title": "Keblack - Boucan Ft. Franglish (Paroles)",
+        "channel": "Ryzk  ",
+        "views": 784563,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pLfnC6NXuwk"
+      },
+      {
         "id": "8szt07xG1e4",
         "title": "AÏE 😅😂🙈 #chute",
         "channel": "FamilyBoulanger",
-        "views": 3504965,
+        "views": 3506691,
         "score": 0.82,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=8szt07xG1e4"
@@ -30964,15 +30965,15 @@
         "id": "kYcNC79D7OI",
         "title": "D.ACE - Du boucan (clip officiel)",
         "channel": "D. Ace Officiel",
-        "views": 1431641,
+        "views": 1431929,
         "score": 0.77,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=kYcNC79D7OI"
       }
     ],
-    "youtube_score": 0.99,
+    "youtube_score": 0.98,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "NMBFBj24kks",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31071,10 +31072,19 @@
   "DOCKS": {
     "youtube_candidates": [
       {
+        "id": "dickIeBauoI",
+        "title": "How Floating Docks Lift A Warship Out Of The Water ⚓🚢",
+        "channel": "Lost Chapters",
+        "views": 2843,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dickIeBauoI"
+      },
+      {
         "id": "GA26fJtSWPg",
         "title": "EA FC 27 | Career Mode | #25 | NEW SEASON, EIGHT NEW SIGNINGS!",
         "channel": "docks",
-        "views": 17024,
+        "views": 17366,
         "score": 2.53,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=GA26fJtSWPg"
@@ -31083,69 +31093,60 @@
         "id": "fRAAOLHJFG8",
         "title": "EA FC 27 | Career Mode | #1 | Coventry City",
         "channel": "docks",
-        "views": 185559,
+        "views": 186310,
         "score": 2.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=fRAAOLHJFG8"
       },
       {
-        "id": "BdKz9-4vkXQ",
-        "title": "Solo Raiding Docks in BRM5 is an absolute blast",
-        "channel": "TacoFettJr",
-        "views": 4405,
-        "score": 0.46,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=BdKz9-4vkXQ"
-      },
-      {
         "id": "b6wUgTFOl64",
         "title": "Docks - Chacun ses raisons",
         "channel": "KalashCriminelVEVO",
-        "views": 792478,
+        "views": 792562,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=b6wUgTFOl64"
       },
       {
-        "id": "tb4637nHXtI",
-        "title": "Docks - Crâne Ouvert",
-        "channel": "Docks Officiel",
-        "views": 443567,
-        "score": 1.71,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=tb4637nHXtI"
-      },
-      {
         "id": "vBTcDtKEoqU",
         "title": "Building your own dock",
         "channel": "Dock.Shop",
-        "views": 192076,
+        "views": 192131,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=vBTcDtKEoqU"
       },
       {
+        "id": "tb4637nHXtI",
+        "title": "Docks - Crâne Ouvert",
+        "channel": "Docks Officiel",
+        "views": 443585,
+        "score": 1.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tb4637nHXtI"
+      },
+      {
         "id": "BdvU2ljbKa0",
         "title": "Docks X Kalash Criminel - Fuck les Vices",
         "channel": "Docks Officiel",
-        "views": 1835022,
+        "views": 1835084,
         "score": 1.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=BdvU2ljbKa0"
       },
       {
-        "id": "ZZXmFlPzQGA",
-        "title": "Pintu Keluar Masuk Air Laut Kapal Pesiar",
-        "channel": "Aqoy YTB",
-        "views": 47475,
-        "score": 0.58,
+        "id": "SvcwYxsOb1o",
+        "title": "Mauvaise pente | Deux flics sur les docks | Bruno Solo &amp; Jean-Marc Barr | Film Policier | GP",
+        "channel": "ICON TV - Polars",
+        "views": 7704,
+        "score": 0.49,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=ZZXmFlPzQGA"
+        "url": "https://www.youtube.com/watch?v=SvcwYxsOb1o"
       }
     ],
-    "youtube_score": 2.66,
+    "youtube_score": 2.53,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "GA26fJtSWPg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31161,78 +31162,78 @@
         "id": "CF-hTqTd2rY",
         "title": "Happy Valley Bande Annonce HD VOSTFR",
         "channel": "RaphMania",
-        "views": 2680,
+        "views": 2683,
         "score": 0.43,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=CF-hTqTd2rY"
       },
       {
-        "id": "eVRyk-igXpE",
-        "title": "Elle revoit le PDG aimé à un rencard, mariage contractuel, ils tombent progressivement amoureux",
-        "channel": "Télé Romance Éclatante",
-        "views": 5012,
-        "score": 0.46,
+        "id": "dU1EIRobeys",
+        "title": "VISIONQUEST EPISODES 3–4 REACTION – Can Vision Really Trust Ultron?! - Marvel Studios",
+        "channel": "Reel Rejects",
+        "views": 21440,
+        "score": 0.54,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=eVRyk-igXpE"
-      },
-      {
-        "id": "XOxfe26KNUw",
-        "title": "Él es alérgico a las mujeres, pero la ata a él: «Eres la única que deseo.»",
-        "channel": "Corazón Herido",
-        "views": 1075,
-        "score": 0.38,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=XOxfe26KNUw"
-      },
-      {
-        "id": "yCy3gJ5kjyY",
-        "title": "Unsolved Horror in Happy Valley | The 1967 Stabbing of Keith Lyon",
-        "channel": "Crimes That Haunt Us ",
-        "views": 15569,
-        "score": 0.52,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=yCy3gJ5kjyY"
-      },
-      {
-        "id": "_QXxPh2QyFk",
-        "title": "Leurs familles se détestent, leur amour est plus fort que tout | Film de Noël Complet en Français",
-        "channel": "Boxoffice Films de Noël",
-        "views": 40034,
-        "score": 0.58,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=_QXxPh2QyFk"
-      },
-      {
-        "id": "kEd6fpiIpoA",
-        "title": "Thriller à suspense | Elle rencontre un inconnu du web et DISPARAÎT | 16 and Missing | Film complet",
-        "channel": "TitanumX - Thrillers & Suspense en français",
-        "views": 13257,
-        "score": 0.52,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=kEd6fpiIpoA"
-      },
-      {
-        "id": "ELCPr45flNU",
-        "title": "माफिया बॉस सभी महिलाओं को ठुकराता है,वह उस शिक्षिका पर आसक्त हो जाता है जो उसके टैटू पार्लर में आई।！",
-        "channel": "कॉटन कैंडी थिएटर",
-        "views": 188799,
-        "score": 0.66,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ELCPr45flNU"
+        "url": "https://www.youtube.com/watch?v=dU1EIRobeys"
       },
       {
         "id": "E-0jUJdCANU",
         "title": "शादी की मुलाकात में वह छुपे प्यार के सीईओ से मिली, अनुबंध विवाह, साथ रहकर प्यार में पड़े！",
         "channel": "रोमांस खिलता टीवी",
-        "views": 17614,
-        "score": 0.53,
+        "views": 44560,
+        "score": 0.58,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=E-0jUJdCANU"
+      },
+      {
+        "id": "XlDjQHntrfE",
+        "title": "Undercover Cop Caught Between Two Rival Mobs! 🚨(Action) CROSSFIRE",
+        "channel": "Cinéma Cinémas",
+        "views": 8691,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XlDjQHntrfE"
+      },
+      {
+        "id": "rjVmo0YzQcM",
+        "title": "Kaisar menyamar dipalak hakim daerah, lalu mengangkatnya jadi permaisuri setelah tahu identitasnya!",
+        "channel": "Koleksi Drama Pendek",
+        "views": 1968,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rjVmo0YzQcM"
+      },
+      {
+        "id": "kEd6fpiIpoA",
+        "title": "Thriller à suspense | Elle rencontre un inconnu du web et DISPARAÎT | 16 and Missing | Film complet",
+        "channel": "TitanumX - Thrillers & Suspense en français",
+        "views": 16768,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kEd6fpiIpoA"
+      },
+      {
+        "id": "vxurF_HYu1s",
+        "title": "Forçado a se casar com uma herdeira com deficiência, ele a cura usando apenas uma agulha — e seu",
+        "channel": "AstroCurtas",
+        "views": 3554,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vxurF_HYu1s"
+      },
+      {
+        "id": "ps53g1YY8f8",
+        "title": "眾人都以為他只是廢柴，直到他擊敗六大派，才知竟是絕世隱藏高手 🔥 功夫 | Kung fu | 成龙 | 李小龙",
+        "channel": "小芳追劇",
+        "views": 4534,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ps53g1YY8f8"
       }
     ],
-    "youtube_score": 0.66,
+    "youtube_score": 0.58,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "E-0jUJdCANU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32993,5 +32994,157 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-27"
+  },
+  "Bourbier Boueux": {
+    "youtube_candidates": [
+      {
+        "id": "1zUlt3R3efE",
+        "title": "Bourbier",
+        "channel": "Timal - Topic",
+        "views": 16226,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1zUlt3R3efE"
+      },
+      {
+        "id": "-YIYrN4od9Q",
+        "title": "Bourbier",
+        "channel": "Davy One - Topic",
+        "views": 2830526,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-YIYrN4od9Q"
+      },
+      {
+        "id": "Oq1CjXvYCaM",
+        "title": "KASONGO LE ROI DU BOURBIER DE RETOUR 💀",
+        "channel": "La Quête du Savoir",
+        "views": 1813288,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Oq1CjXvYCaM"
+      },
+      {
+        "id": "4etCR5Z6YjI",
+        "title": "Hayce Lemsi ft. XVBARBAR - Och Bad 2 (Bourbier)",
+        "channel": "Aniis_m",
+        "views": 217024,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4etCR5Z6YjI"
+      },
+      {
+        "id": "YdYzMYFzCH8",
+        "title": "KASONGO EST DANS LE BOURBIER 💀",
+        "channel": "La Quête du Savoir",
+        "views": 783527,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YdYzMYFzCH8"
+      },
+      {
+        "id": "NV-EUH7_ZXo",
+        "title": "Kemar - BOURBIER",
+        "channel": "Kemar",
+        "views": 298358,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NV-EUH7_ZXo"
+      },
+      {
+        "id": "azQaMJx2uwE",
+        "title": "Siboy - Bourbier (Live) | ROUNDS | Vevo",
+        "channel": "SiboyVEVO",
+        "views": 524147,
+        "score": 3.71,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=azQaMJx2uwE"
+      },
+      {
+        "id": "an0pbL3D234",
+        "title": "BourBier BoueuX Live @Le Balto I Fursac (23) I Déc25 I #imPRoGResSiVTeKno",
+        "channel": "Alexis Blithikiotis",
+        "views": 148,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=an0pbL3D234"
+      }
+    ],
+    "youtube_score": 3.71,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-22",
+    "youtube_rejected_ids": [
+      "azQaMJx2uwE"
+    ],
+    "youtube_validated": false
+  },
+  "Cheval": {
+    "youtube_candidates": [
+      {
+        "id": "3uz1cOVCXVg",
+        "title": "Au galop sur mon cheval 🐎 | Chanson sur les chevaux pour enfants | HeyKids en Français",
+        "channel": "HeyKids - Chansons Pour Enfants",
+        "views": 706117,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3uz1cOVCXVg"
+      },
+      {
+        "id": "bHiZjBCnGbM",
+        "title": "1 HOUR of HAPPY HORSES to Make Your Day Better!",
+        "channel": "DiscoverTheHorse",
+        "views": 9519377,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bHiZjBCnGbM"
+      },
+      {
+        "id": "oFjIlV5d404",
+        "title": "Le Cheval 🐎 Comptine Bébé en Francais | HeyKids",
+        "channel": "HeyKids - Chansons Pour Enfants",
+        "views": 7719100,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oFjIlV5d404"
+      },
+      {
+        "id": "Arla8iYfXGM",
+        "title": "❤️Une HISTOIRE VRAIE bouleversante sur un cheval qui change des VIES | Français | 4K",
+        "channel": "Chambre Ciné",
+        "views": 152163,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Arla8iYfXGM"
+      },
+      {
+        "id": "1yvZV8piMYI",
+        "title": "Rosi Hochegger - Dressage de Cheval / LE PLUS GRAND CABARET DU MONDE",
+        "channel": "Patrick Sébastien",
+        "views": 44578019,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1yvZV8piMYI"
+      },
+      {
+        "id": "GYjM74h0vrM",
+        "title": "que du + 🌈🦄 #cheval #horse #equitation",
+        "channel": "ForeverLennon",
+        "views": 194850,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GYjM74h0vrM"
+      }
+    ],
+    "youtube_score": 0.96,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "1yvZV8piMYI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-22"
   }
 }
