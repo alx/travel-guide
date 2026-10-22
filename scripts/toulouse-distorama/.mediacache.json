@@ -6766,7 +6766,11 @@
       }
     ],
     "youtube_score": 5.44,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-22",
+    "event_date": "2026-11-04"
   },
   "LAMPE ROUGE": {
     "youtube_video_id": "",
