@@ -31584,7 +31584,11 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-04"
+    "event_date": "2026-11-04",
+    "youtube_rejected_ids": [
+      "4f6_X-uHulk"
+    ],
+    "youtube_validated": false
   },
   "LES TARDIGRADES": {
     "youtube_candidates": [
