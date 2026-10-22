@@ -33141,10 +33141,14 @@
     ],
     "youtube_score": 0.96,
     "youtube_auto_validated": false,
-    "youtube_video_id": "1yvZV8piMYI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-22"
+    "event_date": "2026-10-22",
+    "youtube_rejected_ids": [
+      "1yvZV8piMYI"
+    ],
+    "youtube_validated": false
   }
 }
