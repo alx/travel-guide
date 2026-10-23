@@ -100,7 +100,13 @@ function loadSlides() {
 
 // ── yt-dlp helpers ────────────────────────────────────────────────────────────
 function downloadMedia(videoId) {
-  const dest = path.join(TMP_MEDIA_DIR, `${videoId}.mp4`);
+  const base = path.resolve(TMP_MEDIA_DIR);
+  const dest = path.resolve(base, `${videoId}.mp4`);
+  const rel = path.relative(base, dest);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
+    console.warn(`  ⚠ invalid videoId`);
+    return null;
+  }
   if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) return dest;
   console.log(`  ↓ downloading ${videoId}…`);
   const r = spawnSync('yt-dlp', [
