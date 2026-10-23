@@ -24,6 +24,7 @@ import re
 import sqlite3
 import sys
 from datetime import datetime, timezone
+from urllib.parse import urlparse, urlunparse
 
 import requests
 
@@ -79,9 +80,36 @@ def extract_json(text: str) -> dict | None:
         return None
 
 
+def build_validated_url(base_url: str) -> str:
+    try:
+        # Minimal path validation
+        if "/../" in base_url or re.search(r"/%2e%2e/", base_url, re.IGNORECASE):
+            raise ValueError("Invalid path")
+        
+        parsed = urlparse(base_url)
+        
+        # Protocol + host checks
+        if parsed.scheme not in ("http", "https"):
+            raise ValueError("Invalid protocol")
+        if not parsed.hostname:
+            raise ValueError("Invalid host")
+        allowed_domains = ["fami", "lamai270"]
+        if parsed.hostname.lower() not in allowed_domains:
+            raise ValueError("Invalid host")
+        
+        # Append /health to the path
+        path = parsed.path.rstrip("/") + "/health"
+        parsed = parsed._replace(path=path)
+        
+        return urlunparse(parsed)
+    except Exception:
+        raise ValueError("Invalid URL")
+
+
 def check_server(url: str, timeout: int = 5) -> bool:
     try:
-        r = requests.get(f"{url}/health", timeout=timeout)
+        validated_url = build_validated_url(url)
+        r = requests.get(validated_url, timeout=timeout)
         return r.status_code == 200
     except requests.RequestException:
         return False
