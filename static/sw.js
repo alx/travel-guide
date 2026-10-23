@@ -18,17 +18,20 @@ self.addEventListener('fetch', e => {
 
   // GeoJSON: cache-first (changes rarely)
   if (url.pathname.endsWith('locations.geojson')) {
-    e.respondWith(
-      caches.match(e.request).then(r => r || fetch(e.request).then(res => {
-        caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-        return res;
-      }))
-    );
+    // Validate that the request is from the same origin to prevent SSRF
+    if (url.origin === self.location.origin) {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).then(res => {
+          caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+          return res;
+        }))
+      );
+    }
     return;
   }
 
   // OSM tiles: network-first with cache fallback
-  if (url.hostname.includes('tile.openstreetmap.org')) {
+  if (url.hostname === 'tile.openstreetmap.org') {
     e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
     return;
   }
