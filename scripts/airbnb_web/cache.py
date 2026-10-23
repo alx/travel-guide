@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -134,6 +135,11 @@ def put(
         "categories": sorted(categories),
         "result":     result,
     })
+
+    base_real = os.path.realpath(CACHE_DIR)
+    target_real = os.path.realpath(path)
+    if os.path.commonpath([base_real, target_real]) != base_real:
+        raise Exception("Invalid file path")
 
     path.write_text(
         json.dumps(records, ensure_ascii=False, indent=2),
