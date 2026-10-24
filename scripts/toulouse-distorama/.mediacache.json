@@ -3044,7 +3044,7 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-07-09",
+    "event_date": "2026-11-14",
     "youtube_candidates": [
       {
         "id": "",
@@ -7314,10 +7314,87 @@
     "youtube_validated": true
   },
   "Blind Test": {
-    "youtube_video_id": "wRyD81oBUSM",
+    "youtube_video_id": "dlZN-lRgmfw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "3GR7Rud8vxU",
+        "title": "BLIND TEST MUSIQUES DE 1967 À 2026  - 70 EXTRAITS (TOUTES GÉNÉRATIONS)",
+        "channel": "FAN2BLINDTEST",
+        "views": 51386,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3GR7Rud8vxU"
+      },
+      {
+        "id": "xqqpbOp-e5c",
+        "title": "BLIND TEST - TOUT GENRE (80 extraits)",
+        "channel": "Les Blind Tests de Léo",
+        "views": 617814,
+        "score": 1.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xqqpbOp-e5c"
+      },
+      {
+        "id": "dlZN-lRgmfw",
+        "title": "BLIND TEST TOUTES GÉNÉRATIONS (80 extraits)",
+        "channel": "Les Blind Tests de Léo",
+        "views": 963388,
+        "score": 1.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dlZN-lRgmfw"
+      },
+      {
+        "id": "nkpvlMBmhLo",
+        "title": "BLIND TEST TOUTES GÉNÉRATIONS (80 extraits)",
+        "channel": "Les Blind Tests de Léo",
+        "views": 528005,
+        "score": 1.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=nkpvlMBmhLo"
+      },
+      {
+        "id": "0YWt4Ai8q_g",
+        "title": "BLIND TEST MUSIQUES DE 1962 À 2025  - 70 EXTRAITS (TOUTES GÉNÉRATIONS)",
+        "channel": "FAN2BLINDTEST",
+        "views": 1216734,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=0YWt4Ai8q_g"
+      },
+      {
+        "id": "sMFzOJlB4fk",
+        "title": "BLIND TEST TOUT GENRE | 80 extraits | (Film,Animation,Jeux Vidéo,Série,Réplique)",
+        "channel": "NexuS",
+        "views": 376772,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sMFzOJlB4fk"
+      },
+      {
+        "id": "Vam1e2YfyTI",
+        "title": "blind test musique 2000 -2025 de 40 extraits / toute génération",
+        "channel": "FAN BLIND TEST",
+        "views": 361372,
+        "score": 1.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Vam1e2YfyTI"
+      },
+      {
+        "id": "jup66Daprm4",
+        "title": "BLIND TEST TOUT GENRE 80 extraits (Film,Série,Jeux Vidéo,Dessin Animé,Animé)",
+        "channel": "NexuS",
+        "views": 208306,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jup66Daprm4"
+      }
+    ],
+    "youtube_score": 1.75,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-20"
   },
   "ENFANTS DES ETOILES": {
     "youtube_video_id": "oPxelBob96I",
@@ -8852,7 +8929,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-14"
   },
   "MAEVE": {
     "youtube_video_id": "",
@@ -12973,7 +13051,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "gRteZGEJyyY",
+    "youtube_video_id": "UyQuuQT-gio",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13579,7 +13657,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "x57oTTcHtOk",
+    "youtube_video_id": "0RxbxQZEcco",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -29614,7 +29692,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "bt7eI0AwnpU",
+    "youtube_video_id": "G-viwnGNpuY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30549,7 +30627,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "7vLCX0c_7hw",
+    "youtube_video_id": "0x74wQoL440",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33009,7 +33087,7 @@
         "id": "1zUlt3R3efE",
         "title": "Bourbier",
         "channel": "Timal - Topic",
-        "views": 16226,
+        "views": 16832,
         "score": 0.53,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=1zUlt3R3efE"
@@ -33018,7 +33096,7 @@
         "id": "-YIYrN4od9Q",
         "title": "Bourbier",
         "channel": "Davy One - Topic",
-        "views": 2830526,
+        "views": 2831555,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=-YIYrN4od9Q"
@@ -33027,16 +33105,25 @@
         "id": "Oq1CjXvYCaM",
         "title": "KASONGO LE ROI DU BOURBIER DE RETOUR 💀",
         "channel": "La Quête du Savoir",
-        "views": 1813288,
+        "views": 1817116,
         "score": 0.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Oq1CjXvYCaM"
       },
       {
+        "id": "NV-EUH7_ZXo",
+        "title": "Kemar - BOURBIER",
+        "channel": "Kemar",
+        "views": 298445,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NV-EUH7_ZXo"
+      },
+      {
         "id": "4etCR5Z6YjI",
         "title": "Hayce Lemsi ft. XVBARBAR - Och Bad 2 (Bourbier)",
         "channel": "Aniis_m",
-        "views": 217024,
+        "views": 217108,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=4etCR5Z6YjI"
@@ -33045,42 +33132,33 @@
         "id": "YdYzMYFzCH8",
         "title": "KASONGO EST DANS LE BOURBIER 💀",
         "channel": "La Quête du Savoir",
-        "views": 783527,
+        "views": 784970,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=YdYzMYFzCH8"
       },
       {
-        "id": "NV-EUH7_ZXo",
-        "title": "Kemar - BOURBIER",
-        "channel": "Kemar",
-        "views": 298358,
-        "score": 0.68,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=NV-EUH7_ZXo"
+        "id": "an0pbL3D234",
+        "title": "BourBier BoueuX Live @Le Balto I Fursac (23) I Déc25 I #imPRoGResSiVTeKno",
+        "channel": "Alexis Blithikiotis",
+        "views": 151,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=an0pbL3D234"
       },
       {
         "id": "azQaMJx2uwE",
         "title": "Siboy - Bourbier (Live) | ROUNDS | Vevo",
         "channel": "SiboyVEVO",
-        "views": 524147,
+        "views": 524212,
         "score": 3.71,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=azQaMJx2uwE"
-      },
-      {
-        "id": "an0pbL3D234",
-        "title": "BourBier BoueuX Live @Le Balto I Fursac (23) I Déc25 I #imPRoGResSiVTeKno",
-        "channel": "Alexis Blithikiotis",
-        "views": 148,
-        "score": 3.27,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=an0pbL3D234"
       }
     ],
-    "youtube_score": 3.71,
+    "youtube_score": 3.27,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "an0pbL3D234",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33096,25 +33174,16 @@
         "id": "3uz1cOVCXVg",
         "title": "Au galop sur mon cheval 🐎 | Chanson sur les chevaux pour enfants | HeyKids en Français",
         "channel": "HeyKids - Chansons Pour Enfants",
-        "views": 706117,
+        "views": 707077,
         "score": 0.73,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=3uz1cOVCXVg"
       },
       {
-        "id": "bHiZjBCnGbM",
-        "title": "1 HOUR of HAPPY HORSES to Make Your Day Better!",
-        "channel": "DiscoverTheHorse",
-        "views": 9519377,
-        "score": 0.87,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=bHiZjBCnGbM"
-      },
-      {
         "id": "oFjIlV5d404",
         "title": "Le Cheval 🐎 Comptine Bébé en Francais | HeyKids",
         "channel": "HeyKids - Chansons Pour Enfants",
-        "views": 7719100,
+        "views": 7719584,
         "score": 0.86,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=oFjIlV5d404"
@@ -33123,7 +33192,7 @@
         "id": "Arla8iYfXGM",
         "title": "❤️Une HISTOIRE VRAIE bouleversante sur un cheval qui change des VIES | Français | 4K",
         "channel": "Chambre Ciné",
-        "views": 152163,
+        "views": 156009,
         "score": 0.65,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Arla8iYfXGM"
@@ -33132,24 +33201,42 @@
         "id": "1yvZV8piMYI",
         "title": "Rosi Hochegger - Dressage de Cheval / LE PLUS GRAND CABARET DU MONDE",
         "channel": "Patrick Sébastien",
-        "views": 44578019,
+        "views": 44582325,
         "score": 0.96,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=1yvZV8piMYI"
       },
       {
-        "id": "GYjM74h0vrM",
-        "title": "que du + 🌈🦄 #cheval #horse #equitation",
-        "channel": "ForeverLennon",
-        "views": 194850,
-        "score": 0.66,
+        "id": "gvoJGcD_XX0",
+        "title": "Tu fait de l’équitation toi ? 😂 #horse #cheval #trend #cso #saut d’obstacle #saut",
+        "channel": "Anna et Violetta",
+        "views": 24276,
+        "score": 0.55,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=GYjM74h0vrM"
+        "url": "https://www.youtube.com/watch?v=gvoJGcD_XX0"
+      },
+      {
+        "id": "VFsqxxYt3ow",
+        "title": "#chevaux #cheval #france #nettoyage #asmr",
+        "channel": "Animauxstory",
+        "views": 8115,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VFsqxxYt3ow"
+      },
+      {
+        "id": "bHiZjBCnGbM",
+        "title": "1 HOUR of HAPPY HORSES to Make Your Day Better!",
+        "channel": "DiscoverTheHorse",
+        "views": 9528195,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bHiZjBCnGbM"
       }
     ],
-    "youtube_score": 0.96,
+    "youtube_score": 0.87,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "bHiZjBCnGbM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33158,5 +33245,605 @@
       "1yvZV8piMYI"
     ],
     "youtube_validated": false
+  },
+  "Les Vidéophages": {
+    "youtube_candidates": [
+      {
+        "id": "BHgZTdh82pA",
+        "title": "Faites de l&#39;image Festival / Bande annonce 2011",
+        "channel": "L'oeuf à la coque",
+        "views": 6,
+        "score": 0.11,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BHgZTdh82pA"
+      },
+      {
+        "id": "B2P16FIJ3ZQ",
+        "title": "Ô Lune - film Passeurs d&#39;images Occitanie 2024",
+        "channel": "La Trame",
+        "views": 146,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=B2P16FIJ3ZQ"
+      },
+      {
+        "id": "Rl6D0joq1ig",
+        "title": "Jardin 2 nuits : Faite de l&#39;image.",
+        "channel": "ile verte",
+        "views": 59,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Rl6D0joq1ig"
+      },
+      {
+        "id": "8upM2RJkTaY",
+        "title": "Festival Faites de l&#39;image 2010 / Bande annonce",
+        "channel": "L'oeuf à la coque",
+        "views": 9,
+        "score": 0.12,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8upM2RJkTaY"
+      },
+      {
+        "id": "4z1n9tpjj6Q",
+        "title": "Faites de l&#39;image Festival / Bande annonce 2009",
+        "channel": "L'oeuf à la coque",
+        "views": 13,
+        "score": 0.14,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4z1n9tpjj6Q"
+      },
+      {
+        "id": "_p10CMeFJsI",
+        "title": "Passeurs d&#39;images Occitanie 31/03/21 - Journée de rencontre (8/10)",
+        "channel": "La Trame",
+        "views": 13,
+        "score": 0.14,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_p10CMeFJsI"
+      },
+      {
+        "id": "7VJIj_y-FB4",
+        "title": "Passeurs d&#39;images Occitanie 31/03/21 - Journée de rencontre (4/10)",
+        "channel": "La Trame",
+        "views": 47,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7VJIj_y-FB4"
+      },
+      {
+        "id": "pvzeU3GcJks",
+        "title": "Passeurs d&#39;images Occitanie 31/03/21 - Journée de rencontre (10/10)",
+        "channel": "La Trame",
+        "views": 41,
+        "score": 0.2,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pvzeU3GcJks"
+      }
+    ],
+    "youtube_score": 0.27,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-02",
+    "youtube_rejected_ids": [
+      "B2P16FIJ3ZQ"
+    ],
+    "youtube_validated": false
+  },
+  "Kriegelstein": {
+    "youtube_candidates": [
+      {
+        "id": "4cR7QC8rIlk",
+        "title": "KRIEGELSTEIN - Empty Canyons (teaser live 2024)",
+        "channel": "KRIEGELSTEIN",
+        "views": 228,
+        "score": 5.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=4cR7QC8rIlk"
+      },
+      {
+        "id": "rF1AFiqxaVE",
+        "title": "KRIEGELSTEIN - Frustration (LIVE SESSION)",
+        "channel": "KRIEGELSTEIN",
+        "views": 1537,
+        "score": 5.4,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=rF1AFiqxaVE"
+      },
+      {
+        "id": "r-zIs6xmNBM",
+        "title": "KRIEGELSTEIN - RED WITCH",
+        "channel": "KRIEGELSTEIN",
+        "views": 1133,
+        "score": 5.38,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=r-zIs6xmNBM"
+      },
+      {
+        "id": "VAEHviHZfL0",
+        "title": "KRIEGELSTEIN - Interlude / Tangerine",
+        "channel": "KRIEGELSTEIN",
+        "views": 455,
+        "score": 5.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=VAEHviHZfL0"
+      },
+      {
+        "id": "XiFRA3PJGW0",
+        "title": "KRIEGELSTEIN - KALMOS live @ L&#39;Intermédiaire, Marseille, 28-03-2026",
+        "channel": "Jbs Yahya",
+        "views": 15,
+        "score": 3.15,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=XiFRA3PJGW0"
+      },
+      {
+        "id": "QLjgikTckM0",
+        "title": "Alles Verloren - Binder &amp; Krieglstein",
+        "channel": "catmastro",
+        "views": 431477,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QLjgikTckM0"
+      },
+      {
+        "id": "m-Yj-kYqPAQ",
+        "title": "Unique piano from KRIEGELSTEIN Paris, France. 19th century.",
+        "channel": "ANTIQON",
+        "views": 190,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=m-Yj-kYqPAQ"
+      },
+      {
+        "id": "zeWmlQCVLBk",
+        "title": "YATS",
+        "channel": "Kriegelstein - Topic",
+        "views": 255,
+        "score": 1.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zeWmlQCVLBk"
+      }
+    ],
+    "youtube_score": 5.4,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "rF1AFiqxaVE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
+  },
+  "Zapoï": {
+    "youtube_candidates": [
+      {
+        "id": "jtXzsO6TUbw",
+        "title": "Le tourisme spatial, une arnaque ? - Groland Le Zapoï du 06/10 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 619651,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jtXzsO6TUbw"
+      },
+      {
+        "id": "aSOmVdm1eJE",
+        "title": "Viva Las Vegas  - Groland Le Zapoï du 17/02  - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 493974,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aSOmVdm1eJE"
+      },
+      {
+        "id": "Yoz6-uCUHS4",
+        "title": "Surprise génétique - Groland Le Zapoï du 27/04 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 778934,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Yoz6-uCUHS4"
+      },
+      {
+        "id": "ZMAsHbm3ZAM",
+        "title": "Le meilleur pâtissier  - Groland Le Zapoï du 06/04 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 1333006,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZMAsHbm3ZAM"
+      },
+      {
+        "id": "jK4wnCLuBtI",
+        "title": "Gromillionnaire - Groland Le Zapoï du 03/02 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 2459454,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jK4wnCLuBtI"
+      },
+      {
+        "id": "MrXRFpgPGVU",
+        "title": "Micron incognito  - Groland Le Zapoï du 17/02  - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 352312,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=MrXRFpgPGVU"
+      },
+      {
+        "id": "kxtcMUwOQZY",
+        "title": "Mélenchon dans son milieu naturel - Groland Le Zapoï du 27/10 - CANAL+ - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 591557,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kxtcMUwOQZY"
+      },
+      {
+        "id": "9qlEpu_roz4",
+        "title": "Prison pleine - Groland Le Zapoï du 11/05 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 436411,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9qlEpu_roz4"
+      }
+    ],
+    "youtube_score": 0.8,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "jK4wnCLuBtI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
+  },
+  "RADIX PARADOX": {
+    "youtube_candidates": [
+      {
+        "id": "lHcIhYN9GsQ",
+        "title": "RADIX PARADOX | M&amp;M&#39;S &amp; MST | Cuire - 21-06-2025 | Des Gens Biens |",
+        "channel": "Seb Rhaa Dicks",
+        "views": 610,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=lHcIhYN9GsQ"
+      },
+      {
+        "id": "nWZQBd9rUJM",
+        "title": "RADIX PARADOX | home | Urbistock | 6 - 06 - 26 |",
+        "channel": "Seb Rhaa Dicks",
+        "views": 108,
+        "score": 0.25,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=nWZQBd9rUJM"
+      },
+      {
+        "id": "3mkOnsIwvos",
+        "title": "RADIX PARADOX | everyday + tous les jours | Urbistock | 6 - 06 - 26 |",
+        "channel": "Seb Rhaa Dicks",
+        "views": 106,
+        "score": 0.25,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3mkOnsIwvos"
+      },
+      {
+        "id": "oy6TMleoZZk",
+        "title": "RADIX PARADOX | sms + voyage | Urbistock | 6 - 06 - 26 |",
+        "channel": "Seb Rhaa Dicks",
+        "views": 73,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oy6TMleoZZk"
+      },
+      {
+        "id": "XNX_jslT1OE",
+        "title": "Radix Paradox: Mystery of the Crypto Chamber",
+        "channel": "Tyler D'Antonio",
+        "views": 292,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XNX_jslT1OE"
+      },
+      {
+        "id": "uLCnvyRGo5k",
+        "title": "RADIX PARADOX",
+        "channel": "caulainkour",
+        "views": 53,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=uLCnvyRGo5k"
+      },
+      {
+        "id": "ZMKh3f-o3_M",
+        "title": "Home (feat. Johanny Melloul, Nico Poisson &amp; Julien Paget) (Radio Edit)",
+        "channel": "Seb Radix - Topic",
+        "views": 54,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZMKh3f-o3_M"
+      },
+      {
+        "id": "ZggaG5frREE",
+        "title": "Everyday / Tous les jours (feat. Johanny Melloul, Nico Poisson &amp; Julien Paget) (Radio Edit)",
+        "channel": "Seb Radix - Topic",
+        "views": 27,
+        "score": 0.18,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZggaG5frREE"
+      }
+    ],
+    "youtube_score": 0.35,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "lHcIhYN9GsQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-08"
+  },
+  "HOFLAW": {
+    "youtube_candidates": [
+      {
+        "id": "C8f105gl4RI",
+        "title": "HofLaw Girls Night Out Overview",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 1070,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=C8f105gl4RI"
+      },
+      {
+        "id": "q1U9kIASBxs",
+        "title": "Hoflaw - House Made Of Ice",
+        "channel": "Hoflaw",
+        "views": 28,
+        "score": 5.18,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=q1U9kIASBxs"
+      },
+      {
+        "id": "TXVJvzZR9pA",
+        "title": "Hofheimer Family Law Firm",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 82,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=TXVJvzZR9pA"
+      },
+      {
+        "id": "VtWTuzQbTo4",
+        "title": "Hofheimer Family Law Firm",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 87,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VtWTuzQbTo4"
+      },
+      {
+        "id": "AstfTt1qZis",
+        "title": "Hofheimer Family Law Firm",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 15497,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AstfTt1qZis"
+      },
+      {
+        "id": "hi5t9nVFFP8",
+        "title": "Introducing Attorney Brittany Hudgens",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 7,
+        "score": 0.11,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hi5t9nVFFP8"
+      },
+      {
+        "id": "Cj5nWA2vy_I",
+        "title": "HofLaw Divorce Coaching",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 45,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Cj5nWA2vy_I"
+      },
+      {
+        "id": "OWjX5WbHClI",
+        "title": "CustodyBootcampQuestionsPart3",
+        "channel": "Hofheimer Family Law Firm",
+        "views": 133,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OWjX5WbHClI"
+      }
+    ],
+    "youtube_score": 5.18,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "q1U9kIASBxs",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "LA FAIBLESSE": {
+    "youtube_candidates": [
+      {
+        "id": "CUc_jBmvLps",
+        "title": "JONATHAN ALPEYRIE ÉMEUTES: LE PRIX DE LA FAIBLESSE",
+        "channel": "OMERTA",
+        "views": 42210,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CUc_jBmvLps"
+      },
+      {
+        "id": "GwT2i-ZhTos",
+        "title": "Les Zakariens - La Faiblesse",
+        "channel": "FrenchRap15",
+        "views": 43503,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GwT2i-ZhTos"
+      },
+      {
+        "id": "FZLH2xojOCU",
+        "title": "JUL - la faiblesse de l&#39;homme (ancien son clef USB)",
+        "channel": "son2fou",
+        "views": 23043,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FZLH2xojOCU"
+      },
+      {
+        "id": "YQ1nqclGLSw",
+        "title": "Saké - La faiblesse (Audio Officiel)",
+        "channel": "SAKÉ",
+        "views": 25813,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YQ1nqclGLSw"
+      },
+      {
+        "id": "4wADZsytmX8",
+        "title": "LA FAIBLESSE - Dans la nuit (Official Video)",
+        "channel": "GUERILLA ASSO",
+        "views": 3898,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4wADZsytmX8"
+      },
+      {
+        "id": "BqipaGhDFxg",
+        "title": "LA FAIBLESSE - Live Session 2025 partie 1 : LA CHUTE",
+        "channel": "STUDIO GEORGES DELATOURNE",
+        "views": 1296,
+        "score": 3.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=BqipaGhDFxg"
+      },
+      {
+        "id": "cSrPKrgnp74",
+        "title": "« Léonie Martin, la faiblesse transfigurée. » Conférence du Père Guibert (1ère Partie)",
+        "channel": "Sanctuaire d'Alençon",
+        "views": 11860,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=cSrPKrgnp74"
+      },
+      {
+        "id": "s_8zsUqCtz0",
+        "title": "LA FAIBLESSE EST UNE FORCE",
+        "channel": "Eric Younous MMPLUS",
+        "views": 82363,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=s_8zsUqCtz0"
+      }
+    ],
+    "youtube_score": 3.39,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "BqipaGhDFxg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "FUCKING ARTISTS MARKET : Défilé de créateurs , coiffeurs , linogravure , céramique , fringues , sérigraphies , lingerie fétish , Dj , Tombola": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-22"
+  },
+  "surprises ! - 11/21h - Gratuit": {
+    "youtube_candidates": [
+      {
+        "id": "pPB-VyIOJ5w",
+        "title": "Elle préfère Michou ou Inoxtag ? - Chocoh Tiktok",
+        "channel": "CHOCOH SHORTS",
+        "views": 13853270,
+        "score": 0.89,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pPB-VyIOJ5w"
+      },
+      {
+        "id": "ig3QULvcyJY",
+        "title": "D&amp;D : le round de surprise n&#39;existe pas #jdr #shorts",
+        "channel": "Geek POWA 🎲 Jeu de rôles & podcast 🎙️ ",
+        "views": 1296,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ig3QULvcyJY"
+      },
+      {
+        "id": "v6uc3Zc9mrY",
+        "title": "New secret in avatar world 🌎 #avatarworld #liliworld #pazu",
+        "channel": "Lili_world",
+        "views": 1101671,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=v6uc3Zc9mrY"
+      },
+      {
+        "id": "AspEsIvvd2g",
+        "title": "Avoir un fils à 14 ans 👶#tiktok #enfants #maman #jeune #humour #fyp #shorts #shortvideo",
+        "channel": "MEGARYX",
+        "views": 628930,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AspEsIvvd2g"
+      },
+      {
+        "id": "Z78W9IGoSco",
+        "title": "🪙✨ RÉCLAME GRATUITEMENT TOUTES les PIÈCES d’Avatar World ! Secrets Partie 1",
+        "channel": "Le Monde de Lili et Tofu",
+        "views": 179099,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Z78W9IGoSco"
+      },
+      {
+        "id": "Zp2vtRz6F8s",
+        "title": "la famille de Swan en 2080..#swan#swanthevoice#neo#short#shorts#humour#humor#joke#jokes#shortsvideo",
+        "channel": "nael ait",
+        "views": 14255630,
+        "score": 0.89,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zp2vtRz6F8s"
+      },
+      {
+        "id": "sxdVy_pAKyM",
+        "title": "Elle a adoré 😻 #jouetsenfants#cadeaupourenfants #enfants #enfantsparents #dessin #dessiner",
+        "channel": "SketchArty",
+        "views": 30523693,
+        "score": 0.94,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sxdVy_pAKyM"
+      },
+      {
+        "id": "zAEl7tdE_b8",
+        "title": "Squeezie sort avec lena situation",
+        "channel": "Yuki Shorts ",
+        "views": 8885726,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zAEl7tdE_b8"
+      }
+    ],
+    "youtube_score": 0.94,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "sxdVy_pAKyM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-22"
+  },
+  "Lancement ARTZINE LE BARRÉ": {
+    "youtube_video_id": "XXyHiuBJBuU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
   }
 }
