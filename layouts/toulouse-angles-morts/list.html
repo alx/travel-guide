@@ -1,0 +1,141 @@
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  html, body { height: 100%; }
+  body { margin: 0; }
+  #map { position: fixed; inset: 0; z-index: 0; background: #eef2f6; }
+
+  .am-overlay {
+    position: absolute; top: 1rem; left: 1rem; z-index: 400;
+    width: 340px; max-width: calc(100vw - 2rem);
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+    border-radius: 14px; box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 1.1rem 1.2rem; font-size: 0.9rem; color: #1a1a1a;
+  }
+  .am-overlay h1 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; color: #1a3a5c; }
+  .am-overlay p.lede { font-size: 0.82rem; color: #555; line-height: 1.5; margin-bottom: 0.9rem; }
+  .am-brand { font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-decoration: none; letter-spacing: 0.03em; display: inline-block; margin-bottom: 0.6rem; }
+  .am-stats { display: flex; gap: 0.9rem; margin-bottom: 0.9rem; flex-wrap: wrap; }
+  .am-stat { flex: 1; min-width: 90px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9px; padding: 0.5rem 0.6rem; }
+  .am-stat .n { font-size: 1.25rem; font-weight: 700; color: #1a3a5c; line-height: 1.1; }
+  .am-stat .l { font-size: 0.68rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 0.15rem; }
+  .am-legend { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.85rem; }
+  .am-leg { display: flex; align-items: center; gap: 0.55rem; font-size: 0.8rem; color: #444; }
+  .am-swatch { width: 26px; height: 0; border-radius: 2px; flex-shrink: 0; }
+  .am-note { font-size: 0.72rem; color: #7c6f9c; background: #f5f2fc; border: 1px solid #e6defa; border-radius: 8px; padding: 0.55rem 0.65rem; line-height: 1.45; }
+  .am-toggle { display: flex; align-items: center; gap: 0.5rem; margin: 0.7rem 0 0; font-size: 0.8rem; color: #444; cursor: pointer; user-select: none; }
+  .am-toggle input { accent-color: #7c3aed; width: 15px; height: 15px; cursor: pointer; }
+  .leaflet-popup-content { font-size: 0.85rem; line-height: 1.5; margin: 0.7rem 0.9rem; }
+  .leaflet-popup-content .am-popname { font-weight: 700; color: #1a3a5c; display: block; margin-bottom: 0.2rem; }
+  .leaflet-popup-content .am-pill { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 20px; margin-top: 0.35rem; }
+  @media (max-width: 640px) {
+    .am-overlay { top: auto; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; width: auto; max-height: 56vh; overflow-y: auto; }
+    .am-overlay h1 { font-size: 1.05rem; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="am-overlay">
+  <a class="am-brand" href="{{ "/" | relURL }}">🗺️ Maps</a>
+  <h1>🕶️ Angles Morts — Toulouse</h1>
+  <p class="lede">{{ .Description }}</p>
+
+  <div class="am-stats">
+    <div class="am-stat"><div class="n" id="st-km">—</div><div class="l">km à l'angle mort</div></div>
+    <div class="am-stat"><div class="n" id="st-cams">—</div><div class="l">caméras en zone</div></div>
+    <div class="am-stat"><div class="n" id="st-seg">—</div><div class="l">tronçons aveugles</div></div>
+  </div>
+
+  <div class="am-legend">
+    <div class="am-leg"><span class="am-swatch" style="border-top:4px solid #dc2626;"></span> Aucune couverture caméra</div>
+    <div class="am-leg"><span class="am-swatch" style="border-top:3px solid #94a3b8;"></span> Couverture partielle / couverte</div>
+  </div>
+
+  <label class="am-toggle">
+    <input type="checkbox" id="show-covered"> Afficher les rues couvertes
+  </label>
+
+  <p class="am-note" id="am-model-note">Modèle de couverture : —</p>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  var map = L.map('map', { zoomControl: true });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var coveredLayer = L.featureGroup();
+  var uncoveredLayer = L.featureGroup().addTo(map);
+
+  var COLOR_UNC = '#dc2626';
+  var COLOR_COV = '#94a3b8';
+
+  function popupHTML(p) {
+    var pill = p.status === 'uncovered'
+      ? '<span class="am-pill" style="background:#fee2e2;color:#b91c1c;">Aucune couverture</span>'
+      : '<span class="am-pill" style="background:#e2e8f0;color:#475569;">Couverture partielle</span>';
+    var kw = p.highway ? '<div style="color:#64748b;font-size:0.78rem;margin-top:0.25rem;">' + p.highway + '</div>' : '';
+    return '<span class="am-popname">' + (p.name || 'Voie sans nom') + '</span>'
+         + '<div style="color:#64748b;font-size:0.78rem;">' + (p.length_m || '?') + ' m &middot; ' + Math.round((p.coverage_frac || 0) * 100) + '% couvert</div>'
+         + kw + pill;
+  }
+
+  fetch('{{ "/toulouse-angles-morts/locations.geojson" | relURL }}')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var feats = data.features || [];
+      var nUnc = 0, kmUnc = 0, kmTot = 0;
+
+      feats.forEach(function (f) {
+        var p = f.properties || {};
+        var isUnc = p.status === 'uncovered';
+        if (isUnc) { nUnc++; kmUnc += (p.length_m || 0); }
+        kmTot += (p.length_m || 0);
+
+        var line = L.geoJSON(f, {
+          style: {
+            color: isUnc ? COLOR_UNC : COLOR_COV,
+            weight: isUnc ? 4 : 3,
+            opacity: isUnc ? 0.92 : 0.55,
+            lineCap: 'round',
+            lineJoin: 'round'
+          }
+        }).bindPopup(popupHTML(p));
+
+        (isUnc ? uncoveredLayer : coveredLayer).addLayer(line);
+      });
+
+      document.getElementById('st-km').textContent = (kmUnc / 1000).toFixed(1);
+      document.getElementById('st-seg').textContent = nUnc;
+      document.getElementById('st-cams').textContent = (data._meta && data._meta.cameras_in_zone) || '—';
+      if (data._meta && data._meta.coverage_model) {
+        document.getElementById('am-model-note').textContent = 'Modèle : ' + data._meta.coverage_model + '.';
+      }
+
+      if (uncoveredLayer.getLayers().length) {
+        map.fitBounds(uncoveredLayer.getBounds().pad(0.08));
+      }
+
+      var toggle = document.getElementById('show-covered');
+      toggle.addEventListener('change', function () {
+        if (toggle.checked) { coveredLayer.addTo(map); coveredLayer.bringToBack(); }
+        else { map.removeLayer(coveredLayer); }
+      });
+    })
+    .catch(function (e) {
+      document.querySelector('.am-overlay').insertAdjacentHTML('beforeend',
+        '<p class="am-note">Données indisponibles.</p>');
+      console.error(e);
+    });
+})();
+</script>
+{{ end }}

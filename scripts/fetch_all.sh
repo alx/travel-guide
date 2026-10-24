@@ -23,6 +23,7 @@ declare -A MAPS=(
   ["scripts/yoga_france/fetch_yoga_france.py"]="static/yoga-france/locations.geojson"
   ["scripts/videosurveillance_france/fetch_videosurveillance_france.py"]="static/videosurveillance-france/locations.geojson"
   ["scripts/videoprotection_toulouse/fetch_videoprotection_toulouse.py"]="static/videoprotection-toulouse/locations.geojson"
+  ["scripts/toulouse_angles_morts/generate.py"]="static/toulouse-angles-morts/locations.geojson"
 )
 
 FILTER="${*:-}"  # optional name filter (space-separated substrings)
