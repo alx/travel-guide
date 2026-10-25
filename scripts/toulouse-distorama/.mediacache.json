@@ -33419,7 +33419,10 @@
     "bandcamp_url": "https://ganacherecords.bandcamp.com/album/kriegelstein-chronicles-vol-1",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2858796223/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-25"
   },
   "Zapoï": {
     "youtube_candidates": [
