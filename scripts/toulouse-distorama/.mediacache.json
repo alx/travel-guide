@@ -10199,11 +10199,15 @@
     "youtube_validated": true
   },
   "RÔTI BONDAGE": {
-    "youtube_video_id": "",
+    "youtube_video_id": "QiiYGNbqqAk",
     "bandcamp_url": "https://rotibondage.bandcamp.com/album/d-mo-2022",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3594424389/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-30"
+    "event_date": "2026-10-30",
+    "youtube_validated": true,
+    "youtube_auto_validated": false,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-25"
   },
   "VANR": {
     "youtube_video_id": "xKsSbGsbt9c",
