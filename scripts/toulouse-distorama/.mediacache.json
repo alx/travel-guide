@@ -33505,11 +33505,15 @@
     ],
     "youtube_score": 0.8,
     "youtube_auto_validated": false,
-    "youtube_video_id": "jK4wnCLuBtI",
+    "youtube_video_id": "",
     "bandcamp_url": "https://ayler-records.bandcamp.com/track/zapo",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3430355662/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_rejected_ids": [
+      "jK4wnCLuBtI"
+    ],
+    "youtube_validated": false
   },
   "RADIX PARADOX": {
     "youtube_candidates": [
