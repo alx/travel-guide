@@ -31916,11 +31916,15 @@
     ],
     "youtube_score": 3.35,
     "youtube_auto_validated": false,
-    "youtube_video_id": "Ifk8P5f07Sk",
+    "youtube_video_id": "",
     "bandcamp_url": "https://thedreammachineuk.bandcamp.com/music",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2555510126/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_rejected_ids": [
+      "Ifk8P5f07Sk"
+    ],
+    "youtube_validated": false
   },
   "COMPLOTS": {
     "youtube_candidates": [
