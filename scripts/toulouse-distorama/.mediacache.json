@@ -31829,11 +31829,15 @@
     ],
     "youtube_score": 0.68,
     "youtube_auto_validated": false,
-    "youtube_video_id": "Nx1Ob3KoMKg",
+    "youtube_video_id": "",
     "bandcamp_url": "https://shilparay.bandcamp.com/track/silk-war-barcelona",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=511284011/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_rejected_ids": [
+      "Nx1Ob3KoMKg"
+    ],
+    "youtube_validated": false
   },
   "THE DREAM MACHINE UK": {
     "youtube_candidates": [
