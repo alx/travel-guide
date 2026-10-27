@@ -34632,7 +34632,10 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-27"
   },
   "NARKOSE": {
     "youtube_candidates": [
