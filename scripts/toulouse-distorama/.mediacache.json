@@ -3222,7 +3222,7 @@
     "bandcamp_searched": false
   },
   "ZAPOÏ": {
-    "youtube_video_id": "jK4wnCLuBtI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -3302,7 +3302,11 @@
     ],
     "youtube_score": 0.8,
     "youtube_auto_validated": false,
-    "event_date": "2026-11-07"
+    "event_date": "2026-11-07",
+    "youtube_rejected_ids": [
+      "jK4wnCLuBtI"
+    ],
+    "youtube_validated": false
   },
   "KESSLER SYNDROME": {
     "youtube_video_id": "",
