@@ -759,10 +759,87 @@
     "bandcamp_validated": true
   },
   "SILLY WALK": {
-    "youtube_video_id": "5ptUMe9eqYE",
-    "bandcamp_url": "https://familyspreerecordings.bandcamp.com/track/die-anna",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=156839140/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true
+    "youtube_video_id": "iV2ViNJFZC8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-20",
+    "youtube_candidates": [
+      {
+        "id": "5ptUMe9eqYE",
+        "title": "Ministry of Silly Walks | Monty Python (Official Sketch)",
+        "channel": "Monty Python",
+        "views": 2340512,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5ptUMe9eqYE"
+      },
+      {
+        "id": "iV2ViNJFZC8",
+        "title": "Monty Python&#39;s Ministry of Silly Walks (Full Sketch)",
+        "channel": "bakalai",
+        "views": 5875096,
+        "score": 0.85,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=iV2ViNJFZC8"
+      },
+      {
+        "id": "cfY4bUcsjNo",
+        "title": "The Monty Python - Les démarches débiles - The silly walk",
+        "channel": "guif08",
+        "views": 88044,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=cfY4bUcsjNo"
+      },
+      {
+        "id": "HHFuTpVvRCI",
+        "title": "Ministry of Silly Walks - Monty Python&#39;s Flying Circus - S02E01",
+        "channel": "Bugsy Power",
+        "views": 1722043,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HHFuTpVvRCI"
+      },
+      {
+        "id": "FBipikT-3xI",
+        "title": "Monty Python - The Silly Walk Song (Official Lyric Video)",
+        "channel": "Monty Python",
+        "views": 367394,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FBipikT-3xI"
+      },
+      {
+        "id": "rP3Mxhi4Uio",
+        "title": "Silly Walk City March in Brno (2013)",
+        "channel": "KokosProductions",
+        "views": 508510,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rP3Mxhi4Uio"
+      },
+      {
+        "id": "58mUme-ldPA",
+        "title": "The Ministry of Silly Walks: Funniest Monty Python Sketches Ever!",
+        "channel": "WatchMojoUK",
+        "views": 76661,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=58mUme-ldPA"
+      },
+      {
+        "id": "wippooDL6WE",
+        "title": "Monty Python - The silly walk",
+        "channel": "TheMaidenOne",
+        "views": 1519588,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wippooDL6WE"
+      }
+    ],
+    "youtube_score": 0.85,
+    "youtube_auto_validated": false
   },
   "VÉTUSTE (indie rk)": {
     "youtube_video_id": "",
@@ -3145,10 +3222,87 @@
     "bandcamp_searched": false
   },
   "ZAPOÏ": {
-    "youtube_video_id": "jtXzsO6TUbw",
+    "youtube_video_id": "jK4wnCLuBtI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "jtXzsO6TUbw",
+        "title": "Le tourisme spatial, une arnaque ? - Groland Le Zapoï du 06/10 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 619803,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jtXzsO6TUbw"
+      },
+      {
+        "id": "ZMAsHbm3ZAM",
+        "title": "Le meilleur pâtissier  - Groland Le Zapoï du 06/04 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 1335130,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZMAsHbm3ZAM"
+      },
+      {
+        "id": "Yoz6-uCUHS4",
+        "title": "Surprise génétique - Groland Le Zapoï du 27/04 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 779129,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Yoz6-uCUHS4"
+      },
+      {
+        "id": "aSOmVdm1eJE",
+        "title": "Viva Las Vegas  - Groland Le Zapoï du 17/02  - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 493986,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aSOmVdm1eJE"
+      },
+      {
+        "id": "jK4wnCLuBtI",
+        "title": "Gromillionnaire - Groland Le Zapoï du 03/02 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 2461756,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jK4wnCLuBtI"
+      },
+      {
+        "id": "MrXRFpgPGVU",
+        "title": "Micron incognito  - Groland Le Zapoï du 17/02  - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 352367,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=MrXRFpgPGVU"
+      },
+      {
+        "id": "kxtcMUwOQZY",
+        "title": "Mélenchon dans son milieu naturel - Groland Le Zapoï du 27/10 - CANAL+ - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 594150,
+        "score": 0.72,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kxtcMUwOQZY"
+      },
+      {
+        "id": "9qlEpu_roz4",
+        "title": "Prison pleine - Groland Le Zapoï du 11/05 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 436526,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9qlEpu_roz4"
+      }
+    ],
+    "youtube_score": 0.8,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-07"
   },
   "KESSLER SYNDROME": {
     "youtube_video_id": "",
@@ -4217,7 +4371,8 @@
     "youtube_rejected_ids": [
       "HBJBxuIs6g0"
     ],
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-07"
   },
   "OOG BOGO": {
     "youtube_video_id": "Jhyk9DY-HmU",
@@ -4300,10 +4455,87 @@
     "bandcamp_searched": false
   },
   "SOUL HATER": {
-    "youtube_video_id": "rtVLc_p98sg",
+    "youtube_video_id": "WD2yX46gVL0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "rtVLc_p98sg",
+        "title": "Soul Hater - Astral Malefactor [EP] 2025",
+        "channel": "BChaos",
+        "views": 1195,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rtVLc_p98sg"
+      },
+      {
+        "id": "XSn4IzVUNgk",
+        "title": "Soul Hater - Demo 2024 (Full Demo)",
+        "channel": "xBrutalYouth666x",
+        "views": 2865,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XSn4IzVUNgk"
+      },
+      {
+        "id": "WD2yX46gVL0",
+        "title": "SOUL HATER - Hardcore - Paris  @ Skate-park le petit - HD SOUND - Toulouse FR  18/05/2024",
+        "channel": "Doc De Roeck",
+        "views": 324,
+        "score": 3.31,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=WD2yX46gVL0"
+      },
+      {
+        "id": "q_G4Z7IVu7I",
+        "title": "SOUL HATER (FRA) - Live at BDC Fest 2026, Le Chinois, Montreuil, France 12-09-2026",
+        "channel": "FAYAFEL",
+        "views": 127,
+        "score": 3.26,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=q_G4Z7IVu7I"
+      },
+      {
+        "id": "7yuw3oUU3T8",
+        "title": "SOUL HATER (FRA) - Live at Le Chinois, Montreuil, France 07-06-2026",
+        "channel": "FAYAFEL",
+        "views": 103,
+        "score": 3.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=7yuw3oUU3T8"
+      },
+      {
+        "id": "UcfdSTKfcro",
+        "title": "Soul Hater : Complete Show Live In Montreuil (07/06/2026 @ Le Chinois)",
+        "channel": "Frankie Snow",
+        "views": 62,
+        "score": 3.22,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=UcfdSTKfcro"
+      },
+      {
+        "id": "Qce4BGmStZw",
+        "title": "Soul Hater - Mix Warmaudio, Décine, Lyon (France) 2026 04 24",
+        "channel": "SPIRITRIBE - VIDEOS",
+        "views": 48,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Qce4BGmStZw"
+      },
+      {
+        "id": "-c9lG_wIUxU",
+        "title": "Malignant Embodiment",
+        "channel": "Soul Hater - Topic",
+        "views": 543,
+        "score": 1.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-c9lG_wIUxU"
+      }
+    ],
+    "youtube_score": 3.31,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-06"
   },
   "« HELLISHA SAUVAGE": {
     "youtube_video_id": "Bj82ehzadyQ",
@@ -7266,7 +7498,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-06"
   },
   "SOULSPLITTER": {
     "youtube_video_id": "iBR35DdYZ_8",
@@ -8105,7 +8338,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-14"
   },
   "COLLECTIF CABANE, DJ SET": {
     "youtube_video_id": "8I3KyZrAWiM",
@@ -9788,10 +10022,87 @@
     "bandcamp_searched": false
   },
   "THE VACUUMS": {
-    "youtube_video_id": "oop31hCDbxA",
+    "youtube_video_id": "expn5p8fZRY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "oop31hCDbxA",
+        "title": "The Vacuums - Mr Sammy Davis Jr.",
+        "channel": "Lukas Aphexas",
+        "views": 767,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oop31hCDbxA"
+      },
+      {
+        "id": "J8L9TeEgBoI",
+        "title": "Cleaning Up Leaves Has Never Been this EASY",
+        "channel": "Silver Cymbal",
+        "views": 1851,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=J8L9TeEgBoI"
+      },
+      {
+        "id": "KjZV4MOG2a0",
+        "title": "Step Outta My Way",
+        "channel": "The Vacuums - Topic",
+        "views": 3,
+        "score": 1.08,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KjZV4MOG2a0"
+      },
+      {
+        "id": "nNFTcTV9-dY",
+        "title": "Vacuums at Walmart",
+        "channel": "Brandon on Vacuums ",
+        "views": 101023,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=nNFTcTV9-dY"
+      },
+      {
+        "id": "Z1uVXo8bf78",
+        "title": "Vacuuming has never been this quick 🤩  #henryquick #vacuum #vacuumcleaner #cleaning  #stickvacuum",
+        "channel": "My Henry",
+        "views": 1992188,
+        "score": 0.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Z1uVXo8bf78"
+      },
+      {
+        "id": "expn5p8fZRY",
+        "title": "Free Liar",
+        "channel": "The Vacuums - Topic",
+        "views": 192,
+        "score": 1.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=expn5p8fZRY"
+      },
+      {
+        "id": "ZLE9DRnH01o",
+        "title": "Giant Vacuum",
+        "channel": "Buttered Side Down",
+        "views": 73532389,
+        "score": 0.98,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZLE9DRnH01o"
+      },
+      {
+        "id": "HOMYo539G7g",
+        "title": "Stop Wasting Money On Expensive Robot Vacuums 2026",
+        "channel": "Vacuum Nerds",
+        "views": 257872,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HOMYo539G7g"
+      }
+    ],
+    "youtube_score": 1.29,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-28"
   },
   "MINERVES": {
     "youtube_video_id": "OEbw4lFjP8k",
@@ -10234,7 +10545,8 @@
     "youtube_rejected_ids": [
       "DtH8ajkSaj4"
     ],
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-26"
   },
   "Quizz « Super héros » by Oncle Joe": {
     "youtube_video_id": "",
@@ -10740,7 +11052,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-29"
   },
   "GAMMA GT": {
@@ -11440,7 +11752,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-25"
   },
   "SOFIA": {
@@ -12211,7 +12523,7 @@
     "youtube_video_id": "tEwg65Q7Mck",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-20"
   },
   "CASUAL RAVERS": {
@@ -13058,7 +13370,7 @@
     "youtube_video_id": "JfHXCbYcnGk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-12"
   },
   "PYK-CROU MUSIC": {
@@ -13661,10 +13973,10 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "H5d-cbLHpKw",
+    "youtube_video_id": "BBVLmTq1YLk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-11"
   },
   "ALTAIR": {
@@ -16493,10 +16805,10 @@
     "youtube_auto_validated": false
   },
   "100% Techno Live Machine : AGRESSION SOROR.E": {
-    "youtube_video_id": "ceoe0Iq6HxY",
+    "youtube_video_id": "n5FieRk-42Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-08-08"
   },
   "AUCH!": {
@@ -20910,7 +21222,7 @@
     "youtube_video_id": "n5FieRk-42Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-07-02"
   },
   "DJ set COLLECTIF CARABINES": {
@@ -23392,7 +23704,7 @@
     "youtube_video_id": "ZwmTdmUXQko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-08"
   },
   "SO BEAST": {
@@ -26315,10 +26627,10 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "6MaWnSyjkfg",
+    "youtube_video_id": "lZjENC9sL5c",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-16",
     "youtube_rejected_ids": [
       "YQbESMdRwhA",
@@ -26846,7 +27158,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-17"
   },
   "TÉLÉCASTRÉ": {
@@ -27016,10 +27328,10 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "",
-    "bandcamp_url": "https://freedomtospend.bandcamp.com/track/en-attendant-l-aube",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2605029302/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "upHxIs247RI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-10-19",
     "youtube_rejected_ids": [
       "MGDVe3ePvpo"
@@ -28482,10 +28794,10 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "j7ZKmiVydBM",
-    "bandcamp_url": "https://atinimatso.bandcamp.com/track/errances-matinales-01",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1173807678/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-10-24",
     "youtube_rejected_ids": [
       "Xn_rP9Swa-M"
@@ -28767,7 +29079,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-27"
   },
   "KELLEY STOLTZ": {
@@ -29696,10 +30008,10 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "R8MWKsheHxk",
-    "bandcamp_url": "https://defected.bandcamp.com/",
+    "youtube_video_id": "GGDVYM21yEs",
+    "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-09-19"
   },
   "ERREUR DE PROG (reporté au 10 novembre) ->TAK": {
@@ -30631,10 +30943,10 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "IwvGeyGS-_c",
+    "youtube_video_id": "iIQoqD0HpHo",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-17",
     "youtube_rejected_ids": [
       "E9Cku97WSO8"
@@ -31665,7 +31977,7 @@
     "youtube_video_id": "ctuDu_atfPw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-04",
     "youtube_rejected_ids": [
       "4f6_X-uHulk"
@@ -31759,83 +32071,83 @@
   "AFTER BARCELONA": {
     "youtube_candidates": [
       {
-        "id": "Nx1Ob3KoMKg",
-        "title": "🎧  Barcelona After Work | Deep House Relax Mix",
-        "channel": "Barcelona Sessions",
-        "views": 254261,
-        "score": 0.68,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Nx1Ob3KoMKg"
-      },
-      {
-        "id": "U7yeLDVS4EE",
-        "title": "Barcelona After Hours — Luxury Coastal Deep House Radio",
-        "channel": "After Hours Radio",
-        "views": 6581,
-        "score": 0.48,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=U7yeLDVS4EE"
-      },
-      {
-        "id": "ImZ6r2oMFxU",
-        "title": "HANSI FLICK&#39;S GENIUS PLAN After Barcelona&#39;s Defensive Crisis 😳",
-        "channel": "OFFSIDE STORIES",
-        "views": 41390,
-        "score": 0.58,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ImZ6r2oMFxU"
-      },
-      {
-        "id": "8kyjpRe5FKY",
-        "title": "Barcelona After Hours 🌙 | Mediterranean Retro Mix · 1986",
-        "channel": "Fros Radio",
-        "views": 257,
-        "score": 0.3,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=8kyjpRe5FKY"
-      },
-      {
-        "id": "t4Q_wanZVbw",
-        "title": "BARCELONA Before Hansi Flick vs After Hansi Flick || CREDIT: Hamid Sahari",
-        "channel": "Elivision ",
-        "views": 7395,
-        "score": 0.48,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=t4Q_wanZVbw"
-      },
-      {
-        "id": "6hNiiwzbKoo",
-        "title": "😱 béticos tras el robo del Barcelona #vikingoblanco",
-        "channel": "Vikingo Blanco Shorts",
-        "views": 27313,
-        "score": 0.55,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=6hNiiwzbKoo"
-      },
-      {
-        "id": "9SROWY5jGDA",
-        "title": "PSG-Barcelone : &quot;Je ne vois AUCUNE FAIBLESSE au BARÇA !&quot;",
+        "id": "KmBbEbsBYpw",
+        "title": "Barça 1-2 Real: Avec un doublé de Mbappé, les Madrilènes remportent le Clasico... le débrief complet",
         "channel": "AFTER FOOT",
-        "views": 40666,
-        "score": 0.58,
+        "views": 15430,
+        "score": 0.52,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=9SROWY5jGDA"
+        "url": "https://www.youtube.com/watch?v=KmBbEbsBYpw"
       },
       {
-        "id": "EllEKpSpHbs",
-        "title": "Lamine Yamal Got HEADBUTTED After Barcelona Robbed Betis?! 😳💀",
-        "channel": "Bullet Ball",
-        "views": 5237,
-        "score": 0.46,
+        "id": "aA73kjbD9fM",
+        "title": "MOURINHO, FULL PRESS CONFERENCE after BARCELONA 1 - REAL MADRID 2: A HARD-FOUGHT EL CLÁSICO WIN",
+        "channel": "Diario AS",
+        "views": 7383,
+        "score": 0.48,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=EllEKpSpHbs"
+        "url": "https://www.youtube.com/watch?v=aA73kjbD9fM"
+      },
+      {
+        "id": "bomgCpeSIw4",
+        "title": "Lamine Yamal Looks DEVASTATED After Real Madrid Beat Barcelona at Camp Nou | FULL SCENE",
+        "channel": "Diario AS",
+        "views": 752,
+        "score": 3.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=bomgCpeSIw4"
+      },
+      {
+        "id": "aQJNN_da5dA",
+        "title": "HANSI FLICK, full PRESS CONFERENCE after FC BARCELONA 1-REAL MADRID 2",
+        "channel": "Diario AS",
+        "views": 3283,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aQJNN_da5dA"
+      },
+      {
+        "id": "iCUIa5b2rWE",
+        "title": "ANALYSIS | FC Barcelona 1-2 Real Madrid | Mbappé shines, Yamal struggles, Ballon d&#39;Or talk",
+        "channel": "Premier Sports",
+        "views": 8663,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=iCUIa5b2rWE"
+      },
+      {
+        "id": "MktdfxFiwlQ",
+        "title": "QUICK MADRID 3 CHANGES AFTER TODAYS INJUEY,  BARCELONA UPDATES, PALMER SPEAKS AFTER..OLISE, PSG AND",
+        "channel": "AllSportsGH",
+        "views": 9444,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=MktdfxFiwlQ"
+      },
+      {
+        "id": "pGgCw5wYiU0",
+        "title": "😳 Mourinho’s Legendary Message After Real Madrid Lost 5-0 to Barcelona! 🔥",
+        "channel": "GoalBrief 📰",
+        "views": 7354,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pGgCw5wYiU0"
+      },
+      {
+        "id": "6r0OiUsPfkE",
+        "title": "I’m DISGUSTED With Barcelona After That…",
+        "channel": "GRETT",
+        "views": 333,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6r0OiUsPfkE"
       }
     ],
-    "youtube_score": 0.68,
+    "youtube_score": 3.36,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://shilparay.bandcamp.com/track/silk-war-barcelona",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=511284011/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "youtube_video_id": "bomgCpeSIw4",
+    "bandcamp_url": "https://oliviatremorcontrol.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3873302425/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
     "event_date": "2026-11-07",
     "youtube_rejected_ids": [
@@ -31849,34 +32161,25 @@
         "id": "l1Fkx6AOuG8",
         "title": "SML Movie: The Dream Machine!",
         "channel": "SML",
-        "views": 29909914,
+        "views": 29934122,
         "score": 0.93,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=l1Fkx6AOuG8"
       },
       {
-        "id": "EbJXy8szcBE",
-        "title": "THE DREAM MACHINE | Award-winning Short Film | Mystery/Thriller/Sci-fi",
-        "channel": "Embring Sterner Entertainment",
-        "views": 9751,
-        "score": 0.5,
+        "id": "VdAgj34G4tg",
+        "title": "Mark Farina - Dream Machine",
+        "channel": "andylion420",
+        "views": 3184479,
+        "score": 0.81,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=EbJXy8szcBE"
-      },
-      {
-        "id": "3lOQ4Tv7iDs",
-        "title": "The Dream Machine - Fort Perch Rock (Official Video)",
-        "channel": "The Dream Machine",
-        "views": 9564,
-        "score": 1.5,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=3lOQ4Tv7iDs"
+        "url": "https://www.youtube.com/watch?v=VdAgj34G4tg"
       },
       {
         "id": "wI2yAzBH0sc",
         "title": "Dream Machines - Azaad 4L (Visuals) | Desi Trap Music | Latest Punjabi Songs 2026",
         "channel": "AZAAD 4L",
-        "views": 125064,
+        "views": 139727,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=wI2yAzBH0sc"
@@ -31885,7 +32188,7 @@
         "id": "aHGXVW0fYp4",
         "title": "Tokio Hotel - Dream Machine - Dream Machine - Album [AUDIO]",
         "channel": "Tokio Hotel",
-        "views": 534606,
+        "views": 534917,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=aHGXVW0fYp4"
@@ -31894,35 +32197,44 @@
         "id": "e8TmBe4J6kA",
         "title": "The Dream Machine - Flowers On The Razorwire (Official Video)",
         "channel": "The Dream Machine",
-        "views": 2857,
+        "views": 2870,
         "score": 1.43,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=e8TmBe4J6kA"
       },
       {
-        "id": "CpCuj0aAwOg",
-        "title": "The Dream Machine - Angel Heart (Official)",
-        "channel": "dreammachineVEVO",
-        "views": 1592,
-        "score": 0.4,
+        "id": "3lOQ4Tv7iDs",
+        "title": "The Dream Machine - Fort Perch Rock (Official Video)",
+        "channel": "The Dream Machine",
+        "views": 9574,
+        "score": 1.5,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=CpCuj0aAwOg"
+        "url": "https://www.youtube.com/watch?v=3lOQ4Tv7iDs"
       },
       {
-        "id": "Ifk8P5f07Sk",
-        "title": "Snug Live Sessions - Dream Machine",
-        "channel": "Snug Live Sessions",
-        "views": 597,
-        "score": 3.35,
+        "id": "Ws7HMX6aNsY",
+        "title": "Dream Machine - Live at Permanent Records Roadhouse, LA 4/3/2024",
+        "channel": "Daniel Kirby",
+        "views": 1175,
+        "score": 3.38,
         "live": 1,
-        "url": "https://www.youtube.com/watch?v=Ifk8P5f07Sk"
+        "url": "https://www.youtube.com/watch?v=Ws7HMX6aNsY"
+      },
+      {
+        "id": "PoS2X_nkuBU",
+        "title": "The Dream Machine - Children, My England (Official Video)",
+        "channel": "The Dream Machine",
+        "views": 21205,
+        "score": 1.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=PoS2X_nkuBU"
       }
     ],
-    "youtube_score": 3.35,
+    "youtube_score": 3.38,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://thedreammachineuk.bandcamp.com/music",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2555510126/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "youtube_video_id": "Ws7HMX6aNsY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
     "bandcamp_searched": true,
     "event_date": "2026-11-07",
     "youtube_rejected_ids": [
@@ -33435,10 +33747,19 @@
   "Zapoï": {
     "youtube_candidates": [
       {
+        "id": "ZMAsHbm3ZAM",
+        "title": "Le meilleur pâtissier  - Groland Le Zapoï du 06/04 - CANAL+",
+        "channel": "Groland - CANAL+",
+        "views": 1334759,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZMAsHbm3ZAM"
+      },
+      {
         "id": "jtXzsO6TUbw",
         "title": "Le tourisme spatial, une arnaque ? - Groland Le Zapoï du 06/10 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 619651,
+        "views": 619777,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jtXzsO6TUbw"
@@ -33447,7 +33768,7 @@
         "id": "aSOmVdm1eJE",
         "title": "Viva Las Vegas  - Groland Le Zapoï du 17/02  - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 493974,
+        "views": 493982,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=aSOmVdm1eJE"
@@ -33456,25 +33777,16 @@
         "id": "Yoz6-uCUHS4",
         "title": "Surprise génétique - Groland Le Zapoï du 27/04 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 778934,
+        "views": 779101,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Yoz6-uCUHS4"
       },
       {
-        "id": "ZMAsHbm3ZAM",
-        "title": "Le meilleur pâtissier  - Groland Le Zapoï du 06/04 - CANAL+",
-        "channel": "Groland - CANAL+",
-        "views": 1333006,
-        "score": 0.77,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ZMAsHbm3ZAM"
-      },
-      {
         "id": "jK4wnCLuBtI",
         "title": "Gromillionnaire - Groland Le Zapoï du 03/02 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 2459454,
+        "views": 2461387,
         "score": 0.8,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jK4wnCLuBtI"
@@ -33483,7 +33795,7 @@
         "id": "MrXRFpgPGVU",
         "title": "Micron incognito  - Groland Le Zapoï du 17/02  - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 352312,
+        "views": 352353,
         "score": 0.69,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=MrXRFpgPGVU"
@@ -33492,7 +33804,7 @@
         "id": "kxtcMUwOQZY",
         "title": "Mélenchon dans son milieu naturel - Groland Le Zapoï du 27/10 - CANAL+ - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 591557,
+        "views": 593597,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=kxtcMUwOQZY"
@@ -33501,15 +33813,15 @@
         "id": "9qlEpu_roz4",
         "title": "Prison pleine - Groland Le Zapoï du 11/05 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 436411,
+        "views": 436510,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9qlEpu_roz4"
       }
     ],
-    "youtube_score": 0.8,
+    "youtube_score": 0.77,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "ZMAsHbm3ZAM",
     "bandcamp_url": "https://ayler-records.bandcamp.com/track/zapo",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3430355662/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -33771,9 +34083,9 @@
   },
   "FUCKING ARTISTS MARKET : Défilé de créateurs , coiffeurs , linogravure , céramique , fringues , sérigraphies , lingerie fétish , Dj , Tombola": {
     "youtube_video_id": "",
-    "bandcamp_url": "https://eroticmarket.bandcamp.com/",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=8994637/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-11-22"
   },
   "surprises ! - 11/21h - Gratuit": {
@@ -33860,10 +34172,3221 @@
     "event_date": "2026-11-22"
   },
   "Lancement ARTZINE LE BARRÉ": {
-    "youtube_video_id": "Cc2Urn0EOIo",
+    "youtube_video_id": "Nh_YDEhMmqk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-26"
+  },
+  "Jam Session avec AUGUSTE HARLE": {
+    "youtube_candidates": [
+      {
+        "id": "6Jt1zMuioAE",
+        "title": "Compil Terya Groove en concert à Itzac",
+        "channel": "Stephan villieres",
+        "views": 2352,
+        "score": 3.42,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=6Jt1zMuioAE"
+      },
+      {
+        "id": "SRCtzBMjR80",
+        "title": "Vocelli en concert à l&#39;Espace Bonnefoy (Toulouse 06/04/12) 2/3",
+        "channel": "BoXL0VeFactÔRy!!!;p*",
+        "views": 506,
+        "score": 3.34,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=SRCtzBMjR80"
+      }
+    ],
+    "youtube_score": 3.42,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-01",
+    "youtube_rejected_ids": [
+      "6Jt1zMuioAE"
+    ],
+    "youtube_validated": false
+  },
+  "AKASPI": {
+    "youtube_candidates": [
+      {
+        "id": "aARyUPQfLMg",
+        "title": "AKASPI - GUIZMO KK",
+        "channel": "Akaspi (Akalay & Spini)",
+        "views": 126,
+        "score": 1.26,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aARyUPQfLMg"
+      },
+      {
+        "id": "sSPVwjUqUyI",
+        "title": "Akalay &amp; Spini - Triangle VIP (video clip)",
+        "channel": "Akaspi (Akalay & Spini)",
+        "views": 747,
+        "score": 1.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sSPVwjUqUyI"
+      },
+      {
+        "id": "36oy7K06-QA",
+        "title": "アカスピEXTRA2024 ~バラード・ジャズ全国大会~ Wezen.（関西ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 565,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=36oy7K06-QA"
+      },
+      {
+        "id": "9Y6fUClP8Eo",
+        "title": "アカスピEXTRA2024∼3年生全国大会∼  - 了 -（関西ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 454,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9Y6fUClP8Eo"
+      },
+      {
+        "id": "QJU29x1nuXo",
+        "title": "アカスピEXTRA2024∼2年生全国大会∼crocus（関西ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 198,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QJU29x1nuXo"
+      },
+      {
+        "id": "A33EjwMURZs",
+        "title": "アカスピEXTRA2024∼3年生全国大会∼ord. （関東ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 186,
+        "score": 0.28,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=A33EjwMURZs"
+      },
+      {
+        "id": "8HKpv1pHXuU",
+        "title": "アカスピEXTRA2024 ~ギャルバン全国大会~ Olivia（関西ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 414,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8HKpv1pHXuU"
+      },
+      {
+        "id": "exikVZIRxfY",
+        "title": "アカスピEXTRA2024∼3年生全国大会∼canᴀria（関東ブロック）",
+        "channel": "A cappella Spirits",
+        "views": 147,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=exikVZIRxfY"
+      }
+    ],
+    "youtube_score": 1.36,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "sSPVwjUqUyI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-04"
+  },
+  "DEATH FROM PARIS": {
+    "youtube_candidates": [
+      {
+        "id": "RVrj_2PI1nQ",
+        "title": "Death In Paris - One Foot in the Grave (Official Music Video)",
+        "channel": "Death in Paris",
+        "views": 28788,
+        "score": 0.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RVrj_2PI1nQ"
+      },
+      {
+        "id": "P8B1P7mwaZs",
+        "title": "The Duel between Paris and Menelaus - The Trojan War Saga Ep17 - Greek Mythology in Comics",
+        "channel": "See U in History / Mythology",
+        "views": 155371,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=P8B1P7mwaZs"
+      },
+      {
+        "id": "OMPBJttyBQA",
+        "title": "2PAF",
+        "channel": "Death In Paris - Topic",
+        "views": 6335,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OMPBJttyBQA"
+      },
+      {
+        "id": "I8ttfAQZP2k",
+        "title": "Troy 2004   Paris Kills Achilles Full Scene   Full HD",
+        "channel": "codigo morza",
+        "views": 214076,
+        "score": 3.67,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=I8ttfAQZP2k"
+      },
+      {
+        "id": "Rdrx5DWFJ_s",
+        "title": "&quot;Stay With Me&quot; Paris&#39;s Heartbreaking Death Scene from Helen of Troy (2003) | RomComs",
+        "channel": "RomComs",
+        "views": 19554,
+        "score": 3.54,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Rdrx5DWFJ_s"
+      },
+      {
+        "id": "jRGGMUhYpnU",
+        "title": "Death In Paris - What&#39;s Today? (Official Music Video)",
+        "channel": "Ghost Killer Entertainment",
+        "views": 96684,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jRGGMUhYpnU"
+      },
+      {
+        "id": "lQFCDY8oWhA",
+        "title": "The Death of Paris and the Madness of Ajax - The Trojan War Saga Ep.13",
+        "channel": "See U in History / Mythology",
+        "views": 91651,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=lQFCDY8oWhA"
+      },
+      {
+        "id": "rqsmrSyLTNM",
+        "title": "Taylor Swift - Death By A Thousand Cuts (Live From Paris)",
+        "channel": "Taylor Swift",
+        "views": 4659771,
+        "score": 3.83,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=rqsmrSyLTNM"
+      }
+    ],
+    "youtube_score": 3.83,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "rqsmrSyLTNM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-06"
+  },
+  "KLUB2CŒUR": {
+    "youtube_video_id": "wRYhxV5EE_Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-06"
+  },
+  "TOULOUSE HARDCORE": {
+    "youtube_candidates": [
+      {
+        "id": "tW57KUQS63o",
+        "title": "Scènes punk hardcore et métal à Toulouse : Srail et The RedMoths entre débrouille et passion.",
+        "channel": "Sam Rob",
+        "views": 1061,
+        "score": 3.38,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=tW57KUQS63o"
+      },
+      {
+        "id": "Wy2_sDT4Nco",
+        "title": "ASLØ | Amnexia, Toulouse 2026 (Hard Techno + Acid)",
+        "channel": "ASLØ",
+        "views": 171928,
+        "score": 3.65,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Wy2_sDT4Nco"
+      },
+      {
+        "id": "lVOp0lVwW3s",
+        "title": "NO SELF - Gulf of Truth- [Metal Hardcore] - Toulouse @ L&#39;Engrenage _ Balma Gramont  2025",
+        "channel": "Doc De Roeck",
+        "views": 431,
+        "score": 3.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=lVOp0lVwW3s"
+      },
+      {
+        "id": "960lScKzpME",
+        "title": "Joshua - The last island Mix hardcore @ Toulouse (2001)",
+        "channel": "History of Free Party",
+        "views": 493,
+        "score": 3.34,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=960lScKzpME"
+      },
+      {
+        "id": "UkxYMqHErPo",
+        "title": "NO SELF - Hardcore - Toulouse @ Skatepark le petit - HD SOUND - Toulouse FR  18/05/2024",
+        "channel": "Doc De Roeck",
+        "views": 984,
+        "score": 3.37,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=UkxYMqHErPo"
+      },
+      {
+        "id": "-2-zp5m4zZI",
+        "title": "UP RIGHTS - Toulouse - SXE Hardcore @ Le Phénix - Toulouse - 2025",
+        "channel": "Doc De Roeck",
+        "views": 391,
+        "score": 3.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=-2-zp5m4zZI"
+      },
+      {
+        "id": "j7Q_BTwAk-k",
+        "title": "TOULOUSE THREEWAYYY",
+        "channel": "Jowi",
+        "views": 1660,
+        "score": 3.4,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=j7Q_BTwAk-k"
+      },
+      {
+        "id": "ptvNk-kfCvk",
+        "title": "SHELLSHOCK - Oi ! Hardcore - TOULOUSE  @ Skate-park le petit - HD SOUND - Toulouse FR  23/06/2024",
+        "channel": "Doc De Roeck",
+        "views": 1686,
+        "score": 3.4,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ptvNk-kfCvk"
+      }
+    ],
+    "youtube_score": 3.65,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Wy2_sDT4Nco",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-06"
+  },
+  "VÈRN": {
+    "youtube_candidates": [
+      {
+        "id": "9Vu1sgKO67k",
+        "title": "PANOPTIQUE AVEC VUE - vèrn // Live Session",
+        "channel": "vèrn",
+        "views": 292,
+        "score": 5.31,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=9Vu1sgKO67k"
+      },
+      {
+        "id": "4V4EauqIeTI",
+        "title": "Vern-sur-Seiche : la police municipale bientôt armée pour assurer sa sécurité 👮‍♂️",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 2986,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4V4EauqIeTI"
+      },
+      {
+        "id": "S4w3WtlxYBc",
+        "title": "Rennes : violents débordements et interdiction d&#39;attroupements après la manif 💥",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 6046,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=S4w3WtlxYBc"
+      },
+      {
+        "id": "_IG7bZt2C20",
+        "title": "Rennes : la Confédération paysanne offre le petit-déjeuner aux lycéens mobilisés 🥐",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 2698,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_IG7bZt2C20"
+      },
+      {
+        "id": "jrJayghgKs0",
+        "title": "Rennes : Loïg Chesnais-Girard réagit à la mobilisation et critique l&#39;État 🏛️",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 1120,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jrJayghgKs0"
+      },
+      {
+        "id": "mO1M-gxLkRQ",
+        "title": "Rennes : tension en marge de la manifestation lycéenne et intervention des CRS 🚨",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 7819,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mO1M-gxLkRQ"
+      },
+      {
+        "id": "2_vy-bDCdNA",
+        "title": "Vern-sur-Seiche Bucolia",
+        "channel": "Imoja",
+        "views": 115686,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2_vy-bDCdNA"
+      },
+      {
+        "id": "3GvOj3prAJM",
+        "title": "Mobilisation lycéenne à Rennes : l&#39;interview de Tom, lycéen mobilisé 📢",
+        "channel": "TVR - Chaîne de télé bretonne",
+        "views": 867,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3GvOj3prAJM"
+      }
+    ],
+    "youtube_score": 5.31,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "9Vu1sgKO67k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-06"
+  },
+  "KRIEGELSTEIN": {
+    "youtube_candidates": [
+      {
+        "id": "4cR7QC8rIlk",
+        "title": "KRIEGELSTEIN - Empty Canyons (teaser live 2024)",
+        "channel": "KRIEGELSTEIN",
+        "views": 228,
+        "score": 5.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=4cR7QC8rIlk"
+      },
+      {
+        "id": "rF1AFiqxaVE",
+        "title": "KRIEGELSTEIN - Frustration (LIVE SESSION)",
+        "channel": "KRIEGELSTEIN",
+        "views": 1541,
+        "score": 5.4,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=rF1AFiqxaVE"
+      },
+      {
+        "id": "r-zIs6xmNBM",
+        "title": "KRIEGELSTEIN - RED WITCH",
+        "channel": "KRIEGELSTEIN",
+        "views": 1135,
+        "score": 5.38,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=r-zIs6xmNBM"
+      },
+      {
+        "id": "VAEHviHZfL0",
+        "title": "KRIEGELSTEIN - Interlude / Tangerine",
+        "channel": "KRIEGELSTEIN",
+        "views": 457,
+        "score": 5.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=VAEHviHZfL0"
+      },
+      {
+        "id": "XiFRA3PJGW0",
+        "title": "KRIEGELSTEIN - KALMOS live @ L&#39;Intermédiaire, Marseille, 28-03-2026",
+        "channel": "Jbs Yahya",
+        "views": 17,
+        "score": 3.16,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=XiFRA3PJGW0"
+      },
+      {
+        "id": "QLjgikTckM0",
+        "title": "Alles Verloren - Binder &amp; Krieglstein",
+        "channel": "catmastro",
+        "views": 431832,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QLjgikTckM0"
+      },
+      {
+        "id": "m-Yj-kYqPAQ",
+        "title": "Unique piano from KRIEGELSTEIN Paris, France. 19th century.",
+        "channel": "ANTIQON",
+        "views": 190,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=m-Yj-kYqPAQ"
+      },
+      {
+        "id": "zeWmlQCVLBk",
+        "title": "YATS",
+        "channel": "Kriegelstein - Topic",
+        "views": 256,
+        "score": 1.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zeWmlQCVLBk"
+      }
+    ],
+    "youtube_score": 5.4,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "rF1AFiqxaVE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
+  },
+  "NARKOSE": {
+    "youtube_candidates": [
+      {
+        "id": "5-L3EEn98ck",
+        "title": "Abendvisite - Narkose Teil 1",
+        "channel": "KlinikumIN",
+        "views": 1227680,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5-L3EEn98ck"
+      },
+      {
+        "id": "08vD7P9UaXg",
+        "title": "Was passiert im OP wenn man in Narkose liegt?",
+        "channel": "Praxisklinik am Rosengarten",
+        "views": 149363,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=08vD7P9UaXg"
+      },
+      {
+        "id": "9x_5eOMLTKg",
+        "title": "Tipps zur Bewältigung der Angst vor einer Narkose. 🤍 #drberkei #op #narkose #nasenop #brustop",
+        "channel": "Dr. Julia Berkei",
+        "views": 23696,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9x_5eOMLTKg"
+      },
+      {
+        "id": "3E1ea3sTdbs",
+        "title": "Quick View | Narkoseeinleitung",
+        "channel": "Klinikum Fürth",
+        "views": 138122,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3E1ea3sTdbs"
+      },
+      {
+        "id": "GcaTd1SxpQE",
+        "title": "Gefangen in der Narkose #Neuanfang #Narkose #tru #trudoku #zdf",
+        "channel": "TRU DOKU",
+        "views": 65551,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GcaTd1SxpQE"
+      },
+      {
+        "id": "8M08l6oslz8",
+        "title": "NARKOSE - &quot;Ruhrgebiet&quot; (Music video)",
+        "channel": "Tremendo Garaje",
+        "views": 4066,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8M08l6oslz8"
+      },
+      {
+        "id": "fyD18aJbSG4",
+        "title": "Einschlafen in sicheren Händen...💤💚",
+        "channel": "Wiener Gesundheitsverbund",
+        "views": 6900,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fyD18aJbSG4"
+      },
+      {
+        "id": "-mU1RzvkGKs",
+        "title": "Wie die Vollnarkose bei einer Operation abläuft – Schritt für Schritt",
+        "channel": "Universitätsklinikum Freiburg",
+        "views": 1093120,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-mU1RzvkGKs"
+      }
+    ],
+    "youtube_score": 0.76,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "5-L3EEn98ck",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-12"
+  },
+  "COOL J & THE HOTLINE": {
+    "youtube_candidates": [
+      {
+        "id": "udEN8EdJT9k",
+        "title": "LL COOL J - Luv U Better",
+        "channel": "LLCoolJVEVO",
+        "views": 46998990,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=udEN8EdJT9k"
+      },
+      {
+        "id": "q-VDKO6pNpU",
+        "title": "1-900-909-COOL | Television Commercial | 1989 | LL Cool J Hotline",
+        "channel": "Analog Memories",
+        "views": 3021,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=q-VDKO6pNpU"
+      },
+      {
+        "id": "IDdkz4n0c70",
+        "title": "LL Cool J Had Em Dialing His Hotline Back In The Day #Shorts #LLCoolJ #Queens #NY #80s",
+        "channel": "Hip-Hop Junky",
+        "views": 2387,
+        "score": 0.42,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=IDdkz4n0c70"
+      },
+      {
+        "id": "F7vX_6deVyo",
+        "title": "L. L. Cool J Hotline Commercial",
+        "channel": "TV Nostalgia And More",
+        "views": 25,
+        "score": 0.18,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=F7vX_6deVyo"
+      },
+      {
+        "id": "Av8Kq0zRf3I",
+        "title": "Eminem and LL COOL J Perform &quot;Going Back To Cali&quot; and &quot;Rock The Bells&quot; at Rock Hall Of Fame",
+        "channel": "LL COOL J",
+        "views": 8733825,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Av8Kq0zRf3I"
+      },
+      {
+        "id": "oVDfyc2lh4Q",
+        "title": "LL COOL J - I&#39;m Bad (Official Music Video)",
+        "channel": "LLCoolJVEVO",
+        "views": 39725977,
+        "score": 0.95,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oVDfyc2lh4Q"
+      },
+      {
+        "id": "w_XVxj035Qk",
+        "title": "LL COOL J - Proclivities ft. Saweetie",
+        "channel": "LL COOL J",
+        "views": 1893784,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=w_XVxj035Qk"
+      },
+      {
+        "id": "icLqP05prbQ",
+        "title": "LL Cool J 900 Number To Hear Walking With A Panther Early",
+        "channel": "Stevie G. The Illest",
+        "views": 403,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=icLqP05prbQ"
+      }
+    ],
+    "youtube_score": 0.96,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "udEN8EdJT9k",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "THE SILVERLININGS": {
+    "youtube_candidates": [
+      {
+        "id": "kVS-6k2tQAA",
+        "title": "Silver Linings Playbook (2013) Official Trailer [HD]",
+        "channel": "Roadshow Films",
+        "views": 1833870,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kVS-6k2tQAA"
+      },
+      {
+        "id": "DKL4X0PZz7M",
+        "title": "First Aid Kit - My Silver Lining (Official Video)",
+        "channel": "FirstAidKitVEVO",
+        "views": 53187389,
+        "score": 0.97,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=DKL4X0PZz7M"
+      },
+      {
+        "id": "og36vWGn5CU",
+        "title": "Silver Linings Playbook (8/9) Movie CLIP - I Did My Research (2012) HD",
+        "channel": "Movieclips",
+        "views": 1015429,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=og36vWGn5CU"
+      },
+      {
+        "id": "wbzJB36Z1F4",
+        "title": "Laufey - Silver Lining (Official Music Video)",
+        "channel": "Laufey",
+        "views": 7292870,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wbzJB36Z1F4"
+      },
+      {
+        "id": "gboyt6tegkM",
+        "title": "Nightcore - Silver Lining",
+        "channel": "Madi",
+        "views": 6923185,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=gboyt6tegkM"
+      },
+      {
+        "id": "B35qHapLdik",
+        "title": "Silver Linings Playbook- Final dance scene",
+        "channel": "Amy Bradley",
+        "views": 473374,
+        "score": 3.71,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=B35qHapLdik"
+      },
+      {
+        "id": "8p0YBrmfLyA",
+        "title": "Silver Linings Playbook (5/9) Movie CLIP - Sort of Like Me (2012) HD",
+        "channel": "Movieclips",
+        "views": 1180043,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8p0YBrmfLyA"
+      },
+      {
+        "id": "cv7-qdvYht8",
+        "title": "Mt. Joy - Silver Lining [Official Music Video]",
+        "channel": "Mt. Joy Official",
+        "views": 3916953,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=cv7-qdvYht8"
+      }
+    ],
+    "youtube_score": 3.71,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "B35qHapLdik",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "CORIUM": {
+    "youtube_candidates": [
+      {
+        "id": "eBQ2JAiGWLA",
+        "title": "🪐La substance la plus dangereuse sur Terre !",
+        "channel": "AstronoGeek",
+        "views": 1300963,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=eBQ2JAiGWLA"
+      },
+      {
+        "id": "DfEMldrM7N4",
+        "title": "CORIUM - LIVE @LE PIT DOG - LORIENT - HD - [FULL SET - MULTI CAM] 06/02/2026",
+        "channel": "VIOLENT MOTION",
+        "views": 448,
+        "score": 3.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=DfEMldrM7N4"
+      },
+      {
+        "id": "10Oy6Z7Fztw",
+        "title": "Chernobyl - What is CORIUM? #shorts #history  #science #chernobyldisaster #nucleardisaster",
+        "channel": "Subject Zero Science",
+        "views": 886009,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=10Oy6Z7Fztw"
+      },
+      {
+        "id": "ZEDkyjS97EM",
+        "title": "EPR de Flamanville : le récupérateur de corium, une amélioration à la sûreté de conception",
+        "channel": "EDF",
+        "views": 20812,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZEDkyjS97EM"
+      },
+      {
+        "id": "UI75U7a7WJ8",
+        "title": "Corium du réacteur 1 de Fukushima Daiichi - 09-02-2022",
+        "channel": "BlogdeFukushima",
+        "views": 13357,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=UI75U7a7WJ8"
+      },
+      {
+        "id": "BkbswBcvhqo",
+        "title": "⚛️ ☢️ Le concept en 3 minutes : Qu&#39;est ce que le corium ? ⚛️ ☢️",
+        "channel": "Eurêkulure (by Science Buissonnière)",
+        "views": 6287,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BkbswBcvhqo"
+      },
+      {
+        "id": "G8shksPydPk",
+        "title": "Molten Corium Concrete Interaction",
+        "channel": "ESLAB Simulations. SNU",
+        "views": 36485,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=G8shksPydPk"
+      },
+      {
+        "id": "tqB8RHCurpU",
+        "title": "La chose la plus radioactive de la planète ! 😱",
+        "channel": "Human évolution ",
+        "views": 339774,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tqB8RHCurpU"
+      }
+    ],
+    "youtube_score": 3.33,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "DfEMldrM7N4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "EMBER": {
+    "youtube_candidates": [
+      {
+        "id": "KF-rYJvn6UU",
+        "title": "🐉 EMBER 2: The Valley of Dragons | Full Fantasy Dragon Movie (English)",
+        "channel": "MythicToons",
+        "views": 16744,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KF-rYJvn6UU"
+      },
+      {
+        "id": "vPaRqZ0WYLA",
+        "title": "WhoMadeWho - Ember",
+        "channel": "Get Physical Music",
+        "views": 820337,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vPaRqZ0WYLA"
+      },
+      {
+        "id": "G1pDoEQMpRQ",
+        "title": "Ember loses her temper and nearly ruins her father&#39;s business.#minions  #cartoon  #shorts  #fyp",
+        "channel": "Tahir Afsar",
+        "views": 83709,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=G1pDoEQMpRQ"
+      },
+      {
+        "id": "mR_3ZWllqb4",
+        "title": "How Good Is The &quot;God Of Might&quot; Ember Farm? [Torchlight Infinite]",
+        "channel": "Squid RPG",
+        "views": 12972,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mR_3ZWllqb4"
+      },
+      {
+        "id": "6m9N9Wm44FA",
+        "title": "embers",
+        "channel": "Dead Butterflies - Topic",
+        "views": 1408138,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6m9N9Wm44FA"
+      },
+      {
+        "id": "K0f7jwGBRGM",
+        "title": "【リゼロ】MYTH &amp; ROID feat. TK (凛として時雨)「Ender Ember」-lyric video-",
+        "channel": "「Re:ゼロから始める異世界生活」チャンネル【公式】",
+        "views": 1070273,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=K0f7jwGBRGM"
+      },
+      {
+        "id": "IfDODvcS_4w",
+        "title": "Re:Zero Season 4 - ED Full『Ender Ember』by Myth &amp; Roid feat. TK from Ling Tosite Sigure | Lyrics ❣️",
+        "channel": "Kirani Music",
+        "views": 332145,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=IfDODvcS_4w"
+      },
+      {
+        "id": "SrwCOIe_Lhw",
+        "title": "MYTH &amp; ROID feat. TK(凛として時雨)「Ender Ember」MV（TVアニメ「Re:ゼロから始める異世界生活 4th season」EDテーマ）",
+        "channel": "MYTH & ROID Official Channel",
+        "views": 1957042,
+        "score": 0.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SrwCOIe_Lhw"
+      }
+    ],
+    "youtube_score": 0.79,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "SrwCOIe_Lhw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "Les Filles du Bruit : LA FAIBLESSE": {
+    "youtube_candidates": [
+      {
+        "id": "Dhg9Z-rNc2w",
+        "title": "POURQUOI les hommes et les femmes ne devraient pas se battre ?",
+        "channel": "BIZARRE",
+        "views": 1514192,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Dhg9Z-rNc2w"
+      },
+      {
+        "id": "XV4zCdemWJM",
+        "title": "Glorious  - Relever le faible",
+        "channel": "Glorious Louange",
+        "views": 18949937,
+        "score": 0.91,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XV4zCdemWJM"
+      },
+      {
+        "id": "Xvag8TCg-RQ",
+        "title": "Les causes surprenantes de la fatigue chronique",
+        "channel": "Dialogues par Fabrice Midal",
+        "views": 853246,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Xvag8TCg-RQ"
+      },
+      {
+        "id": "VLGHB1FIllk",
+        "title": "QU&#39;EST-CE QU&#39;UN ORGASME ET QUAND A-T-IL LIEU ?",
+        "channel": "Doctissimo",
+        "views": 452680,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VLGHB1FIllk"
+      },
+      {
+        "id": "YkbmUJfVhpk",
+        "title": "Un hypersensible ressent les emotions 5 fois plus qu’une personne qui ne l’est pas",
+        "channel": "Christèle Albaret",
+        "views": 145510,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YkbmUJfVhpk"
+      },
+      {
+        "id": "1k-OZN96k30",
+        "title": "Comment marcher élégamment avec des talons ? 👠",
+        "channel": "L'élégance à la française",
+        "views": 415544,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1k-OZN96k30"
+      },
+      {
+        "id": "sD1SX0VAuLE",
+        "title": "Tous la croyaient douce et fragile. Mais quand les brutes arrivent, elle les met tous KO toute seule",
+        "channel": "Chaîne Orange Océan",
+        "views": 1021920,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sD1SX0VAuLE"
+      },
+      {
+        "id": "sEXdbnSkWhQ",
+        "title": "Fatigué ? Pourquoi on ne vous a jamais dit cela",
+        "channel": "Christèle Albaret",
+        "views": 514158,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sEXdbnSkWhQ"
+      }
+    ],
+    "youtube_score": 0.91,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "XV4zCdemWJM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "MELTING POP": {
+    "youtube_candidates": [
+      {
+        "id": "U3khFGSN3XA",
+        "title": "Melting POP - Alexandre DUBOSC",
+        "channel": "Alexandre DUBOSC - Film",
+        "views": 4809086,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=U3khFGSN3XA"
+      },
+      {
+        "id": "KTM5mCDZZm8",
+        "title": "Pinguini Tattici Nucleari - Melting Pop (Art track Video)",
+        "channel": "PinguiniVEVO",
+        "views": 807039,
+        "score": 0.74,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KTM5mCDZZm8"
+      },
+      {
+        "id": "P-UrH9BKgVg",
+        "title": "Melting Pop Teaser gala 2026 remixed by DJ BKlein (part2)",
+        "channel": "Melting Pop",
+        "views": 107,
+        "score": 5.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=P-UrH9BKgVg"
+      },
+      {
+        "id": "sshZzxHdIyU",
+        "title": "Blue Mink   Melting Pot 1969",
+        "channel": "radioceylon sundaychoice",
+        "views": 66697,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sshZzxHdIyU"
+      },
+      {
+        "id": "G5oOQgiIwXI",
+        "title": "Melting Pot",
+        "channel": "Booker T. & The M.G.'s - Topic",
+        "views": 1167642,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=G5oOQgiIwXI"
+      },
+      {
+        "id": "_k5vfn8me7c",
+        "title": "🔴PSYHODELIK VS TABIBIAN chez FDENEWS !",
+        "channel": "Le Melting Pot",
+        "views": 13885,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_k5vfn8me7c"
+      },
+      {
+        "id": "Md9dFOf_RQc",
+        "title": "Pinguini Tattici Nucleari - Melting Pop (Lyrics)",
+        "channel": "Testi Freschi",
+        "views": 10937,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Md9dFOf_RQc"
+      },
+      {
+        "id": "9gnob1EYJ8g",
+        "title": "MELTING-POP OUVERTURE CONCERT",
+        "channel": "C. CHEVILLOT",
+        "views": 3443,
+        "score": 3.44,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=9gnob1EYJ8g"
+      }
+    ],
+    "youtube_score": 5.25,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "P-UrH9BKgVg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "NICK SALOMON": {
+    "youtube_candidates": [
+      {
+        "id": "6zvYCmaOnNY",
+        "title": "Bevis Frond plays the Countdown Theme",
+        "channel": "Phil McMullen",
+        "views": 19774,
+        "score": 0.54,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6zvYCmaOnNY"
+      },
+      {
+        "id": "HtXTMXE9iDw",
+        "title": "Nick Salomon Friends - Live at Axis 15 Novembre 2025",
+        "channel": "Migueltxum",
+        "views": 66,
+        "score": 3.23,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=HtXTMXE9iDw"
+      },
+      {
+        "id": "jEPbz4_fw2Q",
+        "title": "The Outskirts Of Infinity with Nick Saloman, JAM Part 1.",
+        "channel": "duggablatt",
+        "views": 1431,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jEPbz4_fw2Q"
+      },
+      {
+        "id": "wTx3mly3yPM",
+        "title": "EP9 Salomon Freeski TV - East Coast Rail Trip",
+        "channel": "SalomonFreeskiTV",
+        "views": 15268,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wTx3mly3yPM"
+      },
+      {
+        "id": "6tS0a3LA7zM",
+        "title": "Nick Salomon - Dark Field",
+        "channel": "praha_68",
+        "views": 63,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6tS0a3LA7zM"
+      },
+      {
+        "id": "Ckwt6k1Zb1I",
+        "title": "Nick Salomon &amp; The Swinger - I want a woman",
+        "channel": "lareuniondeblues",
+        "views": 202,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Ckwt6k1Zb1I"
+      },
+      {
+        "id": "QuK_e6m7JeE",
+        "title": "Teaser Nick Salomon (Live Axis Studio)",
+        "channel": "Pierre Jeffroy",
+        "views": 76,
+        "score": 3.24,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=QuK_e6m7JeE"
+      },
+      {
+        "id": "hCdfG6KijTc",
+        "title": "Nick Salomon &amp; The Swinger Demons - Tobacco Road. Live &#39;17",
+        "channel": "lareuniondeblues",
+        "views": 298,
+        "score": 3.31,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=hCdfG6KijTc"
+      }
+    ],
+    "youtube_score": 3.31,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "hCdfG6KijTc",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-14"
+  },
+  "CUL ZAG": {
+    "youtube_candidates": [
+      {
+        "id": "UP4AeTgdk2I",
+        "title": "CUL ZAG // Beardy Man Under the Bridge Sessions",
+        "channel": "Cul Zag",
+        "views": 621,
+        "score": 5.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=UP4AeTgdk2I"
+      },
+      {
+        "id": "aeBKKFzwRbQ",
+        "title": "Cul Zag - Andreas Vidas",
+        "channel": "Cul Zag",
+        "views": 4544,
+        "score": 5.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=aeBKKFzwRbQ"
+      },
+      {
+        "id": "UFAK4BWpzv0",
+        "title": "Cul Zag - Miniminima [Live@Le Cirque Electrique - Paris 28/11/2025]",
+        "channel": "ZeMrTurtle - SteelCarapace",
+        "views": 26,
+        "score": 3.18,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=UFAK4BWpzv0"
+      },
+      {
+        "id": "IihiCL797QQ",
+        "title": "Cul Zag — Itchy Scratchy LIVE",
+        "channel": "Cul Zag",
+        "views": 104,
+        "score": 5.25,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=IihiCL797QQ"
+      },
+      {
+        "id": "cLu0yzSjIag",
+        "title": "Cul Zag - Art school [Live@Le Cirque Electrique - Paris 28/11/2025]",
+        "channel": "ZeMrTurtle - SteelCarapace",
+        "views": 19,
+        "score": 3.16,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=cLu0yzSjIag"
+      },
+      {
+        "id": "SstdaB8UEk4",
+        "title": "Escaping in Zig-Zag style #roblox",
+        "channel": "BloxVibe",
+        "views": 4547,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SstdaB8UEk4"
+      },
+      {
+        "id": "ulxEZgec0mc",
+        "title": "Best crimper | micro crimper | hnk zig zag | #hair #bridal #makeup #beauty #cosmetics",
+        "channel": "Om beauty care",
+        "views": 1873947,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ulxEZgec0mc"
+      },
+      {
+        "id": "hKCMmXBbhVo",
+        "title": "DiGiMon",
+        "channel": "CUL ZAG - Topic",
+        "views": 91,
+        "score": 1.25,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hKCMmXBbhVo"
+      }
+    ],
+    "youtube_score": 5.46,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "aeBKKFzwRbQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-16"
+  },
+  "GUS ENGLERHORN": {
+    "youtube_candidates": [
+      {
+        "id": "CS_zdUlAyx8",
+        "title": "Gus Englehorn - Thyme (Official Video)",
+        "channel": "Gus Englehorn",
+        "views": 14577,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CS_zdUlAyx8"
+      },
+      {
+        "id": "2vPB7kvb0KY",
+        "title": "Gus Englehorn - Live at SXSW 2025",
+        "channel": "Dizmo Concert Experience",
+        "views": 191,
+        "score": 3.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=2vPB7kvb0KY"
+      },
+      {
+        "id": "ymVGBNLgDE8",
+        "title": "Gus Englehorn - Better Watch Your Step (Official Music Video)",
+        "channel": "Gus Englehorn",
+        "views": 2056,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ymVGBNLgDE8"
+      },
+      {
+        "id": "jgfePOoHAJw",
+        "title": "Gus Englehorn - Tarantula (Official Video)",
+        "channel": "Gus Englehorn",
+        "views": 51216,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jgfePOoHAJw"
+      },
+      {
+        "id": "K4GREv_raQ8",
+        "title": "Gus Englehorn - Metal Detector (Official Music Video)",
+        "channel": "Gus Englehorn",
+        "views": 5242,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=K4GREv_raQ8"
+      },
+      {
+        "id": "KMfMtdXfIiI",
+        "title": "Gus Englehorn LIVE @ CJSW x Sled Island",
+        "channel": "CJSW",
+        "views": 143,
+        "score": 3.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=KMfMtdXfIiI"
+      },
+      {
+        "id": "UTa625eBpuY",
+        "title": "A Brief History of Gus Englehorn",
+        "channel": "Gus Englehorn",
+        "views": 15079,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=UTa625eBpuY"
+      },
+      {
+        "id": "5gJmzQOaQ1M",
+        "title": "GUS ENGLEHORN Full Live Concert 4K @ Stereolux Nantes France October 27th 2022",
+        "channel": "CONCERTS MUSIC LIVE ",
+        "views": 1764,
+        "score": 3.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=5gJmzQOaQ1M"
+      }
+    ],
+    "youtube_score": 3.41,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "5gJmzQOaQ1M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-17"
+  },
+  "CONVULSIF": {
+    "youtube_candidates": [
+      {
+        "id": "8zJOr3P6DbA",
+        "title": "Premiers secours : Crise convulsive | Secourisme",
+        "channel": "SIKANA Français",
+        "views": 1651143,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8zJOr3P6DbA"
+      },
+      {
+        "id": "zVAIa4ynwQ0",
+        "title": "Crise convulsive - Épilepsie - Prise en charge de la victime",
+        "channel": "CESU Rouen",
+        "views": 104356,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zVAIa4ynwQ0"
+      },
+      {
+        "id": "dnJoyQe3X8w",
+        "title": "Bien réagir en cas de crise convulsive - Le Magazine de la santé",
+        "channel": "Allo Docteurs",
+        "views": 86749,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dnJoyQe3X8w"
+      },
+      {
+        "id": "kn0SPQKa2Ss",
+        "title": "Crise d&#39;épilepsie,  convulsions, que faire ?",
+        "channel": "Les Minutes de Jérémy",
+        "views": 5782,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kn0SPQKa2Ss"
+      },
+      {
+        "id": "baZQsQNZ-gY",
+        "title": "Seizure vs. Convulsion | Epilepsy",
+        "channel": "Howcast",
+        "views": 134945,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=baZQsQNZ-gY"
+      },
+      {
+        "id": "Bppv1AR6Zsw",
+        "title": "5 30 1 Convulsions et état de mal épileptique - Diagnostic et étiologies",
+        "channel": "CEMIR Learning",
+        "views": 7276,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Bppv1AR6Zsw"
+      },
+      {
+        "id": "gpFPyaa3czI",
+        "title": "Convulsif - &quot;The Axe Will Break&quot; (official video)",
+        "channel": "HumusRecords",
+        "views": 3639,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=gpFPyaa3czI"
+      },
+      {
+        "id": "hGhTbUYIHz0",
+        "title": "Que faire en cas de convulsions ?",
+        "channel": "Dr. Walid MEKEDDEM",
+        "views": 4604,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hGhTbUYIHz0"
+      }
+    ],
+    "youtube_score": 0.78,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "8zJOr3P6DbA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-18"
+  },
+  "TORN": {
+    "youtube_candidates": [
+      {
+        "id": "VV1XWJN3nJo",
+        "title": "Natalie Imbruglia - Torn (Official Video)",
+        "channel": "natalieimbrugliaVEVO",
+        "views": 376633925,
+        "score": 1.07,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VV1XWJN3nJo"
+      },
+      {
+        "id": "NogHM5V-vuk",
+        "title": "Natalie Imbruglia - Torn (Lyrics)",
+        "channel": "7clouds Rock",
+        "views": 24142007,
+        "score": 0.92,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NogHM5V-vuk"
+      },
+      {
+        "id": "wBmWvvTV0P4",
+        "title": "Ava Max - Torn [Official Music Video]",
+        "channel": "Ava Max",
+        "views": 117729002,
+        "score": 1.01,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wBmWvvTV0P4"
+      },
+      {
+        "id": "J5diUHXM8gE",
+        "title": "The Return to Torn City",
+        "channel": "Knoffinator",
+        "views": 18372,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=J5diUHXM8gE"
+      },
+      {
+        "id": "fQuC32gH8Rw",
+        "title": "Natalie Imbruglia - Torn (Lyrics)",
+        "channel": "7clouds",
+        "views": 15470699,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fQuC32gH8Rw"
+      },
+      {
+        "id": "J8CCsR7Bu8o",
+        "title": "Natalie Imbruglia - Torn (The Prince&#39;s Trust Party In The Park 1998)",
+        "channel": "King's Trust Music",
+        "views": 23669845,
+        "score": 0.92,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=J8CCsR7Bu8o"
+      },
+      {
+        "id": "JBBI0l-gepY",
+        "title": "KALANI ARTIS - TORN OFFICIAL MUSIC VIDEO",
+        "channel": "kalani artis",
+        "views": 99782,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JBBI0l-gepY"
+      },
+      {
+        "id": "x21WEjwsaUA",
+        "title": "Kalani Artis - Torn - Australian Idol 2026 Audition",
+        "channel": "Liam Tompkin",
+        "views": 2481319,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=x21WEjwsaUA"
+      }
+    ],
+    "youtube_score": 1.07,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "VV1XWJN3nJo",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-18"
+  },
+  "CEL RAY": {
+    "youtube_candidates": [
+      {
+        "id": "XJVrpnBz5sc",
+        "title": "Cel Ray - &quot;Teen (Cult) Song&quot; (Official Music Video)",
+        "channel": "explodinginsound",
+        "views": 2226,
+        "score": 0.42,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XJVrpnBz5sc"
+      },
+      {
+        "id": "BEFwM8K5PYg",
+        "title": "CEL RAY -&quot;Cel Rayzer&quot; (2026, full album)",
+        "channel": "Tremendo Garaje",
+        "views": 2452,
+        "score": 0.42,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BEFwM8K5PYg"
+      },
+      {
+        "id": "jw_1LC5Finw",
+        "title": "Cel-Ray: The soda that shouldn’t work (but does?)",
+        "channel": "Paige Dalton",
+        "views": 5638,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jw_1LC5Finw"
+      },
+      {
+        "id": "tUFQymDdAeA",
+        "title": "Cel-Ray Soda (Celery Soda) - Weird Stuff In A Can #150",
+        "channel": "Atomic Shrimp",
+        "views": 60242,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tUFQymDdAeA"
+      },
+      {
+        "id": "LoUvIyEKXM4",
+        "title": "CEL RAY - &quot;Cellular Raymond&quot; (2023, full EP)",
+        "channel": "Tremendo Garaje",
+        "views": 4686,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LoUvIyEKXM4"
+      },
+      {
+        "id": "IbkCAJEEXTY",
+        "title": "Cel Ray - Lakes Mall [Live @ West Fest - Chicago 2025-07-18]",
+        "channel": "sounds from below",
+        "views": 214,
+        "score": 3.29,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=IbkCAJEEXTY"
+      },
+      {
+        "id": "6rtCzwfJEME",
+        "title": "Cel-Ray: The Drink New York Delis Have Known for 150 Years #DeliCulture #FoodHack #NYC",
+        "channel": "Noah Eats!",
+        "views": 1020,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6rtCzwfJEME"
+      },
+      {
+        "id": "LyjmWgZPP3U",
+        "title": "Cel Ray - &quot;Toxic&quot; (Official Lyric Video)",
+        "channel": "celraychi",
+        "views": 730,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LyjmWgZPP3U"
+      }
+    ],
+    "youtube_score": 3.29,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "IbkCAJEEXTY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-19"
+  },
+  "PERICOLO": {
+    "youtube_candidates": [
+      {
+        "id": "wnGkv2Inqf0",
+        "title": "MASSIMO PERICOLO - 7 MILIARDI (Prod. Crookers &amp; Nic Sarno) (OFFICIAL VIDEO)",
+        "channel": "massimo pericolo",
+        "views": 16209735,
+        "score": 1.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wnGkv2Inqf0"
+      },
+      {
+        "id": "9ydoPEEJ8GE",
+        "title": "PERICOLO",
+        "channel": "Mikush - Topic",
+        "views": 345613,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9ydoPEEJ8GE"
+      },
+      {
+        "id": "gL0GvHBxQf4",
+        "title": "Chris Nolan, Neima Ezza, Massimo Pericolo, Tedua - SECONDI DI RABBIA (Official Visual Video)",
+        "channel": "ChrisNolanVEVO",
+        "views": 27438,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=gL0GvHBxQf4"
+      },
+      {
+        "id": "5Pw7TNxUOuo",
+        "title": "333 Mob, Low Kidd - PERICOLOSO feat. Lazza, Geolier (Visual Video)",
+        "channel": "333 Mob",
+        "views": 400492,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5Pw7TNxUOuo"
+      },
+      {
+        "id": "IWE7jzZJOHg",
+        "title": "Charlie Charles, Bresh - Pericolo (Visual)",
+        "channel": "CharlieCharlesVEVO",
+        "views": 57533,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=IWE7jzZJOHg"
+      },
+      {
+        "id": "bJMqbWthmoA",
+        "title": "Pericolo | Dangerous - Epic the Musical COVER ITA",
+        "channel": "Professione Teatro",
+        "views": 40525,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=bJMqbWthmoA"
+      },
+      {
+        "id": "Zx7aT84vW0A",
+        "title": "Massimo Pericolo - Non Parlarmi (Outro) (Official Video)",
+        "channel": "MassimoPericoloVEVO",
+        "views": 2172567,
+        "score": 1.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zx7aT84vW0A"
+      },
+      {
+        "id": "FOrlKm3RWcE",
+        "title": "Massimo Pericolo - Straniero (Visual Video) ft. Tedua",
+        "channel": "MassimoPericoloVEVO",
+        "views": 2775148,
+        "score": 1.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FOrlKm3RWcE"
+      }
+    ],
+    "youtube_score": 1.9,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "wnGkv2Inqf0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-19"
+  },
+  "Blindtest par 'Ju": {
+    "youtube_candidates": [
+      {
+        "id": "8jX6k91-BT4",
+        "title": "COMPLÈTE LES PAROLES – 【Spécial JUL 2021 à 2025】",
+        "channel": "Kadima - Blind Test",
+        "views": 501644,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8jX6k91-BT4"
+      },
+      {
+        "id": "Gw0_X0LYZLw",
+        "title": "Blind Test JU 2013",
+        "channel": "Y2P",
+        "views": 298,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Gw0_X0LYZLw"
+      },
+      {
+        "id": "c_60BQnbUyI",
+        "title": "BLIND TEST (J-POP)",
+        "channel": "Blind Land",
+        "views": 7510,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=c_60BQnbUyI"
+      },
+      {
+        "id": "_Po691d-SNk",
+        "title": "Trouve la MUSIQUE que je MIME ! ft. Jerezalto, Matdeuh, Ju #short #blindtest #challenge",
+        "channel": "NOBUO & CO",
+        "views": 330753,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_Po691d-SNk"
+      },
+      {
+        "id": "1KeMfCNphQI",
+        "title": "Blind Test Musique Française | Spécial 2010 - 2020",
+        "channel": "TubesRewind",
+        "views": 3460,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1KeMfCNphQI"
+      },
+      {
+        "id": "JU-wFZ3_duE",
+        "title": "Blind test des bruits du quotidien.",
+        "channel": "AlemTest",
+        "views": 64898,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JU-wFZ3_duE"
+      },
+      {
+        "id": "BVj4KZM5hWw",
+        "title": "Blindtest J-Music : 01",
+        "channel": "Blindtest Ni",
+        "views": 196,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BVj4KZM5hWw"
+      },
+      {
+        "id": "Mf0ve1lqVcU",
+        "title": "Blind Test SPECIAL FANNY J!! (2021)",
+        "channel": "Marabou Tv ",
+        "views": 2933,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Mf0ve1lqVcU"
+      }
+    ],
+    "youtube_score": 0.71,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "8jX6k91-BT4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-20"
+  },
+  "PARAZITE PETALS": {
+    "youtube_candidates": [
+      {
+        "id": "fHENCYh3BOs",
+        "title": "Why This Tiny Parasite Turns Pretty Flowers into Mutant Leaves",
+        "channel": "Unlikely Facts",
+        "views": 510,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fHENCYh3BOs"
+      },
+      {
+        "id": "QHNo4wbXY5Y",
+        "title": "Kenapa Bunga Anggrek Bisa Menempel di Pohon Tanpa Menjadi Parasit? 🌸😲#anggrek #faktamenarik #edukasi",
+        "channel": "EcoFlash",
+        "views": 1279,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QHNo4wbXY5Y"
+      },
+      {
+        "id": "CMZa590SKeQ",
+        "title": "Carpenter bees gather pollen on petals",
+        "channel": "Li Budou",
+        "views": 286,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CMZa590SKeQ"
+      },
+      {
+        "id": "BXseRyssmy0",
+        "title": "Las Orquídeas en Árboles son plantas parásitas? #orquideas #cuidadosdeorquideas #flores #orchid",
+        "channel": "Cuidando mis Orquideas",
+        "views": 12657,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BXseRyssmy0"
+      },
+      {
+        "id": "DanGJz3Up4Q",
+        "title": "Plant vs Zombie Asym Game?? - Petal vs Plague Sneak Peak #roblox #asymmetricalhorror",
+        "channel": "Ani KAngel",
+        "views": 33788,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=DanGJz3Up4Q"
+      },
+      {
+        "id": "SHogNi66mZE",
+        "title": "Petals – Angels in Ashes (Official Audio)",
+        "channel": "Angels in Ashes",
+        "views": 17229,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SHogNi66mZE"
+      },
+      {
+        "id": "QcpO-FM0BxM",
+        "title": "Flowers on my way #orchid #plants #flowers #parasite #jungle #nature",
+        "channel": "LaTo. ",
+        "views": 1438,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QcpO-FM0BxM"
+      },
+      {
+        "id": "cliXsvsX2ek",
+        "title": "Rafflesia is a parasitic flower that lives on climbing plants.#animals and #plant",
+        "channel": "unique plants and animals",
+        "views": 499,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=cliXsvsX2ek"
+      }
+    ],
+    "youtube_score": 0.57,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "DanGJz3Up4Q",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-20"
+  },
+  "STONED MATTER": {
+    "youtube_candidates": [
+      {
+        "id": "sImVfCHuai0",
+        "title": "Stoned Matter - Alien Cave (Official Video)",
+        "channel": "Stoned Matter",
+        "views": 4229,
+        "score": 5.45,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=sImVfCHuai0"
+      },
+      {
+        "id": "_Ftv0j_Q1ho",
+        "title": "Stoned Matter",
+        "channel": "Stoned Matter - Topic",
+        "views": 166,
+        "score": 1.28,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_Ftv0j_Q1ho"
+      },
+      {
+        "id": "RDk-9bSRq8M",
+        "title": "Stoned Matter - Riding To The Sun (Official Video)",
+        "channel": "666MrDoom",
+        "views": 3860,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RDk-9bSRq8M"
+      },
+      {
+        "id": "v4JaPna9TKU",
+        "title": "Stoned Matter - La Méca",
+        "channel": "Stoned Matter",
+        "views": 187,
+        "score": 5.28,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=v4JaPna9TKU"
+      },
+      {
+        "id": "ZfDN3sa4EEY",
+        "title": "Stoned Matter - Riding To The Sun (full Album 2023)",
+        "channel": "Rock Freaks [official]",
+        "views": 430,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZfDN3sa4EEY"
+      },
+      {
+        "id": "Q2DEWR5UBMo",
+        "title": "Stoned Matter - live @ la tanière",
+        "channel": "La Tanière Records",
+        "views": 792,
+        "score": 3.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Q2DEWR5UBMo"
+      },
+      {
+        "id": "hKkHgPvDWWA",
+        "title": "Stoned Matter - Middle Finger Pilate Meditation",
+        "channel": "Stoned Matter",
+        "views": 700,
+        "score": 5.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=hKkHgPvDWWA"
+      },
+      {
+        "id": "kYnIvZZ5_fs",
+        "title": "Stoned Matter",
+        "channel": "Robin De La Campagne",
+        "views": 207,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kYnIvZZ5_fs"
+      }
+    ],
+    "youtube_score": 5.45,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "sImVfCHuai0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-21"
+  },
+  "Fucking Artists Market : Défilé de créateurs, coiffeurs, linogravure, céramique, fringues, sérigraphies, lingerie fetish, DJ, tombola": {
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-22"
+  },
+  "MANSION'S CELLAR": {
+    "youtube_candidates": [
+      {
+        "id": "fuoG1zOOFQ4",
+        "title": "MANSION&#39;S CELLAR - LIVE AU PORT MUSEE",
+        "channel": "Mansion's Cellar",
+        "views": 733,
+        "score": 5.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=fuoG1zOOFQ4"
+      },
+      {
+        "id": "RIeRFMW2RqE",
+        "title": "Mansion&#39;s Cellar - Astra Song",
+        "channel": "Mansion's Cellar",
+        "views": 9834,
+        "score": 2.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RIeRFMW2RqE"
+      },
+      {
+        "id": "9ECZ3IgkBq8",
+        "title": "MANSION&#39;S CELLAR - MID MID (Live à La Cantate)",
+        "channel": "Mansion's Cellar",
+        "views": 6037,
+        "score": 5.47,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=9ECZ3IgkBq8"
+      },
+      {
+        "id": "YcL2DbxiRPw",
+        "title": "MANSION&#39;S CELLAR - LIVE À LA CANTATE (Working Man Saz / How Many / Mid Mid)",
+        "channel": "Mansion's Cellar",
+        "views": 5056,
+        "score": 5.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=YcL2DbxiRPw"
+      },
+      {
+        "id": "zG9K-E0mSKI",
+        "title": "Mansion&#39;s Cellar - Basement Time",
+        "channel": "Mansion's Cellar",
+        "views": 6203,
+        "score": 2.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zG9K-E0mSKI"
+      },
+      {
+        "id": "zVjabW5NpRw",
+        "title": "MANSION&#39;S CELLAR - Mid Mid (Live aux Trans Musicales 2024)",
+        "channel": "Les Trans",
+        "views": 4729,
+        "score": 3.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=zVjabW5NpRw"
+      },
+      {
+        "id": "fJK0iYJLGK8",
+        "title": "MANSION&#39;S CELLAR - YOU AND I (Live au Port-Musée)",
+        "channel": "Mansion's Cellar",
+        "views": 598,
+        "score": 5.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=fJK0iYJLGK8"
+      },
+      {
+        "id": "y17HYDb9IFc",
+        "title": "MANSION&#39;S CELLAR - DISKO PAULIG (Live au Port-Musée)",
+        "channel": "Mansion's Cellar",
+        "views": 1877,
+        "score": 5.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=y17HYDb9IFc"
+      }
+    ],
+    "youtube_score": 5.47,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "9ECZ3IgkBq8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-25"
+  },
+  "PAOPOU": {
+    "youtube_candidates": [
+      {
+        "id": "ym6kerUebyY",
+        "title": "Paopou - Live session (Gragnague 2026)",
+        "channel": "Paopou & Co",
+        "views": 135,
+        "score": 4.27,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ym6kerUebyY"
+      },
+      {
+        "id": "i5J6uop3J0U",
+        "title": "Kingdom Hearts - Un fruit Paopou",
+        "channel": "Lagrogne",
+        "views": 78,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=i5J6uop3J0U"
+      },
+      {
+        "id": "WjsjJsgtND8",
+        "title": "Kingdom Hearts III: Sora Shares A Paopu Fruit With Kairi",
+        "channel": "Naughty Gaming SFW",
+        "views": 42437,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=WjsjJsgtND8"
+      },
+      {
+        "id": "o7px9azM-So",
+        "title": "Kingdom Hearts Final Mix - Un fruit Paopou",
+        "channel": "Lagrogne",
+        "views": 41,
+        "score": 0.2,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=o7px9azM-So"
+      },
+      {
+        "id": "ZcyMn-mRwRY",
+        "title": "Présentation du cousin paopou 😀😅",
+        "channel": "C’nous",
+        "views": 137,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZcyMn-mRwRY"
+      },
+      {
+        "id": "GouFD_gs6OA",
+        "title": "Paopou ataca a YUYA otra vez por instagram",
+        "channel": "Instahistories Youtubers",
+        "views": 44595,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=GouFD_gs6OA"
+      },
+      {
+        "id": "HzqjF8zQYns",
+        "title": "La Carranguerita canta La Gallina Mellicera - Audiciones a ciegas | La Voz Kids Colombia 2018",
+        "channel": "MUSIC TV",
+        "views": 3778161,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HzqjF8zQYns"
+      },
+      {
+        "id": "sIoYNMi3nAo",
+        "title": "283 rue du Paopou - Construction Sims 4",
+        "channel": "Zaïrith",
+        "views": 153,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sIoYNMi3nAo"
+      }
+    ],
+    "youtube_score": 4.27,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "ym6kerUebyY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-25"
+  },
+  "UNWANTED NOISE": {
+    "youtube_candidates": [
+      {
+        "id": "QV7J57bgwEo",
+        "title": "UNWANTED NOISE - WE ARE STILL HERE - HARDCORE WORLDWIDE (OFFICIAL HD VERSION HCWW)",
+        "channel": "HARDCORE WORLDWIDE",
+        "views": 10602,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QV7J57bgwEo"
+      },
+      {
+        "id": "zVWXC__0AYM",
+        "title": "Unwanted Sound",
+        "channel": "Spin Off - Topic",
+        "views": 506324,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zVWXC__0AYM"
+      },
+      {
+        "id": "gwFYA8eu3Kw",
+        "title": "Unwanted Noise - Tonight We Die 2019 (Full Album)",
+        "channel": "Narcoleptic Fox",
+        "views": 4497,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=gwFYA8eu3Kw"
+      },
+      {
+        "id": "jmwBeAONzcs",
+        "title": "UNWANTED NOISE - PREVAIL - HC WORLDWIDE (OFFICIAL HD VERSION HCWW)",
+        "channel": "HARDCORE WORLDWIDE",
+        "views": 8701,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jmwBeAONzcs"
+      },
+      {
+        "id": "Npxfawvj4To",
+        "title": "Unwanted Noise - Answers (Live in MTL @ Foufounes Electrique 28.03.2026)",
+        "channel": "Unwanted Noise Official",
+        "views": 256,
+        "score": 4.3,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Npxfawvj4To"
+      },
+      {
+        "id": "dOVfZooRLWI",
+        "title": "UNWANTED NOISE . live in LA",
+        "channel": "TWISTED VISIONS  (MANIC MEDIA)",
+        "views": 467,
+        "score": 3.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=dOVfZooRLWI"
+      },
+      {
+        "id": "68dl6ZeeYSY",
+        "title": "Unwanted Noise - Live at Cirque Electrique (Paris, FR)",
+        "channel": "pAsKk Attack",
+        "views": 1135,
+        "score": 3.38,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=68dl6ZeeYSY"
+      },
+      {
+        "id": "kQEkUfWPFd8",
+        "title": "Unwanted Noise - Left For Dead (PROMO 2026/LYRICS VIDEO)",
+        "channel": "Unwanted Noise Official",
+        "views": 203,
+        "score": 1.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kQEkUfWPFd8"
+      }
+    ],
+    "youtube_score": 4.3,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "Npxfawvj4To",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-25"
+  },
+  "EMBERSIGHT": {
+    "youtube_candidates": [
+      {
+        "id": "ctyr6WIz7us",
+        "title": "Embersight - Shards Of Glass (OFFICIAL VIDEO)",
+        "channel": "Embersight",
+        "views": 14576,
+        "score": 5.52,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ctyr6WIz7us"
+      },
+      {
+        "id": "-s-6KY2Q7e4",
+        "title": "Embersight - Dust (OFFICIAL VIDEO)",
+        "channel": "Embersight",
+        "views": 21262,
+        "score": 5.54,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=-s-6KY2Q7e4"
+      },
+      {
+        "id": "hqyxMKdFeAA",
+        "title": "Embersight - Concrete Curtain (OFFICIAL VIDEO)",
+        "channel": "Embersight",
+        "views": 39725,
+        "score": 5.57,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=hqyxMKdFeAA"
+      },
+      {
+        "id": "5yMCCU5fR6o",
+        "title": "Embersight - Echoes (FULL EP LIVE SESSION)",
+        "channel": "Embersight",
+        "views": 7792,
+        "score": 5.49,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=5yMCCU5fR6o"
+      },
+      {
+        "id": "oY_IIznW5I0",
+        "title": "Embersight - Drain Me // Concrete Curtain (LIVE IN CANNES 2025)",
+        "channel": "Embersight",
+        "views": 1851,
+        "score": 5.41,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=oY_IIznW5I0"
+      },
+      {
+        "id": "kff4pWQFbPE",
+        "title": "EMBERSIGHT - LIVE IN CANNES - OUT NOW",
+        "channel": "Embersight",
+        "views": 1207,
+        "score": 5.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=kff4pWQFbPE"
+      },
+      {
+        "id": "ppsfGbSbyAw",
+        "title": "Embersight - Coma (OFFICIAL VIDEO)",
+        "channel": "Embersight",
+        "views": 5418,
+        "score": 5.47,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ppsfGbSbyAw"
+      },
+      {
+        "id": "IQmNvlBsLdw",
+        "title": "Embersight - Slipped Away (OFFICIAL VIDEO)",
+        "channel": "Embersight",
+        "views": 18556,
+        "score": 5.53,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=IQmNvlBsLdw"
+      }
+    ],
+    "youtube_score": 5.57,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "hqyxMKdFeAA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "GOLEM MÉCANIQUE": {
+    "youtube_candidates": [
+      {
+        "id": "sjE3-yTL7y8",
+        "title": "Golem Mecanique @ db&#39;s, Utrecht, the Netherlands, 3-4-2026",
+        "channel": "Erik Kohl",
+        "views": 27,
+        "score": 0.18,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sjE3-yTL7y8"
+      },
+      {
+        "id": "AeC3zo51vv8",
+        "title": "Golem mécanique, solo@dedale #27, le Fiacre, Bordeaux, samedi 10 mai 2025",
+        "channel": "pierre mons",
+        "views": 120,
+        "score": 0.26,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AeC3zo51vv8"
+      },
+      {
+        "id": "Di_BM5v8EYo",
+        "title": "GOLEM MECANIQUE/ MOLOCH  short movie",
+        "channel": "golem mecanique",
+        "views": 400,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Di_BM5v8EYo"
+      },
+      {
+        "id": "LkIlLtLl7MA",
+        "title": "Golem Mécanique - Ameq",
+        "channel": "ab joy",
+        "views": 572,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LkIlLtLl7MA"
+      },
+      {
+        "id": "b0ydi5gRjTE",
+        "title": "GORDON ASHWORTH + PANOS ALEXIADIS + GOLEM MECANIQUE +....... Part 5 HD",
+        "channel": "Sébastien Sollier",
+        "views": 229,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b0ydi5gRjTE"
+      },
+      {
+        "id": "MoNkN_C5dNY",
+        "title": "Golem Mécanique : Complete Show Live In Paris (01/02/2020 @ La Gaîté Lyrique)",
+        "channel": "Frankie Snow",
+        "views": 581,
+        "score": 3.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=MoNkN_C5dNY"
+      },
+      {
+        "id": "weOoAA_0tmQ",
+        "title": "LA MANTA (Golem Mécanique / Clara de Asís)",
+        "channel": "Clara de Asís",
+        "views": 747,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=weOoAA_0tmQ"
+      },
+      {
+        "id": "slspybnsIWM",
+        "title": "Golem Mecanique/ I gathered the courage to stay at night teaser",
+        "channel": "golem mecanique",
+        "views": 72,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=slspybnsIWM"
+      }
+    ],
+    "youtube_score": 3.35,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "MoNkN_C5dNY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "Lancement Artzine Le Barré": {
+    "youtube_video_id": "Nh_YDEhMmqk",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "MAYHEM CIRCLE": {
+    "youtube_candidates": [
+      {
+        "id": "lB7KvWVJUJA",
+        "title": "MAYHEM - I Crimini dell&#39;Inner Circle - 41",
+        "channel": "Crime & Comedy",
+        "views": 39944,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=lB7KvWVJUJA"
+      },
+      {
+        "id": "ihV7bebSkFI",
+        "title": "I MAYHEM e il Black Metal Inner Circle - #reboot #reload #mayhem #burzum #blackmetal #innercircle",
+        "channel": "CrackUpArt - Botteguccia Artistica de IlTeo - YT",
+        "views": 1939,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ihV7bebSkFI"
+      },
+      {
+        "id": "yClM3ik6cyU",
+        "title": "Agents of Mayhem - 360 IN A CAR - A Full Circle Achievement/Trophy Guide",
+        "channel": "Maka91Productions",
+        "views": 14260,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yClM3ik6cyU"
+      },
+      {
+        "id": "64kt2vaP1lc",
+        "title": "Linekraft - Circle Of Mayhem",
+        "channel": "blindscreen",
+        "views": 394,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=64kt2vaP1lc"
+      },
+      {
+        "id": "NnZ-lIVjey4",
+        "title": "#metal #metalhead #blackmetal #euronymous #edit  #perohlin #metalheadcommunity",
+        "channel": "MayheM",
+        "views": 163417,
+        "score": 1.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NnZ-lIVjey4"
+      },
+      {
+        "id": "mNojwQLvGD4",
+        "title": "Ezreal, But He Shoots NUCLEAR SNOWBALLS (Insane True DMG) | ARAM Mayhem",
+        "channel": "Body Those Fools 2",
+        "views": 6178,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mNojwQLvGD4"
+      },
+      {
+        "id": "F5ezk3ELEJQ",
+        "title": "The darkest band of all time. Iconic History🎼🪦#fyp #mayhem#blackmetal #truenorwegianblackmetal#viral",
+        "channel": "Underground scenes-Jarankhu",
+        "views": 16030,
+        "score": 0.53,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=F5ezk3ELEJQ"
+      },
+      {
+        "id": "owYY-fKY6yg",
+        "title": "L&#39;oscura storia dei Mayhem (#64)",
+        "channel": "La Zona Oscura - True crime e misteri",
+        "views": 36350,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=owYY-fKY6yg"
+      }
+    ],
+    "youtube_score": 1.65,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "NnZ-lIVjey4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "SPARKLING RED DIAMOND": {
+    "youtube_candidates": [
+      {
+        "id": "CDSv9ssWeLY",
+        "title": "Sparkling Red Diamond - Spirit Whole (Official Audio)",
+        "channel": "Sparkling Red Diamond",
+        "views": 686,
+        "score": 5.35,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=CDSv9ssWeLY"
+      },
+      {
+        "id": "",
+        "title": "Sparkling Red Diamond",
+        "channel": "",
+        "views": 0,
+        "score": 0.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v="
+      },
+      {
+        "id": "XbaGieHVII8",
+        "title": "BEAUTIFUL RED DIAMOND | #reddiamond #diamond #diamonds #gemstones #rare #viral #zircons #status",
+        "channel": "Natural Rough Gemstones",
+        "views": 36907,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XbaGieHVII8"
+      },
+      {
+        "id": "uE23M8DrLzo",
+        "title": "Unveiling Red Diamond Secrets: Rarity, Value, and the 4 C&#39;s!",
+        "channel": "mineralgemstones",
+        "views": 964,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=uE23M8DrLzo"
+      },
+      {
+        "id": "Lc_4kOWm6tw",
+        "title": "A rare crimson red diamond unveiled at Smithsonian Natural History Museum",
+        "channel": "Arirang News",
+        "views": 7351,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Lc_4kOWm6tw"
+      },
+      {
+        "id": "3_W0Ml8fAug",
+        "title": "Sparkling Red Diamond - My Last Hero[ine] (Official Lyric Video)",
+        "channel": "Sparkling Red Diamond",
+        "views": 185,
+        "score": 5.28,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=3_W0Ml8fAug"
+      },
+      {
+        "id": "n0wvDwSnzcw",
+        "title": "Making the world&#39;s most expensive carbonated water!",
+        "channel": "NileRed",
+        "views": 14639948,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=n0wvDwSnzcw"
+      },
+      {
+        "id": "TAm3viTzt8A",
+        "title": "Sparkling Red Diamond - Spirit Whole (Guitar Playthrough)",
+        "channel": "Sparkling Red Diamond",
+        "views": 181,
+        "score": 5.28,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=TAm3viTzt8A"
+      }
+    ],
+    "youtube_score": 5.35,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "CDSv9ssWeLY",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "Stand-Up Catch Impro": {
+    "youtube_candidates": [
+      {
+        "id": "h2oXZMn6w7o",
+        "title": "IMPRO 2023 - Błachnio, Leja, Sobaniec, Buchwald, Gajda, Płocha, Puzyr (impro, stand-up, komedia)",
+        "channel": "Kanał Komediowy",
+        "views": 105564,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=h2oXZMn6w7o"
+      },
+      {
+        "id": "ySCgiUAo6NE",
+        "title": "Stand-up Impro | Litości odc. 70. | Bendler | Kasparek | Wolski | Machnicki | Inwazja z Niemiec",
+        "channel": "Łukasz Wolski",
+        "views": 66025,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ySCgiUAo6NE"
+      },
+      {
+        "id": "_31II5XxMmI",
+        "title": "Nono Standup, le roi de l’impro... La chronique de Benjamin Tranié",
+        "channel": "France Inter",
+        "views": 305697,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_31II5XxMmI"
+      },
+      {
+        "id": "5aFXyb-1olo",
+        "title": "Machnicki Leja Wolski Pakosz | Stand-Up | Impro | Crowdwork | Najlepsze rozmowy z publicznością 2024",
+        "channel": "Tomek Machnicki",
+        "views": 136173,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5aFXyb-1olo"
+      },
+      {
+        "id": "5krJNr-nkcU",
+        "title": "CZAREK SIKORA | Tu i Teraz 6 | Stand-Up Impro",
+        "channel": "Czarek Sikora",
+        "views": 315536,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5krJNr-nkcU"
+      },
+      {
+        "id": "uWIfWdRhBF8",
+        "title": "Stand-Up Impro | Litości odc.39 | 2025 | Machnicki | Kasparek | Wolski | Ruciński | Gdański Wiedźmin",
+        "channel": "Tomek Machnicki",
+        "views": 132954,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=uWIfWdRhBF8"
+      },
+      {
+        "id": "mjMO5hzGsSc",
+        "title": "JE PÈTE LITTERALEMENT UN CABLE ( IMPRO )",
+        "channel": "edouard deloignon",
+        "views": 211256,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mjMO5hzGsSc"
+      },
+      {
+        "id": "EQ6asLcHYaU",
+        "title": "CATCH IMPRO PROFESSIONNEL 4eme édition - Aftermovie",
+        "channel": "COM UNE IMPRO",
+        "views": 44,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EQ6asLcHYaU"
+      }
+    ],
+    "youtube_score": 0.69,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "_31II5XxMmI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "WHITE OCEAN BURNS": {
+    "youtube_candidates": [
+      {
+        "id": "LhKQSZdN-k8",
+        "title": "Oceanvs Orientalis - White Ocean - Burning Man 2015",
+        "channel": "hamza sarsouri",
+        "views": 475330,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LhKQSZdN-k8"
+      },
+      {
+        "id": "eXVK25KL70s",
+        "title": "Armen Miran - White Ocean - Burning Man 2016",
+        "channel": "Music",
+        "views": 55052,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=eXVK25KL70s"
+      },
+      {
+        "id": "py3ByP-15_0",
+        "title": "VIKEN ARMAN Live - BURNING MAN - White Ocean Sunset 2016",
+        "channel": "Viken Arman",
+        "views": 86336,
+        "score": 3.62,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=py3ByP-15_0"
+      },
+      {
+        "id": "dRe1BaxvOwc",
+        "title": "Hernan Cattaneo - White Ocean Sunrise - Burning Man 2016",
+        "channel": "Music",
+        "views": 444,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dRe1BaxvOwc"
+      },
+      {
+        "id": "j04bXNuw328",
+        "title": "Gorje Hewek &amp; Izhevski - White Ocean - Burning Man 2016",
+        "channel": "Nacho Oberti",
+        "views": 50738,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=j04bXNuw328"
+      },
+      {
+        "id": "r4ZB5CYHGQ4",
+        "title": "August Burns Red - &quot;White Washed&quot;",
+        "channel": "Solid State Records",
+        "views": 631185,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=r4ZB5CYHGQ4"
+      },
+      {
+        "id": "pneh3LKVOnw",
+        "title": "Burning Man is Out of this world 🏜️✨ #burningman2025 #dustyvibes #burningman #technomusic #rave",
+        "channel": "Mr. Rave ",
+        "views": 2840522,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pneh3LKVOnw"
+      },
+      {
+        "id": "J7k4sTLmdho",
+        "title": "August Burns Red - &quot;Ocean Of Apathy&quot;",
+        "channel": "Solid State Records",
+        "views": 207157,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=J7k4sTLmdho"
+      }
+    ],
+    "youtube_score": 3.62,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "py3ByP-15_0",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-26"
+  },
+  "Spectacle Drag : GO SHOW EOZ": {
+    "youtube_candidates": [
+      {
+        "id": "W2YscoAEW3s",
+        "title": "must see performances from moulin rouge 🎭",
+        "channel": "myamericastory",
+        "views": 434325,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=W2YscoAEW3s"
+      },
+      {
+        "id": "G43DnaU9qPM",
+        "title": "Amy Winehouse - Back To Black (Live Belgrade 18-06-2011 drunk or stoned), RIP 23-07-2011 †",
+        "channel": "Jos Houben",
+        "views": 12919718,
+        "score": 3.89,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=G43DnaU9qPM"
+      },
+      {
+        "id": "5kEfq8jPsu4",
+        "title": "Bruno Mars - Chunky (from the Victoria’s Secret 2016 Fashion Show) (Official Live Performance)",
+        "channel": "Bruno Mars",
+        "views": 71527722,
+        "score": 3.98,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=5kEfq8jPsu4"
+      },
+      {
+        "id": "H_1-g1EqoGA",
+        "title": "Blanche Cassadine as Celine Dion",
+        "channel": "traywise",
+        "views": 429,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=H_1-g1EqoGA"
+      },
+      {
+        "id": "AnvsLMvmPgU",
+        "title": "Chicago the Musical Australia (2019) - All That Jazz",
+        "channel": "The Otaku's Study",
+        "views": 2019334,
+        "score": 0.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AnvsLMvmPgU"
+      },
+      {
+        "id": "jPCJIB1f7jk",
+        "title": "Lip Sync Battle - Tom Holland",
+        "channel": "Comedy Central Latinoamérica",
+        "views": 180466267,
+        "score": 1.03,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jPCJIB1f7jk"
+      },
+      {
+        "id": "yHx5JjbkgRQ",
+        "title": "CONTROVERSIAL Sabrina Carpenter Performance #sabrinacarpenter #britawards #bedchem #music",
+        "channel": "Celebrity Central",
+        "views": 654013,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yHx5JjbkgRQ"
+      },
+      {
+        "id": "melsdbHHjb8",
+        "title": "Carnival Spectacle Last Show of the Day (Back and Side Aisle View) MARDI GRRRA 2023 at Chessington",
+        "channel": "Amy and Mel",
+        "views": 1312,
+        "score": 3.39,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=melsdbHHjb8"
+      }
+    ],
+    "youtube_score": 3.98,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "5kEfq8jPsu4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-27"
+  },
+  "JÉRÔME SAGE ET SON ORCHESTRE": {
+    "youtube_candidates": [
+      {
+        "id": "NSE73AFzZhc",
+        "title": "Old Man River (feat. Hubert Degex et son orchestre)",
+        "channel": "John Littleton - Topic",
+        "views": 43,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NSE73AFzZhc"
+      },
+      {
+        "id": "v0-B74lm_t4",
+        "title": "Concerto pour piano et orchestre, FP 146: II. Andante con moto - Commencer très lentement",
+        "channel": "Eric Lesage - Topic",
+        "views": 1087,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=v0-B74lm_t4"
+      },
+      {
+        "id": "ckC0Gz73h2s",
+        "title": "Ben L&#39;Oncle Soul - Etre Un Homme Comme Vous",
+        "channel": "BenLOncleSoulVEVO",
+        "views": 11161419,
+        "score": 0.88,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ckC0Gz73h2s"
+      },
+      {
+        "id": "6F3_DoGeSuM",
+        "title": "Cubana Chic orchestra",
+        "channel": "Agence Osé! - Metteur en fête",
+        "views": 80,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6F3_DoGeSuM"
+      },
+      {
+        "id": "NUjsDxIaU1U",
+        "title": "1918, l&#39;Homme qui titubait dans la guerre: La valse de l’arrière... (Instrumental)",
+        "channel": "Release - Topic",
+        "views": 82,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NUjsDxIaU1U"
+      },
+      {
+        "id": "YmZefJAX-Ic",
+        "title": "Le Pistonné | Film Complet | Guy Bedos | Coluche | JP-Marielle | Claude Piéplu | Comédie | SPF",
+        "channel": "CINE SELECT",
+        "views": 15384,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YmZefJAX-Ic"
+      },
+      {
+        "id": "-vF-7Zv0h7k",
+        "title": "Les Soeurs Siamoises Petruchka et Anouchka - Incroyable mais Vrai !",
+        "channel": "Les JumeLLes Anne & Sophie",
+        "views": 5426910,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-vF-7Zv0h7k"
+      },
+      {
+        "id": "mrYpHlbmPAw",
+        "title": "Connesson: Athanor / Supernova - Chœur de Radio France / Orchestre National de France",
+        "channel": "Vidéos Editions",
+        "views": 764,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mrYpHlbmPAw"
+      }
+    ],
+    "youtube_score": 0.88,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "ckC0Gz73h2s",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-28"
+  },
+  "WINDER": {
+    "youtube_candidates": [
+      {
+        "id": "xDIyQ4sS5TI",
+        "title": "WINDER, GEORGIA - JULY 21, 2025 - HISTORIC DISTRICT - SLOW MOTION",
+        "channel": "Athens, GA -motovlog",
+        "views": 548,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xDIyQ4sS5TI"
+      },
+      {
+        "id": "LQhwmOWvrEU",
+        "title": "Winder Georgia Map Tour | Explore Life, Location &amp; Community In This Hidden Gem | Winder GA Living",
+        "channel": "Homes & Life In Georgia With Samuel Stott",
+        "views": 834,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LQhwmOWvrEU"
+      },
+      {
+        "id": "zIA-DzI09BY",
+        "title": "Do You Really Need A Watch Winder? Yes Or No?",
+        "channel": "He Spoke Style",
+        "views": 406081,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zIA-DzI09BY"
+      },
+      {
+        "id": "XTvoYNNGfDk",
+        "title": "Winder - Run For Love -  HD",
+        "channel": "Louis *Jukebox.Productions* (Louis)",
+        "views": 306297,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XTvoYNNGfDk"
+      },
+      {
+        "id": "Z7McHkPwZpE",
+        "title": "Winder - Run For Love 1984",
+        "channel": "Urmas Vesso",
+        "views": 11313,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Z7McHkPwZpE"
+      },
+      {
+        "id": "iLuk69CsnYQ",
+        "title": "Winder - MEDELLIN (Video Oficial)",
+        "channel": "Winder ",
+        "views": 6664,
+        "score": 1.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=iLuk69CsnYQ"
+      },
+      {
+        "id": "Sq3KGIKLv68",
+        "title": "WINDER - Run for love.flv",
+        "channel": "eriksynkro",
+        "views": 731219,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Sq3KGIKLv68"
+      },
+      {
+        "id": "xiXat8O0E1Q",
+        "title": "How to use a Watch Winder",
+        "channel": "Crown & Caliber ",
+        "views": 183882,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xiXat8O0E1Q"
+      }
+    ],
+    "youtube_score": 1.48,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "iLuk69CsnYQ",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-12"
+  },
+  "DOUBLEFACE RICHARD": {
+    "youtube_candidates": [
+      {
+        "id": "2kjU5tRm10E",
+        "title": "Vox Low dj set &amp; Richard Doubleface @ Connexion Toulouse 2015-30-01",
+        "channel": "Entropie Radio Show",
+        "views": 434,
+        "score": 3.33,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=2kjU5tRm10E"
+      },
+      {
+        "id": "csCesr-E6BM",
+        "title": "Sorcellerie  Comment Identifier les Personnes à Double Face#clips #shorts #bostratv  #mort",
+        "channel": "PAUL RICHARD PANDI",
+        "views": 245,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=csCesr-E6BM"
+      },
+      {
+        "id": "WdrUXcQG0xw",
+        "title": "Franck Muller Double Face Chronograph, Richard Mille Yohan Blake LTD Edition &amp; Modeling For Forbes",
+        "channel": "Gentleman Masterclass",
+        "views": 513,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=WdrUXcQG0xw"
+      },
+      {
+        "id": "mlCHlrmaKa0",
+        "title": "Double Face Carnaval Guadeloupe 2018 Mardi Gras",
+        "channel": "Christopher",
+        "views": 1463,
+        "score": 0.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mlCHlrmaKa0"
+      },
+      {
+        "id": "Akhp_r4v__M",
+        "title": "Al Jarreau and Richard Dworsky - Seasons ( demo, Feb. 1972 )",
+        "channel": "Richard Dworsky - Official",
+        "views": 1839,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Akhp_r4v__M"
+      },
+      {
+        "id": "yzEpD26tH5o",
+        "title": "Double Face",
+        "channel": "Deen Wave - Topic",
+        "views": 261,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yzEpD26tH5o"
+      },
+      {
+        "id": "VYqvvgpu-M4",
+        "title": "Richard Birman Alex Catherine - Femmes",
+        "channel": "MizikFwi",
+        "views": 35857,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VYqvvgpu-M4"
+      },
+      {
+        "id": "8S6GRM-gF7Y",
+        "title": "Double Foot Stomp! 🔥 🔥 🔥",
+        "channel": "Richard Ruiz Productions ",
+        "views": 11571,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8S6GRM-gF7Y"
+      }
+    ],
+    "youtube_score": 3.33,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "2kjU5tRm10E",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "In the beginning there was rhythm DJ Set : LADY MISS PENELOPE": {
+    "youtube_candidates": [
+      {
+        "id": "CrEsDC84TbQ",
+        "title": "#sssniperwolf #azzyland edit",
+        "channel": "Maee",
+        "views": 9171502,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CrEsDC84TbQ"
+      },
+      {
+        "id": "YKePW9dQrfg",
+        "title": "The difference between a Deaf person signing and a Hearing person",
+        "channel": "Elizabeth Harris",
+        "views": 15756843,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YKePW9dQrfg"
+      },
+      {
+        "id": "fKn0sfyO94c",
+        "title": "WHO HIT THE BEST BEAT?💖#shorts #shortsfeed #viralshorts",
+        "channel": "ROCK SQUAD",
+        "views": 50047686,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fKn0sfyO94c"
+      },
+      {
+        "id": "TLxhaO6Hl8w",
+        "title": "how fast will it speed up???",
+        "channel": "LSToast",
+        "views": 33326534,
+        "score": 0.94,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=TLxhaO6Hl8w"
+      },
+      {
+        "id": "PGC4eGW25lA",
+        "title": "Jonas Blue, Malive - Edge Of Desire (Radio Edit)",
+        "channel": "Jonas Blue",
+        "views": 9831741,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=PGC4eGW25lA"
+      },
+      {
+        "id": "7-BnB3xxUoA",
+        "title": "Nightcrawlers - Push The Feeling On",
+        "channel": "NightcrawlersVEVO",
+        "views": 51140924,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7-BnB3xxUoA"
+      },
+      {
+        "id": "D-NvQ6VJYtE",
+        "title": "Jamiroquai - Cosmic Girl (Official Video)",
+        "channel": "JamiroquaiVEVO",
+        "views": 105789674,
+        "score": 1.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=D-NvQ6VJYtE"
+      },
+      {
+        "id": "1BjarT-Vpjg",
+        "title": "How To Play Recorded On iPhone Meme Song | Easy Piano Tutorial #shorts",
+        "channel": "Straight To The Point Tutorials",
+        "views": 4086114,
+        "score": 0.83,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1BjarT-Vpjg"
+      }
+    ],
+    "youtube_score": 1.0,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "D-NvQ6VJYtE",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "TAK!": {
+    "youtube_candidates": [
+      {
+        "id": "1GjBYaMUh8Y",
+        "title": "EP 2367: Tiger Shroff नहीं Aamir थे टारगेट पर, पर ‘मिस्टर परफ़ेक्सनिस्ट’ तक इसलिए मुश्किल था पहुंचना",
+        "channel": "Crime Tak",
+        "views": 79604,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1GjBYaMUh8Y"
+      },
+      {
+        "id": "SsUxdqgwgtU",
+        "title": "🔴AAJ KA AGENDA: 2 मैच तो जीत लिए अब SERIES पर भी करो कब्जा, WELLINGTON में गलतियों से रहना दूर |",
+        "channel": "Sports Tak",
+        "views": 110479,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SsUxdqgwgtU"
+      },
+      {
+        "id": "VaVCFqP6jak",
+        "title": "CZĘSTOCHOWA ZDECYDOWAŁA! | WYNIKI REFERENDUM | LIVE ADAMCZYK&amp;KARNOWSKI 20:45 KANAŁ TAK!",
+        "channel": "Kanał TAK!",
+        "views": 148518,
+        "score": 4.65,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=VaVCFqP6jak"
+      },
+      {
+        "id": "BgPBgTEvi08",
+        "title": "[MV] TAK - ‘ニャニャニャチュニャ (NNNCN)’ feat. Kotoha",
+        "channel": "TAK / DORIDORI",
+        "views": 3384185,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BgPBgTEvi08"
+      },
+      {
+        "id": "8Cm-7oCq9HA",
+        "title": "[MV] TAK - ‘PPPP’ feat. 初音ミク、重音テト",
+        "channel": "TAK / DORIDORI",
+        "views": 66569437,
+        "score": 0.98,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8Cm-7oCq9HA"
+      },
+      {
+        "id": "kc0GAAgANm0",
+        "title": "Gangster Himanshu Bhau के गांव पहुंचा हरियाणा Tak, घर पर ताला लेकिन ग्रामीणों ने क्या बताया ?",
+        "channel": "Haryana Tak",
+        "views": 24747,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kc0GAAgANm0"
+      },
+      {
+        "id": "iEXkpS-Q9dI",
+        "title": "How to Play Tak",
+        "channel": "James Ernest",
+        "views": 201330,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=iEXkpS-Q9dI"
+      },
+      {
+        "id": "N_vYUNEktsA",
+        "title": "[MV] TAK - &#39;도깨비꽃&#39; feat. 텐코 시부키",
+        "channel": "TAK / DORIDORI",
+        "views": 5207695,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=N_vYUNEktsA"
+      }
+    ],
+    "youtube_score": 4.65,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "VaVCFqP6jak",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
+  },
+  "UNCLE BENNY AND HIS CALYPSO SWING": {
+    "youtube_video_id": "Qyp4ywk8lyA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-19",
+    "youtube_candidates": [
+      {
+        "id": "HKqteh7-qnA",
+        "title": "Sausage - Uncle Benny and his Calypso Swing (Duo)",
+        "channel": "UncleBenny",
+        "views": 25,
+        "score": 0.18,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HKqteh7-qnA"
+      },
+      {
+        "id": "KoO5GTRY46I",
+        "title": "Hill and gully rider - Uncle Benny and his Calypso Swing (Duo)",
+        "channel": "UncleBenny",
+        "views": 53,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KoO5GTRY46I"
+      },
+      {
+        "id": "jZ7HCbz2LK0",
+        "title": "MOOD SWING - SLOW &amp; LOW (Studio Road TV)",
+        "channel": "Studio Road TV",
+        "views": 1411,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jZ7HCbz2LK0"
+      },
+      {
+        "id": "Qyp4ywk8lyA",
+        "title": "Live at 491",
+        "channel": "citystream",
+        "views": 272,
+        "score": 3.3,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Qyp4ywk8lyA"
+      },
+      {
+        "id": "9ma5PPCVzOc",
+        "title": "DR swing",
+        "channel": "Lourdes Robles",
+        "views": 349,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9ma5PPCVzOc"
+      },
+      {
+        "id": "HzWsh64v9YU",
+        "title": "Gerald Clark &amp; His Caribbean Serenaders  La Rosa",
+        "channel": "TTGoldenAge",
+        "views": 676,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=HzWsh64v9YU"
+      },
+      {
+        "id": "TZdvihA7Y1A",
+        "title": "DANCE CRAZES OF THE &#39;60S (Compiled by Toni Basil)",
+        "channel": "ToniBasilsHouse",
+        "views": 4696544,
+        "score": 0.83,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=TZdvihA7Y1A"
+      },
+      {
+        "id": "ROBCi-PPFZc",
+        "title": "Calypso (Chris Gumbley)",
+        "channel": "Gumbles Publications",
+        "views": 112,
+        "score": 0.26,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ROBCi-PPFZc"
+      }
+    ],
+    "youtube_score": 3.3,
+    "youtube_auto_validated": false
   }
 }
