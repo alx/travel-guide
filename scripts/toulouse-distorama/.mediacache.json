@@ -2485,7 +2485,84 @@
     "youtube_video_id": "thwpz-GGJp4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "thwpz-GGJp4",
+        "title": "Richard Birman - Nuit Bleue",
+        "channel": "Desde3",
+        "views": 353912,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=thwpz-GGJp4"
+      },
+      {
+        "id": "b5V_7GPhEGI",
+        "title": "FUZION - Nuit bleue (Lyrics/Translation)     🪘🎹🎸🎺🎼🎧",
+        "channel": "Zouk Hits for Life",
+        "views": 69651,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b5V_7GPhEGI"
+      },
+      {
+        "id": "OynWzCniyOk",
+        "title": "Andéol (Feat. Kyana) - Nuits bleues",
+        "channel": "Andéol",
+        "views": 83607,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OynWzCniyOk"
+      },
+      {
+        "id": "Lu27duZ7QxI",
+        "title": "Maëlle - Nuit bleue",
+        "channel": "Maëlle Officiel",
+        "views": 63980,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Lu27duZ7QxI"
+      },
+      {
+        "id": "rpL35kknsgA",
+        "title": "Nuit bleue",
+        "channel": "FUZION - Topic",
+        "views": 41809,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rpL35kknsgA"
+      },
+      {
+        "id": "2g_dyT5wuc0",
+        "title": "Paul SEVERS - La nuit bleue",
+        "channel": "Joseph Dominique",
+        "views": 34228,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2g_dyT5wuc0"
+      },
+      {
+        "id": "M4EcyUKa_xs",
+        "title": "Nuit bleue FIM COMPLET EN FRANCAIS",
+        "channel": "NGuY51",
+        "views": 1924,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=M4EcyUKa_xs"
+      },
+      {
+        "id": "jRcx8ZVmgj0",
+        "title": "NUIT BLEUE - court-métrage",
+        "channel": "ASPIRINE PRODUCTIONS",
+        "views": 1115,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=jRcx8ZVmgj0"
+      }
+    ],
+    "youtube_score": 0.69,
+    "youtube_auto_validated": false,
+    "event_date": "2026-10-30"
   },
   "FRÈRES POUETARDS": {
     "youtube_video_id": "kSMhB9FiCgE",
@@ -3222,7 +3299,7 @@
     "bandcamp_searched": false
   },
   "ZAPOÏ": {
-    "youtube_video_id": "",
+    "youtube_video_id": "ZMAsHbm3ZAM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -3231,7 +3308,7 @@
         "id": "jtXzsO6TUbw",
         "title": "Le tourisme spatial, une arnaque ? - Groland Le Zapoï du 06/10 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 619803,
+        "views": 620028,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jtXzsO6TUbw"
@@ -3240,7 +3317,7 @@
         "id": "ZMAsHbm3ZAM",
         "title": "Le meilleur pâtissier  - Groland Le Zapoï du 06/04 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 1335130,
+        "views": 1336456,
         "score": 0.77,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=ZMAsHbm3ZAM"
@@ -3249,7 +3326,7 @@
         "id": "Yoz6-uCUHS4",
         "title": "Surprise génétique - Groland Le Zapoï du 27/04 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 779129,
+        "views": 779349,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Yoz6-uCUHS4"
@@ -3258,7 +3335,7 @@
         "id": "aSOmVdm1eJE",
         "title": "Viva Las Vegas  - Groland Le Zapoï du 17/02  - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 493986,
+        "views": 493998,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=aSOmVdm1eJE"
@@ -3267,7 +3344,7 @@
         "id": "jK4wnCLuBtI",
         "title": "Gromillionnaire - Groland Le Zapoï du 03/02 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 2461756,
+        "views": 2463427,
         "score": 0.8,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jK4wnCLuBtI"
@@ -3276,7 +3353,7 @@
         "id": "MrXRFpgPGVU",
         "title": "Micron incognito  - Groland Le Zapoï du 17/02  - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 352367,
+        "views": 352399,
         "score": 0.69,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=MrXRFpgPGVU"
@@ -3285,7 +3362,7 @@
         "id": "kxtcMUwOQZY",
         "title": "Mélenchon dans son milieu naturel - Groland Le Zapoï du 27/10 - CANAL+ - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 594150,
+        "views": 595639,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=kxtcMUwOQZY"
@@ -3294,13 +3371,13 @@
         "id": "9qlEpu_roz4",
         "title": "Prison pleine - Groland Le Zapoï du 11/05 - CANAL+",
         "channel": "Groland - CANAL+",
-        "views": 436526,
+        "views": 436591,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9qlEpu_roz4"
       }
     ],
-    "youtube_score": 0.8,
+    "youtube_score": 0.77,
     "youtube_auto_validated": false,
     "event_date": "2026-11-07",
     "youtube_rejected_ids": [
@@ -8890,7 +8967,8 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-28"
   },
   "CLEGANE": {
     "youtube_video_id": "n08FCr5z2qE",
@@ -13371,7 +13449,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "JfHXCbYcnGk",
+    "youtube_video_id": "g0xlm70xJ2g",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13977,7 +14055,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "BBVLmTq1YLk",
+    "youtube_video_id": "_xOrSDcjle8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26631,7 +26709,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "lZjENC9sL5c",
+    "youtube_video_id": "6MaWnSyjkfg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28798,7 +28876,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "",
+    "youtube_video_id": "Nhnd_iu745k",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -29175,7 +29253,7 @@
     "bandcamp_url": "https://alientears.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=857472705/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-10-30",
+    "event_date": "2026-10-29",
     "youtube_candidates": [
       {
         "id": "EXipygpS_RU",
@@ -29251,7 +29329,10 @@
       }
     ],
     "youtube_score": 3.38,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-28"
   },
   "LA PIGÑATA": {
     "youtube_video_id": "5MdQBXrXbhg",
@@ -30012,7 +30093,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "GGDVYM21yEs",
+    "youtube_video_id": "no31I_2QgdQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30947,7 +31028,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "iIQoqD0HpHo",
+    "youtube_video_id": "WwqV0GrhhNU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31978,7 +32059,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "ctuDu_atfPw",
+    "youtube_video_id": "cwH5qLeMU7s",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34203,9 +34284,9 @@
         "url": "https://www.youtube.com/watch?v=SRCtzBMjR80"
       }
     ],
-    "youtube_score": 3.42,
+    "youtube_score": 3.34,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "SRCtzBMjR80",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34382,7 +34463,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "wRYhxV5EE_Y",
+    "youtube_video_id": "7tMYCVrs7z8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -36476,7 +36557,7 @@
     "event_date": "2026-11-26"
   },
   "Lancement Artzine Le Barré": {
-    "youtube_video_id": "Nh_YDEhMmqk",
+    "youtube_video_id": "cPMyICKG-1s",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
