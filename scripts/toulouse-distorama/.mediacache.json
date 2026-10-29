@@ -37729,13 +37729,14 @@
     ],
     "youtube_score": 0.51,
     "youtube_auto_validated": false,
-    "youtube_video_id": "3f3mUO_xKxI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-10-31",
     "youtube_rejected_ids": [
-      "Zl2EB-5LaBs"
+      "Zl2EB-5LaBs",
+      "3f3mUO_xKxI"
     ],
     "youtube_validated": false
   },
