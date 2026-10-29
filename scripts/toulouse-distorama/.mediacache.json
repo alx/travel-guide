@@ -32568,11 +32568,15 @@
     ],
     "youtube_score": 0.48,
     "youtube_auto_validated": false,
-    "youtube_video_id": "PnFi0dNeVV4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-11-11"
+    "event_date": "2026-11-11",
+    "youtube_rejected_ids": [
+      "PnFi0dNeVV4"
+    ],
+    "youtube_validated": false
   },
   ".MADCHAMB": {
     "youtube_candidates": [
