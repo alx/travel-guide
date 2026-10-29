@@ -37640,11 +37640,15 @@
     ],
     "youtube_score": 1.57,
     "youtube_auto_validated": false,
-    "youtube_video_id": "efqpA9X2EvU",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-10-31"
+    "event_date": "2026-10-31",
+    "youtube_rejected_ids": [
+      "efqpA9X2EvU"
+    ],
+    "youtube_validated": false
   },
   "NAOSA": {
     "youtube_candidates": [
