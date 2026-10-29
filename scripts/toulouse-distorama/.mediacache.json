@@ -13449,7 +13449,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "OpY7bc7Txgo",
+    "youtube_video_id": "pe03nMA0Ur8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -14055,7 +14055,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "nopp287zNp4",
+    "youtube_video_id": "AJncpGaRxCE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -17972,25 +17972,34 @@
   },
   "CLAYMORES": {
     "youtube_video_id": "",
-    "bandcamp_url": "https://theclaymoresmusic.bandcamp.com/album/the-devil-and-the-deep",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1197306384/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
-    "event_date": "2026-07-25",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-10-31",
     "youtube_candidates": [
       {
         "id": "LAeBDOP8qig",
         "title": "Scrim- claymore (official music video)",
         "channel": "Scrim",
-        "views": 466760,
+        "views": 513328,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=LAeBDOP8qig"
       },
       {
+        "id": "YKQ1jWuHoGk",
+        "title": "CLAYMORE : Le monstre n&#39;est pas celui que vous croyez (analyse)",
+        "channel": "Cogitonaute",
+        "views": 95525,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YKQ1jWuHoGk"
+      },
+      {
         "id": "jCslJpDARdc",
         "title": "How A Claymore Mine Works 😨",
         "channel": "Zack D. Films",
-        "views": 13129244,
+        "views": 13139507,
         "score": 0.89,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jCslJpDARdc"
@@ -17999,7 +18008,7 @@
         "id": "AkC7vNrgs6M",
         "title": "Claymore DESTRUCTION in Super Slow Mo! - Ballistic High-Speed",
         "channel": "Ballistic High-Speed",
-        "views": 1607129,
+        "views": 1640467,
         "score": 0.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=AkC7vNrgs6M"
@@ -18008,52 +18017,44 @@
         "id": "xjErH_J2bA4",
         "title": "🧨 Why Claymore Mines Are So Brutal💥",
         "channel": "G Logics 👑",
-        "views": 1122596,
+        "views": 1129132,
         "score": 0.76,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=xjErH_J2bA4"
       },
       {
-        "id": "zb2xowrtss4",
-        "title": "How M18A1 CLAYMORE Works",
-        "channel": "Mscope",
-        "views": 1858414,
-        "score": 0.78,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=zb2xowrtss4"
+        "id": "KJiqP8hurLU",
+        "title": "Live Claymore",
+        "channel": "The U.S. Army",
+        "views": 160822,
+        "score": 3.65,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=KJiqP8hurLU"
       },
       {
         "id": "i6gzn0v0fGU",
         "title": "Les CLAYMORES et les EXALTÉS (meilleures que les pilliers)",
         "channel": "Alphawick",
-        "views": 46509,
-        "score": 0.58,
+        "views": 48081,
+        "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=i6gzn0v0fGU"
-      },
-      {
-        "id": "vM4UcddNOAs",
-        "title": "Which Claymore Is The Best? #fromsoftware",
-        "channel": "Youwy",
-        "views": 85343,
-        "score": 0.62,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=vM4UcddNOAs"
       },
       {
         "id": "-Qv3ieQ-_Hs",
         "title": "Claymores",
         "channel": "LOCKED SHUT - Topic",
-        "views": 132050,
-        "score": 0.64,
+        "views": 275732,
+        "score": 0.68,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=-Qv3ieQ-_Hs"
       }
     ],
-    "youtube_score": 0.89,
+    "youtube_score": 3.65,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "jCslJpDARdc"
+      "jCslJpDARdc",
+      "KJiqP8hurLU"
     ],
     "youtube_validated": false
   },
@@ -26790,7 +26791,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "972lxoK1qxY",
+    "youtube_video_id": "6MaWnSyjkfg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27318,7 +27319,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "DJ/VJ PIET DU CONGO": {
-    "youtube_video_id": "",
+    "youtube_video_id": "JRmDf23dzx0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28957,7 +28958,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "IM0LMAcwRRY",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30174,7 +30175,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "dVIzO1Eyg1E",
+    "youtube_video_id": "6iIQ-Ddy-gU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32497,7 +32498,7 @@
         "id": "PnFi0dNeVV4",
         "title": "RUBAMAZZO - Steal Your Way to Victory with this Classic Italian Scopa-style Card Game!",
         "channel": "Play-In Games",
-        "views": 6670,
+        "views": 6778,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=PnFi0dNeVV4"
@@ -32506,7 +32507,7 @@
         "id": "bTpadSnRPgI",
         "title": "Growing Up Italian Scopa Tournament | LOST IN THE SAUCE",
         "channel": "Growing Up Italian",
-        "views": 6337,
+        "views": 6412,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bTpadSnRPgI"
@@ -32515,19 +32516,10 @@
         "id": "VmYFB6gcHAU",
         "title": "Scopa Tournament 2019",
         "channel": "Growing Up Italian",
-        "views": 1933,
+        "views": 1937,
         "score": 0.41,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=VmYFB6gcHAU"
-      },
-      {
-        "id": "5j_0BnaZ7Cg",
-        "title": "La Scopa - NaCLIPS",
-        "channel": "NaCLIPS - Napoli Cultura e Lingua Italiana Per Stranieri",
-        "views": 134,
-        "score": 0.27,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=5j_0BnaZ7Cg"
       },
       {
         "id": "rbmGmOIM9io",
@@ -32539,10 +32531,19 @@
         "url": "https://www.youtube.com/watch?v=rbmGmOIM9io"
       },
       {
+        "id": "5j_0BnaZ7Cg",
+        "title": "La Scopa - NaCLIPS",
+        "channel": "NaCLIPS - Napoli Cultura e Lingua Italiana Per Stranieri",
+        "views": 134,
+        "score": 0.27,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5j_0BnaZ7Cg"
+      },
+      {
         "id": "9n6wGdCz-SU",
         "title": "The king of scopa",
         "channel": "Growing Up Italian",
-        "views": 6623,
+        "views": 6694,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9n6wGdCz-SU"
@@ -32551,27 +32552,27 @@
         "id": "c6XDmlsrBGg",
         "title": "2nd Annual Growing Up Italian Scopa Tournament",
         "channel": "Growing Up Italian",
-        "views": 1454,
+        "views": 1456,
         "score": 0.4,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=c6XDmlsrBGg"
       },
       {
-        "id": "KUr6bHafBtw",
-        "title": "FC Barcelona Beisbol Jonathan Garcia Final SCopa Juvenil 07",
-        "channel": "Club Beisbol Softbol Barcelona",
-        "views": 762,
-        "score": 0.36,
+        "id": "dN54mC3TLLc",
+        "title": "Maria Sofia #Shorts pt6",
+        "channel": "Carico di Tutto",
+        "views": 201902,
+        "score": 0.66,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=KUr6bHafBtw"
+        "url": "https://www.youtube.com/watch?v=dN54mC3TLLc"
       }
     ],
-    "youtube_score": 0.48,
+    "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "dN54mC3TLLc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-11",
     "youtube_rejected_ids": [
       "PnFi0dNeVV4"
@@ -37569,78 +37570,78 @@
         "id": "uFBgeZLsvVE",
         "title": "Official TBOI Item Guides No. 695: Bloody Gust",
         "channel": "Nicalis, Inc.",
-        "views": 3218,
+        "views": 3405,
         "score": 0.44,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=uFBgeZLsvVE"
       },
       {
-        "id": "X20VRWKFdcg",
-        "title": "Fastest gust of wind ever recorded #Shorts #weather",
-        "channel": "InfoPoint - SH",
-        "views": 19237,
-        "score": 0.54,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=X20VRWKFdcg"
-      },
-      {
-        "id": "efqpA9X2EvU",
-        "title": "GUST  - Wouldn&#39;t it be nice",
-        "channel": "GustOfficial",
-        "views": 33901,
-        "score": 1.57,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=efqpA9X2EvU"
-      },
-      {
         "id": "Nq7AZfSf-Lc",
         "title": "Gust of wind causes a ship collision | DW News",
         "channel": "DW News",
-        "views": 56534,
+        "views": 56615,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Nq7AZfSf-Lc"
       },
       {
-        "id": "XBkOER1p3Dw",
-        "title": "G.U.S.T. - ILLUSION (Official Video)",
-        "channel": "Gustbandbe",
-        "views": 1094,
-        "score": 1.38,
+        "id": "PhxGpCJaxXE",
+        "title": "HOKKAIDO HIT by WINTER STORM — 95-MPH Gust Tops Hurricane Force, Garage Collapses",
+        "channel": "Global Weather Network",
+        "views": 7858,
+        "score": 0.49,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=XBkOER1p3Dw"
+        "url": "https://www.youtube.com/watch?v=PhxGpCJaxXE"
+      },
+      {
+        "id": "N7wktUblVb4",
+        "title": "GUST Celebrates Kuwait&#39;s National &amp; Liberation Days",
+        "channel": "GUST_ Official",
+        "views": 25005,
+        "score": 1.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=N7wktUblVb4"
       },
       {
         "id": "ptnGUYJK5mU",
         "title": "BULDAK NUOVO GUST",
         "channel": "Numero 1 Market",
-        "views": 12457,
+        "views": 12557,
         "score": 0.51,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=ptnGUYJK5mU"
       },
       {
+        "id": "mzP1tAKOzq4",
+        "title": "Berserk | Season 1 | Episode ( 1 - 10 )",
+        "channel": "Syx",
+        "views": 419102,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mzP1tAKOzq4"
+      },
+      {
+        "id": "tfhgGmb_4yg",
+        "title": "CIA Hero Gust Avrakotos&#39; Unconventional Methods #shorts",
+        "channel": "Mortial Clips",
+        "views": 3631,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tfhgGmb_4yg"
+      },
+      {
         "id": "VWSRtPTmRr4",
         "title": "Pharrell Williams - Gust of Wind (Official Video)",
         "channel": "PharrellWilliamsVEVO",
-        "views": 22817589,
+        "views": 22817686,
         "score": 0.92,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=VWSRtPTmRr4"
-      },
-      {
-        "id": "tq_LteD-xxc",
-        "title": "Ginger &amp; Gust Visit Starsand Island 🌴",
-        "channel": "My Time series",
-        "views": 10440,
-        "score": 0.5,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=tq_LteD-xxc"
       }
     ],
-    "youtube_score": 1.57,
+    "youtube_score": 1.55,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "N7wktUblVb4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37725,9 +37726,9 @@
         "url": "https://www.youtube.com/watch?v=OTHnQjOHHyA"
       }
     ],
-    "youtube_score": 0.63,
+    "youtube_score": 0.51,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "3f3mUO_xKxI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
