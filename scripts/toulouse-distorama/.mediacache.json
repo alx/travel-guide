@@ -37235,11 +37235,15 @@
     ],
     "youtube_score": 1.48,
     "youtube_auto_validated": false,
-    "youtube_video_id": "iLuk69CsnYQ",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-12"
+    "event_date": "2026-11-12",
+    "youtube_rejected_ids": [
+      "iLuk69CsnYQ"
+    ],
+    "youtube_validated": false
   },
   "DOUBLEFACE RICHARD": {
     "youtube_candidates": [
