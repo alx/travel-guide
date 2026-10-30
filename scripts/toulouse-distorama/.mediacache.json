@@ -32570,14 +32570,15 @@
     ],
     "youtube_score": 0.48,
     "youtube_auto_validated": false,
-    "youtube_video_id": "bTpadSnRPgI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-11",
     "youtube_rejected_ids": [
       "PnFi0dNeVV4",
-      "dN54mC3TLLc"
+      "dN54mC3TLLc",
+      "bTpadSnRPgI"
     ],
     "youtube_validated": false
   },
