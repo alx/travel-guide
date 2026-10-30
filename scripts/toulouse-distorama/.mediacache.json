@@ -14055,7 +14055,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "AJncpGaRxCE",
+    "youtube_video_id": "BBVLmTq1YLk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -17978,83 +17978,84 @@
     "event_date": "2026-10-31",
     "youtube_candidates": [
       {
-        "id": "LAeBDOP8qig",
-        "title": "Scrim- claymore (official music video)",
-        "channel": "Scrim",
-        "views": 513328,
-        "score": 0.71,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=LAeBDOP8qig"
-      },
-      {
-        "id": "YKQ1jWuHoGk",
-        "title": "CLAYMORE : Le monstre n&#39;est pas celui que vous croyez (analyse)",
-        "channel": "Cogitonaute",
-        "views": 95525,
-        "score": 0.62,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=YKQ1jWuHoGk"
-      },
-      {
-        "id": "jCslJpDARdc",
-        "title": "How A Claymore Mine Works 😨",
-        "channel": "Zack D. Films",
-        "views": 13139507,
-        "score": 0.89,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=jCslJpDARdc"
-      },
-      {
         "id": "AkC7vNrgs6M",
         "title": "Claymore DESTRUCTION in Super Slow Mo! - Ballistic High-Speed",
         "channel": "Ballistic High-Speed",
-        "views": 1640467,
+        "views": 1643667,
         "score": 0.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=AkC7vNrgs6M"
       },
       {
-        "id": "xjErH_J2bA4",
-        "title": "🧨 Why Claymore Mines Are So Brutal💥",
-        "channel": "G Logics 👑",
-        "views": 1129132,
-        "score": 0.76,
+        "id": "YKQ1jWuHoGk",
+        "title": "CLAYMORE : Le monstre n&#39;est pas celui que vous croyez (analyse)",
+        "channel": "Cogitonaute",
+        "views": 96224,
+        "score": 0.62,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=xjErH_J2bA4"
+        "url": "https://www.youtube.com/watch?v=YKQ1jWuHoGk"
       },
       {
-        "id": "KJiqP8hurLU",
-        "title": "Live Claymore",
-        "channel": "The U.S. Army",
-        "views": 160822,
-        "score": 3.65,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=KJiqP8hurLU"
+        "id": "LAeBDOP8qig",
+        "title": "Scrim- claymore (official music video)",
+        "channel": "Scrim",
+        "views": 514933,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LAeBDOP8qig"
       },
       {
         "id": "i6gzn0v0fGU",
         "title": "Les CLAYMORES et les EXALTÉS (meilleures que les pilliers)",
         "channel": "Alphawick",
-        "views": 48081,
+        "views": 48255,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=i6gzn0v0fGU"
       },
       {
-        "id": "-Qv3ieQ-_Hs",
-        "title": "Claymores",
-        "channel": "LOCKED SHUT - Topic",
-        "views": 275732,
-        "score": 0.68,
+        "id": "xjErH_J2bA4",
+        "title": "🧨 Why Claymore Mines Are So Brutal💥",
+        "channel": "G Logics 👑",
+        "views": 1129324,
+        "score": 0.76,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=-Qv3ieQ-_Hs"
+        "url": "https://www.youtube.com/watch?v=xjErH_J2bA4"
+      },
+      {
+        "id": "zb2xowrtss4",
+        "title": "How M18A1 CLAYMORE Works",
+        "channel": "Mscope",
+        "views": 1862374,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zb2xowrtss4"
+      },
+      {
+        "id": "EzOXnvrIGMk",
+        "title": "Firing Process of a Claymore Mine",
+        "channel": "Military Excursions",
+        "views": 1344313,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=EzOXnvrIGMk"
+      },
+      {
+        "id": "9QFfE6X6m4Y",
+        "title": "Claymore (2025) | TV Trailer | Live Action Anime AI PV | クレイモア トレーラー",
+        "channel": "Kevin Films",
+        "views": 71117,
+        "score": 3.61,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=9QFfE6X6m4Y"
       }
     ],
-    "youtube_score": 3.65,
+    "youtube_score": 3.61,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "jCslJpDARdc",
-      "KJiqP8hurLU"
+      "KJiqP8hurLU",
+      "9QFfE6X6m4Y"
     ],
     "youtube_validated": false
   },
@@ -27319,7 +27320,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "DJ/VJ PIET DU CONGO": {
-    "youtube_video_id": "JRmDf23dzx0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28958,7 +28959,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "",
+    "youtube_video_id": "lW0W4AOgs6Q",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30175,7 +30176,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "6iIQ-Ddy-gU",
+    "youtube_video_id": "no31I_2QgdQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31110,7 +31111,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "qclVGsOqBJM",
+    "youtube_video_id": "tiYfadqOGsA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32498,7 +32499,7 @@
         "id": "PnFi0dNeVV4",
         "title": "RUBAMAZZO - Steal Your Way to Victory with this Classic Italian Scopa-style Card Game!",
         "channel": "Play-In Games",
-        "views": 6778,
+        "views": 6788,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=PnFi0dNeVV4"
@@ -32507,7 +32508,7 @@
         "id": "bTpadSnRPgI",
         "title": "Growing Up Italian Scopa Tournament | LOST IN THE SAUCE",
         "channel": "Growing Up Italian",
-        "views": 6412,
+        "views": 6416,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bTpadSnRPgI"
@@ -32531,6 +32532,15 @@
         "url": "https://www.youtube.com/watch?v=rbmGmOIM9io"
       },
       {
+        "id": "hxzYA5E6dqk",
+        "title": "44/17 Torneo scopa d&#39;assi 21 ottobre",
+        "channel": "MultimediaEnsMilano",
+        "views": 177,
+        "score": 0.28,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hxzYA5E6dqk"
+      },
+      {
         "id": "5j_0BnaZ7Cg",
         "title": "La Scopa - NaCLIPS",
         "channel": "NaCLIPS - Napoli Cultura e Lingua Italiana Per Stranieri",
@@ -32543,7 +32553,7 @@
         "id": "9n6wGdCz-SU",
         "title": "The king of scopa",
         "channel": "Growing Up Italian",
-        "views": 6694,
+        "views": 6698,
         "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9n6wGdCz-SU"
@@ -32556,20 +32566,11 @@
         "score": 0.4,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=c6XDmlsrBGg"
-      },
-      {
-        "id": "dN54mC3TLLc",
-        "title": "Maria Sofia #Shorts pt6",
-        "channel": "Carico di Tutto",
-        "views": 201902,
-        "score": 0.66,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=dN54mC3TLLc"
       }
     ],
-    "youtube_score": 0.66,
+    "youtube_score": 0.48,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "bTpadSnRPgI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34551,7 +34552,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "SqTEVUgTLbA",
+    "youtube_video_id": "7tMYCVrs7z8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37568,81 +37569,81 @@
   "GUST": {
     "youtube_candidates": [
       {
+        "id": "009qWpVfBoM",
+        "title": "10 Ultralight Aircraft So Flimsy a Gust of Wind Could Break Them!",
+        "channel": " Ultimate Aircraft",
+        "views": 1565,
+        "score": 0.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=009qWpVfBoM"
+      },
+      {
+        "id": "Q0NG6_Qfxko",
+        "title": "What we tried to hold",
+        "channel": "Angelixpearl",
+        "views": 134568,
+        "score": 0.64,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Q0NG6_Qfxko"
+      },
+      {
+        "id": "ZvVhoQRJGto",
+        "title": "Frumos la vedere, dar cum e la gust? 🍎",
+        "channel": "TraLaLa - Cantece si desene animate pentru copii",
+        "views": 7497,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ZvVhoQRJGto"
+      },
+      {
+        "id": "FOaO2fkjkpM",
+        "title": "*NEW* Gust Crobat is my MVP of the Mega Halloween Cup!",
+        "channel": "HomeSliceHenry",
+        "views": 26118,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FOaO2fkjkpM"
+      },
+      {
         "id": "uFBgeZLsvVE",
         "title": "Official TBOI Item Guides No. 695: Bloody Gust",
         "channel": "Nicalis, Inc.",
-        "views": 3405,
-        "score": 0.44,
+        "views": 5481,
+        "score": 0.47,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=uFBgeZLsvVE"
-      },
-      {
-        "id": "Nq7AZfSf-Lc",
-        "title": "Gust of wind causes a ship collision | DW News",
-        "channel": "DW News",
-        "views": 56615,
-        "score": 0.59,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Nq7AZfSf-Lc"
-      },
-      {
-        "id": "PhxGpCJaxXE",
-        "title": "HOKKAIDO HIT by WINTER STORM — 95-MPH Gust Tops Hurricane Force, Garage Collapses",
-        "channel": "Global Weather Network",
-        "views": 7858,
-        "score": 0.49,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=PhxGpCJaxXE"
       },
       {
         "id": "N7wktUblVb4",
         "title": "GUST Celebrates Kuwait&#39;s National &amp; Liberation Days",
         "channel": "GUST_ Official",
-        "views": 25005,
+        "views": 25007,
         "score": 1.55,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=N7wktUblVb4"
       },
       {
-        "id": "ptnGUYJK5mU",
-        "title": "BULDAK NUOVO GUST",
-        "channel": "Numero 1 Market",
-        "views": 12557,
-        "score": 0.51,
+        "id": "Nq7AZfSf-Lc",
+        "title": "Gust of wind causes a ship collision | DW News",
+        "channel": "DW News",
+        "views": 57784,
+        "score": 0.6,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=ptnGUYJK5mU"
+        "url": "https://www.youtube.com/watch?v=Nq7AZfSf-Lc"
       },
       {
-        "id": "mzP1tAKOzq4",
-        "title": "Berserk | Season 1 | Episode ( 1 - 10 )",
-        "channel": "Syx",
-        "views": 419102,
-        "score": 0.7,
+        "id": "QdVd-Xl0LuQ",
+        "title": "War Robots - 👻 UE GUST Setup That Turns UE Blitz into an Absolute Monster! 👹 - 🎁25x  MESMER-M",
+        "channel": "Huy WR",
+        "views": 2075,
+        "score": 0.41,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=mzP1tAKOzq4"
-      },
-      {
-        "id": "tfhgGmb_4yg",
-        "title": "CIA Hero Gust Avrakotos&#39; Unconventional Methods #shorts",
-        "channel": "Mortial Clips",
-        "views": 3631,
-        "score": 0.45,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=tfhgGmb_4yg"
-      },
-      {
-        "id": "VWSRtPTmRr4",
-        "title": "Pharrell Williams - Gust of Wind (Official Video)",
-        "channel": "PharrellWilliamsVEVO",
-        "views": 22817686,
-        "score": 0.92,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=VWSRtPTmRr4"
+        "url": "https://www.youtube.com/watch?v=QdVd-Xl0LuQ"
       }
     ],
-    "youtube_score": 1.55,
+    "youtube_score": 0.64,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "Q0NG6_Qfxko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37704,7 +37705,7 @@
         "id": "y_wUrA4C2LA",
         "title": "CHEVROLET NAOSA OPEN 2026 FINAL PRO-AM",
         "channel": "PIGHEAD",
-        "views": 340,
+        "views": 341,
         "score": 0.32,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=y_wUrA4C2LA"
@@ -37713,7 +37714,7 @@
         "id": "Zl2EB-5LaBs",
         "title": "naosa seminuevos teleautos feb 2019",
         "channel": "Teleautos & Telemotos (Oficial)",
-        "views": 110625,
+        "views": 110628,
         "score": 0.63,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Zl2EB-5LaBs"
@@ -37728,9 +37729,9 @@
         "url": "https://www.youtube.com/watch?v=OTHnQjOHHyA"
       }
     ],
-    "youtube_score": 0.51,
+    "youtube_score": 0.45,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "S0aGEBH1edM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
