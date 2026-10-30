@@ -32659,11 +32659,15 @@
     ],
     "youtube_score": 1.41,
     "youtube_auto_validated": false,
-    "youtube_video_id": "jMtcPHYf-XQ",
+    "youtube_video_id": "",
     "bandcamp_url": "https://madchamb.bandcamp.com/album/some-songs-not-an-album",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2875425632/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-12"
+    "event_date": "2026-11-12",
+    "youtube_rejected_ids": [
+      "jMtcPHYf-XQ"
+    ],
+    "youtube_validated": false
   },
   "DOUCE ANGOISSE": {
     "youtube_candidates": [
