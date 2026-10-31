@@ -37408,11 +37408,15 @@
     ],
     "youtube_score": 1.0,
     "youtube_auto_validated": false,
-    "youtube_video_id": "D-NvQ6VJYtE",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-13"
+    "event_date": "2026-11-13",
+    "youtube_rejected_ids": [
+      "D-NvQ6VJYtE"
+    ],
+    "youtube_validated": false
   },
   "TAK!": {
     "youtube_candidates": [
