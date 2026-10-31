@@ -32923,7 +32923,10 @@
     "bandcamp_url": "https://myllaissues.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=80098644/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-13"
+    "event_date": "2026-11-13",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-10-31"
   },
   "BLACK DIAMOND": {
     "youtube_candidates": [
