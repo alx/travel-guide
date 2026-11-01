@@ -37952,11 +37952,15 @@
     ],
     "youtube_score": 0.43,
     "youtube_auto_validated": false,
-    "youtube_video_id": "XcFFIyr4Hms",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-06"
+    "event_date": "2026-11-06",
+    "youtube_rejected_ids": [
+      "XcFFIyr4Hms"
+    ],
+    "youtube_validated": false
   },
   "ORSINI": {
     "youtube_candidates": [
