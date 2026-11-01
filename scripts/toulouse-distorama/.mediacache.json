@@ -347,7 +347,10 @@
     ],
     "youtube_score": 5.45,
     "youtube_auto_validated": false,
-    "event_date": "2026-11-14"
+    "event_date": "2026-11-14",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-01"
   },
   "ARRROGANT (pk noisy) + ROTI BONDAGE": {
     "youtube_video_id": "",
