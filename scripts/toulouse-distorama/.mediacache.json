@@ -38039,11 +38039,15 @@
     ],
     "youtube_score": 0.64,
     "youtube_auto_validated": false,
-    "youtube_video_id": "MgzHlFanfm0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-06"
+    "event_date": "2026-11-06",
+    "youtube_rejected_ids": [
+      "MgzHlFanfm0"
+    ],
+    "youtube_validated": false
   },
   "DJ BABZILLA": {
     "youtube_candidates": [
