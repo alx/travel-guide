@@ -38397,5 +38397,11 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-13"
+  },
+  "BLASTOCYSTIS HOMINIS": {
+    "youtube_rejected_ids": [
+      "_akIVneeySg"
+    ],
+    "youtube_validated": false
   }
 }
