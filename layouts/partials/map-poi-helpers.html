@@ -265,7 +265,16 @@ fetch(MAP_CONFIG.geojsonUrl)
     renderSidebar();
     updateMarkers();
     if (Object.keys(markers).length > 0) {
-      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.1));
+      // A single pin (or a cluster of low-accuracy ones) must not zoom to street
+      // level: a region centroid shown at zoom 15 reads as an exact address.
+      const maxZoomByAccuracy = { high: 15, medium: 13, low: 9, none: 5 };
+      const accuracies = allPOIs.map(f => f.properties.coord_accuracy || 'medium');
+      const worst = accuracies.includes('low') ? 'low'
+                  : accuracies.includes('medium') ? 'medium'
+                  : accuracies.includes('high') ? 'high' : 'none';
+      map.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.1), {
+        maxZoom: maxZoomByAccuracy[worst] || 13,
+      });
     }
     const params = new URLSearchParams(window.location.search);
     const urlFilter = params.get('filter');
