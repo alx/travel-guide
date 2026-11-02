@@ -8,7 +8,11 @@
   <!-- Primary Meta -->
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.author }}">
+  {{- /* A "head" block may declare noindex; emitting index,follow first would win,
+         because crawlers take the first robots tag and ignore later ones. */}}
+  {{- if not (and .Params.section (eq .Params.section "hidden")) }}
   <meta name="robots" content="index, follow">
+  {{- end }}
   <link rel="canonical" href="{{ .Permalink }}">
 
   <!-- Favicons -->
