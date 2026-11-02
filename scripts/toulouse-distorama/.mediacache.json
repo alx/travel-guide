@@ -12610,7 +12610,7 @@
     "bandcamp_searched": true
   },
   "Dernier after Fifigro DJ set NICOLAS DROLC": {
-    "youtube_video_id": "MiiLNGhSJjw",
+    "youtube_video_id": "NmQb0-pwupE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -16895,11 +16895,24 @@
     "youtube_auto_validated": false
   },
   "100% Techno Live Machine : AGRESSION SOROR.E": {
-    "youtube_video_id": "n5FieRk-42Y",
+    "youtube_video_id": "7gyVLUtBAgU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-08-08"
+    "event_date": "2026-08-08",
+    "youtube_candidates": [
+      {
+        "id": "7gyVLUtBAgU",
+        "title": "⏳ Ten Minute Stories by Algernon Blackwood ✨📚",
+        "channel": "Storytime Haven",
+        "views": 14145,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7gyVLUtBAgU"
+      }
+    ],
+    "youtube_score": 0.52,
+    "youtube_auto_validated": false
   },
   "AUCH!": {
     "youtube_video_id": "GOt9sj5NJvQ",
@@ -26800,7 +26813,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "T2uj-Q_PZ5I",
+    "youtube_video_id": "PXDWVAITlv8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27501,7 +27514,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "F6rFNnLYSw8",
+    "youtube_video_id": "upHxIs247RI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28967,7 +28980,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "lW0W4AOgs6Q",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30184,7 +30197,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "t_P37xvuvH0",
+    "youtube_video_id": "xjo4DCM9XY4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32150,7 +32163,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "ctuDu_atfPw",
+    "youtube_video_id": "cwH5qLeMU7s",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34385,7 +34398,7 @@
         "id": "SRCtzBMjR80",
         "title": "Vocelli en concert à l&#39;Espace Bonnefoy (Toulouse 06/04/12) 2/3",
         "channel": "BoXL0VeFactÔRy!!!;p*",
-        "views": 506,
+        "views": 511,
         "score": 3.34,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=SRCtzBMjR80"
@@ -34571,7 +34584,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "0D-cMBlh2d4",
+    "youtube_video_id": "OpVo_2NuvYQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37914,15 +37927,6 @@
         "url": "https://www.youtube.com/watch?v=KEthTMWHXR0"
       },
       {
-        "id": "JT3wFvatsUc",
-        "title": "MAQUINARIA INCENDIARIA - &quot;MAQUETA&quot; (2026)",
-        "channel": "Max Setentista",
-        "views": 325,
-        "score": 0.31,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=JT3wFvatsUc"
-      },
-      {
         "id": "FvLiKw_jNh8",
         "title": "Maquinaria incendiaria - Firmeza 10",
         "channel": "vomitandoxrabia",
@@ -37930,6 +37934,15 @@
         "score": 0.35,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=FvLiKw_jNh8"
+      },
+      {
+        "id": "JT3wFvatsUc",
+        "title": "MAQUINARIA INCENDIARIA - &quot;MAQUETA&quot; (2026)",
+        "channel": "Max Setentista",
+        "views": 325,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JT3wFvatsUc"
       },
       {
         "id": "H8lCv9AZCYg",
@@ -37941,18 +37954,18 @@
         "url": "https://www.youtube.com/watch?v=H8lCv9AZCYg"
       },
       {
-        "id": "XcFFIyr4Hms",
-        "title": "Incendiaria - Ocaso y barbarie (Full Album) [2026 Crust Punk]",
-        "channel": "grindwar channel",
-        "views": 2928,
-        "score": 0.43,
+        "id": "nGVeH61xhps",
+        "title": "Nuevo ataque incendiario en contulmo",
+        "channel": "SEDENA",
+        "views": 280,
+        "score": 0.31,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=XcFFIyr4Hms"
+        "url": "https://www.youtube.com/watch?v=nGVeH61xhps"
       }
     ],
-    "youtube_score": 0.43,
+    "youtube_score": 0.37,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "4IyGlsDfayw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37960,7 +37973,9 @@
     "youtube_rejected_ids": [
       "XcFFIyr4Hms"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-02"
   },
   "ORSINI": {
     "youtube_candidates": [
@@ -37968,25 +37983,16 @@
         "id": "-kFUcC_wBlQ",
         "title": "Orsini su Youssef Siher: &quot;Non ho trovato nulla che consenta di ritrarlo come un mostro&quot;",
         "channel": "Il Fatto Quotidiano",
-        "views": 52628,
-        "score": 0.59,
+        "views": 62911,
+        "score": 0.6,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=-kFUcC_wBlQ"
-      },
-      {
-        "id": "uRxe6bfNLAc",
-        "title": "Orsini: &quot;La fine dell’Ucraina si avvicina: Trump sta cercando di salvare il salvabile&quot;",
-        "channel": "Il Fatto Quotidiano",
-        "views": 54322,
-        "score": 0.59,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=uRxe6bfNLAc"
       },
       {
         "id": "CDdWL0yNaTk",
         "title": "The Orsini Family",
         "channel": "MrAstrotheology",
-        "views": 60504,
+        "views": 60583,
         "score": 0.6,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=CDdWL0yNaTk"
@@ -37995,51 +38001,60 @@
         "id": "yMJ9ppw6-lQ",
         "title": "LEI È UN GRANDISSIMO IGNORANTE! | ORSINI SI SCALDA CONTRO FIDENZA #new",
         "channel": "Official Blob Tube",
-        "views": 16282,
+        "views": 17340,
         "score": 0.53,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=yMJ9ppw6-lQ"
       },
       {
-        "id": "xkuEFCbGvDU",
-        "title": "ORSINI: &quot;DOBBIAMO RIDERLE IN FACCIA, È QUESTO CIÒ CHE MELONI MERITA. ECCO PERCHÉ&quot; #news #shorts",
+        "id": "0AIAIOj4FvE",
+        "title": "Orsini: &quot;Ecco perché Meloni non ha l’autorità morale per condannare le violenze di Milano&quot;",
         "channel": "Il Fatto Quotidiano",
-        "views": 43344,
-        "score": 0.58,
+        "views": 56662,
+        "score": 0.59,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=xkuEFCbGvDU"
+        "url": "https://www.youtube.com/watch?v=0AIAIOj4FvE"
       },
       {
         "id": "dm6Cer44l7s",
         "title": "Secret Society Familes: The Orsini Family",
         "channel": "MicstagesUK Online",
-        "views": 19044,
-        "score": 0.53,
+        "views": 19089,
+        "score": 0.54,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=dm6Cer44l7s"
+      },
+      {
+        "id": "xkuEFCbGvDU",
+        "title": "ORSINI: &quot;DOBBIAMO RIDERLE IN FACCIA, È QUESTO CIÒ CHE MELONI MERITA. ECCO PERCHÉ&quot; #news #shorts",
+        "channel": "Il Fatto Quotidiano",
+        "views": 43759,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xkuEFCbGvDU"
       },
       {
         "id": "MgzHlFanfm0",
         "title": "Luca Sommi intervista Alessandro Orsini a Dedalo 2026",
         "channel": "Luca Sommi",
-        "views": 127524,
+        "views": 127594,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=MgzHlFanfm0"
       },
       {
-        "id": "NeU1raqgLPI",
-        "title": "ORSINI UMILIA FIDANZA? «LEI È IGNORANTE!» – «CATTIVO MAESTRO!» SCOPPIA IL CAOS IN DIRETTA!",
-        "channel": "LAURENT  DE BAI",
-        "views": 3523,
-        "score": 0.44,
+        "id": "Q0kqTmKDros",
+        "title": "Orsini: &quot;L’Ucraina è dentro una bara: ha perso le regioni più ricche e strategiche&quot;",
+        "channel": "Il Fatto Quotidiano",
+        "views": 66946,
+        "score": 0.6,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=NeU1raqgLPI"
+        "url": "https://www.youtube.com/watch?v=Q0kqTmKDros"
       }
     ],
-    "youtube_score": 0.64,
+    "youtube_score": 0.6,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "-kFUcC_wBlQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -38297,5 +38312,88 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-26"
+  },
+  "APM": {
+    "youtube_candidates": [
+      {
+        "id": "amRg7Ch8zoU",
+        "title": "APM? - CAP. 884 - 29/10/2026",
+        "channel": "APM?",
+        "views": 24333,
+        "score": 1.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=amRg7Ch8zoU"
+      },
+      {
+        "id": "uGlPuSA86S4",
+        "title": "I Got a JOB At The NEW GRAIN ELEVATOR In APM! (American Plains Mudding)",
+        "channel": "LiamPlays",
+        "views": 10949,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=uGlPuSA86S4"
+      },
+      {
+        "id": "hwvbiD-qvdk",
+        "title": "I Rescued the NEW Grain Trailer from a MASSIVE Crash in APM | Roblox American Plains Mudding",
+        "channel": "Hakai Plays",
+        "views": 6851,
+        "score": 0.48,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hwvbiD-qvdk"
+      },
+      {
+        "id": "b2Qb54PKpKw",
+        "title": "I Joined The BIGGEST FIRE DEPARTMENT In APM! (American Plains Mudding)",
+        "channel": "LiamPlays",
+        "views": 25880,
+        "score": 0.55,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b2Qb54PKpKw"
+      },
+      {
+        "id": "05FGtQ31ghs",
+        "title": "A MASSIVE FIRE Broke Out At The NEW Grain Elevator In APM! | Roblox American Plains Mudding",
+        "channel": "13YoBros",
+        "views": 2385,
+        "score": 0.42,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=05FGtQ31ghs"
+      },
+      {
+        "id": "qaGW_beNXns",
+        "title": "APM Players found a GLITCH...",
+        "channel": "LiamPlays",
+        "views": 78358,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=qaGW_beNXns"
+      },
+      {
+        "id": "KyLPhDtKHUU",
+        "title": "Working At The NEW GRAIN ELEVATOR In APM!",
+        "channel": "LiamPlays",
+        "views": 33699,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=KyLPhDtKHUU"
+      },
+      {
+        "id": "1cEy4VFM0Jg",
+        "title": "I Was FORCED To Move To A NEW TOWN In APM! (American Plains Mudding)",
+        "channel": "LiamPlays",
+        "views": 180219,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1cEy4VFM0Jg"
+      }
+    ],
+    "youtube_score": 1.55,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "amRg7Ch8zoU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-13"
   }
 }
