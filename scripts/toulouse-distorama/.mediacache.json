@@ -38490,7 +38490,8 @@
   "DRAGONKEEP": {
     "youtube_rejected_ids": [
       "C_GnVa2YnZ0",
-      "Un0g7F_9I2M"
+      "Un0g7F_9I2M",
+      "LdTNvjheWSw"
     ],
     "youtube_validated": false,
     "youtube_candidates": [
@@ -38569,7 +38570,7 @@
     ],
     "youtube_score": 0.41,
     "youtube_auto_validated": false,
-    "youtube_video_id": "LdTNvjheWSw",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
