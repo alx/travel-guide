@@ -12610,7 +12610,7 @@
     "bandcamp_searched": true
   },
   "Dernier after Fifigro DJ set NICOLAS DROLC": {
-    "youtube_video_id": "NmQb0-pwupE",
+    "youtube_video_id": "MiiLNGhSJjw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13457,7 +13457,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "JfHXCbYcnGk",
+    "youtube_video_id": "FmBQDmVz3VA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -14063,7 +14063,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "5biLcOyt0ww",
+    "youtube_video_id": "LaSEhcR6488",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -23887,7 +23887,7 @@
     "event_date": "2026-10-08"
   },
   "Pedales et Vandales #1 : TENDRESSE VIOLENCE": {
-    "youtube_video_id": "7BHWyvNFOA0",
+    "youtube_video_id": "ZwmTdmUXQko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27514,7 +27514,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "upHxIs247RI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30197,7 +30197,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "xjo4DCM9XY4",
+    "youtube_video_id": "no31I_2QgdQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31132,7 +31132,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "6weC-rpOv5o",
+    "youtube_video_id": "YA8T6mEXFxY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32163,7 +32163,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "cwH5qLeMU7s",
+    "youtube_video_id": "ctuDu_atfPw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32595,7 +32595,7 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-11",
+    "event_date": "2026-11-17",
     "youtube_rejected_ids": [
       "PnFi0dNeVV4",
       "dN54mC3TLLc",
@@ -34584,7 +34584,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "OpVo_2NuvYQ",
+    "youtube_video_id": "bTd8rA2nQdc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37355,19 +37355,37 @@
   "In the beginning there was rhythm DJ Set : LADY MISS PENELOPE": {
     "youtube_candidates": [
       {
+        "id": "BhfRgDxKSIw",
+        "title": "Turn down for what 💔 #music #school #schoollife #schooldance",
+        "channel": "Sevvyy",
+        "views": 24485213,
+        "score": 0.92,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=BhfRgDxKSIw"
+      },
+      {
         "id": "wPEeUxsg6PM",
         "title": "predebut megan and daniela ATEEEE 😩 #katseye",
         "channel": "EYEKON WORLD",
-        "views": 9129136,
+        "views": 9132047,
         "score": 0.87,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=wPEeUxsg6PM"
       },
       {
+        "id": "3DhBzqUAzn0",
+        "title": "“Is sign language universal?” (Tiktok): Lizzytharris",
+        "channel": "Elizabeth Harris",
+        "views": 16187282,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3DhBzqUAzn0"
+      },
+      {
         "id": "CrEsDC84TbQ",
         "title": "#sssniperwolf #azzyland edit",
         "channel": "Maee",
-        "views": 9179818,
+        "views": 9183081,
         "score": 0.87,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=CrEsDC84TbQ"
@@ -37376,60 +37394,42 @@
         "id": "TLxhaO6Hl8w",
         "title": "how fast will it speed up???",
         "channel": "LSToast",
-        "views": 33333601,
+        "views": 33336579,
         "score": 0.94,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=TLxhaO6Hl8w"
       },
       {
-        "id": "JlyjBooHM9Q",
-        "title": "Electro House DJ set in Lyon | French Candy",
-        "channel": "French Candy",
-        "views": 98068,
-        "score": 3.62,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=JlyjBooHM9Q"
-      },
-      {
-        "id": "3DhBzqUAzn0",
-        "title": "“Is sign language universal?” (Tiktok): Lizzytharris",
-        "channel": "Elizabeth Harris",
-        "views": 16176549,
-        "score": 0.9,
+        "id": "4S_zAGjpVN8",
+        "title": "He ignore her 🥺💔 | Summer time sadness 😭 #onesidedlove #euphoria #sydneysweeny #sad #cry #hollywood",
+        "channel": "CinematicBites",
+        "views": 1034161,
+        "score": 0.75,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=3DhBzqUAzn0"
-      },
-      {
-        "id": "PGC4eGW25lA",
-        "title": "Jonas Blue, Malive - Edge Of Desire (Radio Edit)",
-        "channel": "Jonas Blue",
-        "views": 9923267,
-        "score": 0.87,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=PGC4eGW25lA"
+        "url": "https://www.youtube.com/watch?v=4S_zAGjpVN8"
       },
       {
         "id": "fKn0sfyO94c",
         "title": "WHO HIT THE BEST BEAT?💖#shorts #shortsfeed #viralshorts",
         "channel": "ROCK SQUAD",
-        "views": 50058908,
+        "views": 50064027,
         "score": 0.96,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=fKn0sfyO94c"
       },
       {
-        "id": "7-BnB3xxUoA",
-        "title": "Nightcrawlers - Push The Feeling On",
-        "channel": "NightcrawlersVEVO",
-        "views": 51218416,
-        "score": 0.96,
+        "id": "LyTp9d6xoSc",
+        "title": "Deku’s song #bnha #mha #bokunoheroacademia #myheroacademia #deku #izukumidoriya #midoriya #tiktok",
+        "channel": "22annabell22",
+        "views": 3794452,
+        "score": 0.82,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=7-BnB3xxUoA"
+        "url": "https://www.youtube.com/watch?v=LyTp9d6xoSc"
       }
     ],
-    "youtube_score": 3.62,
+    "youtube_score": 0.94,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "TLxhaO6Hl8w",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -38400,20 +38400,264 @@
   },
   "BLASTOCYSTIS HOMINIS": {
     "youtube_rejected_ids": [
-      "_akIVneeySg"
+      "_akIVneeySg",
+      "qgwSzYOLUgo"
     ],
-    "youtube_validated": false
+    "youtube_validated": false,
+    "youtube_candidates": [
+      {
+        "id": "qgwSzYOLUgo",
+        "title": "Understanding Blastocystis Hominis and How To Treat It",
+        "channel": "IBS Treatment Center",
+        "views": 10982,
+        "score": 0.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=qgwSzYOLUgo"
+      },
+      {
+        "id": "Li8m0fL64wE",
+        "title": "Blastocystis hominis: Pathogen or Bystander? How to Interpret GI-MAP Results",
+        "channel": "Diagnostic Solutions Laboratory",
+        "views": 6146,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Li8m0fL64wE"
+      },
+      {
+        "id": "_akIVneeySg",
+        "title": "What I Learned from 10 Doctors About Blastocystis Hominis Symptoms",
+        "channel": "Dr. Paul Anderson",
+        "views": 32586,
+        "score": 0.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_akIVneeySg"
+      },
+      {
+        "id": "c9QIjVU9rpo",
+        "title": "Does Blastocystis Need to Be Treated?",
+        "channel": "IBS Treatment Center",
+        "views": 3550,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=c9QIjVU9rpo"
+      },
+      {
+        "id": "K3WUJ4Ok2Sg",
+        "title": "Testing Options for Blastocystis Hominis",
+        "channel": "Dr. Paul Anderson",
+        "views": 3954,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=K3WUJ4Ok2Sg"
+      },
+      {
+        "id": "aTaACDc0puA",
+        "title": "Does Blastocystis Need to Be Treated #Blastocystis #BlastocystisHominis #GutHealth #Part5",
+        "channel": "IBS Treatment Center",
+        "views": 863,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aTaACDc0puA"
+      },
+      {
+        "id": "XhQdNQ3vw8g",
+        "title": "Blastocystis hominis/species – Cause for Concern? | The Microbiome Expert",
+        "channel": "Guy Daniels The Microbiome Expert",
+        "views": 2019,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XhQdNQ3vw8g"
+      },
+      {
+        "id": "g6OC_maLhbY",
+        "title": "Does Blastocystis Need to Be Treated #Blastocystis #BlastocystisHominis #GutHealth #Part1",
+        "channel": "IBS Treatment Center",
+        "views": 541,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=g6OC_maLhbY"
+      }
+    ],
+    "youtube_score": 0.51,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
   },
   "DRAGONKEEP": {
     "youtube_rejected_ids": [
       "C_GnVa2YnZ0"
     ],
-    "youtube_validated": false
+    "youtube_validated": false,
+    "youtube_candidates": [
+      {
+        "id": "viKq6qkdbpA",
+        "title": "DragonKeep : Where Dragons Fly Forever Free (Full Album)",
+        "channel": "Dark Ambient / Dungeon Synth Channel",
+        "views": 1153,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=viKq6qkdbpA"
+      },
+      {
+        "id": "ct7UtW_L_pM",
+        "title": "DragonKeep - The Dragon&#39;s Keep (2021) (Old School Dungeon Synth, Medieval Synth)",
+        "channel": "Plastic Music Lover",
+        "views": 595,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ct7UtW_L_pM"
+      },
+      {
+        "id": "6zw9hBaiCvU",
+        "title": "DragonKeep - Wings of Death (The Tale of Ezherbü) (full album 2026) dungeon synth",
+        "channel": "Lila Starless",
+        "views": 670,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6zw9hBaiCvU"
+      },
+      {
+        "id": "LdTNvjheWSw",
+        "title": "Deep-eyes Deal Massive damage #yugioh #yugiohcommunity #duellinks #dragonkeep #dragonmaster",
+        "channel": "Unsealed Recollections",
+        "views": 2043,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LdTNvjheWSw"
+      },
+      {
+        "id": "C_GnVa2YnZ0",
+        "title": "The New Garden Dragon Keep Is Broken",
+        "channel": "ZeeSnow",
+        "views": 10913,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=C_GnVa2YnZ0"
+      },
+      {
+        "id": "aYu1HZF6XXQ",
+        "title": "Dragon-Keep Castle Built From SCRATCH in Minutes! Raw Land to Epic Fortress | AI Timelapse",
+        "channel": "RestoLapse Craft",
+        "views": 1346,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aYu1HZF6XXQ"
+      },
+      {
+        "id": "ugpMYwrNyEc",
+        "title": "DragonKeep - Demo Collection (2019 - 2021 full compilation) dungeon synth",
+        "channel": "Lila Starless",
+        "views": 629,
+        "score": 0.35,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ugpMYwrNyEc"
+      },
+      {
+        "id": "ThJn9d5s0jw",
+        "title": "Dragon&#39;s Keep Looting Battalion (feat. Lunaria)",
+        "channel": "Runereader - Topic",
+        "views": 10,
+        "score": 0.13,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ThJn9d5s0jw"
+      }
+    ],
+    "youtube_score": 0.41,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "LdTNvjheWSw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
   },
   "MANDATORY REGICIDE": {
     "youtube_rejected_ids": [
       "favo-98Qv_E"
     ],
-    "youtube_validated": false
+    "youtube_validated": false,
+    "youtube_candidates": [
+      {
+        "id": "XwyZU776JxY",
+        "title": "MANDATORY REGICIDE - DEMO (2026)",
+        "channel": "Cadavérique Productions",
+        "views": 59,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XwyZU776JxY"
+      },
+      {
+        "id": "D_CETkiY4oE",
+        "title": "Mandatory Regicide: The Game [Slay the Princess pt. 1]",
+        "channel": "uhh_fina vods",
+        "views": 3,
+        "score": 0.08,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=D_CETkiY4oE"
+      },
+      {
+        "id": "zWyMAObykN8",
+        "title": "[Quest Guide] Regicide",
+        "channel": "Slayermusiq1",
+        "views": 106885,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zWyMAObykN8"
+      },
+      {
+        "id": "FWcL__nsyjc",
+        "title": "Regicide - Progressive Entrapment",
+        "channel": "thrasherCy",
+        "views": 1977,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FWcL__nsyjc"
+      },
+      {
+        "id": "y-zrPdvWxC0",
+        "title": "Doom 2 - Eviternity (Map 4: Regicide): UV-Fast 100%",
+        "channel": "Mancubian Candidate",
+        "views": 203,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=y-zrPdvWxC0"
+      },
+      {
+        "id": "_Nq32wPSLLg",
+        "title": "REGICIDE PROMO EP 2019",
+        "channel": "MetalMediaProductions",
+        "views": 230,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_Nq32wPSLLg"
+      },
+      {
+        "id": "favo-98Qv_E",
+        "title": "[OSRS] FAST and EFFICIENT Regicide Quest Guide | IRONMAN FRIENDLY",
+        "channel": "Chemie",
+        "views": 31400,
+        "score": 0.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=favo-98Qv_E"
+      },
+      {
+        "id": "_xpo3ecchbY",
+        "title": "Regicide Legacy - Chapter 2 | Full Playthrough",
+        "channel": "Cardboard Drafthouse",
+        "views": 252,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_xpo3ecchbY"
+      }
+    ],
+    "youtube_score": 0.63,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "zWyMAObykN8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-07"
   }
 }
