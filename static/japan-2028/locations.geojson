@@ -8,17 +8,17 @@
   ],
   "_meta": {
     "crs": "EPSG:4326",
-    "generated": "2026-11-02T23:25:51Z",
+    "generated": "2026-11-03T00:13:17Z",
     "title": "Japan 2028",
     "source": "['/tmp/jp/signal-export/Japan2028/chat.md']",
-    "total_features": 30,
+    "total_features": 32,
     "total_links": 70,
-    "without_coordinates": 40
+    "without_coordinates": 38
   },
   "features": [
     {
       "type": "Feature",
-      "id": "poi-75799636",
+      "id": "poi-14850423",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -27,7 +27,7 @@
         ]
       },
       "properties": {
-        "id": "poi-75799636",
+        "id": "poi-14850423",
         "name": "Watch",
         "category": "Other",
         "icon": "📍",
@@ -42,7 +42,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-26730222",
+      "id": "poi-65627467",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -51,7 +51,7 @@
         ]
       },
       "properties": {
-        "id": "poi-26730222",
+        "id": "poi-65627467",
         "name": "Huadu Lake Park",
         "category": "Other",
         "icon": "📍",
@@ -66,7 +66,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-33913819",
+      "id": "poi-99520489",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -75,7 +75,7 @@
         ]
       },
       "properties": {
-        "id": "poi-33913819",
+        "id": "poi-99520489",
         "name": "HK Express",
         "category": "Other",
         "icon": "📍",
@@ -90,7 +90,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-41465563",
+      "id": "poi-33618472",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -99,7 +99,7 @@
         ]
       },
       "properties": {
-        "id": "poi-41465563",
+        "id": "poi-33618472",
         "name": "Xôi Saka",
         "category": "Other",
         "icon": "📍",
@@ -114,7 +114,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-58255590",
+      "id": "poi-04358553",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -123,13 +123,13 @@
         ]
       },
       "properties": {
-        "id": "poi-58255590",
+        "id": "poi-04358553",
         "name": "Vietnam, China reach agreement to build 3 railway lines",
         "category": "Other",
         "icon": "📍",
         "url": "https://news.tuoitre.vn/vietnam-china-reach-agreement-to-build-3-railway-lines-10383356.htm",
         "domain": "news.tuoitre.vn",
-        "notes": "area: Vietnam",
+        "notes": "city: Vietnam",
         "shared_by": "Alexandre",
         "shared_at": "2026-01-14 05:07:27",
         "coord_source": "nominatim",
@@ -138,7 +138,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-88350014",
+      "id": "poi-39636814",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -147,13 +147,13 @@
         ]
       },
       "properties": {
-        "id": "poi-88350014",
+        "id": "poi-39636814",
         "name": "When to Submit Malaysia Digital Arrival Card (MDAC) – Timing Guide",
         "category": "Other",
         "icon": "📍",
         "url": "https://malaysiaarrivalcards.com/when-exactly-should-you-submit-the-malaysia-digital-arrival-card-mdac/",
         "domain": "malaysiaarrivalcards.com",
-        "notes": "area: Malaysia",
+        "notes": "city: Malaysia",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-02-18 04:52:32",
         "coord_source": "nominatim",
@@ -162,7 +162,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-64368670",
+      "id": "poi-09667923",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -171,7 +171,7 @@
         ]
       },
       "properties": {
-        "id": "poi-64368670",
+        "id": "poi-09667923",
         "name": "Kuala Lumpur My",
         "category": "Stay",
         "icon": "🛏️",
@@ -186,7 +186,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-24571495",
+      "id": "poi-67628098",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -195,11 +195,11 @@
         ]
       },
       "properties": {
-        "id": "poi-24571495",
+        "id": "poi-67628098",
         "name": "Appartement · Kuala Lumpur · ★4,84 · 1 chambre · 2 lits · 1 salle de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/1143350516762244264?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/1143350516762244264?adults=2&check_in=2026-02-25&check_out=2026-03-02&children=2&location=Kuala%20Lumpur%2C%20Malaisie&search_mode=regular_search&source_impression_id=p3_1771668203_P3U99Kro2xkBrFZG&previous_page_section_name=1001&federated_search_id=815aea56-e34b-4500-9134-c63c0fbca4cf&scroll_to_review=1611328392063140881",
         "domain": "airbnb.fr",
         "notes": "city: Kuala Lumpur",
         "shared_by": "SandrineDAVILA",
@@ -210,7 +210,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-00519499",
+      "id": "poi-52395694",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -219,11 +219,11 @@
         ]
       },
       "properties": {
-        "id": "poi-00519499",
+        "id": "poi-52395694",
         "name": "Appartement en résidence · Kuala Lumpur · ★4,62 · 1 chambre · 2 lits · 1 salle de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/835815869540707326?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/835815869540707326?adults=2&check_in=2026-02-25&check_out=2026-03-02&children=2&location=Kuala%20Lumpur%2C%20Malaisie&search_mode=regular_search&source_impression_id=p3_1771669668_P3fKtVsJoLdkSmG6&previous_page_section_name=1001&federated_search_id=73998ad1-3f7b-403d-8159-2900209d2cca&modal=PHOTO_TOUR_SCROLLABLE",
         "domain": "airbnb.fr",
         "notes": "city: Kuala Lumpur",
         "shared_by": "SandrineDAVILA",
@@ -234,7 +234,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-22199880",
+      "id": "poi-14976122",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -243,11 +243,11 @@
         ]
       },
       "properties": {
-        "id": "poi-22199880",
+        "id": "poi-14976122",
         "name": "Appartement · Kuala Lumpur · ★4,79 · 1 chambre · 4 lits · 1 salle de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/1508088203865454557?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/1508088203865454557?adults=2&check_in=2026-02-25&check_out=2026-03-02&children=2&location=Kuala%20Lumpur%2C%20Malaisie&search_mode=regular_search&source_impression_id=p3_1771905920_P3OWJoovol5gPkDC&previous_page_section_name=1001&federated_search_id=d1254a2f-8098-413d-836c-260270795cea",
         "domain": "airbnb.fr",
         "notes": "city: Kuala Lumpur",
         "shared_by": "SandrineDAVILA",
@@ -258,7 +258,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-85937634",
+      "id": "poi-24188586",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -267,11 +267,11 @@
         ]
       },
       "properties": {
-        "id": "poi-85937634",
+        "id": "poi-24188586",
         "name": "Appartement · Kuala Lumpur · ★4,86 · 1 chambre · 3 lits · 1 salle de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/1537134922862932623?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/1537134922862932623?adults=2&check_in=2026-02-25&check_out=2026-03-02&children=2&search_mode=regular_search&source_impression_id=p3_1771906088_P3HVcii_sNg9r2kE&previous_page_section_name=1000&federated_search_id=f10c5167-5f6d-4d46-aa14-6c555621a8cb",
         "domain": "airbnb.fr",
         "notes": "city: Kuala Lumpur",
         "shared_by": "SandrineDAVILA",
@@ -282,7 +282,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-17437760",
+      "id": "poi-09421282",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -291,13 +291,13 @@
         ]
       },
       "properties": {
-        "id": "poi-17437760",
+        "id": "poi-09421282",
         "name": "PRICES + PROMOTIONS — Blastacars Malaysia",
         "category": "Other",
         "icon": "📍",
         "url": "https://www.blastacars.my/prices",
         "domain": "blastacars.my",
-        "notes": "area: Malaysia",
+        "notes": "city: Malaysia",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-02-25 16:26:48",
         "coord_source": "nominatim",
@@ -306,7 +306,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-91766526",
+      "id": "poi-58249619",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -315,7 +315,7 @@
         ]
       },
       "properties": {
-        "id": "poi-91766526",
+        "id": "poi-58249619",
         "name": "Kl Forest Eco Park Canopy Walk",
         "category": "Other",
         "icon": "📍",
@@ -330,7 +330,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-02007494",
+      "id": "poi-81577998",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -339,7 +339,7 @@
         ]
       },
       "properties": {
-        "id": "poi-02007494",
+        "id": "poi-81577998",
         "name": "Jln Alor, Bukit Bintang, Kuala Lumpur, Federal Territory Of Kuala Lumpur",
         "category": "Other",
         "icon": "📍",
@@ -354,7 +354,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-52787364",
+      "id": "poi-55901146",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -363,11 +363,11 @@
         ]
       },
       "properties": {
-        "id": "poi-52787364",
-        "name": "Rubbish Mountain",
+        "id": "poi-55901146",
+        "name": "Google Maps",
         "category": "Other",
         "icon": "📍",
-        "url": "https://www.google.com/maps/place/Rubbish+Mountain/@5.3721597,100.3282053,1895a,35y,337.96h,44.44t/data=!3m1!1e3!4m6!3m5!1s0x304ac3000d8dc735:0x8f710b9ae238975e!8m2!3d5.3902184!4d100.3248555!16s%2Fg%2F11yqyvst",
+        "url": "https://www.google.com/maps/place/Rubbish+Mountain/@5.3721597,100.3282053,1895a,35y,337.96h,44.44t/data=!3m1!1e3!4m6!3m5!1s0x304ac3000d8dc735:0x8f710b9ae238975e!8m2!3d5.3902184!4d100.3248555!16s%2Fg%2F11yqyvst_4?hl=fr&entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D",
         "domain": "google.com",
         "notes": "",
         "shared_by": "SandrineDAVILA",
@@ -378,7 +378,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-22375962",
+      "id": "poi-05153530",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -387,7 +387,7 @@
         ]
       },
       "properties": {
-        "id": "poi-22375962",
+        "id": "poi-05153530",
         "name": "Maritime Suite, Karpal Singh Dr, George Town, Penang",
         "category": "Other",
         "icon": "📍",
@@ -402,7 +402,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-06396519",
+      "id": "poi-10994716",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -411,11 +411,11 @@
         ]
       },
       "properties": {
-        "id": "poi-06396519",
+        "id": "poi-10994716",
         "name": "Appartement en résidence · George Town · ★4,67 · Studio · 2 lits · 1 salle de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/1034675590655884269?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/1034675590655884269?adults=2&check_in=2026-03-05&check_out=2026-03-09&children=2&guests=4&location=Penang%2C%20Malaisie&search_mode=regular_search&amenities%5B%5D=8&source_impression_id=p3_1772588376_P3BiazpiTPgeklnF&previous_page_section_name=1001&federated_search_id=f6b4e96f-347c-4e94-b32d-2a441c055261",
         "domain": "airbnb.fr",
         "notes": "city: George Town",
         "shared_by": "SandrineDAVILA",
@@ -426,7 +426,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-27663811",
+      "id": "poi-11223717",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -435,7 +435,7 @@
         ]
       },
       "properties": {
-        "id": "poi-27663811",
+        "id": "poi-11223717",
         "name": "Penang My",
         "category": "Stay",
         "icon": "🛏️",
@@ -450,7 +450,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-05616445",
+      "id": "poi-57000979",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -459,11 +459,11 @@
         ]
       },
       "properties": {
-        "id": "poi-05616445",
+        "id": "poi-57000979",
         "name": "Appartement · George Town · ★4,87 · 2 chambres · 2 lits · 2 salles de bain",
         "category": "Stay",
         "icon": "🛏️",
-        "url": "https://www.airbnb.fr/rooms/1127604708009182915?adults=2&check",
+        "url": "https://www.airbnb.fr/rooms/1127604708009182915?adults=2&check_in=2026-03-05&check_out=2026-03-09&children=2&guests=4&search_mode=regular_search&amenities%5B%5D=8&source_impression_id=p3_1772594650_P35eQ62FtYQ1hs9M&previous_page_section_name=1000&federated_search_id=56dc9782-c8e7-4242-b490-fe64ae9c7674&modal=PHOTO_TOUR_SCROLLABLE",
         "domain": "airbnb.fr",
         "notes": "city: George Town",
         "shared_by": "SandrineDAVILA",
@@ -474,7 +474,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-60098925",
+      "id": "poi-70977510",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -483,13 +483,13 @@
         ]
       },
       "properties": {
-        "id": "poi-60098925",
+        "id": "poi-70977510",
         "name": "Train Route / Map In Malaysia - KTMB",
         "category": "Transport",
         "icon": "🚄",
         "url": "https://www.ktmb.com.my/MapsAndRoute.html",
         "domain": "ktmb.com.my",
-        "notes": "area: Malaysia",
+        "notes": "city: Malaysia",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-03-08 03:18:53",
         "coord_source": "nominatim",
@@ -498,7 +498,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-65007282",
+      "id": "poi-94430460",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -507,13 +507,13 @@
         ]
       },
       "properties": {
-        "id": "poi-65007282",
+        "id": "poi-94430460",
         "name": "Official Thailand Digital Arrival Card (TDAC) – No Fees Required",
         "category": "Other",
         "icon": "📍",
         "url": "https://tdac.immigration.go.th",
         "domain": "tdac.immigration.go.th",
-        "notes": "area: Thailand",
+        "notes": "city: Thailand",
         "shared_by": "Me",
         "shared_at": "2026-03-08 06:49:31",
         "coord_source": "nominatim",
@@ -522,7 +522,31 @@
     },
     {
       "type": "Feature",
-      "id": "poi-49134840",
+      "id": "poi-04730805",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3504027,
+          33.5681757
+        ]
+      },
+      "properties": {
+        "id": "poi-04730805",
+        "name": "【アットホーム】福陵ハイデンス 1階 ３ＬＤＫ[1017516187]福岡市早良区のマンション",
+        "category": "Stay",
+        "icon": "🛏️",
+        "url": "https://www.athome.co.jp/mansion/1017516187/?BKLISTID=004LPC&SEARCHDIV=1&sref=list_map&DOWN=4",
+        "domain": "athome.co.jp",
+        "notes": "area: 福岡市早良区",
+        "shared_by": "SandrineDAVILA",
+        "shared_at": "2026-06-21 15:15:24",
+        "coord_source": "nominatim",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-19762057",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -531,7 +555,7 @@
         ]
       },
       "properties": {
-        "id": "poi-49134840",
+        "id": "poi-19762057",
         "name": "Channel",
         "category": "Other",
         "icon": "📍",
@@ -546,7 +570,31 @@
     },
     {
       "type": "Feature",
-      "id": "poi-77808319",
+      "id": "poi-40082522",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.196231,
+          33.5571816
+        ]
+      },
+      "properties": {
+        "id": "poi-40082522",
+        "name": "【アットホーム】糸島市 志摩師吉１丁目（筑前前原駅） 2階建 ３ＬＤＫ[1112938618]糸島市の一戸建て",
+        "category": "Stay",
+        "icon": "🛏️",
+        "url": "https://www.athome.co.jp/kodate/1112938618/?BKLISTID=004LPC&SEARCHDIV=1&sref=list_map&DOWN=4",
+        "domain": "athome.co.jp",
+        "notes": "area: 糸島市",
+        "shared_by": "SandrineDAVILA",
+        "shared_at": "2026-10-16 17:44:07",
+        "coord_source": "nominatim",
+        "coord_accuracy": "medium"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "poi-02586849",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -555,13 +603,13 @@
         ]
       },
       "properties": {
-        "id": "poi-77808319",
+        "id": "poi-02586849",
         "name": "AI Engineer (Overseas Applicants Welcomed) | JOBS IN JAPAN",
         "category": "Other",
         "icon": "📍",
         "url": "https://jobsinjapan.com/jobs/1507708/ai-engineer-overseas-applicants-welcomed/",
         "domain": "jobsinjapan.com",
-        "notes": "area: Tokyo · city: JOBS IN JAPAN",
+        "notes": "city: JOBS IN JAPAN · area: Tokyo",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-27 22:00:03",
         "coord_source": "nominatim",
@@ -570,22 +618,22 @@
     },
     {
       "type": "Feature",
-      "id": "poi-02927271",
+      "id": "poi-79158146",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          135.7681441,
-          35.0115754
+          135.3860338,
+          35.4747274
         ]
       },
       "properties": {
-        "id": "poi-02927271",
+        "id": "poi-79158146",
         "name": "Home exchange: Maizuru - Marie's home - Maizuru/Japan - HomeExchange",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://www.homeexchange.com/homes/view/2719389",
         "domain": "homeexchange.com",
-        "notes": "area: Kyoto",
+        "notes": "city: Maizuru",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-28 19:07:24",
         "coord_source": "nominatim",
@@ -594,7 +642,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-80938722",
+      "id": "poi-46137998",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -603,13 +651,13 @@
         ]
       },
       "properties": {
-        "id": "poi-80938722",
+        "id": "poi-46137998",
         "name": "Home exchange: Ko Pha Ngan - Shai's home - เกาะพะงัน/Thailand - HomeExchange",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://www.homeexchange.com/homes/view/3326731",
         "domain": "homeexchange.com",
-        "notes": "area: Thailand",
+        "notes": "city: Thailand",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-28 19:15:24",
         "coord_source": "nominatim",
@@ -618,7 +666,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-47497981",
+      "id": "poi-58007940",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -627,13 +675,13 @@
         ]
       },
       "properties": {
-        "id": "poi-47497981",
+        "id": "poi-58007940",
         "name": "Home exchange: Hua Hin - Sylvette's home - หัวหิน/Thailand - HomeExchange",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://www.homeexchange.com/homes/view/3189211",
         "domain": "homeexchange.com",
-        "notes": "area: Thailand",
+        "notes": "city: Thailand",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-28 19:29:25",
         "coord_source": "nominatim",
@@ -642,7 +690,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-80848731",
+      "id": "poi-14979546",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -651,13 +699,13 @@
         ]
       },
       "properties": {
-        "id": "poi-80848731",
+        "id": "poi-14979546",
         "name": "Home exchange: Ko Kut - Kerstin's home - เกาะกูด/Thailand - HomeExchange",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://www.homeexchange.com/homes/view/1324351",
         "domain": "homeexchange.com",
-        "notes": "area: Thailand",
+        "notes": "city: Thailand",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-28 19:32:23",
         "coord_source": "nominatim",
@@ -666,7 +714,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-09060275",
+      "id": "poi-71724337",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -675,13 +723,13 @@
         ]
       },
       "properties": {
-        "id": "poi-09060275",
+        "id": "poi-71724337",
         "name": "Propriété 4DK Ville de Nagasaki Préfecture de Nagasaki - ¥700K | Akiya Air",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://akiyaair.com/fr/akiyas/6acb01666b71c501409fa2cd/",
         "domain": "akiyaair.com",
-        "notes": "area: Nagasaki · city: Akiya Air",
+        "notes": "city: Nagasaki",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-10-31 16:22:19",
         "coord_source": "nominatim",
@@ -690,7 +738,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-34267168",
+      "id": "poi-35729976",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -699,13 +747,13 @@
         ]
       },
       "properties": {
-        "id": "poi-34267168",
+        "id": "poi-35729976",
         "name": "¥1.7M | 15DK home in Hyogo built in 1953 | Mokomoko with 389㎡ of building area",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://app.mokomoko.com/property/82c8e820-bf7a-4425-bcff-8a3cc0e290a3?currency=usd&is-metric=true",
         "domain": "app.mokomoko.com",
-        "notes": "area: Hyogo",
+        "notes": "city: Hyogo",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-11-02 22:04:15",
         "coord_source": "nominatim",
@@ -714,7 +762,7 @@
     },
     {
       "type": "Feature",
-      "id": "poi-73876972",
+      "id": "poi-09746354",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -723,13 +771,13 @@
         ]
       },
       "properties": {
-        "id": "poi-73876972",
+        "id": "poi-09746354",
         "name": "¥5.3M | 6DK home in Hyogo built in 1982 | Mokomoko with 146㎡ of building area",
         "category": "Stay",
         "icon": "🛏️",
         "url": "https://app.mokomoko.com/property/592a8f2f-d358-49ee-8441-2af87c17afca?currency=usd&is-metric=true",
         "domain": "app.mokomoko.com",
-        "notes": "area: Hyogo",
+        "notes": "city: Hyogo",
         "shared_by": "SandrineDAVILA",
         "shared_at": "2026-11-02 22:20:14",
         "coord_source": "nominatim",
