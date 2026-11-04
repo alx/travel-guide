@@ -12610,7 +12610,7 @@
     "bandcamp_searched": true
   },
   "Dernier after Fifigro DJ set NICOLAS DROLC": {
-    "youtube_video_id": "Nwip60owKT8",
+    "youtube_video_id": "MiiLNGhSJjw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -13457,7 +13457,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "P9rhlfDiztw",
+    "youtube_video_id": "7RgMiFSVhHE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -14063,7 +14063,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "NAgUhExpR6E",
+    "youtube_video_id": "5biLcOyt0ww",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -26813,7 +26813,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "8C_amnyqLR4",
+    "youtube_video_id": "PXDWVAITlv8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30197,7 +30197,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "R8MWKsheHxk",
+    "youtube_video_id": "aSRKJjrntBk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31132,7 +31132,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "6weC-rpOv5o",
+    "youtube_video_id": "PdJwhICmEiY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34584,7 +34584,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "UvF1bj0PVSI",
+    "youtube_video_id": "bTd8rA2nQdc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -35672,7 +35672,10 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-17"
+    "event_date": "2026-11-17",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-04"
   },
   "CONVULSIF": {
     "youtube_candidates": [
@@ -38410,7 +38413,7 @@
         "id": "qgwSzYOLUgo",
         "title": "Understanding Blastocystis Hominis and How To Treat It",
         "channel": "IBS Treatment Center",
-        "views": 10984,
+        "views": 11008,
         "score": 0.51,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=qgwSzYOLUgo"
@@ -38419,7 +38422,7 @@
         "id": "Li8m0fL64wE",
         "title": "Blastocystis hominis: Pathogen or Bystander? How to Interpret GI-MAP Results",
         "channel": "Diagnostic Solutions Laboratory",
-        "views": 6148,
+        "views": 6153,
         "score": 0.47,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Li8m0fL64wE"
@@ -38428,7 +38431,7 @@
         "id": "_akIVneeySg",
         "title": "What I Learned from 10 Doctors About Blastocystis Hominis Symptoms",
         "channel": "Dr. Paul Anderson",
-        "views": 32586,
+        "views": 32630,
         "score": 0.56,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=_akIVneeySg"
@@ -38437,7 +38440,7 @@
         "id": "c9QIjVU9rpo",
         "title": "Does Blastocystis Need to Be Treated?",
         "channel": "IBS Treatment Center",
-        "views": 3550,
+        "views": 3556,
         "score": 0.44,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=c9QIjVU9rpo"
@@ -38446,42 +38449,42 @@
         "id": "K3WUJ4Ok2Sg",
         "title": "Testing Options for Blastocystis Hominis",
         "channel": "Dr. Paul Anderson",
-        "views": 3955,
+        "views": 3957,
         "score": 0.45,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=K3WUJ4Ok2Sg"
       },
       {
+        "id": "aTaACDc0puA",
+        "title": "Does Blastocystis Need to Be Treated #Blastocystis #BlastocystisHominis #GutHealth #Part5",
+        "channel": "IBS Treatment Center",
+        "views": 865,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=aTaACDc0puA"
+      },
+      {
         "id": "XhQdNQ3vw8g",
         "title": "Blastocystis hominis/species – Cause for Concern? | The Microbiome Expert",
         "channel": "Guy Daniels The Microbiome Expert",
-        "views": 2021,
+        "views": 2029,
         "score": 0.41,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=XhQdNQ3vw8g"
       },
       {
-        "id": "lNr8kJOMYD8",
-        "title": "Blastocystis ein Darmparasit - wirklich harmlos ?",
-        "channel": "Dr. med. Ralf Kirkamm",
-        "views": 8375,
-        "score": 0.49,
+        "id": "g6OC_maLhbY",
+        "title": "Does Blastocystis Need to Be Treated #Blastocystis #BlastocystisHominis #GutHealth #Part1",
+        "channel": "IBS Treatment Center",
+        "views": 544,
+        "score": 0.34,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=lNr8kJOMYD8"
-      },
-      {
-        "id": "YaSCM0jXWUQ",
-        "title": "🤔Blastocystis Hominis en Heces? Es un Quiste/Forma Vacuolar? ¿Que es? Morfologia e Identificacion🔬",
-        "channel": "Tutorias Laboratorio Clinico",
-        "views": 54667,
-        "score": 0.59,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=YaSCM0jXWUQ"
+        "url": "https://www.youtube.com/watch?v=g6OC_maLhbY"
       }
     ],
-    "youtube_score": 0.59,
+    "youtube_score": 0.47,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "Li8m0fL64wE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -38499,46 +38502,28 @@
         "id": "viKq6qkdbpA",
         "title": "DragonKeep : Where Dragons Fly Forever Free (Full Album)",
         "channel": "Dark Ambient / Dungeon Synth Channel",
-        "views": 1153,
+        "views": 1156,
         "score": 0.38,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=viKq6qkdbpA"
       },
       {
-        "id": "ct7UtW_L_pM",
-        "title": "DragonKeep - The Dragon&#39;s Keep (2021) (Old School Dungeon Synth, Medieval Synth)",
-        "channel": "Plastic Music Lover",
-        "views": 595,
-        "score": 0.35,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ct7UtW_L_pM"
-      },
-      {
         "id": "6zw9hBaiCvU",
         "title": "DragonKeep - Wings of Death (The Tale of Ezherbü) (full album 2026) dungeon synth",
         "channel": "Lila Starless",
-        "views": 670,
+        "views": 675,
         "score": 0.35,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=6zw9hBaiCvU"
       },
       {
-        "id": "LdTNvjheWSw",
-        "title": "Deep-eyes Deal Massive damage #yugioh #yugiohcommunity #duellinks #dragonkeep #dragonmaster",
-        "channel": "Unsealed Recollections",
-        "views": 2043,
-        "score": 0.41,
+        "id": "ct7UtW_L_pM",
+        "title": "DragonKeep - The Dragon&#39;s Keep (2021) (Old School Dungeon Synth, Medieval Synth)",
+        "channel": "Plastic Music Lover",
+        "views": 600,
+        "score": 0.35,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=LdTNvjheWSw"
-      },
-      {
-        "id": "C_GnVa2YnZ0",
-        "title": "The New Garden Dragon Keep Is Broken",
-        "channel": "ZeeSnow",
-        "views": 10913,
-        "score": 0.5,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=C_GnVa2YnZ0"
+        "url": "https://www.youtube.com/watch?v=ct7UtW_L_pM"
       },
       {
         "id": "aYu1HZF6XXQ",
@@ -38550,10 +38535,19 @@
         "url": "https://www.youtube.com/watch?v=aYu1HZF6XXQ"
       },
       {
+        "id": "LdTNvjheWSw",
+        "title": "Deep-eyes Deal Massive damage #yugioh #yugiohcommunity #duellinks #dragonkeep #dragonmaster",
+        "channel": "Unsealed Recollections",
+        "views": 2043,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=LdTNvjheWSw"
+      },
+      {
         "id": "ugpMYwrNyEc",
         "title": "DragonKeep - Demo Collection (2019 - 2021 full compilation) dungeon synth",
         "channel": "Lila Starless",
-        "views": 629,
+        "views": 630,
         "score": 0.35,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=ugpMYwrNyEc"
@@ -38566,11 +38560,20 @@
         "score": 0.13,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=ThJn9d5s0jw"
+      },
+      {
+        "id": "Un0g7F_9I2M",
+        "title": "GTD Garden Dragonkeep  #gardentowerdefense  #roblox #gardentowerdefence#foryou #fyp",
+        "channel": "HOMEWORKS",
+        "views": 6107,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Un0g7F_9I2M"
       }
     ],
-    "youtube_score": 0.41,
+    "youtube_score": 0.39,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "aYu1HZF6XXQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
