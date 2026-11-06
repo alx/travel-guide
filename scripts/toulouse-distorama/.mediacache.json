@@ -36004,11 +36004,15 @@
     ],
     "youtube_score": 1.9,
     "youtube_auto_validated": false,
-    "youtube_video_id": "wnGkv2Inqf0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-19"
+    "event_date": "2026-11-19",
+    "youtube_rejected_ids": [
+      "wnGkv2Inqf0"
+    ],
+    "youtube_validated": false
   },
   "Blindtest par 'Ju": {
     "youtube_candidates": [
