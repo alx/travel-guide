@@ -13457,7 +13457,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "7RgMiFSVhHE",
+    "youtube_video_id": "0CQNrpQakGA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27514,7 +27514,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "",
+    "youtube_video_id": "upHxIs247RI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -28980,7 +28980,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "bV6nZ5J80j4",
+    "youtube_video_id": "j7ZKmiVydBM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -30197,7 +30197,7 @@
     "youtube_auto_validated": false
   },
   "Keep Off The Track #2 (24 heures d'explorations sonores): Mix/Live Expé/Électro/Bass/IDM/Breakcore & more": {
-    "youtube_video_id": "aSRKJjrntBk",
+    "youtube_video_id": "R8MWKsheHxk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31132,7 +31132,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "PdJwhICmEiY",
+    "youtube_video_id": "6weC-rpOv5o",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34393,15 +34393,6 @@
         "score": 3.42,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=6Jt1zMuioAE"
-      },
-      {
-        "id": "SRCtzBMjR80",
-        "title": "Vocelli en concert à l&#39;Espace Bonnefoy (Toulouse 06/04/12) 2/3",
-        "channel": "BoXL0VeFactÔRy!!!;p*",
-        "views": 511,
-        "score": 3.34,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=SRCtzBMjR80"
       }
     ],
     "youtube_score": 0,
@@ -34584,7 +34575,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "bTd8rA2nQdc",
+    "youtube_video_id": "SqTEVUgTLbA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -35672,10 +35663,7 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-17",
-    "youtube_validated": true,
-    "youtube_validated_via": "discord-reaction",
-    "youtube_validated_at": "2026-11-04"
+    "event_date": "2026-11-17"
   },
   "CONVULSIF": {
     "youtube_candidates": [
@@ -35837,11 +35825,15 @@
     ],
     "youtube_score": 1.07,
     "youtube_auto_validated": false,
-    "youtube_video_id": "VV1XWJN3nJo",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-18"
+    "event_date": "2026-11-18",
+    "youtube_rejected_ids": [
+      "VV1XWJN3nJo"
+    ],
+    "youtube_validated": false
   },
   "CEL RAY": {
     "youtube_candidates": [
@@ -36681,7 +36673,7 @@
     "event_date": "2026-11-26"
   },
   "Lancement Artzine Le Barré": {
-    "youtube_video_id": "cPMyICKG-1s",
+    "youtube_video_id": "XXyHiuBJBuU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
