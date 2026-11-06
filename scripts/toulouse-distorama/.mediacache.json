@@ -35742,11 +35742,15 @@
     ],
     "youtube_score": 0.78,
     "youtube_auto_validated": false,
-    "youtube_video_id": "8zJOr3P6DbA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-18"
+    "event_date": "2026-11-18",
+    "youtube_rejected_ids": [
+      "8zJOr3P6DbA"
+    ],
+    "youtube_validated": false
   },
   "TORN": {
     "youtube_candidates": [
