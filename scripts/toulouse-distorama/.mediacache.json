@@ -37534,7 +37534,7 @@
     "event_date": "2026-11-13"
   },
   "UNCLE BENNY AND HIS CALYPSO SWING": {
-    "youtube_video_id": "Qyp4ywk8lyA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37614,7 +37614,11 @@
       }
     ],
     "youtube_score": 3.3,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "Qyp4ywk8lyA"
+    ],
+    "youtube_validated": false
   },
   "GUST": {
     "youtube_candidates": [
