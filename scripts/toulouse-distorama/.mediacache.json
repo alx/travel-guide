@@ -762,7 +762,7 @@
     "bandcamp_validated": true
   },
   "SILLY WALK": {
-    "youtube_video_id": "iV2ViNJFZC8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -842,7 +842,11 @@
       }
     ],
     "youtube_score": 0.85,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "iV2ViNJFZC8"
+    ],
+    "youtube_validated": false
   },
   "VÉTUSTE (indie rk)": {
     "youtube_video_id": "",
