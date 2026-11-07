@@ -33196,11 +33196,15 @@
     ],
     "youtube_score": 0.91,
     "youtube_auto_validated": false,
-    "youtube_video_id": "Bs6kS_R1bP8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-11-20"
+    "event_date": "2026-11-20",
+    "youtube_rejected_ids": [
+      "Bs6kS_R1bP8"
+    ],
+    "youtube_validated": false
   },
   "BARAKA FRIT' SOUND SYSTEM": {
     "youtube_candidates": [
