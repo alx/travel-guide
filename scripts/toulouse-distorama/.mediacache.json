@@ -13457,7 +13457,7 @@
     "bandcamp_searched": true
   },
   "Hosting de Katherine D'Occaz et Pandore De Minuit)": {
-    "youtube_video_id": "WoE_TDf0yZ8",
+    "youtube_video_id": "SxAohJYqwW4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -14063,7 +14063,7 @@
     "bandcamp_searched": true
   },
   "DJ set DEEJAYJOMAX": {
-    "youtube_video_id": "j_zFgriWtO4",
+    "youtube_video_id": "Wb-HiRJvD7g",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27514,7 +27514,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "",
+    "youtube_video_id": "upHxIs247RI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31132,7 +31132,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "YA8T6mEXFxY",
+    "youtube_video_id": "RGUVSASJKWM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33110,7 +33110,10 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-11-20"
+    "event_date": "2026-11-20",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-07"
   },
   "WEIRD LIZARD": {
     "youtube_candidates": [
@@ -34575,7 +34578,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "DpL8aRORo70",
+    "youtube_video_id": "bvPqkpDEx4U",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -35671,7 +35674,7 @@
         "id": "8zJOr3P6DbA",
         "title": "Premiers secours : Crise convulsive | Secourisme",
         "channel": "SIKANA Français",
-        "views": 1656192,
+        "views": 1656592,
         "score": 0.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=8zJOr3P6DbA"
@@ -35680,34 +35683,34 @@
         "id": "dnJoyQe3X8w",
         "title": "Bien réagir en cas de crise convulsive - Le Magazine de la santé",
         "channel": "Allo Docteurs",
-        "views": 86861,
+        "views": 86874,
         "score": 0.62,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=dnJoyQe3X8w"
       },
       {
-        "id": "zVAIa4ynwQ0",
-        "title": "Crise convulsive - Épilepsie - Prise en charge de la victime",
-        "channel": "CESU Rouen",
-        "views": 105170,
-        "score": 0.63,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=zVAIa4ynwQ0"
-      },
-      {
         "id": "kn0SPQKa2Ss",
         "title": "Crise d&#39;épilepsie,  convulsions, que faire ?",
         "channel": "Les Minutes de Jérémy",
-        "views": 5962,
+        "views": 5978,
         "score": 0.47,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=kn0SPQKa2Ss"
       },
       {
+        "id": "zVAIa4ynwQ0",
+        "title": "Crise convulsive - Épilepsie - Prise en charge de la victime",
+        "channel": "CESU Rouen",
+        "views": 105246,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zVAIa4ynwQ0"
+      },
+      {
         "id": "dS9HRuF4Cso",
         "title": "Intervention chez une dame qui fait des crises de convulsions",
         "channel": "Urgences",
-        "views": 42643,
+        "views": 42699,
         "score": 0.58,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=dS9HRuF4Cso"
@@ -35716,7 +35719,7 @@
         "id": "CQ3k1nAa8vc",
         "title": "Premiers soins en cas de convulsions",
         "channel": "Canadian Red Cross / Croix-Rouge canadienne",
-        "views": 49151,
+        "views": 49210,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=CQ3k1nAa8vc"
@@ -35725,24 +35728,24 @@
         "id": "N3KwUSzp670",
         "title": "😱 Comment réagir face à des convulsions. Les 5 conseils à adopter",
         "channel": "Super.Pédiatre ",
-        "views": 3302,
+        "views": 3321,
         "score": 0.44,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=N3KwUSzp670"
       },
       {
-        "id": "Bppv1AR6Zsw",
-        "title": "5 30 1 Convulsions et état de mal épileptique - Diagnostic et étiologies",
-        "channel": "CEMIR Learning",
-        "views": 7404,
-        "score": 0.48,
+        "id": "hGhTbUYIHz0",
+        "title": "Que faire en cas de convulsions ?",
+        "channel": "Dr. Walid MEKEDDEM",
+        "views": 4669,
+        "score": 0.46,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=Bppv1AR6Zsw"
+        "url": "https://www.youtube.com/watch?v=hGhTbUYIHz0"
       }
     ],
-    "youtube_score": 0.63,
+    "youtube_score": 0.62,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "dnJoyQe3X8w",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -35759,7 +35762,7 @@
         "id": "VV1XWJN3nJo",
         "title": "Natalie Imbruglia - Torn (Official Video)",
         "channel": "natalieimbrugliaVEVO",
-        "views": 377555565,
+        "views": 377654703,
         "score": 1.07,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=VV1XWJN3nJo"
@@ -35768,7 +35771,7 @@
         "id": "NogHM5V-vuk",
         "title": "Natalie Imbruglia - Torn (Lyrics)",
         "channel": "7clouds Rock",
-        "views": 24591847,
+        "views": 24638718,
         "score": 0.92,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=NogHM5V-vuk"
@@ -35777,7 +35780,7 @@
         "id": "wBmWvvTV0P4",
         "title": "Ava Max - Torn [Official Music Video]",
         "channel": "Ava Max",
-        "views": 117831686,
+        "views": 117842299,
         "score": 1.01,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=wBmWvvTV0P4"
@@ -35786,51 +35789,51 @@
         "id": "J8CCsR7Bu8o",
         "title": "Natalie Imbruglia - Torn (The Prince&#39;s Trust Party In The Park 1998)",
         "channel": "King's Trust Music",
-        "views": 23765588,
+        "views": 23774947,
         "score": 0.92,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=J8CCsR7Bu8o"
       },
       {
-        "id": "J5diUHXM8gE",
-        "title": "The Return to Torn City",
-        "channel": "Knoffinator",
-        "views": 18737,
-        "score": 0.53,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=J5diUHXM8gE"
-      },
-      {
         "id": "DXSBl-SsN5U",
         "title": "Level up quickly in Torn City for Beginners #torn",
         "channel": "Ares Mahin",
-        "views": 81106,
+        "views": 81348,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=DXSBl-SsN5U"
       },
       {
-        "id": "fQuC32gH8Rw",
-        "title": "Natalie Imbruglia - Torn (Lyrics)",
-        "channel": "7clouds",
-        "views": 15496825,
-        "score": 0.9,
+        "id": "Alwek_UJofA",
+        "title": "Natalie Imbruglia - Torn (Sunset Sessions)",
+        "channel": "Natalie Imbruglia",
+        "views": 4892462,
+        "score": 0.84,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=fQuC32gH8Rw"
+        "url": "https://www.youtube.com/watch?v=Alwek_UJofA"
       },
       {
         "id": "iYFu9V8OM54",
         "title": "Torn - ads vs gameplay | Badvertising",
         "channel": "WalrusLimePie",
-        "views": 28947,
+        "views": 29108,
         "score": 0.56,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=iYFu9V8OM54"
+      },
+      {
+        "id": "fQuC32gH8Rw",
+        "title": "Natalie Imbruglia - Torn (Lyrics)",
+        "channel": "7clouds",
+        "views": 15499777,
+        "score": 0.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=fQuC32gH8Rw"
       }
     ],
-    "youtube_score": 1.01,
+    "youtube_score": 0.92,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "NogHM5V-vuk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -35930,81 +35933,81 @@
   "PERICOLO": {
     "youtube_candidates": [
       {
-        "id": "wnGkv2Inqf0",
-        "title": "MASSIMO PERICOLO - 7 MILIARDI (Prod. Crookers &amp; Nic Sarno) (OFFICIAL VIDEO)",
-        "channel": "massimo pericolo",
-        "views": 16209735,
-        "score": 1.9,
+        "id": "eS3ntNS5CsU",
+        "title": "Pericolo",
+        "channel": "Vichenzo Orru - Topic",
+        "views": 20875,
+        "score": 0.54,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=wnGkv2Inqf0"
-      },
-      {
-        "id": "9ydoPEEJ8GE",
-        "title": "PERICOLO",
-        "channel": "Mikush - Topic",
-        "views": 345613,
-        "score": 0.69,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=9ydoPEEJ8GE"
-      },
-      {
-        "id": "gL0GvHBxQf4",
-        "title": "Chris Nolan, Neima Ezza, Massimo Pericolo, Tedua - SECONDI DI RABBIA (Official Visual Video)",
-        "channel": "ChrisNolanVEVO",
-        "views": 27438,
-        "score": 0.55,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=gL0GvHBxQf4"
-      },
-      {
-        "id": "5Pw7TNxUOuo",
-        "title": "333 Mob, Low Kidd - PERICOLOSO feat. Lazza, Geolier (Visual Video)",
-        "channel": "333 Mob",
-        "views": 400492,
-        "score": 0.7,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=5Pw7TNxUOuo"
+        "url": "https://www.youtube.com/watch?v=eS3ntNS5CsU"
       },
       {
         "id": "IWE7jzZJOHg",
         "title": "Charlie Charles, Bresh - Pericolo (Visual)",
         "channel": "CharlieCharlesVEVO",
-        "views": 57533,
-        "score": 0.59,
+        "views": 57885,
+        "score": 0.6,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=IWE7jzZJOHg"
+      },
+      {
+        "id": "9ydoPEEJ8GE",
+        "title": "PERICOLO",
+        "channel": "Mikush - Topic",
+        "views": 347162,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=9ydoPEEJ8GE"
       },
       {
         "id": "bJMqbWthmoA",
         "title": "Pericolo | Dangerous - Epic the Musical COVER ITA",
         "channel": "Professione Teatro",
-        "views": 40525,
+        "views": 41509,
         "score": 0.58,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bJMqbWthmoA"
       },
       {
+        "id": "OhdjWpa92Z4",
+        "title": "BELPIETRO LA SINITRA è IL VERO PERICOLO PER LA NAZIONE",
+        "channel": "News Italia",
+        "views": 8304,
+        "score": 0.49,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OhdjWpa92Z4"
+      },
+      {
+        "id": "wnGkv2Inqf0",
+        "title": "MASSIMO PERICOLO - 7 MILIARDI (Prod. Crookers &amp; Nic Sarno) (OFFICIAL VIDEO)",
+        "channel": "massimo pericolo",
+        "views": 16220300,
+        "score": 1.9,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wnGkv2Inqf0"
+      },
+      {
+        "id": "2WtPLBdsI1w",
+        "title": "Dargen D&#39;Amico, Massimo Pericolo, Jake La Furia - Nullatenente",
+        "channel": "dargenVEVO",
+        "views": 1084191,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=2WtPLBdsI1w"
+      },
+      {
         "id": "Zx7aT84vW0A",
         "title": "Massimo Pericolo - Non Parlarmi (Outro) (Official Video)",
         "channel": "MassimoPericoloVEVO",
-        "views": 2172567,
+        "views": 2181996,
         "score": 1.79,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Zx7aT84vW0A"
-      },
-      {
-        "id": "FOrlKm3RWcE",
-        "title": "Massimo Pericolo - Straniero (Visual Video) ft. Tedua",
-        "channel": "MassimoPericoloVEVO",
-        "views": 2775148,
-        "score": 1.81,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=FOrlKm3RWcE"
       }
     ],
-    "youtube_score": 1.9,
+    "youtube_score": 1.79,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "Zx7aT84vW0A",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37534,7 +37537,7 @@
     "event_date": "2026-11-13"
   },
   "UNCLE BENNY AND HIS CALYPSO SWING": {
-    "youtube_video_id": "",
+    "youtube_video_id": "7kq1JQUhwVQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37544,8 +37547,8 @@
         "id": "HKqteh7-qnA",
         "title": "Sausage - Uncle Benny and his Calypso Swing (Duo)",
         "channel": "UncleBenny",
-        "views": 25,
-        "score": 0.18,
+        "views": 32,
+        "score": 0.19,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=HKqteh7-qnA"
       },
@@ -37553,8 +37556,8 @@
         "id": "KoO5GTRY46I",
         "title": "Hill and gully rider - Uncle Benny and his Calypso Swing (Duo)",
         "channel": "UncleBenny",
-        "views": 53,
-        "score": 0.22,
+        "views": 63,
+        "score": 0.23,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=KoO5GTRY46I"
       },
@@ -37577,6 +37580,15 @@
         "url": "https://www.youtube.com/watch?v=Qyp4ywk8lyA"
       },
       {
+        "id": "26TIfLT-1Xk",
+        "title": "Now You Has Jazz (HD) - Bing Crosby, Louis Armstrong from the film &quot;High Society&quot; (1956)",
+        "channel": "New Wave Films",
+        "views": 1706057,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=26TIfLT-1Xk"
+      },
+      {
         "id": "9ma5PPCVzOc",
         "title": "DR swing",
         "channel": "Lourdes Robles",
@@ -37586,24 +37598,6 @@
         "url": "https://www.youtube.com/watch?v=9ma5PPCVzOc"
       },
       {
-        "id": "HzWsh64v9YU",
-        "title": "Gerald Clark &amp; His Caribbean Serenaders  La Rosa",
-        "channel": "TTGoldenAge",
-        "views": 676,
-        "score": 0.35,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=HzWsh64v9YU"
-      },
-      {
-        "id": "TZdvihA7Y1A",
-        "title": "DANCE CRAZES OF THE &#39;60S (Compiled by Toni Basil)",
-        "channel": "ToniBasilsHouse",
-        "views": 4696544,
-        "score": 0.83,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=TZdvihA7Y1A"
-      },
-      {
         "id": "ROBCi-PPFZc",
         "title": "Calypso (Chris Gumbley)",
         "channel": "Gumbles Publications",
@@ -37611,9 +37605,18 @@
         "score": 0.26,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=ROBCi-PPFZc"
+      },
+      {
+        "id": "7kq1JQUhwVQ",
+        "title": "Bing Crosby &amp; Frank Sinatra - Well, Did You Evah (High Society)",
+        "channel": "zaunschirmseppl",
+        "views": 3616602,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7kq1JQUhwVQ"
       }
     ],
-    "youtube_score": 3.3,
+    "youtube_score": 0.82,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "Qyp4ywk8lyA"
