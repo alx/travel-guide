@@ -37906,11 +37906,15 @@
     ],
     "youtube_score": 0.38,
     "youtube_auto_validated": false,
-    "youtube_video_id": "OBPmJD85Slk",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-20"
+    "event_date": "2026-11-20",
+    "youtube_rejected_ids": [
+      "OBPmJD85Slk"
+    ],
+    "youtube_validated": false
   },
   "MAQUINARIA INCENDIARIA": {
     "youtube_candidates": [
