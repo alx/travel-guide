@@ -762,89 +762,90 @@
     "bandcamp_validated": true
   },
   "SILLY WALK": {
-    "youtube_video_id": "",
+    "youtube_video_id": "YWfL3pqiW38",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-20",
     "youtube_candidates": [
       {
-        "id": "5ptUMe9eqYE",
-        "title": "Ministry of Silly Walks | Monty Python (Official Sketch)",
-        "channel": "Monty Python",
-        "views": 2340512,
-        "score": 0.8,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=5ptUMe9eqYE"
-      },
-      {
         "id": "iV2ViNJFZC8",
         "title": "Monty Python&#39;s Ministry of Silly Walks (Full Sketch)",
         "channel": "bakalai",
-        "views": 5875096,
+        "views": 5884143,
         "score": 0.85,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=iV2ViNJFZC8"
       },
       {
+        "id": "5ptUMe9eqYE",
+        "title": "Ministry of Silly Walks | Monty Python (Official Sketch)",
+        "channel": "Monty Python",
+        "views": 2422741,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5ptUMe9eqYE"
+      },
+      {
         "id": "cfY4bUcsjNo",
         "title": "The Monty Python - Les démarches débiles - The silly walk",
         "channel": "guif08",
-        "views": 88044,
+        "views": 88238,
         "score": 0.62,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=cfY4bUcsjNo"
       },
       {
-        "id": "HHFuTpVvRCI",
-        "title": "Ministry of Silly Walks - Monty Python&#39;s Flying Circus - S02E01",
-        "channel": "Bugsy Power",
-        "views": 1722043,
-        "score": 0.78,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=HHFuTpVvRCI"
-      },
-      {
-        "id": "FBipikT-3xI",
-        "title": "Monty Python - The Silly Walk Song (Official Lyric Video)",
-        "channel": "Monty Python",
-        "views": 367394,
-        "score": 0.7,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=FBipikT-3xI"
-      },
-      {
         "id": "rP3Mxhi4Uio",
         "title": "Silly Walk City March in Brno (2013)",
         "channel": "KokosProductions",
-        "views": 508510,
+        "views": 508797,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=rP3Mxhi4Uio"
       },
       {
-        "id": "58mUme-ldPA",
-        "title": "The Ministry of Silly Walks: Funniest Monty Python Sketches Ever!",
-        "channel": "WatchMojoUK",
-        "views": 76661,
-        "score": 0.61,
+        "id": "FBipikT-3xI",
+        "title": "Monty Python - The Silly Walk Song (Official Lyric Video)",
+        "channel": "Monty Python",
+        "views": 367888,
+        "score": 0.7,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=58mUme-ldPA"
+        "url": "https://www.youtube.com/watch?v=FBipikT-3xI"
       },
       {
-        "id": "wippooDL6WE",
-        "title": "Monty Python - The silly walk",
-        "channel": "TheMaidenOne",
-        "views": 1519588,
-        "score": 0.77,
+        "id": "a3ppLWGygaw",
+        "title": "Hundreds take part in ‘silly walk’ parade - BBC News",
+        "channel": "BBC News",
+        "views": 83289,
+        "score": 0.62,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=wippooDL6WE"
+        "url": "https://www.youtube.com/watch?v=a3ppLWGygaw"
+      },
+      {
+        "id": "By95MlAGTjE",
+        "title": "Traffic sign makes people do the Monty Python Silly Walk",
+        "channel": "NRK",
+        "views": 1250390,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=By95MlAGTjE"
+      },
+      {
+        "id": "YWfL3pqiW38",
+        "title": "SILLY WALK - Too old to die young / Punk rock/Toulouse FR @ La cigale dans la fourmilière - 2025",
+        "channel": "Doc De Roeck",
+        "views": 397,
+        "score": 3.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=YWfL3pqiW38"
       }
     ],
-    "youtube_score": 0.85,
+    "youtube_score": 3.32,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
-      "iV2ViNJFZC8"
+      "iV2ViNJFZC8",
+      "5ptUMe9eqYE"
     ],
     "youtube_validated": false
   },
@@ -6348,10 +6349,87 @@
     "youtube_validated": true
   },
   "GEHEN": {
-    "youtube_video_id": "J4Y5os6gHxI",
+    "youtube_video_id": "szSm0Gg3s_4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "bandcamp_searched": false,
+    "youtube_candidates": [
+      {
+        "id": "8BaZJckNdXw",
+        "title": "GEHEN Conjugation (Present) | German Verbs (Learn German Fast!) #deutschlernen #conjugation #german",
+        "channel": "Deutsche Sprachinstitut TV",
+        "views": 36814,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8BaZJckNdXw"
+      },
+      {
+        "id": "ZTs5uc809j4",
+        "title": "GEHEN (FRA) - Live at Le Sample, Bagnolet, France 01-02-2026",
+        "channel": "FAYAFEL",
+        "views": 341,
+        "score": 3.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=ZTs5uc809j4"
+      },
+      {
+        "id": "Phcy2uxepLI",
+        "title": "Gehen Saree Mini Review Buy 1 Get 1 Free at 1699/- Nemo on Fleek #gehen #shorts #fashion #gehensaree",
+        "channel": "Nemo on Fleek",
+        "views": 4486,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Phcy2uxepLI"
+      },
+      {
+        "id": "Eu5hUaUml_A",
+        "title": "Verben mit &quot;gehen&quot; (Teil 1): Deutscher Wortschatz für Fortgeschrittene",
+        "channel": "Deutsch mit Rieke",
+        "views": 207706,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Eu5hUaUml_A"
+      },
+      {
+        "id": "szSm0Gg3s_4",
+        "title": "GEHEN - LIVE @LE SALEM - BORDEAUX - HD - [FULL SET - MULTI CAM] 06/03/2026",
+        "channel": "VIOLENT MOTION",
+        "views": 488,
+        "score": 3.34,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=szSm0Gg3s_4"
+      },
+      {
+        "id": "J6YRtWwNc3k",
+        "title": "Gehen: Vom ersten Schritt an gesund I ARD Gesund",
+        "channel": "ARD GESUND",
+        "views": 119366,
+        "score": 0.63,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=J6YRtWwNc3k"
+      },
+      {
+        "id": "dZs6VC3FjXc",
+        "title": "Gehen (to go)",
+        "channel": "Now German",
+        "views": 2687,
+        "score": 0.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dZs6VC3FjXc"
+      },
+      {
+        "id": "j0CPaJS2-Y8",
+        "title": "gehen (go) | German language vocabulary",
+        "channel": "German say",
+        "views": 3313,
+        "score": 0.44,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=j0CPaJS2-Y8"
+      }
+    ],
+    "youtube_score": 3.34,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-10"
   },
   "NO FAITH IN MEDICINE": {
     "youtube_video_id": "0mWM0S1dMro",
@@ -26817,7 +26895,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "PXDWVAITlv8",
+    "youtube_video_id": "FkTp7PBxsd4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27518,7 +27596,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "upHxIs247RI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31136,7 +31214,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "RGUVSASJKWM",
+    "youtube_video_id": "Tm6xXPNBBxo",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32167,7 +32245,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "ctuDu_atfPw",
+    "youtube_video_id": "bPMJQ2fPNmc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33125,7 +33203,7 @@
         "id": "BATacQounZ0",
         "title": "The Top 10 Weirdest Lizards on Earth",
         "channel": "Crazy Creatures",
-        "views": 31491,
+        "views": 31850,
         "score": 0.56,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=BATacQounZ0"
@@ -33134,7 +33212,7 @@
         "id": "o34PXlg1cCI",
         "title": "This was a close call 🍌🦖🥴 #funny #pet #reptile #petlover #iguana",
         "channel": "Rocket The Iguana",
-        "views": 3263865,
+        "views": 3306056,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=o34PXlg1cCI"
@@ -33143,16 +33221,25 @@
         "id": "45EYYvwTUWQ",
         "title": "Best Lizard Moments",
         "channel": "Fursure",
-        "views": 70750,
+        "views": 74505,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=45EYYvwTUWQ"
       },
       {
+        "id": "qB3F5YR-yZI",
+        "title": "This Dilophosaurus Is Part Human… | Terrible Lizards #Shorts #TerribleLizards #HorrorGaming",
+        "channel": "CaJuJu",
+        "views": 3578451,
+        "score": 0.82,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=qB3F5YR-yZI"
+      },
+      {
         "id": "Bs6kS_R1bP8",
         "title": "A gluttonous house lizard - house gecko #animals #Lizard #Gecko",
         "channel": "Animal King",
-        "views": 19043102,
+        "views": 19380263,
         "score": 0.91,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Bs6kS_R1bP8"
@@ -33161,25 +33248,16 @@
         "id": "1LGKNrq75_o",
         "title": "EAT LIZARD | MAN VS WILD | MAN VS WILD IN HINDI #survival #shorts #ytshorts #outdoors",
         "channel": "born survivor ",
-        "views": 623460,
-        "score": 0.72,
+        "views": 769626,
+        "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=1LGKNrq75_o"
-      },
-      {
-        "id": "w772gEg3tXs",
-        "title": "Weird lizard caught in California",
-        "channel": "WildlifeGannon",
-        "views": 1467,
-        "score": 0.4,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=w772gEg3tXs"
       },
       {
         "id": "1rkkKyYCxio",
         "title": "This Lizard Escapes the Heat in an Unusual Way | BBC Studios",
         "channel": "BBC Studios",
-        "views": 212441,
+        "views": 213887,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=1rkkKyYCxio"
@@ -33188,18 +33266,18 @@
         "id": "0atBngB0K4o",
         "title": "Who said lizards couldn&#39;t be entertaining?! Cute &amp; Funny Lizard Compilation",
         "channel": "Newsflare",
-        "views": 204228,
+        "views": 207046,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=0atBngB0K4o"
       }
     ],
-    "youtube_score": 0.91,
+    "youtube_score": 0.82,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "qB3F5YR-yZI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-20",
     "youtube_rejected_ids": [
       "Bs6kS_R1bP8"
@@ -36111,81 +36189,81 @@
   "PARAZITE PETALS": {
     "youtube_candidates": [
       {
-        "id": "fHENCYh3BOs",
-        "title": "Why This Tiny Parasite Turns Pretty Flowers into Mutant Leaves",
-        "channel": "Unlikely Facts",
-        "views": 510,
-        "score": 0.34,
+        "id": "R2i5MWqdVHw",
+        "title": "the ending traumatized me!! 😭💔 #leeches #kdrama #kdramaedit",
+        "channel": "Kdrama Forever",
+        "views": 47145041,
+        "score": 0.96,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=fHENCYh3BOs"
+        "url": "https://www.youtube.com/watch?v=R2i5MWqdVHw"
       },
       {
-        "id": "QHNo4wbXY5Y",
-        "title": "Kenapa Bunga Anggrek Bisa Menempel di Pohon Tanpa Menjadi Parasit? 🌸😲#anggrek #faktamenarik #edukasi",
-        "channel": "EcoFlash",
-        "views": 1279,
-        "score": 0.39,
+        "id": "u3GmzwaH-r8",
+        "title": "Huge Plant Parasite",
+        "channel": "Brains Syndicate",
+        "views": 911,
+        "score": 0.37,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=QHNo4wbXY5Y"
+        "url": "https://www.youtube.com/watch?v=u3GmzwaH-r8"
       },
       {
-        "id": "CMZa590SKeQ",
-        "title": "Carpenter bees gather pollen on petals",
-        "channel": "Li Budou",
-        "views": 286,
+        "id": "PDmppTNwIGM",
+        "title": "The Ghost Parasite of Sri Lanka&#39;s Wild Savanna! 🌸☠️ #ceylonwildblooms #wildflowersofsrilanka #nature",
+        "channel": "Ceylon Wild Blooms",
+        "views": 287,
         "score": 0.31,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=CMZa590SKeQ"
+        "url": "https://www.youtube.com/watch?v=PDmppTNwIGM"
       },
       {
-        "id": "BXseRyssmy0",
-        "title": "Las Orquídeas en Árboles son plantas parásitas? #orquideas #cuidadosdeorquideas #flores #orchid",
-        "channel": "Cuidando mis Orquideas",
-        "views": 12657,
-        "score": 0.51,
+        "id": "2KHh2zcYucI",
+        "title": "the real flower has spotted petals. mine has texture instead. Rafflesia arnoldii&#39;s perigon is usuall",
+        "channel": "Naina Oeuvre",
+        "views": 1304,
+        "score": 0.39,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=BXseRyssmy0"
+        "url": "https://www.youtube.com/watch?v=2KHh2zcYucI"
+      },
+      {
+        "id": "eSbka30ZCF4",
+        "title": "Parasite – Angels in Ashes (Official Lyric Video)",
+        "channel": "Angels in Ashes",
+        "views": 153159,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=eSbka30ZCF4"
       },
       {
         "id": "DanGJz3Up4Q",
         "title": "Plant vs Zombie Asym Game?? - Petal vs Plague Sneak Peak #roblox #asymmetricalhorror",
         "channel": "Ani KAngel",
-        "views": 33788,
+        "views": 33945,
         "score": 0.57,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=DanGJz3Up4Q"
       },
       {
-        "id": "SHogNi66mZE",
-        "title": "Petals – Angels in Ashes (Official Audio)",
-        "channel": "Angels in Ashes",
-        "views": 17229,
-        "score": 0.53,
+        "id": "I33qmWtkq-0",
+        "title": "PARASITE IN CITY #youtube #subscribe #video #youtuber #music #newvideo #linkinbio #youtubechannel",
+        "channel": "GaMeJuMbLe",
+        "views": 261296,
+        "score": 0.68,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=SHogNi66mZE"
+        "url": "https://www.youtube.com/watch?v=I33qmWtkq-0"
       },
       {
-        "id": "QcpO-FM0BxM",
-        "title": "Flowers on my way #orchid #plants #flowers #parasite #jungle #nature",
-        "channel": "LaTo. ",
-        "views": 1438,
-        "score": 0.39,
+        "id": "ratgfVFMSUM",
+        "title": "The Newest Species of Social Parasite Discovered in Morocco",
+        "channel": "The Arthropod Museum",
+        "views": 990,
+        "score": 0.37,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=QcpO-FM0BxM"
-      },
-      {
-        "id": "cliXsvsX2ek",
-        "title": "Rafflesia is a parasitic flower that lives on climbing plants.#animals and #plant",
-        "channel": "unique plants and animals",
-        "views": 499,
-        "score": 0.34,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=cliXsvsX2ek"
+        "url": "https://www.youtube.com/watch?v=ratgfVFMSUM"
       }
     ],
-    "youtube_score": 0.57,
+    "youtube_score": 0.96,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "R2i5MWqdVHw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -36701,7 +36779,7 @@
     "event_date": "2026-11-26"
   },
   "Lancement Artzine Le Barré": {
-    "youtube_video_id": "XXyHiuBJBuU",
+    "youtube_video_id": "joADXS3Uct4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37908,7 +37986,7 @@
         "url": "https://www.youtube.com/watch?v=OBPmJD85Slk"
       }
     ],
-    "youtube_score": 0.38,
+    "youtube_score": 0,
     "youtube_auto_validated": false,
     "youtube_video_id": "",
     "bandcamp_url": "",
@@ -38694,5 +38772,422 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-07"
+  },
+  "PURPL ARMOR": {
+    "youtube_candidates": [
+      {
+        "id": "z233CWCDX-s",
+        "title": "How to Paint Purple Armour for Miniatures",
+        "channel": "Dusk Til Dawn Miniatures",
+        "views": 4575,
+        "score": 0.46,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=z233CWCDX-s"
+      },
+      {
+        "id": "94GyW2m-NGs",
+        "title": "How to paint purple armor?! Emperors Children glam",
+        "channel": "Mavericks Paint",
+        "views": 239871,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=94GyW2m-NGs"
+      },
+      {
+        "id": "",
+        "title": "Purpl Armor",
+        "channel": "",
+        "views": 0,
+        "score": 0.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v="
+      },
+      {
+        "id": "VYeLmTCeZY4",
+        "title": "Square in a Triangle",
+        "channel": "Purpl Armor - Topic",
+        "views": 305,
+        "score": 1.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VYeLmTCeZY4"
+      },
+      {
+        "id": "oRH4bwd8W_s",
+        "title": "Want a vibrant PURPLE Warhammer paint recipe?",
+        "channel": "Brush and Banner",
+        "views": 53936,
+        "score": 0.59,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oRH4bwd8W_s"
+      },
+      {
+        "id": "FmFhFZbDMM4",
+        "title": "How to Paint - Purple NMM Armour",
+        "channel": "JuanHidalgo Miniatures",
+        "views": 42966,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FmFhFZbDMM4"
+      },
+      {
+        "id": "qNarsqiaIBI",
+        "title": "Purpl Armor - PURPL ARMOR (Full EP Visualiser) | Dungeon Synth / Dreamcore / Noise",
+        "channel": "Purpl Armor",
+        "views": 31,
+        "score": 5.19,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=qNarsqiaIBI"
+      },
+      {
+        "id": "esL-B8_WJp8",
+        "title": "&quot;VOID&quot; Armor Trim in Minecraft! (OP Purple Glow Combo) 🥶 #shorts #minecraftshorts",
+        "channel": "Fluxer Fz",
+        "views": 163562,
+        "score": 0.65,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=esL-B8_WJp8"
+      }
+    ],
+    "youtube_score": 5.19,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "qNarsqiaIBI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-10"
+  },
+  "REDMOTHS": {
+    "youtube_candidates": [
+      {
+        "id": "FkMZ_EFHZzI",
+        "title": "REDMOTHS 「床」（YUKA)  Official visualizer",
+        "channel": "redmoths",
+        "views": 367,
+        "score": 5.32,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=FkMZ_EFHZzI"
+      },
+      {
+        "id": "tW57KUQS63o",
+        "title": "Scènes punk hardcore et métal à Toulouse : Srail et The RedMoths entre débrouille et passion.",
+        "channel": "Sam Rob",
+        "views": 1097,
+        "score": 3.38,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=tW57KUQS63o"
+      },
+      {
+        "id": "mtl39h4KrSA",
+        "title": "El comité de Careta Radio : entrevista a REDMOTHS desde Francia.",
+        "channel": "Careta Radio",
+        "views": 90,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mtl39h4KrSA"
+      },
+      {
+        "id": "4bZ45JMZBhk",
+        "title": "Turmoil",
+        "channel": "REDMOTHS - Topic",
+        "views": 357,
+        "score": 1.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4bZ45JMZBhk"
+      },
+      {
+        "id": "ifgeBxOzHPc",
+        "title": "The Redmoths Exclusive Interview",
+        "channel": "RichyKearnsProductions",
+        "views": 1053,
+        "score": 0.38,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ifgeBxOzHPc"
+      },
+      {
+        "id": "T8aW_fLV0L4",
+        "title": "Amnesia",
+        "channel": "REDMOTHS - Topic",
+        "views": 319,
+        "score": 1.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=T8aW_fLV0L4"
+      },
+      {
+        "id": "yfvfnd5qZhA",
+        "title": "Listless",
+        "channel": "REDMOTHS - Topic",
+        "views": 448,
+        "score": 1.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=yfvfnd5qZhA"
+      },
+      {
+        "id": "RkR_v6jCp5g",
+        "title": "DREAD",
+        "channel": "REDMOTHS - Topic",
+        "views": 3003,
+        "score": 1.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RkR_v6jCp5g"
+      }
+    ],
+    "youtube_score": 5.32,
+    "youtube_validated": true,
+    "youtube_auto_validated": true,
+    "youtube_video_id": "FkMZ_EFHZzI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-10"
+  },
+  "KOMOREBI": {
+    "youtube_candidates": [
+      {
+        "id": "plT0msyy-0c",
+        "title": "Komorebi - Je peux compter sur toi (Clip officiel)",
+        "channel": "Komorebi louange",
+        "views": 1451,
+        "score": 1.4,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=plT0msyy-0c"
+      },
+      {
+        "id": "TXylSLBAQWI",
+        "title": "KOMOREBI - Award-winning Short Film (2025) Best Picture | ENG SUB",
+        "channel": "JZR Films",
+        "views": 190598,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=TXylSLBAQWI"
+      },
+      {
+        "id": "0LCbS_gm0RA",
+        "title": "Komorebi - A Tiling Window Manager for Windows?!",
+        "channel": "Olge",
+        "views": 45029,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=0LCbS_gm0RA"
+      },
+      {
+        "id": "54yqn1BmrZs",
+        "title": "純音樂 | KOMOREBI - M-TAKU 不同版本連續播放 抖音最火純音樂完整版 好聼的輕音樂",
+        "channel": "X.S Music",
+        "views": 1471322,
+        "score": 0.77,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=54yqn1BmrZs"
+      },
+      {
+        "id": "CenJ8oDHi3k",
+        "title": "Komorebi Dreams | Japanese Healing Music for Meditation and Deep Relaxation | World Music",
+        "channel": "Sound Passport - A Journey Through World Music",
+        "views": 660970,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=CenJ8oDHi3k"
+      },
+      {
+        "id": "v1up3zGBYZU",
+        "title": "《Komorebi-piano&amp;violin》钢琴&amp;小提琴改编版-浅绯色的喵/Duo Cover 【QianMusic】",
+        "channel": "浅绯色的喵QianMusic",
+        "views": 2342299,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=v1up3zGBYZU"
+      },
+      {
+        "id": "_Zvy2PidEMc",
+        "title": "KOMOREBI警笛版［M-TAKU］｜抖音神曲",
+        "channel": "TIMELESS",
+        "views": 5138654,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_Zvy2PidEMc"
+      },
+      {
+        "id": "IO0x4XM-ph8",
+        "title": "Preparing my tiny cottage for -20C Nordic winter ❄️",
+        "channel": "Komorebi Tales",
+        "views": 11095,
+        "score": 1.51,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=IO0x4XM-ph8"
+      }
+    ],
+    "youtube_score": 1.51,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "IO0x4XM-ph8",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-21"
+  },
+  "AUTOTELIC INTERACTIONS": {
+    "youtube_candidates": [
+      {
+        "id": "g0alhtY_jfU",
+        "title": "Learn To Play To Learn Through Play",
+        "channel": "Autotelic Interactions - Topic",
+        "views": 8,
+        "score": 1.12,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=g0alhtY_jfU"
+      },
+      {
+        "id": "YJjpTKSNkO8",
+        "title": "Crushed Into A Category",
+        "channel": "Autotelic Interactions - Topic",
+        "views": 6,
+        "score": 1.11,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=YJjpTKSNkO8"
+      },
+      {
+        "id": "SYbkDeSSWQk",
+        "title": "Normative Expectations",
+        "channel": "Autotelic Interactions - Topic",
+        "views": 0,
+        "score": 1.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SYbkDeSSWQk"
+      },
+      {
+        "id": "dSbFw8qzy8o",
+        "title": "Obedience To Authority",
+        "channel": "Autotelic Interactions - Topic",
+        "views": 0,
+        "score": 1.0,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dSbFw8qzy8o"
+      },
+      {
+        "id": "5s8IsagWvYk",
+        "title": "Backlash",
+        "channel": "Autotelic Interactions - Topic",
+        "views": 6,
+        "score": 1.11,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=5s8IsagWvYk"
+      },
+      {
+        "id": "ta8RS0km40c",
+        "title": "Intentional interactions to get in the Zone",
+        "channel": "Autotelic Drive",
+        "views": 8,
+        "score": 0.12,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=ta8RS0km40c"
+      },
+      {
+        "id": "Zx77IYFb4nM",
+        "title": "Vygotskian Autotelic Agents",
+        "channel": "Tristan Karch",
+        "views": 91,
+        "score": 0.25,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Zx77IYFb4nM"
+      },
+      {
+        "id": "4D_LSe5P4x8",
+        "title": "Developmental AI:  machines that learn like children (Pierre-Yves Oudeyer)",
+        "channel": "Pierre-Yves Oudeyer",
+        "views": 949,
+        "score": 0.37,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=4D_LSe5P4x8"
+      }
+    ],
+    "youtube_score": 1.12,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "g0alhtY_jfU",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-28"
+  },
+  "MUSÉE DE LA MATIÈRE NOIRE": {
+    "youtube_candidates": [
+      {
+        "id": "-lmducV5asY",
+        "title": "La matière la plus mystérieuse de l&#39;univers... (fascinant)",
+        "channel": "Zebroloss",
+        "views": 221081,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-lmducV5asY"
+      },
+      {
+        "id": "iYfyq3z9PCE",
+        "title": "Musée de la matière noire - Capsules Sauvages 2022",
+        "channel": "FLA-Kultur",
+        "views": 48,
+        "score": 0.21,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=iYfyq3z9PCE"
+      },
+      {
+        "id": "8Cps5_vJ9XQ",
+        "title": "Matière Noire ALT &amp; OLMETA sur F3",
+        "channel": "Haciendaworkshop",
+        "views": 193,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8Cps5_vJ9XQ"
+      },
+      {
+        "id": "MLHcCA662y4",
+        "title": "Le Musée de la Matière Noire - Spring Field",
+        "channel": "Phil Amadeus GroNaZz",
+        "views": 22,
+        "score": 0.17,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=MLHcCA662y4"
+      },
+      {
+        "id": "VVsHUsUgc-0",
+        "title": "Matière Noire by Gonzalo Borondo  with Carmen Main  and Edoardo Tresoldi",
+        "channel": "Matteo Dell'Angelo",
+        "views": 222,
+        "score": 0.29,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=VVsHUsUgc-0"
+      },
+      {
+        "id": "mJZsB8oIWj4",
+        "title": "Une BIO-MACHINE antique découverte dans la Pyramide noire ? Des archéologues US témoignent",
+        "channel": "Sympa et les Secrets de l'Archéologie",
+        "views": 1410,
+        "score": 0.39,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mJZsB8oIWj4"
+      },
+      {
+        "id": "DYoYmrLDVI8",
+        "title": "Cellule - lOOl - Musée de la Matière Noire",
+        "channel": "Phil Amadeus GroNaZz",
+        "views": 33,
+        "score": 0.19,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=DYoYmrLDVI8"
+      },
+      {
+        "id": "7_K7Ikjd2rw",
+        "title": "Stepping Inside The Abyss of Perception: Matière Noire, the Marseille Group Show by Gonzalo Borondo",
+        "channel": "Matteo Dell'Angelo",
+        "views": 35,
+        "score": 3.19,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=7_K7Ikjd2rw"
+      }
+    ],
+    "youtube_score": 3.19,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "7_K7Ikjd2rw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-28"
   }
 }
