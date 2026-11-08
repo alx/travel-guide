@@ -33361,11 +33361,15 @@
     ],
     "youtube_score": 3.32,
     "youtube_auto_validated": false,
-    "youtube_video_id": "N0GEt_67C1o",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-11-21"
+    "event_date": "2026-11-21",
+    "youtube_rejected_ids": [
+      "N0GEt_67C1o"
+    ],
+    "youtube_validated": false
   },
   "Scène ouverte de poésie": {
     "youtube_candidates": [
