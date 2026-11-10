@@ -26897,7 +26897,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "gO3D7QXugBA",
+    "youtube_video_id": "59i4PneHLCU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27598,7 +27598,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "UdccyFjE4HM",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33363,14 +33363,15 @@
     ],
     "youtube_score": 3.45,
     "youtube_auto_validated": false,
-    "youtube_video_id": "x9dBfmFPrFA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-21",
     "youtube_rejected_ids": [
       "N0GEt_67C1o",
-      "BpS798mwSq4"
+      "BpS798mwSq4",
+      "x9dBfmFPrFA"
     ],
     "youtube_validated": false
   },
@@ -34485,7 +34486,7 @@
         "id": "6Jt1zMuioAE",
         "title": "Compil Terya Groove en concert à Itzac",
         "channel": "Stephan villieres",
-        "views": 2353,
+        "views": 2354,
         "score": 3.42,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=6Jt1zMuioAE"
@@ -34671,7 +34672,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "bvPqkpDEx4U",
+    "youtube_video_id": "xzAfoxxuv0E",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -36786,7 +36787,7 @@
     "event_date": "2026-11-26"
   },
   "Lancement Artzine Le Barré": {
-    "youtube_video_id": "XXyHiuBJBuU",
+    "youtube_video_id": "cPMyICKG-1s",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
