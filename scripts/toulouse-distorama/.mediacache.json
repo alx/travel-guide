@@ -29064,7 +29064,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "",
+    "youtube_video_id": "j7ZKmiVydBM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31216,7 +31216,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "dlMUoyUA1xM",
+    "youtube_video_id": "fTzOlxEjlQ0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33292,7 +33292,7 @@
         "id": "BpS798mwSq4",
         "title": "Dj P2N feat Dj H Baraka - Kiapakatshi (Clip Video Official) by IsubaDrums",
         "channel": "Dj p2n Isuba Drums",
-        "views": 1640892,
+        "views": 1642402,
         "score": 0.78,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=BpS798mwSq4"
@@ -33301,10 +33301,19 @@
         "id": "JQJvsK203DQ",
         "title": "Baraka Blue: Love &amp; Light (official video)",
         "channel": "Alchemiya Video on Demand",
-        "views": 129877,
+        "views": 129900,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=JQJvsK203DQ"
+      },
+      {
+        "id": "b9xwbg4Q0bU",
+        "title": "Juice Wayne,Mrzux Figlan,EasyTiger Lens,King Sushie &amp; Zinceba_ Malume Bandibethile(MUSIC VIDEO)",
+        "channel": "First Klass Terrorists",
+        "views": 1256009,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=b9xwbg4Q0bU"
       },
       {
         "id": "jQE900te6TQ",
@@ -33316,13 +33325,13 @@
         "url": "https://www.youtube.com/watch?v=jQE900te6TQ"
       },
       {
-        "id": "b9xwbg4Q0bU",
-        "title": "Juice Wayne,Mrzux Figlan,EasyTiger Lens,King Sushie &amp; Zinceba_ Malume Bandibethile(MUSIC VIDEO)",
-        "channel": "First Klass Terrorists",
-        "views": 1242402,
-        "score": 0.76,
+        "id": "Hq0REVspgYw",
+        "title": "COMUNIDADES ALTERNATIVAS en ESPAÑA: Vivir fuera del sistema para conectar con el presente",
+        "channel": "Lethal Crysis",
+        "views": 769434,
+        "score": 0.74,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=b9xwbg4Q0bU"
+        "url": "https://www.youtube.com/watch?v=Hq0REVspgYw"
       },
       {
         "id": "Ca5m4cP0zUQ",
@@ -33337,33 +33346,24 @@
         "id": "vQeY_TGRcCU",
         "title": "Portugal 🇵🇹 Braga - کشور پرتغال از اینجا شروع شد! ولاگ سفر به شمال پرتغال",
         "channel": "Persian Explorers",
-        "views": 19870,
-        "score": 0.54,
+        "views": 26526,
+        "score": 0.55,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=vQeY_TGRcCU"
       },
       {
-        "id": "Cgw7qOCbA5c",
-        "title": "The BEST Way To Use Casks In Stardew Valley",
-        "channel": "The Prophecy",
-        "views": 2039738,
-        "score": 0.79,
+        "id": "tAEXgBOIhTA",
+        "title": "MAS B - Reconnaissance Francky Degam (Clip Officiel)",
+        "channel": "MAS B Officiel ",
+        "views": 5321077,
+        "score": 0.84,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=Cgw7qOCbA5c"
-      },
-      {
-        "id": "x9dBfmFPrFA",
-        "title": "Amapiano &amp; Afro House Vibes | The Lovesound Show June 2025 @ Brixton Radio | Exclusive Remixes",
-        "channel": "Fargas Beats",
-        "views": 4312,
-        "score": 3.45,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=x9dBfmFPrFA"
+        "url": "https://www.youtube.com/watch?v=tAEXgBOIhTA"
       }
     ],
-    "youtube_score": 3.45,
+    "youtube_score": 0.84,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "tAEXgBOIhTA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33452,11 +33452,15 @@
     ],
     "youtube_score": 3.32,
     "youtube_auto_validated": false,
-    "youtube_video_id": "jbb4rV7Nc0c",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-11-24"
+    "event_date": "2026-11-24",
+    "youtube_rejected_ids": [
+      "jbb4rV7Nc0c"
+    ],
+    "youtube_validated": false
   },
   "ASSO MONKAT LAB": {
     "youtube_candidates": [
@@ -34672,7 +34676,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "xzAfoxxuv0E",
+    "youtube_video_id": "bvPqkpDEx4U",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
