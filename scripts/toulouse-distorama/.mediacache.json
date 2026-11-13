@@ -1667,7 +1667,7 @@
     "bandcamp_validated": true
   },
   "CLAIRE VON CORDA": {
-    "youtube_video_id": "eFvIg2QmgjI",
+    "youtube_video_id": "",
     "bandcamp_url": "https://dead14.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1686869586/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -1746,7 +1746,11 @@
       }
     ],
     "youtube_score": 0.33,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "eFvIg2QmgjI"
+    ],
+    "youtube_validated": false
   },
   "VÉTUSTE": {
     "youtube_video_id": "Z1pA1JDkJGg",
