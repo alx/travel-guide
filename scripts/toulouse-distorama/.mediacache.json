@@ -36809,11 +36809,15 @@
     "youtube_validated_at": "2026-11-13"
   },
   "Lancement Artzine Le Barré": {
-    "youtube_video_id": "cPMyICKG-1s",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-26"
+    "event_date": "2026-11-26",
+    "youtube_rejected_ids": [
+      "cPMyICKG-1s"
+    ],
+    "youtube_validated": false
   },
   "MAYHEM CIRCLE": {
     "youtube_candidates": [
