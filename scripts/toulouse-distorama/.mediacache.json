@@ -37062,11 +37062,15 @@
     ],
     "youtube_score": 0.69,
     "youtube_auto_validated": false,
-    "youtube_video_id": "_31II5XxMmI",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-26"
+    "event_date": "2026-11-26",
+    "youtube_rejected_ids": [
+      "_31II5XxMmI"
+    ],
+    "youtube_validated": false
   },
   "WHITE OCEAN BURNS": {
     "youtube_candidates": [
