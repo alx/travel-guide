@@ -37149,11 +37149,15 @@
     ],
     "youtube_score": 3.62,
     "youtube_auto_validated": false,
-    "youtube_video_id": "py3ByP-15_0",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-11-26"
+    "event_date": "2026-11-26",
+    "youtube_rejected_ids": [
+      "py3ByP-15_0"
+    ],
+    "youtube_validated": false
   },
   "Spectacle Drag : GO SHOW EOZ": {
     "youtube_candidates": [
