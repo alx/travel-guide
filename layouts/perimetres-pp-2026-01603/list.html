@@ -1,0 +1,292 @@
+{{ define "head" }}
+<meta name="robots" content="noindex, nofollow">
+{{ partial "map-poi-styles.html" . }}
+<style>
+  /* Perimeter-specific: the limit ring is the product, so it must stay visible
+     over the basemap and readable where rings of neighbouring schools overlap. */
+  .peri-card .cat-badge { background: #fef3c7; color: #92400e; }
+  .peri-card h3 { font-size: 0.9rem; line-height: 1.3; }
+  .peri-meta { font-size: 0.74rem; color: #666; margin-top: 0.2rem; }
+  .peri-note { font-size: 0.7rem; color: #92400e; background: #fffbeb; border-radius: 6px; padding: 0.3rem 0.45rem; margin-top: 0.4rem; line-height: 1.35; }
+  .peri-actions { display: flex; gap: 0.6rem; margin-top: 0.45rem; flex-wrap: wrap; }
+  .peri-actions a { font-size: 0.72rem; color: #1a3a5c; text-decoration: none; font-weight: 500; }
+  .peri-actions a:hover { text-decoration: underline; }
+
+  #legal-notice {
+    background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px;
+    padding: 0.6rem 0.75rem; font-size: 0.72rem; color: #78350f; line-height: 1.45;
+  }
+  #legal-notice strong { color: #92400e; }
+  #legal-notice a { color: #92400e; }
+
+  #status-banner {
+    border-radius: 10px; padding: 0.55rem 0.75rem; font-size: 0.76rem;
+    font-weight: 600; line-height: 1.35;
+  }
+  #status-banner.active  { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  #status-banner.pending { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+  #status-banner.past    { background: #f3f4f6; color: #4b5563; border: 1px solid #d1d5db; }
+
+  .legend { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.72rem; color: #444; margin-top: 0.4rem; }
+  .legend-row { display: flex; align-items: center; gap: 0.45rem; }
+  .legend-swatch { width: 18px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Mobile: keep the cards reachable */
+  @media (max-width: 720px) {
+    .map-overlay { width: calc(100% - 2rem); }
+    .overlay-card.scrollable { max-height: 45vh; }
+  }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div id="map"></div>
+
+<div class="map-overlay">
+  <div class="overlay-card">
+    <a href="{{ "/" | relURL }}" class="site-brand">🗺️ Maps</a>
+    <div class="page-header">
+      <h1>🚧 Périmètres 100 m</h1>
+      <p>Arrêté n°2026-01603 · 16–20 novembre 2026</p>
+    </div>
+    <div id="status-banner"></div>
+    <input class="search-box" type="text" id="search" placeholder="🔍 Rechercher un établissement…">
+    <div id="filter-btns"></div>
+    <div class="legend">
+      <div class="legend-row"><span class="legend-swatch" style="background:#f59e0b;opacity:.35;border:1.5px solid #b45309;"></span> Rayon de 100 m (interdiction)</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#334155;opacity:.75;"></span> Emprise de l'établissement (OSM)</div>
+    </div>
+  </div>
+
+  <div class="overlay-card scrollable">
+    <div id="poi-list"></div>
+    <div id="legal-notice">
+      <strong>Source.</strong> Arrêté n°2026-01603 du 13 novembre 2026 du préfet de police,
+      <a href="{{ .Site.Params.arreteUrl | default "https://www.prefecturedepolice.interieur.gouv.fr/sites/default/files/Documents/arrete_2026-01603_perimetrique_lycees_et_ees_paris_16_au_20_novembre_2026_v2.pdf" }}" target="_blank" rel="noopener">texte intégral (PDF)</a>.
+      Les périmètres sont calculés à partir des emprises OpenStreetMap
+      (© contributeurs OSM, ODbL) et non du tracé officiel de la préfecture :
+      ils sont <em>indicatifs</em>. Seul le texte de l'arrêté fait foi.
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+window.MAP_CONFIG = {
+  geojsonUrl: '{{ "/perimetres-pp-2026-01603/locations.geojson" | relURL }}',
+  center: [48.8600, 2.3450],
+  zoom: 12,
+  focusZoom: 16,
+  appliesFrom: '{{ .Site.Data.arrete202601603.applies_from | default "2026-11-16" }}',
+  appliesTo:   '{{ .Site.Data.arrete202601603.applies_to   | default "2026-11-20" }}'
+};
+
+const map = L.map('map', { maxZoom: 19 }).setView(MAP_CONFIG.center, MAP_CONFIG.zoom);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 19, subdomains: 'abc'
+}).addTo(map);
+
+const LIMIT_COLOR = '#b45309';
+const LIMIT_FILL  = '#f59e0b';
+const FOOT_COLOR  = '#334155';
+
+let establishments = [];   // merged per-establishment records
+let limitLayers = {}, footLayers = {}, activeId = null;
+const limitPane = map.createPane('limitPane');
+limitPane.style.zIndex = 400;
+const footPane = map.createPane('footPane');
+footPane.style.zIndex = 410;
+
+function catClass(c) { return c === 'Lycée' ? 'lycee' : 'ees'; }
+
+function buildRecords(features) {
+  const byId = new Map();
+  for (const f of features) {
+    const p = f.properties;
+    if (!byId.has(p.id)) byId.set(p.id, { props: p, limit: null, footprint: null });
+    const rec = byId.get(p.id);
+    if (p.role === 'limit') rec.limit = f.geometry;
+    if (p.role === 'footprint') rec.footprint = f.geometry;
+  }
+  return [...byId.values()];
+}
+
+/* Convert a GeoJSON geometry to an array of [lat,lng] rings for L.polygon. */
+function toRings(geom) {
+  const wrap = c => c.map(([lng, lat]) => [lat, lng]);
+  if (geom.type === 'Polygon') return geom.coordinates.map(wrap);
+  if (geom.type === 'MultiPolygon') {
+    const rings = [];
+    for (const poly of geom.coordinates) for (const ring of poly) rings.push(wrap(ring));
+    return rings;
+  }
+  return [];
+}
+
+/* A MultiPolygon must be drawn as several polygons, not one ring soup, or the
+   holes and separate blocks render incorrectly. */
+function addGeometry(geom, style, pane) {
+  const layers = [];
+  const mk = rings => {
+    if (!rings.length) return;
+    const poly = L.polygon(rings, style);
+    poly.options.pane = pane;
+    poly.addTo(map);
+    layers.push(poly);
+  };
+  if (geom.type === 'Polygon') mk(toRings(geom));
+  else if (geom.type === 'MultiPolygon') {
+    for (const poly of geom.coordinates) mk(poly.map(r => r.map(([lng, lat]) => [lat, lng])));
+  }
+  return layers;
+}
+
+function draw() {
+  const search = (document.getElementById('search').value || '').toLowerCase();
+  const activeFilter = document.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+
+  Object.values(limitLayers).flat().forEach(l => l.remove());
+  Object.values(footLayers).flat().forEach(l => l.remove());
+  limitLayers = {}; footLayers = {};
+
+  const visible = establishments.filter(rec => {
+    const p = rec.props;
+    if (activeFilter !== 'all' && p.category !== activeFilter) return false;
+    if (!search) return true;
+    return (p.name + ' ' + (p.address || '') + ' ' + p.arrondissement).toLowerCase().includes(search);
+  });
+
+  for (const rec of visible) {
+    const p = rec.props;
+    if (rec.limit) {
+      limitLayers[p.id] = addGeometry(rec.limit, {
+        color: LIMIT_COLOR, weight: 1.5, opacity: 0.85,
+        fillColor: LIMIT_FILL, fillOpacity: 0.22, interactive: true
+      }, 'limitPane');
+    }
+    if (rec.footprint) {
+      footLayers[p.id] = addGeometry(rec.footprint, {
+        color: FOOT_COLOR, weight: 1, opacity: 0.8,
+        fillColor: FOOT_COLOR, fillOpacity: 0.55, interactive: false
+      }, 'footPane');
+    }
+    for (const l of (limitLayers[p.id] || [])) {
+      l.bindPopup(
+        `<strong>${p.name}</strong><br>${p.arrondissement} arrondissement` +
+        (p.address ? `<br>${p.address}` : '') +
+        `<br><em>Interdiction des rassemblements non déclarés dans un rayon de ${p.perimeter_m} m</em>` +
+        (p.osm_url ? `<br><a href="${p.osm_url}" target="_blank" rel="noopener">Emprise OSM</a>` : '')
+      );
+      l.on('click', () => select(p.id));
+    }
+  }
+  renderList(visible);
+}
+
+function renderList(visible) {
+  const list = document.getElementById('poi-list');
+  list.innerHTML = '';
+  const counter = document.createElement('div');
+  counter.className = 'peri-meta';
+  counter.textContent = `${visible.length} établissement(s)`;
+  list.appendChild(counter);
+
+  for (const rec of visible) {
+    const p = rec.props;
+    const card = document.createElement('div');
+    card.className = 'poi-card peri-card' + (activeId === p.id ? ' active' : '');
+    card.dataset.id = p.id;
+    card.innerHTML =
+      `<span class="cat-badge">${p.category}</span>` +
+      `<h3>${p.name}</h3>` +
+      `<div class="peri-meta">${p.arrondissement} arrondissement${p.address ? ' · ' + p.address : ''}</div>` +
+      (p.caveat ? `<div class="peri-note">⚠️ ${p.caveat}</div>` : '') +
+      `<div class="peri-actions">` +
+        `<a href="#" data-fly="${p.id}">📍 Zoomer</a>` +
+        (p.osm_url ? `<a href="${p.osm_url}" target="_blank" rel="noopener">Emprise OSM ↗</a>` : '') +
+      `</div>`;
+    card.addEventListener('click', e => {
+      if (e.target.dataset.fly) { e.preventDefault(); flyTo(p.id); return; }
+      select(p.id);
+    });
+    list.appendChild(card);
+  }
+}
+
+function flyTo(id) {
+  const layers = limitLayers[id] || [];
+  const foot = footLayers[id] || [];
+  const all = layers.concat(foot);
+  if (!all.length) return;
+  const g = L.featureGroup(all).getBounds();
+  map.fitBounds(g.pad(0.12), { maxZoom: MAP_CONFIG.focusZoom });
+  select(id);
+}
+
+function select(id) {
+  activeId = id;
+  for (const [k, layers] of Object.entries(limitLayers)) {
+    const on = k === id;
+    for (const l of layers) l.setStyle({ fillOpacity: on ? 0.38 : 0.22, weight: on ? 2.5 : 1.5 });
+  }
+  document.querySelectorAll('.peri-card').forEach(c =>
+    c.classList.toggle('active', c.dataset.id === id));
+}
+
+/* Filter buttons */
+function buildFilters() {
+  const cats = ['all', ...new Set(establishments.map(e => e.props.category))];
+  const box = document.getElementById('filter-btns');
+  box.innerHTML = '';
+  for (const c of cats) {
+    const b = document.createElement('button');
+    b.className = 'filter-btn' + (c === 'all' ? ' active' : '');
+    b.dataset.cat = c;
+    b.textContent = c === 'all' ? 'Tous' : c;
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      draw();
+    });
+    box.appendChild(b);
+  }
+}
+
+/* Date banner — the measure is 16-20 November 2026 inclusive. A page about a
+   five-day police order must say loud and clear whether it currently applies. */
+function renderStatus() {
+  const el = document.getElementById('status-banner');
+  const today = new Date().toISOString().slice(0, 10);
+  const from = MAP_CONFIG.appliesFrom, to = MAP_CONFIG.appliesTo;
+  const fr = d => d.split('-').reverse().join('/');   // 2026-11-16 -> 16/11/2026
+  if (today < from) {
+    el.className = 'pending';
+    el.textContent = `Mesure à venir : du ${fr(from)} au ${fr(to)} inclus.`;
+  } else if (today <= to) {
+    el.className = 'active';
+    el.textContent = `En vigueur aujourd'hui — jusqu'au ${fr(to)} inclus.`;
+  } else {
+    el.className = 'past';
+    el.textContent = `Mesure échue : elle a pris fin le ${fr(to)}. Carte conservée à titre d'archive.`;
+  }
+}
+
+fetch(MAP_CONFIG.geojsonUrl)
+  .then(r => r.json())
+  .then(data => {
+    establishments = buildRecords(data.features);
+    buildFilters();
+    renderStatus();
+    draw();
+    const all = [...Object.values(limitLayers).flat(), ...Object.values(footLayers).flat()];
+    if (all.length) map.fitBounds(L.featureGroup(all).getBounds().pad(0.05), { maxZoom: 13 });
+  })
+  .catch(err => {
+    document.getElementById('poi-list').textContent = 'Erreur de chargement des données : ' + err;
+  });
+
+document.getElementById('search').addEventListener('input', draw);
+</script>
+{{ end }}
