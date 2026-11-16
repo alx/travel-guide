@@ -1667,17 +1667,17 @@
     "bandcamp_validated": true
   },
   "CLAIRE VON CORDA": {
-    "youtube_video_id": "",
-    "bandcamp_url": "https://dead14.bandcamp.com/",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1686869586/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "NaNO9MfnL-Y",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "youtube_candidates": [
       {
         "id": "EVjFByBgplk",
         "title": "LE PÉCHÉ ORIGINAL | Érotisme, du Roman à la chanson  avec Claire Von Corda",
         "channel": "On Air Original",
-        "views": 157,
-        "score": 0.27,
+        "views": 169,
+        "score": 0.28,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=EVjFByBgplk"
       },
@@ -1685,34 +1685,52 @@
         "id": "w5V_H3WDgFA",
         "title": "FIR ! - Claire Von Corda",
         "channel": "La bande-son et les vidéos de la revue.",
-        "views": 17,
-        "score": 0.16,
+        "views": 34,
+        "score": 0.19,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=w5V_H3WDgFA"
-      },
-      {
-        "id": "nKefaYCVf6Y",
-        "title": "LSVGL - Claire Von Corda",
-        "channel": "La bande-son et les vidéos de la revue.",
-        "views": 8,
-        "score": 0.12,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=nKefaYCVf6Y"
       },
       {
         "id": "id3tjggXYpE",
         "title": "Danseur (feat. Claire Von Corda)",
         "channel": "Release - Topic",
-        "views": 138,
+        "views": 145,
         "score": 0.27,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=id3tjggXYpE"
       },
       {
+        "id": "RyRwbkm_2Is",
+        "title": "Claire Von Corda x Cemetery Agent",
+        "channel": "Who cares if life sux",
+        "views": 61,
+        "score": 0.22,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=RyRwbkm_2Is"
+      },
+      {
+        "id": "nKefaYCVf6Y",
+        "title": "LSVGL - Claire Von Corda",
+        "channel": "La bande-son et les vidéos de la revue.",
+        "views": 13,
+        "score": 0.14,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=nKefaYCVf6Y"
+      },
+      {
+        "id": "NaNO9MfnL-Y",
+        "title": "Can the circle be unbroken (cover) Julien ZEAD &amp; Claire Von Corda",
+        "channel": "Julien ZEAD",
+        "views": 474,
+        "score": 0.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NaNO9MfnL-Y"
+      },
+      {
         "id": "eFvIg2QmgjI",
         "title": "The Von Corda interview",
         "channel": "Tapages TV",
-        "views": 462,
+        "views": 467,
         "score": 0.33,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=eFvIg2QmgjI"
@@ -1721,28 +1739,10 @@
         "id": "_vRUhSBaTxU",
         "title": "BDH (feat. Claire Von Corda)",
         "channel": "Release - Topic",
-        "views": 52,
+        "views": 53,
         "score": 0.22,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=_vRUhSBaTxU"
-      },
-      {
-        "id": "ChYLI9aG2K0",
-        "title": "LS VGL 2 (feat. Claire Von Corda)",
-        "channel": "Release - Topic",
-        "views": 35,
-        "score": 0.19,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ChYLI9aG2K0"
-      },
-      {
-        "id": "X7c0-X7Ax34",
-        "title": "lazone.org -  &quot;La PLAGE&quot; par claire von corda #litterature #appelatexte",
-        "channel": "Littérature underground",
-        "views": 10,
-        "score": 0.13,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=X7c0-X7Ax34"
       }
     ],
     "youtube_score": 0.33,
@@ -1750,7 +1750,8 @@
     "youtube_rejected_ids": [
       "eFvIg2QmgjI"
     ],
-    "youtube_validated": false
+    "youtube_validated": false,
+    "event_date": "2026-11-26"
   },
   "VÉTUSTE": {
     "youtube_video_id": "Z1pA1JDkJGg",
@@ -27602,7 +27603,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "",
+    "youtube_video_id": "32VRmEj00v8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31220,7 +31221,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "oIlk7cHpCCQ",
+    "youtube_video_id": "jNSnSphys2E",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32251,7 +32252,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "Vv52WNmM7Cg",
+    "youtube_video_id": "ctuDu_atfPw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33430,8 +33431,8 @@
         "id": "lI0FTfyEjJs",
         "title": "TIM &quot;Le chasseur de chat &quot; POÉSIE voix vives 2026 SeamensClub Merci Sam pour la scène ouverte. ",
         "channel": "Eric VAUBAN",
-        "views": 2,
-        "score": 3.06,
+        "views": 3,
+        "score": 3.08,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=lI0FTfyEjJs"
       },
@@ -33454,9 +33455,9 @@
         "url": "https://www.youtube.com/watch?v=93-hSYkY3Sw"
       }
     ],
-    "youtube_score": 3.27,
+    "youtube_score": 3.25,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "PDNegAlZDo8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -34682,7 +34683,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "zOKcYeFkd1w",
+    "youtube_video_id": "HLlktHn5itY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -36991,78 +36992,78 @@
         "id": "h2oXZMn6w7o",
         "title": "IMPRO 2023 - Błachnio, Leja, Sobaniec, Buchwald, Gajda, Płocha, Puzyr (impro, stand-up, komedia)",
         "channel": "Kanał Komediowy",
-        "views": 105564,
+        "views": 105829,
         "score": 0.63,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=h2oXZMn6w7o"
       },
       {
-        "id": "ySCgiUAo6NE",
-        "title": "Stand-up Impro | Litości odc. 70. | Bendler | Kasparek | Wolski | Machnicki | Inwazja z Niemiec",
-        "channel": "Łukasz Wolski",
-        "views": 66025,
-        "score": 0.6,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=ySCgiUAo6NE"
-      },
-      {
         "id": "_31II5XxMmI",
         "title": "Nono Standup, le roi de l’impro... La chronique de Benjamin Tranié",
         "channel": "France Inter",
-        "views": 305697,
+        "views": 309024,
         "score": 0.69,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=_31II5XxMmI"
       },
       {
-        "id": "5aFXyb-1olo",
-        "title": "Machnicki Leja Wolski Pakosz | Stand-Up | Impro | Crowdwork | Najlepsze rozmowy z publicznością 2024",
-        "channel": "Tomek Machnicki",
-        "views": 136173,
-        "score": 0.64,
+        "id": "PLLpYhI4xRY",
+        "title": "Stand-Up Impro | Litości odc. 81 | 2026 | Kasparek | Wolski | Machnicki | Sumliński | Dzielenie",
+        "channel": "Krzysztof Kasparek",
+        "views": 62404,
+        "score": 0.6,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=5aFXyb-1olo"
-      },
-      {
-        "id": "5krJNr-nkcU",
-        "title": "CZAREK SIKORA | Tu i Teraz 6 | Stand-Up Impro",
-        "channel": "Czarek Sikora",
-        "views": 315536,
-        "score": 0.69,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=5krJNr-nkcU"
-      },
-      {
-        "id": "uWIfWdRhBF8",
-        "title": "Stand-Up Impro | Litości odc.39 | 2025 | Machnicki | Kasparek | Wolski | Ruciński | Gdański Wiedźmin",
-        "channel": "Tomek Machnicki",
-        "views": 132954,
-        "score": 0.64,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=uWIfWdRhBF8"
-      },
-      {
-        "id": "mjMO5hzGsSc",
-        "title": "JE PÈTE LITTERALEMENT UN CABLE ( IMPRO )",
-        "channel": "edouard deloignon",
-        "views": 211256,
-        "score": 0.67,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=mjMO5hzGsSc"
+        "url": "https://www.youtube.com/watch?v=PLLpYhI4xRY"
       },
       {
         "id": "EQ6asLcHYaU",
         "title": "CATCH IMPRO PROFESSIONNEL 4eme édition - Aftermovie",
         "channel": "COM UNE IMPRO",
-        "views": 44,
+        "views": 51,
         "score": 0.21,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=EQ6asLcHYaU"
+      },
+      {
+        "id": "N4itMeqgpQs",
+        "title": "Sätze mit denen man sich im Urlaub direkt als Touri aus Deutschland entlarvt (Improspiel)",
+        "channel": "Stand Up Komitee",
+        "views": 95884,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=N4itMeqgpQs"
+      },
+      {
+        "id": "mjMO5hzGsSc",
+        "title": "JE PÈTE LITTERALEMENT UN CABLE ( IMPRO )",
+        "channel": "edouard deloignon",
+        "views": 222985,
+        "score": 0.67,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=mjMO5hzGsSc"
+      },
+      {
+        "id": "PkP71xldoSs",
+        "title": "AFTERMOVIE CATCH IMPRO - 17 AVRIL 2026",
+        "channel": "LeSaxAcheres78",
+        "views": 72,
+        "score": 0.23,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=PkP71xldoSs"
+      },
+      {
+        "id": "k4acRQ4-6uY",
+        "title": "Stand-up Impro &quot;Litości!&quot; || Kasparek || Wolski || Machnicki || Jaworski || odc. 65",
+        "channel": "Krzysztof Kasparek",
+        "views": 43228,
+        "score": 0.58,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=k4acRQ4-6uY"
       }
     ],
-    "youtube_score": 0.69,
+    "youtube_score": 0.67,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "mjMO5hzGsSc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37078,7 +37079,7 @@
         "id": "LhKQSZdN-k8",
         "title": "Oceanvs Orientalis - White Ocean - Burning Man 2015",
         "channel": "hamza sarsouri",
-        "views": 475330,
+        "views": 476073,
         "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=LhKQSZdN-k8"
@@ -37087,7 +37088,7 @@
         "id": "eXVK25KL70s",
         "title": "Armen Miran - White Ocean - Burning Man 2016",
         "channel": "Music",
-        "views": 55052,
+        "views": 55561,
         "score": 0.59,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=eXVK25KL70s"
@@ -37096,60 +37097,60 @@
         "id": "py3ByP-15_0",
         "title": "VIKEN ARMAN Live - BURNING MAN - White Ocean Sunset 2016",
         "channel": "Viken Arman",
-        "views": 86336,
+        "views": 86639,
         "score": 3.62,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=py3ByP-15_0"
       },
       {
+        "id": "Ckr-C72PckE",
+        "title": "Hernan Cattaneo | White Ocean |  Burning Man 2015",
+        "channel": "Gravity Electronic music",
+        "views": 63713,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Ckr-C72PckE"
+      },
+      {
         "id": "dRe1BaxvOwc",
         "title": "Hernan Cattaneo - White Ocean Sunrise - Burning Man 2016",
         "channel": "Music",
-        "views": 444,
+        "views": 454,
         "score": 0.33,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=dRe1BaxvOwc"
       },
       {
-        "id": "j04bXNuw328",
-        "title": "Gorje Hewek &amp; Izhevski - White Ocean - Burning Man 2016",
-        "channel": "Nacho Oberti",
-        "views": 50738,
-        "score": 0.59,
+        "id": "imemMM-EoCY",
+        "title": "wanted to feel something #sunburn #summer #sun #sunpoisoning #skincare #skin #burn #miami #florida",
+        "channel": "callie guerra",
+        "views": 27757708,
+        "score": 0.93,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=j04bXNuw328"
+        "url": "https://www.youtube.com/watch?v=imemMM-EoCY"
       },
       {
-        "id": "r4ZB5CYHGQ4",
-        "title": "August Burns Red - &quot;White Washed&quot;",
-        "channel": "Solid State Records",
-        "views": 631185,
-        "score": 0.73,
+        "id": "3829oXRaIAY",
+        "title": "God Speaks To Moses (Burning Bush) | The Prince of Egypt (1998) | Family Flicks",
+        "channel": "Family Flicks",
+        "views": 1875802,
+        "score": 0.78,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=r4ZB5CYHGQ4"
+        "url": "https://www.youtube.com/watch?v=3829oXRaIAY"
       },
       {
-        "id": "pneh3LKVOnw",
-        "title": "Burning Man is Out of this world 🏜️✨ #burningman2025 #dustyvibes #burningman #technomusic #rave",
-        "channel": "Mr. Rave ",
-        "views": 2840522,
-        "score": 0.81,
+        "id": "4tHJDFyP_vU",
+        "title": "Diego! BURN THE BOATS! #asmongold",
+        "channel": "Zackrawrr Shorts",
+        "views": 6375016,
+        "score": 0.85,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=pneh3LKVOnw"
-      },
-      {
-        "id": "J7k4sTLmdho",
-        "title": "August Burns Red - &quot;Ocean Of Apathy&quot;",
-        "channel": "Solid State Records",
-        "views": 207157,
-        "score": 0.66,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=J7k4sTLmdho"
+        "url": "https://www.youtube.com/watch?v=4tHJDFyP_vU"
       }
     ],
-    "youtube_score": 3.62,
+    "youtube_score": 0.93,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "imemMM-EoCY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -39231,5 +39232,92 @@
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-28"
+  },
+  "C'est le moment de nous donner vos dates de décembre - on boucle le 25 novembre - merci !!": {
+    "youtube_candidates": [
+      {
+        "id": "--eCjeEWpqg",
+        "title": "L’INTÉGRALE - La Grande confrontation : les médias sont-ils (vraiment) coupables ?｜LCI",
+        "channel": "LCI",
+        "views": 189193,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=--eCjeEWpqg"
+      },
+      {
+        "id": "N8JBP-quUUw",
+        "title": "JuL - Nostalgique // Clip Officiel // 2025",
+        "channel": "DORETDEPLATINE",
+        "views": 9611615,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=N8JBP-quUUw"
+      },
+      {
+        "id": "637AEOKuqGk",
+        "title": "Marius Psalmiste - Top 24 des meilleurs chants d&#39;adoration",
+        "channel": "Marius Psalmiste_pro",
+        "views": 2950345,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=637AEOKuqGk"
+      },
+      {
+        "id": "tSm-v3pHYdU",
+        "title": "J&#39;ai 18 ANS (plus pour longtemps) 🍰😂",
+        "channel": "CHOCOH",
+        "views": 9782034,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tSm-v3pHYdU"
+      },
+      {
+        "id": "g4KYiEjZ_2g",
+        "title": "Le père Noël porte des faux ongles 💅🏻😱 #shorts",
+        "channel": "Téo Lavabo",
+        "views": 7637510,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=g4KYiEjZ_2g"
+      },
+      {
+        "id": "oMZQLCYmlOk",
+        "title": "🎉 Joyeux Anniversaire à Toi 🎂 | La Chanson d&#39;Anniversaire 2026 | CréaSon",
+        "channel": "CréaSon",
+        "views": 315540,
+        "score": 0.69,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oMZQLCYmlOk"
+      },
+      {
+        "id": "JRAXJqaDJm4",
+        "title": "Un Entrainement de 10 Minutes Pour Brûler la Graisse Qui Marche Vraiment",
+        "channel": "SYMPA",
+        "views": 2081165,
+        "score": 0.79,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=JRAXJqaDJm4"
+      },
+      {
+        "id": "zPAZwj9sZzc",
+        "title": "CNEWS : 1 MILLION DE SIGNATURES, PÉTITION CLASSÉE… QUI VEUT NOUS FAIRE TAIRE ?",
+        "channel": "Kurious Anima 2.0",
+        "views": 9485,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zPAZwj9sZzc"
+      }
+    ],
+    "youtube_score": 0.87,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
+    "event_date": "2026-11-25",
+    "youtube_rejected_ids": [
+      "N8JBP-quUUw"
+    ],
+    "youtube_validated": false
   }
 }
