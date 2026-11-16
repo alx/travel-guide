@@ -1368,7 +1368,11 @@
       }
     ],
     "youtube_score": 3.28,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-16",
+    "event_date": "2026-11-28"
   },
   "IRON LUNGS (stoner pk)": {
     "youtube_video_id": "",
