@@ -33723,7 +33723,10 @@
     "bandcamp_url": "https://ellykace.bandcamp.com/track/if-i-ask",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=635623427/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-27"
+    "event_date": "2026-11-27",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-16"
   },
   "Bourbier Boueux": {
     "youtube_candidates": [
