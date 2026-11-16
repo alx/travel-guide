@@ -10281,7 +10281,10 @@
     ],
     "youtube_score": 1.29,
     "youtube_auto_validated": false,
-    "event_date": "2026-11-28"
+    "event_date": "2026-11-28",
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-16"
   },
   "MINERVES": {
     "youtube_video_id": "OEbw4lFjP8k",
