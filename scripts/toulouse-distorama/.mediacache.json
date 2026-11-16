@@ -33553,11 +33553,15 @@
     ],
     "youtube_score": 0.87,
     "youtube_auto_validated": false,
-    "youtube_video_id": "hbkVqpU_PlM",
+    "youtube_video_id": "",
     "bandcamp_url": "https://smokeyjoethekid.bandcamp.com/track/the-monkey-song-smokey-joe-the-kid-remix-free-download",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1606545269/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-27"
+    "event_date": "2026-11-27",
+    "youtube_rejected_ids": [
+      "hbkVqpU_PlM"
+    ],
+    "youtube_validated": false
   },
   "EXPARTY": {
     "youtube_candidates": [
