@@ -10660,7 +10660,8 @@
     "youtube_rejected_ids": [
       "IDqMB6C1uys"
     ],
-    "youtube_validated": true
+    "youtube_validated": true,
+    "event_date": "2026-11-28"
   },
   "LES REMPLAÇANTS": {
     "youtube_video_id": "35VTbozkY-o",
@@ -26909,7 +26910,7 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "59i4PneHLCU",
+    "youtube_video_id": "pyPstb1zpK0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -27610,7 +27611,7 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "32VRmEj00v8",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -29076,7 +29077,7 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "",
+    "youtube_video_id": "5SAyrvPK3oY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -31228,7 +31229,7 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "jNSnSphys2E",
+    "youtube_video_id": "DupPTibZdwc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -32259,7 +32260,7 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "ctuDu_atfPw",
+    "youtube_video_id": "1SLUivw7xoU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -33488,6 +33489,24 @@
         "url": "https://www.youtube.com/watch?v=wBCZkFUsHrM"
       },
       {
+        "id": "6ndZ49BO0QA",
+        "title": "This Dial M for Monkey Episode was BANNED! #shorts #banned #cartoon",
+        "channel": "RetroGrade",
+        "views": 179893,
+        "score": 0.66,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=6ndZ49BO0QA"
+      },
+      {
+        "id": "788ymKf0zOw",
+        "title": "Émission Électrocore - FMR 01/11/26",
+        "channel": "Pompot",
+        "views": 76,
+        "score": 0.24,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=788ymKf0zOw"
+      },
+      {
         "id": "G_hfYPyarKM",
         "title": "Exploring Cobra Labs Association: Day 1 - Unveiling the Creation Process of Amped Monkeys",
         "channel": "AMPED MONKEY YACHT CLUB NFTs ",
@@ -33497,66 +33516,48 @@
         "url": "https://www.youtube.com/watch?v=G_hfYPyarKM"
       },
       {
-        "id": "hbkVqpU_PlM",
-        "title": "As you can see My son is trying to join a gang !",
-        "channel": "Monzz Ent",
-        "views": 8432619,
-        "score": 0.87,
+        "id": "eYmSp4KO1FU",
+        "title": "Primates en laboratoire : l’élevage discret du CNRS",
+        "channel": "M6 Info",
+        "views": 23306,
+        "score": 0.55,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=hbkVqpU_PlM"
+        "url": "https://www.youtube.com/watch?v=eYmSp4KO1FU"
       },
       {
-        "id": "Zc9b1Go70FE",
-        "title": "Monkey funny video",
-        "channel": "Shah All-Rounder 50k",
-        "views": 168,
-        "score": 0.28,
+        "id": "SWK34Sn8vF8",
+        "title": "Dinner lasts an hour now | KADTC Adjustable Slow Feeder #Shorts",
+        "channel": "Blue Monkey Picks",
+        "views": 391,
+        "score": 0.32,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=Zc9b1Go70FE"
+        "url": "https://www.youtube.com/watch?v=SWK34Sn8vF8"
       },
       {
         "id": "zZ9Oa4qvnJI",
         "title": "Monkey funny video",
         "channel": "Shah All-Rounder 50k",
-        "views": 347,
+        "views": 352,
         "score": 0.32,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=zZ9Oa4qvnJI"
       },
       {
-        "id": "CAkat1bAvqk",
-        "title": "Monkey funny video",
-        "channel": "Shah All-Rounder 50k",
-        "views": 578,
-        "score": 0.35,
+        "id": "hbkVqpU_PlM",
+        "title": "As you can see My son is trying to join a gang !",
+        "channel": "Monzz Ent",
+        "views": 8456886,
+        "score": 0.87,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=CAkat1bAvqk"
-      },
-      {
-        "id": "CXrrYaG-5XI",
-        "title": "Monkey fight video",
-        "channel": "Shah All-Rounder 50k",
-        "views": 390,
-        "score": 0.32,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=CXrrYaG-5XI"
-      },
-      {
-        "id": "_BRpLLDEkbk",
-        "title": "This Robot Climbs Trees Like a Monkey – Is this the Future of Canopy Research?",
-        "channel": "ETH Zürich",
-        "views": 6155,
-        "score": 0.47,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=_BRpLLDEkbk"
+        "url": "https://www.youtube.com/watch?v=hbkVqpU_PlM"
       }
     ],
-    "youtube_score": 0.87,
+    "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://smokeyjoethekid.bandcamp.com/track/the-monkey-song-smokey-joe-the-kid-remix-free-download",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1606545269/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "6ndZ49BO0QA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-11-27",
     "youtube_rejected_ids": [
       "hbkVqpU_PlM"
@@ -34700,7 +34701,7 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "HLlktHn5itY",
+    "youtube_video_id": "447m7zGek8M",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -37184,43 +37185,34 @@
         "id": "W2YscoAEW3s",
         "title": "must see performances from moulin rouge 🎭",
         "channel": "myamericastory",
-        "views": 434325,
-        "score": 0.7,
+        "views": 446119,
+        "score": 0.71,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=W2YscoAEW3s"
       },
       {
-        "id": "G43DnaU9qPM",
-        "title": "Amy Winehouse - Back To Black (Live Belgrade 18-06-2011 drunk or stoned), RIP 23-07-2011 †",
-        "channel": "Jos Houben",
-        "views": 12919718,
-        "score": 3.89,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=G43DnaU9qPM"
-      },
-      {
-        "id": "5kEfq8jPsu4",
-        "title": "Bruno Mars - Chunky (from the Victoria’s Secret 2016 Fashion Show) (Official Live Performance)",
-        "channel": "Bruno Mars",
-        "views": 71527722,
-        "score": 3.98,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=5kEfq8jPsu4"
-      },
-      {
-        "id": "H_1-g1EqoGA",
-        "title": "Blanche Cassadine as Celine Dion",
-        "channel": "traywise",
-        "views": 429,
-        "score": 0.33,
+        "id": "hC9a7oqstMQ",
+        "title": "Maddy Morphosis’ Big Reveal #dragrace",
+        "channel": "Showgirls WeHo",
+        "views": 16213709,
+        "score": 0.9,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=H_1-g1EqoGA"
+        "url": "https://www.youtube.com/watch?v=hC9a7oqstMQ"
+      },
+      {
+        "id": "Fz2mggtfL4Q",
+        "title": "Show Yourself (from &quot;Frozen 2&quot;) by Andy Crocker  Live Drag Performance at Nectar Nightclub",
+        "channel": "Andy Crocker",
+        "views": 267957,
+        "score": 3.68,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Fz2mggtfL4Q"
       },
       {
         "id": "AnvsLMvmPgU",
         "title": "Chicago the Musical Australia (2019) - All That Jazz",
         "channel": "The Otaku's Study",
-        "views": 2019334,
+        "views": 2065654,
         "score": 0.79,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=AnvsLMvmPgU"
@@ -37229,33 +37221,42 @@
         "id": "jPCJIB1f7jk",
         "title": "Lip Sync Battle - Tom Holland",
         "channel": "Comedy Central Latinoamérica",
-        "views": 180466267,
+        "views": 181267133,
         "score": 1.03,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=jPCJIB1f7jk"
       },
       {
-        "id": "yHx5JjbkgRQ",
-        "title": "CONTROVERSIAL Sabrina Carpenter Performance #sabrinacarpenter #britawards #bedchem #music",
-        "channel": "Celebrity Central",
-        "views": 654013,
-        "score": 0.73,
+        "id": "H_1-g1EqoGA",
+        "title": "Blanche Cassadine as Celine Dion",
+        "channel": "traywise",
+        "views": 434,
+        "score": 0.33,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=yHx5JjbkgRQ"
+        "url": "https://www.youtube.com/watch?v=H_1-g1EqoGA"
       },
       {
-        "id": "melsdbHHjb8",
-        "title": "Carnival Spectacle Last Show of the Day (Back and Side Aisle View) MARDI GRRRA 2023 at Chessington",
-        "channel": "Amy and Mel",
-        "views": 1312,
-        "score": 3.39,
+        "id": "OelN_shRmuI",
+        "title": "Drag Show Etiquette (The Basic Dos and Dont&#39;s from a Real Drag Performer!)",
+        "channel": "Maxxx Pleasure",
+        "views": 15576,
+        "score": 3.52,
         "live": 1,
-        "url": "https://www.youtube.com/watch?v=melsdbHHjb8"
+        "url": "https://www.youtube.com/watch?v=OelN_shRmuI"
+      },
+      {
+        "id": "OSayp2tArqA",
+        "title": "JO PARIS 2024 - Le magnifique &quot;Nightcall&quot; par KAVINSKY, ANGÈLE et PHOENIX au Stade de France",
+        "channel": "Eurosport France",
+        "views": 10070510,
+        "score": 0.88,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OSayp2tArqA"
       }
     ],
-    "youtube_score": 3.98,
+    "youtube_score": 3.68,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "Fz2mggtfL4Q",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
@@ -39258,79 +39259,79 @@
   "C'est le moment de nous donner vos dates de décembre - on boucle le 25 novembre - merci !!": {
     "youtube_candidates": [
       {
+        "id": "XMBDdTHTIEo",
+        "title": "Tiakola - Mélo Décalé",
+        "channel": "TIAKOLA",
+        "views": 43908903,
+        "score": 0.96,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=XMBDdTHTIEo"
+      },
+      {
         "id": "--eCjeEWpqg",
         "title": "L’INTÉGRALE - La Grande confrontation : les médias sont-ils (vraiment) coupables ?｜LCI",
         "channel": "LCI",
-        "views": 189193,
-        "score": 0.66,
+        "views": 209921,
+        "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=--eCjeEWpqg"
-      },
-      {
-        "id": "N8JBP-quUUw",
-        "title": "JuL - Nostalgique // Clip Officiel // 2025",
-        "channel": "DORETDEPLATINE",
-        "views": 9611615,
-        "score": 0.87,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=N8JBP-quUUw"
-      },
-      {
-        "id": "637AEOKuqGk",
-        "title": "Marius Psalmiste - Top 24 des meilleurs chants d&#39;adoration",
-        "channel": "Marius Psalmiste_pro",
-        "views": 2950345,
-        "score": 0.81,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=637AEOKuqGk"
       },
       {
         "id": "tSm-v3pHYdU",
         "title": "J&#39;ai 18 ANS (plus pour longtemps) 🍰😂",
         "channel": "CHOCOH",
-        "views": 9782034,
+        "views": 9789351,
         "score": 0.87,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=tSm-v3pHYdU"
       },
       {
-        "id": "g4KYiEjZ_2g",
-        "title": "Le père Noël porte des faux ongles 💅🏻😱 #shorts",
-        "channel": "Téo Lavabo",
-        "views": 7637510,
-        "score": 0.86,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=g4KYiEjZ_2g"
-      },
-      {
-        "id": "oMZQLCYmlOk",
-        "title": "🎉 Joyeux Anniversaire à Toi 🎂 | La Chanson d&#39;Anniversaire 2026 | CréaSon",
-        "channel": "CréaSon",
-        "views": 315540,
-        "score": 0.69,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=oMZQLCYmlOk"
-      },
-      {
-        "id": "JRAXJqaDJm4",
-        "title": "Un Entrainement de 10 Minutes Pour Brûler la Graisse Qui Marche Vraiment",
-        "channel": "SYMPA",
-        "views": 2081165,
-        "score": 0.79,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=JRAXJqaDJm4"
-      },
-      {
-        "id": "zPAZwj9sZzc",
-        "title": "CNEWS : 1 MILLION DE SIGNATURES, PÉTITION CLASSÉE… QUI VEUT NOUS FAIRE TAIRE ?",
-        "channel": "Kurious Anima 2.0",
-        "views": 9485,
+        "id": "UmEQJpfdIIo",
+        "title": "How to Build a Client Booking System from Scratch in Excel",
+        "channel": "Excel For Freelancers",
+        "views": 9567,
         "score": 0.5,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=zPAZwj9sZzc"
+        "url": "https://www.youtube.com/watch?v=UmEQJpfdIIo"
+      },
+      {
+        "id": "637AEOKuqGk",
+        "title": "Marius Psalmiste - Top 24 des meilleurs chants d&#39;adoration",
+        "channel": "Marius Psalmiste_pro",
+        "views": 2958829,
+        "score": 0.81,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=637AEOKuqGk"
+      },
+      {
+        "id": "FS_R4D98x2U",
+        "title": "J’AI RETROUVER UNE VIDEO DOSSIER DE LILOUFITLOVE 😭🤣",
+        "channel": "loufitlove",
+        "views": 9412720,
+        "score": 0.87,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=FS_R4D98x2U"
+      },
+      {
+        "id": "OqEN-0QHvCw",
+        "title": "Trop mignonne 🥺 #famillenombreuses #pourtoi #family #humour #mafille #prank",
+        "channel": "Lacasadekida",
+        "views": 7847476,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OqEN-0QHvCw"
+      },
+      {
+        "id": "3CtC4SE2QQc",
+        "title": "SOIREE DU LUNDI sur S.O.N.A.R. / Liar&#39;s Bar avec Zerator, JDG, Antoine &amp; Lydia",
+        "channel": "LexiTVz",
+        "views": 761,
+        "score": 0.36,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3CtC4SE2QQc"
       }
     ],
-    "youtube_score": 0.87,
+    "youtube_score": 0.96,
     "youtube_auto_validated": false,
     "youtube_video_id": "",
     "bandcamp_url": "",
@@ -39338,7 +39339,8 @@
     "bandcamp_searched": false,
     "event_date": "2026-11-25",
     "youtube_rejected_ids": [
-      "N8JBP-quUUw"
+      "N8JBP-quUUw",
+      "XMBDdTHTIEo"
     ],
     "youtube_validated": false
   }
