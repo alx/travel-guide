@@ -37258,13 +37258,14 @@
     ],
     "youtube_score": 3.68,
     "youtube_auto_validated": false,
-    "youtube_video_id": "Fz2mggtfL4Q",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-27",
     "youtube_rejected_ids": [
-      "5kEfq8jPsu4"
+      "5kEfq8jPsu4",
+      "Fz2mggtfL4Q"
     ],
     "youtube_validated": false
   },
