@@ -33554,13 +33554,14 @@
     ],
     "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "6ndZ49BO0QA",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-11-27",
     "youtube_rejected_ids": [
-      "hbkVqpU_PlM"
+      "hbkVqpU_PlM",
+      "6ndZ49BO0QA"
     ],
     "youtube_validated": false
   },
