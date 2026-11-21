@@ -89,7 +89,13 @@ function loadEvents() {
 
 // ── yt-dlp helper ─────────────────────────────────────────────────────────────
 function downloadMedia(videoId) {
-  const dest = path.join(TMP_MEDIA_DIR, `${videoId}.mp4`);
+  const base = path.resolve(TMP_MEDIA_DIR);
+  const dest = path.resolve(base, `${videoId}.mp4`);
+  const rel = path.relative(base, dest);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
+    console.warn(`  ⚠ invalid videoId`);
+    return null;
+  }
   if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) return dest;
   console.log(`  ↓ downloading ${videoId}…`);
   const r = spawnSync('yt-dlp', [
@@ -110,8 +116,13 @@ function downloadMedia(videoId) {
 function startMediaServer(dir) {
   return new Promise((resolve, reject) => {
     const server = http.createServer((req, res) => {
-      const filePath = path.join(dir, decodeURIComponent(req.url.slice(1)));
-      fs.readFile(filePath, (err, data) => {
+      const base = path.resolve(dir);
+      const target = path.resolve(base, decodeURIComponent(req.url.slice(1)));
+      const relative = path.relative(base, target);
+      if (relative.startsWith('..') || path.isAbsolute(relative)) {
+        res.writeHead(404); res.end(); return;
+      }
+      fs.readFile(target, (err, data) => {
         if (err) { res.writeHead(404); res.end(); return; }
         res.writeHead(200, {'Content-Type': 'video/mp4', 'Accept-Ranges': 'bytes'});
         res.end(data);
