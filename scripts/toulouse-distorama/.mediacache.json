@@ -40288,11 +40288,15 @@
     ],
     "youtube_score": 0.35,
     "youtube_auto_validated": false,
-    "youtube_video_id": "rUC-1cFAtGs",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-12-03"
+    "event_date": "2026-12-03",
+    "youtube_rejected_ids": [
+      "rUC-1cFAtGs"
+    ],
+    "youtube_validated": false
   },
   "Soutien à L’Autonomie : AESTAS": {
     "youtube_video_id": "nwhWvOIyRMQ",
