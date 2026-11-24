@@ -40386,11 +40386,15 @@
     ],
     "youtube_score": 5.39,
     "youtube_auto_validated": false,
-    "youtube_video_id": "wkCuzsJF8qM",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-12-03"
+    "event_date": "2026-12-03",
+    "youtube_rejected_ids": [
+      "wkCuzsJF8qM"
+    ],
+    "youtube_validated": false
   },
   "COLLECTIF INCONEL": {
     "youtube_candidates": [
