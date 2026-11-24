@@ -40469,11 +40469,15 @@
     ],
     "youtube_score": 0.76,
     "youtube_auto_validated": false,
-    "youtube_video_id": "sXw5DNJPMIw",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-12-04"
+    "event_date": "2026-12-04",
+    "youtube_rejected_ids": [
+      "sXw5DNJPMIw"
+    ],
+    "youtube_validated": false
   },
   "DUCTAPE": {
     "youtube_candidates": [
