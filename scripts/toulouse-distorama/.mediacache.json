@@ -40255,11 +40255,15 @@
     ],
     "youtube_score": 3.62,
     "youtube_auto_validated": false,
-    "youtube_video_id": "WgSUskUiDi4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
-    "event_date": "2026-12-03"
+    "event_date": "2026-12-03",
+    "youtube_rejected_ids": [
+      "WgSUskUiDi4"
+    ],
+    "youtube_validated": false
   },
   "MISSTHEKIDD": {
     "youtube_candidates": [
