@@ -763,9 +763,9 @@
   },
   "SILLY WALK": {
     "youtube_video_id": "YWfL3pqiW38",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://sillywalk.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3884928415/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-20",
     "youtube_candidates": [
       {
@@ -1674,7 +1674,7 @@
     "youtube_video_id": "NaNO9MfnL-Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "EVjFByBgplk",
@@ -2502,9 +2502,9 @@
   },
   "NUIT BLEUE": {
     "youtube_video_id": "thwpz-GGJp4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://nuitbleue666.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2611957276/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "thwpz-GGJp4",
@@ -3313,9 +3313,9 @@
   },
   "AUGUST ANGST": {
     "youtube_video_id": "ZW8AkJGNftw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://augustangst.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3918063348/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "8ZYUASfu7rs",
@@ -3401,7 +3401,7 @@
     "youtube_video_id": "ZMAsHbm3ZAM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "jtXzsO6TUbw",
@@ -3486,9 +3486,9 @@
   },
   "KESSLER SYNDROME": {
     "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://kesslersyndrome.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1857935041/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "MmVW8f31vI8"
     ],
@@ -3610,7 +3610,7 @@
     "youtube_video_id": "NQKD-jLMEMM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-12-02"
   },
@@ -4128,9 +4128,9 @@
   },
   "SUKKUBE": {
     "youtube_video_id": "E-xQrSI_nAg",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://sukkube.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1054198263/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-11-26"
   },
@@ -4551,9 +4551,9 @@
   },
   "PFFF…": {
     "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://pfff.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1800736697/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "HBJBxuIs6g0"
     ],
@@ -4642,9 +4642,9 @@
   },
   "SOUL HATER": {
     "youtube_video_id": "WD2yX46gVL0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://soulhaterhc.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3628471697/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "rtVLc_p98sg",
@@ -6362,7 +6362,7 @@
     "youtube_video_id": "nIU9fobUjRg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-12-04"
   },
@@ -6443,9 +6443,9 @@
   },
   "GEHEN": {
     "youtube_video_id": "szSm0Gg3s_4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://gehenband.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1819197972/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "8BaZJckNdXw",
@@ -7759,9 +7759,9 @@
   },
   "BLACK MEADOWS": {
     "youtube_video_id": "LDzwmQn0GkA",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://flowerpotrecords.bandcamp.com/album/black-sun-2023",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1338952662/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-11-06"
   },
@@ -8549,9 +8549,9 @@
   },
   "SEVERED SOUL": {
     "youtube_video_id": "TQujI23s7Q8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://severedsoulmetal.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1064175657/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-12-11"
   },
@@ -8602,7 +8602,7 @@
     "youtube_video_id": "UIHWclLfRkQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-11-14"
   },
@@ -9148,9 +9148,9 @@
   },
   "JÉRÔME SAGE ORCHESTRA": {
     "youtube_video_id": "j920BAm3CQc",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://freshsoundrecords1.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1251669286/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-11-28"
   },
@@ -9212,9 +9212,9 @@
   },
   "BADASS MOTHER FUZZERS": {
     "youtube_video_id": "G-W1SORa3ss",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://badassmotherfuzzers.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1917236380/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-12-04"
   },
@@ -9319,9 +9319,9 @@
   },
   "MIXSOUP": {
     "youtube_video_id": "Mvad6JaLVbc",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://bandcamp.com/fabmixsoup",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=709917578/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "i7_XzKXQUQg",
@@ -9415,9 +9415,9 @@
   },
   "SOPOORIFIC": {
     "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://sopoorific.bandcamp.com/album/echoes-of-the-lost-souls",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3078560497/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "lsfwG4OA2y0"
     ],
@@ -9613,9 +9613,9 @@
   },
   "ALLUSION": {
     "youtube_video_id": "vUMOmBxC3Cg",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://onismproductions.bandcamp.com/album/allusion",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2104093840/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "vUMOmBxC3Cg",
@@ -9801,7 +9801,7 @@
     "youtube_video_id": "TvnlwisFkXE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_validated": true,
     "event_date": "2026-12-16"
   },
@@ -9896,9 +9896,9 @@
   },
   "PETIT BUREAU": {
     "youtube_video_id": "0zgcvEb3NRM",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://petitbureau.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1382186463/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "itp7Ihk3wsg",
@@ -10523,9 +10523,9 @@
   },
   "THE VACUUMS": {
     "youtube_video_id": "expn5p8fZRY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://thevacuumsband.bandcamp.com/album/the-vacuums-2",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3285840095/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "oop31hCDbxA",
@@ -10971,9 +10971,9 @@
   },
   "GUT BUGS": {
     "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://gutbugs.bandcamp.com/album/s-t",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=921993676/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "IDqMB6C1uys"
     ],
@@ -11043,9 +11043,9 @@
   },
   "Blues au coin du Zinc": {
     "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://themoonkillers.bandcamp.com/album/le-grand-incendie-de-bucket-place",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=482194319/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "DtH8ajkSaj4"
     ],
@@ -11316,7 +11316,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_rejected_ids": [
       "-HAhVwzQRAY"
     ],
@@ -18409,7 +18409,7 @@
     "youtube_video_id": "AkC7vNrgs6M",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-31",
     "youtube_candidates": [
       {
@@ -21856,7 +21856,7 @@
     "youtube_video_id": "xcgzT3g-nE4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "youtube_candidates": [
       {
         "id": "xcgzT3g-nE4",
@@ -24304,7 +24304,7 @@
     "youtube_video_id": "ZwmTdmUXQko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-08"
   },
   "SO BEAST": {
@@ -27230,7 +27230,7 @@
     "youtube_video_id": "59i4PneHLCU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-16",
     "youtube_rejected_ids": [
       "YQbESMdRwhA",
@@ -27758,7 +27758,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-17"
   },
   "TÉLÉCASTRÉ": {
@@ -27931,7 +27931,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-19",
     "youtube_rejected_ids": [
       "MGDVe3ePvpo"
@@ -29394,10 +29394,10 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "j7ZKmiVydBM",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "youtube_video_id": "EIvxOkTN14g",
+    "bandcamp_url": "https://atinimatso.bandcamp.com/track/errances-matinales-01",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1173807678/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-10-24",
     "youtube_rejected_ids": [
       "Xn_rP9Swa-M"
@@ -29679,7 +29679,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-27"
   },
   "KELLEY STOLTZ": {
@@ -31546,10 +31546,10 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "d2-n8EelZus",
+    "youtube_video_id": "tiYfadqOGsA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-17",
     "youtube_rejected_ids": [
       "E9Cku97WSO8"
@@ -32577,10 +32577,10 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "n_6Oy2Pr8QY",
+    "youtube_video_id": "WQEAk7zqmVk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-04",
     "youtube_rejected_ids": [
       "4f6_X-uHulk"
@@ -33008,7 +33008,7 @@
     "youtube_video_id": "9n6wGdCz-SU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-17",
     "youtube_rejected_ids": [
       "PnFi0dNeVV4",
@@ -33095,9 +33095,9 @@
     "youtube_score": 1.39,
     "youtube_auto_validated": false,
     "youtube_video_id": "1qfZ2-iWh5w",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://madchamb.bandcamp.com/album/some-songs-not-an-album",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2875425632/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12",
     "youtube_rejected_ids": [
       "jMtcPHYf-XQ"
@@ -33607,9 +33607,9 @@
     "youtube_score": 0.82,
     "youtube_auto_validated": false,
     "youtube_video_id": "qB3F5YR-yZI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://sugonline.bandcamp.com/album/slug-beat",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=163966158/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-20",
     "youtube_rejected_ids": [
       "Bs6kS_R1bP8"
@@ -33696,7 +33696,7 @@
     "youtube_video_id": "tAEXgBOIhTA",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-21",
     "youtube_rejected_ids": [
       "N0GEt_67C1o",
@@ -33783,9 +33783,9 @@
     "youtube_score": 3.25,
     "youtube_auto_validated": false,
     "youtube_video_id": "PDNegAlZDo8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://bandcamp.com/jdlegrand",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=439067784/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-24",
     "youtube_rejected_ids": [
       "jbb4rV7Nc0c",
@@ -33872,9 +33872,9 @@
     "youtube_score": 0.45,
     "youtube_auto_validated": false,
     "youtube_video_id": "jUVA42p5ZaY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://smokeyjoethekid.bandcamp.com/track/the-monkey-song-smokey-joe-the-kid-remix-free-download",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1606545269/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-27",
     "youtube_rejected_ids": [
       "hbkVqpU_PlM",
@@ -34845,7 +34845,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-01",
     "youtube_rejected_ids": [
       "6Jt1zMuioAE",
@@ -34931,9 +34931,9 @@
     "youtube_score": 1.36,
     "youtube_auto_validated": false,
     "youtube_video_id": "sSPVwjUqUyI",
-    "bandcamp_url": "",
+    "bandcamp_url": "https://akaspi.bandcamp.com/",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-11"
   },
   "DEATH FROM PARIS": {
@@ -35014,16 +35014,16 @@
     "youtube_score": 3.83,
     "youtube_auto_validated": false,
     "youtube_video_id": "rqsmrSyLTNM",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://paris-death-hilton.bandcamp.com/album/age-of-death",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4127850437/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "_pYPthFgFSE",
+    "youtube_video_id": "2V-iUkumY0g",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-06"
   },
   "TOULOUSE HARDCORE": {
@@ -35104,9 +35104,9 @@
     "youtube_score": 3.65,
     "youtube_auto_validated": false,
     "youtube_video_id": "Wy2_sDT4Nco",
-    "bandcamp_url": "",
+    "bandcamp_url": "https://bandcamp.com/discover/toulouse-hardcore",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-06"
   },
   "VÈRN": {
@@ -35188,9 +35188,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "9Vu1sgKO67k",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://artusrock.bandcamp.com/album/drac",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1011323333/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-06"
   },
   "KRIEGELSTEIN": {
@@ -35271,9 +35271,9 @@
     "youtube_score": 5.4,
     "youtube_auto_validated": false,
     "youtube_video_id": "rF1AFiqxaVE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://ganacherecords.bandcamp.com/album/kriegelstein-chronicles-vol-1",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2858796223/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-07",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -35359,7 +35359,7 @@
     "youtube_video_id": "5-L3EEn98ck",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-12"
   },
   "COOL J & THE HOTLINE": {
@@ -35442,7 +35442,7 @@
     "youtube_video_id": "udEN8EdJT9k",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-13"
   },
   "THE SILVERLININGS": {
@@ -35523,9 +35523,9 @@
     "youtube_score": 3.71,
     "youtube_auto_validated": false,
     "youtube_video_id": "B35qHapLdik",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://thesilverlinings-tsl.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2458898214/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-13"
   },
   "CORIUM": {
@@ -35606,9 +35606,9 @@
     "youtube_score": 3.33,
     "youtube_auto_validated": false,
     "youtube_video_id": "DfEMldrM7N4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://corium-kc.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=896931761/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-14"
   },
   "EMBER": {
@@ -35689,9 +35689,9 @@
     "youtube_score": 0.79,
     "youtube_auto_validated": false,
     "youtube_video_id": "SrwCOIe_Lhw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://kubbi.bandcamp.com/album/ember",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=631104649/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-14"
   },
   "Les Filles du Bruit : LA FAIBLESSE": {
@@ -35774,7 +35774,7 @@
     "youtube_video_id": "XV4zCdemWJM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-14"
   },
   "MELTING POP": {
@@ -35856,9 +35856,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "P-UrH9BKgVg",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://fvzzpopvli.bandcamp.com/album/melting-pop",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4145076676/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-14"
   },
   "NICK SALOMON": {
@@ -35941,7 +35941,7 @@
     "youtube_video_id": "hCdfG6KijTc",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-14"
   },
   "CUL ZAG": {
@@ -36022,9 +36022,9 @@
     "youtube_score": 5.46,
     "youtube_auto_validated": false,
     "youtube_video_id": "aeBKKFzwRbQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://culzag.bandcamp.com/album/cul-zag",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4248465203/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-16"
   },
   "GUS ENGLERHORN": {
@@ -36107,7 +36107,7 @@
     "youtube_video_id": "5gJmzQOaQ1M",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-17"
   },
   "CONVULSIF": {
@@ -36190,7 +36190,7 @@
     "youtube_video_id": "dnJoyQe3X8w",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-18",
     "youtube_rejected_ids": [
       "8zJOr3P6DbA",
@@ -36278,7 +36278,7 @@
     "youtube_video_id": "NogHM5V-vuk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-18",
     "youtube_rejected_ids": [
       "VV1XWJN3nJo",
@@ -36364,9 +36364,9 @@
     "youtube_score": 3.29,
     "youtube_auto_validated": false,
     "youtube_video_id": "IbkCAJEEXTY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://celray.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3957144270/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-19",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -36450,9 +36450,9 @@
     "youtube_score": 1.79,
     "youtube_auto_validated": false,
     "youtube_video_id": "Zx7aT84vW0A",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://3dpericolo.bandcamp.com/album/always-time-for-breakfast",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=216604415/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-19",
     "youtube_rejected_ids": [
       "wnGkv2Inqf0"
@@ -36539,7 +36539,7 @@
     "youtube_video_id": "8jX6k91-BT4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-20"
   },
   "PARAZITE PETALS": {
@@ -36622,7 +36622,7 @@
     "youtube_video_id": "R2i5MWqdVHw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-20",
     "youtube_rejected_ids": [
       "DanGJz3Up4Q"
@@ -36707,16 +36707,16 @@
     "youtube_score": 5.45,
     "youtube_auto_validated": false,
     "youtube_video_id": "sImVfCHuai0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://stonedmatter.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3411906928/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-21"
   },
   "Fucking Artists Market : Défilé de créateurs, coiffeurs, linogravure, céramique, fringues, sérigraphies, lingerie fetish, DJ, tombola": {
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-22"
   },
   "MANSION'S CELLAR": {
@@ -36797,9 +36797,9 @@
     "youtube_score": 5.47,
     "youtube_auto_validated": false,
     "youtube_video_id": "9ECZ3IgkBq8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://vladlabel.bandcamp.com/album/faces-sag-like-melted-wax",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1240078425/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-25",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -36883,9 +36883,9 @@
     "youtube_score": 4.27,
     "youtube_auto_validated": false,
     "youtube_video_id": "ym6kerUebyY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://paopou.bandcamp.com/album/jumping-the-falls",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1778325295/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-09",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -36969,9 +36969,9 @@
     "youtube_score": 4.3,
     "youtube_auto_validated": false,
     "youtube_video_id": "Npxfawvj4To",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://unwantednoise.bandcamp.com/album/last-of-our-kind",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1214027248/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-25"
   },
   "EMBERSIGHT": {
@@ -37052,9 +37052,9 @@
     "youtube_score": 5.57,
     "youtube_auto_validated": false,
     "youtube_video_id": "hqyxMKdFeAA",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://embersight.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3651138139/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -37138,9 +37138,9 @@
     "youtube_score": 3.35,
     "youtube_auto_validated": false,
     "youtube_video_id": "MoNkN_C5dNY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://golemecanique.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=785053362/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -37150,7 +37150,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-26",
     "youtube_rejected_ids": [
       "cPMyICKG-1s"
@@ -37237,7 +37237,7 @@
     "youtube_video_id": "NnZ-lIVjey4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-26"
   },
   "SPARKLING RED DIAMOND": {
@@ -37320,7 +37320,7 @@
     "youtube_video_id": "CDSv9ssWeLY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-26"
   },
   "Stand-Up Catch Impro": {
@@ -37401,9 +37401,9 @@
     "youtube_score": 0.63,
     "youtube_auto_validated": false,
     "youtube_video_id": "h2oXZMn6w7o",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://chuckwinter.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1429783705/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26",
     "youtube_rejected_ids": [
       "_31II5XxMmI",
@@ -37490,9 +37490,9 @@
     "youtube_score": 0.93,
     "youtube_auto_validated": false,
     "youtube_video_id": "imemMM-EoCY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://centurymedia.bandcamp.com/track/my-heart-and-the-ocean",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1616125302/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26",
     "youtube_rejected_ids": [
       "py3ByP-15_0"
@@ -37579,7 +37579,7 @@
     "youtube_video_id": "jx38roG4qn4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-27",
     "youtube_rejected_ids": [
       "5kEfq8jPsu4",
@@ -37749,9 +37749,9 @@
     "youtube_score": 0.73,
     "youtube_auto_validated": false,
     "youtube_video_id": "Sq3KGIKLv68",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://nina-winder-lind.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3362407080/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-12",
     "youtube_rejected_ids": [
       "iLuk69CsnYQ"
@@ -37836,9 +37836,9 @@
     "youtube_score": 3.33,
     "youtube_auto_validated": false,
     "youtube_video_id": "2kjU5tRm10E",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://wildwomentheband.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2986812696/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-13"
   },
   "In the beginning there was rhythm DJ Set : LADY MISS PENELOPE": {
@@ -37919,9 +37919,9 @@
     "youtube_score": 0.94,
     "youtube_auto_validated": false,
     "youtube_video_id": "TLxhaO6Hl8w",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://vindig.bandcamp.com/music",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4037337757/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-13",
     "youtube_rejected_ids": [
       "D-NvQ6VJYtE",
@@ -38009,16 +38009,16 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "VaVCFqP6jak",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://takensemble.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2933744539/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-13"
   },
   "UNCLE BENNY AND HIS CALYPSO SWING": {
     "youtube_video_id": "7kq1JQUhwVQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://spaindisco.bandcamp.com/video",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=908196287/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-19",
     "youtube_candidates": [
       {
@@ -38179,9 +38179,9 @@
     "youtube_score": 0.92,
     "youtube_auto_validated": false,
     "youtube_video_id": "VWSRtPTmRr4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://gustsl.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2694946075/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-10-31",
     "youtube_rejected_ids": [
       "efqpA9X2EvU",
@@ -38270,7 +38270,7 @@
     "youtube_video_id": "lu00sU10vmo",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-10-31",
     "youtube_rejected_ids": [
       "Zl2EB-5LaBs",
@@ -38357,9 +38357,9 @@
     "youtube_score": 0.59,
     "youtube_auto_validated": false,
     "youtube_video_id": "c9iYEBSTNhc",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://cartonrecords.bandcamp.com/track/cataplasme",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=561807317/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-20"
   },
   "The Bling Bling Talkshow par la Maison Clinquante": {
@@ -38379,7 +38379,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-20",
     "youtube_rejected_ids": [
       "OBPmJD85Slk"
@@ -38464,9 +38464,9 @@
     "youtube_score": 0.37,
     "youtube_auto_validated": false,
     "youtube_video_id": "4IyGlsDfayw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://maquinariaincendiaria.bandcamp.com/album/maqueta",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1445633877/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-06",
     "youtube_rejected_ids": [
       "XcFFIyr4Hms"
@@ -38553,9 +38553,9 @@
     "youtube_score": 0.6,
     "youtube_auto_validated": false,
     "youtube_video_id": "-kFUcC_wBlQ",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://orsiniband.bandcamp.com/album/ezin-atera",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=446848146/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-06",
     "youtube_rejected_ids": [
       "MgzHlFanfm0",
@@ -38643,7 +38643,7 @@
     "youtube_video_id": "-qsFIsw7v6Y",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-26"
   },
   "NEBULAX2": {
@@ -38724,9 +38724,9 @@
     "youtube_score": 5.36,
     "youtube_auto_validated": false,
     "youtube_video_id": "l5nEPo-9SpU",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://russiantechno.bandcamp.com/album/1-rt-64t",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1516833279/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26"
   },
   "Release Party LA BARBI B": {
@@ -38807,9 +38807,9 @@
     "youtube_score": 3.89,
     "youtube_auto_validated": false,
     "youtube_video_id": "gGKZqDyGWYs",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://taleenkali.bandcamp.com/album/only-lovers-left-alive-single",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1746143979/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-26"
   },
   "APM": {
@@ -38892,7 +38892,7 @@
     "youtube_video_id": "amRg7Ch8zoU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-13"
   },
   "BLASTOCYSTIS HOMINIS": {
@@ -38979,9 +38979,9 @@
     "youtube_score": 0.47,
     "youtube_auto_validated": false,
     "youtube_video_id": "Li8m0fL64wE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://goreproductions.bandcamp.com/album/blastocystis-hominis-single",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3236045334/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-07"
   },
   "DRAGONKEEP": {
@@ -39070,7 +39070,7 @@
     "youtube_video_id": "aYu1HZF6XXQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-07"
   },
   "MANDATORY REGICIDE": {
@@ -39156,9 +39156,9 @@
     "youtube_score": 0.63,
     "youtube_auto_validated": false,
     "youtube_video_id": "zWyMAObykN8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://mandatoryregicide.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3045320732/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-07"
   },
   "PURPL ARMOR": {
@@ -39240,9 +39240,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "qNarsqiaIBI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://purplarmor.bandcamp.com/album/purpl-armor",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1022554409/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-10"
   },
   "REDMOTHS": {
@@ -39324,9 +39324,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "FkMZ_EFHZzI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://awfulfieldrecords.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2972158081/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-10"
   },
   "KOMOREBI": {
@@ -39409,7 +39409,7 @@
     "youtube_video_id": "IO0x4XM-ph8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-21"
   },
   "AUTOTELIC INTERACTIONS": {
@@ -39490,9 +39490,9 @@
     "youtube_score": 1.12,
     "youtube_auto_validated": false,
     "youtube_video_id": "g0alhtY_jfU",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://autotelic-interactions.bandcamp.com/album/social-conditioning",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4116822260/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-28"
   },
   "MUSÉE DE LA MATIÈRE NOIRE": {
@@ -39573,9 +39573,9 @@
     "youtube_score": 3.19,
     "youtube_auto_validated": false,
     "youtube_video_id": "7_K7Ikjd2rw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://museedelamatierenoire.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3373686372/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-11-28"
   },
   "C'est le moment de nous donner vos dates de décembre - on boucle le 25 novembre - merci !!": {
@@ -39656,9 +39656,9 @@
     "youtube_score": 0.87,
     "youtube_auto_validated": false,
     "youtube_video_id": "FS_R4D98x2U",
-    "bandcamp_url": "",
+    "bandcamp_url": "https://daily.bandcamp.com/features/bandcamp-fridays",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-25",
     "youtube_rejected_ids": [
       "N8JBP-quUUw",
@@ -39747,14 +39747,14 @@
     "youtube_video_id": "Uh6G3gEkMds",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-21"
   },
   "Fanfares 100 % meufs et minorités de genre -> Dimanche Intense": {
     "youtube_video_id": "m3ldnWsShhk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-21"
   },
   "JOAQUIN ORTEGA": {
@@ -39837,7 +39837,7 @@
     "youtube_video_id": "YAiU4ygnoAQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-11-28",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -39923,7 +39923,7 @@
     "youtube_video_id": "j_wGFuEqKG0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-02"
   },
   "ROSA CRVX": {
@@ -40006,7 +40006,7 @@
     "youtube_video_id": "YW600Xzf1WI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-02"
   },
   "AMELO": {
@@ -40089,7 +40089,7 @@
     "youtube_video_id": "iH-tokJqkp8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -40175,90 +40175,90 @@
     "youtube_video_id": "JS0-u6Z2Z8M",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-03"
   },
   "MADA": {
     "youtube_candidates": [
       {
+        "id": "1B6H8ztKSqM",
+        "title": "GTA VI + DLSS 5? PROGRESS SEMALEM GA KE SAVE GARA2 MATI LAMPU!",
+        "channel": "Mada Rahadian",
+        "views": 89153,
+        "score": 1.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1B6H8ztKSqM"
+      },
+      {
+        "id": "xZNclSVGoTY",
+        "title": "DO YOU LIKE MAYA’S DRAWING IN ROBLOX..😮😳 #roblox #berry #shorts",
+        "channel": "MadaROBLOX",
+        "views": 481737,
+        "score": 1.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=xZNclSVGoTY"
+      },
+      {
+        "id": "kVFlX3FihQM",
+        "title": "Mada Escolheu, Mado se Complicou! 😂🤡",
+        "channel": "mado e mada",
+        "views": 28880,
+        "score": 1.56,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=kVFlX3FihQM"
+      },
+      {
+        "id": "zs1Uc46xhUc",
+        "title": "FUNK MADA ",
+        "channel": "NOW PHONK",
+        "views": 68137,
+        "score": 0.6,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=zs1Uc46xhUc"
+      },
+      {
         "id": "bwPMGa1JIhM",
         "title": "Kalash - Mada",
         "channel": "KalashVEVO",
-        "views": 17021745,
+        "views": 17022550,
         "score": 0.9,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bwPMGa1JIhM"
       },
       {
-        "id": "UCA5oC6_tmE",
-        "title": "La véritable taille de madagascar",
-        "channel": "Balade Mentale",
-        "views": 39187,
-        "score": 0.57,
+        "id": "82h6FCRLPM0",
+        "title": "FUNK MADA (SLOWED)",
+        "channel": "ICEDMANE - Topic",
+        "views": 465473,
+        "score": 0.71,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=UCA5oC6_tmE"
+        "url": "https://www.youtube.com/watch?v=82h6FCRLPM0"
       },
       {
         "id": "WgSUskUiDi4",
         "title": "LIVE - 1/4 SENEGAL vs MADAGASCAR - Championnats du monde de pétanque Khon Kaen 2026 SÉNÉGAL VS MADA",
         "channel": "SPORTMAG ",
-        "views": 91010,
+        "views": 97900,
         "score": 3.62,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=WgSUskUiDi4"
       },
       {
-        "id": "CeiXI2Lb0ms",
-        "title": "death mode..💀 - death edit - song : funk mada",
-        "channel": "hoboedits",
-        "views": 1450930,
-        "score": 0.77,
+        "id": "V1aWgcji010",
+        "title": "Phyzix - MADA (Official Video) 2024",
+        "channel": "Phyzix",
+        "views": 256995,
+        "score": 0.68,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=CeiXI2Lb0ms"
-      },
-      {
-        "id": "yuyu-PaYVWY",
-        "title": "Il tombe amoureux d’elle… au moment où elle est brisée 💔 | MADA EP17",
-        "channel": "Orisha Films",
-        "views": 2078,
-        "score": 0.41,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=yuyu-PaYVWY"
-      },
-      {
-        "id": "DGM8Wft-wSc",
-        "title": "&quot;Muzan&#39;s Wrost Nightmare 💀🔥&quot; - Yorrichi Edit | Funk Mada (Slowed &amp; Reverb)",
-        "channel": "BLACKFX EDITZ ",
-        "views": 236803,
-        "score": 0.67,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=DGM8Wft-wSc"
-      },
-      {
-        "id": "QIHXr_QGmBo",
-        "title": "10 Minutes of Best NRG Mada Plays from VCT",
-        "channel": "Koroda",
-        "views": 130767,
-        "score": 0.64,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=QIHXr_QGmBo"
-      },
-      {
-        "id": "WFJNnvl8Wq8",
-        "title": "MADA générique début",
-        "channel": "Orisha Films",
-        "views": 36259,
-        "score": 0.57,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=WFJNnvl8Wq8"
+        "url": "https://www.youtube.com/watch?v=V1aWgcji010"
       }
     ],
-    "youtube_score": 3.62,
+    "youtube_score": 1.71,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "youtube_video_id": "xZNclSVGoTY",
+    "bandcamp_url": "https://auralcanyonmusic.bandcamp.com/album/mada",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4010012968/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_rejected_ids": [
       "WgSUskUiDi4"
@@ -40286,12 +40286,12 @@
         "url": "https://www.youtube.com/watch?v=rUC-1cFAtGs"
       }
     ],
-    "youtube_score": 0.35,
+    "youtube_score": 0.3,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "j5tqo4dY0Ko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_rejected_ids": [
       "rUC-1cFAtGs"
@@ -40302,7 +40302,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_rejected_ids": [
       "nwhWvOIyRMQ"
@@ -40333,7 +40333,7 @@
         "id": "wkCuzsJF8qM",
         "title": "Yaggui - Sola",
         "channel": "Yaggui",
-        "views": 1240,
+        "views": 1242,
         "score": 5.39,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=wkCuzsJF8qM"
@@ -40360,7 +40360,7 @@
         "id": "_APQB2-Um-I",
         "title": "Angel",
         "channel": "Shaggy - Topic",
-        "views": 305743845,
+        "views": 305864548,
         "score": 1.06,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=_APQB2-Um-I"
@@ -40384,12 +40384,12 @@
         "url": "https://www.youtube.com/watch?v=OhaqnGpTNlc"
       }
     ],
-    "youtube_score": 5.39,
+    "youtube_score": 5.36,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "youtube_video_id": "8YvuuGDbVys",
+    "bandcamp_url": "https://yaggui.bandcamp.com/track/au-clair-de-mon-cul-2",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2337205284/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_rejected_ids": [
       "wkCuzsJF8qM"
@@ -40420,7 +40420,7 @@
         "id": "EYdJQEQP9UA",
         "title": "The Tisha 5.56 | Stealth Additive Works",
         "channel": "Shark Coast Tactical",
-        "views": 139076,
+        "views": 139539,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=EYdJQEQP9UA"
@@ -40429,7 +40429,7 @@
         "id": "sx1cREYXT5Q",
         "title": "Porsche 911 Turbo S Kline Innovation Exhaust #shorts",
         "channel": "S Collective",
-        "views": 483,
+        "views": 487,
         "score": 0.34,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=sx1cREYXT5Q"
@@ -40438,7 +40438,7 @@
         "id": "zf2JPtJAUFc",
         "title": "This Suppressor Doesn’t Get Hot???  PART 1",
         "channel": "The Weapon Collective",
-        "views": 13828,
+        "views": 13840,
         "score": 0.52,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=zf2JPtJAUFc"
@@ -40447,10 +40447,19 @@
         "id": "sXw5DNJPMIw",
         "title": "BEST SUPPRESSOR COVER #tacticalshooter #tacticalgear #nomirage",
         "channel": "Sukon Performance",
-        "views": 1115130,
+        "views": 1115234,
         "score": 0.76,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=sXw5DNJPMIw"
+      },
+      {
+        "id": "vf5HTpPkb0g",
+        "title": "Ferrari GTC4Lusso Full Send🚀 F1 Sound",
+        "channel": "UR Collective",
+        "views": 2357,
+        "score": 0.42,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vf5HTpPkb0g"
       },
       {
         "id": "bulBJI6nIPQ",
@@ -40460,26 +40469,18 @@
         "score": 0.36,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=bulBJI6nIPQ"
-      },
-      {
-        "id": "vf5HTpPkb0g",
-        "title": "Ferrari GTC4Lusso Full Send🚀 F1 Sound",
-        "channel": "UR Collective",
-        "views": 2356,
-        "score": 0.42,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=vf5HTpPkb0g"
       }
     ],
-    "youtube_score": 0.76,
+    "youtube_score": 0.64,
     "youtube_auto_validated": false,
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-04",
     "youtube_rejected_ids": [
-      "sXw5DNJPMIw"
+      "sXw5DNJPMIw",
+      "EYdJQEQP9UA"
     ],
     "youtube_validated": false
   },
@@ -40563,7 +40564,7 @@
     "youtube_video_id": "imsbFwtEXbw",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-04"
   },
   "ELECTROKOHLE": {
@@ -40626,9 +40627,9 @@
     "youtube_score": 3.44,
     "youtube_auto_validated": false,
     "youtube_video_id": "mW6VNuM4rQk",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://elektrokohle.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3619390244/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-04"
   },
   "LA MINE": {
@@ -40710,9 +40711,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "EsDoymOC_Y0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://dernierebande.bandcamp.com/track/la-mine",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2133237978/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-04"
   },
   "MAD DOGS": {
@@ -40793,9 +40794,9 @@
     "youtube_score": 3.63,
     "youtube_auto_validated": false,
     "youtube_video_id": "BakGPTqg-Hw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://maddogsrnr.bandcamp.com/album/we-are-ready-to-testify",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1642759098/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-04"
   },
   "WALLIE": {
@@ -40876,9 +40877,9 @@
     "youtube_score": 3.63,
     "youtube_auto_validated": false,
     "youtube_video_id": "N9E78hNgbwI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://walliestone.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2432247603/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-04"
   },
   "ESTETICA NOIR": {
@@ -40959,9 +40960,9 @@
     "youtube_score": 5.53,
     "youtube_auto_validated": false,
     "youtube_video_id": "m-mTSZ06FGE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://esteticanoir.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4251129756/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-05",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -41045,9 +41046,9 @@
     "youtube_score": 0.75,
     "youtube_auto_validated": false,
     "youtube_video_id": "3VaploBgWis",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://maskara.bandcamp.com/album/liqueur",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1277540841/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-05"
   },
   "MARTIN DUPONT": {
@@ -41128,9 +41129,9 @@
     "youtube_score": 3.55,
     "youtube_auto_validated": false,
     "youtube_video_id": "3i9pxew6-Xg",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://martindupont.bandcamp.com/music",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1040304481/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-05",
     "youtube_validated": true,
     "youtube_validated_via": "discord-reaction",
@@ -41214,9 +41215,9 @@
     "youtube_score": 5.55,
     "youtube_auto_validated": false,
     "youtube_video_id": "VopcuxrYft4",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://lucidvox-band.bandcamp.com/album/we-are",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2080399925/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-09"
   },
   "ALEXIS LUMIÈRE": {
@@ -41297,9 +41298,9 @@
     "youtube_score": 5.29,
     "youtube_auto_validated": false,
     "youtube_video_id": "ZU-LAKtqU2Q",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://musiqueexe.bandcamp.com/album/adventurism",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2315575927/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-10"
   },
   "ENOTRI": {
@@ -41380,9 +41381,9 @@
     "youtube_score": 1.44,
     "youtube_auto_validated": false,
     "youtube_video_id": "RE6e_CWmai0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://taliaproduzioni.bandcamp.com/track/conchiglia",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=728347445/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-10"
   },
   "MASCULINE FÉMININE": {
@@ -41463,9 +41464,9 @@
     "youtube_score": 0.83,
     "youtube_auto_validated": false,
     "youtube_video_id": "272WZTu87YI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://musiclovers.bandcamp.com/album/masculine-feminine",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2341615298/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-10"
   },
   "Release Party : COUR DE RÉCRÉ": {
@@ -41546,9 +41547,9 @@
     "youtube_score": 3.83,
     "youtube_auto_validated": false,
     "youtube_video_id": "9hCF63u7Xv0",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://newadventuresinpop.bandcamp.com/track/pink-punk-party",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2210428032/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-10"
   },
   "GORSED NOCTIS": {
@@ -41629,9 +41630,9 @@
     "youtube_score": 5.22,
     "youtube_auto_validated": false,
     "youtube_video_id": "uDusRzkM-zY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://gorsednoctisofficial.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3219107968/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-11"
   },
   "LEG IT": {
@@ -41712,9 +41713,9 @@
     "youtube_score": 1.38,
     "youtube_auto_validated": false,
     "youtube_video_id": "9fFjIGu9wOI",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://executivelegs.bandcamp.com/album/leg-it",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2456104945/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-11"
   },
   "Soutien à L’Autonomie : AUCH!": {
@@ -41797,7 +41798,7 @@
     "youtube_video_id": "wZ5laIZwBQ0",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-11"
   },
   "ADA": {
@@ -41879,9 +41880,9 @@
     "youtube_validated": true,
     "youtube_auto_validated": true,
     "youtube_video_id": "sbYHfJjsH_Q",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://adarave.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3844817792/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "DAYDREAMS OF A MAD KING": {
@@ -41962,9 +41963,9 @@
     "youtube_score": 5.36,
     "youtube_auto_validated": false,
     "youtube_video_id": "yfKU2ZDEiz8",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://bigelectriccat.bandcamp.com/album/dreams-of-a-mad-king",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2510485758/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "DEATH FROM ABOVE": {
@@ -42045,9 +42046,9 @@
     "youtube_score": 1.8,
     "youtube_auto_validated": false,
     "youtube_video_id": "sdQqgVzex_w",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://deathfromabove1979.bandcamp.com/music",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1239413966/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "FLYING PIKES": {
@@ -42128,9 +42129,9 @@
     "youtube_score": 0.81,
     "youtube_auto_validated": false,
     "youtube_video_id": "4JkA68kceCw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://bucketheadpikes.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1836643031/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "FUN FUN FUNERAL": {
@@ -42213,7 +42214,7 @@
     "youtube_video_id": "RU9MdRJb5GI",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "KCIDY": {
@@ -42294,9 +42295,9 @@
     "youtube_score": 5.57,
     "youtube_auto_validated": false,
     "youtube_video_id": "yO4Y1fPDfEc",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://kcidy.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=690958723/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "NICOLAS.BARJAK": {
@@ -42379,7 +42380,7 @@
     "youtube_video_id": "jXg0U01jQVg",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "Pyroliz invite KENT’S": {
@@ -42408,7 +42409,7 @@
     "youtube_video_id": "gRkWlTPvRKM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-12"
   },
   "BERGÉ VERSER": {
@@ -42489,16 +42490,16 @@
     "youtube_score": 3.26,
     "youtube_auto_validated": false,
     "youtube_video_id": "IDCn04xi9SE",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://tuf-music.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3476054863/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-16"
   },
   "Release party : MINITELLE XEROXE": {
     "youtube_video_id": "k3eKSURUvKg",
-    "bandcamp_url": "",
+    "bandcamp_url": "https://minitellexeroxe.bandcamp.com/",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-16"
   },
   "DJ sets : M!A": {
@@ -42579,9 +42580,9 @@
     "youtube_score": 3.92,
     "youtube_auto_validated": false,
     "youtube_video_id": "eQ-OVsdK-hM",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://mouseatouille.bandcamp.com/album/dj-set",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=645880715/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-17"
   },
   "J'IRAI SEP LIVE": {
@@ -42662,9 +42663,9 @@
     "youtube_score": 3.6,
     "youtube_auto_validated": false,
     "youtube_video_id": "WzBW7Cd-5Bw",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://lessoucoupesviolentes.bandcamp.com/track/seven-days",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1714698791/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-17"
   },
   "ROSIE": {
@@ -42745,9 +42746,9 @@
     "youtube_score": 3.68,
     "youtube_auto_validated": false,
     "youtube_video_id": "nL-zj7leEfA",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://roughhouserosiee.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=4093071800/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-17"
   },
   "VJing : JEUNE SORCIER": {
@@ -42830,7 +42831,7 @@
     "youtube_video_id": "Y_ooaWy_-vk",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-17"
   },
   "N:OR": {
@@ -42911,16 +42912,16 @@
     "youtube_score": 0.73,
     "youtube_auto_validated": false,
     "youtube_video_id": "SZGSigx54UY",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://opaltapes.bandcamp.com/track/is-it-the-n-or-the-o",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=293171401/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-18"
   },
   "Antiform by NUL EN TEKNO PRODUCTION": {
-    "youtube_video_id": "JcjT7zgs6cs",
+    "youtube_video_id": "eRAkPz0lPqM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_searched": true,
     "event_date": "2026-12-19"
   },
   "FEU": {
@@ -43001,9 +43002,9 @@
     "youtube_score": 1.04,
     "youtube_auto_validated": false,
     "youtube_video_id": "iUCJhD_2zmA",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false,
+    "bandcamp_url": "https://feufeufeu.bandcamp.com/album/l-dessous-il-ne-pleut-pas",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1187634341/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
     "event_date": "2026-12-19"
   }
 }
