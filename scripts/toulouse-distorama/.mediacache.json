@@ -43710,11 +43710,15 @@
     ],
     "youtube_score": 0.76,
     "youtube_auto_validated": false,
-    "youtube_video_id": "VjXdKzUCMTY",
+    "youtube_video_id": "",
     "bandcamp_url": "https://mrzebre.bandcamp.com/",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2518652955/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-06"
+    "event_date": "2026-12-06",
+    "youtube_rejected_ids": [
+      "VjXdKzUCMTY"
+    ],
+    "youtube_validated": false
   },
   "Soutien aux éditions indés ! Tombola du Kiosk": {
     "youtube_video_id": "wZ8vHymad_s",
