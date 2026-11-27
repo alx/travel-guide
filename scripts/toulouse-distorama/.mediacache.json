@@ -3213,7 +3213,7 @@
     "bandcamp_searched": false
   },
   "HOLYFISH": {
-    "youtube_video_id": "lCKq-60aJnU",
+    "youtube_video_id": "",
     "bandcamp_url": "https://holyfish.bandcamp.com/album/never-coming-back",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3746846398/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -3293,7 +3293,11 @@
       }
     ],
     "youtube_score": 5.5,
-    "youtube_auto_validated": false
+    "youtube_auto_validated": false,
+    "youtube_rejected_ids": [
+      "lCKq-60aJnU"
+    ],
+    "youtube_validated": false
   },
   "RED QUIET (sludge/noise) - CHIHUAS OF DEPTHS (rock alternatif) - KAALBAÅR": {
     "youtube_video_id": "",
