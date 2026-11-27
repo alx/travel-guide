@@ -43623,11 +43623,15 @@
     ],
     "youtube_score": 0.93,
     "youtube_auto_validated": false,
-    "youtube_video_id": "WG1r8lebeLo",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-12-06"
+    "event_date": "2026-12-06",
+    "youtube_rejected_ids": [
+      "WG1r8lebeLo"
+    ],
+    "youtube_validated": false
   },
   "ZEBRE": {
     "youtube_candidates": [
