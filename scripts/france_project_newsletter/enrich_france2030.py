@@ -28,9 +28,11 @@ import io
 import json
 import os
 import pathlib
+import re
 import sqlite3
 import unicodedata
 from datetime import datetime, timezone
+from urllib.parse import urlparse, urlunparse
 
 import requests
 
@@ -58,10 +60,33 @@ def normalize(s: str) -> str:
     return " ".join(s.split())
 
 
+def build_validated_url(base_url: str) -> str:
+    try:
+        # Minimal path validation
+        if "/../" in base_url or re.search(r"/%2e%2e/", base_url, re.IGNORECASE):
+            raise ValueError("Invalid path")
+        
+        parsed = urlparse(base_url)
+        
+        # Protocol + host checks
+        if parsed.scheme not in ("http", "https"):
+            raise ValueError("Invalid protocol")
+        if not parsed.hostname:
+            raise ValueError("Invalid host")
+        allowed_domains = ["www.data.gouv.fr"]
+        if parsed.hostname.lower() not in allowed_domains:
+            raise ValueError("Invalid host")
+        
+        return urlunparse(parsed)
+    except Exception:
+        raise ValueError("Invalid URL")
+
+
 def load_csv(path_or_url: str) -> list[dict]:
     if path_or_url.startswith("http"):
         try:
-            r = requests.get(path_or_url, timeout=30)
+            validated_url = build_validated_url(path_or_url)
+            r = requests.get(validated_url, timeout=30)
             r.raise_for_status()
             text = r.text
         except Exception as exc:
