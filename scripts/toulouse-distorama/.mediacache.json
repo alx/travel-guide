@@ -4051,7 +4051,7 @@
     "youtube_validated": true
   },
   "COUP DROIT": {
-    "youtube_video_id": "5h56bKeGbHw",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -4131,7 +4131,11 @@
     ],
     "youtube_score": 0.7,
     "youtube_auto_validated": false,
-    "event_date": "2026-12-05"
+    "event_date": "2026-12-05",
+    "youtube_rejected_ids": [
+      "5h56bKeGbHw"
+    ],
+    "youtube_validated": false
   },
   "GRUESOME PLEDGE": {
     "youtube_video_id": "S8ztvVYzxo4",
