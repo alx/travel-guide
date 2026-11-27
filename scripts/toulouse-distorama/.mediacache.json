@@ -1754,8 +1754,10 @@
     "youtube_rejected_ids": [
       "eFvIg2QmgjI"
     ],
-    "youtube_validated": false,
-    "event_date": "2026-11-26"
+    "youtube_validated": true,
+    "event_date": "2026-12-08",
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-27"
   },
   "VÉTUSTE": {
     "youtube_video_id": "Z1pA1JDkJGg",
