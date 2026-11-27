@@ -43804,11 +43804,15 @@
     ],
     "youtube_score": 0.88,
     "youtube_auto_validated": false,
-    "youtube_video_id": "kgi3XOjCJUk",
+    "youtube_video_id": "",
     "bandcamp_url": "https://thediscussion.bandcamp.com/music",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=447488521/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-07"
+    "event_date": "2026-12-07",
+    "youtube_rejected_ids": [
+      "kgi3XOjCJUk"
+    ],
+    "youtube_validated": false
   },
   "super repas": {
     "youtube_candidates": [
