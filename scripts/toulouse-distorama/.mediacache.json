@@ -41561,11 +41561,15 @@
     ],
     "youtube_score": 0.83,
     "youtube_auto_validated": false,
-    "youtube_video_id": "272WZTu87YI",
+    "youtube_video_id": "",
     "bandcamp_url": "https://musiclovers.bandcamp.com/album/masculine-feminine",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2341615298/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-10"
+    "event_date": "2026-12-10",
+    "youtube_rejected_ids": [
+      "272WZTu87YI"
+    ],
+    "youtube_validated": false
   },
   "Release Party : COUR DE RÉCRÉ": {
     "youtube_candidates": [
