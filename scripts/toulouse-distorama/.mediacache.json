@@ -41474,11 +41474,15 @@
     ],
     "youtube_score": 1.44,
     "youtube_auto_validated": false,
-    "youtube_video_id": "RE6e_CWmai0",
+    "youtube_video_id": "",
     "bandcamp_url": "https://taliaproduzioni.bandcamp.com/track/conchiglia",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=728347445/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-10"
+    "event_date": "2026-12-10",
+    "youtube_rejected_ids": [
+      "RE6e_CWmai0"
+    ],
+    "youtube_validated": false
   },
   "MASCULINE FÉMININE": {
     "youtube_candidates": [
