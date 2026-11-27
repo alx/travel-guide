@@ -41648,11 +41648,15 @@
     ],
     "youtube_score": 3.83,
     "youtube_auto_validated": false,
-    "youtube_video_id": "9hCF63u7Xv0",
+    "youtube_video_id": "",
     "bandcamp_url": "https://newadventuresinpop.bandcamp.com/track/pink-punk-party",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2210428032/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-10"
+    "event_date": "2026-12-10",
+    "youtube_rejected_ids": [
+      "9hCF63u7Xv0"
+    ],
+    "youtube_validated": false
   },
   "GORSED NOCTIS": {
     "youtube_candidates": [
