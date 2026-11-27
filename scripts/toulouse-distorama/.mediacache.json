@@ -43257,11 +43257,15 @@
     ],
     "youtube_score": 0.85,
     "youtube_auto_validated": false,
-    "youtube_video_id": "BJii-aPpO9o",
+    "youtube_video_id": "",
     "bandcamp_url": "https://wedgeband.bandcamp.com/music",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2230270489/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-01"
+    "event_date": "2026-12-01",
+    "youtube_rejected_ids": [
+      "BJii-aPpO9o"
+    ],
+    "youtube_validated": false
   },
   "Release Party: SHOESHINERS": {
     "youtube_candidates": [
