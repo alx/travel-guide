@@ -43895,11 +43895,15 @@
     ],
     "youtube_score": 0.82,
     "youtube_auto_validated": false,
-    "youtube_video_id": "3EJW7m6lplY",
+    "youtube_video_id": "",
     "bandcamp_url": "https://vialka.bandcamp.com/album/plus-vite-que-la-musique",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=886939535/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-07"
+    "event_date": "2026-12-07",
+    "youtube_rejected_ids": [
+      "3EJW7m6lplY"
+    ],
+    "youtube_validated": false
   },
   "MICHEL CLOUP TRIO": {
     "youtube_candidates": [
