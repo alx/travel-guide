@@ -43337,11 +43337,15 @@
     ],
     "youtube_score": 3.42,
     "youtube_auto_validated": false,
-    "youtube_video_id": "RR_K0L7B7RM",
+    "youtube_video_id": "",
     "bandcamp_url": "https://boyscoutaudio.bandcamp.com/album/h-r",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2763893707/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-03"
+    "event_date": "2026-12-03",
+    "youtube_rejected_ids": [
+      "RR_K0L7B7RM"
+    ],
+    "youtube_validated": false
   },
   "Soutien à Autonomie : AESTAS": {
     "youtube_video_id": "iGL4NCXnW-4",
