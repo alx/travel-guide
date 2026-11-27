@@ -43453,7 +43453,11 @@
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-12-06"
+    "event_date": "2026-12-06",
+    "youtube_rejected_ids": [
+      "7wKyL5hqR1s"
+    ],
+    "youtube_validated": false
   },
   "Super goûter": {
     "youtube_candidates": [
