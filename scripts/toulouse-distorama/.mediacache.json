@@ -45203,11 +45203,15 @@
     "event_date": "2026-12-22"
   },
   "LADY MISS PENELOPE (DJset riot grrrls": {
-    "youtube_video_id": "H4M3GmJXe2s",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
-    "event_date": "2026-12-05"
+    "event_date": "2026-12-05",
+    "youtube_rejected_ids": [
+      "H4M3GmJXe2s"
+    ],
+    "youtube_validated": false
   },
   "Apéro de Noël": {
     "youtube_candidates": [
