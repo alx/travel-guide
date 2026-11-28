@@ -3215,11 +3215,11 @@
     "bandcamp_searched": false
   },
   "HOLYFISH": {
-    "youtube_video_id": "",
+    "youtube_video_id": "eN-nAVd9SUY",
     "bandcamp_url": "https://holyfish.bandcamp.com/album/never-coming-back",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3746846398/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-11-14",
+    "event_date": "2026-12-05",
     "youtube_candidates": [
       {
         "id": "",
@@ -3234,8 +3234,8 @@
         "id": "eN-nAVd9SUY",
         "title": "HOLYFISH - EPILOGUE | Live Session",
         "channel": "HOLYFISH",
-        "views": 1079,
-        "score": 5.38,
+        "views": 1338,
+        "score": 5.39,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=eN-nAVd9SUY"
       },
@@ -3243,8 +3243,8 @@
         "id": "DNRjaQVMPs4",
         "title": "HOLYFISH - Day To Day (Live From EPILOGUE Session)",
         "channel": "HOLYFISH",
-        "views": 276,
-        "score": 5.31,
+        "views": 379,
+        "score": 5.32,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=DNRjaQVMPs4"
       },
@@ -3252,8 +3252,8 @@
         "id": "2jtMCW67cYU",
         "title": "HOLYFISH - Mute Sea (Live From EPILOGUE Session)",
         "channel": "HOLYFISH",
-        "views": 223,
-        "score": 5.29,
+        "views": 260,
+        "score": 5.3,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=2jtMCW67cYU"
       },
@@ -3261,7 +3261,7 @@
         "id": "XMs82rSNA-E",
         "title": "HOLYFISH - Blame (Live From EPILOGUE Session)",
         "channel": "HOLYFISH",
-        "views": 133,
+        "views": 154,
         "score": 5.27,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=XMs82rSNA-E"
@@ -3270,7 +3270,7 @@
         "id": "GMtLVQAgIF8",
         "title": "Garbage/Big boy - LIVE AT THE BLACK CAT PUB BORDEAUX - HOLYFISH",
         "channel": "HOLYFISH",
-        "views": 170,
+        "views": 184,
         "score": 5.28,
         "live": 1,
         "url": "https://www.youtube.com/watch?v=GMtLVQAgIF8"
@@ -3279,22 +3279,22 @@
         "id": "oQgSc4Wi-n4",
         "title": "Day To Day",
         "channel": "HOLYFISH - Topic",
-        "views": 418,
+        "views": 432,
         "score": 1.33,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=oQgSc4Wi-n4"
       },
       {
-        "id": "lCKq-60aJnU",
-        "title": "pick up the call! |holyfish| ibispaint animation.",
-        "channel": "Holyfish",
-        "views": 9930,
-        "score": 5.5,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=lCKq-60aJnU"
+        "id": "OWWNxlnhfHo",
+        "title": "Bubble",
+        "channel": "HOLYFISH - Topic",
+        "views": 447,
+        "score": 1.33,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=OWWNxlnhfHo"
       }
     ],
-    "youtube_score": 5.5,
+    "youtube_score": 5.39,
     "youtube_auto_validated": false,
     "youtube_rejected_ids": [
       "lCKq-60aJnU"
@@ -4051,7 +4051,7 @@
     "youtube_validated": true
   },
   "COUP DROIT": {
-    "youtube_video_id": "",
+    "youtube_video_id": "-Ymf3BMDfcY",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -4060,7 +4060,7 @@
         "id": "xue9cSVZp-U",
         "title": "Comment réussir un coup droit ? - Tuto Tennis Technique #4 avec Paul-Henri Mathieu | FFT",
         "channel": "Fédération Française de Tennis",
-        "views": 142091,
+        "views": 142214,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=xue9cSVZp-U"
@@ -4069,7 +4069,7 @@
         "id": "4J7wZ7NTIeU",
         "title": "5 Étapes pour un Coup Droit Parfait (technique d’une pro)",
         "channel": "Pauline Payet",
-        "views": 80302,
+        "views": 80548,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=4J7wZ7NTIeU"
@@ -4078,7 +4078,7 @@
         "id": "5h56bKeGbHw",
         "title": "Comment FRAPPER le Coup Droit PARFAIT",
         "channel": "Jules Marie",
-        "views": 419635,
+        "views": 419799,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=5h56bKeGbHw"
@@ -4087,7 +4087,7 @@
         "id": "v0oL_s154xg",
         "title": "Comment faire un coup droit au tennis ? (4 étapes faciles)",
         "channel": "Grégoire & Vincent – Club House",
-        "views": 119794,
+        "views": 119832,
         "score": 0.63,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=v0oL_s154xg"
@@ -4096,40 +4096,40 @@
         "id": "YTZzEkzNZ5A",
         "title": "Comment faire un bon coup droit ?",
         "channel": "Pauline Payet",
-        "views": 95324,
+        "views": 95517,
         "score": 0.62,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=YTZzEkzNZ5A"
       },
       {
-        "id": "wRUeJoPHuYA",
-        "title": "Gestuelle complète en coup droit  #tenniscoach #tennis",
-        "channel": "Riviera Tennis Coaching",
-        "views": 2387,
-        "score": 0.42,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=wRUeJoPHuYA"
-      },
-      {
         "id": "-Ymf3BMDfcY",
         "title": "coup droit tennis - fondamentaux techniques pour débutants",
         "channel": "Tennis Pourcentage",
-        "views": 166633,
+        "views": 166652,
         "score": 0.65,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=-Ymf3BMDfcY"
       },
       {
+        "id": "Xp_ypn9Dkuo",
+        "title": "Apprendre à frapper un coup droit | Tennis",
+        "channel": "SIKANA Français",
+        "views": 35240,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Xp_ypn9Dkuo"
+      },
+      {
         "id": "rIzfQchuq3M",
         "title": "Exploite une balle lente pour attaquer et finir en coup droit🎾🔥💥",
         "channel": "Frédéric Petitjean ",
-        "views": 16010,
+        "views": 16025,
         "score": 0.53,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=rIzfQchuq3M"
       }
     ],
-    "youtube_score": 0.7,
+    "youtube_score": 0.65,
     "youtube_auto_validated": false,
     "event_date": "2026-12-05",
     "youtube_rejected_ids": [
@@ -8743,10 +8743,87 @@
     "bandcamp_searched": false
   },
   "CUT FACE": {
-    "youtube_video_id": "Ey95IFCz8_Q",
-    "bandcamp_url": "",
-    "bandcamp_embed_url": "",
-    "bandcamp_searched": false
+    "youtube_video_id": "CQ4LSLIT-rw",
+    "bandcamp_url": "https://cutface.bandcamp.com/",
+    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1939753619/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "bandcamp_searched": true,
+    "youtube_candidates": [
+      {
+        "id": "Ey95IFCz8_Q",
+        "title": "Cut Face - Those Sundays",
+        "channel": "Cut Face",
+        "views": 737,
+        "score": 5.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=Ey95IFCz8_Q"
+      },
+      {
+        "id": "CQ4LSLIT-rw",
+        "title": "CUT FACE - Those Sundays (Live Session)",
+        "channel": "Cut Face",
+        "views": 4639,
+        "score": 5.46,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=CQ4LSLIT-rw"
+      },
+      {
+        "id": "hboKkaZ_ps0",
+        "title": "Bulk Face VS Cut Face",
+        "channel": "Prem Joshi",
+        "views": 748987,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=hboKkaZ_ps0"
+      },
+      {
+        "id": "LEaAXkhExSk",
+        "title": "Cut Face - Tomorrow&#39;s Echo",
+        "channel": "Cut Face",
+        "views": 159,
+        "score": 5.28,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=LEaAXkhExSk"
+      },
+      {
+        "id": "CRSXYHPJ1a8",
+        "title": "Cut Face - You&#39;ll Never Get The Same Moment Twice",
+        "channel": "Cut Face",
+        "views": 817,
+        "score": 5.36,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=CRSXYHPJ1a8"
+      },
+      {
+        "id": "2J1qRyEXdt0",
+        "title": "Cut Face - Upgrade (Official Video)",
+        "channel": "Cut Face",
+        "views": 3454,
+        "score": 5.44,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=2J1qRyEXdt0"
+      },
+      {
+        "id": "lQJQWG-Of2A",
+        "title": "How to get perfect face shape 🧐‼️🔥#fitness #motivation#gym#homeworkout #bodybuilding#jawlinegoals#yt",
+        "channel": "YTGAMINGBORME",
+        "views": 7796218,
+        "score": 0.86,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=lQJQWG-Of2A"
+      },
+      {
+        "id": "cC1jr1mhKe4",
+        "title": "How To Cut Face Framing Bangs @asgar_hairstylist",
+        "channel": "Cool Clips Salon",
+        "views": 38038,
+        "score": 0.57,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=cC1jr1mhKe4"
+      }
+    ],
+    "youtube_score": 5.46,
+    "youtube_auto_validated": false,
+    "event_date": "2026-11-28"
   },
   "THE COVIDS": {
     "youtube_video_id": "qx7ul0mw2us",
@@ -24394,7 +24471,7 @@
     "youtube_video_id": "ZwmTdmUXQko",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-08"
   },
   "SO BEAST": {
@@ -27317,10 +27394,10 @@
     "youtube_auto_validated": false
   },
   "Les Vidéophages : Cinéma Sous Les Étoiles": {
-    "youtube_video_id": "cq3vAOxUvpg",
+    "youtube_video_id": "59i4PneHLCU",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-16",
     "youtube_rejected_ids": [
       "YQbESMdRwhA",
@@ -27848,7 +27925,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-17"
   },
   "TÉLÉCASTRÉ": {
@@ -28018,10 +28095,10 @@
     "youtube_validated_at": "2026-10-04"
   },
   "L’Aube Tattoo (illustration /sketches) en guest sur rendez-vous": {
-    "youtube_video_id": "W0spBAKt6gg",
-    "bandcamp_url": "https://anjo.bandcamp.com/",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2983903705/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "UdccyFjE4HM",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-10-19",
     "youtube_rejected_ids": [
       "MGDVe3ePvpo"
@@ -29484,10 +29561,10 @@
     "youtube_validated": false
   },
   "Toulouse Noise Consortium : Scène ouverte de bruits et poésie sonore": {
-    "youtube_video_id": "EIvxOkTN14g",
-    "bandcamp_url": "https://bandcamp.com/discover/carte-postale-sonore",
+    "youtube_video_id": "j7ZKmiVydBM",
+    "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-24",
     "youtube_rejected_ids": [
       "Xn_rP9Swa-M"
@@ -29769,7 +29846,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-27"
   },
   "KELLEY STOLTZ": {
@@ -31636,10 +31713,10 @@
     "youtube_validated_at": "2026-10-05"
   },
   "SUPERCONTENTSDET'LÀ": {
-    "youtube_video_id": "hUO2M5hJWls",
+    "youtube_video_id": "2YV1vbHbLy8",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-10-17",
     "youtube_rejected_ids": [
       "E9Cku97WSO8"
@@ -32667,10 +32744,10 @@
     "event_date": "2026-11-03"
   },
   "Pédales & Vandales #2 « Queervember » : RUM3UR": {
-    "youtube_video_id": "tWwPT1EZvno",
+    "youtube_video_id": "X81LIsrAetQ",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-04",
     "youtube_rejected_ids": [
       "4f6_X-uHulk"
@@ -34935,7 +35012,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-01",
     "youtube_rejected_ids": [
       "6Jt1zMuioAE",
@@ -35110,10 +35187,10 @@
     "event_date": "2026-11-06"
   },
   "KLUB2CŒUR": {
-    "youtube_video_id": "KwaU-SYMBpw",
+    "youtube_video_id": "aHjFBwjrN0E",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-06"
   },
   "TOULOUSE HARDCORE": {
@@ -36806,7 +36883,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-22"
   },
   "MANSION'S CELLAR": {
@@ -37240,7 +37317,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-26",
     "youtube_rejected_ids": [
       "cPMyICKG-1s"
@@ -38469,7 +38546,7 @@
     "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-20",
     "youtube_rejected_ids": [
       "OBPmJD85Slk"
@@ -39844,7 +39921,7 @@
     "youtube_video_id": "6Vy6Sv92DV4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-11-21"
   },
   "JOAQUIN ORTEGA": {
@@ -41403,7 +41480,7 @@
         "id": "RE6e_CWmai0",
         "title": "L’antico popolo degli ENOTRI.",
         "channel": "Calabria Enotria",
-        "views": 3137,
+        "views": 3149,
         "score": 1.44,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=RE6e_CWmai0"
@@ -41412,53 +41489,53 @@
         "id": "RLHhavkbTHg",
         "title": "Enotria: The Last Song - Official Trailer",
         "channel": "IGN",
-        "views": 183815,
+        "views": 184496,
         "score": 0.66,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=RLHhavkbTHg"
       },
       {
-        "id": "LQ5WVilQ1pY",
-        "title": "Gli Enotri e come cucinavano in Calabria 3300 anni fa.",
-        "channel": "cristian di marco",
-        "views": 199,
-        "score": 0.29,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=LQ5WVilQ1pY"
-      },
-      {
         "id": "N7fft9h7wT4",
         "title": "Enotria: The Last Song - First Impressions - (Full Video on Channel)",
         "channel": "Auzf",
-        "views": 81406,
+        "views": 82114,
         "score": 0.61,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=N7fft9h7wT4"
       },
       {
-        "id": "1MQTd4V3984",
-        "title": "01 - Storia di Calabria: Alla ricerca degli Enotri",
-        "channel": "LeStorieInfinite",
-        "views": 385,
-        "score": 0.32,
+        "id": "LQ5WVilQ1pY",
+        "title": "Gli Enotri e come cucinavano in Calabria 3300 anni fa.",
+        "channel": "Nuovo ok bar",
+        "views": 201,
+        "score": 0.29,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=1MQTd4V3984"
+        "url": "https://www.youtube.com/watch?v=LQ5WVilQ1pY"
       },
       {
         "id": "K04K4CE7dbk",
         "title": "Italo: Il Re degli Enotri che Diede il Nome all&#39;Italia",
         "channel": "Passato e tela: viaggio nella storia e nell'arte.",
-        "views": 20069,
+        "views": 20077,
         "score": 0.54,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=K04K4CE7dbk"
       },
       {
+        "id": "1MQTd4V3984",
+        "title": "01 - Storia di Calabria: Alla ricerca degli Enotri",
+        "channel": "LeStorieInfinite",
+        "views": 387,
+        "score": 0.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=1MQTd4V3984"
+      },
+      {
         "id": "NqXnG1BbhPw",
         "title": "The Squandered Potential of Enotria: The Last Song",
         "channel": "Serjuh",
-        "views": 7534,
-        "score": 0.48,
+        "views": 7646,
+        "score": 0.49,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=NqXnG1BbhPw"
       },
@@ -41466,18 +41543,18 @@
         "id": "5SyaovatKbs",
         "title": "Enotria: The Last Song | 1-Minute Review",
         "channel": "Omnivert Gamer",
-        "views": 6303,
-        "score": 0.47,
+        "views": 6423,
+        "score": 0.48,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=5SyaovatKbs"
       }
     ],
-    "youtube_score": 1.44,
+    "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://taliaproduzioni.bandcamp.com/track/conchiglia",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=728347445/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "RLHhavkbTHg",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
       "RE6e_CWmai0"
@@ -41487,28 +41564,28 @@
   "MASCULINE FÉMININE": {
     "youtube_candidates": [
       {
-        "id": "AaJTxUwLAvM",
-        "title": "Comment savoir si un mot est 🚹MASCULIN ou 🚺FÉMININ en français ? (QUIZ + EXPLICATIONS)",
-        "channel": "Guillaume Posé - Professeur de français",
-        "views": 274381,
-        "score": 0.68,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=AaJTxUwLAvM"
-      },
-      {
         "id": "1k7biUvtZVI",
         "title": "masculine and feminine noun",
         "channel": "English Grammar - High School Level",
-        "views": 2040193,
+        "views": 2049810,
         "score": 0.79,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=1k7biUvtZVI"
       },
       {
+        "id": "AaJTxUwLAvM",
+        "title": "Comment savoir si un mot est 🚹MASCULIN ou 🚺FÉMININ en français ? (QUIZ + EXPLICATIONS)",
+        "channel": "Guillaume Posé - Professeur de français",
+        "views": 275000,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AaJTxUwLAvM"
+      },
+      {
         "id": "d7ouAN5qt38",
         "title": "Apprendre le Masculin  et le Féminin",
         "channel": "Eveiller mon enfant",
-        "views": 570715,
+        "views": 571422,
         "score": 0.72,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=d7ouAN5qt38"
@@ -41517,8 +41594,8 @@
         "id": "LSgQF-tVKTY",
         "title": "Masculine Feminine (Masculin Féminin) (1966) Trailer",
         "channel": "Movieix",
-        "views": 7535,
-        "score": 0.48,
+        "views": 7621,
+        "score": 0.49,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=LSgQF-tVKTY"
       },
@@ -41526,45 +41603,45 @@
         "id": "wSa4f9Iy7_4",
         "title": "30 Masculine and Feminine gender | Noun Gender | Change the Gender | English Grammar  #shorts",
         "channel": "Learning Hub",
-        "views": 2575321,
+        "views": 2592508,
         "score": 0.8,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=wSa4f9Iy7_4"
       },
       {
+        "id": "272WZTu87YI",
+        "title": "30 Masculine and Feminine Nouns | Gender of Nouns in English | #shorts #englishgrammar #english",
+        "channel": "Chamak Study",
+        "views": 4583836,
+        "score": 0.83,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=272WZTu87YI"
+      },
+      {
         "id": "nEO20CeonPw",
         "title": "Masculine → Average → Feminine → Ultra Feminine #aestheic #face #beauty",
         "channel": "Skin",
-        "views": 318574,
+        "views": 324519,
         "score": 0.69,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=nEO20CeonPw"
       },
       {
-        "id": "jSKdFLMqa_0",
-        "title": "Grammaire : Le genre du nom / masculin et féminin CP / CE1",
-        "channel": "Français avec Hanan Éducation",
-        "views": 163285,
-        "score": 0.65,
+        "id": "eal-HxLMk_E",
+        "title": "Féminin et masculin en équilibre - Arnaud Riou",
+        "channel": "Arnaud Riou",
+        "views": 31454,
+        "score": 0.56,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=jSKdFLMqa_0"
-      },
-      {
-        "id": "272WZTu87YI",
-        "title": "30 Masculine and Feminine Nouns | Gender of Nouns in English | #shorts #englishgrammar #english",
-        "channel": "Chamak Study",
-        "views": 4568490,
-        "score": 0.83,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=272WZTu87YI"
+        "url": "https://www.youtube.com/watch?v=eal-HxLMk_E"
       }
     ],
-    "youtube_score": 0.83,
+    "youtube_score": 0.8,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://musiclovers.bandcamp.com/album/masculine-feminine",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2341615298/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "wSa4f9Iy7_4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
       "272WZTu87YI"
@@ -41574,31 +41651,40 @@
   "Release Party : COUR DE RÉCRÉ": {
     "youtube_candidates": [
       {
-        "id": "M9zxET6HlUg",
-        "title": "@Indiehoffman (IG) putting on a surfing clinic in Noosa! #surfergirl #surfgirl # #surfaustralia",
-        "channel": "Totland.pictures",
-        "views": 126124,
-        "score": 0.64,
+        "id": "hlyQnWwSaNo",
+        "title": "穿成炮灰反派，覺醒系統，靠做好人逆襲了！",
+        "channel": "笑笑看劇",
+        "views": 207421,
+        "score": 0.66,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=M9zxET6HlUg"
+        "url": "https://www.youtube.com/watch?v=hlyQnWwSaNo"
+      },
+      {
+        "id": "Evsu3qoU83o",
+        "title": "Horse Training  Mastering Pressure and Release Techniques",
+        "channel": "Double Diamond Hill Ranch",
+        "views": 551,
+        "score": 0.34,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Evsu3qoU83o"
       },
       {
         "id": "QGAqY9-KfCU",
         "title": "#dance #classes #danceclass #tahitidancefitness #workout #oritahiti #tahitiandance #online #fitness",
         "channel": "Tahiti Dance Fitness",
-        "views": 121041,
+        "views": 121044,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=QGAqY9-KfCU"
       },
       {
-        "id": "68XJla3DWw8",
-        "title": "How do you play the hula hoop game?😵‍💫🤪",
-        "channel": "Gurung Vj",
-        "views": 189092,
-        "score": 0.66,
+        "id": "nR6X3KeN2SY",
+        "title": "What&#39;s Happening on the Kern River?",
+        "channel": "Kern River Fly Shop / Guy Jeans",
+        "views": 2357,
+        "score": 0.42,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=68XJla3DWw8"
+        "url": "https://www.youtube.com/watch?v=nR6X3KeN2SY"
       },
       {
         "id": "qwXlTMFE_p0",
@@ -41610,48 +41696,39 @@
         "url": "https://www.youtube.com/watch?v=qwXlTMFE_p0"
       },
       {
-        "id": "O_V_3jNHoRI",
-        "title": "🔥 Rudeus Returns Stronger Than Ever! | Mushoku Tensei Season 3 Trailer 💥 #shorts",
-        "channel": "Winzer Ami",
-        "views": 432642,
-        "score": 0.7,
+        "id": "j-EXFQsHKvA",
+        "title": "Sophia Grace and Rosie perform &#39;Super Bass&#39; 11 years later #ellen #shorts",
+        "channel": "TheEllenShow",
+        "views": 19289405,
+        "score": 0.91,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=O_V_3jNHoRI"
+        "url": "https://www.youtube.com/watch?v=j-EXFQsHKvA"
       },
       {
-        "id": "9hCF63u7Xv0",
-        "title": "Pink Lily chante Quoicoubeh en Concert !  #pinklily",
-        "channel": "PINK LILY VIDÉO",
-        "views": 4006923,
-        "score": 3.83,
-        "live": 1,
-        "url": "https://www.youtube.com/watch?v=9hCF63u7Xv0"
+        "id": "d5BKIUV3Upo",
+        "title": "Start Your Own Event Decorating Business!",
+        "channel": "Yes! Event Decor & More",
+        "views": 449760,
+        "score": 0.71,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=d5BKIUV3Upo"
       },
       {
-        "id": "8hZy_8njU5E",
-        "title": "🔥【4K超清合集】一口气看完《斗破苍穹年番》EP001-219 全集大结局！无删减纯享，从迦南学院杀穿中州直通双帝之战！#btth #斗破苍穹 #xiaoyan #萧炎",
-        "channel": "ACTION漫客",
-        "views": 12334,
-        "score": 0.51,
+        "id": "-rIYSPtFqPA",
+        "title": "Excellento - Les Cancres Amoureux // Clip",
+        "channel": "Excellento",
+        "views": 10865,
+        "score": 0.5,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=8hZy_8njU5E"
-      },
-      {
-        "id": "4DFK9UFtRnc",
-        "title": "NEW: Just hours after the Idaho student murders, Bryan Kohberger is caught on surveillance video",
-        "channel": "Fox News",
-        "views": 763653,
-        "score": 0.74,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=4DFK9UFtRnc"
+        "url": "https://www.youtube.com/watch?v=-rIYSPtFqPA"
       }
     ],
-    "youtube_score": 3.83,
+    "youtube_score": 0.91,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://newadventuresinpop.bandcamp.com/track/pink-punk-party",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2210428032/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "j-EXFQsHKvA",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
       "9hCF63u7Xv0"
@@ -42603,9 +42680,9 @@
   },
   "Release party : MINITELLE XEROXE": {
     "youtube_video_id": "k3eKSURUvKg",
-    "bandcamp_url": "https://minitellexeroxe.bandcamp.com/",
+    "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-12-16"
   },
   "DJ sets : M!A": {
@@ -43024,10 +43101,10 @@
     "event_date": "2026-12-18"
   },
   "Antiform by NUL EN TEKNO PRODUCTION": {
-    "youtube_video_id": "JcjT7zgs6cs",
+    "youtube_video_id": "vSpwSKbu0As",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-12-19"
   },
   "FEU": {
@@ -43202,83 +43279,83 @@
   "WEDGE": {
     "youtube_candidates": [
       {
-        "id": "XDaIkNPNb2k",
-        "title": "[Limbus Company] Wedge Outis with Facade is... something",
-        "channel": "Jexnpierre",
-        "views": 144716,
-        "score": 0.65,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=XDaIkNPNb2k"
-      },
-      {
-        "id": "DCNL3sQXjAw",
-        "title": "Power Ups and Handicaps?! - BIG WEDGE vs Tim",
-        "channel": "Takomo Golf",
-        "views": 9479,
-        "score": 0.5,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=DCNL3sQXjAw"
-      },
-      {
         "id": "No5Df2231YA",
         "title": "Simple Machines: The Wedge",
         "channel": "funsciencedemos",
-        "views": 417464,
+        "views": 417556,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=No5Df2231YA"
       },
       {
-        "id": "qqBZeVyVzLM",
-        "title": "THE WEDGE is Firing in November 2026 but the beach has CHANGED!!! (RAW)",
-        "channel": "BEEFS T.V.",
-        "views": 65126,
-        "score": 0.6,
+        "id": "5yuqiYCDpXE",
+        "title": "Press-Stamping the Scorelines on a Fully Custom Wedge❗️🔨✨KOEI GOLF🇯🇵SHINAGAWA #golf",
+        "channel": "KOEI GOLF 🇯🇵 SHINAGAWA",
+        "views": 36390,
+        "score": 0.57,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=qqBZeVyVzLM"
-      },
-      {
-        "id": "pnYobkY-5V8",
-        "title": "Scottie Scheffler and Rory McIlroy&#39;s Wedge Workshop | TaylorMade Golf",
-        "channel": "TaylorMade Golf",
-        "views": 1041929,
-        "score": 0.75,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=pnYobkY-5V8"
+        "url": "https://www.youtube.com/watch?v=5yuqiYCDpXE"
       },
       {
         "id": "FhOFLl9kA6g",
         "title": "Fur leg warmers + wedge heel boots = Llamaxxing",
         "channel": "RealAvaBella",
-        "views": 25384,
-        "score": 0.55,
+        "views": 29804,
+        "score": 0.56,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=FhOFLl9kA6g"
-      },
-      {
-        "id": "BJii-aPpO9o",
-        "title": "Paprika Potato Wedges | Crispy &amp; Smokey",
-        "channel": "Together to Eat",
-        "views": 5757945,
-        "score": 0.85,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=BJii-aPpO9o"
       },
       {
         "id": "z-MOrUvjNm8",
         "title": "Simple Machines – Wedges",
         "channel": "Next Generation Science",
-        "views": 143183,
+        "views": 143503,
         "score": 0.64,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=z-MOrUvjNm8"
+      },
+      {
+        "id": "-Ogc9gnUP5c",
+        "title": "Easy way to felling a straight tree without rope and only wedge. #treefelling #treefeller #chainsaw",
+        "channel": "Slashcut Expert",
+        "views": 15334,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=-Ogc9gnUP5c"
+      },
+      {
+        "id": "pnYobkY-5V8",
+        "title": "Scottie Scheffler and Rory McIlroy&#39;s Wedge Workshop | TaylorMade Golf",
+        "channel": "TaylorMade Golf",
+        "views": 1042417,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=pnYobkY-5V8"
+      },
+      {
+        "id": "oY1sFMa_RFw",
+        "title": "BIG WEDGE GOLF STEAL A CLUB CHALLENGE!",
+        "channel": "Big Wedge Golf",
+        "views": 404408,
+        "score": 1.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=oY1sFMa_RFw"
+      },
+      {
+        "id": "7-WsacN-YB4",
+        "title": "🔧 DIY Wedge-Locked Hoe Handle with Metal Washer Reinforcement",
+        "channel": "WeAreWorking",
+        "views": 391027,
+        "score": 0.7,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=7-WsacN-YB4"
       }
     ],
-    "youtube_score": 0.85,
+    "youtube_score": 1.7,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://wedgeband.bandcamp.com/music",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2230270489/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "youtube_video_id": "oY1sFMa_RFw",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
     "bandcamp_searched": true,
     "event_date": "2026-12-01",
     "youtube_rejected_ids": [
@@ -43289,6 +43366,15 @@
   "Release Party: SHOESHINERS": {
     "youtube_candidates": [
       {
+        "id": "m1B4oxIez2M",
+        "title": "How to remove creases out of your shoes 👞 and finished with a Mirror Shine ✨ #mirrorshine",
+        "channel": "Mr Bull and Shine",
+        "views": 1779176,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=m1B4oxIez2M"
+      },
+      {
         "id": "0iYSfavCYXM",
         "title": "Shoe Shine Events",
         "channel": "Thomas McNees",
@@ -43296,24 +43382,6 @@
         "score": 0.31,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=0iYSfavCYXM"
-      },
-      {
-        "id": "Rxr28LGbn74",
-        "title": "Shoe Shine Events",
-        "channel": "Adrian R Zamora",
-        "views": 591,
-        "score": 0.35,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Rxr28LGbn74"
-      },
-      {
-        "id": "Pb7CuoZjahs",
-        "title": "How to use New black liquid shoe polish?( polish without brush special)#shoepolish #cherryblossom.",
-        "channel": "Paranormal Bharatiya",
-        "views": 135112,
-        "score": 0.64,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=Pb7CuoZjahs"
       },
       {
         "id": "S1ifszmwYDg",
@@ -43325,15 +43393,6 @@
         "url": "https://www.youtube.com/watch?v=S1ifszmwYDg"
       },
       {
-        "id": "8JMLlbn77Eo",
-        "title": "Shoeshine Weekend Improvement",
-        "channel": "Paul Akers",
-        "views": 1804,
-        "score": 0.41,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=8JMLlbn77Eo"
-      },
-      {
         "id": "RR_K0L7B7RM",
         "title": "Show-Me Institute Free-Market Field Trip No. 1: Shoe Shines",
         "channel": "Show-Me Institute",
@@ -43343,29 +43402,47 @@
         "url": "https://www.youtube.com/watch?v=RR_K0L7B7RM"
       },
       {
-        "id": "--Ioehdk45U",
-        "title": "Saint Premium British Lager pop-up shoe shine at Boxpark, Shoreditch",
-        "channel": "enjoysaint",
-        "views": 236,
-        "score": 0.3,
+        "id": "Rxr28LGbn74",
+        "title": "Shoe Shine Events",
+        "channel": "Adrian R Zamora",
+        "views": 591,
+        "score": 0.35,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=--Ioehdk45U"
+        "url": "https://www.youtube.com/watch?v=Rxr28LGbn74"
       },
       {
-        "id": "m1B4oxIez2M",
-        "title": "How to remove creases out of your shoes 👞 and finished with a Mirror Shine ✨ #mirrorshine",
-        "channel": "Mr Bull and Shine",
-        "views": 1777753,
-        "score": 0.78,
+        "id": "kcLXAdrJ1Bg",
+        "title": "Fortis Green Shoeshine",
+        "channel": "Fortis Green Apparel",
+        "views": 143,
+        "score": 0.27,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=m1B4oxIez2M"
+        "url": "https://www.youtube.com/watch?v=kcLXAdrJ1Bg"
+      },
+      {
+        "id": "8JMLlbn77Eo",
+        "title": "Shoeshine Weekend Improvement",
+        "channel": "Paul Akers",
+        "views": 1804,
+        "score": 0.41,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=8JMLlbn77Eo"
+      },
+      {
+        "id": "slUYdhutcV0",
+        "title": "Skip meets the Shoeshine Legend of Douglasville",
+        "channel": "Gold's Gym West Georgia",
+        "views": 247,
+        "score": 0.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=slUYdhutcV0"
       }
     ],
-    "youtube_score": 3.42,
+    "youtube_score": 0.78,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://boyscoutaudio.bandcamp.com/album/h-r",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2763893707/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
+    "youtube_video_id": "m1B4oxIez2M",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
     "bandcamp_searched": true,
     "event_date": "2026-12-03",
     "youtube_rejected_ids": [
@@ -43386,7 +43463,7 @@
         "id": "uYHNdTPV7pM",
         "title": "Hide",
         "channel": "Juice WRLD - Topic",
-        "views": 171784527,
+        "views": 171861160,
         "score": 1.03,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=uYHNdTPV7pM"
@@ -43395,7 +43472,7 @@
         "id": "mYCd4OR9lcM",
         "title": "Hide - Dorian Concept (Slowed x Reverbed)",
         "channel": "Motheory",
-        "views": 6507991,
+        "views": 6523240,
         "score": 0.85,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=mYCd4OR9lcM"
@@ -43404,43 +43481,16 @@
         "id": "qAmCtvPCCE0",
         "title": "Juice WRLD, Seezyn - Hide (Lyrics) (Spider-Man: Into the Spider-Verse)",
         "channel": "Rap City",
-        "views": 16479258,
+        "views": 16485657,
         "score": 0.9,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=qAmCtvPCCE0"
       },
       {
-        "id": "SPtsfsGvTfM",
-        "title": "dialer me app hide kaise kare | dialler mein app ko kaise chhupaye | how to hide app in dialler 2027",
-        "channel": "Tech Tracks",
-        "views": 2277,
-        "score": 0.42,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=SPtsfsGvTfM"
-      },
-      {
-        "id": "-qoVeoG8XuU",
-        "title": "hide with Spread Beaver - ROCKET DIVE",
-        "channel": "hideofficialVEVO",
-        "views": 25193778,
-        "score": 1.93,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=-qoVeoG8XuU"
-      },
-      {
-        "id": "tlFolRo1WiE",
-        "title": "Dorian Concept - &#39;Hide (CS01 Version)&#39; (Official Video)",
-        "channel": "Dorian Concept",
-        "views": 4574191,
-        "score": 0.83,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=tlFolRo1WiE"
-      },
-      {
         "id": "Pvf4ieSqWK8",
         "title": "Dorian Concept - &#39;Hide (Slow)&#39; (Official Video)",
         "channel": "Dorian Concept",
-        "views": 1487176,
+        "views": 1491933,
         "score": 0.77,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Pvf4ieSqWK8"
@@ -43449,15 +43499,42 @@
         "id": "yhrkyR3mLMk",
         "title": "Juice WRLD - HIDE (Spider verse music video)(Official vid)",
         "channel": "Gothic PaNda Art",
-        "views": 6928257,
+        "views": 6931936,
         "score": 0.86,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=yhrkyR3mLMk"
+      },
+      {
+        "id": "rlLk_fYrvhw",
+        "title": "Ella Mai - Hide (Official Lyric Video)",
+        "channel": "EllaMaiVEVO",
+        "views": 2446841,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=rlLk_fYrvhw"
+      },
+      {
+        "id": "NunkOiNQPI8",
+        "title": "App Ko Hide Kaise Kare | Hide App #hide #app",
+        "channel": "Dileep Technical",
+        "views": 654492,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=NunkOiNQPI8"
+      },
+      {
+        "id": "tlFolRo1WiE",
+        "title": "Dorian Concept - &#39;Hide (CS01 Version)&#39; (Official Video)",
+        "channel": "Dorian Concept",
+        "views": 4580180,
+        "score": 0.83,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tlFolRo1WiE"
       }
     ],
-    "youtube_score": 1.93,
+    "youtube_score": 1.03,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "uYHNdTPV7pM",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -43468,7 +43545,7 @@
     "youtube_validated": false
   },
   "Soutien aux éditions indés ! Présentation du livre « Crever le silence »": {
-    "youtube_video_id": "HVrf7BE6SJc",
+    "youtube_video_id": "Fg1jJ1V7l58",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
@@ -43484,61 +43561,61 @@
         "id": "cb0o8-h82z0",
         "title": "Goûter de la flemme hyper simple et rapide",
         "channel": "Jimmy & Laura Astuces",
-        "views": 405785,
+        "views": 406255,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=cb0o8-h82z0"
       },
       {
-        "id": "X01JDi2h_bM",
-        "title": "Le meilleur goûter (Recette Pain de mie + Nutella)",
-        "channel": "FastGoodCuisine Shorts",
-        "views": 1253128,
-        "score": 0.76,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=X01JDi2h_bM"
-      },
-      {
         "id": "LUtFYvfq7UM",
         "title": "Un GOÛTER de la Flemme incroyable !! 🥰🤤 #shorts #short #recette #cuisine #gouter #seizemay #food",
         "channel": "SEIZEMAY",
-        "views": 2271419,
+        "views": 2271857,
         "score": 0.79,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=LUtFYvfq7UM"
       },
       {
+        "id": "X01JDi2h_bM",
+        "title": "Le meilleur goûter (Recette Pain de mie + Nutella)",
+        "channel": "FastGoodCuisine Shorts",
+        "views": 1254015,
+        "score": 0.76,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=X01JDi2h_bM"
+      },
+      {
         "id": "KPdvIs8LKSw",
         "title": "J’essaye le gâteau goutte d’eau 💧 #recette #raindropcake #gateau #patisserie #japonais",
         "channel": "Roxane Tardy",
-        "views": 750018,
+        "views": 751800,
         "score": 0.73,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=KPdvIs8LKSw"
       },
       {
-        "id": "0ZZKYdjF1uw",
-        "title": "Pâtisserie Réaliste : un Canapé XXL comestible #DessertRéaliste #amauryguichon #dessert",
-        "channel": "Angelica Pâtisserie",
-        "views": 1208007,
-        "score": 0.76,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=0ZZKYdjF1uw"
-      },
-      {
         "id": "AnC3FkrPgiE",
         "title": "Le Goûter de la Flemme ! 👍",
         "channel": "SEIZEMAY",
-        "views": 118372,
+        "views": 118616,
         "score": 0.63,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=AnC3FkrPgiE"
       },
       {
+        "id": "Bjrpxq8RY4E",
+        "title": "Dessert express au airfryer 15/20 min à 160°C 🍪 #shorts #airfryerrecipes #airfryer #dessertrecipe",
+        "channel": "Cleanwithcha",
+        "views": 1050192,
+        "score": 0.75,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=Bjrpxq8RY4E"
+      },
+      {
         "id": "BVQKEPyHVeU",
         "title": "Un Goûter de la FLEMME super gourmand !! 🤤😍 #shorts #short #recette #recette #seizemay #gouter",
         "channel": "SEIZEMAY",
-        "views": 173573,
+        "views": 173715,
         "score": 0.65,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=BVQKEPyHVeU"
@@ -43547,15 +43624,15 @@
         "id": "GoDKDdHhpVM",
         "title": "Un GOÛTER de la Flemme hyper gourmand !! 🤤 #shorts #short #recette #gouter #cuisine #seizemay",
         "channel": "SEIZEMAY",
-        "views": 715303,
+        "views": 715531,
         "score": 0.73,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=GoDKDdHhpVM"
       }
     ],
-    "youtube_score": 0.79,
+    "youtube_score": 0.76,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "X01JDi2h_bM",
     "bandcamp_url": "https://cartonsonore.bandcamp.com/album/la-b-o-de-ton-go-ter",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=878998473/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
@@ -43571,7 +43648,7 @@
         "id": "Vb7m-E-K0M0",
         "title": "Livre : SUPER NICKEL: Les meilleures recettes de la table - Chef Michel Dumas",
         "channel": "Le Petit Coin Lecture",
-        "views": 399,
+        "views": 402,
         "score": 0.33,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=Vb7m-E-K0M0"
@@ -43580,72 +43657,72 @@
         "id": "tvszFf8xokA",
         "title": "This book folding pattern is an easy one!!",
         "channel": "Joleen Emery",
-        "views": 371809,
+        "views": 372671,
         "score": 0.7,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=tvszFf8xokA"
       },
       {
-        "id": "2hGWNJRUkM8",
-        "title": "Une super idée à coudre pour amener au travail 🥰 #couturefacile #diy #couturerapide #astucecouture",
-        "channel": "Lucille - Couture & Crochet",
-        "views": 325584,
-        "score": 0.69,
+        "id": "Y7Ci4idG1DQ",
+        "title": "DIY Bookshelf #diy #books #booklover",
+        "channel": "Salty Acres ",
+        "views": 673552,
+        "score": 0.73,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=2hGWNJRUkM8"
+        "url": "https://www.youtube.com/watch?v=Y7Ci4idG1DQ"
       },
       {
-        "id": "WG1r8lebeLo",
-        "title": "Compte jusqu’à 1000 en français #apprendre #enfants #débutant #chiffres #math #maternelle",
-        "channel": "Kidi Fun",
-        "views": 27767849,
-        "score": 0.93,
+        "id": "s2Y41lo4Y4w",
+        "title": "From Catan, D&amp;D to Warhammer Battles ⚔🔥 Modular Gaming Table available on our website!",
+        "channel": "Wyrmwood Vlogs",
+        "views": 4693721,
+        "score": 0.83,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=WG1r8lebeLo"
+        "url": "https://www.youtube.com/watch?v=s2Y41lo4Y4w"
+      },
+      {
+        "id": "l6J-ccezT6Q",
+        "title": "How to: Super High Gloss Resin Table",
+        "channel": "Mark Montano",
+        "views": 13220,
+        "score": 0.52,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=l6J-ccezT6Q"
       },
       {
         "id": "4Gr8o6dcYj8",
         "title": "This is an easy book folding pattern that has a very dramatic look when complete. #bookfolding #book",
         "channel": "Joleen Emery",
-        "views": 230096,
+        "views": 230701,
         "score": 0.67,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=4Gr8o6dcYj8"
       },
       {
-        "id": "SkMlJ3eAY4o",
-        "title": "Easy diy Christmas craft decor - book page trees #christmasdecor #christmascrafts #christmas",
-        "channel": "Gina Luker",
-        "views": 2379936,
-        "score": 0.8,
+        "id": "epcO9T_RdWQ",
+        "title": "Super Easy Build Console Table, perfect sofa table for display of art, books and cups of coffee!",
+        "channel": "HandmadeHome",
+        "views": 10840,
+        "score": 0.5,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=SkMlJ3eAY4o"
-      },
-      {
-        "id": "3QFgdx855b0",
-        "title": "Vos doigts sont des calculatrices (Table de 9) 🤓",
-        "channel": "FabienOlicard",
-        "views": 1572022,
-        "score": 0.77,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=3QFgdx855b0"
+        "url": "https://www.youtube.com/watch?v=epcO9T_RdWQ"
       },
       {
         "id": "q_Ggxye1SP4",
         "title": "Un stabilo Zèbre et Léopard ?! Je teste #shorts #dessin #art",
         "channel": "TutoDrawSurprise",
-        "views": 6286899,
+        "views": 6287833,
         "score": 0.85,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=q_Ggxye1SP4"
       }
     ],
-    "youtube_score": 0.93,
+    "youtube_score": 0.85,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
+    "youtube_video_id": "q_Ggxye1SP4",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-12-06",
     "youtube_rejected_ids": [
       "WG1r8lebeLo"
@@ -43658,7 +43735,7 @@
         "id": "D_lHCbzLR9g",
         "title": "Des zèbres se roulent dans la poussière",
         "channel": "National Geographic Animaux",
-        "views": 111682,
+        "views": 111901,
         "score": 0.63,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=D_lHCbzLR9g"
@@ -43667,72 +43744,72 @@
         "id": "U1Ysr2DKHFI",
         "title": "A Zebra&#39;s Journey Through the Wild | Nature&#39;s Great Migrations | BBC Earth",
         "channel": "BBC Earth",
-        "views": 900564,
+        "views": 902167,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=U1Ysr2DKHFI"
       },
       {
-        "id": "1JAPhnTwTAg",
-        "title": "Pourquoi Est-il IMPOSSIBLE de Domestiquer Les ZÈBRES ?",
-        "channel": "Histoire Des Choses Simples",
-        "views": 15038,
-        "score": 0.52,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=1JAPhnTwTAg"
-      },
-      {
         "id": "3dq2Z8KpgJE",
         "title": "Zèbres, la grande galopade | ARTE Évasion",
         "channel": "ARTE Évasion",
-        "views": 14801,
+        "views": 14894,
         "score": 0.52,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=3dq2Z8KpgJE"
       },
       {
-        "id": "XAO5xye_BKE",
-        "title": "Zèbre : pourquoi est-il rayé ? La réponse va vous surprendre",
-        "channel": "Planète Animale",
-        "views": 6312,
-        "score": 0.48,
+        "id": "1JAPhnTwTAg",
+        "title": "Pourquoi Est-il IMPOSSIBLE de Domestiquer Les ZÈBRES ?",
+        "channel": "Histoire Des Choses Simples",
+        "views": 15052,
+        "score": 0.52,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=XAO5xye_BKE"
+        "url": "https://www.youtube.com/watch?v=1JAPhnTwTAg"
       },
       {
         "id": "JCVXK8rdzDw",
         "title": "Zebra - Sound Effect | ProSounds",
         "channel": "ProSounds",
-        "views": 815400,
+        "views": 819047,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=JCVXK8rdzDw"
       },
       {
-        "id": "gNOp9R25cys",
-        "title": "🦓Le Zèbre | Chansons d&#39;Animaux | Pinkfong Baby Shark en français ! Chansons pour Enfants",
-        "channel": "Pinkfong, Bébé Requin ! Chansons pour Enfants",
-        "views": 45451,
-        "score": 0.58,
+        "id": "XAO5xye_BKE",
+        "title": "Zèbre : pourquoi est-il rayé ? La réponse va vous surprendre",
+        "channel": "Planète Animale",
+        "views": 6321,
+        "score": 0.48,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=gNOp9R25cys"
+        "url": "https://www.youtube.com/watch?v=XAO5xye_BKE"
       },
       {
-        "id": "VjXdKzUCMTY",
-        "title": "Le zèbre qui danse - Comptine à geste africaine pour les petits",
-        "channel": "Comptines d'Afrique",
-        "views": 1204641,
-        "score": 0.76,
+        "id": "_K_tAqZTuYI",
+        "title": "Animal transformation | Funny zebra #animalshorts #animals #zebra #funny",
+        "channel": "Animalia",
+        "views": 11853319,
+        "score": 0.88,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=VjXdKzUCMTY"
+        "url": "https://www.youtube.com/watch?v=_K_tAqZTuYI"
+      },
+      {
+        "id": "wsUYXTWp7Bg",
+        "title": "Combat acharné entre deux zèbres  - ZAPPING SAUVAGE",
+        "channel": "France TV Science & Nature",
+        "views": 290637,
+        "score": 0.68,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=wsUYXTWp7Bg"
       }
     ],
-    "youtube_score": 0.76,
+    "youtube_score": 0.88,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://mrzebre.bandcamp.com/",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2518652955/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "_K_tAqZTuYI",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-06",
     "youtube_rejected_ids": [
       "VjXdKzUCMTY"
@@ -43740,10 +43817,10 @@
     "youtube_validated": false
   },
   "Soutien aux éditions indés ! Tombola du Kiosk": {
-    "youtube_video_id": "wZ8vHymad_s",
+    "youtube_video_id": "b2qtQ-dqGOE",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
-    "bandcamp_searched": true,
+    "bandcamp_searched": false,
     "event_date": "2026-12-07",
     "youtube_rejected_ids": [
       "aLc0dOp9rh0"
@@ -43753,84 +43830,84 @@
   "discussion": {
     "youtube_candidates": [
       {
-        "id": "029qKT1VgUM",
-        "title": "DISCUSSION HOUR  25TH NOVEMBER 2026  TOPIC:  NATIONAL VS REGIONAL PARTIES:WHO DO PEOPLE TRUST ? - 2",
-        "channel": "ISTV NETWORK",
-        "views": 22552,
-        "score": 0.54,
+        "id": "wo8SNdgNVG4",
+        "title": "UNINFORMED. #discussion #interview #jeffsquare #shorts",
+        "channel": "Jeff Square",
+        "views": 116512,
+        "score": 0.63,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=029qKT1VgUM"
+        "url": "https://www.youtube.com/watch?v=wo8SNdgNVG4"
       },
       {
-        "id": "Xl7OSsQL70c",
-        "title": "DISCUSSION HOUR 23RD  NOVEMBER 2026  TOPIC: NATIONAL VS REGIONAL PARTIES : WHO DO PEOPLE TRUST ?",
-        "channel": "ISTV NETWORK",
-        "views": 41665,
-        "score": 0.58,
+        "id": "GvDZsPVPKrk",
+        "title": "SEND THEM BACK. #publicinteraction #discussion #argument #jeffsquare #shorta",
+        "channel": "Jeff Square",
+        "views": 29611,
+        "score": 0.56,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=Xl7OSsQL70c"
+        "url": "https://www.youtube.com/watch?v=GvDZsPVPKrk"
       },
       {
-        "id": "LfCGoWtF_tc",
-        "title": "How to Write a Discussion Section | Scribbr 🎓",
-        "channel": "Scribbr",
-        "views": 257370,
-        "score": 0.68,
+        "id": "c73w8VMpujI",
+        "title": "#970 - Crise d&#39;angoisse (feat ; @Narosaka) #discussion #talk #chill #drole #humour #foryou #fyp",
+        "channel": "Oliarius",
+        "views": 8316,
+        "score": 0.49,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=LfCGoWtF_tc"
+        "url": "https://www.youtube.com/watch?v=c73w8VMpujI"
       },
       {
-        "id": "rOl3aQaezLo",
-        "title": "B2 English Podcast: Discussion and Debate! Comprehensible Input English",
-        "channel": "High Level Listening Advanced English Podcast",
-        "views": 259278,
-        "score": 0.68,
+        "id": "ialP_9JznlA",
+        "title": "A discussion of the hadith concerning three sons of caliphs who will fight over a hidden treasure",
+        "channel": "Eman Channel",
+        "views": 3182,
+        "score": 0.44,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=rOl3aQaezLo"
+        "url": "https://www.youtube.com/watch?v=ialP_9JznlA"
       },
       {
-        "id": "e3IBLKYaK1E",
-        "title": "Scaffolding Discussion Skills With a Socratic Circle",
-        "channel": "Edutopia",
-        "views": 244384,
-        "score": 0.67,
+        "id": "JOtBqgFTVsc",
+        "title": "27 November, 2026 | Editorial Discussion |",
+        "channel": "PW OnlyIAS",
+        "views": 14263,
+        "score": 0.52,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=e3IBLKYaK1E"
+        "url": "https://www.youtube.com/watch?v=JOtBqgFTVsc"
+      },
+      {
+        "id": "SbyY2JnlszQ",
+        "title": "Never ending discussion😂… #shorts",
+        "channel": "Lovebirdssf143 Samfara",
+        "views": 69996,
+        "score": 0.61,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=SbyY2JnlszQ"
       },
       {
         "id": "kgi3XOjCJUk",
         "title": "Kevin Gates - Discussion [Official Audio]",
         "channel": "kevingatesTV",
-        "views": 11005446,
+        "views": 11006276,
         "score": 0.88,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=kgi3XOjCJUk"
       },
       {
-        "id": "C5sO7wDrK6I",
-        "title": "Prepare for PTE Academic | Summarize group discussion | Everything you need to know 💡|  Pearson",
-        "channel": "Pearson",
-        "views": 73474,
-        "score": 0.61,
+        "id": "mqbY5w6UJxc",
+        "title": "#969 - Arbre à Arbre (feat ; @Narosaka) #discussion #talk #chill #drole #humour #foryou #fyp #fy",
+        "channel": "Oliarius",
+        "views": 41546,
+        "score": 0.58,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=C5sO7wDrK6I"
-      },
-      {
-        "id": "aoO_sQZsFn4",
-        "title": "Mini 14 Accuracy Discussion and Review of Match Ammo - I Messed Up",
-        "channel": "LeverBoy",
-        "views": 4542,
-        "score": 0.46,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=aoO_sQZsFn4"
+        "url": "https://www.youtube.com/watch?v=mqbY5w6UJxc"
       }
     ],
-    "youtube_score": 0.88,
+    "youtube_score": 0.63,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://thediscussion.bandcamp.com/music",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=447488521/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "wo8SNdgNVG4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-07",
     "youtube_rejected_ids": [
       "kgi3XOjCJUk"
@@ -43840,37 +43917,19 @@
   "super repas": {
     "youtube_candidates": [
       {
-        "id": "r6kxaiAd_3U",
-        "title": "1600 calories le repas (Recette chipo purée + diet)",
-        "channel": "JEREM LE COACH",
-        "views": 670754,
-        "score": 0.73,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=r6kxaiAd_3U"
-      },
-      {
         "id": "69orUBi41jw",
         "title": "Les recettes de la flemme, épisode 0  #recettefacile #recettes #recetterapide",
         "channel": "Pauline & Romain",
-        "views": 1449932,
+        "views": 1453110,
         "score": 0.77,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=69orUBi41jw"
       },
       {
-        "id": "3EJW7m6lplY",
-        "title": "Le repas de la flemme idéal 🔥",
-        "channel": "Jimmy & Laura Astuces",
-        "views": 3702202,
-        "score": 0.82,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=3EJW7m6lplY"
-      },
-      {
         "id": "DwYu0KEl9Og",
         "title": "Tacos fait maison vite et rapide repas pour chaque jour",
         "channel": "Recette Nicole",
-        "views": 816220,
+        "views": 820210,
         "score": 0.74,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=DwYu0KEl9Og"
@@ -43879,45 +43938,63 @@
         "id": "QbHjZNkqn-8",
         "title": "une idée repas super simple à faire ! #recette  #recipe #coconutrice",
         "channel": "Ella cuisine!",
-        "views": 2338,
-        "score": 0.42,
+        "views": 2725,
+        "score": 0.43,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=QbHjZNkqn-8"
-      },
-      {
-        "id": "H4Ij3hxENBo",
-        "title": "Une idée de repas d’Halloween 🤭 1g: Manon.blf #maman #famille #halloween #fete #bebe #fyp",
-        "channel": "manon blf ",
-        "views": 306705,
-        "score": 0.69,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=H4Ij3hxENBo"
-      },
-      {
-        "id": "XxeQ3ZM8VZ4",
-        "title": "La Chakchouka c’est le repas plaisir et sain à la fois !! 🤤#chakchouka #recettesaine #healthy",
-        "channel": "SEIZEMAY",
-        "views": 787346,
-        "score": 0.74,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=XxeQ3ZM8VZ4"
       },
       {
         "id": "9QByPEuQsJM",
         "title": "LE MEILLEUR SANDWICH DE LA FLEMME !!! #recette #snack #cuisine #sandwich #grilledcheese #burger",
         "channel": "Soso cuisine moi",
-        "views": 1190462,
+        "views": 1190736,
         "score": 0.76,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9QByPEuQsJM"
+      },
+      {
+        "id": "tdQYxKsglPE",
+        "title": "Boules aux fromage 🧀 (les quantité sur insta) #food #foodie #recette #recipe #instafood #easyrecipe",
+        "channel": "Malcom's Food",
+        "views": 662261,
+        "score": 0.73,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=tdQYxKsglPE"
+      },
+      {
+        "id": "sQsqNj3wFa0",
+        "title": "DINGUERIE : CONCOMBRE FARCI",
+        "channel": "zoéladiet",
+        "views": 1843064,
+        "score": 0.78,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=sQsqNj3wFa0"
+      },
+      {
+        "id": "apZU0BlE63o",
+        "title": "Mon repas équilibré et super simple pour ce soir ❤️ #reequilibragealimentaire #dieteticienne",
+        "channel": "Ysaline",
+        "views": 89822,
+        "score": 0.62,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=apZU0BlE63o"
+      },
+      {
+        "id": "vGgxRfq22Ls",
+        "title": "Cordon Bleu Maison! 😍🧀",
+        "channel": "Chef Théo",
+        "views": 5195247,
+        "score": 0.84,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=vGgxRfq22Ls"
       }
     ],
-    "youtube_score": 0.82,
+    "youtube_score": 0.84,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://vialka.bandcamp.com/album/plus-vite-que-la-musique",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=886939535/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "vGgxRfq22Ls",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-07",
     "youtube_rejected_ids": [
       "3EJW7m6lplY"
@@ -44013,46 +44090,28 @@
   "LILITH SONGS": {
     "youtube_candidates": [
       {
-        "id": "gSVB4s2Iz9Q",
-        "title": "Lilith Shadow Flame Official Song",
-        "channel": " Reverstorm",
-        "views": 249857,
-        "score": 0.67,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=gSVB4s2Iz9Q"
-      },
-      {
-        "id": "HtmMBhJgPm8",
-        "title": "I Was Never Meant to Bow - LILITH THEME",
-        "channel": "Manifested Dreams",
-        "views": 1298317,
-        "score": 0.76,
-        "live": 0,
-        "url": "https://www.youtube.com/watch?v=HtmMBhJgPm8"
-      },
-      {
         "id": "uwR89DK5Byw",
         "title": "Stayed Gone (Lute &amp; Lilith Ver.)  Hazbin Hotel Animated Music Video【Rewrite Cover By MilkyyMelodies】",
         "channel": "MilkyyMelodies",
-        "views": 8138317,
+        "views": 8150203,
         "score": 0.86,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=uwR89DK5Byw"
       },
       {
-        "id": "jeQfLEULwLI",
-        "title": "Lilith - Remember My Name",
-        "channel": " Reverstorm",
-        "views": 31589,
-        "score": 0.56,
+        "id": "HtmMBhJgPm8",
+        "title": "I Was Never Meant to Bow - LILITH THEME",
+        "channel": "Manifested Dreams",
+        "views": 1300372,
+        "score": 0.76,
         "live": 0,
-        "url": "https://www.youtube.com/watch?v=jeQfLEULwLI"
+        "url": "https://www.youtube.com/watch?v=HtmMBhJgPm8"
       },
       {
         "id": "4YQ8mgzXcxU",
         "title": "Lilith",
         "channel": "Saint Avangeline - Topic",
-        "views": 37995427,
+        "views": 38081002,
         "score": 0.95,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=4YQ8mgzXcxU"
@@ -44061,7 +44120,7 @@
         "id": "T0slAhvMLgw",
         "title": "Lilith - Saint Avangeline (Lyrics)",
         "channel": "Justified Melody",
-        "views": 2901269,
+        "views": 2911799,
         "score": 0.81,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=T0slAhvMLgw"
@@ -44070,7 +44129,7 @@
         "id": "9PdH-zavwO4",
         "title": "Halsey, SUGA - Lilith (Diablo IV Anthem)",
         "channel": "HalseyVEVO",
-        "views": 35197571,
+        "views": 35213917,
         "score": 0.94,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=9PdH-zavwO4"
@@ -44079,18 +44138,36 @@
         "id": "elxOiCLx8ys",
         "title": "Lilith - La Première Rebelle | Mythologie Biblique (Dark Cinematic Music) 🎵",
         "channel": "Ronny Wolfy",
-        "views": 7620,
+        "views": 7670,
         "score": 0.49,
         "live": 0,
         "url": "https://www.youtube.com/watch?v=elxOiCLx8ys"
+      },
+      {
+        "id": "W_GYDyn9zEE",
+        "title": "Gravity (Lilith Version) | Hazbin Hotel Animation |【By MilkyyMelodies】",
+        "channel": "MilkyyMelodies",
+        "views": 2356146,
+        "score": 0.8,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=W_GYDyn9zEE"
+      },
+      {
+        "id": "AUNlrvte4_8",
+        "title": "Lilith&#39;s Whisper | Dark Song",
+        "channel": "Echoes of Soul",
+        "views": 9600,
+        "score": 0.5,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=AUNlrvte4_8"
       }
     ],
-    "youtube_score": 0.95,
+    "youtube_score": 0.94,
     "youtube_auto_validated": false,
-    "youtube_video_id": "",
-    "bandcamp_url": "https://lilithduo.bandcamp.com/album/my-favorite-songs",
-    "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1259339269/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
-    "bandcamp_searched": true,
+    "youtube_video_id": "9PdH-zavwO4",
+    "bandcamp_url": "",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
       "4YQ8mgzXcxU"
@@ -45224,7 +45301,8 @@
     "bandcamp_searched": true,
     "event_date": "2026-12-05",
     "youtube_rejected_ids": [
-      "H4M3GmJXe2s"
+      "H4M3GmJXe2s",
+      "fze5DbRACuY"
     ],
     "youtube_validated": false
   },
@@ -45310,5 +45388,88 @@
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2087258053/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
     "event_date": "2026-12-24"
+  },
+  "CHRISTOPHE CLÉBARD": {
+    "youtube_candidates": [
+      {
+        "id": "dFvFxWPKAfQ",
+        "title": "Le futur c&#39;est la drogue",
+        "channel": "Christophe Clébard - Topic",
+        "views": 265,
+        "score": 1.3,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=dFvFxWPKAfQ"
+      },
+      {
+        "id": "_Dv4cIf7lgE",
+        "title": "Espace Noir",
+        "channel": "Christophe Clébard - Topic",
+        "views": 28,
+        "score": 1.18,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=_Dv4cIf7lgE"
+      },
+      {
+        "id": "PeucDGalsiM",
+        "title": "Christophe Clébard (live) | Support Your Brussels Scene | Beursschouwburg",
+        "channel": "Kiosk Radio",
+        "views": 12684,
+        "score": 3.51,
+        "live": 1,
+        "url": "https://www.youtube.com/watch?v=PeucDGalsiM"
+      },
+      {
+        "id": "3mK5BBv7b_8",
+        "title": "Christophe Clébard - Les Enfants-",
+        "channel": "Christophe Clebard",
+        "views": 3962,
+        "score": 0.45,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=3mK5BBv7b_8"
+      },
+      {
+        "id": "f1HTwxROykw",
+        "title": "Christophe CLÉBARD - On va crever (2018)",
+        "channel": "Crème de la Crème",
+        "views": 5904,
+        "score": 0.47,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=f1HTwxROykw"
+      },
+      {
+        "id": "36jrPth_Vo0",
+        "title": "la sodomie",
+        "channel": "Christophe Clébard - Topic",
+        "views": 2694,
+        "score": 1.43,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=36jrPth_Vo0"
+      },
+      {
+        "id": "QjJljBm8SDY",
+        "title": "tu as violé mon coeur",
+        "channel": "Christophe Clébard - Topic",
+        "views": 351,
+        "score": 1.32,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=QjJljBm8SDY"
+      },
+      {
+        "id": "DroltoIMTs0",
+        "title": "CHRISTOPHE CLEBARD",
+        "channel": "Christophe Clebard",
+        "views": 307,
+        "score": 0.31,
+        "live": 0,
+        "url": "https://www.youtube.com/watch?v=DroltoIMTs0"
+      }
+    ],
+    "youtube_score": 3.51,
+    "youtube_auto_validated": false,
+    "youtube_video_id": "PeucDGalsiM",
+    "bandcamp_url": "https://christopheclebard.bandcamp.com/",
+    "bandcamp_embed_url": "",
+    "bandcamp_searched": true,
+    "event_date": "2026-11-28"
   }
 }
