@@ -3299,7 +3299,9 @@
     "youtube_rejected_ids": [
       "lCKq-60aJnU"
     ],
-    "youtube_validated": false
+    "youtube_validated": true,
+    "youtube_validated_via": "discord-reaction",
+    "youtube_validated_at": "2026-11-28"
   },
   "RED QUIET (sludge/noise) - CHIHUAS OF DEPTHS (rock alternatif) - KAALBAÅR": {
     "youtube_video_id": "",
