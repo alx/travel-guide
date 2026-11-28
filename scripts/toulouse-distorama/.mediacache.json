@@ -44174,13 +44174,14 @@
     ],
     "youtube_score": 0.94,
     "youtube_auto_validated": false,
-    "youtube_video_id": "9PdH-zavwO4",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
-      "4YQ8mgzXcxU"
+      "4YQ8mgzXcxU",
+      "9PdH-zavwO4"
     ],
     "youtube_validated": false
   },
