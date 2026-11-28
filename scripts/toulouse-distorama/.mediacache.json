@@ -43635,13 +43635,14 @@
     ],
     "youtube_score": 0.76,
     "youtube_auto_validated": false,
-    "youtube_video_id": "X01JDi2h_bM",
+    "youtube_video_id": "",
     "bandcamp_url": "https://cartonsonore.bandcamp.com/album/la-b-o-de-ton-go-ter",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=878998473/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
     "event_date": "2026-12-06",
     "youtube_rejected_ids": [
-      "LUtFYvfq7UM"
+      "LUtFYvfq7UM",
+      "X01JDi2h_bM"
     ],
     "youtube_validated": false
   },
