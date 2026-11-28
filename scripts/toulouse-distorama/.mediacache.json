@@ -43548,13 +43548,14 @@
     "youtube_validated": false
   },
   "Soutien aux éditions indés ! Présentation du livre « Crever le silence »": {
-    "youtube_video_id": "Fg1jJ1V7l58",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": true,
     "event_date": "2026-12-06",
     "youtube_rejected_ids": [
-      "7wKyL5hqR1s"
+      "7wKyL5hqR1s",
+      "Fg1jJ1V7l58"
     ],
     "youtube_validated": false
   },
