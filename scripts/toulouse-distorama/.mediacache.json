@@ -43823,13 +43823,14 @@
     "youtube_validated": false
   },
   "Soutien aux éditions indés ! Tombola du Kiosk": {
-    "youtube_video_id": "b2qtQ-dqGOE",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-12-07",
     "youtube_rejected_ids": [
-      "aLc0dOp9rh0"
+      "aLc0dOp9rh0",
+      "b2qtQ-dqGOE"
     ],
     "youtube_validated": false
   },
