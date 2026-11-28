@@ -41898,11 +41898,15 @@
     ],
     "youtube_score": 1.38,
     "youtube_auto_validated": false,
-    "youtube_video_id": "9fFjIGu9wOI",
+    "youtube_video_id": "",
     "bandcamp_url": "https://executivelegs.bandcamp.com/album/leg-it",
     "bandcamp_embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2456104945/size=small/bgcol=111111/linkcol=ffffff/transparent=true/",
     "bandcamp_searched": true,
-    "event_date": "2026-12-11"
+    "event_date": "2026-12-11",
+    "youtube_rejected_ids": [
+      "9fFjIGu9wOI"
+    ],
+    "youtube_validated": false
   },
   "Soutien à L’Autonomie : AUCH!": {
     "youtube_candidates": [
