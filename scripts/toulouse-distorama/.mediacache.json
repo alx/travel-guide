@@ -41553,13 +41553,14 @@
     ],
     "youtube_score": 0.66,
     "youtube_auto_validated": false,
-    "youtube_video_id": "RLHhavkbTHg",
+    "youtube_video_id": "",
     "bandcamp_url": "",
     "bandcamp_embed_url": "",
     "bandcamp_searched": false,
     "event_date": "2026-12-10",
     "youtube_rejected_ids": [
-      "RE6e_CWmai0"
+      "RE6e_CWmai0",
+      "RLHhavkbTHg"
     ],
     "youtube_validated": false
   },
